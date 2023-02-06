@@ -8,7 +8,7 @@ Everyones' first foray into The Cloud was storage. No doubt, whether you realize
 
 But there are some gotchas with using Web2 cloud solutions, aren't there? More than anything, it gets expensive fast, and it all goes to... well, Web2 CEOs and Board Members.
 
-We believe in the ethos of decentralization here at Genesys Go. People who own files and data should _actually_ get the chance to **own their data.** Web2 and centralized companies shouldn't get a say in how you use your files, mine you for data, and rip you off at billing time. And that's a key reason why we created the Shadow Drive (and are building out more cloud offerings on top of that).
+We believe in the ethos of decentralization here at GenesysGo. People who own files and data should _actually_ get the chance to **own their data.** Web2 and centralized companies shouldn't get a say in how you use your files, mine you for data, and rip you off at billing time. And that's a key reason why we created the Shadow Drive (and are building out more cloud offerings on top of that).
 
 Decentralized storage has been done before. We didn't invent that. But we like to think we perfected it by combining the power of Solana's consensus with an insanely well architected distributed, resilient storage solution that also maximizes throughput.&#x20;
 

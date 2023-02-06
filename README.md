@@ -4,7 +4,11 @@ description: A resource compendium for the Shadow Cloud distributed infrastructu
 
 # GET STARTED
 
-## What is Shadow
+## What is Shadow Cloud?
+
+(rework this entire page)
+
+
 
 At it's core, "Shadow" and all of it's offerings are more than just cool tech that you can use to do blockchain stuff. It's a core belief that returns to the ethos of blockchain:
 

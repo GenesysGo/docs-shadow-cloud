@@ -1,5 +1,5 @@
 ---
-description: Let's get it started
+description: Let's review a step by step walkthrough (including examples) on using the Shadow RPC
 ---
 
 # Use the RPCs (the JWT Page)

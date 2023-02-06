@@ -4,9 +4,9 @@ description: How to authenticate to Premium RPC services
 
 # Before You Begin - Authentication
 
-### Ok before you freak out, we're going to give you code samples for you to ~~plagiarize~~ use
+### Ok before you freak out, we're going to give you code samples for you to use
 
-We just want to make it abundantly clear that these things don't work the moment you reserve them. An important part to making sure YOUR dedicated RPCs work best for you is that they _remain_ dedicated to your app. It would be a mega bummer if some (dare I say) Shadowy Super Coder were to find your RPC's endpoint and use it for their own and hog your precious resources.
+We just want to make it abundantly clear that without setting up basic authentication, the RPCs will reject reuqests for security. An important part to making sure YOUR dedicated RPCs work best for you is that they _remain_ dedicated to your app. It would be a mega bummer if some (dare I say) Shadowy Super Coder were to find your RPC's endpoint and use it for their own and hog your precious resources.
 
 SO. We built an authentication mechanism that will restrict usage of the RPC to your dApp. This is done by a proxy that you run (which we provide an example container solution for!) requests a JWT token. There are basically 2 phases to authentication and usage.
 

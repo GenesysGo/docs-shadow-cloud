@@ -20,7 +20,7 @@ Active RPCs is going to be the place where you spend the most amount of time. So
 
 **Account ID** - this will be used in two places. _First_, it is used to retrieve your JWT. _Second_, this is the endpoint for your RPC which you will find in the field called...
 
-**RPC URL** - this is where your RPC is located. This is where you tell your code to send it's transactions to.
+**RPC URL** - this is where your RPC is located. This is where you tell your code to send it's read requests or transactions to.
 
 **Token -** you can request a JWT directly from the portal, right here.
 
