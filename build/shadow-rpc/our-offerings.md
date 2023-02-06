@@ -4,24 +4,24 @@ description: RPCs aren't One Size Fits All
 
 # Our Offerings
 
-## RPCs Aren't One Size Fits All
+## RPCs Are Not One Size Fits All
 
-Some devs just need a way into Solana to test some stuff out. Some devs higher RPC throughput for their dApp. And some devs need to have RPC instances in every region of the world in order to globally load balance their dApp because they have a buttload of transactions. We got all these devs covered.
+Some devs just need a way into Solana to test some stuff out. Some devs higher RPC throughput for their dApp. And some devs need to have RPC instances in every region of the world in order to globally load balance their dApp because they have millions of transactions. We got all these situations covered.
 
 ### We offer Three Tiers of RPC
 
 {% hint style="info" %}
 Note, creating multiple RPC accounts increases your project's rate limits.
 
-Prices below are monthly.
+Prices below are for 30 day cycles (roughlky monthly)
 {% endhint %}
 
-#### Tier 0 - "I'm just a little block-curious"
+#### Tier 0 - "I'm just a little curious how this works"
 
 * Use: Low performance requirements, ideal for just exploring how Solana works and testing some new calls out
 * **Cost = Free**
 * 1x Request per second
-  * This is monitored based on a combo of the following:
+  * This is monitored based on a combination of the following:
     * Your IP Address
     * UUID that Shadow generates
     * JWT token that is recycled every 24 hours

@@ -1,15 +1,13 @@
 ---
-description: If you're a dev and need an RPC, this is for you
+description: If you're a developer and need to read data from Solana, this section provides you with options and guides on getting everything quickly set up and secured. 
 ---
 
 # RPC Subscribers
 
 ### So you're developing the greatest Solana dApp ever...
 
-One of the things that you will find out really quickly is that when your end user clicks the "Submit" button in their wallet, your app will need to build a transaction and send it to an RPC. If you try to rely on public, free RPCs, your dApp will crash and burn the first time it comes under any sort of of load.
+You're off to a great start by choosing the only highly performant decentralized RPC network. Other RPC networks force you to choose between performance or decentralization. The Shadow RPC network provides all the benefits of decentralization without sacrificing speed, stability, or security.
 
-Because you are studious, you've read all of the documentation up until this point, right?... Right?&#x20;
+One of the things that you will find out really quickly is that when your end user clicks the "Submit" button in their wallet, your app will need to build a transaction and send it to an RPC. Furthermore, if your application is thriving with users you will find their activity generates huge read-loads and consistly high throughput that needs horizontal back-end elasticity. If you try to rely on public, free RPCs, your dApp will crash and burn the first time it comes under any sort of of load.
 
-Well then you remember the part where I mentioned RPCs, by default, are already under heavy load. Throw in public usage and everyone and their mom is trying to shove a transaction through that poor RPC and the sysadmin is in the corner puking his guts out because he'll never be able to keep these systems up.
-
-You need a dedicated RPC. Your end users deserve a dedicated RPC experience. We have dedicated RPCs.&#x20;
+Built on a network of independent operators, Shadow’s Solana RPCs truly decentralize your back-end API with payments for compute going directly to ecosystem operators.

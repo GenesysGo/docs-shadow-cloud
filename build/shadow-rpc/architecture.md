@@ -33,7 +33,7 @@ Your webserver would then serve identical websites with one exception - the RPC 
 
 ![](<../.gitbook/assets/image (3) (1).png>)
 
-When you purchase services from Genesys Go, there are add-on services available. One of those is Global Server Load Balancing (GSLB). If you purchase RPC services in different global regions (ie, NA, EU, and APAC), you can add the add-on GSLB package and we will take care of the rest. There are two tiers of global load balancing offered (3 regions or 6 regions) which we will cover when it comes time to reserve the RPC.
+When you purchase services from GenesysGo, there are add-on services available. One of those is Global Server Load Balancing (GSLB). If you purchase RPC services in different global regions (ie, NA, EU, and APAC), you can add the add-on GSLB package and we will take care of the rest. There are two tiers of global load balancing offered (3 regions or 6 regions) which we will cover when it comes time to reserve the RPC.
 
-Why do this? Because you need to focus on your app's code; not the internet plumbing. And this is guaranteed to give your end users the best possible experience.
+Why do this? Because you need to focus on your app's code; not the internet plumbing. And this is reliable way to give your end users the best possible experience.
 
