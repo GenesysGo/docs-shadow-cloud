@@ -33,7 +33,7 @@ Remember, you can reserve as many instances as you want.
 
 **Third on the list is an Account Name.** This is a clever name that you can set to organize your RPC accounts. This would be particularly handy for billing/accounting if you're sophisticated enough to think that far in advance.
 
-**Lastly is the Stake Amount field.** Let's take a moment to wrap our heads around how billing actually works. For a single Premium+ RPC, the cost is $795/month. When you first reserve a Premium+ instance, the $795 is immediately paid to the operator.
+**Lastly is the Stake Amount field.** Let's take a moment to wrap our heads around how billing actually works. For a single Premium+ RPC, the cost is $795/ every 30 days (or ~1 month). When you first reserve a Premium+ instance, the $795 is immediately paid to the operator.
 
 What's interesting is this also opens an account where you can prepay any amount of monthly fees that you want. Note that the monthly payment needs to be _deposited before the expiration_ that is shown in the [My RPCs page.](my-rpcs.md)
 
