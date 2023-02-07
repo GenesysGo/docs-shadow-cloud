@@ -21,7 +21,7 @@
     * [Before You Begin](build/shadow-drive/before-you-begin.md)
     * [The CLI](build/shadow-drive/the-cli.md)
     * [The SDK](build/shadow-drive/the-sdk.md)
-    * [The API](build/shadow-drive/the-sdk.md)
+    *
     * [Ecosystem](build/shadow-drive/ecosystem.md)
 * [Operate](operate/README.md)
   * [Solana](operate/Solana/README.md)
