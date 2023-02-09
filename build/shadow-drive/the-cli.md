@@ -12,7 +12,7 @@ npm install -g @shadow-drive/cli
 
 Your output will look like this:
 
-![](<../.gitbook/assets/image (4).png>)
+![](<../../.gitbook/assets/image (4).png>)
 
 _As an alternative, a community member created and open-sourced their own CLI that is based on Rust instead of TS:_ [_https://github.com/ebrightfield/shadow-drive-rust-cli_](https://github.com/ebrightfield/shadow-drive-rust-cli) __&#x20;
 
