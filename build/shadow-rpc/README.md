@@ -6,7 +6,7 @@ description: If you're a developer and need to read data from Solana, this secti
 
 |Type |Tier |Global Limit   |Data Limit    |Other Limits   |Archival   |GSLB   |Cost / 30 Days|    |
 |---|---|---|---|---|---|---|---|---|
-|[Free](reserve-shadow-rpc-account.md)   |Tier 0|1 RPS   |data |no gPA, 6 RPM gMA |yes   |yes   |0  |[Sign-up](https://portal.genesysgo.net/premium/reserve)  |
+|[Free](reserve-shadow-rpc-account.md)   |Tier 0|1 RPS   |data |<details><summary>Details</summary>no gPA, 6 RPM gMA |yes   |yes   |0  |[Sign-up](https://portal.genesysgo.net/premium/reserve)  |
 |[Premium](reserve-shadow-rpc-account.md)   |Tier 1|b   |data   | |yes   |yes   |0|[Sign-up](https://portal.genesysgo.net/premium/reserve)  |
 |[Premium+](reserve-shadow-rpc-account.md)   |Tier 2|c   |data   |    |yes   |yes**   |0    |[Sign-up](https://portal.genesysgo.net/premium/reserve)    |
 
