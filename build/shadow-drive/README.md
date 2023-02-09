@@ -1,19 +1,30 @@
 ---
-description: Introducing Decentralized Storage
+description: The topics in this section help you get started using Shadow Drive decentralized storage
 ---
 
-# Shadow Drive
+# Build using Shadow Drive
 
-Everyones' first foray into The Cloud was storage. No doubt, whether you realized it or not, your first usage of the cloud was when you set up a Dropbox account (or something like it - Google Drive, iCloud storage, OneDrive, etc.) That's great, because it really is the starting point for EVERYTHING else that runs in the cloud.
+## Get Started
 
-But there are some gotchas with using Web2 cloud solutions, aren't there? More than anything, it gets expensive fast, and it all goes to... well, Web2 CEOs and Board Members.
+Prerequisites: Install [NodeJS LTS 16.17.1](https://nodejs.org/en/download/) on any OS. 
 
-We believe in the ethos of decentralization here at GenesysGo. People who own files and data should _actually_ get the chance to **own their data.** Web2 and centralized companies shouldn't get a say in how you use your files, mine you for data, and rip you off at billing time. And that's a key reason why we created the Shadow Drive (and are building out more cloud offerings on top of that).
+Then run the following command
 
-Decentralized storage has been done before. We didn't invent that. But we like to think we perfected it by combining the power of Solana's consensus with an insanely well architected distributed, resilient storage solution that also maximizes throughput.&#x20;
+```bash
+npm install -g @shadow-drive/cli
+```
 
-Is it insanely fast and resilient? Yes.
+## Next steps
+* After you install Shadow Drive, learn how to use the [CLI client](the-cli.md).
 
-Are we proud of it? Also yes.
+* If you prefer, here is a step by step [video walkthrough]().
 
-Try it for yourself and you'll see.
+* Further streamline your integrations with Shadow Drive using the SDK and API.
+
+## Get Support
+
+* Review the [FAQ]()
+
+* Visit us in [Discord]() for support and feedback!
+
+* Submit your project to the [ecosystem]() page so we can highlight your amazing work!
