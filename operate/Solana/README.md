@@ -1,18 +1,16 @@
 ---
-description: Can anyone run a Solana RPC?
+description: Follow the intructions here to run a Shadow RPC and become a Shadow Operator.
 ---
 
-# Basics
+# Shadow RPC Set up
+ 
+* [1 - Configure Hardware](1-prep-your-drives.md)
+* [2 - Configure Solana Environment](2-prep-your-solana-env.md)
+* [3 - Start and Monitor Your Node](3-start-and-monitor-your-node.md)
+* [4 - Join the Shadow RPC Network](4-join-the-shadow-rpc-network.md)
 
-## I have used a computer before, can I run an RPC node?
-
-You can think of running an RPC node a lot like mining Bitcoin in the sense that if you have electricity and tech skills, you can earn some extra scratch for putting them out there in the world.
-
-But you _can't_ think about it as a 1:1 perfect match.&#x20;
-
-_**Running an RPC is best suited for a systems administrator with at least 1 year of experience working with cloud and Linux technologies.**_ Sure, some unicorns could get by with less experience, and yes, we are here to help!
-
-But I want to be clear - running an RPC server is NOT for everyone. Here are some questions to help you figure out where your skillset lies relative to what is needed to run an RPC:
+## Prerequisites
+<details><summary>Review Skills</summary>
 
 * Define what SSH is
 * What is the difference between baremetal and a virtual machine
@@ -21,11 +19,54 @@ But I want to be clear - running an RPC server is NOT for everyone. Here are som
 * What Ubuntu utility is used to create disk partitions?
 * What Ubuntu utility is used to create filesystems on top of disk partitions?
 * What would you pipe an Ubuntu log file to if you wanted to search the log file for a specific keyword?
-* Nano or Vim? (yes, I will judge you based on your answer)
+* Nano or Vim?
 * What is swap (related to memory)?
 
-See, notice I didn't ask any questions about Solana? It's not expected that you know a lot about Solana yet (but it certainly helps). **And to be completely honest,** you don't even need to know the answer to all of those things above off of the top of your head - you just need to be able to hold the conversation around these things and probably relate them back to some professional experience you've had in the past. Hell, we all google our jobs anyways, right?
+Running a Solana RPC is best suited for a systems administrator with at least 1 year of experience working with cloud and Linux technologies. Sure, some unicorns could get by with less experience, and yes, we are here to help!
+</details>
 
-So if you've made it this far and you want to see what's next, we'll move on to how big your server has to be to run an RPC.
+<details><summary>Review Hardware Requirements</summary>
 
+### I have a really powerful Desktop PC - can I run it on that?
+
+No.
+
+Solana RPCs are nothing to mess with. They do almost all of the things that a Solana validator nodes do PLUS they handle almost all of the lookup requests. Ever opened your Phantom wallet and waited for the balances to load? That's because it was blowing up an RPC requesting all of the balances and SPL tokens and NFTs in your wallet.&#x20;
+
+Now imagine that happening for all the wallets everywhere in the world. That's an RPC, and that's why your desktop PC will commit seppuku if you try to run a Solana RPC on it.
+
+### So what's it take?
+
+* More important than anything is redundancy. You run servers in data centers because you get:
+  * Dual power circuits from 2 separate power companies
+  * Dual battery backups
+  * Dual ISPs
+  * Dual cooling and air conditioning flows
+
+You don't have those things at home, so just know going into this that if someone is paying you for a - and this is a keyword here - _**\*Premium\***_ service such as _**\*Premium\***_ RPC, you have an obligation to provide just that.
+
+So what data center should you use and where to begin this journey? 👇
+
+**Apply for access to data centers through the Solana Server Program (requires KYC!)** [**https://solana.org/server-program**](https://solana.org/server-program)****
+
+**You can alternatively explore other bare metal providers without going through Solana Server program, like** [**Latitude**](https://latitude.sh)**.**
+
+Once you've gone through that, you will be given a catalog of servers and data centers to pick from. I'm here to tell you right now, most of those offerings work great for validators - they do NOT work great for RPCs. Never forget, RPCs require a hoss of a server.
+
+We recommend:
+
+* AMD EPYC 7502P 32 Core CPU _**or better**_ (AMD EPYC is preferred over Intel, and the 7443 will work)
+* 512 GB RAM minimum, _**1 TB RAM preferred**_
+* Disk layout:
+  * 1x OS Drive that will also hold Solana logs. 128GB min, _**256GB+ preferred**_
+  * 2x 1TB nVME drive minimum, _**2x 3.9TB nVME preferred**_
+* And another thing to watch out for is bandwith usage. Depending on the region, some of our nodes can transmit up to 10 TB outbound per day, which can rack up a big bill if your hosting provider charge by the TB.
+
+_**The preferred node that most operators have been using is currently the Equinix EQ-6 or Latitude s3.large.**_
+
+_**NOTE: IN ADDITION to the hardware requirements above, it is also required that all operators stake 10,000 SHDW per node that they want to operate!!**_
+</details>
+
+{% hint style="danger" %}
 _**PLEASE NOTE: We are currently pausing Shadow Operator registration as we kickstart the Premium RPC program with our long time alpha testers. Please check back SOON**_&#x20;
+{% endhint %}
