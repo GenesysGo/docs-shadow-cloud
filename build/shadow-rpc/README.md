@@ -10,7 +10,7 @@ description: This section provides you with options and guides on getting everyt
 |&check; No credit caps<br>&check; Global Routing</br>&check; Transaction Archive |&check; No credit caps<br>&check; Global Routing</br>&check; Transaction Archival<br>&check; Auth security|&check; No credit caps<br>&check; Regional Routing</br>&check; Transaction Archival</br>&check; Auth Security</br>&check; High Compute<br>&check; High Data Cap   |
 |1 req / sec  |50 req / sec|Unlimited   |
 |[Sign Up]()    |[Sign up]()    |[Sign up]()    |
-|<details><summary>Details & Limits</summary>gPA = not avail.<br>gMA = 6 RPM</br>Txn History = 1 RPS<br>sendTxn = 1 RPS</br></details>   |<details><summary>Details & Limits</summary>gPA = 5 RPS<br>gMA = 25 RPS</br>Txn History = 10 RPS<br>sendTxn = 5 RPS</br></details>   </details>   |<details><summary>Details & Limits</summary>gPA = 10 RPS<br>gMA = 100 RPS</br>Txn History = 40 RPS<br>sendTxn = 50 RPS</br></details> 
+|<details><summary>Details & Limits</summary>gPA = not avail.<br>gMA = 6 RPM</br>Archive = 1 RPS<br>sendTxn = 1 RPS</br></details>   |<details><summary>Details & Limits</summary>gPA = 5 RPS<br>gMA = 25 RPS</br>Archive = 10 RPS<br>sendTxn = 5 RPS</br></details>   </details>   |<details><summary>Details & Limits</summary>gPA = 10 RPS<br>gMA = 100 RPS</br>Archive = 40 RPS<br>sendTxn = 50 RPS</br></details> 
 
 ## We can help you make a decision:
 <details><summary>Compare plans in greater detail</summary>

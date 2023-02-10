@@ -1,19 +1,23 @@
 ---
-description: A resource compendium for the Shadow Cloud distributed infrastructure platform, bringing Web3 values with Web2 performance and stability.
+description: The Shadow Book serves as the consolidated resource for anyone exploring or trying to build on top of the Shadow Ecosystem.
 ---
 
-# GET STARTED
+# Introduction
 
-## What is Shadow Cloud?
+This resource will be updated over time and the community should feel empowered to submit PRs for edits they would like to see or information they feel has been left out.
 
-(rework this entire page)
+Please feel free to submit edits (as PRs) here - https://github.com/GenesysGo/docs-shadow-cloud
 
+## How this resource is organized
 
+* [Learn](learn/README.md)
+    * This section explains our how we are combining powerful web2 baremetal with decentralized solutions to create superior technologies. This section is for those interestered in undertanding the value we bring to developers and enterprises in need of distributed ledger compute and storage solutions.
 
-At it's core, "Shadow" and all of it's offerings are more than just cool tech that you can use to do blockchain stuff. It's a core belief that returns to the ethos of blockchain:
+* [Build](build/README.md)
+    * This section focuses on easy and actionable information to help you quickly get started building. Step by step guides, and line by line CLI instruction offer developers the quickest path to working concepts. We are constantly improvig this section to make sure utilizing our solutions is as easy as possibele.
 
-**Transactions should happen on a peer-to-peer basis.** People who want _something_ should be able to buy it directly from people who provide _something_. The people who want something get it quickly and cheap, and the people who put forth the effort to provide something get rewarded.
+* [Operate](operate/README.md)
+    * The operator section focuses specifically on confguring bare metal hosts to contribute compute and/or storage to the Shadow Cloud network. This community of builders and operators form the decentralized spine powering our current, and exciting technologies planned for release later this year.
 
-In a weird way, blockchain has been getting away from this ethos over the past few years. At the same time, there exist opportunities to improve upon web2 solutions by unleashing this peer-to-peer ecosystem.&#x20;
-
-That is what Shadow sets out to be. A tech ecosystem made by builders, for builders. Put another way, Devs can purchase tech services directly from tech providers. Let's dig into this by looking at our products.
+* [Reference](reference/README.md)
+    * Much like an appendix, the refernce section is a quick navigation hub for key resources. Our media kit, social media presence, and more can be found here.

@@ -1,7 +1,70 @@
 ---
-description: For individuals intersted in becoming Shadow Operators in order to contribute high quality compute to the Shadow Cloud in exchange for rewards. As the Shadow Cloud platform expands, so will opportunities to contribute hardware (incuding mobile phones).
+description: For those interested in contributing high quality compute to the Shadow Cloud. As the Shadow Cloud platform expands, so will opportunities to contribute hardware (incuding mobile phones).
 ---
 
 # Shadow Operators
 
-So you want to earn rewards by utilizing your technical skillset? Running a Shadow RPC node might just be the way for you to do it. BUT you need to be fully aware of what the skill and technical requirements are before you begin...
+So you want to earn rewards by utilizing your technical skillset? Becoming a Shadow Operator might just be the way for you to do it. BUT you need to be fully aware of what the skill and technical requirements are before you begin...
+
+## Shadow RPC
+
+Shadow RPCs are a network of independent operators currently operating on Solana. You can can register and review leaderboards on the [operator dashboard](https://portal.genesysgo.net/nodes/leaderboard).
+
+<details><summary>Review Skills</summary>
+
+* Define what SSH is
+* What is the difference between baremetal and a virtual machine
+* What is latency in terms of a network? What is latency in terms of a disk?
+* What is the difference between an HDD, SSD, and nVME?
+* What Ubuntu utility is used to create disk partitions?
+* What Ubuntu utility is used to create filesystems on top of disk partitions?
+* What would you pipe an Ubuntu log file to if you wanted to search the log file for a specific keyword?
+* Nano or Vim?
+* What is swap (related to memory)?
+
+Running a Solana RPC is best suited for a systems administrator with at least 1 year of experience working with cloud and Linux technologies. Sure, some unicorns could get by with less experience, and yes, we are here to help!
+</details>
+
+<details><summary>Review Hardware Requirements</summary>
+
+### I have a really powerful Desktop PC - can I run it on that?
+
+No.
+
+Solana RPCs are nothing to mess with. They do almost all of the things that a Solana validator nodes do PLUS they handle almost all of the lookup requests. Ever opened your Phantom wallet and waited for the balances to load? That's because it was blowing up an RPC requesting all of the balances and SPL tokens and NFTs in your wallet.&#x20;
+
+Now imagine that happening for all the wallets everywhere in the world. That's an RPC, and that's why your desktop PC will commit seppuku if you try to run a Solana RPC on it.
+
+### So what's it take?
+
+* More important than anything is redundancy. You run servers in data centers because you get:
+  * Dual power circuits from 2 separate power companies
+  * Dual battery backups
+  * Dual ISPs
+  * Dual cooling and air conditioning flows
+
+You don't have those things at home, so just know going into this that if someone is paying you for a - and this is a keyword here - _**\*Premium\***_ service such as _**\*Premium\***_ RPC, you have an obligation to provide just that.
+
+So what data center should you use and where to begin this journey? 👇
+
+**Apply for access to data centers through the Solana Server Program (requires KYC!)** [**https://solana.org/server-program**](https://solana.org/server-program)****
+
+**You can alternatively explore other bare metal providers without going through Solana Server program, like** [**Latitude**](https://latitude.sh)**.**
+
+Once you've gone through that, you will be given a catalog of servers and data centers to pick from. I'm here to tell you right now, most of those offerings work great for validators - they do NOT work great for RPCs. Never forget, RPCs require a hoss of a server.
+
+We recommend:
+
+* AMD EPYC 7502P 32 Core CPU _**or better**_ (AMD EPYC is preferred over Intel, and the 7443 will work)
+* 512 GB RAM minimum, _**1 TB RAM preferred**_
+* Disk layout:
+  * 1x OS Drive that will also hold Solana logs. 128GB min, _**256GB+ preferred**_
+  * 2x 1TB nVME drive minimum, _**2x 3.9TB nVME preferred**_
+* And another thing to watch out for is bandwith usage. Depending on the region, some of our nodes can transmit up to 10 TB outbound per day, which can rack up a big bill if your hosting provider charge by the TB.
+
+_**The preferred node that most operators have been using is currently the Equinix EQ-6 or Latitude s3.large.**_
+
+_**NOTE: IN ADDITION to the hardware requirements above, it is also required that all operators stake 10,000 SHDW per node that they want to operate!!**_
+</details>
+
+### Learn how to set up and run a [Shadow RPC](solana/README.md)

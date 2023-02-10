@@ -1,6 +1,6 @@
 # The CLI
 
-The CLI is probably the easiest way to interact with Shadow Drive on an a la carte basis. You can certainly use your favorite shell scripting language, or just type the commands one at a time. Whatever floats your boat. For test driving Shadow Drive, this is the best way to get started.
+The CLI is probably the easiest way to interact with Shadow Drive on an a la carte basis. You can certainly use your favorite shell scripting language, or just type the commands one at a time. For test driving Shadow Drive, this is the best way to get started.
 
 ## Install the Shadow Drive CLI
 
@@ -38,7 +38,7 @@ export PATH="/home/sol/.local/share/solana/install/active_release/bin:$PATH"
 
 ### Create a Keypair file
 
-We need to have a keypair in .json format to use the Shadow Drive CLI. This is going to be the wallet that owns the storage account. If you want, you can convert your browser wallet into a .json file by exporting the private keys. Solflare by default exports it in a .json format (it looks like a standard array of integers, \[1,2,3,4...]. Phantom, however, needs some help and [we have just the tool to do that](https://gist.github.com/tracy-codes/f17e7ed8acfdd1be442f632f5b80763c).&#x20;
+We need to have a keypair in .json format to use the Shadow Drive CLI. This is going to be the wallet that owns the storage account. If you want, you can convert your browser wallet into a .json file by exporting the private keys. Solflare by default exports it in a .json format (it looks like a standard array of integers, \[1,2,3,4...]. Phantom, however, needs some help and [we have just the tool to do that](https://gist.github.com/tracy-codes/f17e7ed8acfdd1be442f632f5b80763c).
 
 If you want to create a new wallet, just use
 
