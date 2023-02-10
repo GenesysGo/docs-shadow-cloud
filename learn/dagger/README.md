@@ -1,4 +1,33 @@
 ---
+description: Directed acyclic gossiping graph enabling replication and storage and the problems is solves.
+---
+
+# D.A.G.G.E.R
+
+## high level explanation of dagger (rework asll of this)
+Shadow Cloud requires the following basics:
+
+A way to collect payment - that's where Solana comes in
+
+A way to validate the payment as well as the compute request - that's DAGGER (more to come)
+
+A way to add new nodes or remove old nodes to the compute network - another thing DAGGER does
+
+And orchestration of VM creation on the compute network - DAGGER and then some other magic
+
+
+## an outline of the sections that follow
+
+* components
+* transactions
+* consensus
+
+
+
+
+# review this again it seems like it all needs redone
+
+---
 description: Directed Acyclic Gossip Graph Enabling Replication
 ---
 
