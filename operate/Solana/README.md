@@ -1,3 +1,7 @@
+---
+description: Intructions on becoming a Shadow Operator.
+---
+
 # Shadow RPC Set up
 
 [1 - Configure Hardware](1-prep-your-drives.md)
@@ -70,3 +74,16 @@ _**NOTE: IN ADDITION to the hardware requirements above, it is also required tha
 {% hint style="danger" %}
 _**PLEASE NOTE: We are currently pausing Shadow Operator registration as we kickstart the Premium RPC program with our long time alpha testers. Please check back SOON**_&#x20;
 {% endhint %}
+
+
+## Why Shadow RPCs on Solana?
+
+One of the most interesting aspects of Solana's architecture is the RPC. It's weird.&#x20;
+
+An RPC, on its own, stores and performs all of the same tasks as an actual Solana validator with the exception of actual voting on new blocks. It also handles the bulk of data lookups for the Solana blockchain. Because it handles all of the same traffic as a validator but the additional traffic of just looking up data (like every time you open Phantom and it retrieves your balances), Solana RPCs get clobbered and they have to be much, much bigger machines than typical Solana validators.
+
+The kicker - there is no reward built into the Solana protocol for running an RPC. If you stand up an RPC right now, you will get nothing for doing that on its own.
+
+What's the result? There aren't many Solana RPCs in existence. And the catch? People still need RPCs. App developers _NEED_ RPCs, and they need those RPCs to be rock solid.
+
+Other RPC networks force you to choose between performance or decentralization. The Shadow RPC network provides all the benefits of decentralization without sacrificing speed, stability, or security.

@@ -2,6 +2,8 @@
 description: Every event exists
 ---
 
+# this all needs redone under transactions not "events" - revie again but looking like a mass delete all
+
 # Events Eventually Explained
 
 ### Gossip is not Drama.
