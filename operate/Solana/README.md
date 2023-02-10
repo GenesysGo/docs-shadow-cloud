@@ -3,7 +3,7 @@ description: Follow the intructions here to run a Shadow RPC and become a Shadow
 ---
 
 # Shadow RPC Set up
- 
+
 * [1 - Configure Hardware](1-prep-your-drives.md)
 
 * [2 - Configure Solana Environment](2-prep-your-solana-env.md)
@@ -12,6 +12,7 @@ description: Follow the intructions here to run a Shadow RPC and become a Shadow
 
 * [4 - Join the Shadow RPC Network](4-join-the-shadow-rpc-network.md)
 
+<br></br>
 ## Prerequisites
 
 <details><summary>Review Skills</summary>
