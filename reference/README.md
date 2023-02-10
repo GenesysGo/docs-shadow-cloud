@@ -12,12 +12,12 @@ SDKs [JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk) as
 [API]()
 
 [FAQ]()
-<br></br>
+
 ## Shadow RPC
 [Guide]()
 
 [FAQ]()
-<br></br>
+
 ## Support
 
 [Change Log]()
@@ -25,7 +25,7 @@ SDKs [JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk) as
 [Version releases]() & Bug fixes
 
 [Technical Support]()
-<br></br>
+
 ## Social Media
 
 [Discord]()
@@ -33,7 +33,7 @@ SDKs [JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk) as
 [Twitter]()
 
 [Shadow.cloud](https://shadow.cloud)
-<br></br>
+
 ## Community
 
 Shadow [Ecosystem]()

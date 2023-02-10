@@ -42,7 +42,7 @@
     * [Authentication](build/shadow-rpc/before-you-begin-authentication.md)
     * [Support and FAQ](build/shadow-rpc/support-and-faq.md)
 * [Operate](operate/README.md)
-  * [Solana](operate/solana/README.md)
+  * [Shadow RPC on Solana](operate/solana/README.md)
     * [1 - Configure Hardware](operate/Solana/1-prep-your-drives.md)
     * [2 - Configure Solana Environment](operate/Solana/2-prep-your-solana-env.md)
     * [3 - Start and Monitor Your Node](operate/Solana/3-start-and-monitor-your-node.md)
