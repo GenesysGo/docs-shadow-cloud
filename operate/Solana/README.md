@@ -1,7 +1,3 @@
----
-description: Follow the intructions here to run a Shadow RPC and become a Shadow Operator.
----
-
 # Shadow RPC Set up
 
 [1 - Configure Hardware](1-prep-your-drives.md)
