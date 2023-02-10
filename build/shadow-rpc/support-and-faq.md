@@ -1,6 +1,6 @@
 # Support and FAQ
 
-If you've got questions, we've got answers. Probably.
+If you've got questions, we've got answers.
 
 **👉Where can I go to reach out for technical assistance?**
 

@@ -1,19 +1,41 @@
 ---
-description: Shadow Cloud reference documentaion includes
+description: Shadow Cloud consolidated resources
 ---
 
-# Services reference documenation
+# Shadow Cloud reference documentation icnludes:
 
-## What is Shadow
+## Shadow Drive
+[CLI]()
 
-Shadow Drive SDKs in both [JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk) as well as [Rust](https://crates.io/crates/shadow-drive-rust).&#x20;
+SDKs [JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk) as well as [Rust](https://crates.io/crates/shadow-drive-rust).&#x20;
 
-Shadow Drive [CLI]()
+[API]()
 
-Shadow Drive [API]()
+[FAQ]()
+<br></br>
+## Shadow RPC
+[Guide]()
 
-Shadow RPC [FAQ]()
+[FAQ]()
+<br></br>
+## Support
 
-Version releases & Bug fixes
+[Change Log]()
 
-Discord ticketing system
+[Version releases]() & Bug fixes
+
+[Technical Support]()
+<br></br>
+## Social Media
+
+[Discord]()
+
+[Twitter]()
+
+[Shadow.cloud](https://shadow.cloud)
+<br></br>
+## Community
+
+Shadow [Ecosystem]()
+
+[Media Kit]()
