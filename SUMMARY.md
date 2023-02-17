@@ -2,10 +2,7 @@
 
 * [GET STARTED](README.md)
 * [Learn](learn/README.md)
-  * [D.A.G.G.E.R](learn/dagger/README.md)
-    * [Components](learn/dagger/components.md)
-    * [Transactions](learn/dagger/transactions.md)
-    * [Consensus](learn/dagger/consensus.md)
+  * [D.A.G.G.E.R](learn/dagger.md)
   * [Storage Services](learn/storage-services/README.md)
     * [Design](learn/storage-services/design.md)
     * [On-Chain Proofs](learn/storage-services/on-chain-proofs.md)
