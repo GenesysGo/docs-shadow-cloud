@@ -42,6 +42,7 @@ At the foundation of everything are the Shadow Operators who run the nodes that 
 [Become and Shadow Operator!]()
 
 ### Business Use Cases for Shadow Cloud
+<details><summary>Storage Use Cases</summary>
 
 * Storage
     * Web hosting & content management
@@ -54,6 +55,9 @@ At the foundation of everything are the Shadow Operators who run the nodes that 
         * Some information is too important for humanity to lose. From scientific research projects to historical documentation, cryptographic proofs guarantee a dataset’s integrity and availability forever. Imagine if the world’s most important libraries couldn’t be destroyed because the information has been distributed across thousands of unique locations worldwide.
     * Personal & editable storage space
         * With optional mutability, you are free to create and delete files as you see fit. With low costs and many front-end user interfaces to choose from, Shadow Drive can be your personal expanded storage space.
+</details>
+<details><summary>Compute Use Cases</summary>
+
 * Compute
     * Application Building
         * Delivery on-chain data to front-end business applications with speed and reliability.
@@ -61,3 +65,4 @@ At the foundation of everything are the Shadow Operators who run the nodes that 
         * Power back-end mobile remote procedural calls to enable users to ineract with their favorite blockchain or web3 mobile application.
     * Enterprise VMs
         * White-glove handlnig of baremetal and virtual provisioning for specialied distributed ledger technology implementatations
+</details>
