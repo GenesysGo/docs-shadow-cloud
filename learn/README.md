@@ -34,6 +34,10 @@ Built on a network of independent operators, Shadow’s Solana RPCs truly decent
 
 [Start Building using Shadow RPC!]()
 
+Utilizing DAGGER as an orchestration / oracle protocol, we are capable of networking together decentralized commodity clouds (Shadow Operator virtual machines) under a frond end UI/UX experience that effectively decetralizes virtual machine provisioning. This is the same as Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operates trustlessly by individuals / entities who are Shadow Operators! This is currenlty in proof-of-concept and under development for the future. We revealed this technology as the Solana Breakpoint 2022 event.
+
+[Check out the Shadow VMs Demo from Breakpoint]()
+
 ### Shadow Operators
 Shadow Operators are the decentralized backbone of the Shadow commodity cloud. Operators lease their high-performance compute, storage, and bandwidth. Businesses, projects, and/or individual developers can trustlessly provision network resources. User payments are sent directly to Shadow Operators. Shadow Operators who ensure their resources are always available and performant earn more. Shadow Operators who are inconsistent earn less.
 

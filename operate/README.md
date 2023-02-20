@@ -4,7 +4,9 @@ description: For those interested in contributing high quality compute to the Sh
 
 # Shadow Operators
 
-So you want to earn rewards by utilizing your technical skillset? Becoming a Shadow Operator might just be the way for you to do it. BUT you need to be fully aware of what the skill and technical requirements are before you begin...
+So you want to earn rewards by utilizing your technical skillset? Becoming a Shadow Operator might just be the way for you to do it. We have put together hardware and configuration guides for those less familiar with running RPCs.
+
+[Register here](https://portal.genesysgo.net/nodes/register) to become a Shadow Operator!
 
 ## Shadow RPC
 
