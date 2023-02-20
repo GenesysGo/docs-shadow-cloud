@@ -2,7 +2,7 @@
 description: Intructions on becoming a Shadow Operator.
 ---
 
-# Shadow RPC Set up
+# Shadow RPC Set Up
 
 [1 - Configure Hardware](1-prep-your-drives.md)
 
@@ -35,7 +35,7 @@ Running a Solana RPC is best suited for a systems administrator with at least 1 
 
 No.
 
-Solana RPCs are nothing to mess with. They do almost all of the things that a Solana validator nodes do PLUS they handle almost all of the lookup requests. Ever opened your Phantom wallet and waited for the balances to load? That's because it was blowing up an RPC requesting all of the balances and SPL tokens and NFTs in your wallet.&#x20;
+Solana RPCs are nothing to mess with. They do almost all of the things that a Solana validator nodes do PLUS they handle almost all of the lookup requests. Ever opened your Phantom wallet and waited for the balances to load? That's because it was blowing up an RPC requesting all of the balances and SPL tokens and NFTs in your wallet.
 
 Now imagine that happening for all the wallets everywhere in the world. That's an RPC, and that's why your desktop PC will commit seppuku if you try to run a Solana RPC on it.
 
@@ -69,16 +69,17 @@ We recommend:
 _**The preferred node that most operators have been using is currently the Equinix EQ-6 or Latitude s3.large.**_
 
 _**NOTE: IN ADDITION to the hardware requirements above, it is also required that all operators stake 10,000 SHDW per node that they want to operate!!**_
+
 </details>
 
 {% hint style="danger" %}
-_**PLEASE NOTE: We are currently pausing Shadow Operator registration as we kickstart the Premium RPC program with our long time alpha testers. Please check back SOON**_&#x20;
+_**PLEASE NOTE: We are currently pausing Shadow Operator registration as we kickstart the Premium RPC program with our long time alpha testers. Please check back SOON**_
 {% endhint %}
 
 
 ## Why Shadow RPCs on Solana?
 
-One of the most interesting aspects of Solana's architecture is the RPC. It's weird.&#x20;
+One of the most interesting aspects of Solana's architecture is the RPC. It's weird.
 
 An RPC, on its own, stores and performs all of the same tasks as an actual Solana validator with the exception of actual voting on new blocks. It also handles the bulk of data lookups for the Solana blockchain. Because it handles all of the same traffic as a validator but the additional traffic of just looking up data (like every time you open Phantom and it retrieves your balances), Solana RPCs get clobbered and they have to be much, much bigger machines than typical Solana validators.
 

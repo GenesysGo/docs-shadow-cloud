@@ -42,6 +42,8 @@ description: Shadow Cloud consolidated resources
 
 [Shadow Ecosystem]()
 
+[Solana Breakpoint Demo 2022]()
+
 ## Media Kit
 
 [Logos and branding](https://www.shadow.cloud/media-kit)
