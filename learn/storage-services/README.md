@@ -12,7 +12,7 @@ v1 - what it was and how it got to v1.5
 
 v1.5 - 
 
-v2 - tease
+v2 - high level objectives
 
 
 ## Why use Shadow Drive?
