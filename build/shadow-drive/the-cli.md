@@ -50,7 +50,7 @@ solana-keygen new -o ~/shdw-keypair.json
 
 You'll need to send a small amount of SOL and SHDW to that wallet address to proceed! The SOL is used to pay for transaction fees, the SHDW is used to create (and expand) the storage account!
 
-### Context-Sensitive Halp
+### Context-Sensitive Help
 
 Like most CLIs, Shadow Drive comes with help. All shadow drive commands begin with `shdw-drive`.
 

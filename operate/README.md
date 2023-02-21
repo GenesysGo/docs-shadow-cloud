@@ -1,16 +1,26 @@
 ---
-description: For those interested in contributing high quality compute to the Shadow Cloud. As the Shadow Cloud platform expands, so will opportunities to contribute hardware (incuding mobile phones).
+description: For those interested in contributing high quality compute to the Shadow Cloud. As the Shadow Cloud platform expands, so will opportunities to contribute hardware (including mobile phones).
 ---
 
 # Shadow Operators
 
-So you want to earn rewards by utilizing your technical skillset? Becoming a Shadow Operator might just be the way for you to do it. We have put together hardware and configuration guides for those less familiar with running RPCs.
+Shadow Operators are independent members of the Solana community who maintain servers in order to actively contribute compute and storage to the Shadow Protocol's decentralized network of servers.
+
+They operate in a trustless permissionless environment and in exchange for their efforts receive rewards in the form of $SHDW. Being a Shadow Operator is the only way to earn single sided staking rewards in $SHDW.
+
+There are multiple considerations at play for Shadow Operators that are very important to understand before becoming a Shadow Operator. We have put together hardware and configuration guides for those less familiar with running RPCs.
+
+You can see this live network of independent operators by visiting the Shadow Operator leaderboard:
+
+[Operator Leaderboard](https://portal.genesysgo.net/nodes/leaderboard).
+
+If you already have an RPC up and running:
 
 [Register here](https://portal.genesysgo.net/nodes/register) to become a Shadow Operator!
 
-## Shadow RPC
+Are you interested in becoming a Shadow Operator? Review the skills and requirements below:
 
-Shadow RPCs are a network of independent operators currently operating on Solana. You can can register and review leaderboards on the [operator dashboard](https://portal.genesysgo.net/nodes/leaderboard).
+## Skills and Hardware
 
 <details><summary>Review Skills</summary>
 
@@ -69,4 +79,14 @@ _**The preferred node that most operators have been using is currently the Equin
 _**NOTE: IN ADDITION to the hardware requirements above, it is also required that all operators stake 10,000 SHDW per node that they want to operate!!**_
 </details>
 
-### Learn how to set up and run a [Shadow RPC](solana/README.md)
+## Ready to build a Shadow RPC?
+
+### [Learn how](solana/README.md) to build, monitor, and maintain!
+
+{% hint style="danger" %}
+Being a Shadow Operator is something which should be taken seriously. Anyone can learn to become a Shadow Operator but it should be understood that this is not a "set it and forget it" thing.
+
+When the Shadow Operator program moves into live Mainnet beta please note that all things are subject to change, as they are with any beta.
+
+Maintaining the stability of the Solana network and efficiently processing the requests of its users are the highest priorities of Shadow Operators. Any actions taken by Shadow Operators designed to "game the system" could result in changes to the program to ensure that stability and efficiency, and perhaps result in consequences for the Operator.
+{% endhint %}

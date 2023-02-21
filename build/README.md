@@ -1,10 +1,10 @@
 ---
-description: Actionalbe links and step by step guides to make using Shadow Cloud services as easy as possible!
+description: Actionable links and step by step guides to make using Shadow Cloud services as easy as possible!
 ---
 
 ## Shadow Drive
 
-* 👉 For a fast and easy start use the [CLI guide](shadow-drive/the-cli.md). 
+* 👉 **For a fast and easy start use the [CLI guide](shadow-drive/the-cli.md).**
 
     * It only takes a few minutes to install the latest [NodeJS LTS 16.17.1](https://nodejs.org/en/download/), and **make sure you have both SHDW and SOL in your wallet in order to reserve storage**.
 
@@ -17,7 +17,7 @@ description: Actionalbe links and step by step guides to make using Shadow Cloud
 
 ## Shadow RPC
 
-* 👉 A quick and low-cost option is the [Premium (Tier 1)](shadow-rpc/README.md) subscription and is a common choice for early development.
+* 👉 **A quick and low-cost option is the [Premium](shadow-rpc/README.md) subscription and is a common choice for early development.**
 
     * It outshines our competitors on rate limits given the cost, and provides automatic global load balancing (GEO-DNS routing) natively.
 
