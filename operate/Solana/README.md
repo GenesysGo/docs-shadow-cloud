@@ -12,7 +12,7 @@ description: Intructions on becoming a Shadow Operator.
 
 [4 - Join the Shadow RPC Network](4-join-the-shadow-rpc-network.md)
 
-## Prerequisites
+## Prerequisite Knowledge
 
 <details><summary>Review Skills</summary>
 
@@ -72,19 +72,60 @@ _**NOTE: IN ADDITION to the hardware requirements above, it is also required tha
 
 </details>
 
-{% hint style="danger" %}
-_**PLEASE NOTE: We are currently pausing Shadow Operator registration as we kickstart the Premium RPC program with our long time alpha testers. Please check back SOON**_
+<details><summary>Slashing</summary>
+
+Slashing is a mechanism by which a network punishes bad actors or negligent operators. The Shadow Operator smart contract has a slashing mechanism in place as well.
+
+Health checks are sent to Shadow Operators in the form of RPC pings. Shadow Operators whose machines fail to respond to the health check pings or are behind by higher than a certain amount of slots are considered "down" and are potentially subject to slashing if they persist in that state for too long.
+
+{% hint style="info" %}
+All instances of slashing and failed health checks are handled on-chain and have been validated for consensus by the Solana Mainnet validators. Slashing is recorded on-chain and callable for review to ensure the integrity of the mechanic.
 {% endhint %}
 
+The slashing order flow looks something like this:
 
-## Why Shadow RPCs on Solana?
+1. A health check is sent to the Shadow Operator's machine.
+2. The Shadow Operator's machine responds back showing that it is 1550 slots behind. This Shadow Node is considered to be in a "down" state because it is not capable of properly serving network requests.
+3. The Shadow Operator's machine persists in this state for several minutes.
+4. The results of this health check are recorded on-chain in the Shadow Operator Staking smart contract's program account and that Shadow Node is slashed.
+5. The smart contract references the current epoch on-chain and how many times that Shadow Node has been slashed during that epoch.
+6. $SHDW emissions are slashed first. If a Shadow Node continually shows as being in a "down" state then it is possible for the Shadow Operator's emissions to be slashed to zero and they will earn no rewards for that epoch.
+7. If no emissions are available for that epoch because the Shadow Node has consistently been responding poorly to the health check then the staking smart contract will slash the Shadow Operator's collateral.
+8. If a Shadow Operator's collateral has been slashed and they fall below a minimum threshold then they are considered "underwater" on their collateral and must replenish it in order to begin earning rewards again.
+9. All $SHDW tokens removed as a result of slashing are deposited into the Shadow Operator Emissions smart contract to contribute to future emissions for the Shadow Operators.
+</details>
 
-One of the most interesting aspects of Solana's architecture is the RPC. It's weird.
+<details><summary> Staking & Collateral</summary>
 
-An RPC, on its own, stores and performs all of the same tasks as an actual Solana validator with the exception of actual voting on new blocks. It also handles the bulk of data lookups for the Solana blockchain. Because it handles all of the same traffic as a validator but the additional traffic of just looking up data (like every time you open Phantom and it retrieves your balances), Solana RPCs get clobbered and they have to be much, much bigger machines than typical Solana validators.
+{% hint style="warning" %}
+Initial collateral requirements are set at 10,000 $SHDW. In order to earn rewards collateral must be staked and emissions are no longer earned if the collateral is unstaked.&#x20;
 
-The kicker - there is no reward built into the Solana protocol for running an RPC. If you stand up an RPC right now, you will get nothing for doing that on its own.
+This is subject to change as the Shadow Operator Program leaves the Devnet period and goes fully live on Mainnet.
 
-What's the result? There aren't many Solana RPCs in existence. And the catch? People still need RPCs. App developers _NEED_ RPCs, and they need those RPCs to be rock solid.
+A warming up and cooling off period exists and exactly mirrors the warming up and cooling off periods of Solana Validators.
+{% endhint %}
 
-Other RPC networks force you to choose between performance or decentralization. The Shadow RPC network provides all the benefits of decentralization without sacrificing speed, stability, or security.
+As said, the stability of the Solana network and the execution of requests made by Solana users are the highest priorities for Shadow Operators.
+
+To that end, the Shadow Operator smart contract employs a staking mechanism by which Shadow Operators are required to put up "collateral". This was a concept we borrowed from the Filecoin network. It is important, especially in the early Mainnet beta phases of the Shadow Operator program, that Shadow Operators understand the importance of the role they play in the ecosystem.
+
+The collateral mechanism also allows new Shadow Operators to come online and immediately start earning rewards without having to go through a period of earning little to no rewards because they have to do something like attract enough stake first.
+
+Shadow Operators who fail to keep up with their machine, consistently serve requests poorly, or attempt malicious activities, will not only earn less in $SHDW emissions but will also potentially have their collateral slashed.
+
+For more on slashing please see the "Slashing" section.
+</details>
+
+<details><summary>Emissions</summary>
+
+Shadow Operators receive emissions of USDC every 30 days. This directly corresponds to the client billing cycle. Since smart contracts power the billing and emissions the entire process is transparent and verifiable on chain.
+
+Payments from clients are aggregates on a regional basis and so therefore emissions to operators are based on that same region. For example, if there are 100 clients in the New York region being served by 10 operators. The emissions to operators would in theory be [100 client payments]/[10 operators]. Since not all 10 operators would have 100% uptime, the formula is slightly more complicated to account for operator delinquency. The delinquency will differ per operator depending on the performance of their machine and its overall stability in serving requests. This is tracked and provided on the [Shadow Operator Leaderboard]().
+
+{% hint style="warning" %}
+$SHDW payments are not guaranteed. Being a Shadow Operator is no different than running a Solana Validator in terms of needing to contribute to the network.
+
+Solana Validators that cannot attract stake and are consistently offline will see themselves earning fewer and fewer rewards. Similarly, Shadow Operators whose machines are not consistently online or are serving requests poorly will also earn fewer and fewer rewards.
+{% endhint %}
+
+</details>

@@ -13,14 +13,14 @@ DAGGER is a distributed system with a graph based consensus meechanism. There ar
 
 The following list defines a few terms commonly used throughout this document:
 
-Transaction: A write request submitted by a user. A transaction can contain raw bytes,
+**Transaction:** A write request submitted by a user. A transaction can contain raw bytes,
 membership management requests, and Shadow transactions ([Shadow Drive/Cloud actions
 e.g. store file, instantiate VM).
 
-Block: A set of transactions that are packed into a [Merkle Tree]() whose root hash is included
+**Block:** A set of transactions that are packed into a [Merkle Tree]() whose root hash is included
 in a node in the [DAG]().
 
-Event: A node in the DAG, which contains the hashes of its parents, a timestamp, a
+**Event:** A node in the DAG, which contains the hashes of its parents, a timestamp, a
 Block payload, and the creator’s signature of the aforementioned.
 
 The DAGGER system reaches consensus on the ordering of Events via asynchronous compu-

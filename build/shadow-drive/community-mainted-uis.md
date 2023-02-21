@@ -48,7 +48,7 @@ Another prime example of a comprehensive suite of NFT tools should include Shado
 
 {% embed url="https://shdw-drive.genesysgo.net/6P6WznKbJ2nEMCfrXZDQvipCgCSx45SXxjWMWvqfPtyJ/yal_website.html" %}
 
-A fascinating use case where an HTML doc can be served on Shadow Drive while the minting functionality and wallet connectiion can remain in tact. Check it out!
+A fascinating use case where an HTML doc can be served on Shadow Drive while the minting functionality and wallet connection can remain in tact. Check it out!
 
 ### Grape Shadow UI
 

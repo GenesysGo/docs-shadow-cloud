@@ -16,13 +16,13 @@ That's where the Premium RPC network by Genesys Go comes in. People want to use 
 
 Go to 👉 [https://portal.genesysgo.net/nodes](https://portal.genesysgo.net/nodes) and connect your wallet.
 
-![](<../.gitbook/assets/image (2) (2).png>)
+![](<../../.gitbook/assets/image (2) (2).png>)
 
 Once your wallet is connected, click the Wallet bubble again and click Sign In to sign a transaction.
 
 Now click on the +Register Node tab.
 
-![](<../.gitbook/assets/image (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1).png>)
 
 The form fields to fill out are pretty straightforward.
 
@@ -39,7 +39,7 @@ Once you submit and sign this, you will immediately be added into the RPC networ
 
 Once registered, you'll want to monitor your node from the perspective of Genesys Go. A leaderboard is published so that you can quickly see your node's current state within the shadow network.
 
-![](<../.gitbook/assets/image (2) (3).png>)
+![](<../../.gitbook/assets/image (2) (3).png>)
 
 The status column is the key takeaway. Here are the code definitions
 

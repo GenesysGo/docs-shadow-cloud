@@ -20,6 +20,8 @@ description: Shadow Cloud consolidated resources
 
 [FAQ]()
 
+[Operator Leaderboard](https://portal.genesysgo.net/nodes/leaderboard)
+
 ## Support
 
 [Change Log]()
@@ -27,6 +29,8 @@ description: Shadow Cloud consolidated resources
 [Version releases]()
 
 [Technical Support]()
+
+[Shadow Glossary]()
 
 ## Social Media
 

@@ -1,5 +1,7 @@
 # 1 - Prep Your Drives
 
+
+<details><summary>Technical Notes</summary>
 It's hard to pinpoint which of your server resources is most important for running a Solana RPC. Is it CPU? Is it RAM? Is it storage? Is it network? To be totally honest, all of them are equally important and critical to run a Solana RPC. Maybe you could skimp a little bit on a validator node, but not RPCs. RPCs get clobbered.
 
 It is dead certain that you need nVME storage, though, and a lot of it. Both Solana RPCs and Validators do the exact same thing under the hood. The only difference is RPCs serve lookup requests, and validators vote on proposed blocks on the blockchain. Everything else is the same.
@@ -22,6 +24,9 @@ Let's pretend you have a 256 GB OS drive, and 2x 3.9 TB nVME drives. Let's furth
 We have to first bring the nVME drives to life by creating partitions and then adding a filesystem to them.
 
 Let's get through the absolute basics first, though. We need to patch the server, and create a user account that we can run our Solana processes under. **Make absolutely sure you create the sol user, and execute the last command to act as the sol user for all subsequent tasks.**
+</details>
+
+In your terminal (assuming Ubuntu 20.04 LTS):
 
 ```bash
 apt update
