@@ -8,7 +8,7 @@ description: Truly decentralized RPC read-access to the Solana Blockchain for in
 
 You're off to a great start by choosing the only highly performant decentralized RPC network. Other RPC networks force you to choose between performance or decentralization. The Shadow RPC network provides all the benefits of decentralization without sacrificing speed, stability, or security.
 
-One of the things that you will find out really quickly is that when your end user clicks the "Submit" button in their wallet, your app will need to build a transaction and send it to an RPC. Furthermore, if your application is thriving with users you will find their activity generates huge read-loads and consistly high throughput that needs horizontal back-end elasticity. If you try to rely on public, free RPCs, your dApp will crash and burn the first time it comes under any sort of of load.
+One of the things that you will find out really quickly is that when your end user clicks the "Submit" button in their wallet, your app will need to build a transaction and send it to an RPC. Furthermore, if your application is thriving with users you will find their activity generates huge read-loads and consistently high throughput that needs horizontal back-end elasticity. If you try to rely on public, free RPCs, your dApp will crash and burn the first time it comes under any sort of of load.
 
 **Built on a network of independent operators, Shadow’s Solana RPCs truly decentralize your back-end API with payments for compute going directly to ecosystem operators.**
 
@@ -60,6 +60,6 @@ Additional enhancements releasing soon:
 
 # **Future Compute Services**
 
-Utilizing DAGGER as an orchestration / oracle protocol, we are capable of networking together decentralized commodity clouds (Shadow Operator virtual machines) under a frond end UI/UX experience that effectively decetralizes virtual machine provisioning. This is the same as Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operates trustlessly by individuals / entities who are Shadow Operators! This is currenlty in proof-of-concept and under development for the future. We revealed this technology as the Solana Breakpoint 2022 event.
+Utilizing DAGGER as an orchestration / oracle protocol, we are capable of networking together decentralized commodity clouds (Shadow Operator virtual machines) under a frond end UI/UX experience that effectively decentralizes virtual machine provisioning. This is the same as Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operates trustlessly by individuals / entities who are Shadow Operators! This is currently in proof-of-concept and under development for the future. We revealed this technology as the Solana Breakpoint 2022 event.
 
 **[Check out the Shadow VMs Demo from Breakpoint]()**

@@ -2,31 +2,31 @@
 description: Shadow Cloud consolidated resources
 ---
 
-# Shadow Cloud reference documentation icnludes:
+# Shadow Cloud reference documentation includes:
 
 ## Shadow Drive
-[CLI]()
+[CLI](/build/shadow-drive/the-cli.md)
 
 [SDK JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk)
 
 [SDK Rust](https://crates.io/crates/shadow-drive-rust)
 
-[API]()
+[API](/build/shadow-drive/the-api.md)
 
-[FAQ]()
+[FAQ](/build/shadow-drive/support-and-faq.md)
 
 ## Shadow RPC
-[Guide]()
+[Guide](/build/shadow-rpc/my-rpcs.md)
 
-[FAQ]()
+[FAQ](/build/shadow-rpc/support-and-faq.md)
 
 [Operator Leaderboard](https://portal.genesysgo.net/nodes/leaderboard)
 
 ## Support
 
-[Change Log]()
+[Change Log](/reference/change-logs.md)
 
-[Version releases]()
+[Version releases](/reference/change-logs.md)
 
 [Technical Support]()
 

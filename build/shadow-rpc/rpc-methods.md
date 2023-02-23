@@ -1,3 +1,2 @@
-# Solana Method Types
+# Solana RPC Method Types
 
-(SEO optimized linkages to Solana stuff)

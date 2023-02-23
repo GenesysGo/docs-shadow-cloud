@@ -12,7 +12,7 @@ description: This section provides you with options and guides on getting everyt
 |[Sign Up]()    |[Sign up]()    |[Sign up]()    |
 |<details><summary>Details & Limits</summary>gPA = not avail.<br>gMA = 6 RPM</br>Archive = 1 RPS<br>sendTxn = 1 RPS</br></details>   |<details><summary>Details & Limits</summary>gPA = 5 RPS<br>gMA = 25 RPS</br>Archive = 10 RPS<br>sendTxn = 5 RPS</br></details>   </details>   |<details><summary>Details & Limits</summary>gPA = 10 RPS<br>gMA = 100 RPS</br>Archive = 40 RPS<br>sendTxn = 50 RPS</br></details> 
 
-## We can help you make a decision:
+## We can help you make a decision!
 <details><summary>Compare plans in greater detail</summary>
 
 ### RPCs Are Not One Size Fits All
@@ -92,13 +92,13 @@ description: Useful Design Ideas for using your RPC
 
 #### **Basic - 1 Front End web app and 1 Premium RPC**
 
-****![](<../.gitbook/assets/image (5).png>)****
+****![](<../../.gitbook/assets/image (5).png>)****
 
 There's not much to this design. Your end users from all over the world will connect to your website to submit a transaction. In your dApp, you define the [Connection](https://solana-labs.github.io/solana-web3.js/classes/Connection.html) - for endpoint param, you will simply provide it with our endpoint URL.
 
 #### Ideal, but more complicated - Multiple RPCs to Provide GeoRedundancy and Load Balancing
 
-![](<../.gitbook/assets/image (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1).png>)
 
 In this scenario, your goal is to have traffic load balanced and also provide your end users with the lowest latency (and possibly faster confirmation times). There are a few ways to accomplish this.
 
@@ -106,14 +106,42 @@ Here, you would place a DNS-enabled load balancer in the front. There are many r
 
 As client traffic arrives on the DNS router, the DNS router inspects the source packet to determine what geography it is coming from, and then redirects the client to the nearest backend resource which would be your web servers, located in disparate regions.
 
-Your webserver would then serve identical websites with one exception - the RPC connections would be different based on the closest Premium RPCs you have reserved.&#x20;
+Your webserver would then serve identical websites with one exception - the RPC connections would be different based on the closest Premium RPCs you have reserved.
 
 #### For critical workloads, there is The Kennedy Package - Let us handle the plumbing.
 
-![](<../.gitbook/assets/image (3) (1).png>)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
 When you purchase services from GenesysGo, there are add-on services available. One of those is Global Server Load Balancing (GSLB). If you purchase RPC services in different global regions (ie, NA, EU, and APAC), you can add the add-on GSLB package and we will take care of the rest. There are two tiers of global load balancing offered (3 regions or 6 regions) which we will cover when it comes time to reserve the RPC.
 
 Why do this? Because you need to focus on your app's code; not the internet plumbing. And this is reliable way to give your end users the best possible experience.
 
 </details>
+
+## Securing Your Endpoint
+
+<details><summary>Authentication</summary>
+
+**We provide code samples for you to use in the set up guide. This is a general explanation of how authentiation works.**
+
+We just want to make it clear that without setting up basic authentication, the RPCs will reject requests as a security best practice. An important part to making sure **your** dedicated RPCs work best for you is that they _remain_ dedicated to your app.
+
+With this in mind, we built an authentication mechanism that will restrict usage of the RPC to your dApp. This is done by a proxy that you run (which we provide an example container solution for!) requests a JWT token. There are basically two phases to authentication and usage.
+
+1.  Authenticate
+
+    When you register for a Premium RPC, you will have to identify a wallet keypair that is eligible to request a token. You will send an authentication request including a signed message with the wallet keypair.\
+    \
+    The authentication response will return an authentication token - NOT the JWT token.
+2. Using the authentication token, you will then be able to request a JWT token. Upon receiving a JWT token, you can then send all requests to your RPC endpoint using the standard Authorization Bearer \<token> header.
+
+You can review the methods for authentication. We also cover these in the configuration guide in proceeding sections.
+
+**Important: The JWT expires every 24 hours. You will have to request it again with a back-end process in order to maintain access to your endpoint. We will help you set this up!**
+
+### Here's a UML Sequence Diagram
+
+![](<../../.gitbook/assets/image (3) (2).png>)
+
+</details>
+
