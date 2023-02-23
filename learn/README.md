@@ -6,7 +6,7 @@ description: An introductions to the Shadow Cloud and it's implementations
 
 ## **Mission**
 
-The Shadow Platform will continually evolve as a stable high-performance cloud platform powered by a decentralized network of operators. Shadow is the only commodity cloud network designed to democratize the hundreds of billions earned each year by traditional cloud platforms without sacrificing performance. Through thoughtful design, the Shadow Cloud will offer multiple service options which leverage our distributed ledger technology. This will empower the use of decentralization through compute and storage offering for when it makes sense, while offering builders and business options and the ability to customize our solutions to achieve their desired degree of web3 versus web2 implementations. 
+The Shadow Platform will continually evolve as a stable high-performance cloud platform powered by a decentralized network of operators. Shadow is the only commodity cloud network designed to democratize the hundreds of billions earned each year by traditional cloud platforms without sacrificing performance. Through thoughtful design, the Shadow Cloud will offer multiple service options which leverage our distributed ledger technology. The result is vertically integrated, L1-specific storage/compute greatly improving developer experience. This will also empower the use of distributed ledger technology as-a-service offering builders and businesses more granular options when customizing our solutions to achieve their desired degree of web3 exposures. 
 
 ## **The Basics of Shadow Cloud**
 The Shadow Ecosystem is a series of trustless infrastructure layers focused on decentralizing the web2 stack and adapting it for the web3 world. We call this core technology D.A.G.G.E.R. Powered by Shadow Operators, the network provides builders and businesses with storage and compute solutions to expand their web3 presence, or simply use some of the most highly performant distributed ledger technology for it's low cost and resiliency in business.
@@ -15,7 +15,7 @@ Now cloud compute makes up $400,000,000,000 (that's billion with a B) per year b
 
 The Shadow Platform is a stable high-performance cloud platform powered by a decentralized network of operators. Unlike traditional cloud platforms, network-generated revenues are sent to Shadow Operators. Shadow is the only commodity cloud network designed to democratize the hundreds of billions earned each year by traditional cloud platforms without sacrificing performance.
 
-In order execute this trustless decentralized network we built our own highly performant consensus and orchestration protocol called D.A.G.G.E.R. Your takeaway is this: _**DAGGER is the heartbeat of Shadow Cloud**_. It is the decentralizor and orchestrator.
+In order execute this trustless decentralized network we built our own highly performant consensus and orchestration protocol called D.A.G.G.E.R.
 
 ## **D.A.G.G.E.R.**
 The foundation the Shadow Ecosystem is D.A.G.G.E.R., a trustless decentralized consensus protocol that expands the Shadow Cloud platform beyond standard compute and storage offerings, enabling decentralized offerings of compute, mobile compute, and decentralized storage - all while pushing the limits of performance, quality, and security. D.A.G.G.E.R. stands for Directed Acyclic Gossip Graph Enabling Replication (of compute and storage). 
@@ -34,7 +34,7 @@ Built on a network of independent operators, Shadow’s Solana RPCs truly decent
 
 **[Start Building using Shadow RPC!]()**
 
-Utilizing DAGGER as an orchestration / oracle protocol, we are capable of networking together decentralized commodity clouds (Shadow Operator virtual machines) under a frond end UI/UX experience that effectively decetralizes virtual machine provisioning. This is the same as Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operates trustlessly by individuals / entities who are Shadow Operators! This is currenlty in proof-of-concept and under development for the future. We revealed this technology as the Solana Breakpoint 2022 event.
+Utilizing DAGGER as an orchestration / oracle protocol, we are capable of networking together decentralized commodity clouds (Shadow Operator virtual machines) under a frond end UI/UX experience that effectively decentralizes virtual machine provisioning. This is the same as Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operates trustlessly by individuals / entities who are Shadow Operators! This is currently in proof-of-concept and under development for the future. We revealed this technology as the Solana Breakpoint 2022 event.
 
 **[Check out the Shadow VMs Demo from Breakpoint]()**
 

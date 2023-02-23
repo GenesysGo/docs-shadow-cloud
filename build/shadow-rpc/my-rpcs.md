@@ -10,7 +10,7 @@ The answer lies within the My RPCs page. The My RPCs page is arranged into three
 
 ### Active RPCs
 
-![](<../.gitbook/assets/Screen Shot 2022-10-03 at 3.50.13 PM.png>)
+![](<../../.gitbook/assets/Screen Shot 2022-10-03 at 3.50.13 PM.png>)
 
 Active RPCs is going to be the place where you spend the most amount of time. Some key fields to pay attention to:
 
@@ -26,7 +26,7 @@ Active RPCs is going to be the place where you spend the most amount of time. So
 
 ### Add-Ons
 
-![](<../.gitbook/assets/Screen Shot 2022-10-03 at 3.52.29 PM.png>)
+![](<../../.gitbook/assets/Screen Shot 2022-10-03 at 3.52.29 PM.png>)
 
 There are two options on the add-ons page currently (but more to come!).&#x20;
 
@@ -41,7 +41,7 @@ Click in the field and just start typing the subdomain that you would like to re
 
 #### Metrics
 
-![](<../.gitbook/assets/Screen Shot 2022-10-03 at 7.33.23 PM.png>)
+![](<../../.gitbook/assets/Screen Shot 2022-10-03 at 7.33.23 PM.png>)
 
 A very straightforward dashboard where you can see your most used and most recent RPC calls.&#x20;
 

@@ -4,7 +4,7 @@ description: D.A.G.G.E.R. stands for Directed acyclic gossiping graph enabling r
 
 # D.A.G.G.E.R
 
-DAGGER is a distributed system with a graph based consensus meechanism. There are four componenents that make up the protocol specification. The components, in the order an income transaction would see them throughout its lifecycle are ilustrated the figure below:
+DAGGER is a distributed system with a graph based consensus mechanism. There are four components that make up the protocol specification. The components, in the order an income transaction would see them throughout its lifecycle are illustrated the figure below:
 
 <figure><img src="../.gitbook/assets/dagger-lifecycle.png" alt=""><figcaption></figcaption></figure>
 
@@ -23,8 +23,7 @@ in a node in the [DAG]().
 **Event:** A node in the DAG, which contains the hashes of its parents, a timestamp, a
 Block payload, and the creator’s signature of the aforementioned.
 
-The DAGGER system reaches consensus on the ordering of Events via asynchronous compu-
-tations on a local graph.
+The DAGGER system reaches consensus on the ordering of Events via asynchronous computations on a local graph.
 
 
 ## Components
@@ -70,9 +69,9 @@ transactions. The verification happens for events made by peers, as well as for 
 actions made by users. There are several forms of verification: signature verification for trans-
 actions, signature verification for blocks, and root hash verification for blocks. When processing
 peer events, the verifier is responsible for the first two of these forms of verification, while the
-forester is responsible for verification of the root hash of the transaction merkle trees that form
+forester is responsible for verification of the root hash of the transaction Merkle trees that form
 the blocks. When processing incoming user transactions, the forester gathers transactions to
-pack into a block and produces the merkle root hash which represents the block.
+pack into a block and produces the Merkle root hash which represents the block.
 
 ### Graph (Consensus)
 
