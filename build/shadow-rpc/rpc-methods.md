@@ -1,7 +1,6 @@
 # RPC Methods
 
 *   [JSON RPC API](/api)
-*   [Websocket Methods](/api/websocket)
 *   [HTTP Methods](/api/http)
     
     *   [getAccountInfo](#getaccountinfo)
@@ -57,6 +56,24 @@
     *   [requestAirdrop](#requestairdrop)
     *   [sendTransaction](#sendtransaction)
     *   [simulateTransaction](#simulatetransaction)
+*   [Websocket Methods](/api/websocket)  
+    *   [accountSubscribe](#accountsubscribe)
+    *   [accountUnsubscribe](#accountunsubscribe)
+    *   [logsSubscribe](#logssubscribe)
+    *   [logsUnsubscribe](#logsunsubscribe)
+    *   [programSubscribe](#programsubscribe)
+    *   [programUnsubscribe](#programunsubscribe)
+    *   [signatureSubscribe](#signaturesubscribe)
+    *   [signatureUnsubscribe](#signatureunsubscribe)
+    *   [slotSubscribe](#slotsubscribe)
+    *   [slotUnsubscribe](#slotunsubscribe)
+*   [Unstable Methods](#blocksubscribe)
+    *   [blockSubscribe](#blocksubscribe)
+    *   [blockUnsubscribe](#blockunsubscribe)
+    *   [slotsUpdatesSubscribe](#slotsupdatessubscribe)
+    *   [slotsUpdatesUnsubscribe](#slotsupdatesunsubscribe)
+    *   [voteSubscribe](#votesubscribe)
+    *   [voteUnsubscribe](#voteunsubscribe)
 *   [Deprecated Methods](#getconfirmedblock)
     
 
@@ -94,7 +111,7 @@ The response output will be a JSON object with the following fields:
 
 *   `jsonrpc: <string>` - matching the request specification
 *   `id: <number>` - matching the request identifier
-*   `result: <array|number|object|string>` - requested data or success confirmation
+*   `**result: <array|number|object|string>` - requ**ested data or success confirmation
 
 Requests can be sent in batches by sending an array of JSON-RPC request objects as the data for a single POST.
 
@@ -145,70 +162,6 @@ Many methods that take a commitment parameter return an RpcResponse JSON object 
 
 Some methods support an `encoding` parameter, and can return account or instruction data in parsed JSON format if `"encoding":"jsonParsed"` is requested and the node has a parser for the owning program. Solana nodes currently support JSON parsing for the following native and SPL programs:
 
-Program
-
-Account State
-
-Instructions
-
-Address Lookup
-
-v1.15.0
-
-v1.15.0
-
-BPF Loader
-
-n/a
-
-stable
-
-BPF Upgradeable Loader
-
-stable
-
-stable
-
-Config
-
-stable
-
-SPL Associated Token Account
-
-n/a
-
-stable
-
-SPL Memo
-
-n/a
-
-stable
-
-SPL Token
-
-stable
-
-stable
-
-SPL Token 2022
-
-stable
-
-stable
-
-Stake
-
-stable
-
-stable
-
-Vote
-
-stable
-
-stable
-
 The list of account parsers can be found [here](https://github.com/solana-labs/solana/blob/master/account-decoder/src/parse_account_data.rs), and instruction parsers [here](https://github.com/solana-labs/solana/blob/master/transaction-status/src/parse_instruction.rs).
 
 Filter criteria[​](#filter-criteria "Direct link to heading")
@@ -225,23 +178,15 @@ Some methods support providing a `filters` object to enable pre-filtering the da
 *   `dataSize: u64` - compares the program account data length with the provided data size
     
 
-Health Check[​](#health-check "Direct link to heading")
--------------------------------------------------------
-
-Although not a JSON RPC API, a `GET /health` at the RPC HTTP Endpoint provides a health-check mechanism for use by load balancers or other network infrastructure. This request will always return a HTTP 200 OK response with a body of "ok", "behind" or "unknown" based on the following conditions:
-
-1.  If one or more `--known-validator` arguments are provided to `solana-validator` - "ok" is returned when the node has within `HEALTH_CHECK_SLOT_DISTANCE` slots of the highest known validator, otherwise "behind". "unknown" is returned when no slot information from known validators is not yet available.
-2.  "ok" is always returned if no known validators are provided.
-
 JSON RPC API Reference[​](#json-rpc-api-reference "Direct link to heading")
 ---------------------------------------------------------------------------
 
-getAccountInfo[​](#getaccountinfo "Direct link to heading")
+## `getAccountInfo[​](#getaccountinfo "Direct link to heading")`
 -----------------------------------------------------------
 
 Returns all information associated with the account of provided Pubkey
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -275,7 +220,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to:
 
@@ -289,19 +234,53 @@ The result will be an RpcResponse JSON object with `value` equal to:
     *   `size: <u64>` - the data size of the account
 
 ### Code sample:[​](#code-sample "Direct link to heading")
-
-    curl http://localhost:8899 -X POST -H "Content-Type: application/json" -d '  {    "jsonrpc": "2.0",    "id": 1,    "method": "getAccountInfo",    "params": [      "vines1vzrYbzLMRdu58ou5XTby4qAqVRLmqo36NKPTg",      {        "encoding": "base58"      }    ]  }'
+```bash
+curl http://localhost:8899 -X POST -H "Content-Type: application/json" -d '
+  {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "getAccountInfo",
+    "params": [
+      "vines1vzrYbzLMRdu58ou5XTby4qAqVRLmqo36NKPTg",
+      {
+        "encoding": "base58"
+      }
+    ]
+  }
+'
+```
 
 ### Response:[​](#response "Direct link to heading")
 
-    {  "jsonrpc": "2.0",  "result": {    "context": {      "slot": 1    },    "value": {      "data": [        "11116bv5nS2h3y12kD1yUKeMZvGcKLSjQgX6BeV7u1FrjeJcKfsHRTPuR3oZ1EioKtYGiYxpxMG5vpbZLsbcBYBEmZZcMKaSoGx9JZeAuWf",        "base58"      ],      "executable": false,      "lamports": 1000000000,      "owner": "11111111111111111111111111111111",      "rentEpoch": 2,      "space": 80    }  },  "id": 1}
+```json
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "context": {
+      "slot": 1
+    },
+    "value": {
+      "data": [
+        "11116bv5nS2h3y12kD1yUKeMZvGcKLSjQgX6BeV7u1FrjeJcKfsHRTPuR3oZ1EioKtYGiYxpxMG5vpbZLsbcBYBEmZZcMKaSoGx9JZeAuWf",
+        "base58"
+      ],
+      "executable": false,
+      "lamports": 1000000000,
+      "owner": "11111111111111111111111111111111",
+      "rentEpoch": 2,
+      "space": 80
+    }
+  },
+  "id": 1
+}
+```
 
 getBalance[​](#getbalance "Direct link to heading")
 ---------------------------------------------------
 
 Returns the balance of the account of provided Pubkey
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -317,7 +296,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `RpcResponse<u64>` - RpcResponse JSON object with `value` field set to the balance
 
@@ -334,7 +313,7 @@ getBlock[​](#getblock "Direct link to heading")
 
 Returns identity and transaction information about a confirmed block in the ledger
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `u64` required
 
@@ -384,7 +363,7 @@ rewards `bool` optional
 
 whether to populate the \`rewards\` array. If parameter not provided, the default includes rewards.
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be an object with the following fields:
 
@@ -495,7 +474,7 @@ getBlockHeight[​](#getblockheight "Direct link to heading")
 
 Returns the current block height of the node
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -507,7 +486,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 *   `<u64>` - Current block height
 
@@ -515,9 +494,9 @@ The minimum slot that the request can be evaluated at
 
     curl http://localhost:8899 -X POST -H "Content-Type: application/json" -d '  {    "jsonrpc":"2.0","id":1,    "method":"getBlockHeight"  }'
 
-Result:
+**Result:
 
-### Response:[​](#response "Direct link to heading")
+### Response:[​](#response "Direct **link to heading")
 
     {  "jsonrpc": "2.0",  "result": 1233,  "id": 1}
 
@@ -526,7 +505,7 @@ getBlockProduction[​](#getblockproduction "Direct link to heading")
 
 Returns recent block production information from the current or previous epoch.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -545,7 +524,7 @@ Slot range to return block production for. If parameter not provided, defaults t
 *   `firstSlot: <u64>` - first slot to return block production information for (inclusive)
 *   (optional) `lastSlot: <u64>` - last slot to return block production information for (inclusive). If parameter not provided, defaults to the highest slot
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to:
 
@@ -568,13 +547,13 @@ getBlockCommitment[​](#getblockcommitment "Direct link to heading")
 
 Returns commitment for particular block
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `u64` required
 
 block number, identified by Slot
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be a JSON object containing:
 
@@ -596,7 +575,7 @@ getBlocks[​](#getblocks "Direct link to heading")
 
 Returns a list of confirmed blocks between two slots
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `u64` required
 
@@ -614,7 +593,7 @@ Configuration object containing the following fields:
 
 *   "processed" is not supported
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be an array of u64 integers listing confirmed blocks between `start_slot` and either `end_slot` - if provided, or latest confirmed block, inclusive. Max range allowed is 500,000 slots.
 
@@ -631,7 +610,7 @@ getBlocksWithLimit[​](#getblockswithlimit "Direct link to heading")
 
 Returns a list of confirmed blocks starting at the given slot
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `u64` required
 
@@ -649,7 +628,7 @@ Configuration object containing the following field:
 
 *   "processed" is not supported
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be an array of u64 integers listing confirmed blocks starting at `start_slot` for up to `limit` blocks, inclusive.
 
@@ -670,13 +649,13 @@ info
 
 Each validator reports their UTC time to the ledger on a regular interval by intermittently adding a timestamp to a Vote for a particular block. A requested block's time is calculated from the stake-weighted mean of the Vote timestamps in a set of recent blocks recorded on the ledger.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `u64` required
 
 block number, identified by Slot
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 *   `<i64>` - estimated production time, as Unix timestamp (seconds since the Unix epoch)
 *   `<null>` - timestamp is not available for this block
@@ -694,11 +673,11 @@ getClusterNodes[​](#getclusternodes "Direct link to heading")
 
 Returns information about all the nodes participating in the cluster
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be an array of JSON objects, each with the following sub fields:
 
@@ -723,7 +702,7 @@ getEpochInfo[​](#getepochinfo "Direct link to heading")
 
 Returns information about the current epoch
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -739,7 +718,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be an object with the following fields:
 
@@ -763,11 +742,11 @@ getEpochSchedule[​](#getepochschedule "Direct link to heading")
 
 Returns the epoch schedule information from this cluster's genesis config
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be an object with the following fields:
 
@@ -794,7 +773,7 @@ caution
 
 **NEW: This method is only available in solana-core v1.9 or newer. Please use [getFees](#getFees) for solana-core v1.8**
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -810,7 +789,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 *   `<u64|null>` - Fee corresponding to the message at the specified blockhash
 
@@ -827,11 +806,11 @@ getFirstAvailableBlock[​](#getfirstavailableblock "Direct link to heading")
 
 Returns the slot of the lowest confirmed block that has not been purged from the ledger
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 *   `<u64>` - Slot
 
@@ -848,11 +827,11 @@ getGenesisHash[​](#getgenesishash "Direct link to heading")
 
 Returns the genesis hash
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 *   `<string>` - a Hash as base-58 encoded string
 
@@ -873,11 +852,11 @@ caution
 
 If one or more `--known-validator` arguments are provided to `solana-validator` - "ok" is returned when the node has within `HEALTH_CHECK_SLOT_DISTANCE` slots of the highest known validator, otherwise an error is returned. "ok" is always returned if no known validators are provided.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 If the node is healthy: "ok"
 
@@ -889,9 +868,9 @@ If the node is unhealthy, a JSON RPC error response is returned. The specifics o
 
 ### Response:[​](#response "Direct link to heading")
 
-Healthy Result:
+Healthy **Result:
 
-    { "jsonrpc": "2.0", "result": "ok", "id": 1 }
+    { "jsonrpc": "2.0", "result": "**ok", "id": 1 }
 
 Unhealthy Result (generic):
 
@@ -912,11 +891,11 @@ caution
 
 NEW: This method is only available in solana-core v1.9 or newer. Please use [getSnapshotSlot](/api/http#getsnapshotslot) for solana-core v1.8
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 When the node has a snapshot, this returns a JSON object with the following fields:
 
@@ -942,11 +921,11 @@ getIdentity[​](#getidentity "Direct link to heading")
 
 Returns the identity pubkey for the current node
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be a JSON object with the following fields:
 
@@ -965,7 +944,7 @@ getInflationGovernor[​](#getinflationgovernor "Direct link to heading")
 
 Returns the current inflation governor
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -973,7 +952,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be a JSON object with the following fields:
 
@@ -996,11 +975,11 @@ getInflationRate[​](#getinflationrate "Direct link to heading")
 
 Returns the specific inflation values for the current epoch
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be a JSON object with the following fields:
 
@@ -1022,7 +1001,7 @@ getInflationReward[​](#getinflationreward "Direct link to heading")
 
 Returns the inflation / staking reward for a list of addresses for an epoch
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `array` optional
 
@@ -1042,7 +1021,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be a JSON array with the following fields:
 
@@ -1065,7 +1044,7 @@ getLargestAccounts[​](#getlargestaccounts "Direct link to heading")
 
 Returns the 20 largest accounts, by lamport balance (results may be cached up to two hours)
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -1079,7 +1058,7 @@ filter results by account type
 
 Values: `circulating``nonCirculating`
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to an array of `<object>` containing:
 
@@ -1103,7 +1082,7 @@ caution
 
 NEW: This method is only available in solana-core v1.9 or newer. Please use [getRecentBlockhash](#getrecentblockhash) for solana-core v1.8
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -1115,7 +1094,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `RpcResponse<object>` - RpcResponse JSON object with `value` field set to a JSON object including:
 
@@ -1135,7 +1114,7 @@ getLeaderSchedule[​](#getleaderschedule "Direct link to heading")
 
 Returns the leader schedule for an epoch
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `u64` optional
 
@@ -1151,7 +1130,7 @@ identity `string` optional
 
 Only return results for this validator identity (base-58 encoded)
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 Returns a result with one of the two following values:
 
@@ -1171,11 +1150,11 @@ getMaxRetransmitSlot[​](#getmaxretransmitslot "Direct link to heading")
 
 Get the max slot seen from retransmit stage.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<u64>` - Slot number
 
@@ -1192,11 +1171,11 @@ getMaxShredInsertSlot[​](#getmaxshredinsertslot "Direct link to heading")
 
 Get the max slot seen from after shred insert.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<u64>` - Slot number
 
@@ -1213,7 +1192,7 @@ getMinimumBalanceForRentExemption[​](#getminimumbalanceforrentexemption "Direc
 
 Returns minimum balance required to make account rent exempt.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `usize` optional
 
@@ -1225,7 +1204,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<u64>` - minimum lamports required in the Account to remain rent free
 
@@ -1242,7 +1221,7 @@ getMultipleAccounts[​](#getmultipleaccounts "Direct link to heading")
 
 Returns the account information for a list of Pubkeys.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `array` optional
 
@@ -1276,7 +1255,7 @@ Details
 *   [`jsonParsed` encoding](/api/http#parsed-responses) attempts to use program-specific state parsers to return more human-readable and explicit account state data.
 *   If `jsonParsed` is requested but a parser cannot be found, the field falls back to `base64` encoding, detectable when the `data` field is type `<string>`.
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be a JSON object with `value` equal to an array of:
 
@@ -1302,7 +1281,7 @@ getProgramAccounts[​](#getprogramaccounts "Direct link to heading")
 
 Returns all accounts owned by the provided program Pubkey
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -1350,7 +1329,7 @@ info
 
 The resultant account(s) must meet **ALL** filter criteria to be included in the returned results
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 By default, the result field will be an array of JSON objects.
 
@@ -1382,13 +1361,13 @@ getRecentPerformanceSamples[​](#getrecentperformancesamples "Direct link to he
 
 Returns a list of recent performance samples, in reverse slot order. Performance samples are taken every 60 seconds and include the number of transactions and slots that occur in a given time window.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 limit `usize` optional
 
 number of samples to return (maximum 720)
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 An array of `RpcPerfSample<object>` with the following fields:
 
@@ -1422,7 +1401,7 @@ info
 
 Currently, a node's prioritization-fee cache stores data from up to 150 blocks.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `array` optional
 
@@ -1432,7 +1411,7 @@ note
 
 If this parameter is provided, the response will reflect a fee to land a transaction locking all of the provided accounts as writable.
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 An array of `RpcPrioritizationFee<object>` with the following fields:
 
@@ -1452,7 +1431,7 @@ getSignaturesForAddress[​](#getsignaturesforaddress "Direct link to heading")
 
 Returns signatures for confirmed transactions that include the given address in their `accountKeys` list. Returns signatures backwards in time from the provided signature or most recent confirmed block
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -1480,7 +1459,7 @@ until `string` optional
 
 search until this transaction signature, if found before limit reached
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 An array of `<object>`, ordered from **newest** to **oldest** transaction, containing transaction signature information with the following fields:
 
@@ -1508,7 +1487,7 @@ info
 
 Unless the `searchTransactionHistory` configuration parameter is included, this method only searches the recent status cache of signatures, which retains statuses for all active slots plus `MAX_RECENT_BLOCKHASHES` rooted slots.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `array` optional
 
@@ -1522,7 +1501,7 @@ searchTransactionHistory `bool` optional
 
 if `true` - a Solana node will search its ledger cache for any signatures not found in the recent status cache
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 An array of `RpcResponse<object>` consisting of either:
 
@@ -1549,7 +1528,7 @@ getSlot[​](#getslot "Direct link to heading")
 
 Returns the slot that has reached the [given or default commitment level](/api/http#configuring-state-commitment)
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -1561,7 +1540,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<u64>` - Current slot
 
@@ -1578,7 +1557,7 @@ getSlotLeader[​](#getslotleader "Direct link to heading")
 
 Returns the current slot leader
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -1590,7 +1569,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<string>` - Node identity Pubkey as base-58 encoded string
 
@@ -1607,7 +1586,7 @@ getSlotLeaders[​](#getslotleaders "Direct link to heading")
 
 Returns the slot leaders for a given slot range
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `u64` optional
 
@@ -1617,7 +1596,7 @@ Start slot, as u64 integer
 
 Limit, as u64 integer (between 1 and 5,000)
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<array[string]>` - array of Node identity public keys as base-58 encoded strings
 
@@ -1638,7 +1617,7 @@ getStakeActivation[​](#getstakeactivation "Direct link to heading")
 
 Returns epoch activation information for a stake account
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -1658,7 +1637,7 @@ epoch `u64` optional
 
 epoch for which to calculate activation details. If parameter not provided, defaults to current epoch.
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be a JSON object with the following fields:
 
@@ -1679,7 +1658,7 @@ getStakeMinimumDelegation[​](#getstakeminimumdelegation "Direct link to headin
 
 Returns the stake minimum delegation, in lamports.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -1687,7 +1666,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to:
 
@@ -1706,7 +1685,7 @@ getSupply[​](#getsupply "Direct link to heading")
 
 Returns information about the current supply.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -1718,7 +1697,7 @@ excludeNonCirculatingAccountsList `bool` optional
 
 exclude non circulating accounts list from response
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to a JSON object containing:
 
@@ -1740,7 +1719,7 @@ getTokenAccountBalance[​](#gettokenaccountbalance "Direct link to heading")
 
 Returns the token balance of an SPL Token account.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -1752,7 +1731,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to a JSON object containing:
 
@@ -1776,7 +1755,7 @@ getTokenAccountsByDelegate[​](#gettokenaccountsbydelegate "Direct link to head
 
 Returns all SPL Token accounts by approved Delegate.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -1817,7 +1796,7 @@ Details
 *   `jsonParsed` encoding attempts to use program-specific state parsers to return more human-readable and explicit account state data.
 *   If `jsonParsed` is requested but a parser cannot be found, the field falls back to `base64` encoding, detectable when the `data` field is type `string`.
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to an array of JSON objects, which will contain:
 
@@ -1845,7 +1824,7 @@ getTokenAccountsByOwner[​](#gettokenaccountsbyowner "Direct link to heading")
 
 Returns all SPL Token accounts by token owner.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -1886,7 +1865,7 @@ Details
 *   `jsonParsed` encoding attempts to use program-specific state parsers to return more human-readable and explicit account state data.
 *   If `jsonParsed` is requested but a parser cannot be found, the field falls back to `base64` encoding, detectable when the `data` field is type `string`.
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to an array of JSON objects, which will contain:
 
@@ -1914,7 +1893,7 @@ getTokenLargestAccounts[​](#gettokenlargestaccounts "Direct link to heading")
 
 Returns the 20 largest accounts of a particular SPL Token type.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -1926,7 +1905,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to an array of JSON objects containing:
 
@@ -1949,7 +1928,7 @@ getTokenSupply[​](#gettokensupply "Direct link to heading")
 
 Returns the total supply of an SPL Token type.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -1961,7 +1940,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to a JSON object containing:
 
@@ -1983,7 +1962,7 @@ getTransaction[​](#gettransaction "Direct link to heading")
 
 Returns transaction details for a confirmed transaction
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -2010,7 +1989,7 @@ Details
 *   `jsonParsed` encoding attempts to use program-specific state parsers to return more human-readable and explicit data in the `transaction.message.instructions` list.
 *   If `jsonParsed` is requested but a parser cannot be found, the instruction falls back to regular JSON encoding (`accounts`, `data`, and `programIdIndex` fields).
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 *   `<null>` - if transaction is not found or not confirmed
 *   `<object>` - if transaction is confirmed, an object with the following fields:
@@ -2057,7 +2036,7 @@ getTransactionCount[​](#gettransactioncount "Direct link to heading")
 
 Returns the current Transaction count from the ledger
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -2069,7 +2048,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<u64>` - the current Transaction count from the ledger
 
@@ -2086,11 +2065,11 @@ getVersion[​](#getversion "Direct link to heading")
 
 Returns the current Solana version running on the node
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be a JSON object with the following fields:
 
@@ -2110,7 +2089,7 @@ getVoteAccounts[​](#getvoteaccounts "Direct link to heading")
 
 Returns the account info and associated stake for all the voting accounts in the current bank.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `object` optional
 
@@ -2130,7 +2109,7 @@ delinquentSlotDistance `u64` optional
 
 Specify the number of slots behind the tip that a validator must fall to be considered delinquent. \*\*NOTE:\*\* For the sake of consistency between ecosystem products, \_it is \*\*not\*\* recommended that this argument be specified.\_
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be a JSON object of `current` and `delinquent` accounts, each containing an array of JSON objects with the following sub fields:
 
@@ -2162,7 +2141,7 @@ caution
 
 NEW: This method is only available in solana-core v1.9 or newer. Please use [getFeeCalculatorForBlockhash](#getfeecalculatorforblockhash) for solana-core v1.8
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -2178,7 +2157,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<bool>` - `true` if the blockhash is still valid
 
@@ -2199,11 +2178,11 @@ info
 
 This value may increase over time if the node is configured to purge older ledger data
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `u64` - Minimum ledger slot number
 
@@ -2220,7 +2199,7 @@ requestAirdrop[​](#requestairdrop "Direct link to heading")
 
 Requests an airdrop of lamports to a Pubkey
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -2236,7 +2215,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<string>` - Transaction Signature of the airdrop, as a base-58 encoded string
 
@@ -2268,7 +2247,7 @@ Before submitting, the following preflight checks are performed:
 
 The returned signature is the first signature in the transaction, which is used to identify the transaction ([transaction id](/terminology#transaction-id)). This identifier can be easily extracted from the transaction data before submission.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -2300,7 +2279,7 @@ minContextSlot `number`
 
 set the minimum slot at which to perform preflight transaction checks
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<string>` - First Transaction Signature embedded in the transaction, as base-58 encoded string ([transaction id](/terminology#transaction-id))
 
@@ -2317,7 +2296,7 @@ simulateTransaction[​](#simulatetransaction "Direct link to heading")
 
 Simulate sending a transaction
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -2372,7 +2351,7 @@ Details
 *   `jsonParsed` encoding attempts to use program-specific state parsers to return more human-readable and explicit account state data.
 *   If `jsonParsed` is requested but a parser cannot be found, the field falls back to binary encoding, detectable when the `data` field is type `string`.
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` set to a JSON object with the following fields:
 
@@ -2399,6 +2378,666 @@ The result will be an RpcResponse JSON object with `value` set to a JSON object 
 
     {  "jsonrpc": "2.0",  "result": {    "context": {      "slot": 218    },    "value": {      "err": null,      "accounts": null,      "logs": [        "Program 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri invoke [1]",        "Program 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri consumed 2366 of 1400000 compute units",        "Program return: 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri KgAAAAAAAAA=",        "Program 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri success"      ],      "returnData": {        "data": ["Kg==", "base64"],        "programId": "83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri"      },      "unitsConsumed": 2366    }  },  "id": 1}
 
+
+
+
+
+RPC Websocket API
+=================
+
+After connecting to the RPC PubSub websocket at `ws://<ADDRESS>/`:
+
+*   Submit subscription requests to the websocket using the methods below
+*   Multiple subscriptions may be active at once
+*   Many subscriptions take the optional [`commitment` parameter](/api/http#configuring-state-commitment), defining how finalized a change should be to trigger a notification. For subscriptions, if commitment is unspecified, the default value is `finalized`.
+
+RPC PubSub WebSocket Endpoint[​](#rpc-pubsub-websocket-endpoint "Direct link to heading")
+-----------------------------------------------------------------------------------------
+
+**Default port:** 8900 e.g. ws://localhost:8900, [http://192.168.1.88:8900](http://192.168.1.88:8900)
+
+Methods[​](#methods "Direct link to heading")
+---------------------------------------------
+
+The following methods are supported in the RPC Websocket API:
+
+accountSubscribe[​](#accountsubscribe "Direct link to heading")
+---------------------------------------------------------------
+
+Subscribe to an account to receive notifications when the lamports or data for a given account public key changes
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`string` required
+
+Account Pubkey, as base-58 encoded string
+
+`object` optional
+
+Configuration object containing the following fields:
+
+[commitment](/api/http#configuring-state-commitment) `string` optional
+
+[encoding](/api/http#parsed-responses) `string` optional
+
+Encoding format for Account data
+
+Values: `base58``base64``base64+zstd``jsonParsed`
+
+Details
+
+*   `base58` is slow.
+*   `jsonParsed` encoding attempts to use program-specific state parsers to return more human-readable and explicit account state data
+*   If `jsonParsed` is requested but a parser cannot be found, the field falls back to binary encoding, detectable when the `data`field is type`string`.
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<number>` - Subscription id (needed to unsubscribe)
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "accountSubscribe",  "params": [    "CM78CPUeXjn8o3yroDHxUtKsZZgoy4GPkPPXfouKNH12",    {      "encoding": "jsonParsed",      "commitment": "finalized"    }  ]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": 23784, "id": 1 }
+
+#### Notification Format:[​](#notification-format "Direct link to heading")
+
+The notification format is the same as seen in the [getAccountInfo](#getAccountInfo) RPC HTTP method.
+
+Base58 encoding:
+
+    {  "jsonrpc": "2.0",  "method": "accountNotification",  "params": {    "result": {      "context": {        "slot": 5199307      },      "value": {        "data": [          "11116bv5nS2h3y12kD1yUKeMZvGcKLSjQgX6BeV7u1FrjeJcKfsHPXHRDEHrBesJhZyqnnq9qJeUuF7WHxiuLuL5twc38w2TXNLxnDbjmuR",          "base58"        ],        "executable": false,        "lamports": 33594,        "owner": "11111111111111111111111111111111",        "rentEpoch": 635,        "space": 80      }    },    "subscription": 23784  }}
+
+Parsed-JSON encoding:
+
+    {  "jsonrpc": "2.0",  "method": "accountNotification",  "params": {    "result": {      "context": {        "slot": 5199307      },      "value": {        "data": {          "program": "nonce",          "parsed": {            "type": "initialized",            "info": {              "authority": "Bbqg1M4YVVfbhEzwA9SpC9FhsaG83YMTYoR4a8oTDLX",              "blockhash": "LUaQTmM7WbMRiATdMMHaRGakPtCkc2GHtH57STKXs6k",              "feeCalculator": {                "lamportsPerSignature": 5000              }            }          }        },        "executable": false,        "lamports": 33594,        "owner": "11111111111111111111111111111111",        "rentEpoch": 635,        "space": 80      }    },    "subscription": 23784  }}
+
+accountUnsubscribe[​](#accountunsubscribe "Direct link to heading")
+-------------------------------------------------------------------
+
+Unsubscribe from account change notifications
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`number` required
+
+id of the account Subscription to cancel
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<bool>` - unsubscribe success message
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "accountUnsubscribe",  "params": [0]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": true, "id": 1 }
+
+blockSubscribe[​](#blocksubscribe "Direct link to heading")
+-----------------------------------------------------------
+
+Subscribe to receive notification anytime a new block is Confirmed or Finalized.
+
+caution
+
+This subscription is **unstable** and only available if the validator was started with the `--rpc-pubsub-enable-block-subscription` flag.
+
+**NOTE: The format of this subscription may change in the future**
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+filter `string | object` optional
+
+filter criteria for the logs to receive results by account type; currently supported:
+
+`string`
+
+`all` - include all transactions in block
+
+`object`
+
+A JSON object with the following field:
+
+*   `mentionsAccountOrProgram: <string>` - return only transactions that mention the provided public key (as base-58 encoded string). If no mentions in a given block, then no notification will be sent.
+
+`object` optional
+
+Configuration object containing the following fields:
+
+[commitment](/api/http#configuring-state-commitment) `string` optional
+
+transactionDetails `string` optional
+
+level of transaction detail to return, either "full", "signatures", or "none".
+
+showRewards `bool` optionalDefault: `true`
+
+whether to populate the \`rewards\` array.
+
+[encoding](/api/http#parsed-responses) `string` optionalDefault: `base64`
+
+Encoding format for Account data
+
+Values: `base58``base64``base64+zstd``jsonParsed`
+
+Details
+
+*   `base58` is slow
+*   `jsonParsed` encoding attempts to use program-specific state parsers to return more human-readable and explicit account state data.
+*   If `jsonParsed` is requested but a parser cannot be found, the field falls back to `base64` encoding, detectable when the `data` field is type `string`.
+
+### **Result:[​](#result "Direct link to heading")**
+
+`integer` - subscription id (needed to unsubscribe)
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": "1",  "method": "blockSubscribe",  "params": ["all"]}
+
+    {  "jsonrpc": "2.0",  "id": "1",  "method": "blockSubscribe",  "params": [    {      "mentionsAccountOrProgram": "LieKvPRE8XeX3Y2xVNHjKlpAScD12lYySBVQ4HqoJ5op"    },    {      "commitment": "confirmed",      "encoding": "base64",      "showRewards": true,      "transactionDetails": "full"    }  ]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": 0, "id": 1 }
+
+#### Notification Format:[​](#notification-format "Direct link to heading")
+
+The notification will be an object with the following fields:
+
+*   `slot: <u64>` - The corresponding slot.
+*   `err: <object|null>` - Error if something went wrong publishing the notification otherwise null.
+*   `block: <object|null>` - A block object as seen in the [getBlock](/api/http#getblock) RPC HTTP method.
+
+    {  "jsonrpc": "2.0",  "method": "blockNotification",  "params": {    "result": {      "context": {        "slot": 112301554      },      "value": {        "slot": 112301554,        "block": {          "previousBlockhash": "GJp125YAN4ufCSUvZJVdCyWQJ7RPWMmwxoyUQySydZA",          "blockhash": "6ojMHjctdqfB55JDpEpqfHnP96fiaHEcvzEQ2NNcxzHP",          "parentSlot": 112301553,          "transactions": [            {              "transaction": [                "OpltwoUvWxYi1P2U8vbIdE/aPntjYo5Aa0VQ2JJyeJE2g9Vvxk8dDGgFMruYfDu8/IfUWb0REppTe7IpAuuLRgIBAAkWnj4KHRpEWWW7gvO1c0BHy06wZi2g7/DLqpEtkRsThAXIdBbhXCLvltw50ZnjDx2hzw74NVn49kmpYj2VZHQJoeJoYJqaKcvuxCi/2i4yywedcVNDWkM84Iuw+cEn9/ROCrXY4qBFI9dveEERQ1c4kdU46xjxj9Vi+QXkb2Kx45QFVkG4Y7HHsoS6WNUiw2m4ffnMNnOVdF9tJht7oeuEfDMuUEaO7l9JeUxppCvrGk3CP45saO51gkwVYEgKzhpKjCx3rgsYxNR81fY4hnUQXSbbc2Y55FkwgRBpVvQK7/+clR4Gjhd3L4y+OtPl7QF93Akg1LaU9wRMs5nvfDFlggqI9PqJl+IvVWrNRdBbPS8LIIhcwbRTkSbqlJQWxYg3Bo2CTVbw7rt1ZubuHWWp0mD/UJpLXGm2JprWTePNULzHu67sfqaWF99LwmwjTyYEkqkRt1T0Je5VzHgJs0N5jY4iIU9K3lMqvrKOIn/2zEMZ+ol2gdgjshx+sphIyhw65F3J/Dbzk04LLkK+CULmN571Y+hFlXF2ke0BIuUG6AUF+4214Cu7FXnqo3rkxEHDZAk0lRrAJ8X/Z+iwuwI5cgbd9uHXZaGT2cvhRs7reawctIXtX1s3kTqM9YV+/wCpDLAp8axcEkaQkLDKRoWxqp8XLNZSKial7Rk+ELAVVKWoWLRXRZ+OIggu0OzMExvVLE5VHqy71FNHq4gGitkiKYNFWSLIE4qGfdFLZXy/6hwS+wq9ewjikCpd//C9BcCL7Wl0iQdUslxNVCBZHnCoPYih9JXvGefOb9WWnjGy14sG9j70+RSVx6BlkFELWwFvIlWR/tHn3EhHAuL0inS2pwX7ZQTAU6gDVaoqbR2EiJ47cKoPycBNvHLoKxoY9AZaBjPl6q8SKQJSFyFd9n44opAgI6zMTjYF/8Ok4VpXEESp3QaoUyTI9sOJ6oFP6f4dwnvQelgXS+AEfAsHsKXxGAIUDQENAgMEBQAGBwgIDg8IBJCER3QXl1AVDBADCQoOAAQLERITDAjb7ugh3gOuTy==",                "base64"              ],              "meta": {                "err": null,                "status": {                  "Ok": null                },                "fee": 5000,                "preBalances": [                  1758510880, 2067120, 1566000, 1461600, 2039280, 2039280,                  1900080, 1865280, 0, 3680844220, 2039280                ],                "postBalances": [                  1758505880, 2067120, 1566000, 1461600, 2039280, 2039280,                  1900080, 1865280, 0, 3680844220, 2039280                ],                "innerInstructions": [                  {                    "index": 0,                    "instructions": [                      {                        "programIdIndex": 13,                        "accounts": [1, 15, 3, 4, 2, 14],                        "data": "21TeLgZXNbtHXVBzCaiRmH"                      },                      {                        "programIdIndex": 14,                        "accounts": [3, 4, 1],                        "data": "6qfC8ic7Aq99"                      },                      {                        "programIdIndex": 13,                        "accounts": [1, 15, 3, 5, 2, 14],                        "data": "21TeLgZXNbsn4QEpaSEr3q"                      },                      {                        "programIdIndex": 14,                        "accounts": [3, 5, 1],                        "data": "6LC7BYyxhFRh"                      }                    ]                  },                  {                    "index": 1,                    "instructions": [                      {                        "programIdIndex": 14,                        "accounts": [4, 3, 0],                        "data": "7aUiLHFjSVdZ"                      },                      {                        "programIdIndex": 19,                        "accounts": [17, 18, 16, 9, 11, 12, 14],                        "data": "8kvZyjATKQWYxaKR1qD53V"                      },                      {                        "programIdIndex": 14,                        "accounts": [9, 11, 18],                        "data": "6qfC8ic7Aq99"                      }                    ]                  }                ],                "logMessages": [                  "Program QMNeHCGYnLVDn1icRAfQZpjPLBNkfGbSKRB83G5d8KB invoke [1]",                  "Program QMWoBmAyJLAsA1Lh9ugMTw2gciTihncciphzdNzdZYV invoke [2]"                ],                "preTokenBalances": [                  {                    "accountIndex": 4,                    "mint": "iouQcQBAiEXe6cKLS85zmZxUqaCqBdeHFpqKoSz615u",                    "uiTokenAmount": {                      "uiAmount": null,                      "decimals": 6,                      "amount": "0",                      "uiAmountString": "0"                    },                    "owner": "LieKvPRE8XeX3Y2xVNHjKlpAScD12lYySBVQ4HqoJ5op",                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"                  },                  {                    "accountIndex": 5,                    "mint": "iouQcQBAiEXe6cKLS85zmZxUqaCqBdeHFpqKoSz615u",                    "uiTokenAmount": {                      "uiAmount": 11513.0679,                      "decimals": 6,                      "amount": "11513067900",                      "uiAmountString": "11513.0679"                    },                    "owner": "rXhAofQCT7NN9TUqigyEAUzV1uLL4boeD8CRkNBSkYk",                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"                  },                  {                    "accountIndex": 10,                    "mint": "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1",                    "uiTokenAmount": {                      "uiAmount": null,                      "decimals": 6,                      "amount": "0",                      "uiAmountString": "0"                    },                    "owner": "CL9wkGFT3SZRRNa9dgaovuRV7jrVVigBUZ6DjcgySsCU",                    "programId": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"                  },                  {                    "accountIndex": 11,                    "mint": "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1",                    "uiTokenAmount": {                      "uiAmount": 15138.514093,                      "decimals": 6,                      "amount": "15138514093",                      "uiAmountString": "15138.514093"                    },                    "owner": "LieKvPRE8XeX3Y2xVNHjKlpAScD12lYySBVQ4HqoJ5op",                    "programId": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"                  }                ],                "postTokenBalances": [                  {                    "accountIndex": 4,                    "mint": "iouQcQBAiEXe6cKLS85zmZxUqaCqBdeHFpqKoSz615u",                    "uiTokenAmount": {                      "uiAmount": null,                      "decimals": 6,                      "amount": "0",                      "uiAmountString": "0"                    },                    "owner": "LieKvPRE8XeX3Y2xVNHjKlpAScD12lYySBVQ4HqoJ5op",                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"                  },                  {                    "accountIndex": 5,                    "mint": "iouQcQBAiEXe6cKLS85zmZxUqaCqBdeHFpqKoSz615u",                    "uiTokenAmount": {                      "uiAmount": 11513.103028,                      "decimals": 6,                      "amount": "11513103028",                      "uiAmountString": "11513.103028"                    },                    "owner": "rXhAofQCT7NN9TUqigyEAUzV1uLL4boeD8CRkNBSkYk",                    "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"                  },                  {                    "accountIndex": 10,                    "mint": "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1",                    "uiTokenAmount": {                      "uiAmount": null,                      "decimals": 6,                      "amount": "0",                      "uiAmountString": "0"                    },                    "owner": "CL9wkGFT3SZRRNa9dgaovuRV7jrVVigBUZ6DjcgySsCU",                    "programId": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"                  },                  {                    "accountIndex": 11,                    "mint": "Saber2gLauYim4Mvftnrasomsv6NvAuncvMEZwcLpD1",                    "uiTokenAmount": {                      "uiAmount": 15489.767829,                      "decimals": 6,                      "amount": "15489767829",                      "uiAmountString": "15489.767829"                    },                    "owner": "BeiHVPRE8XeX3Y2xVNrSsTpAScH94nYySBVQ4HqgN9at",                    "programId": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"                  }                ],                "rewards": []              }            }          ],          "blockTime": 1639926816,          "blockHeight": 101210751        },        "err": null      }    },    "subscription": 14  }}
+
+blockUnsubscribe[​](#blockunsubscribe "Direct link to heading")
+---------------------------------------------------------------
+
+Unsubscribe from block notifications
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`integer` required
+
+subscription id to cancel
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<bool>` - unsubscribe success message
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "blockUnsubscribe",  "params": [0]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": true, "id": 1 }
+
+logsSubscribe[​](#logssubscribe "Direct link to heading")
+---------------------------------------------------------
+
+Subscribe to transaction logging
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+filter `string | object` required
+
+filter criteria for the logs to receive results by account type. The following filters types are currently supported:
+
+`string`
+
+A string with one of the following values:
+
+*   `all` - subscribe to all transactions except for simple vote transactions
+*   `allWithVotes` - subscribe to all transactions including simple vote transactions
+
+`object`
+
+An object with the following field:
+
+*   `mentions: [ <string> ]` - array of Pubkeys (as base-58 encoded strings) to listen for being mentioned in any transaction
+
+`object` optional
+
+Configuration object containing the following fields:
+
+[commitment](/api/http#configuring-state-commitment) `string` optional
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<integer>` - Subscription id (needed to unsubscribe)
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "logsSubscribe",  "params": [    {      "mentions": [ "11111111111111111111111111111111" ]    },    {      "commitment": "finalized"    }  ]}{  "jsonrpc": "2.0",  "id": 1,  "method": "logsSubscribe",  "params": [ "all" ]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": 24040, "id": 1 }
+
+#### Notification Format:[​](#notification-format "Direct link to heading")
+
+The notification will be an RpcResponse JSON object with value equal to:
+
+*   `signature: <string>` - The transaction signature base58 encoded.
+*   `err: <object|null>` - Error if transaction failed, null if transaction succeeded. [TransactionError definitions](https://github.com/solana-labs/solana/blob/c0c60386544ec9a9ec7119229f37386d9f070523/sdk/src/transaction/error.rs#L13)
+*   `logs: <array|null>` - Array of log messages the transaction instructions output during execution, null if simulation failed before the transaction was able to execute (for example due to an invalid blockhash or signature verification failure)
+
+Example:
+
+    {  "jsonrpc": "2.0",  "method": "logsNotification",  "params": {    "result": {      "context": {        "slot": 5208469      },      "value": {        "signature": "5h6xBEauJ3PK6SWCZ1PGjBvj8vDdWG3KpwATGy1ARAXFSDwt8GFXM7W5Ncn16wmqokgpiKRLuS83KUxyZyv2sUYv",        "err": null,        "logs": [          "SBF program 83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri success"        ]      }    },    "subscription": 24040  }}
+
+logsUnsubscribe[​](#logsunsubscribe "Direct link to heading")
+-------------------------------------------------------------
+
+Unsubscribe from transaction logging
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`integer` required
+
+subscription id to cancel
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<bool>` - unsubscribe success message
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "logsUnsubscribe",  "params": [0]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": true, "id": 1 }
+
+programSubscribe[​](#programsubscribe "Direct link to heading")
+---------------------------------------------------------------
+
+Subscribe to a program to receive notifications when the lamports or data for an account owned by the given program changes
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`string` required
+
+Pubkey of the `program_id`, as base-58 encoded string
+
+`object` optional
+
+Configuration object containing the following fields:
+
+[commitment](/api/http#configuring-state-commitment) `string` optional
+
+[filters](/api/http#filter-criteria) `array` optional
+
+filter results using various [filter objects](/api/http#filter-criteria)
+
+info
+
+The resultant account must meet **ALL** filter criteria to be included in the returned results
+
+[encoding](/api/http#parsed-responses) `string` optional
+
+Encoding format for Account data
+
+Values: `base58``base64``base64+zstd``jsonParsed`
+
+Details
+
+*   `base58` is slow.
+*   [`jsonParsed`](/api/http#parsed-responses%22%3E) encoding attempts to use program-specific state parsers to return more human-readable and explicit account state data.
+*   If `jsonParsed` is requested but a parser cannot be found, the field falls back to `base64` encoding, detectable when the `data` field is type `string`.
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<integer>` - Subscription id (needed to unsubscribe)
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "programSubscribe",  "params": [    "11111111111111111111111111111111",    {      "encoding": "base64",      "commitment": "finalized"    }  ]}{  "jsonrpc": "2.0",  "id": 1,  "method": "programSubscribe",  "params": [    "11111111111111111111111111111111",    {      "encoding": "jsonParsed"    }  ]}{  "jsonrpc": "2.0",  "id": 1,  "method": "programSubscribe",  "params": [    "11111111111111111111111111111111",    {      "encoding": "base64",      "filters": [        {          "dataSize": 80        }      ]    }  ]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": 24040, "id": 1 }
+
+#### Notification format[​](#notification-format "Direct link to heading")
+
+The notification format is a **single** program account object as seen in the [getProgramAccounts](/api/http#getprogramaccounts) RPC HTTP method.
+
+Base58 encoding:
+
+    {  "jsonrpc": "2.0",  "method": "programNotification",  "params": {    "result": {      "context": {        "slot": 5208469      },      "value": {        "pubkey": "H4vnBqifaSACnKa7acsxstsY1iV1bvJNxsCY7enrd1hq",        "account": {          "data": [            "11116bv5nS2h3y12kD1yUKeMZvGcKLSjQgX6BeV7u1FrjeJcKfsHPXHRDEHrBesJhZyqnnq9qJeUuF7WHxiuLuL5twc38w2TXNLxnDbjmuR",            "base58"          ],          "executable": false,          "lamports": 33594,          "owner": "11111111111111111111111111111111",          "rentEpoch": 636,          "space": 80        }      }    },    "subscription": 24040  }}
+
+Parsed-JSON encoding:
+
+    {  "jsonrpc": "2.0",  "method": "programNotification",  "params": {    "result": {      "context": {        "slot": 5208469      },      "value": {        "pubkey": "H4vnBqifaSACnKa7acsxstsY1iV1bvJNxsCY7enrd1hq",        "account": {          "data": {            "program": "nonce",            "parsed": {              "type": "initialized",              "info": {                "authority": "Bbqg1M4YVVfbhEzwA9SpC9FhsaG83YMTYoR4a8oTDLX",                "blockhash": "LUaQTmM7WbMRiATdMMHaRGakPtCkc2GHtH57STKXs6k",                "feeCalculator": {                  "lamportsPerSignature": 5000                }              }            }          },          "executable": false,          "lamports": 33594,          "owner": "11111111111111111111111111111111",          "rentEpoch": 636,          "space": 80        }      }    },    "subscription": 24040  }}
+
+programUnsubscribe[​](#programunsubscribe "Direct link to heading")
+-------------------------------------------------------------------
+
+Unsubscribe from program-owned account change notifications
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`number` required
+
+id of account Subscription to cancel
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<bool>` - unsubscribe success message
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "programUnsubscribe",  "params": [0]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": true, "id": 1 }
+
+signatureSubscribe[​](#signaturesubscribe "Direct link to heading")
+-------------------------------------------------------------------
+
+Subscribe to a transaction signature to receive notification when a given transaction is committed. On `signatureNotification` - the subscription is automatically cancelled.
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`string` required
+
+Transaction Signature, as base-58 encoded string
+
+`object` optional
+
+Configuration object containing the following fields:
+
+[commitment](/api/http#configuring-state-commitment) `string` optional
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<integer>` - subscription id (needed to unsubscribe)
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "signatureSubscribe",  "params": [    "2EBVM6cB8vAAD93Ktr6Vd8p67XPbQzCJX47MpReuiCXJAtcjaxpvWpcg9Ege1Nr5Tk3a2GFrByT7WPBjdsTycY9b",    {      "commitment": "finalized"    }  ]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": 0, "id": 1 }
+
+#### Notification Format:[​](#notification-format "Direct link to heading")
+
+The notification will be an RpcResponse JSON object with value containing an object with:
+
+*   `err: <object|null>` - Error if transaction failed, null if transaction succeeded. [TransactionError definitions](https://github.com/solana-labs/solana/blob/c0c60386544ec9a9ec7119229f37386d9f070523/sdk/src/transaction/error.rs#L13)
+
+Example:
+
+    {  "jsonrpc": "2.0",  "method": "signatureNotification",  "params": {    "result": {      "context": {        "slot": 5207624      },      "value": {        "err": null      }    },    "subscription": 24006  }}
+
+signatureUnsubscribe[​](#signatureunsubscribe "Direct link to heading")
+-----------------------------------------------------------------------
+
+Unsubscribe from signature confirmation notification
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`number` required
+
+subscription id to cancel
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<bool>` - unsubscribe success message
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "signatureUnsubscribe",  "params": [0]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": true, "id": 1 }
+
+slotSubscribe[​](#slotsubscribe "Direct link to heading")
+---------------------------------------------------------
+
+Subscribe to receive notification anytime a slot is processed by the validator
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+**None**
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<integer>` - Subscription id (needed to unsubscribe)
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    { "jsonrpc": "2.0", "id": 1, "method": "slotSubscribe" }
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": 0, "id": 1 }
+
+#### Notification Format:[​](#notification-format "Direct link to heading")
+
+The notification will be an object with the following fields:
+
+*   `parent: <u64>` - The parent slot
+*   `root: <u64>` - The current root slot
+*   `slot: <u64>` - The newly set slot value
+
+Example:
+
+    {  "jsonrpc": "2.0",  "method": "slotNotification",  "params": {    "result": {      "parent": 75,      "root": 44,      "slot": 76    },    "subscription": 0  }}
+
+slotUnsubscribe[​](#slotunsubscribe "Direct link to heading")
+-------------------------------------------------------------
+
+Unsubscribe from slot notifications
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`integer` required
+
+subscription id to cancel
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<bool>` - unsubscribe success message
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "slotUnsubscribe",  "params": [0]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": true, "id": 1 }
+
+slotsUpdatesSubscribe[​](#slotsupdatessubscribe "Direct link to heading")
+-------------------------------------------------------------------------
+
+Subscribe to receive a notification from the validator on a variety of updates on every slot
+
+caution
+
+This subscription is unstable
+
+**NOTE: the format of this subscription may change in the future and it may not always be supported**
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+**None**
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<integer>` - Subscription id (needed to unsubscribe)
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    { "jsonrpc": "2.0", "id": 1, "method": "slotsUpdatesSubscribe" }
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": 0, "id": 1 }
+
+#### Notification Format:[​](#notification-format "Direct link to heading")
+
+The notification will be an object with the following fields:
+
+*   `parent: <u64>` - The parent slot
+*   `slot: <u64>` - The newly updated slot
+*   `timestamp: <i64>` - The Unix timestamp of the update
+*   `type: <string>` - The update type, one of:
+    *   "firstShredReceived"
+    *   "completed"
+    *   "createdBank"
+    *   "frozen"
+    *   "dead"
+    *   "optimisticConfirmation"
+    *   "root"
+
+    {  "jsonrpc": "2.0",  "method": "slotsUpdatesNotification",  "params": {    "result": {      "parent": 75,      "slot": 76,      "timestamp": 1625081266243,      "type": "optimisticConfirmation"    },    "subscription": 0  }}
+
+slotsUpdatesUnsubscribe[​](#slotsupdatesunsubscribe "Direct link to heading")
+-----------------------------------------------------------------------------
+
+Unsubscribe from slot-update notifications
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`number` required
+
+subscription id to cancel
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<bool>` - unsubscribe success message
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "slotsUpdatesUnsubscribe",  "params": [0]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": true, "id": 1 }
+
+rootSubscribe[​](#rootsubscribe "Direct link to heading")
+---------------------------------------------------------
+
+Subscribe to receive notification anytime a new root is set by the validator.
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+**None**
+
+### **Result:[​](#result "Direct link to heading")**
+
+`integer` - subscription id (needed to unsubscribe)
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    { "jsonrpc": "2.0", "id": 1, "method": "rootSubscribe" }
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": 0, "id": 1 }
+
+#### Notification Format:[​](#notification-format "Direct link to heading")
+
+The result is the latest root slot number.
+
+    {  "jsonrpc": "2.0",  "method": "rootNotification",  "params": {    "result": 42,    "subscription": 0  }}
+
+rootUnsubscribe[​](#rootunsubscribe "Direct link to heading")
+-------------------------------------------------------------
+
+Unsubscribe from root notifications
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`number` required
+
+subscription id to cancel
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<bool>` - unsubscribe success message
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "rootUnsubscribe",  "params": [0]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": true, "id": 1 }
+
+voteSubscribe[​](#votesubscribe "Direct link to heading")
+---------------------------------------------------------
+
+Subscribe to receive notification anytime a new vote is observed in gossip. These votes are pre-consensus therefore there is no guarantee these votes will enter the ledger.
+
+caution
+
+This subscription is unstable and only available if the validator was started with the `--rpc-pubsub-enable-vote-subscription` flag. The format of this subscription may change in the future
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+**None**
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<integer>` - subscription id (needed to unsubscribe)
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    { "jsonrpc": "2.0", "id": 1, "method": "voteSubscribe" }
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": 0, "id": 1 }
+
+#### Notification Format:[​](#notification-format "Direct link to heading")
+
+The notification will be an object with the following fields:
+
+*   `hash: <string>` - The vote hash
+*   `slots: <array>` - The slots covered by the vote, as an array of u64 integers
+*   `timestamp: <i64|null>` - The timestamp of the vote
+*   `signature: <string>` - The signature of the transaction that contained this vote
+
+    {  "jsonrpc": "2.0",  "method": "voteNotification",  "params": {    "result": {      "hash": "8Rshv2oMkPu5E4opXTRyuyBeZBqQ4S477VG26wUTFxUM",      "slots": [1, 2],      "timestamp": null    },    "subscription": 0  }}
+
+voteUnsubscribe[​](#voteunsubscribe "Direct link to heading")
+-------------------------------------------------------------
+
+Unsubscribe from vote notifications
+
+### **Parameters:[​](#parameters "Direct link to heading")**
+
+`integer` required
+
+subscription id to cancel
+
+### **Result:[​](#result "Direct link to heading")**
+
+`<bool>` - unsubscribe success message
+
+### Code sample:[​](#code-sample "Direct link to heading")
+
+    {  "jsonrpc": "2.0",  "id": 1,  "method": "voteUnsubscribe",  "params": [0]}
+
+### Response:[​](#response "Direct link to heading")
+
+    { "jsonrpc": "2.0", "result": true, "id": 1 }
+
+[
+
+
+
+
 JSON RPC API Deprecated Methods[​](#json-rpc-api-deprecated-methods "Direct link to heading")
 ---------------------------------------------------------------------------------------------
 
@@ -2411,7 +3050,7 @@ This method is expected to be removed in solana-core v2.0. **Please use [getBloc
 
 Returns identity and transaction information about a confirmed block in the ledger
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `u64` required
 
@@ -2442,7 +3081,7 @@ Details
 *   `jsonParsed` encoding attempts to use program-specific instruction parsers to return more human-readable and explicit data in the `transaction.message.instructions` list.
 *   If `jsonParsed` is requested but a parser cannot be found, the instruction falls back to regular JSON encoding (`accounts`, `data`, and `programIdIndex` fields).
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be an object with the following fields:
 
@@ -2497,7 +3136,7 @@ This method is expected to be removed in solana-core v2.0 **Please use [getBlock
 
 Returns a list of confirmed blocks between two slots
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `u64` required
 
@@ -2509,7 +3148,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be an array of u64 integers listing confirmed blocks between `start_slot` and either `end_slot` - if provided, or latest confirmed block, inclusive. Max range allowed is 500,000 slots.
 
@@ -2530,7 +3169,7 @@ This method is expected to be removed in solana-core v2.0 **Please use [getBlock
 
 Returns a list of confirmed blocks starting at the given slot
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `u64` required
 
@@ -2546,7 +3185,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be an array of u64 integers listing confirmed blocks starting at `start_slot` for up to `limit` blocks, inclusive.
 
@@ -2567,7 +3206,7 @@ This method is expected to be removed in solana-core v2.0 **Please use [getSigna
 
 Returns signatures for confirmed transactions that include the given address in their `accountKeys` list. Returns signatures backwards in time from the provided signature or most recent confirmed block
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -2591,7 +3230,7 @@ until `string` optional
 
 search until this transaction signature, if found before limit reached.
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result field will be an array of `<object>`, ordered from newest to oldest transaction, containing transaction signature information with the following fields:
 
@@ -2618,7 +3257,7 @@ This method is expected to be removed in solana-core v2.0 **Please use [getTrans
 
 Returns transaction details for a confirmed transaction
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -2642,7 +3281,7 @@ Details
 *   `jsonParsed` encoding attempts to use program-specific instruction parsers to return more human-readable and explicit data in the `transaction.message.instructions` list.
 *   If `jsonParsed` is requested but a parser cannot be found, the instruction falls back to regular `json` encoding (`accounts`, `data`, and `programIdIndex` fields).
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 *   `<null>` - if transaction is not found or not confirmed
 *   `<object>` - if transaction is confirmed, an object with the following fields:
@@ -2679,7 +3318,7 @@ This method is expected to be removed in solana-core v2.0 **Please use [isBlockh
 
 Returns the fee calculator associated with the query blockhash, or `null` if the blockhash has expired
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -2695,7 +3334,7 @@ minContextSlot `number` optional
 
 The minimum slot that the request can be evaluated at
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to:
 
@@ -2720,11 +3359,11 @@ This method is expected to be removed in solana-core v2.0
 
 Returns the fee rate governor information from the root bank
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` equal to an `object` with the following fields:
 
@@ -2751,7 +3390,7 @@ This method is expected to be removed in solana-core v2.0 **Please use [getFeeFo
 
 Returns a recent block hash from the ledger, a fee schedule that can be used to compute the cost of submitting a transaction using it, and the last slot in which the blockhash will be valid.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -2763,7 +3402,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 The result will be an RpcResponse JSON object with `value` set to a JSON object with the following fields:
 
@@ -2789,7 +3428,7 @@ This method is expected to be removed in solana-core v2.0 **Please use [getLates
 
 Returns a recent block hash from the ledger, and a fee schedule that can be used to compute the cost of submitting a transaction using it.
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 `string` required
 
@@ -2801,7 +3440,7 @@ Configuration object containing the following fields:
 
 [commitment](/api/http#configuring-state-commitment) `string` optional
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 An RpcResponse containing a JSON object consisting of a string blockhash and FeeCalculator JSON object.
 
@@ -2826,11 +3465,11 @@ This method is expected to be removed in solana-core v2.0 **Please use [getHighe
 
 Returns the highest slot that the node has a snapshot for
 
-### Parameters:[​](#parameters "Direct link to heading")
+### **Parameters:[​](#parameters "Direct link to heading")**
 
 **None**
 
-### Result:[​](#result "Direct link to heading")
+### **Result:[​](#result "Direct link to heading")**
 
 `<u64>` - Snapshot slot
 
