@@ -181,7 +181,7 @@ Some methods support providing a `filters` object to enable pre-filtering the da
 JSON RPC API Reference[​](#json-rpc-api-reference "Direct link to heading")
 ---------------------------------------------------------------------------
 
-## `getAccountInfo[​](#getaccountinfo "Direct link to heading")`
+`getAccountInfo`[​](#getaccountinfo)
 -----------------------------------------------------------
 
 Returns all information associated with the account of provided Pubkey
@@ -275,7 +275,7 @@ curl http://localhost:8899 -X POST -H "Content-Type: application/json" -d '
 }
 ```
 
-getBalance[​](#getbalance "Direct link to heading")
+`getBalance`[​](#getbalance)
 ---------------------------------------------------
 
 Returns the balance of the account of provided Pubkey
