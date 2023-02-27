@@ -4,15 +4,17 @@ The following methods are enhanced NFT RPC API Methods in compliance with the
 Metaplex Digital Asset API which allows for querying both Compressed and
 Uncompressed NFTs.
 
+[link text](#<heading-name>) 
+
 ## Methods
 
--   [getAssetProof](#getAssetProof): Get a merkle proof for a compressed asset by its ID
--   [getAsset](#getAsset): get an asset (NFT) by its ID (Pubkey)
--   [getAssetsByOwner](#getAssetsByOwner): Get a list of assets (NFTs) owned by an address (Pubkey)
--   [getAssetsByGroup](#getAssetsByGroup): Get a list of assets (NFTs) by a group key and value (NFT Collection)
--   [getAssetsByCreator](#getAssetsByCreator): Get a list of assets (NFTs) created by an address (Pubkey)
--   [getAssetsByAuthority](#getAssetsByAuthority): Get a list of assets (NFTs) with a specific authority (Pubkey)
--   [searchAssets](#searchAssets): Search for assets (NFTs) by a variety of parameters
+-   [getAssetProof](#<getAssetProof>): Get a merkle proof for a compressed asset by its ID
+-   [getAsset](#<getAsset>): get an asset (NFT) by its ID (Pubkey)
+-   [getAssetsByOwner](#<getAssetsByOwner>): Get a list of assets (NFTs) owned by an address (Pubkey)
+-   [getAssetsByGroup](#<getAssetsByGroup>): Get a list of assets (NFTs) by a group key and value (NFT Collection)
+-   [getAssetsByCreator](#<getAssetsByCreator>): Get a list of assets (NFTs) created by an address (Pubkey)
+-   [getAssetsByAuthority](#<getAssetsByAuthority>): Get a list of assets (NFTs) with a specific authority (Pubkey)
+-   [searchAssets](#<searchAssets>): Search for assets (NFTs) by a variety of parameters
 
 ---
 
