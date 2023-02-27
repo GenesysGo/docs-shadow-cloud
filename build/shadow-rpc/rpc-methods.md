@@ -1,8 +1,7 @@
 # RPC Methods
 
 *   [JSON RPC API](/api)
-*   [HTTP Methods](/api/http)
-    
+*   [HTTP Methods](#http-methods) 
     *   [getAccountInfo](#getaccountinfo)
     *   [getBalance](#getbalance)
     *   [getBlockHeight](#getblockheight)
@@ -56,7 +55,7 @@
     *   [requestAirdrop](#requestairdrop)
     *   [sendTransaction](#sendtransaction)
     *   [simulateTransaction](#simulatetransaction)
-*   [Websocket Methods](/api/websocket)  
+*   [Websocket Methods](#websocket-methods)  
     *   [accountSubscribe](#accountsubscribe)
     *   [accountUnsubscribe](#accountunsubscribe)
     *   [logsSubscribe](#logssubscribe)
@@ -77,7 +76,7 @@
 *   [Deprecated Methods](#getconfirmedblock)
     
 
-JSON RPC HTTP Methods
+JSON RPC HTTP Methods[](#http-methods)
 =====================
 
 Solana nodes accept HTTP requests using the [JSON-RPC 2.0](https://www.jsonrpc.org/specification) specification.
@@ -86,7 +85,7 @@ info
 
 For JavaScript applications, use the [@solana/web3.js](https://github.com/solana-labs/solana-web3.js) library as a convenient interface for the RPC methods to interact with a Solana node.
 
-For an PubSub connection to a Solana node, use the [Websocket API](/api/websocket).
+For an PubSub connection to a Solana node, use the Websocket API.
 
 RPC HTTP Endpoint[​](#rpc-http-endpoint "Direct link to heading")
 -----------------------------------------------------------------
@@ -178,10 +177,10 @@ Some methods support providing a `filters` object to enable pre-filtering the da
 *   `dataSize: u64` - compares the program account data length with the provided data size
     
 
-JSON RPC API Reference[​](#json-rpc-api-reference "Direct link to heading")
+**JSON RPC API Reference**
 ---------------------------------------------------------------------------
 
-`getAccountInfo`[​](#getaccountinfo)
+**`getAccountInfo`**
 -----------------------------------------------------------
 
 Returns all information associated with the account of provided Pubkey
@@ -275,7 +274,7 @@ curl http://localhost:8899 -X POST -H "Content-Type: application/json" -d '
 }
 ```
 
-`getBalance`[​](#getbalance)
+`getBalance`
 ---------------------------------------------------
 
 Returns the balance of the account of provided Pubkey
@@ -2382,7 +2381,7 @@ The result will be an RpcResponse JSON object with `value` set to a JSON object 
 
 
 
-RPC Websocket API
+RPC Websocket API[](#websocket-methods)
 =================
 
 After connecting to the RPC PubSub websocket at `ws://<ADDRESS>/`:
