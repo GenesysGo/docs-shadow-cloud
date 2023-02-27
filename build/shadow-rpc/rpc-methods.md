@@ -1,32 +1,4 @@
-
-[Skip to main content](#docusaurus_skipToContent_fallback)
-
-[
-
-![Solana Logo](/img/logo-horizontal.svg)![Solana Logo](/img/logo-horizontal-dark.svg)
-
-](/)[Learn](/introduction)[Architecture](/cluster/overview)[CLI](/cli)[Developers](/developers)[Validators](/running-validator)
-
-[More](#)
-
-*   [Terminology](/terminology)
-*   [Staking](/staking)
-*   [Integrations](/integrations/exchange)
-*   [Economics](/economics_overview)
-*   [Proposals](/proposals)
-*   [Solana Program Library »](https://spl.solana.com)
-
-[English](#)
-
-*   [English](/api/http)
-*   [Deutsch](/de/api/http)
-*   [Español](/es/api/http)
-*   [Русский](/ru/api/http)
-*   [العربية](/ar/api/http)
-
-[](https://discordapp.com/invite/pquxPsq)[](https://github.com/solana-labs/solana)
-
-Search
+# RPC Methods
 
 *   [JSON RPC API](/api)
 *   [Websocket Methods](/api/websocket)
