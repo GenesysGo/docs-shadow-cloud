@@ -13,7 +13,7 @@ The components, in the order an incoming transaction would see them throughout i
 <figure><img src="../.gitbook/assets/dagger-lifecycle.png" alt=""><figcaption></figcaption></figure>
 
 
-### **Terminology**
+### **Key Terms**
 
 The following list defines a few terms commonly used throughout this document:
 
@@ -104,3 +104,6 @@ In the case of a decentralized storage network like GenesysGo Shadow Drive, D.A.
 Proof-of-storage (PoS) consensus mechanisms like Filecoin and IPFS, on the other hand, allow for decentralized storage by incentivizing participants to store and retrieve data in exchange for cryptocurrency rewards. PoS systems have the potential to offer greater security than centralized storage solutions, as data is distributed across multiple nodes, making it difficult for any single node to compromise the network. However, PoS systems typically require a significant amount of storage capacity and computational resources to participate, making it less accessible to the general public.
 
 In summary, D.A.G.G.E.R. protocol offers a unique consensus mechanism that allows for high throughput, fast finality, and horizontal scalability, making it an attractive choice for decentralized applications like Shadow Drive. PoS, PoW, and PoS consensus mechanisms all offer different benefits and trade-offs, and the choice of which one to use depends on the specific requirements of the application.
+
+### **Terminology used on this page**
+

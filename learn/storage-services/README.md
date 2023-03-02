@@ -16,7 +16,7 @@ The following pages are intended to outline what Shadow Drive is, how it works, 
 
 <details><summary>Please note</summary> 
 
-*This paper assumes some basic knowledge of GenesysGo and the Solana architecture as a whole. If you aren’t familiar with Solana’s architecture, then it is highly recommended to spend some time learning about how Solana validators store “Account State”, what “AccountsDB” is, and what goes into the creation of “on-chain accounts.” Please see the Solana Discord (discord.gg/solana) and check out the dev-resources channel to learn more.*
+*This resource assumes some basic knowledge of GenesysGo and the Solana architecture as a whole. If you aren’t familiar with Solana’s architecture, then it is highly recommended to spend some time learning about how Solana validators store “Account State”, what “AccountsDB” is, and what goes into the creation of “on-chain accounts.” Please see the Solana Discord (discord.gg/solana) and check out the dev-resources channel to learn more.*
 </details>
 
 ## Contents
