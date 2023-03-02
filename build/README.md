@@ -1,38 +1,32 @@
 ---
-description: Actionable links and step by step guides to make using Shadow Cloud services as easy as possible!
+description: Actionable links and step by step guides to make using Shadow Platform services as easy as possible!
 ---
 
-## Shadow Drive
+# **Build using Shadow Drive and RPC**
 
-* **To get started - [Install NodeJS LTS 16.17.1](https://nodejs.org/en/download/)**
-* **Next, install the [Shadow Drive CLI](/build/shadow-drive/README.md)**
+## **Shadow Drive**
+
+### **To get started with the CLI:**  
+1. [Install NodeJS LTS 16.17.1](https://nodejs.org/en/download/)  
+2. Install the [Shadow Drive CLI](/build/shadow-drive/README.md)
+3. Follow the [CLI Guide](/build/shadow-drive/the-cli.md)
     * After installing Solana, **make sure you have both SHDW and SOL in your wallet in order to reserve storage**.
-* **For deeper application integration use the [SDK](shadow-drive/the-sdk.md) availble in both [JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk) as well as [Rust](https://crates.io/crates/shadow-drive-rust) and [Python]()**
 
-    * You can build directly on top of the [API](shadow-drive/the-api.md).
-    * Commmunity mainted UIs and apps currently using Shadow Drives are [here](shadow-drive/community-mainted-uis.md).
+### **To get started with the SDKs:**
+1. [Javascript](https://www.npmjs.com/package/@shadow-drive/sdk), [Rust](https://crates.io/crates/shadow-drive-rust), and [Python](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py) are your choices.
+2. Follow the [SDK Guide](/build/shadow-drive/the-sdk.md)
+    * You can build directly on top of the [API](shadow-drive/the-api.md).  
+    * Tell us about your project in our [Disord](https://discord.gg/genesysgo) so we can publish to the community. See others [here](shadow-drive/community-mainted-uis.md).
 
+## **Shadow RPC**
 
-## Shadow Drive
+### **To get started with Shadow RPC:**
+1. Choose a subscription. The [Premium](shadow-rpc/README.md) subscription is easy, low cost, and a common choice for many. Or you can try a [Free Account](shadow-rpc/reserve-shadow-rpc-account.md)!
+2. Use our [Portal](https://portal.genesysgo.net/premium/reserve) to sign-up. 
+    * **You will need USDC and SOL in your wallet** to complete the reservation. 
+    * Subscriptions to services work on 30 days cycles.
+3. Choose your authentication
+    * We support the easier [API URL key](shadow-rpc/authentication.md) implementation, or if you prefer the [JWT token](shadow-rpc/authentication.md) authentication methods.
 
-**Quickest start** - [Install NodeJS LTS 16.17.1](https://nodejs.org/en/download/) then install the [Shadow Drive CLI](/build/shadow-drive/README.md)
-
-**Javascript SDK** - []()
-
-**Rust SDK**
-
-**Python SDK** 
-
-## Shadow RPC
-
-* **To get started, consider the [Premium](shadow-rpc/README.md) subscription. It is easy, low cost, and a common choice for many.**
-* **Or try a [Free Account](shadow-rpc/reserve-shadow-rpc-account.md) right away and test everything out!**
-    * Our offerings outshine our competitors on rate limits given the cost, and provides automatic global load balancing (GEO-DNS routing) natively.
-
-    * Use our [Portal](https://portal.genesysgo.net/premium/reserve) to sign-up. **You will need USDC and SOL in your wallet** to complete the reservation. Subscriptions to services work on 30 days cycles.
-
-    * [Browse all tiers](shadow-rpc/README.md)
-
-    * We support the quicker [API URL key](shadow-rpc/authentication.md) implemenation, or if you prefer the [JWT token](shadow-rpc/authentication.md) authentication methods so that you can use your paid plan as quickly as possible. 
 
 
