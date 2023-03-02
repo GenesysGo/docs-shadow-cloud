@@ -1,7 +1,8 @@
 # RPC Methods
 
-*   [JSON RPC API Specification](https://www.jsonrpc.org/specification)
-*   [HTTP Methods](#rpc-http-endpoint) 
+*   **[JSON RPC API Specification](https://www.jsonrpc.org/specification)**
+*   **[Solana Javascript SDK](https://solana-labs.github.io/solana-web3.js/)**
+*   **[HTTP Methods](#rpc-http-endpoint)**
     *   [getAccountInfo](#getaccountinfo)
     *   [getBalance](#getbalance)
     *   [getBlockHeight](#getblockheight)
@@ -55,7 +56,7 @@
     *   [requestAirdrop](#requestairdrop)
     *   [sendTransaction](#sendtransaction)
     *   [simulateTransaction](#simulatetransaction)
-*   [Websocket Methods](#websocket-methods)  
+*   **[Websocket Methods](#websocket-methods)**  
     *   [accountSubscribe](#accountsubscribe)
     *   [accountUnsubscribe](#accountunsubscribe)
     *   [logsSubscribe](#logssubscribe)
@@ -66,14 +67,14 @@
     *   [signatureUnsubscribe](#signatureunsubscribe)
     *   [slotSubscribe](#slotsubscribe)
     *   [slotUnsubscribe](#slotunsubscribe)
-*   [Unstable Methods](#blocksubscribe)
+*   **[Unstable Methods](#blocksubscribe)**
     *   [blockSubscribe](#blocksubscribe)
     *   [blockUnsubscribe](#blockunsubscribe)
     *   [slotsUpdatesSubscribe](#slotsupdatessubscribe)
     *   [slotsUpdatesUnsubscribe](#slotsupdatesunsubscribe)
     *   [voteSubscribe](#votesubscribe)
     *   [voteUnsubscribe](#voteunsubscribe)
-*   [Deprecated Methods](#getconfirmedblock)
+*   **[Deprecated Methods](#getconfirmedblock)**
     
 
 JSON RPC HTTP Methods

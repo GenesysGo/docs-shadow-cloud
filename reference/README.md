@@ -2,9 +2,9 @@
 description: Shadow Cloud consolidated resources
 ---
 
-# Shadow Cloud reference documentation includes:
+# **Shadow Cloud reference documentation includes:**
 
-## Shadow Drive
+## **Shadow Drive**
 [CLI](/build/shadow-drive/the-cli.md)
 
 [SDK JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk)
@@ -17,14 +17,14 @@ description: Shadow Cloud consolidated resources
 
 [FAQ](/build/shadow-drive/support-and-faq.md)
 
-## Shadow RPC
+## **Shadow RPC**
 [Guide](/build/shadow-rpc/my-rpcs.md)
 
 [FAQ](/build/shadow-rpc/support-and-faq.md)
 
 [Operator Leaderboard](https://portal.genesysgo.net/nodes/leaderboard)
 
-## Support
+## **Support**
 
 [Change Log](/reference/change-logs.md)
 
@@ -34,9 +34,9 @@ description: Shadow Cloud consolidated resources
 
 [Shadow Glossary]()
 
-## Social Media
+## **Social Media**
 
-[Discord]()
+[Discord](https://discord.gg/genesysgo)
 
 [Twitter]()
 
@@ -44,13 +44,13 @@ description: Shadow Cloud consolidated resources
 
 [Medium Articles](https://genesysgo.medium.com/)
 
-## Community
+## **Community**
 
 [Shadow Ecosystem]()
 
 [Solana Breakpoint Demo 2022]()
 
-## Media Kit
+## **Media Kit**
 
 [Logos and branding](https://www.shadow.cloud/media-kit)
 
