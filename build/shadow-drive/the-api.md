@@ -1,7 +1,5 @@
 ---
-description: >-
-  Shadow Drive exposes an API that you can interact directly without the need of
-  the CLI or SDK. You may build on top of these methods.
+description: Shadow Drive exposes an API that you can interact directly without the need of the CLI or SDK. You may build on top of these methods.
 ---
 
 # The API

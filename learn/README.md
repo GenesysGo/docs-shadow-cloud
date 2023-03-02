@@ -6,7 +6,7 @@ description: An introductions to the Shadow Cloud and it's implementations
 
 ## **Mission**
 
-The Shadow Platform will continually evolve as a stable high-performance cloud platform powered by a decentralized network of operators. Shadow is the only commodity cloud network designed to democratize the hundreds of billions earned each year by traditional cloud platforms without sacrificing performance. Through thoughtful design, the Shadow Cloud will offer multiple service options which leverage our distributed ledger technology. The result is vertically integrated, L1-specific storage/compute greatly improving developer experience. This will also empower the use of distributed ledger technology as-a-service offering builders and businesses more granular options when customizing our solutions to achieve their desired degree of web3 exposures. 
+Our mission is to continually evolve a stable high-performance Shadow Cloud Platform powered by a decentralized network of operators. Shadow is the only commodity cloud network designed to democratize the hundreds of billions earned each year by traditional cloud platforms without sacrificing performance. Through thoughtful design, the Shadow Cloud will offer multiple service options which leverage our distributed ledger technology. The result is vertically integrated, L1-specific storage and compute offering that greatly improves developer experience. This will also empower the use of distributed ledger technology as-a-service offering builders and businesses more granular options when customizing our solutions to achieve their desired degree of web3 exposures. We are going to make it cheaper and easier to build cryptographically native storage applications.
 
 ## **The Basics of Shadow Cloud**
 The Shadow Ecosystem is a series of trustless infrastructure layers focused on decentralizing the web2 stack and adapting it for the web3 world. We call this core technology D.A.G.G.E.R. Powered by Shadow Operators, the network provides builders and businesses with storage and compute solutions to expand their web3 presence, or simply use some of the most highly performant distributed ledger technology for it's low cost and resiliency in business.
@@ -27,6 +27,9 @@ Shadow Drive takes open source software-defined object storage and integrates it
 
 Ultimately, Shadow Drive’s implementation of D.A.G.G.E.R. will produce a permissionless, trustless, decentralized distributed storage network that exists in perpetuity without needing to rely on the direct efforts of a centralized team to grow and expand. It will take time, as the path for open sourcing hardware infrastructure is different from that for software, but Shadow Drive’s final form will be one in which the community drives the direction, enhancements, and future of Shadow Drive.
 
+The current [design]() of Shadow Drive makes embedding storage into applications easy, robust, and natively integrated into the Solana blockchain. Use Shadow Drive to store your 800gb model weights, 100 TB training data and all the generated images your users generate via our [Python](SDK). Or maybe you just want to store your historical geyser plugin output and state, and any relevant program accounts and transactions. If your are building an application in need of back-end storage, secondary storage, or client-facing storage option then our robust [Javascript SDK]() has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
+
+
 **[Start Building on Shadow Drive!]()**
 
 ## **Compute**
@@ -46,6 +49,12 @@ At the foundation of everything are the Shadow Operators who run the nodes that 
 **[Become and Shadow Operator!]()**
 
 ## **Business Use Cases for Shadow Cloud**
+"On-chain" versus "off-chain" is a concept that needs to evolve in order for #web3 tech to meaningfully gain user adoption. #blockchain is type of decentralized ledger technology, but it's not the only DLT anymore. "On-DLT" versus "off-DLT", that's what matters. This is not to take away from the significance of #blockchain or its impact on the world. Instead, it's merely to say that the subset of technologies falling under the DTL umbrella has expanded in the 14 years since blockchain first appeared. The right tool for the right job matters.
+
+Our hope is that Shadow Cloud and D.A.G.G.E.R represent a first step on the path to creating composability in Web3. Not just composability between one blockchain and another... instead, zoom out and think about composability between different all systems under the DLT umbrella. By creating interoperability between Solana and DAGGER the result is a true Web3 cloud platform that doesn't sacrifice speed, stability, and/or security in order to gain trustlessness, decentralization, permissionlessness, and/or censorship resistance.
+
+Decentralized Ledger Technology should be thought of as a superset of technologies that can be selected and assembled in various combinations to satisfy specific user requirements. So what are some of these user requirements? Here are some real world use cases to start:
+
 <details><summary>Storage Use Cases</summary>
 
 * Storage
@@ -59,19 +68,28 @@ At the foundation of everything are the Shadow Operators who run the nodes that 
         * Some information is too important for humanity to lose. From scientific research projects to historical documentation, cryptographic proofs guarantee a dataset’s integrity and availability forever. Imagine if the world’s most important libraries couldn’t be destroyed because the information has been distributed across thousands of unique locations worldwide.
     * Personal & editable storage space
         * With optional mutability, you are free to create and delete files as you see fit. With low costs and many front-end user interfaces to choose from, Shadow Drive can be your personal expanded storage space.
+    * Specialized distributed ledger implementations
+        * The current [design]() of Shadow Drive makes embedding storage into applications easy, robust, and natively integrated into the Solana blockchain. Use Shadow Drive to store your 800gb model weights, 100 TB training data and all the generated images your users generate via our [Python](SDK). Or maybe you just want to store your historical geyser plugin output and state, and any relevant program accounts and transactions. If your are building an application in need of back-end storage, secondary storage, or client-facing storage option then our robust [Javascript SDK]() has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
+
+**[Start Building on Shadow Drive!]()**
 </details>
 <details><summary>Compute Use Cases</summary>
 
 * Compute
     * Application Building
         * Delivery on-chain data to front-end business applications with speed and reliability.
-    * Mobile Development
+    * Custom API Routes
+        * Streamlining integration with Metaplex Digital Asset API which allows for querying both Compressed and
+Uncompressed NFTs
+    * Mobile Development *(future release)*
         * Power back-end mobile remote procedural calls to enable users to interact with their favorite blockchain or web3 mobile application.
-    * Enterprise VMs
-        * White-glove handling of bare metal and virtual provisioning for specialized distributed ledger technology implementations
+    * Enterprise VMs *(future release)*
+        * White-glove handling of bare metal and virtual provisioning for specialized distributed ledger technology implementations.
+
+**[Start Building using Shadow RPC!]()**
 </details>
 
-## **Our Process**
+## **Our Process** (might scrap all of this)
 
 Hit on team values, process
 
@@ -85,7 +103,7 @@ Hit on team values, process
 * list a key thing
 </details>
 
-## **Milestones**
+## **Milestones** (also might scrap)
 
 <details><summary>List</summary>
 

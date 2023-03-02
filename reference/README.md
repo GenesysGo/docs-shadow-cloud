@@ -11,6 +11,8 @@ description: Shadow Cloud consolidated resources
 
 [SDK Rust](https://crates.io/crates/shadow-drive-rust)
 
+[SDK Python](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py)
+
 [API](/build/shadow-drive/the-api.md)
 
 [FAQ](/build/shadow-drive/support-and-faq.md)

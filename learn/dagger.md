@@ -43,6 +43,7 @@ summarize the current graph’s state and choose a peer 1. The communications re
 summary and a chosen peer, sends it to the peer and awaits a sync response, which is forwarded
 to the graph module to be digested.
 
+
 * Incoming Sync Requests
     * An incoming sync request is immediately forward to the graph module. We await a packaged
 sync response containing all events that we have which the peer does not have, which is sent
@@ -87,4 +88,3 @@ The controller module performs reads and writes to the ledger. This is where dif
 of DAGGER will vary the most. For filesystem applications of DAGGER (e.g. Shadow Drive),
 this includes operations like shredding and erasure coding. For other use cases like oracles,
 bridges, and VM orchestration, this is where external calls are made.
-

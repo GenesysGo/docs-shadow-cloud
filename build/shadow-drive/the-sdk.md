@@ -1,12 +1,11 @@
-# The SDK
+# **Shadow Drive SDKs**
 
-### Bake Storage directly into your Web App
+## **Contents**
+* **[Javascript SDK](#getting-started-javascript-sdk)**
+* **[Rust SDK](#getting-started-rust-sdk)**
+* **[Python](#getting-started-python-sdk)**
 
-It's a common design. We need to store data as files and put those files somewhere. Or we want to allow the end user to upload files.&#x20;
-
-The CLI is great and all, but we want to bake this functionality to use the Shadow Drive directly into our app. We got you covered with SDKs in both [JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk) as well as [Rust](https://crates.io/crates/shadow-drive-rust).&#x20;
-
-#### Getting Started
+### **Getting Started: Javascript SDK**
 
 Let's scaffold a React app and add our dependencies
 
@@ -359,7 +358,7 @@ console.log(delFile)
 
 #### Edit a File (aka Replace a file)
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-10-13 at 8.28.30 PM.png" alt=""><figcaption><p>\</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-13 at 8.28.30 PM.png" alt=""><figcaption><p></p></figcaption></figure>
 
 The editFile method is a combo of uploadFile and deleteFile. Let's look at the params:
 
@@ -444,4 +443,99 @@ const acctPubKey = new anchor.web3.PublicKey("EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDF
 const cancelDelStg = await drive.cancelDeleteStorageAccount(acctPubKey,"v2")
 ```
 
-####
+### **Getting Started: Rust SDK**
+
+Available on [crates.io](https://crates.io/crates/shadow-drive-sdk).
+
+#### **Install**
+
+Add the crate to your `Cargo.toml`.
+
+```toml
+shadow-drive-rust = "0.4.0"
+```
+
+#### **Examples**
+
+```rust
+    //init tracing.rs subscriber
+    tracing_subscriber::fmt()
+        .with_env_filter("off,shadow_drive_rust=debug")
+        .init();
+
+    //load keypair from file
+    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+
+    //create shdw drive client
+    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+
+    //derive the storage account pubkey
+    let pubkey = keypair.pubkey();
+    let (storage_account_key, _) =
+        shadow_drive_rust::derived_addresses::storage_account(&pubkey, 0);
+
+    // read files in directory
+    let dir = tokio::fs::read_dir("multiple_uploads")
+    .await
+    .expect("failed to read multiple uploads dir");
+
+    // create Vec of ShadowFile structs for upload
+    let mut files = tokio_stream::wrappers::ReadDirStream::new(dir)
+        .filter(Result::is_ok)
+        .and_then(|entry| async move {
+            Ok(ShadowFile::file(
+                entry
+                    .file_name()
+                    .into_string()
+                    .expect("failed to convert os string to regular string"),
+                entry.path(),
+            ))
+        })
+        .collect::<Result<Vec<_>, _>>()
+        .await
+        .expect("failed to create shdw files for dir");
+
+    // Bytes are also supported
+    files.push(ShadowFile::bytes(
+        String::from("buf.txt"),
+        &b"this is a buf test"[..],
+    ));
+
+    // kick off upload
+    let upload_results = shdw_drive_client
+        .upload_multiple_files(&storage_account_key, files)
+        .await
+        .expect("failed to upload files");
+
+    //profit
+    println!("upload results: {:#?}", upload_results);
+```
+
+
+### **Getting Started: Python SDK**
+
+Check out the [`examples/`](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py) directory for a demonstration of the functionality.
+
+```python
+from shadow_drive import ShadowDriveClient
+
+# Initialize client
+client = ShadowDriveClient("test.json")
+
+# Create account
+size = 2 ** 20
+account, tx = client.create_account("test", size, use_account=True)
+
+# Upload files
+files = ["./files/alpha.txt", "./files/not_alpha.txt"]
+urls = client.upload_files(files)
+
+# Delete files
+client.delete_files(urls)
+
+# Delete account
+client.delete_account(account)
+```
+
+#### **About the [Github Repo](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py)**
+This package uses PyO3 to build a wrapper around the official Shadow Drive Rust SDK. For more information, see the [Rust SDK documentation](https://github.com/GenesysGo/shadow-drive-rust/tree/main/sdk).
