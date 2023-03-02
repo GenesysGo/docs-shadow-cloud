@@ -6,9 +6,19 @@
 
 **[Shadow Drive CLI](https://github.com/GenesysGo/shadow-drive-cli/releases)**
 
-**[Digital Assets RPC Infrastructure](https://github.com/GenesysGo/digital-asset-rpc-infrastructure/releases)**
-
 ## Consolidated Summary
+
+March - Premium RPC Enhancements  
+(pending)
+
+Feb 27, 2023 - Shadow Drive CLI  
+[v0.4.2 - The one that's better faster stronger](https://github.com/GenesysGo/shadow-drive-cli/releases/tag/v0.4.2)
+
+Feb 27, 2023 - Shadow Drive  
+[v3.2.2 - Minor fix](https://github.com/GenesysGo/shadow-drive/releases/tag/v3.2.2)
+
+Feb 27, 2023 - Shadow Drive  
+[v3.2.1 - Faster better stronger](https://github.com/GenesysGo/shadow-drive/releases/tag/v3.2.1)
 
 2 weeks ago - Shadow Drive  
 [v3.1.1 - Fix for Hardware Wallet Transaction Signing](https://github.com/GenesysGo/shadow-drive/releases/tag/v3.1.1)

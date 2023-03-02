@@ -39,16 +39,16 @@ Immutable or mutable data, you choose. We don't take that choice away from you.
     * This is a big one... developers are given all the tools they need to comply with GDPR and can show records that prove that they have deleted a user's personal data. Legal grey areas and loopholes are a risk to your business, $SHDW Drive helps you stay safe. For example, in the case of a project or business needing to produce records to prove GDPR compliance with a user's request to delete personal data... all the records to prove GDPR compliance live on-chain and have been trustlessly verified by the #Solana validator network. $SHDW Drive then encrypts and erasure codes the data and the fragments are algorithmically distributed in triplicate across the distributed network. Everything is handled trustlessly via smart contract and requires signed #Solana transactions ensuring a publicly verifiable on-chain log.
 
 3) **Deterministic Naming Structure!**
-    * Did you know that when you upload files to $SHDW Drive you will know the URL for your file before the upload is complete?
-In combination with your wallet's pub key and the file name you choose your BUIDL doesn't have to stop to wait for a URL.
+    * Did you know that when you upload files to Shadow Drive you will know the URL for your file before the upload is complete? In combination with your wallet's pub key and the file name you choose your building doesn't have to stop to wait for a URL. A deterministic naming structure eliminates the need for a central index, which can become a bottleneck as more objects are added to the system. This structure also makes it easier to scale the system, since all objects are named in the same way. Finally, a deterministic naming structure can be used to speed up queries, since the exact location of an object is known and can be easily located.
 
 4) **Community designed UI's!**
     * The Solana community is incredibly talented and have really shown this by designing multiple user interface's that make uploading files to $SHDW Drive easy for non-developers. Web3 online storage should be accessible to everyone, not just developers.
 
 5) **Great tools and easy to use!**
-    * Shadow Drive has a great CLI and comes with a robust SDK (JS or Rust). Both the core team and community are constantly improving the developer experience.
+    * Shadow Drive has a great CLI and comes with a robust SDK (JS, Rust and python). This more easily enables applications to embed Storage directly into their Web App allow the end user to upload files. The CLI is great and all, but we want to bake this functionality to use the Shadow Drive directly into our app. We got you covered with SDKs in both [JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk) as well as [Rust](https://crates.io/crates/shadow-drive-sdk) and [Python](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py). The SDK code is open source and so both the core team and community are constantly improving the developer experience and the Shadow Drive tool suite. 
 
 6) **Performance & Scalability**
     * Shadow Drive is just as fast if not faster than standard cloud storage providers and has been design for massive horizontal scalability in preparation for rapid mass adoption.
 
 **[Get started with Shadow Drive!](/build/shadow-drive/README.md)**
+
