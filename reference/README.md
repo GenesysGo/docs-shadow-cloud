@@ -30,9 +30,9 @@ description: Shadow Cloud consolidated resources
 
 [Version releases](/reference/change-logs.md)
 
-[Technical Support]()
+[Technical Support](https://discord.gg/genesysgo)
 
-[Shadow Glossary]()
+[Shadow Glossary](/reference/shadow-glossary.md)
 
 ## **Social Media**
 
@@ -46,9 +46,9 @@ description: Shadow Cloud consolidated resources
 
 ## **Community**
 
-[Shadow Ecosystem]()
+[Shadow Ecosystem](/reference/shadow-uis-and-ecosystem.md)
 
-[Solana Breakpoint Demo 2022]()
+[Solana Breakpoint Demo 2022](/reference/breakpoint-2022-demo.md)
 
 ## **Media Kit**
 
