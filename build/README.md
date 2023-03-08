@@ -18,15 +18,7 @@ description: Actionable links and step by step guides to make using Shadow Platf
     * You can build directly on top of the [API](shadow-drive/the-api.md).  
     * Tell us about your project in our [Disord](https://discord.gg/genesysgo) so we can publish to the community. See others [here](shadow-drive/community-mainted-uis.md).
 
-## **Shadow RPC**
+### **(Coming Soon) Enhanced API Subscription Access**
+* Access a more robust API with S3 compatibly secrets/keys to more deeply integrate Shadow Drive into your application's SDK. 
 
-### **To get started with Shadow RPC:**
-1. Choose a subscription. The [Premium](shadow-rpc/README.md) subscription is easy, low cost, and a common choice for many. Or you can try a [Free Account](shadow-rpc/reserve-shadow-rpc-account.md)!
-2. Use our [Portal](https://portal.genesysgo.net/premium/reserve) to sign-up. 
-    * **You will need USDC and SOL in your wallet** to complete the reservation. 
-    * Subscriptions to services work on 30 days cycles.
-3. Choose your authentication
-    * We support the easier [API URL key](shadow-rpc/authentication.md) implementation, or if you prefer the [JWT token](shadow-rpc/authentication.md) authentication methods.
-
-
-
+* Virtually mount Shadow Drive to power your AI training models and LLMs. 
