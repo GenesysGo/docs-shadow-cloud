@@ -33,29 +33,35 @@ The current [design]() of Shadow Drive makes embedding storage into applications
 **[Start Building on Shadow Drive!]()**
 
 ## **Compute**
-Built on a network of independent operators, Shadow’s Solana RPCs truly decentralize your back-end API with payments for compute going directly to ecosystem operators. Upgrade your back-end API to fit a Web3 ethos while still benefiting from resiliency, performance, and affordability.
-
-**[Start Building using Shadow RPC!]()**
-
-Utilizing DAGGER as an orchestration / oracle protocol, we are capable of networking together decentralized commodity clouds (Shadow Operator virtual machines) under a frond end UI/UX experience that effectively decentralizes virtual machine provisioning. This is the same as Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operates trustlessly by individuals / entities who are Shadow Operators! This is currently in proof-of-concept and under development for the future. We revealed this technology as the Solana Breakpoint 2022 event.
+Utilizing DAGGER as an orchestration / oracle protocol, we are capable of networking together decentralized commodity clouds (Shadow Operator virtual machines) under a frond end UI/UX experience that effectively decentralizes virtual machine provisioning. This is similar in concept as an Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operates trustlessly by individuals / entities who are Shadow Operators! This is currently in proof-of-concept and under development for the future. We revealed this technology as the Solana Breakpoint 2022 event.
 
 **[Check out the Shadow VMs Demo from Breakpoint]()**
 
 ## **Shadow Operators**
+**(currently in private alpha)**
+
 Shadow Operators are the decentralized backbone of the Shadow commodity cloud. Operators lease their high-performance compute, storage, and bandwidth. Businesses, projects, and/or individual developers can trustlessly provision network resources. User payments are sent directly to Shadow Operators. Shadow Operators who ensure their resources are always available and performant earn more. Shadow Operators who are inconsistent earn less.
 
 At the foundation of everything are the Shadow Operators who run the nodes that power the Shadow Platform. Operators can connect new nodes to the network, manage their existing servers, or view the overall status of other Shadow Operators – all through the one easy-to-use portal.
 
-**[Become and Shadow Operator!]()**
+Currently in development are a series of Shadow Operator node roles including resolvers, ingestors, storers, cachers. These roles work together under the orchestration of DAGGER to form a permissionless distributed platform that support both Shadow Cloud services and mobile storage being developed.
 
-## **Business Use Cases for Shadow Cloud**
+## **Roadmap**
+There are three areas we focus our developments:
+* The Shadow Drive implementation of DAGGER
+* The Mobile implementation of DAGGER and Shadow Drive
+* The combination of the above two to support AI evolution
+
+## **Putting it all together**
 "On-chain" versus "off-chain" is a concept that needs to evolve in order for #web3 tech to meaningfully gain user adoption. #blockchain is type of decentralized ledger technology, but it's not the only DLT anymore. "On-DLT" versus "off-DLT", that's what matters. This is not to take away from the significance of #blockchain or its impact on the world. Instead, it's merely to say that the subset of technologies falling under the DTL umbrella has expanded in the 14 years since blockchain first appeared. The right tool for the right job matters.
 
 Our hope is that Shadow Cloud and D.A.G.G.E.R represent a first step on the path to creating composability in Web3. Not just composability between one blockchain and another... instead, zoom out and think about composability between different all systems under the DLT umbrella. By creating interoperability between Solana and DAGGER the result is a true Web3 cloud platform that doesn't sacrifice speed, stability, and/or security in order to gain trustlessness, decentralization, permissionlessness, and/or censorship resistance.
 
 Decentralized Ledger Technology should be thought of as a superset of technologies that can be selected and assembled in various combinations to satisfy specific user requirements. So what are some of these user requirements? Here are some real world use cases to start:
 
-<details><summary>Storage Use Cases</summary>
+<details><summary> 
+Shadow Cloud Use Cases
+</summary>
 
 * Storage
     * Web hosting & content management
@@ -66,53 +72,30 @@ Decentralized Ledger Technology should be thought of as a superset of technologi
         * By 3x replicating and erasure coding encrypted records across a decentralized network, Shadow Drive can preserve valuable records from bad actors.
     * Datasets
         * Some information is too important for humanity to lose. From scientific research projects to historical documentation, cryptographic proofs guarantee a dataset’s integrity and availability forever. Imagine if the world’s most important libraries couldn’t be destroyed because the information has been distributed across thousands of unique locations worldwide.
+    * AI implementation
+        * From training models, to backing up data sets, to virtually mounting the storage accounts, Shadow Drive will offer fast, reliable, transparent methods to support many AI data-processing applications by lowering costs of housing huge amounts of data and offering extremely high read/write more cheaply than other decentralized competitors.
     * Personal & editable storage space
         * With optional mutability, you are free to create and delete files as you see fit. With low costs and many front-end user interfaces to choose from, Shadow Drive can be your personal expanded storage space.
     * Specialized distributed ledger implementations
         * The current [design]() of Shadow Drive makes embedding storage into applications easy, robust, and natively integrated into the Solana blockchain. Use Shadow Drive to store your 800gb model weights, 100 TB training data and all the generated images your users generate via our [Python](SDK). Or maybe you just want to store your historical geyser plugin output and state, and any relevant program accounts and transactions. If your are building an application in need of back-end storage, secondary storage, or client-facing storage option then our robust [Javascript SDK]() has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
-
-**[Start Building on Shadow Drive!]()**
-</details>
-<details><summary>Compute Use Cases</summary>
-
 * Compute
-    * Application Building
+    * Application Building *(future release)*
         * Delivery on-chain data to front-end business applications with speed and reliability.
-    * Custom API Routes
-        * Streamlining integration with Metaplex Digital Asset API which allows for querying both Compressed and
-Uncompressed NFTs
     * Mobile Development *(future release)*
         * Power back-end mobile remote procedural calls to enable users to interact with their favorite blockchain or web3 mobile application.
     * Enterprise VMs *(future release)*
         * White-glove handling of bare metal and virtual provisioning for specialized distributed ledger technology implementations.
 
-**[Start Building using Shadow RPC!]()**
+**[Start Building on Shadow Drive!]()**
 </details>
 
-## **Our Process** (might scrap all of this)
+## **Our Team & Milestone** (might scrap all of this)
 
-Hit on team values, process
-
-<details><summary>Learn more about our history</summary>
-
-* a quick who we are and team
-* where we started
-* our process
-* list a key thing
-* list a key thing
-* list a key thing
-</details>
-
-## **Milestones** (also might scrap)
-
-<details><summary>List</summary>
+We have a talented team of senior professionals across multiple fields including software sciences, distributed ledger specialists, product development, systems and cloud engineering, business and finance. We are focused on product quality, reliable, and speed to production. Together as a team we have achieved a lot over the last two years. Some but not all of these milestones include:
 
 * list a key thing
 * list a key thing
 * list a key thing
 
-</details>
-
-Versions and fixes are kept up to date as we continually improve quality, function, and security of the Shadow codebase.
-
+We are eager to continue pushing forward our goals with excitement and focus. As we look forward and execute on our agenda, continueing to support the ecosystem of Shadow builders is a top priority. With great community engagement and feedback we frequently push versions and fixes. See how we continually improve quality, function, and security of the Shadow codebase here:
 **[Review change logs](/reference/change-logs.md)**
