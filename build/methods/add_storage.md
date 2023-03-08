@@ -1,16 +1,8 @@
+---
+layout: landing
+---
+
 # add\_storage
-
-### Example
-
-{% code overflow="wrap" lineNumbers="true" %}
-```javascript
-const accts = await drive.getStorageAccounts("v2")
-let acctPubKey = new anchor.web3.PublicKey(accts[1].publicKey)
-const addStgResp = await drive.addStorage(acctPubKey,"10MB","v2")
-```
-{% endcode %}
-
-
 
 {% swagger method="post" path="" baseUrl="" summary="Adds storage capacity to the specified StorageAccount." expanded="true" %}
 {% swagger-description %}
@@ -35,3 +27,11 @@ The additional amount of storage you want to add. E.g if you have an existing St
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+### Example
+
+```javascript
+const accts = await drive.getStorageAccounts("v2")
+let acctPubKey = new anchor.web3.PublicKey(accts[1].publicKey)
+const addStgResp = await drive.addStorage(acctPubKey,"10MB","v2")
+```
