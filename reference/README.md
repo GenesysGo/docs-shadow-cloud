@@ -17,13 +17,6 @@ description: Shadow Cloud consolidated resources
 
 [FAQ](/build/shadow-drive/support-and-faq.md)
 
-## **Shadow RPC**
-[Guide](/build/shadow-rpc/my-rpcs.md)
-
-[FAQ](/build/shadow-rpc/support-and-faq.md)
-
-[Operator Leaderboard](https://portal.genesysgo.net/nodes/leaderboard)
-
 ## **Support**
 
 [Change Log](/reference/change-logs.md)
