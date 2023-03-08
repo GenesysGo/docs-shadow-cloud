@@ -1,10 +1,10 @@
 ---
-description: The topics in this section help you get started using Shadow Drive decentralized storage
+description: The topics in this section help you get started using Shadow Drive storage
 ---
 
-# Build using Shadow Drive
+# Install Shadow Drive
 
-## Get Started
+## Getting Started
 
 Prerequisites: Install [NodeJS LTS 16.17.1](https://nodejs.org/en/download/) on any OS. 
 

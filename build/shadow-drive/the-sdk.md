@@ -1,11 +1,10 @@
-# **Shadow Drive SDKs**
-
-## **Contents**
+# **Contents**
 * **[Javascript SDK](#getting-started-javascript-sdk)**
 * **[Rust SDK](#getting-started-rust-sdk)**
-* **[Python](#getting-started-python-sdk)**
+* **[Python SDK](#getting-started-python-sdk)**
 
-### **Getting Started: Javascript SDK**
+# **Javascript/TS**
+## **Getting Started: Javascript SDK**
 
 Let's scaffold a React app and add our dependencies
 
@@ -443,7 +442,8 @@ const acctPubKey = new anchor.web3.PublicKey("EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDF
 const cancelDelStg = await drive.cancelDeleteStorageAccount(acctPubKey,"v2")
 ```
 
-# **Getting Started: Rust SDK**
+# **Rust**
+## **Getting Started: Rust SDK**
 
 Available on [crates.io](https://crates.io/crates/shadow-drive-sdk).
 
@@ -519,7 +519,6 @@ shadow-drive-rust = "0.4.0"
 ```
 
 ## **Rust Methods**
-
 
 ### **`add_immutable_storage`**
 Adds storage capacity to the specified immutable` StorageAccount`. This will fail if the `StorageAccount` is not immutable.
