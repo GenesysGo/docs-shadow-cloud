@@ -1,10 +1,10 @@
 ---
-layout: landing
+layout: docs
 ---
 
-# add\_storage
+# add\_storage <span class="iconify" data-icon="Post" data-inline="false"></span>
 
-{% swagger method="post" path="" baseUrl="" summary="Adds storage capacity to the specified StorageAccount." expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.com/" summary="Adds storage capacity to the specified StorageAccount." expanded="true" %}
 {% swagger-description %}
 
 {% endswagger-description %}
