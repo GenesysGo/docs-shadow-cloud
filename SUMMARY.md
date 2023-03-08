@@ -12,7 +12,7 @@
   * [Install Shadow Drive](build/shadow-drive/README.md)
   * [CLI](build/shadow-drive/the-cli.md)
   * [SDKs](build/shadow-drive/the-sdk.md)
-  * [Methods]()
+  * [Methods](build/shadow-drive/methods.md)
   * [API](build/shadow-drive/the-api.md)
   * [FAQ](build/shadow-drive/support-and-faq.md)
   * [Community Maintained UIs](build/shadow-drive/community-mainted-uis.md)
