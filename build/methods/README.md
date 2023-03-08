@@ -1,8 +1,12 @@
+---
+coverY: 0
+---
+
 # Methods
 
 ## **Contents**
 
-* [**add\_immutable\_storage**](methods.md#add\_immutable\_storage)
+* [**add\_immutable\_storage**](./#add\_immutable\_storage)
 
 ## **ad**
 
