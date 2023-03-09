@@ -1,14 +1,6 @@
 # Build
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Quick Start CLI</strong></td><td></td><td></td></tr><tr><td></td><td><strong>Javascript SDK</strong></td><td></td><td></td></tr><tr><td></td><td><strong>Rust SDK</strong></td><td></td><td></td></tr><tr><td>testing</td><td></td><td></td><td><a href="../.gitbook/assets/Screen Shot 2022-10-03 at 3.52.29 PM.png">Screen Shot 2022-10-03 at 3.52.29 PM.png</a></td></tr></tbody></table>
-
-{% swagger method="get" path="" baseUrl="" summary="" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-{% endswagger %}
-
-**Shadow Drive**
+<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><strong>Quick Start: The CLI</strong></td><td align="center"><strong></strong></td><td align="center">Set up in miuntes</td></tr><tr><td align="center"><strong>API</strong></td><td align="center"><strong></strong></td><td align="center">Instant interaction</td></tr><tr><td align="center"><strong>SDKs</strong></td><td align="center"><strong></strong></td><td align="center">Advanced applications</td></tr></tbody></table>
 
 ### **To get started with the CLI:**
 

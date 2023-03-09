@@ -6,6 +6,8 @@ description: >-
 
 # GET STARTED
 
+<table data-view="cards"><thead><tr><th></th><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Learn</strong></td><td></td><td><a href="learn/">learn</a></td></tr><tr><td></td><td align="center">Build</td><td></td><td><a href="build/">build</a></td></tr><tr><td></td><td align="center"><strong>Reference</strong></td><td></td><td><a href="reference/">reference</a></td></tr></tbody></table>
+
 This resource will be updated over time and the community should feel empowered to submit PRs for edits they would like to see or information they feel has been left out.
 
 Please feel free to submit edits (as PRs) here - https://github.com/GenesysGo/docs-shadow-cloud
@@ -13,10 +15,8 @@ Please feel free to submit edits (as PRs) here - https://github.com/GenesysGo/do
 ## How this resource is organized
 
 * [**Learn**](learn/)
-  * This section explains our how we are combining powerful web2 baremetal with decentralized solutions to create superior technologies. This section is for those interestered in undertanding the value we bring to developers and enterprises in need of distributed ledger compute and storage solutions.
+  * This section explains our how we are combining powerful baremetal with decentralized solutions to create superior technologies. This section is for those interested in understanding the value we bring to developers and enterprises in need of distributed ledger compute and storage solutions.
 * [**Build**](build/)
-  * This section focuses on easy and actionable information to help you quickly get started building. Step by step guides, and line by line CLI instruction offer developers the quickest path to working concepts. We are constantly improvig this section to make sure utilizing our solutions is as easy as possibele.
-* [**Operate**](broken-reference)
-  * The operator section focuses specifically on confguring bare metal hosts to contribute compute and/or storage to the Shadow Cloud network. This community of builders and operators form the decentralized spine powering our current, and exciting technologies planned for release later this year.
+  * This section focuses on easy and actionable information to help you quickly get started building. Step by step guides, and line by line CLI instruction offer developers the quickest path to working concepts. We are constantly improving this section to make sure utilizing our solutions is as easy as possible.
 * [**Reference**](reference/)
-  * Much like an appendix, the refernce section is a quick navigation hub for key resources. Our media kit, social media presence, and more can be found here.
+  * Much like an appendix, the reference section is a quick navigation hub for key resources. Our media kit, social media presence, and more can be found here.

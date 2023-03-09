@@ -11,7 +11,7 @@
 * [Build](build/README.md)
   * [Install Shadow Drive](build/shadow-drive/README.md)
   * [CLI](build/shadow-drive/the-cli.md)
-  * [SDK](build/shadow-drive/the-sdk.md)
+  * [SDKs](build/shadow-drive/the-sdk.md)
     * [Javascript](build/shadow-drive/sdk-javascript.md)
     * [Rust](build/shadow-drive/sdk-rust.md)
     * [Python](build/shadow-drive/sdk-python.md)
