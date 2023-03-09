@@ -1,9 +1,3 @@
----
-description: >-
-  Actionable links and step by step guides to make using Shadow Platform
-  services as easy as possible!
----
-
 # Build
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><strong>Quick Start CLI</strong></td><td></td><td></td></tr><tr><td></td><td><strong>Javascript SDK</strong></td><td></td><td></td></tr><tr><td></td><td><strong>Rust SDK</strong></td><td></td><td></td></tr><tr><td>testing</td><td></td><td></td><td><a href="../.gitbook/assets/Screen Shot 2022-10-03 at 3.52.29 PM.png">Screen Shot 2022-10-03 at 3.52.29 PM.png</a></td></tr></tbody></table>
