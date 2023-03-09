@@ -1,6 +1,17 @@
-# Javascript
+# Javascript Methods
 
-## ad
+## addStorage
+
+
+## Definition
+
+`addStorage` is a method of the `ShadowDrive` class defined in `index.ts` at line 121. It takes three parameters: `key`, `size`, and `version` and returns a `Promise<ShadowDriveResponse>` with the confirmed transaction ID.
+
+## Parameters
+
+- `key`: `PublicKey` - Public Key of the existing storage to increase size on
+- `size`: `string` - Amount of storage you are requesting to add to your storage account. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently.
+- `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
 
 {% tabs %}
 {% tab title="Example" %}
@@ -26,5 +37,3 @@ const addStgResp = await drive.addStorage(acctPubKey,"10MB","v2"ca
 {% endcode %}
 {% endtab %}
 {% endtabs %}
-
-In the example code above, the `addStorage` method is used to allocate 10MB of storage capacity to the account referenced by `accts[1].publicKey` using version 2 of the Drive program. The response is stored in the `addStgResp` variable.
