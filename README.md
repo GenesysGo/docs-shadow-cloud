@@ -1,12 +1,43 @@
 ---
 description: >-
-  The Shadow Book serves as the consolidated resource for anyone exploring or
-  trying to build on top of the Shadow Ecosystem.
+  This consolidated resource is for anyone exploring and developing on top of the Shadow Cloud platform.
 ---
 
 # GET STARTED
 
-<table data-view="cards"><thead><tr><th></th><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Learn</strong></td><td></td><td><a href="learn/">learn</a></td></tr><tr><td></td><td align="center">Build</td><td></td><td><a href="build/">build</a></td></tr><tr><td></td><td align="center"><strong>Reference</strong></td><td></td><td><a href="reference/">reference</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Learn</strong></td><td></td><td><a href="learn/">learn</a></td></tr><tr><td></td><td align="center"><strong>Build</strong></td><td></td><td><a href="build/">build</a></td></tr><tr><td></td><td align="center"><strong>Reference</strong></td><td></td><td><a href="reference/">reference</a></td></tr></tbody></table>
+
+<table data-view="cards">
+  <thead>
+    <tr>
+      <th></th>
+      <th align="center"></th>
+      <th></th>
+      <th data-hidden data-card-target data-type="content-ref"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td align="center"><strong style="font-size: 24px;">Learn</strong></td>
+      <td></td>
+      <td><a href="learn/" style="font-size: 24px;">learn</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td align="center"><strong style="font-size: 24px;">Build</strong></td>
+      <td></td>
+      <td><a href="build/" style="font-size: 24px;">build</a></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td align="center"><strong style="font-size: 24px;">Reference</strong></td>
+      <td></td>
+      <td><a href="reference/" style="font-size: 24px;">reference</a></td>
+    </tr>
+  </tbody>
+</table>
+
 
 This resource will be updated over time and the community should feel empowered to submit PRs for edits they would like to see or information they feel has been left out.
 
