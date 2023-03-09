@@ -19,19 +19,19 @@ description: >-
   <tbody>
     <tr>
       <td></td>
-      <td align="center"><strong style="font-size: 24px;">Learn</strong></td>
+      <td align="center"><strong><span style="font-size: 24px;">Learn</span></strong></td>
       <td></td>
       <td><a href="learn/" style="font-size: 24px;">learn</a></td>
     </tr>
     <tr>
       <td></td>
-      <td align="center"><strong style="font-size: 24px;">Build</strong></td>
+      <td align="center"><strong><span style="font-size: 24px;">Build</span></strong></td>
       <td></td>
       <td><a href="build/" style="font-size: 24px;">build</a></td>
     </tr>
     <tr>
       <td></td>
-      <td align="center"><strong style="font-size: 24px;">Reference</strong></td>
+      <td align="center"><strong><span style="font-size: 24px;">Reference</span></strong></td>
       <td></td>
       <td><a href="reference/" style="font-size: 24px;">reference</a></td>
     </tr>
