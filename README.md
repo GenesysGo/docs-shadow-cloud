@@ -7,41 +7,6 @@ description: >-
 
 <table data-view="cards"><thead><tr><th></th><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Learn</strong></td><td></td><td><a href="learn/">learn</a></td></tr><tr><td></td><td align="center"><strong>Build</strong></td><td></td><td><a href="build/">build</a></td></tr><tr><td></td><td align="center"><strong>Reference</strong></td><td></td><td><a href="reference/">reference</a></td></tr></tbody></table>
 
-<head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<table data-view="cards">
-  <thead>
-    <tr>
-      <th></th>
-      <th align="center"></th>
-      <th></th>
-      <th data-hidden data-card-target data-type="content-ref"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td></td>
-      <td align="center"><strong><span class="big-text">Learn</span></strong></td>
-</strong></td>
-      <td></td>
-      <td><a href="learn/" style="font-size: 24px;">learn</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td align="center"><strong><span class="big-text">Build</span></strong></td>
-      <td></td>
-      <td><a href="build/" style="font-size: 24px;">build</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td align="center"><strong><span class="big-text">Reference</span></strong></td>
-      <td></td>
-      <td><a href="reference/" style="font-size: 24px;">reference</a></td>
-    </tr>
-  </tbody>
-</table>
-
 
 This resource will be updated over time and the community should feel empowered to submit PRs for edits they would like to see or information they feel has been left out.
 
