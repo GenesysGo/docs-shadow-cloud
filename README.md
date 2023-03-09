@@ -22,20 +22,20 @@ description: >-
   <tbody>
     <tr>
       <td></td>
-      <td align="center"><strong><span class="my-text">Learn</span></strong></td>
+      <td align="center"><strong><span class="big-text">Learn</span></strong></td>
 </strong></td>
       <td></td>
       <td><a href="learn/" style="font-size: 24px;">learn</a></td>
     </tr>
     <tr>
       <td></td>
-      <td align="center"><strong><span class="my-text">Build</span></strong></td>
+      <td align="center"><strong><span class="big-text">Build</span></strong></td>
       <td></td>
       <td><a href="build/" style="font-size: 24px;">build</a></td>
     </tr>
     <tr>
       <td></td>
-      <td align="center"><strong><span class="my-text">Reference</span></strong></td>
+      <td align="center"><strong><span class="big-text">Reference</span></strong></td>
       <td></td>
       <td><a href="reference/" style="font-size: 24px;">reference</a></td>
     </tr>
