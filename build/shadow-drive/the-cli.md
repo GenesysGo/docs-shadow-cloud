@@ -1,14 +1,21 @@
 # **Contents**
 * **[Install Shadow Drive CLI](#install-the-shadow-drive-cli)**
-* **[Install Solana CLI](#install-the-solana-cli)**
+    * **[Video Walthrough](#video-guide-and-walkthrough)**
+    * **[Install Solana CLI](#install-the-solana-cli)**
     * **[Create a Storage Account](#create-a-storage-account)**
     * **[Upload a FIle](#upload-file-to-shadow-drive)**
-* **[Rust CLI - Experimental!](#the-rust-cli)**
+    * **[Upload Multiple FIles](#upload-multiple-files-to-shadow-drive)**
+    * **[Edit a File](#edit-a-file-aka-overwrite-a-file-aka-replace-a-file)**
+    * **[Delete a File](#delete-a-file)**
+    * **[Add Storage](#add-storage-to-storage-account)**
+    * **[Reduce Storage](#reduce-storage-account-size)**
+    * **[Make File Immutable](#make-storage-account-immutable)**
+* **[Install Rust CLI - Experimental!](#the-rust-cli)**
 
 ## **Introduction**
 The CLI is the easiest way to interact with Shadow Drive. You can use your favorite shell scripting language, or just type the commands one at a time. For test driving Shadow Drive, this is the best way to get started.
 
-## **Install the Shadow Drive CLI**
+# **Install the Shadow Drive CLI**
 
 Prerequisites: Install [NodeJS LTS 16.17.1](https://nodejs.org/en/download/) on any OS.
 
@@ -18,12 +25,9 @@ Then run the following command
 npm install -g @shadow-drive/cli
 ```
 
-#### **Also enjoy this video-based guide if docs aren't quite your style**
-<details><summary>Video Install Guide</summary>
-{% embed url="https://www.youtube.com/watch?v=MfSuzFDDQ30" %}
-</details>
+### **[Video Guide and Walkthrough](https://www.youtube.com/watch?v=MfSuzFDDQ30)**
 
-## **Install the Solana CLI**
+### **Install the Solana CLI**
 
 In order to interact with Shadow Drive, we're going to need a Solana wallet and CLI to interact with the Solana blockchain. 
 
