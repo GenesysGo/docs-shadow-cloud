@@ -2,9 +2,9 @@
 description: A resource for those exploring GenesysGo's Shadow Drive as a storage solution.
 ---
 
-# Shadow Drive Overview
+# **Shadow Drive Overview**
 
-The Shadow Drive is a new approach to on-chain storage and is built specifically for the Solana blockchain, while retaining the ability to become a poly-chain service in the future. Other web3 storage providers have attempted to integrate with Solana in the past and have had only marginal success. Shadow Drive solves this by integrating directly with the Proof of History consensus mechanism, passing on-chain events for consensus approval by the Solana validator network which prove the continued existence and integrity of the stored data.
+The Shadow Drive is a new approach to on-chain storage and is currently built specifically for the Solana blockchain, while retaining the ability to become a poly-chain service in the future. Other web3 storage providers have attempted to integrate with Solana in the past and have had only marginal success. Shadow Drive solves this by integrating directly with the Proof of History consensus mechanism, passing on-chain events for consensus approval by the Solana validator network which prove the continued existence and integrity of the stored data.
 
 The idea for Shadow Drive was founded on the premise that the Solana network is largely misunderstood in terms of what it was built to achieve. By understanding what it truly means to be the world’s most performant state machine, you realize that Solana can be used to reach consensus and maintain state on nearly anything.
 
@@ -19,12 +19,12 @@ The following pages are intended to outline what Shadow Drive is, how it works, 
 *This resource assumes some basic knowledge of GenesysGo and the Solana architecture as a whole. If you aren’t familiar with Solana’s architecture, then it is highly recommended to spend some time learning about how Solana validators store “Account State”, what “AccountsDB” is, and what goes into the creation of “on-chain accounts.” Please see the Solana Discord (discord.gg/solana) and check out the dev-resources channel to learn more.*
 </details>
 
-## Contents
- * **[Design]()**
+## **Contents**
+ * **[Design](/learn/storage-services/design.md)**
     * Learn how the Shadow Drive is built to support an entire ecosystem of new developers
- * **[On-Chain Events as Proof of Storage]()**
+ * **[On-Chain Events as Proof of Storage](/learn/storage-services/on-chain-proofs.md)**
     * Learn how the Shadow Drive utilizes the world’s most performant state machine to ensure the validity and integrity of the state of its storage network via on-chain change events.
- * **[Smart-Contracts]()**
+ * **[Smart-Contracts](/learn/storage-services/smart-contracts.md)**
     * Learn how smart-contracts securely interact and orchestrate client storage
 
 ## Why use Shadow Drive?
@@ -45,10 +45,10 @@ Immutable or mutable data, you choose. We don't take that choice away from you.
     * The Solana community is incredibly talented and have really shown this by designing multiple user interface's that make uploading files to $SHDW Drive easy for non-developers. Web3 online storage should be accessible to everyone, not just developers.
 
 5) **Great tools and easy to use!**
-    * Shadow Drive has a great CLI and comes with a robust SDK (JS, Rust and python). This more easily enables applications to embed Storage directly into their Web App allow the end user to upload files. The CLI is great and all, but we want to bake this functionality to use the Shadow Drive directly into our app. We got you covered with SDKs in both [JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk) as well as [Rust](https://crates.io/crates/shadow-drive-sdk) and [Python](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py). The SDK code is open source and so both the core team and community are constantly improving the developer experience and the Shadow Drive tool suite. 
+    * Shadow Drive has a great CLI and comes with a robust SDK (JS, Rust and python). This more easily enables applications to embed Storage directly into their Web App allow the end user to upload files. The CLI is great and all, but we want to bake this functionality to use the Shadow Drive directly into our app. We got you covered with SDKs in both [JavaScript/Typescript](/build/shadow-drive/sdk-javascript.md) as well as [Rust](/build/shadow-drive/sdk-rust.md) and [Python](/build/shadow-drive/sdk-python.md). The SDK code is open source and so both the core team and community are constantly improving the developer experience and the Shadow Drive tool suite. 
 
 6) **Performance & Scalability**
     * Shadow Drive is just as fast if not faster than standard cloud storage providers and has been design for massive horizontal scalability in preparation for rapid mass adoption.
 
-**[Get started with Shadow Drive!](/build/shadow-drive/README.md)**
+### **[Get started with Shadow Drive!](/build/shadow-drive/README.md)**
 

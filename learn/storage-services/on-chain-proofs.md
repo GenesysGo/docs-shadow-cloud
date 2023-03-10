@@ -6,13 +6,11 @@ What do I mean by “state”? Let’s use computers as an example… Everything
 
 The next thing we need to know is that Solana is unique in the way it structures everything as an “account.” This is important terminology, so here’s the definition:
 
-![https://docs.solana.com/terminology](<../../.gitbook/assets/>)
+![https://docs.solana.com/terminology](<../../.gitbook/assets/terminology.png>)
 
 Thinking back to state, the history of the accounts on Solana is completely irrelevant to their current state. Why? Because all the events that took place in order to arrive at the current state were reviewed by the Proof of History consensus mechanism (i.e. the Solana Validator network) and deemed to be valid.
 
-Tying everything together, what Solana is really built to achieve and maintain consensus on is the state of all accounts on the network. **It is a state machine.** In fact, **“the world’s most performant global state machine”** is exactly how Solana is described in its Twitter bio.
-
-![https://twitter.com/solana](<../../.gitbook/assets/>)
+Tying everything together, what Solana is really built to achieve and maintain consensus on is the state of all accounts on the network. **It is a state machine.** In fact, **“the world’s most performant global state machine”** is exactly how Solana describes itself.
 
 The current state of Solana is already hashed, but then it is shredded and decentralized across all the validators of the network. Effectively what this means is that Solana can recreate the current state of every piece of data on the blockchain… every wallet address, every program that’s been deployed, the location of every single token… at a moment’s notice… **without** needing to know anything about the historical transactions that led up to the current state.
 
@@ -29,4 +27,4 @@ It’s easiest to explain in real terms, so here’s an example… Let’s say y
 
 Under this design, the Shadow Drive smart contract only recognizes signatures from the wallet associated with the stored data. In this example, any transaction request to change the data listed as immutable in Shadow Drive would fail to be validated by the Solana validators. This is because the smart contract would not pass through any instructions to edit or delete this data, due to the fact that the data is immutable and therefore cannot be edited or deleted.
 
-In the **[Shadow Drive Smart Contract]()** section, we will go deeper into how the Shadow Drive smart contract interacts with the Solana validator network to ensure that the data stored in Shadow Drive and the Paxos consensus mechanism inside are also being validated to ensure their current state (and thus the integrity of the data) remains intact.
+In the **[Shadow Drive Smart Contract](/learn/storage-services/smart-contracts.md)** section, we will go deeper into how the Shadow Drive smart contract interacts with the Solana validator network to ensure that the data stored in Shadow Drive and the Paxos consensus mechanism inside are also being validated to ensure their current state (and thus the integrity of the data) remains intact.
