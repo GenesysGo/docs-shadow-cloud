@@ -13,12 +13,20 @@ description: Shadow Drive Developer Tools
 3. Follow the [CLI Guide](shadow-drive/the-cli.md)
    * After installing Solana, **make sure you have both SHDW and SOL in your wallet in order to reserve storage**.
 
-### **To get starteded with the Shadow Drive SDKs:**
+### **To get started with the Shadow Drive SDKs:**
 
 1. [Javascript](https://www.npmjs.com/package/@shadow-drive/sdk), [Rust](https://crates.io/crates/shadow-drive-rust), and [Python](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py) are your choices.
 2. Follow the [SDK Guide](shadow-drive/the-sdk.md)
    * You can build directly on top of the [API](shadow-drive/the-api.md).
    * Tell us about your project in our [Disord](https://discord.gg/genesysgo) so we can publish to the community. See others [here](shadow-drive/community-mainted-uis.md).
+
+### **Submitting Bugs**
+
+If you experience any issues or think you have found a bug with Shadow Drive then please submit it via the github link below!
+
+**https://github.com/GenesysGo/shdw-drive-bug-reports**
+
+Submit a PR or, if you need immediate help join our **[Discord](https://discord.gg/genesysgo)** (discord.gg/genesysgo) and check out the #shdw-drive-support channel! Though, be warned, if you're popping in to submit a bug report then we'll likely thank you very much for your help and then direct you to the Github to submit the pug so that way we can properly document everything on our end!
 
 ### **(Coming Soon) Enhanced API Subscription Access**
 

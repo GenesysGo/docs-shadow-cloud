@@ -10,19 +10,13 @@ description: A list of terms that relate to all thing Shadow!
 \
 **Byzantine Fault Tolerance**: A fault-tolerance system in distributed computing systems where multiple replicas are used to reach consensus, such that any faulty nodes can be tolerated and the consensus of the system can be maintained despite errors or malicious attacks.\
 \
-**Consensus algorithms:** Consensus algorithms are algorithms used to achieve agreement on a single data value among distributed processes or systems. They help to ensure a secure, verifiable, and consistent agreement between multiple parties. Consensus algorithms can be run in both private and public networks, and in some cases guarantee fault tolerance.\
-\
 **Consensus Algorithm**: A consistency algorithm is a method of achieving agreement on a single data value across distributed systems. It is typically used in blockchain networks to arrive at a common data state and ensure consensus across network participants. It is used to achieve fault-tolerance in distributed systems and allows for the distributed system to remain operational even if some of its components fail.\
 \
 **Consensus Protocols**: A consensus protocol is an algorithm used to achieve agreement among distributed systems on the state of data within the system. Consensus protocols are essential in distributed systems to ensure there is no disagreement between the nodes on the data state, so that no node has a different view of the data. The protocols typically employ some form of voting, such as majority voting, or methods like proof of work, to achieve the necessary agreement on the data state.\
 \
-**Crypto-Anarchy**: A decentralized form of information organization, communication and governance enabled by cryptography and software coding to enable virtual anonymity and transaction privacy. Crypto-anarchy can be used to facilitate interaction and discussions on a range of topics in an environment of privacy and security.\
-\
 **Cryptographic Hashing:** Cryptographic hashing is a process used to convert data into a fixed-length string of characters, or "hashes", in order to protect the data and verify its authenticity through an encrypted code. The hash cannot be reversed to the original data and is used extensively time to ensure data integrity. Cryptographic hashes can be used to verify data integrity, authenticate data sources, and prevent tampering.\
 \
 **Cryptography**: The practice and study of techniques used to secure communication, data, and systems by transforming them into an unreadable format. Cryptography is an important component of cybersecurity, providing data protection and confidentiality.\
-\
-**D.A.G.G.E.R.**: D.A.G.G.E.R. stands for Domains-Aware Graph-Guided Exploration and Ranking. It is a computer algorithm developed by Carnegie Mellon University and Microsoft Research that uses machine learning methods to automatically determine the most relevant information from a set of search results. Specifically, D.A.G.G.E.R. considers the content and structure of the documents returned by a query in order to generate a ranked list of results that more closely models the user's intent.\
 \
 **Data Caching**: Data caching is a software engineering technique that stores frequently accessed or computational data in a cache in order to quickly access that data when it is needed. Data caching works by temporarily storing data to serve it quickly when requested. This can significantly improve the performance of applications, which reduces the amount of time spent serving requests.\
 \
@@ -32,13 +26,7 @@ description: A list of terms that relate to all thing Shadow!
 \
 **Data Partitioning:** The process of splitting large data or throughputs into smaller, more manageable units. This process allows for more accuracy in data processing and faster results, as well as the ability to easily store and access the data.\
 \
-\*\*Data Replication:\*\*The process of copying or cloning data from one environment (e.g. server) to another for backup, redundancy or performance optimization.\
-\
 **Data Sharding:** Data Sharding is a partitioning technique which divides large datasets into smaller subsets which are stored across multiple nodes. It is used to improve scalability, availability and fault tolerance in distributed databases. When combined with replication, Data Sharding can improve the speed of queries by allowing them to run in parallel.\
-\
-**Decentralized Autonomous Organizations:** A Decentralized Autonomous Organization (DAO) is a type of distributed organization that is run through rules encoded as computer programs called smart contracts. DAOs typically use blockchain technology to secure records, enforce protocols and manage governance decisions, providing a secure platform for investors, customers and stakeholders to interact with each other.\
-\
-**Decentralized Storage:** A type of storage system wherein data is stored in multiple, geographically distributed locations and each storage location functions independently of other storage locations, such that the storage system will continue to operate even if some locations fail.\
 \
 **Decentralized Storage Network:** A Decentralized Storage Network is a type of distributed system which utilizes distributed nodes to store and serve data securely, without relying on a single point of failure. It is an advanced form of data storage and sharing which provides scalability and redundancy, allowing for more secure and reliable access than that offered by conventional centralized systems.\
 \
@@ -56,8 +44,6 @@ description: A list of terms that relate to all thing Shadow!
 \
 **Distributed File System:** A distributed file system is a file system that allows multiple computers to access and share files located on remote servers. It enables a computing system that consists of multiple computers to work together in order to store and manage data. The system can be seen as a large-scale, decentralized file storage platform that spans multiple nodes. Data is replicated across the computers so that if one computer goes down, another can take its place, which helps provide for high availability, scalability, and fault tolerance.\
 \
-**Distributed Ledger Technology:** A digital technology that allows data to be stored, shared, and synchronized across a distributed systems operating independently from a centralized source. Distribute ledger technology enables the structure of secure, high-throughput transactions across a network of computers without the need for a central authority, creating trust, transparency and immutability.\
-\
 **Distributed Ledger Technology**: A type of database technology that maintains a continuously growing list of records, each stored as a block and protected by cryptography. It is a database shared across multiple nodes in a network, that keeps track of digital transactions between the nodes and is protected by airtight security and tamper proof mechanisms. Transaction records are constantly updated and can be easily accessed.\
 \
 **Distributed Ledger Technology Platforms:** A distributed ledger technology (DLT) platform is a secure digital platform that allows data to be securely shared and stored in a decentralized manner across a wide range of nodes within a network. DLT platforms provide a distributed ledger solution that is tamper-resistant, secured using cryptographic encryption protocols, and can remain resilient even in the face of malicious actors. DLT platforms also enable secure and timely data exchanges, providing scalability, reliability and transparency for transactions.\
@@ -74,17 +60,9 @@ description: A list of terms that relate to all thing Shadow!
 \
 **Fault Tolerance**: Fault tolerance is the capability of a system to continue its normal opertion despite the presence of hardware or software errors, disruptions, and even loss of components or data. Fault tolerant systems are designed to be resilient to failure and to continue normal operation in the event of a partial or total system failure.\
 \
-**GenesysGo D.A.G.G.E.R.**: A distributed interactive simulation and analytics platform developed by GenesysGo. It is used to simulate user behaviour and interact with business processes across agencies and organisations. D.A.G.G.E.R. features a network-centric advanced analytics engine, enabling rapid data correlations, real-time alerts for potential fraud, and advanced insights into customer behaviour.\
-\
-**GenesysGo Shadow Drive:** A storage solution that creates a virtual replication of an existing storage environment, allowing easy access for a wide range of users. This makes it possible for users to access their data from a variety of locations and platforms.\
-\
 **Gossip Protocol:** A distributed algorithm in which each member of a distributed system periodically communicates a message to one or more nodes, which then send the same message onto other nodes, until all members of the network receive the same message. This allows for a system to remain aware of all other nodes and records in the system without the need for a central server.\
 \
 **Hashgraph:** A distributed ledger platform that uses a virtual voting algorithm to achieve consensus faster than a traditional distributed ledger. This system allows for the secure transfer of digital objects and data without needing a third party for authentication. Its consensus algorithm is based on a gossip protocol, where user nodes are able to share news and updates with each other.\
-\
-**Hashgraph Technology:** A distributed ledger technology developed for consensus based distributed applications. It is a data structure and consensus algorithm used to create a secure and fast distributed ledger. It utilizes a unique consensus algorithm to reach agreement quickly in a fair and secure way, and is built on an asynchronous communication network which allows for scalability.\
-\
-**Hashgraph:** A patented distributed consensus algorithm developed by Leemon Baird intended to be faster, fairer, and more secure than other distributed ledger technology, that uses a combination of gossip protocols and "virtual voting" to reach consensus. It maintains a cryptographically authenticated data structure that can be used to verify a consensus outcome.\
 \
 **Hyperledger Fabric:** Hyperledger Fabric is an open source software project that provides a foundation for developing applications that use distributed ledgers. It allows for secure and permissioned transactions between multiple businesses, enabling an ecosystem of participants to securely exchange data and assets. It provides support for smart contracts, digital asset management, encryption, and identity services.\
 \
@@ -94,19 +72,9 @@ description: A list of terms that relate to all thing Shadow!
 \
 **Key Management:** Key management is the overall management of a set of cryptographic keys used to protect data both in transit over a network and in storage. Proper key management encryption and control ensure the secure communication within applications and systems and provides a baseline for protecting sensitive information. Key managers are responsible for the storage, rotation, and renewal of encryption keys and must ensure that the data is secure against unauthorized disclosure, modification, inclusion, or loss.\
 \
-**Layer 1:** network controls that allow computers within the same network to communicate with each other, and establishes the standard required - based on protocols. These controls are located at the physical layer of the OSI model. Examples of layer 1 protocols are Ethernet, Wi-Fi, and PPP.\
-\
-**Layer 2**: Refers to the data link layer of the OSI network model, and is responsible for basic flow control, as well as hardware addressing (Media Access Control, or MAC). It is responsible for providing logical addressing and ensuring data integrity between computers on the same physical network.\
-\
 **Merkle Tree:** A Merkle tree is a tree-based data structure used for verifying the integrity of large sets of data. It consists of a parent-child relationship of data nodes, with each block in the tree taking the data of all child blocks, hashing it together, and then creating a hash of its own. This process is repeated until a single block remains, which creates a hierarchical and hashed structure.\
 \
-**Merkle Tree:** A cryptographic data structure used in public-key infrastructures to efficiently store and verify data. The tree is comprised of hash functions and it is used in verifying large data sets. The root node in the tree is created from the hashes of the branches, allowing for data to be quickly and securely verified without having to read the entire tree.\
-\
-**Microservices**: A way of structuring an application as a suite of independently deployable, loosely coupled services which helps minimize dependencies on shared code, making the application easier to scale, maintain, and deploy.\
-\
 **Multi-Node Clusters**: A type of computing architecture, composed of multiple connected computers, or nodes, that work together and are able to act as a single system. A multi-node cluster allows for increased information processing and storage capacity, as well as increased reliability and availability.\
-\
-**Network Security:** Protecting data across a network from corruption or unauthorized access, through the use of security protocols like encryption and access control. Network security includes physical security, as well as logical security, such as firewalls, user authentication, and intrusion detection systems.\
 \
 **Nodes:** A node is a basic unit of a data structure, such as a linked list or tree data structure. Nodes contain data and also may link to other nodes. Nodes are used to implement graphs, linked lists, trees, stacks, and queues. They are also used to represent algorithms and data structures in computer science.\
 \
@@ -146,15 +114,11 @@ description: A list of terms that relate to all thing Shadow!
 \
 **Security Protocols:** Security protocols are systems of standard rules and regulations created by computer networks to protect data and enable secure communication between devices. They are commonly used for authentication, encryption, confidentiality and data integrity.\
 \
-**Shadow Drive:** A Shadow Drive is a technology that creates a complete system image or "Shadow Copy" of a computer or storage device. This image can be used to quickly restore a system in the event of damage or data loss. The Shadow Copy can also be used for archiving for compliance with government regulations.\
-\
 **Smart Contracts**: A type of protocol that is self-executing, autonomously carrying out the terms of an agreement between two or more parties when predetermined conditions are met. They are used to exchange money, assets, shares, or anything of value without the need for a third party or intermediary in a secure and trustless manner. Smart contracts are used widely within blockchain-based applications to reduce risk and increase speed and accuracy.\
 \
 **Smart Contracts**: Contracts written in computer code that are stored and executed on a blockchain network. Smart contracts are self-executing and contain the terms of an agreement between two or more parties that are written directly into the code. Smart contracts are irreversible and are enforced without the need for a third-party.\
 \
 **State Machines**: A state machine is a system composed of transitioning states, where each state is determined by the previous state and the current inputs. Each state has attached conditions and outputs, and when a the previous state and input conditions match the conditions of the current state, a single output will be generated. State machines are commonly used in computer engineering for finite automation.\
-\
-**Swirlds**: A platform developed by Swirlds Inc. which uses Hashgraph consensus algorithm. Swirlds supports Distributed Consensus Platforms (DCPs) which are suitable for specialized applications requiring consensus, fast transactions, and high scalability. Swirlds provides an open source SDK to develop and deploy Decentralized Applications (DApps) on their platform.\
 \
 **Synchronization Methods:** Methods of ensuring that different parts of a distributed application or system are working from a shared same set of data at a given point in time. This can be achieved by actively sending data among components or by passively waiting for components to ask for data before sending it.\
 \
