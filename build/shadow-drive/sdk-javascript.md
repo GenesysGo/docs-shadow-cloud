@@ -43,7 +43,9 @@ yarn add @shadow-drive/sdk @project-serum/anchor \
     @solana-mobile/wallet-adapter-mobile
 ```
 
-### Instantiate the Wallet and Connection the ol fashion way
+Solana Web3.js can be reviewed here -https://solana-labs.github.io/solana-web3.js/
+
+### **Instantiate the Wallet and Connection**
 
 Use the [Solana docs and examples here](https://github.com/solana-labs/wallet-adapter) if you need help. We're going to focus on Shadow Drive SDK in these docs, so if you need a primer on how to build a React site with Solana, we can refer you to other resources.
 
@@ -96,13 +98,13 @@ return (
 
 </details>
 
-#### Now you can focus on building components for various Shadow Drive operations
+### **Building components for various Shadow Drive operations**
 
 Let's start by instantiating the Shadow Drive connection class object. This will
 have all Shadow Drive methods and it implements the signing wallet within the class for all
 transactions.
 
-At the simplest level, it is recommend for a React app to immediately try to load a connection to a user's Shadow Drives upon wallet connection. This can be done with the useEffect React hook.
+At the simplest level, it is recommend for a React app to immediately try to load a connection to a user's Shadow Drives upon wallet connection. This can be done with the `useEffect` React hook.
 
 ```javascript
 import React, { useEffect } from "react";
@@ -161,7 +163,7 @@ const newAcct = await drive.createStorageAccount("myDemoBucket", "10MB", "v2");
 console.log(newAcct);
 ```
 
-#### Get a list of Owned Storage Accounts
+### **Get a list of Owned Storage Accounts**
 
 This implementation is effectively the same for both Web and Node implementations. The only parameter required is either `v1` or `v2` for the version of storage account you created in the previous step.
 
@@ -219,7 +221,8 @@ Full Response:
 
 </details>
 
-#### Get a Specific Storage Account
+### **Get a Specific Storage Account**
+
 
 This implementation is effectively the same for both Web and Node implementations. The only parameter required is either a PublicKey object or a base-58 string of the public key.
 
@@ -256,16 +259,16 @@ Full Response:
 
 </details>
 
-#### Upload a File
+### **Upload a File**
 
-The uploadFile method requires two parameters:
+The `uploadFile` method requires two parameters:
 
 -   `key`: A PublicKey object representing the public key of the Shadow Storage Account
 -   `data`: A file of either the `File` object type or `ShadowFile` object type
 
 Check the intellisense popup below when hovering over the method
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-10-13 at 7.40.37 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-13 at 7.40.37 PM.png" alt=""><figcaption></figcaption></figure>
 
 `File` objects are implemented in web browsers, and `ShadowFile` is a custom
 type we implemented in TypeScript. So either you are using `File` in the web, or you are
@@ -335,8 +338,6 @@ export default function Upload() {
 }
 ```
 
-\
-
 </details>
 
 And a NodeJS + TypeScript implementation would look like:
@@ -366,18 +367,18 @@ console.log(uploadFile);
 
 </details>
 
-#### Upload Multiple Files
+### **Upload Multiple Files**
 
 This is a nearly identical implementation to uploadFile, except that it requires
 a `FileList` or array of `ShadowFiles` and an optional concurrency parameter.
 
-<figure><img src="../.gitbook/assets/Screen Shot 2022-10-13 at 8.12.08 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-13 at 8.12.08 PM.png" alt=""><figcaption></figcaption></figure>
 
 Recall that the default setting is to attempt to upload 3 files concurrently. Here you can override this and specify how many files you want to try to upload based on the cores and bandwith of your infrastructure.
 
-#### Delete a File
+### **Delete a File**
 
-The implementation of deleteFile is the same between web and Node. There are three required parameters to delete a file:
+The implementation of `deleteFile` is the same between web and Node. There are three required parameters to delete a file:
 
 -   `key`: the storage account's public key
 -   `url`: the current URL of the file to be deleted
@@ -393,11 +394,11 @@ const delFile = await drive.deleteFile(acctPubKey, url, "v2");
 console.log(delFile);
 ```
 
-#### Edit a File (aka Replace a file)
+### **Edit a File (aka Replace a file)**
 
 <figure><img src="../../.gitbook/assets/Screen Shot 2022-10-13 at 8.28.30 PM.png" alt=""><figcaption><p></p></figcaption></figure>
 
-The editFile method is a combo of uploadFile and deleteFile. Let's look at the params:
+The editFile method is a combo of `uploadFile` and `deleteFile`. Let's look at the params:
 
 -   `key`: the Public Key of the storage account
 -   `url`: the URL of the file that is being replaced
@@ -417,7 +418,7 @@ const acctPubKey = new anchor.web3.PublicKey(
 const editFile = await drive.editFile(acctPubKey, url, "v2", fileToUpload);
 ```
 
-#### List Storage Account Files (aka List Objects)
+### **List Storage Account Files (aka List Objects)**
 
 This is a simple implementation that only requires a public key to get the file names of a storage account.
 
@@ -435,7 +436,7 @@ And the response payload:
 { keys: [ 'index.html' ] }
 ```
 
-#### Increase Storage Account Size
+### **Increase Storage Account Size**
 
 This is a method to simply increase the storage limit of a storage account. It requires three params:
 
@@ -449,7 +450,7 @@ let acctPubKey = new anchor.web3.PublicKey(accts[1].publicKey);
 const addStgResp = await drive.addStorage(acctPubKey, "10MB", "v2");
 ```
 
-#### Reduce Storage Account Size
+### **Reduce Storage Account Size**
 
 This is a method to decrease the storage limit of a storage account. This implementation only requires three params - the storage account key, the amount to reduce it by, and the version.
 
@@ -460,7 +461,7 @@ const acctPubKey = new anchor.web3.PublicKey(
 const shrinkAcct = await drive.reduceStorage(acctPubKey, "10MB", "v2");
 ```
 
-#### Next you'll want to claim your unused SHDW
+### **Next you'll want to claim your unused SHDW**
 
 This method allows you to reclaim the SHDW that is no longer being used. This method only requires a storage account public key and a version.
 
@@ -471,7 +472,7 @@ const acctPubKey = new anchor.web3.PublicKey(
 const claimStake = await drive.claimStake(acctPubKey, "v2");
 ```
 
-#### Delete a Storage Account
+### **Delete a Storage Account**
 
 As the name implies, you can delete a storage account and all of its files. The
 storage account can still be recovered until the current epoch ends, but after
@@ -485,7 +486,7 @@ const acctPubKey = new anchor.web3.PublicKey(
 const delAcct = await drive.deleteStorageAccount(acctPubKey, "v2");
 ```
 
-#### Undelete the Deleted Storage Account
+### **Undelete the Deleted Storage Account**
 
 You can still get your storage account back if the current epoch hasn't elapsed.
 This implementation only requires two params - an account public key
