@@ -1,15 +1,19 @@
+---
+description: Shadow Drive Developer Tools
+---
+
 # Build
 
-<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><strong>Quick Start: The CLI</strong></td><td align="center"><strong></strong></td><td align="center">Set up in miuntes</td></tr><tr><td align="center"><strong>API</strong></td><td align="center"><strong></strong></td><td align="center">Instant interaction</td></tr><tr><td align="center"><strong>SDKs</strong></td><td align="center"><strong></strong></td><td align="center">Advanced applications</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"></td><td align="center"><strong>Quick Start: The CLI</strong></td><td align="center">Set up in miuntes</td><td><a href="../.gitbook/assets/633dd4a1aea8e6fb3e35f411_8-block-p-500.png">633dd4a1aea8e6fb3e35f411_8-block-p-500.png</a></td><td><a href="shadow-drive/the-cli.md#introduction">#introduction</a></td></tr><tr><td align="center"><strong></strong></td><td align="center"><strong>API</strong></td><td align="center">Instant interaction</td><td><a href="../.gitbook/assets/633dd4a1aea8e6fb3e35f411_8-block-p-500.png">633dd4a1aea8e6fb3e35f411_8-block-p-500.png</a></td><td><a href="shadow-drive/the-api.md#contents">#contents</a></td></tr><tr><td align="center"><strong></strong></td><td align="center"><strong>SDKs</strong></td><td align="center">Advanced applications</td><td><a href="../.gitbook/assets/633dd4a1aea8e6fb3e35f411_8-block-p-500.png">633dd4a1aea8e6fb3e35f411_8-block-p-500.png</a></td><td><a href="shadow-drive/the-sdk.md">the-sdk.md</a></td></tr></tbody></table>
 
-### **To get started with the CLI:**
+### **To get started with the Shadow Drive CLI:**
 
 1. [Install NodeJS LTS 16.17.1](https://nodejs.org/en/download/)
 2. Install the [Shadow Drive CLI](shadow-drive/)
 3. Follow the [CLI Guide](shadow-drive/the-cli.md)
    * After installing Solana, **make sure you have both SHDW and SOL in your wallet in order to reserve storage**.
 
-### **To get started with the SDKs:**
+### **To get starteded with the Shadow Drive SDKs:**
 
 1. [Javascript](https://www.npmjs.com/package/@shadow-drive/sdk), [Rust](https://crates.io/crates/shadow-drive-rust), and [Python](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py) are your choices.
 2. Follow the [SDK Guide](shadow-drive/the-sdk.md)

@@ -3,25 +3,22 @@ description: >-
   Shadow Drive exposes an API that you can interact directly without the need of
   the CLI or SDK. You may build on top of these methods.
 ---
-# **API**
+
+# API
 
 ## **Contents**
-* **[Example - Sign and upload a file](#example---sign-and-upload-a-file)**
-* **[Example - Edit a file](#example---edit-a-file)**
-* **[Example - Delete a file](#example---delete-a-file)**
 
+* [**Example - Sign and upload a file**](the-api.md#example---sign-and-upload-a-file)
+* [**Example - Edit a file**](the-api.md#example---edit-a-file)
+* [**Example - Delete a file**](the-api.md#example---delete-a-file)
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="storage-account" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="storage-account" %}
 {% swagger-description %}
 Creates a new storage account
 
-\
+\\
 
-
-
-
-\
-
+\\
 
 Request content type: application/json
 {% endswagger-description %}
@@ -40,17 +37,13 @@ Serialized create storage account transaction that's partially signed by the sto
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="storage-account-info" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="storage-account-info" %}
 {% swagger-description %}
 Gets on-chain and Shadow Drive Network data about a storage account
 
-\
+\\
 
-
-
-
-\
-
+\\
 
 Request content type: application/json
 {% endswagger-description %}
@@ -101,20 +94,20 @@ Publickey of the storage account you want to get information for
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="upload" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="upload" %}
 {% swagger-description %}
 Uploads a single file or multiple files at once\
 \
 Request content type: multipart/form-data\
 \
-[**Example Implementation**](the-api.md#example-sign-and-upload-a-file)****
+[**Example Implementation**](the-api.md#example-sign-and-upload-a-file)\*\*\*\*
 
 \
 Parameters (FormData fields)
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="file" type="" required="true" %}
-The file you want to upload. You may add up to 5 files each with a field name of 
+The file you want to upload. You may add up to 5 files each with a field name of
 
 `file`
 
@@ -144,43 +137,30 @@ Key of the storage account you want to upload to
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="edit" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="edit" %}
 {% swagger-description %}
 Edits an existing file
 
-\
+\\
 
-
-
-
-\
-
+\\
 
 Request content type: multipart/form-data
 
-\
+\\
 
-
-
-
-\
-
-
-
+\\
 
 [**Example Implementation**\
-****](the-api.md#example-edit-a-file)
+\*\*\*\*](the-api.md#example-edit-a-file)
 
-
-
-\
-
+\\
 
 Parameters (FormData fields)
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="file" required="true" %}
-The file you want to upload. You may add up to 5 files each with a field name of 
+The file you want to upload. You may add up to 5 files each with a field name of
 
 `file`
 
@@ -200,7 +180,9 @@ Key of the storage account you want to upload to
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="url" required="true" %}
-Url of the original file you want to edit. Example: `https://shdw-drive.genesysgo.net/<storage-account>/<file-name>`
+Url of the original file you want to edit. Example: 
+
+`https://shdw-drive.genesysgo.net/<storage-account>/<file-name>`
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
@@ -213,22 +195,18 @@ Url of the original file you want to edit. Example: `https://shdw-drive.genesysg
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="list-objects" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="list-objects" %}
 {% swagger-description %}
 Get a list of all files associated with a storage account
 
-\
+\\
 
-
-
-
-\
-
+\\
 
 Request content type: application/json
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="storageAccount" %}
+{% swagger-parameter in="body" name="storageAccount" required="false" %}
 String version of the storage account PublicKey that you want to get a list of files for
 {% endswagger-parameter %}
 
@@ -241,17 +219,13 @@ String version of the storage account PublicKey that you want to get a list of f
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="list-objects-and-sizes" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="list-objects-and-sizes" %}
 {% swagger-description %}
 Get a list of all files and their size associated with a storage account
 
-\
+\\
 
-
-
-
-\
-
+\\
 
 Request content type: application/json
 {% endswagger-description %}
@@ -269,17 +243,13 @@ String version of the storage account PublicKey that you want to get a list of f
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="get-object-data" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="get-object-data" %}
 {% swagger-description %}
 Get information about an object
 
-\
+\\
 
-
-
-
-\
-
+\\
 
 Request content type: application/json
 {% endswagger-description %}
@@ -295,44 +265,34 @@ JSON object of the file's metadata in the Shadow Drive Network or an error
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="delete-file" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="delete-file" %}
 {% swagger-description %}
 Deletes a file from a given Storage Account
 
-\
+\\
 
-
-
-
-\
-
+\\
 
 Request content type: application/json
 
-\
+\\
 
-
-
-
-\
-
-
-
+\\
 
 [**Example Implementation**](the-api.md#example-delete-a-file)
 
-****
+***
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="message" %}
+{% swagger-parameter in="body" name="message" required="false" %}
 Base58 message signature.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="signer" %}
+{% swagger-parameter in="body" name="signer" required="false" %}
 Publickey of the signer of the message signature and owner of the storage account
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="location" %}
+{% swagger-parameter in="body" name="location" required="false" %}
 URL of the file you want to delete
 {% endswagger-parameter %}
 
@@ -346,17 +306,13 @@ URL of the file you want to delete
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="add-storage" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="add-storage" %}
 {% swagger-description %}
 Adds storage
 
-\
+\\
 
-
-
-
-\
-
+\\
 
 Request content type: application/json
 {% endswagger-description %}
@@ -376,17 +332,13 @@ Serialized add storage transaction that is partially signed by the shadow drive 
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="reduce-storage" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="reduce-storage" %}
 {% swagger-description %}
 Reduces storage
 
-\
+\\
 
-
-
-
-\
-
+\\
 
 Request content type: application/json
 {% endswagger-description %}
@@ -406,22 +358,18 @@ Serialized reduce storage transaction that is partially signed by the shadow dri
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="make-immutable" expanded="true" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="make-immutable" %}
 {% swagger-description %}
 Makes file immutable
 
-\
+\\
 
-
-
-
-\
-
+\\
 
 Request content type: application/json
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="transaction" %}
+{% swagger-parameter in="body" name="transaction" required="false" %}
 Serialized make immutable transaction that is partially signed by the shadow drive network
 {% endswagger-parameter %}
 
@@ -436,7 +384,7 @@ Serialized make immutable transaction that is partially signed by the shadow dri
 {% endswagger-response %}
 {% endswagger %}
 
-### **Example -  Sign and upload a file**
+### **Example - Sign and upload a file**
 
 ```javascript
 import bs58 from 'bs58'

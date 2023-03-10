@@ -1,12 +1,12 @@
 ---
 description: >-
-  This consolidated resource is for anyone exploring and developing on top of the Shadow Cloud platform.
+  This consolidated resource is for anyone exploring and developing on top of
+  the Shadow Cloud platform.
 ---
 
 # GET STARTED
 
-<table data-view="cards"><thead><tr><th></th><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Learn</strong></td><td></td><td><a href="learn/">learn</a></td></tr><tr><td></td><td align="center"><strong>Build</strong></td><td></td><td><a href="build/">build</a></td></tr><tr><td></td><td align="center"><strong>Reference</strong></td><td></td><td><a href="reference/">reference</a></td></tr></tbody></table>
-
+<table data-view="cards"><thead><tr><th></th><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Learn</strong></td><td></td><td><a href="learn/">learn</a></td><td><a href=".gitbook/assets/633dd4a1aea8e6fb3e35f411_8-block-p-500.png">633dd4a1aea8e6fb3e35f411_8-block-p-500.png</a></td></tr><tr><td></td><td align="center"><strong>Build</strong></td><td></td><td><a href="build/">build</a></td><td><a href=".gitbook/assets/633dd4a1aea8e6fb3e35f411_8-block-p-500.png">633dd4a1aea8e6fb3e35f411_8-block-p-500.png</a></td></tr><tr><td></td><td align="center"><strong>Reference</strong></td><td></td><td><a href="reference/">reference</a></td><td><a href=".gitbook/assets/633dd4a1aea8e6fb3e35f411_8-block-p-500.png">633dd4a1aea8e6fb3e35f411_8-block-p-500.png</a></td></tr></tbody></table>
 
 This resource will be updated over time and the community should feel empowered to submit PRs for edits they would like to see or information they feel has been left out.
 
