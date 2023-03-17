@@ -10,7 +10,7 @@
     * **[delete_file](#delete_file)**
     * **[delete_storage_account](#delete_storage_account)** 
     * **[edit_file](#edit_file)**
-    * **[get_object_data](#get_object_data))**
+    * **[get_object_data](#get_object_data)**
     * **[get_storage_account](#get_storage_account)**
     * **[get_storage_accounts](#get_storage_accounts)**
     * **[list_objects](#list_objects)**
