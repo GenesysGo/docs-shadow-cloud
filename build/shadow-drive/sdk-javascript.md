@@ -6,26 +6,25 @@
 -   **[Edit a File](#edit-a-file-aka-replace-a-file)**
 -   **[Delete a File](#delete-a-file)**
 -   **[Methods](#methods)**
-    -   **[constructor](#contructor)**
-    -   **[addStorage](#addStorage)**
-    -   **[cancelDeleteStorageAccount](#cancelDeleteStorageAccount)**
-    -   **[claimStake](#claimStake)**
-    -   **[createStorageAccount](#createStorageAccount)**
-    -   **[deleteFile](#deleteFile)**
-    -   **[deleteStorageAccount](#deleteStorageAccount)**
-    -   **[editFile](#editFile)**
-    -   **[getStorageAccount](#getStorageAccount)**
-    -   **[getStorageAccounts](#getStorageAccounts)**
-    -   **[listObjects](#listObjects)**
-    -   **[makeStorageImmutable](#makeStorageImmutable)**
+    -   **[constructor](#constructor)**
+    -   **[addStorage](#addstorage)**
+    -   **[cancelDeleteStorageAccount](#canceldeletestorageaccount)**
+    -   **[claimStake](#claimstake)**
+    -   **[createStorageAccount](#createstorageaccount)**
+    -   **[deleteFile](#deletefile)**
+    -   **[deleteStorageAccount](#deletestorageaccount)**
+    -   **[editFile](#editfile)**
+    -   **[getStorageAccount](#getstorageaccount)**
+    -   **[getStorageAccounts](#getstorageaccount)**
+    -   **[listObjects](#listobjects)**
+    -   **[makeStorageImmutable](#makestorageimmutable)**
     -   **[migrate](#migrate)**
-    -   **[redeemRent](#redeemRent)**
-    -   **[reduceStorage](#reduceStorage)**
-    -   **[storageConfigPDA](#storageConfigPDA)**
-    -   **[uploadFile](#uploadFile)**
-    -   **[uploadMultipleFiles](#uploadMultipleFiles)**
-    -   **[userInfo](#userInfo)**
-    -   **[init](#init)**
+    -   **[redeemRent](#redeemrent)**
+    -   **[reduceStorage](#reducestorage)**
+    -   **[storageConfigPDA](#storageconfigpda)**
+    -   **[uploadFile](#uploadfile)**
+    -   **[uploadMultipleFiles](#uploadmultiplefiles)**
+    -   **[userInfo](#userinfo)**
 
 ## **Getting Started: Javascript SDK**
 

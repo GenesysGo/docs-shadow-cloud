@@ -8,9 +8,9 @@ description: >-
 
 ## **Contents**
 
-* [**Example - Sign and upload a file**](the-api.md#example---sign-and-upload-a-file)
-* [**Example - Edit a file**](the-api.md#example---edit-a-file)
-* [**Example - Delete a file**](the-api.md#example---delete-a-file)
+* [**Example - Sign and upload a file**](#example---sign-and-upload-a-file)
+* [**Example - Edit a file**](#example---edit-a-file)
+* [**Example - Delete a file**](#example---delete-a-file)
 
 {% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="storage-account" %}
 {% swagger-description %}
