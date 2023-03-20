@@ -20,6 +20,8 @@ description: Shadow Cloud consolidated resources
 
 ## **Support**
 
+[Network Status]()
+
 [Change Log](change-logs.md)
 
 [Version releases](change-logs.md)
@@ -40,7 +42,7 @@ description: Shadow Cloud consolidated resources
 
 ## **Community**
 
-[Shadow Ecosystem](broken-reference)
+[Shadow Ecosystem](/build/)
 
 [Solana Breakpoint Demo 2022](breakpoint-2022-demo.md)
 
