@@ -257,183 +257,363 @@ shdw-drive make-storage-account-immutable -kp ~/shdw-keypair.json
 
 # **The Rust CLI**
 
-## **(This section is under development)
+## **(This section is under development)**
 
-## Getting Started
-```rust
-/// Perform Shadow Drive operations on the command-line.
-/// This CLI is written in Rust, and conforms to the interfaces
-/// for signer specification available in the official
-/// Solana command-line binaries such as `solana` and `spl-token`.
-#[derive(Debug, Parser)]
-pub struct Opts {
-    #[clap(flatten)]
-    pub cfg_override: ConfigOverride,
-    #[clap(subcommand)]
-    pub command: Command,
-}
+### **CreateStorageAccount**
 
-#[derive(Debug, Parser)]
-pub enum Command {
-    ShadowRpcAuth,
-    /// Create an account on which to store data.
-    /// Storage accounts can be globally, irreversibly marked immutable
-    /// for a one-time fee.
-    /// Otherwise, files can be added or deleted from them, and space
-    /// rented indefinitely.
-    CreateStorageAccount {
-        /// Unique identifier for your storage account
-        name: String,
-        /// File size string, accepts KB, MB, GB, e.g. "10MB"
-        #[clap(parse(try_from_str = parse_filesize))]
-        size: Byte,
-    },
-    /// Queues a storage account for deletion. While the request is
-    /// still enqueued and not yet carried out, a cancellation
-    /// can be made (see cancel-delete-storage-account subcommand).
-    DeleteStorageAccount {
-        /// The account to delete
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-    },
-    /// Cancels the deletion of a storage account enqueued for deletion.
-    CancelDeleteStorageAccount {
-        /// The account for which to cancel deletion.
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-    },
-    /// Redeem tokens afforded to a storage account after reducing storage capacity.
-    ClaimStake {
-        /// The account whose stake to claim.
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-    },
-    /// Increase the capacity of a storage account.
-    AddStorage {
-        /// Storage account to modify
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-        /// File size string, accepts KB, MB, GB, e.g. "10MB"
-        #[clap(parse(try_from_str = parse_filesize))]
-        size: Byte,
-    },
-    /// Increase the immutable storage capacity of a storage account.
-    AddImmutableStorage {
-        /// Storage account to modify
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-        /// File size string, accepts KB, MB, GB, e.g. "10MB"
-        #[clap(parse(try_from_str = parse_filesize))]
-        size: Byte,
-    },
-    /// Reduce the capacity of a storage account.
-    ReduceStorage {
-        /// Storage account to modify
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-        /// File size string, accepts KB, MB, GB, e.g. "10MB"
-        #[clap(parse(try_from_str = parse_filesize))]
-        size: Byte,
-    },
-    /// Make a storage account immutable. This is irreversible.
-    MakeStorageImmutable {
-        /// Storage account to be marked immutable
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-    },
-    /// Fetch the metadata pertaining to a storage account.
-    GetStorageAccount {
-        /// Account whose metadata will be fetched.
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-    },
-    /// Fetch a list of storage accounts owned by a particular pubkey.
-    /// If no owner is provided, the configured signer is used.
-    GetStorageAccounts {
-        /// Searches for storage accounts owned by this owner.
-        #[clap(parse(try_from_str = pubkey_arg))]
-        owner: Option<Pubkey>,
-    },
-    /// List all the files in a storage account.
-    ListFiles {
-        /// Storage account whose files to list.
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-    },
-    /// Get a file, assume it's text, and print it.
-    GetText {
-        /// Storage account where the file is located.
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-        /// Name of the file to fetch
-        filename: String,
-    },
-    /// Get basic file object data from a storage account file.
-    GetObjectData {
-        /// Storage account where the file is located.
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-        /// Name of the file to examine.
-        file: String,
-    },
-    /// Delete a file from a storage account.
-    DeleteFile {
-        /// Storage account where the file to delete is located.
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-        /// Name of the file to delete.
-        filename: String,
-    },
-    /// Has to be the same name as a previously uploaded file
-    EditFile {
-        /// Storage account where the file to edit is located.
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-        /// Path to the new version of the file. Must be the same
-        /// name as the file you are editing.
-        path: PathBuf,
-    },
-    /// Upload one or more files to a storage account.
-    StoreFiles {
-        /// Batch size for file uploads, default 100, only relevant for large
-        /// numbers of uploads
-        #[clap(long, default_value_t=FILE_UPLOAD_BATCH_SIZE)]
-        batch_size: usize,
-        /// The storage account on which to upload the files
-        #[clap(parse(try_from_str = pubkey_arg))]
-        storage_account: Pubkey,
-        /// A list of one or more filepaths, each of which is to be uploaded.
-        #[clap(min_values = 1)]
-        files: Vec<PathBuf>,
-    },
-    /// Creates an archive of metadata (runes) that can be used to summon data using the Shadow Drive Portal. Uploads data, and returns
-    /// the metadata to be compiled into a smart contract.
-    StoreAndCreateRunes {
-        directory: PathBuf,
-        target: PathBuf,
-    },
-}
+Create an account on which to store data. Storage accounts can be globally, irreversibly marked immutable for a one-time fee. Otherwise, files can be added or deleted from them, and space rented indefinitely.
+
+**Parameters:**
+
+`--name`
+* String
+
+`--size`
+* Byte
+
+**Example:**
+
+```
+shadow-drive-cli create-storage-account --name example_account --size 10MB
 ```
 
-### **reateStorageAccount**
+### **DeleteStorageAccount**
 
-```rust
-Command::CreateStorageAccount { name, size } => {
-                let client = shadow_client_factory(signer, rpc_url, auth);
-                println!("Create Storage Account {}: {}", name, size);
-                wait_for_user_confirmation(skip_confirm)?;
-                let response = client
-                    .create_storage_account(&name, size.clone(), StorageAccountVersion::v2())
-                    .await;
-                let resp = process_shadow_api_response(response)?;
-                println!("{:#?}", resp);
-            }
+Queues a storage account for deletion. While the request is still enqueued and not yet carried out, a cancellation can be made (see cancel-delete-storage-account subcommand).
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+**Example:**
+
+```
+shadow-drive-cli delete-storage-account --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
 ```
 
-Response:
-```rust
-{
-        name: String,
-        size: Byte,
-}
+**Example:**
+
+```
+shadow-drive-cli delete-storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+### **CancelDeleteStorageAccount**
+
+Cancels the deletion of a storage account enqueued for deletion.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+**Example:**
+
+```
+shadow-drive-cli cancel-delete-storage-account --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+**Example:**
+
+```
+shadow-drive-cli cancel-delete-storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+### **ClaimStake**
+
+Redeem tokens afforded to a storage account after reducing storage capacity.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+**Example:**
+
+```
+shadow-drive-cli claim-stake --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+**Example:**
+
+```
+shadow-drive-cli claim-stake FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+### **AddStorage**
+
+Increase the capacity of a storage account.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+`--size`
+* Byte (accepts KB, MB, GB)
+
+**Example:**
+
+```
+shadow-drive-cli add-storage --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB --size 10MB
+```
+
+**Example:**
+
+```
+shadow-drive-cli add-storage FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB 10MB
+```
+
+### **AddImmutableStorage**
+
+Increase the immutable storage capacity of a storage account.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+`--size`
+* Byte (accepts KB, MB, GB)
+
+**Example:**
+
+```
+shadow-drive-cli add-immutable-storage --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB --size 10MB
+```
+
+**Example:**
+
+```
+shadow-drive-cli add-immutable-storage FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB 10MB
+```
+
+### **ReduceStorage**
+
+Reduce the capacity of a storage account.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+`--size`
+* Byte (accepts KB, MB, GB)
+
+**Example:**
+
+```
+shadow-drive-cli reduce-storage --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB --size 10MB
+```
+
+**Example:**
+
+```
+shadow-drive-cli reduce-storage FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB 10MB
+```
+
+### **MakeStorageImmutable**
+
+Make a storage account immutable. This is irreversible.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+**Example:**
+
+```
+shadow-drive-cli make-storage-immutable --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+**Example:**
+
+```
+shadow-drive-cli make-storage-immutable FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+### **GetStorageAccount**
+
+Fetch the metadata pertaining to a storage account.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+**Example:**
+
+```
+shadow-drive-cli get-storage-account --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+**Example:**
+
+```
+shadow-drive-cli get-storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+### **GetStorageAccounts**
+
+Fetch a list of storage accounts owned by a particular pubkey. If no owner is provided, the configured signer is used.
+
+**Parameters:**
+
+`--owner`
+* Option\<Pubkey\>
+
+**Example:**
+
+```
+shadow-drive-cli get-storage-accounts --owner FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+**Example:**
+
+```
+shadow-drive-cli get-storage-accounts
+```
+
+### **ListFiles**
+
+List all the files in a storage account.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+**Example:**
+
+```
+shadow-drive-cli list-files --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+**Example:**
+
+```
+shadow-drive-cli list-files FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB
+```
+
+### **GetText**
+
+Get a file, assume it's text, and print it.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+`--filename`
+
+**Example:**
+
+```
+shadow-drive-cli get-text --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB --filename example.txt
+```
+
+**Example:**
+
+```
+shadow-drive-cli get-text FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB example.txt
+```
+
+### **GetObjectData**
+
+Get basic file object data from a storage account file.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+`--file`
+* String
+
+**Example:**
+
+```
+shadow-drive-cli get-object-data --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB --file example.txt
+```
+
+**Example:**
+
+```
+shadow-drive-cli get-object-data FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB example.txt
+```
+
+### **DeleteFile**
+
+Delete a file from a storage account.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+`--filename`
+* String
+
+**Example:**
+
+```
+shadow-drive-cli delete-file --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB --filename example.txt
+```
+
+**Example:**
+
+```
+shadow-drive-cli delete-file FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB example.txt
+```
+
+### **EditFile**
+
+Edit a file in a storage account.
+
+**Parameters:**
+
+`--storage-account`
+* Pubkey
+
+`--path`
+* PathBuf
+
+**Example:**
+
+```
+shadow-drive-cli edit-file --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB --path /path/to/new/file.txt
+```
+
+**Example:**
+
+```
+shadow-drive-cli edit-file FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB /path/to/new/file.txt
+```
+
+### **StoreFiles**
+
+Upload one or more files to a storage account.
+
+**Parameters:**
+
+`--batch-size`
+* usize (default: value of FILE_UPLOAD_BATCH_SIZE)
+
+`--storage-account`
+* Pubkey
+
+`--files`
+* Vec\<PathBuf\>
+
+**Example:**
+
+```
+shadow-drive-cli store-files --batch-size 100 --storage-account FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB file1.txt file2.txt
+```
+
+**Example:**
+
+```
+shadow-drive-cli store-files FKDU64ffTrQq3E1sZsNknefrvY8WkKzCpRyRfptTnyvB file1.txt file2.txt
 ```
