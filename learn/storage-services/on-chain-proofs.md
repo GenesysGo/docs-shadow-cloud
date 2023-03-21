@@ -1,4 +1,4 @@
-# On-chain events as Proof of Storage
+# On-Chain Proofs
 
 First, please allow me to set some context about Solana itself… At the most basic fundamental level, blockchains are nothing more than ledgers. Ledgers record the history of how things have changed over time and all of those changes combined give you the current “state”. Solana is all about its “accounts” and the “state” of those accounts.
 
@@ -6,7 +6,7 @@ What do I mean by “state”? Let’s use computers as an example… Everything
 
 The next thing we need to know is that Solana is unique in the way it structures everything as an “account.” This is important terminology, so here’s the definition:
 
-![https://docs.solana.com/terminology](<../../.gitbook/assets/terminology.png>)
+![https://docs.solana.com/terminology](<../../.gitbook/assets/image (6).png>)
 
 Thinking back to state, the history of the accounts on Solana is completely irrelevant to their current state. Why? Because all the events that took place in order to arrive at the current state were reviewed by the Proof of History consensus mechanism (i.e. the Solana Validator network) and deemed to be valid.
 
@@ -27,4 +27,4 @@ It’s easiest to explain in real terms, so here’s an example… Let’s say y
 
 Under this design, the Shadow Drive smart contract only recognizes signatures from the wallet associated with the stored data. In this example, any transaction request to change the data listed as immutable in Shadow Drive would fail to be validated by the Solana validators. This is because the smart contract would not pass through any instructions to edit or delete this data, due to the fact that the data is immutable and therefore cannot be edited or deleted.
 
-In the **[Shadow Drive Smart Contract](/learn/storage-services/smart-contracts.md)** section, we will go deeper into how the Shadow Drive smart contract interacts with the Solana validator network to ensure that the data stored in Shadow Drive and the Paxos consensus mechanism inside are also being validated to ensure their current state (and thus the integrity of the data) remains intact.
+In the [**Shadow Drive Smart Contract**](smart-contracts.md) section, we will go deeper into how the Shadow Drive smart contract interacts with the Solana validator network to ensure that the data stored in Shadow Drive and the Paxos consensus mechanism inside are also being validated to ensure their current state (and thus the integrity of the data) remains intact.
