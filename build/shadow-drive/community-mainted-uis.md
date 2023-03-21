@@ -2,17 +2,17 @@
 description: Seeing what others have built with Shadow Drive
 ---
 
-# **Ecosystem**
+# Shadow Ecosystem
 
 ## See some of the top projects building incredible apps on Shadow Drive!
 
-Not on this list? [Submit a PR]() to get added.
+Not on this list? [Submit a PR](community-mainted-uis.md) to get added.
 
 ### **SDrive.app**
 
 {% embed url="https://sdrive.app/landing" %}
 
-Easy to use, reliable, private, and secure cloud storage and publishing. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed to support and promote creators around the world.  
+Easy to use, reliable, private, and secure cloud storage and publishing. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed to support and promote creators around the world.
 
 ### **Shadow Storage**
 
@@ -22,7 +22,7 @@ One of the most widely used GUIs for interacting with Shadow Storage. Users can 
 
 ### **Synx - a React Native UI for Shadow Drive**
 
-{% embed url="https://www.synx.xyz/" %}
+{% embed url="https://pages.viral-loops.com/synx" %}
 
 A nice mobile application for working with private cloud storage using Shadow Drive created by the Blxckout team!
 
@@ -42,13 +42,13 @@ This is a full web-hosting service where the backend storage is built on shadow 
 
 {% embed url="https://www.shadowtube.io/" %}
 
-Like YouTube, but built on top of Shadow Drive storage. Uploads come directly from your Shadow Drive storage accounts!&#x20;
+Like YouTube, but built on top of Shadow Drive storage. Uploads come directly from your Shadow Drive storage accounts!
 
 ### **CryptoStraps NFT Tools Shadow UI**
 
 {% embed url="https://cryptostraps.tools/shadow-drive" %}
 
-Another prime example of a comprehensive suite of NFT tools should include Shadow Drive storage, and this tool delivers on all fronts.&#x20;
+Another prime example of a comprehensive suite of NFT tools should include Shadow Drive storage, and this tool delivers on all fronts.
 
 ### **You are Loved**
 
