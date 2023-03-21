@@ -4,7 +4,7 @@ description: Shadow Drive Developer Tools
 
 # Build
 
-<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"></td><td align="center"><strong>Quick Start: The CLI</strong></td><td align="center">Set up in miuntes</td><td><a href="../.gitbook/assets/633dd4a1aea8e6fb3e35f411_8-block-p-500.png">633dd4a1aea8e6fb3e35f411_8-block-p-500.png</a></td><td><a href="shadow-drive/the-cli.md#introduction">#introduction</a></td></tr><tr><td align="center"><strong></strong></td><td align="center"><strong>API</strong></td><td align="center">Instant interaction</td><td><a href="../.gitbook/assets/633dd4a1aea8e6fb3e35f411_8-block-p-500.png">633dd4a1aea8e6fb3e35f411_8-block-p-500.png</a></td><td><a href="shadow-drive/the-api.md#contents">#contents</a></td></tr><tr><td align="center"><strong></strong></td><td align="center"><strong>SDKs</strong></td><td align="center">Advanced applications</td><td><a href="../.gitbook/assets/633dd4a1aea8e6fb3e35f411_8-block-p-500.png">633dd4a1aea8e6fb3e35f411_8-block-p-500.png</a></td><td><a href="shadow-drive/the-sdk.md">the-sdk.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"></td><td align="center"><strong>CLI</strong></td><td align="center">Get started within minutes</td><td><a href="../.gitbook/assets/CLI_icon.png">CLI_icon.png</a></td><td><a href="shadow-drive/the-cli.md#introduction">#introduction</a></td></tr><tr><td align="center"></td><td align="center"><strong>API</strong></td><td align="center">Instant interaction</td><td><a href="../.gitbook/assets/API_icon.png">API_icon.png</a></td><td><a href="shadow-drive/the-api.md#contents">#contents</a></td></tr><tr><td align="center"></td><td align="center"><strong>SDKs</strong></td><td align="center">Advanced applications</td><td><a href="../.gitbook/assets/SDK_Icon.png">SDK_Icon.png</a></td><td><a href="shadow-drive/the-sdk.md">the-sdk.md</a></td></tr></tbody></table>
 
 ### **To get started with the Shadow Drive CLI:**
 
@@ -26,7 +26,7 @@ If you experience any issues or think you have found a bug with Shadow Drive the
 
 **https://github.com/GenesysGo/shdw-drive-bug-reports**
 
-Submit a PR or, if you need immediate help join our **[Discord](https://discord.gg/genesysgo)** (discord.gg/genesysgo) and check out the #shdw-drive-support channel! Though, be warned, if you're popping in to submit a bug report then we'll likely thank you very much for your help and then direct you to the Github to submit the pug so that way we can properly document everything on our end!
+Submit a PR or, if you need immediate help join our [**Discord**](https://discord.gg/genesysgo) (discord.gg/genesysgo) and check out the #shdw-drive-support channel! Though, be warned, if you're popping in to submit a bug report then we'll likely thank you very much for your help and then direct you to the Github to submit the pug so that way we can properly document everything on our end!
 
 ### **(Coming Soon) Enhanced API Subscription Access**
 
