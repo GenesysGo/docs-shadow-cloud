@@ -32,7 +32,7 @@ description: A list of terms that relate to all thing Shadow!
 \
 **Delegated Proof-of-Stake (DPoS):** Delegated Proof-of-Stake (DPoS) is a consensus mechanism used in some blockchain networks. It works by allowing token holders to vote for a “delegate” of their choice to validate transactions and produce new blocks on their behalf. Delegates are rewarded for their work with a percentage of all transaction fees and new block rewards. DPoS networks are usually faster and more scalable than traditional PoW and PoS networks.\
 \
-" **Digital Signatures:** A digital signature is a mathematical scheme for demonstrating the authenticity of digital messages of documents. It is used for authenticating the source of messages or documents and for providing the integrity of messages or documents. A valid digital signature gives a recipient reason to believe that the message or document was created or approved by a known sender, and has not been altered in transit.\
+**Digital Signatures:** A digital signature is a mathematical scheme for demonstrating the authenticity of digital messages of documents. It is used for authenticating the source of messages or documents and for providing the integrity of messages or documents. A valid digital signature gives a recipient reason to believe that the message or document was created or approved by a known sender, and has not been altered in transit.\
 \
 **Directed Acyclic Graphs**: A Directed Acyclic Graph (DAG) is a type of graph with directed edges that do not form a cycle. It consists of vertices (or nodes) and edges that connect the nodes. The direction of the edges between the nodes determines the flow of information from one node to another. A DAG is a useful structure for modeling data sets, such as queues and trees, to represent complex algorithms and processes in computer engineering.\
 \
@@ -129,4 +129,4 @@ description: A list of terms that relate to all thing Shadow!
 **Virtual Voting**: Digital voting system where citizens are able to cast their vote over the internet, directly or through a voting portal. It has been used as an alternative to physical voting polls, particularly during the pandemic. It can also be used to verify the accuracy and security of elections.\
 \
 **Web 3.0:** The Web 3.0 concept refers to the newest generation of the internet. It is highly decentralized and automated, based on AI and distributed ledger technologies such as blockchain. It allows for a more open and secure infrastructure for data storage, authentication, and interactions between devices across the web. It has the potential to be much smarter, faster, and more efficient than its predecessor Web 2.0.\
-\
+\\

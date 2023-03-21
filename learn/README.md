@@ -4,7 +4,7 @@ description: An introductions to the Shadow Cloud and it's implementations
 
 # Learn
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Design</td><td></td></tr><tr><td></td><td>Distributed Ledger Tech</td><td>(D.A.G.G.E.R)</td></tr><tr><td></td><td>Use Cases</td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Design</strong></td><td align="center">v1.5</td></tr><tr><td></td><td align="center"><strong>D.A.G.G.E.R</strong></td><td align="center">Distributed Ledger Tech</td></tr><tr><td></td><td align="center"><strong>Use Cases</strong></td><td align="center">Shadow Drive Capability</td></tr></tbody></table>
 
 ## **Mission**
 
