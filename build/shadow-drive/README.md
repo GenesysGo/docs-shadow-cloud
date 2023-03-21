@@ -2,9 +2,9 @@
 description: The topics in this section help you get started using Shadow Drive storage
 ---
 
-# Install Shadow Drive
+# **Install Shadow Drive**
 
-## Getting Started
+## **Getting Started**
 
 Prerequisites: Install [NodeJS LTS 16.17.1](https://nodejs.org/en/download/) on any OS. 
 
@@ -14,24 +14,24 @@ Then run the following command
 npm install -g @shadow-drive/cli
 ```
 
-## Next steps
+## **Next steps**
 * After you install Shadow Drive, learn how to use the [CLI client](the-cli.md).
 
 * If you prefer, here is a step by step [video walkthrough](https://www.youtube.com/watch?v=MfSuzFDDQ30).
 
-* Further streamline your integrations with Shadow Drive using the SDK and API.
+* Further streamline your integrations with Shadow Drive using the [SDK]() and [API]().
 
-## Get Support
+## **Get Support**
 
 * Review the [FAQ]()
 
 * Visit us in [Discord]() for support and feedback!
 
-* Submit your project to the [ecosystem]() page so we can highlight your amazing work!
+* Submit your project to the [Shadow Ecosystem](/build/shadow-drive/community-mainted-uis.md) page so we can highlight your amazing work!
 
-### [Learn more](/learn/storage-services/README.md) about why Shadow Drive is growing so quickly and what makes it a strong product market fit.
+* Check the [Network Status](http://184.154.66.109:8080/) of the Shadow Drive network.
 
-## Submitting Bugs
+## **Submitting Bugs**
 
 If you experience any issues or think you have found a bug with Shadow Drive then please submit it via the github link below!
 
@@ -42,3 +42,7 @@ Submit a PR or, if you need immediate help join our **[Discord](https://discord.
 There are A LOT of moving parts when you build a storage network that is designed to interface with the Solana Mainnet chain and so we want to make sure our processes for investigating and solving bugs are well maintained.
 
 Thank you for your help!
+
+## **Discover benefits and use cases of Shadow Drive:**
+
+### **[Learn more](/learn/storage-services/README.md)** about why Shadow Drive is growing so quickly and what makes it a strong product market fit.

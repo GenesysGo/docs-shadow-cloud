@@ -22,5 +22,4 @@
   * [Change Logs](reference/change-logs.md)
   * [Social Media & Community](reference/social-media-and-community.md)
   * [Solana Breakpoint 2022 Demo](reference/breakpoint-2022-demo.md)
-  * [Network Status](reference/network-usage-and-status.md)
   * [Shadow Glossary](reference/shadow-glossary.md)
