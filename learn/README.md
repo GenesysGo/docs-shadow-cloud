@@ -4,7 +4,7 @@ description: An introductions to the Shadow Cloud and it's implementations
 
 # Learn
 
-<table data-view="cards"><thead><tr><th></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Design</strong></td><td align="center">v1.5</td></tr><tr><td></td><td align="center"><strong>D.A.G.G.E.R</strong></td><td align="center">Distributed Ledger Tech</td></tr><tr><td></td><td align="center"><strong>Use Cases</strong></td><td align="center">Shadow Drive Capability</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Design</strong></td><td align="center">v1.5</td><td><a href="storage-services/design.md#shadow-drive-v1.5-is-born-building-tools-and-listening-to-developer-feedback">#shadow-drive-v1.5-is-born-building-tools-and-listening-to-developer-feedback</a></td></tr><tr><td></td><td align="center"><strong>D.A.G.G.E.R</strong></td><td align="center">Distributed Ledger Tech</td><td><a href="dagger.md#introduction">#introduction</a></td></tr><tr><td></td><td align="center"><strong>Use Cases</strong></td><td align="center">Shadow Drive Capability</td><td><a href="./#shadow-cloud-use-cases">#shadow-cloud-use-cases</a></td></tr></tbody></table>
 
 ## **Mission**
 
@@ -45,6 +45,8 @@ Ultimately, Shadow Drive’s implementation of D.A.G.G.E.R. will produce a permi
 The current [design](storage-services/design.md#present-design-considerations) of Shadow Drive makes embedding storage into applications easy, robust, and natively interfaced into the Solana blockchain. The SDK support [Javascript](../build/shadow-drive/sdk-javascript.md), [Rust](../build/shadow-drive/sdk-rust.md), and [Python ](../build/shadow-drive/sdk-python.md)all on top of fast and reliable API. Use Shadow Drive to store your 800gb model weights, 10 TB training data and all the generated images your users generate via our [Python](../build/shadow-drive/sdk-python.md) SDK. Or maybe you just want to store your historical geyser plugin output and state, and any relevant program accounts and transactions. If your are building an application in need of back-end storage, secondary storage, or client-facing storage option then our robust [Javascript SDK](../build/shadow-drive/sdk-javascript.md) has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
 
 [**Start Building on Shadow Drive!**](../build/)
+
+****[**Pricing**](storage-services/#pricing)****
 
 ## **Compute**
 

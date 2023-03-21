@@ -95,6 +95,8 @@ Proof-of-storage (PoS) consensus mechanisms like [Filecoin ](dagger.md#filecoin)
 
 In summary, D.A.G.G.E.R. protocol offers a unique consensus mechanism that allows for high throughput, fast finality, and horizontal scalability, making it an attractive choice for decentralized applications like Shadow Drive. PoS, PoW, and PoS consensus mechanisms all offer different benefits and trade-offs, and the choice of which one to use depends on the specific requirements of the application.
 
+[**Start Building on Shadow Drive!**](../build/)
+
 #### **Terminology used on this page**
 
 #### **Blockchain:**
