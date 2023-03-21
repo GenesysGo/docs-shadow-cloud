@@ -27,7 +27,7 @@ The following pages are intended to outline what Shadow Drive is, how it works, 
  * **[Smart-Contracts](/learn/storage-services/smart-contracts.md)**
     * Learn how smart-contracts securely interact and orchestrate client storage
 
-## Why use Shadow Drive?
+## **Why use Shadow Drive?**
 
 If you're a Web3 developer and are wondering why you should use $SHDW Drive, here's a few thoughts:
 

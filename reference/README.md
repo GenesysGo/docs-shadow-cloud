@@ -20,7 +20,7 @@ description: Shadow Cloud consolidated resources
 
 ## **Support**
 
-[Network Status]()
+[Network Status](http://184.154.66.109:8080/)
 
 [Change Log](change-logs.md)
 
