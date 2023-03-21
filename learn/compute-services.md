@@ -6,7 +6,11 @@ description: Products are currently under development.
 
 ### **The Shadow VM implementation of DAGGER**
 
-Utilizing DAGGER as an consensus-driven server orchestration protocol, we are capable of networking together decentralized commodity clouds (Shadow Operator virtual machines on micro-clouds) under a frond end UI/UX experience that effectively decentralizes virtual machine provisioning. This is similar in concept as Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operates trustlessly by individuals / entities who are Shadow Operators! This is currently in proof-of-concept and under development for the future deployment. We are have not set a release date. We revealed this technology at the Solana Breakpoint 2022 event.
+As we continue to push the boundaries of cloud computing, we have developed a revolutionary solution that utilizes DAGGER as a consensus-driven server orchestration protocol. With this technology, we are able to network together decentralized commodity clouds, specifically Shadow Operator virtual machines on micro-clouds, under a user-friendly front-end UI/UX experience. This effectively decentralizes virtual machine provisioning. These virtual machines are similar in concept to the popular cloud providers options like Amazon EC2 instances or Digital Ocean Droplets. However, the back-end resources and "network stack" are owned and operated trustlessly by individuals/entities who are Shadow Operators.
+
+With the ability to effectively decentralize virtual machine provisioning, Shadow Operators have the power to revolutionize the cloud computing industry by providing a more secure, transparent, and efficient solution for users. This technology has the potential to disrupt traditional cloud providers and empower individuals/entities to take control of their cloud resources. We are excited to continue pushing the boundaries of cloud computing with this groundbreaking technology.
+
+This proof-of-concept technology is currently under development for future deployment, and we have yet to set a release date. Our recent unveiling of this technology at the Solana Breakpoint 2022 event has generated significant buzz and excitement within the industry.
 
 [**Check out the Shadow VMs Demo from Breakpoint**](compute-services.md)
 

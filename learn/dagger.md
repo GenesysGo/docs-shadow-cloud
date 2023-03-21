@@ -45,7 +45,7 @@ The communications module initializes outgoing [sync](dagger.md#synchronization-
 * **Incoming Transactions**
   * When a user submits a transaction, the communications module receiving the transaction then forwards it to the processor. After verification, the transaction makes it way through the forester and the graph module which, upon inclusion in a block, sends back the signature for the event which contains the block in which the transaction was included. The communications module forwards this signature back to the user. Note that this does not mean the block has been [finalized](dagger.md#finalized-block-a-block-that-has-been-accepted-by-the-consensus-protocol-and-will-not-be-changed).
 
-<figure><img src="../.gitbook/assets/Docs_MindMap_Transparent.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Docs_MindMap_4.png" alt=""><figcaption></figcaption></figure>
 
 * **Incoming RPC Requests**
   * When a user submits one of several possible [RPC](dagger.md#rpc-request) requests, whether it be to read a file or inquire about a block or transaction, it is forwarded to the controller. The controller sends back the result of the ledger query to the communications module, which forwards it to the user. This RPC API is native to DAGGER and confirm to JSON standards.
