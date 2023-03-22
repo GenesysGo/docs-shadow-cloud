@@ -31,8 +31,44 @@ Data *--> Hash
 
 
 
-With our recent success in recompiling DAGGER on the Solana Saga mobile platform, our roadmap now includes the deployment of DAGGER to mobile devices, which will bring fast Layer-2 finality across mobile peers and deeper integration with Shadow Drive + Solana Mobile for our builders.
+dagger mermaid sequence:
 
-By leveraging the power of mobile resources spread across the globe, the convergence of DAGGER technology with the Shadow Platform will position us well for emerging trends such as "data-as-code," AI-edge apps, and the monetization of idle latent resources by mobile users. This will enable us to stay ahead of the curve and provide our users with cutting-edge technology for their building needs.
+```
+title DAGGER: Lifecycle of a Transaction
 
-In summary, our successful recompilation of DAGGER on the Solana Saga mobile platform has paved the way for the deployment of DAGGER to mobile devices. This will bring fast consensus finality across mobile peers and deeper integration with the Shadow Drive, enabling us to stay ahead of emerging trends and provide our users with the latest technology for their building needs.
+participant User
+participant Communications
+participant Peers
+participant Verifier
+participant Forester
+participant Controller
+participant Graph
+
+User->Communications: New Transaction via RPC
+Communications->Verifier: Transaction Forwarded for Signature Verification
+note over Verifier,Forester, Controller: Processor
+Verifier->Forester: Root Hash Verify
+Forester->Graph: Block Packing
+
+Note over Communications,Graph: Sync State
+Graph-->Communications: Update State and Peer
+Communications->Peers: Outgoing Sync Request
+Peers-->Communications: Sync Response
+Communications->Graph: Sync Data Forwarded
+
+note over Controller,Graph: Consensus
+Graph<-->Controller: Analyze
+Controller->Graph: Write
+
+Graph-->Peers: Sync Differences
+Graph-->Communications: Signature Hash of Event
+Communications-->User: Transaction Signature
+
+User->Communications: RPC Read Inquiry
+Communications->Controller: Forwarded for Ledger Read
+Controller->Graph: Read
+Graph-->Controller: Response
+Controller-->Communications: Ledger State & Response
+Communications-->User: Confirmed as Finalized
+
+```
