@@ -55,6 +55,8 @@ Shadow Drive storage costs are driven by wholesale network costs and can be esti
 
 {% embed url="https://sdrive.app/stats" %}
 
+For common questions check out the [General](/build/shadow-drive/support-and-faq.md) section of our FAQ.
+
 For a comprehensive look at the Shadow Platform's ecosystem check out the [Shadow Ecosystem](../../build/shadow-drive/community-mainted-uis.md) page.
 
 ### [**Get started with Shadow Drive!**](../../build/shadow-drive/)

@@ -26,7 +26,9 @@ If you experience any issues or think you have found a bug with Shadow Drive the
 
 **https://github.com/GenesysGo/shdw-drive-bug-reports**
 
-Submit a PR or, if you need immediate help join our [**Discord**](https://discord.gg/genesysgo) (discord.gg/genesysgo) and check out the #shdw-drive-support channel! Though, be warned, if you're popping in to submit a bug report then we'll likely thank you very much for your help and then direct you to the Github to submit the pug so that way we can properly document everything on our end!
+We adhere to a responsible disclosure process for security related issues which includes sending an email to support@genesysgo.com, and/or reaching out to us in private-channels such as the "#shdw-drive-support" channel in our [**Discord**](https://discord.gg/genesysgo).
+
+Submit a PR for general issues or, if you need immediate help join our [**Discord**](https://discord.gg/genesysgo) (discord.gg/genesysgo) and check out the #shdw-drive-support channel! Though, be warned, if you're popping in to submit a bug report then we'll likely thank you very much for your help and then direct you to the Github to submit the bug so that way we can properly document everything on our end!
 
 ### **(Coming Soon) Enhanced API Subscription Access**
 

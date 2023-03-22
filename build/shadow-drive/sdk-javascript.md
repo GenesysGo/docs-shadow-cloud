@@ -27,7 +27,8 @@
   * [**uploadFile**](sdk-javascript.md#uploadfile)
   * [**uploadMultipleFiles**](sdk-javascript.md#uploadmultiplefiles)
   * [**userInfo**](sdk-javascript.md#userinfo)
-
+* [**Example - POST request via SDK**](#example---post-request-via-sdk-make-immutable)
+* []()
 ### **Getting Started: Javascript SDK**
 
 Let's scaffold a React app and add our dependencies
@@ -1350,5 +1351,135 @@ console.log(responses);
 #### **Definition**
 
 userInfo: PublicKey
+
+### **Example - POST request via SDK (make immutable)**
+```java
+import * as anchor from "@project-serum/anchor";
+import { getStakeAccount, findAssociatedTokenAddress } from "../utils/helpers";
+import {
+  emissions,
+  isBrowser,
+  SHDW_DRIVE_ENDPOINT,
+  tokenMint,
+  uploader,
+} from "../utils/common";
+import {
+  ASSOCIATED_TOKEN_PROGRAM_ID,
+  TOKEN_PROGRAM_ID,
+} from "@solana/spl-token";
+import { ShadowDriveVersion, ShadowDriveResponse } from "../types";
+import fetch from "node-fetch";
+/**
+ *
+ * @param {anchor.web3.PublicKey} key - Publickey of a Storage Account
+ * @param {ShadowDriveVersion} version - ShadowDrive version (v1 or v2)
+ * @returns {ShadowDriveResponse} - Confirmed transaction ID
+ */
+export default async function makeStorageImmutable(
+  key: anchor.web3.PublicKey,
+  version: ShadowDriveVersion
+): Promise<ShadowDriveResponse> {
+  let selectedAccount;
+  try {
+    switch (version.toLocaleLowerCase()) {
+      case "v1":
+        selectedAccount = await this.program.account.storageAccount.fetch(key);
+        break;
+      case "v2":
+        selectedAccount = await this.program.account.storageAccountV2.fetch(
+          key
+        );
+        break;
+    }
+    const ownerAta = await findAssociatedTokenAddress(
+      selectedAccount.owner1,
+      tokenMint
+    );
+    const emissionsAta = await findAssociatedTokenAddress(emissions, tokenMint);
+    let stakeAccount = (await getStakeAccount(this.program, key))[0];
+    let txn;
+    switch (version.toLocaleLowerCase()) {
+      case "v1":
+        txn = await this.program.methods
+          .makeAccountImmutable()
+          .accounts({
+            storageConfig: this.storageConfigPDA,
+            storageAccount: key,
+            stakeAccount,
+            emissionsWallet: emissionsAta,
+            owner: selectedAccount.owner1,
+            uploader: uploader,
+            ownerAta,
+            tokenMint: tokenMint,
+            systemProgram: anchor.web3.SystemProgram.programId,
+            tokenProgram: TOKEN_PROGRAM_ID,
+            associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
+            rent: anchor.web3.SYSVAR_RENT_PUBKEY,
+          })
+          .transaction();
+      case "v2":
+        txn = await this.program.methods
+          .makeAccountImmutable2()
+          .accounts({
+            storageConfig: this.storageConfigPDA,
+            storageAccount: key,
+            owner: selectedAccount.owner1,
+            ownerAta,
+            stakeAccount,
+            uploader: uploader,
+            emissionsWallet: emissionsAta,
+            tokenMint: tokenMint,
+            systemProgram: anchor.web3.SystemProgram.programId,
+            tokenProgram: TOKEN_PROGRAM_ID,
+            associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
+            rent: anchor.web3.SYSVAR_RENT_PUBKEY,
+          })
+          .transaction();
+        break;
+    }
+    txn.recentBlockhash = (
+      await this.connection.getLatestBlockhash()
+    ).blockhash;
+    txn.feePayer = this.wallet.publicKey;
+    let signedTx;
+    let serializedTxn;
+    if (!isBrowser) {
+      await txn.partialSign(this.wallet.payer);
+      serializedTxn = txn.serialize({ requireAllSignatures: false });
+    } else {
+      signedTx = await this.wallet.signTransaction(txn);
+      serializedTxn = signedTx.serialize({ requireAllSignatures: false });
+    }
+    const makeImmutableResponse = await fetch(
+      `${SHDW_DRIVE_ENDPOINT}/make-immutable`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          transaction: Buffer.from(serializedTxn.toJSON().data).toString(
+            "base64"
+          ),
+        }),
+      }
+    );
+    if (!makeImmutableResponse.ok) {
+      return Promise.reject(
+        new Error(`Server response status code: ${
+          makeImmutableResponse.status
+        } \n
+			Server response status message: ${(await makeImmutableResponse.json()).error}`)
+      );
+    }
+    const responseJson = await makeImmutableResponse.json();
+    return Promise.resolve(responseJson);
+  } catch (e) {
+    return Promise.reject(new Error(e));
+  }
+}
+```
+
+
 
 #### **Help improve this** [**resource**](sdk-javascript.md) **or provide us with** [**feedback**](discord/)**.**
