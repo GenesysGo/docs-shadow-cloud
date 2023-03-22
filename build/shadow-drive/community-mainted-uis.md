@@ -2,11 +2,9 @@
 description: Seeing what others have built with Shadow Drive
 ---
 
-# Shadow Ecosystem
+# **Shadow Ecosystem<small><sup>[1]</sup>**
 
-## See some of the top projects building incredible apps on Shadow Drive!
-
-Not on this list? [Submit a PR](community-mainted-uis.md) to get added.
+### **Not on this list? [Submit a PR](community-mainted-uis.md) or drop into our [Discord](https://discord.gg/genesysgo) to get added.**   
 
 ### **SDrive.app**
 
@@ -22,16 +20,14 @@ One of the most widely used GUIs for interacting with Shadow Storage. Users can 
 
 ### **Synx - a React Native UI for Shadow Drive**
 
-{% content-ref url="https://app.gitbook.com/s/fPTC1bxkP9ZapjVkv5rT/reference/api-reference/users" %}
-[Users](https://app.gitbook.com/s/fPTC1bxkP9ZapjVkv5rT/reference/api-reference/users)
+{% content-ref url="https://pages.viral-loops.com/synx"}
 {% endcontent-ref %}
 
 A nice mobile application for working with private cloud storage using Shadow Drive created by the Blxckout team!
 
-### Shadow Portal - summoning off-chain data to your smart contract
+### **Shadow Portal - summoning off-chain data to your smart contract**
 
-{% content-ref url="https://app.gitbook.com/s/mI9BZqcU1Mt39c6S7fU3/use-cases/for-developers" %}
-[For Developers](https://app.gitbook.com/s/mI9BZqcU1Mt39c6S7fU3/use-cases/for-developers)
+{% content-ref url="https://twitter.com/ShadowyPortal"}
 {% endcontent-ref %}
 
 2nd play winners in the Grizzlython hackthon and new primitive to Solana. A novel way to summon off-chain data aka "runes" from Shadow Drive directy into your Solana smart contract.
@@ -54,13 +50,11 @@ This is a full web-hosting service where the backend storage is built on shadow 
 
 Like YouTube, but built on top of Shadow Drive storage. Uploads come directly from your Shadow Drive storage accounts!
 
-### Crab.so Decentralized Social Network
+### **Crab.so Decentralized Social Network**
 
 {% embed url="https://www.crab.so/" %}
 
 Crab is a community-driven, open-source, decentralized network for thriving communities in Web3
-
-\
 
 
 ### **CryptoStraps NFT Tools Shadow UI**
@@ -88,3 +82,9 @@ Another Shadow UI tool for managing your storage from the browser, but this time
 {% embed url="https://github.com/ebrightfield/shadow-drive-rust-cli" %}
 
 Another great contribution from a community member! A Rust-based CLI for working with Shadow Drive!
+
+/
+
+
+<small><sup>[1]</sup> 
+Disclaimer: Third-Party Projects and Non-Affiliation. Please be advised that the projects displayed on our website under the "Shadow Ecosystem" section (hereinafter referred to as the "Ecosystem") are developed and operated by independent third-party entities (collectively, the "Third-Party Projects"). These Third-Party Projects are neither affiliated with, nor endorsed, sponsored, or approved by GenesysGo in any manner. GenesysGo is showcasing these Third-Party Projects solely to demonstrate the diverse and creative community of builders using our software. The inclusion of any Third-Party Project within the Ecosystem does not constitute a recommendation or endorsement of any kind, nor should it be inferred as such. The order and arrangement of the Third-Party Projects in the Ecosystem do not signify any ranking, preference, or superiority and are displayed without any specific sequence or rationale. By accessing or interacting with any of the Third-Party Projects, you acknowledge and agree that GenesysGo assumes no responsibility or liability for any content, products, or services provided by these Third-Party Projects. You agree to release, indemnify, and hold harmless GenesysGo from and against any and all claims, damages, losses, or liabilities arising from or related to your access or use of any Third-Party Project featured in the Ecosystem. It is your sole responsibility to assess the quality, legality, and suitability of any Third-Party Project you may choose to access, use, or engage with. We strongly recommend conducting your own due diligence and seeking professional advice, as necessary, before relying on or engaging with any Third-Party Project. GenesysGo reserves the right, in its sole discretion, to remove, modify, or update the Ecosystem or any Third-Party Project featured therein at any time and without prior notice. By continuing to browse the Ecosystem, you agree to the terms and conditions set forth in this Disclaimer. If you do not agree with any part of this Disclaimer, please refrain from accessing or interacting with the Third-Party Projects featured on our website.</small>
