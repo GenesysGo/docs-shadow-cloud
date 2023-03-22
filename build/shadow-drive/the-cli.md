@@ -1,21 +1,25 @@
-# **Contents**
-* **[Install Shadow Drive CLI](#install-the-shadow-drive-cli)**
-    * **[Video Walkthrough](#video-guide-and-walkthrough)**
-    * **[Install Solana CLI](#install-the-solana-cli)**
-    * **[Create a Storage Account](#create-a-storage-account)**
-    * **[Upload a FIle](#upload-file-to-shadow-drive)**
-    * **[Upload Multiple FIles](#upload-multiple-files-to-shadow-drive)**
-    * **[Edit a File](#edit-a-file-aka-overwrite-a-file-aka-replace-a-file)**
-    * **[Delete a File](#delete-a-file)**
-    * **[Add Storage](#add-storage-to-storage-account)**
-    * **[Reduce Storage](#reduce-storage-account-size)**
-    * **[Make File Immutable](#make-storage-account-immutable)**
-* **[Install Rust CLI - Experimental!](#the-rust-cli)**
+# CLI
+
+## **Contents**
+
+* [**Install Shadow Drive CLI**](the-cli.md#install-the-shadow-drive-cli)
+  * [**Video Walkthrough**](the-cli.md#video-guide-and-walkthrough)
+  * [**Install Solana CLI**](the-cli.md#install-the-solana-cli)
+  * [**Create a Storage Account**](the-cli.md#create-a-storage-account)
+  * [**Upload a FIle**](the-cli.md#upload-file-to-shadow-drive)
+  * [**Upload Multiple FIles**](the-cli.md#upload-multiple-files-to-shadow-drive)
+  * [**Edit a File**](the-cli.md#edit-a-file-aka-overwrite-a-file-aka-replace-a-file)
+  * [**Delete a File**](the-cli.md#delete-a-file)
+  * [**Add Storage**](the-cli.md#add-storage-to-storage-account)
+  * [**Reduce Storage**](the-cli.md#reduce-storage-account-size)
+  * [**Make File Immutable**](the-cli.md#make-storage-account-immutable)
+* [**Install Rust CLI - Experimental!**](the-cli.md#the-rust-cli)
 
 ## **Introduction**
+
 The CLI is the easiest way to interact with Shadow Drive. You can use your favorite shell scripting language, or just type the commands one at a time. For test driving Shadow Drive, this is the best way to get started.
 
-# **Install the Shadow Drive CLI**
+## **Install the Shadow Drive CLI**
 
 Prerequisites: Install [NodeJS LTS 16.17.1](https://nodejs.org/en/download/) on any OS.
 
@@ -25,13 +29,13 @@ Then run the following command
 npm install -g @shadow-drive/cli
 ```
 
-### **[Video Guide and Walkthrough](https://www.youtube.com/watch?v=MfSuzFDDQ30)**
+#### [**Video Guide and Walkthrough**](https://www.youtube.com/watch?v=MfSuzFDDQ30)
 
 ### **Install the Solana CLI**
 
-In order to interact with Shadow Drive, we're going to need a Solana wallet and CLI to interact with the Solana blockchain. 
+In order to interact with Shadow Drive, we're going to need a Solana wallet and CLI to interact with the Solana blockchain.
 
-*NOTE: The Shadow Drive CLI uses it's own RPC configuration. It does not use your Solana environment configuration.*
+_NOTE: The Shadow Drive CLI uses it's own RPC configuration. It does not use your Solana environment configuration._
 
 Check [HERE for the latest version](https://docs.solana.com/cli/install-solana-cli-tools).
 
@@ -54,12 +58,12 @@ If you want to create a new wallet, just use
 ```
 solana-keygen new -o ~/shdw-keypair.json
 ```
-You will see it write a new keypair file and it was display the `pubkey` which is your wallet address.
 
+You will see it write a new keypair file and it was display the `pubkey` which is your wallet address.
 
 **You'll need to send a small amount of SOL and SHDW to that wallet address to proceed! The SOL is used to pay for transaction fees, the SHDW is used to create (and expand) the storage account!**
 
-### **Context-Sensitive Help**
+#### **Context-Sensitive Help**
 
 Shadow Drive CLI comes with integrated help. All shadow drive commands begin with `shdw-drive`.
 
@@ -81,16 +85,20 @@ shdw-drive create-storage-account --help
 
 This is one of the few commands where you will need SHDW. Before the command executes, it will prompt you as to how much SHDW will be required to reserve the storage account. There are three required options:
 
-`-kp, --keypair`  
+`-kp, --keypair`
+
 * Path to wallet that will create the storage account
 
 `-n, --name`
+
 * What you want your storage account to be named. (Does not have to be unique)
 
-`-s, --size`            
+`-s, --size`
+
 * Amount of storage you are requesting to create. This should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported.
 
 **Example:**
+
 ```
 shdw-drive create-storage-account -kp ~/shdw-keypair.json -n "pony storage drive" -s 1GB
 ```
@@ -100,17 +108,21 @@ shdw-drive create-storage-account -kp ~/shdw-keypair.json -n "pony storage drive
 There are only two required options for this command:
 
 `-kp, --keypair`
+
 * Path to wallet that will upload the file
 
-`-f, --file`               
+`-f, --file`
+
 * File path. Current file size limit is 1GB through the CLI.
 
 If you have multiple storage accounts it will present you with a list of owned storage accounts to choose from. You can optionally provide your storage account address with:
 
-`-s, --storage-account`     
+`-s, --storage-account`
+
 * Storage account to upload file to.
 
 **Example:**
+
 ```
 shdw-drive upload-file -kp ~/shdw-keypair.json -f ~/AccountHolders.csv
 ```
@@ -121,19 +133,24 @@ A more realistic use case is to upload an entire directory of, say, NFT images a
 
 Options:
 
-`-kp, --keypair`     
+`-kp, --keypair`
+
 * Path to wallet that will upload the files
 
-`-d, --directory`    
+`-d, --directory`
+
 * Path to folder of files you want to upload.
 
-`-s, --storage-account`     
+`-s, --storage-account`
+
 * Storage account to upload file to.
 
-`-c, --concurrent`             
+`-c, --concurrent`
+
 * Number of concurrent batch uploads. (default: "3")
 
 **Example:**
+
 ```
 shdw-drive upload-multiple-files -kp ~/shdw-keypair.json -d ~/ponyNFT/assets/
 ```
@@ -144,16 +161,20 @@ This command is used to replace an existing file _that has the exact same name._
 
 There are three requirements for this command:
 
-`-kp, --keypair`     
+`-kp, --keypair`
+
 * Path to wallet that will upload the file
 
-`-f, --file`              
+`-f, --file`
+
 * File path. Current file size limit is 1GB through the CLI. File must be named the same as the one you originally uploaded
 
-`-u, --url`               
+`-u, --url`
+
 * Shadow Drive URL of the file you are requesting to delete
 
 **Example:**
+
 ```
 shdw-drive edit-file --keypair ~/shdw-keypair.json --file ~/ponyNFT/01.json --url https://shdw-drive.genesysgo.net/abc123def456ghi789/0.json
 ```
@@ -164,13 +185,15 @@ This is straightforward and it's important to note once it's deleted, it's gone 
 
 There are two requirements and there aren't any options outside of the standard ones:
 
-`-kp, --keypair`    
+`-kp, --keypair`
+
 * Path to the keypair file for the wallet that owns the storage account and file
 
-`-u, --url`             
+`-u, --url`\
 Shadow Drive URL of the file you are requesting to delete
 
 **Example:**
+
 ```
 shdw-drive delete-file --keypair ~/shdw-keypair.json --url https://shdw-drive.genesysgo.net/abc123def456ghi789/0.json
 ```
@@ -181,15 +204,18 @@ You can expand the storage size of a storage account. This command consumes SHDW
 
 There are only two requirements for this call
 
-`-kp, --keypair`     
+`-kp, --keypair`
+
 * Path to wallet that will upload the files
 
-`-s, --size`          
+`-s, --size`
+
 * Amount of storage you are requesting to add to your storage account. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently
 
 If you have more than one account, you'll get to pick which storage account you want to add storage to.
 
 **Example:**
+
 ```
 shdw-drive add-storage -kp ~/shdw-keypair.json -s 100MB
 ```
@@ -200,13 +226,16 @@ You can reduce your storage account and reclaim your unused SHDW tokens. _**This
 
 There are two requirements
 
-`-kp, --keypair`     
+`-kp, --keypair`
+
 * Path to wallet that will upload the files
 
-`-s, --size`            
+`-s, --size`
+
 * Amount of storage you are requesting to remove from your storage account. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently
 
 **Example:**
+
 ```
 shdw-drive reduce-storage -kp ~/shdw-keypair.json -s 500MB
 ```
@@ -215,21 +244,22 @@ shdw-drive reduce-storage -kp ~/shdw-keypair.json -s 500MB
 
 Since you reduced the amount of storage being used in the previous step, you are now free to claim your unused SHDW tokens. The only requirement here is a keypair.
 
-**Example:****
+**Example:**\*\*
+
 ```
 shdw-drive claim-stake -kp ~/shdw-keypair.json
 ```
 
 ### **Delete a Storage Account**
 
-
 You can entirely remove a storage account from Shadow Drive. Upon completion, your SHDW tokens will be returned to the wallet.
 
-*NOTE: You have a grace period upon deletion that lasts until the end of the current Solana epoch. [Go HERE to see](https://explorer.solana.com/) how much time is remaining in the current Solana epoch to know how much grace period you will get.*
+_NOTE: You have a grace period upon deletion that lasts until the end of the current Solana epoch._ [_Go HERE to see_](https://explorer.solana.com/) _how much time is remaining in the current Solana epoch to know how much grace period you will get._
 
 All you need here is a keypair, and it will prompt you for the specific storage account to delete.
 
 **Example:**
+
 ```
 shdw-drive delete-storage-account ~/shdw-keypair.json
 ```
@@ -254,10 +284,9 @@ The only requirement is a keypair. You will be prompted to select a storage acco
 shdw-drive make-storage-account-immutable -kp ~/shdw-keypair.json
 ```
 
+## **The Rust CLI**
 
-# **The Rust CLI**
-
-## **(This section is under development)**
+### **(This section is under development)**
 
 ### **CreateStorageAccount**
 
@@ -266,9 +295,11 @@ Create an account on which to store data. Storage accounts can be globally, irre
 **Parameters:**
 
 `--name`
+
 * String
 
 `--size`
+
 * Byte
 
 **Example:**
@@ -284,6 +315,7 @@ Queues a storage account for deletion. While the request is still enqueued and n
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 **Example:**
@@ -305,6 +337,7 @@ Cancels the deletion of a storage account enqueued for deletion.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 **Example:**
@@ -326,6 +359,7 @@ Redeem tokens afforded to a storage account after reducing storage capacity.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 **Example:**
@@ -347,9 +381,11 @@ Increase the capacity of a storage account.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 `--size`
+
 * Byte (accepts KB, MB, GB)
 
 **Example:**
@@ -371,9 +407,11 @@ Increase the immutable storage capacity of a storage account.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 `--size`
+
 * Byte (accepts KB, MB, GB)
 
 **Example:**
@@ -395,9 +433,11 @@ Reduce the capacity of a storage account.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 `--size`
+
 * Byte (accepts KB, MB, GB)
 
 **Example:**
@@ -419,6 +459,7 @@ Make a storage account immutable. This is irreversible.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 **Example:**
@@ -440,6 +481,7 @@ Fetch the metadata pertaining to a storage account.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 **Example:**
@@ -461,7 +503,8 @@ Fetch a list of storage accounts owned by a particular pubkey. If no owner is pr
 **Parameters:**
 
 `--owner`
-* Option\<Pubkey\>
+
+* Option\<Pubkey>
 
 **Example:**
 
@@ -482,6 +525,7 @@ List all the files in a storage account.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 **Example:**
@@ -503,6 +547,7 @@ Get a file, assume it's text, and print it.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 `--filename`
@@ -526,9 +571,11 @@ Get basic file object data from a storage account file.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 `--file`
+
 * String
 
 **Example:**
@@ -550,9 +597,11 @@ Delete a file from a storage account.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 `--filename`
+
 * String
 
 **Example:**
@@ -574,9 +623,11 @@ Edit a file in a storage account.
 **Parameters:**
 
 `--storage-account`
+
 * Pubkey
 
 `--path`
+
 * PathBuf
 
 **Example:**
@@ -598,13 +649,16 @@ Upload one or more files to a storage account.
 **Parameters:**
 
 `--batch-size`
-* usize (default: value of FILE_UPLOAD_BATCH_SIZE)
+
+* usize (default: value of FILE\_UPLOAD\_BATCH\_SIZE)
 
 `--storage-account`
+
 * Pubkey
 
 `--files`
-* Vec\<PathBuf\>
+
+* Vec\<PathBuf>
 
 **Example:**
 

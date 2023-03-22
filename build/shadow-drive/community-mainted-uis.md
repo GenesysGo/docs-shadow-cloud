@@ -22,9 +22,19 @@ One of the most widely used GUIs for interacting with Shadow Storage. Users can 
 
 ### **Synx - a React Native UI for Shadow Drive**
 
-{% embed url="https://pages.viral-loops.com/synx" %}
+{% content-ref url="https://app.gitbook.com/s/fPTC1bxkP9ZapjVkv5rT/reference/api-reference/users" %}
+[Users](https://app.gitbook.com/s/fPTC1bxkP9ZapjVkv5rT/reference/api-reference/users)
+{% endcontent-ref %}
 
 A nice mobile application for working with private cloud storage using Shadow Drive created by the Blxckout team!
+
+### Shadow Portal - summoning off-chain data to your smart contract
+
+{% content-ref url="https://app.gitbook.com/s/mI9BZqcU1Mt39c6S7fU3/use-cases/for-developers" %}
+[For Developers](https://app.gitbook.com/s/mI9BZqcU1Mt39c6S7fU3/use-cases/for-developers)
+{% endcontent-ref %}
+
+2nd play winners in the Grizzlython hackthon and new primitive to Solana. A novel way to summon off-chain data aka "runes" from Shadow Drive directy into your Solana smart contract.
 
 ### **AlphaBatem's Shadow UI**
 
@@ -43,6 +53,15 @@ This is a full web-hosting service where the backend storage is built on shadow 
 {% embed url="https://www.shadowtube.io/" %}
 
 Like YouTube, but built on top of Shadow Drive storage. Uploads come directly from your Shadow Drive storage accounts!
+
+### Crab.so Decentralized Social Network
+
+{% embed url="https://www.crab.so/" %}
+
+Crab is a community-driven, open-source, decentralized network for thriving communities in Web3
+
+\
+
 
 ### **CryptoStraps NFT Tools Shadow UI**
 

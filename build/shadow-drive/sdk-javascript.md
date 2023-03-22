@@ -1,32 +1,34 @@
-# **Contents**
+# Javascript
 
--   **[Getting Started](#getting-started-javascript-sdk)**
--   **[Create a Storage Account](#create-a-storage-account)**
--   **[Upload a File](#upload-a-file)**
--   **[Edit a File](#edit-a-file-aka-replace-a-file)**
--   **[Delete a File](#delete-a-file)**
--   **[Methods](#methods)**
-    -   **[constructor](#constructor)**
-    -   **[addStorage](#addstorage)**
-    -   **[cancelDeleteStorageAccount](#canceldeletestorageaccount)**
-    -   **[claimStake](#claimstake)**
-    -   **[createStorageAccount](#createstorageaccount)**
-    -   **[deleteFile](#deletefile)**
-    -   **[deleteStorageAccount](#deletestorageaccount)**
-    -   **[editFile](#editfile)**
-    -   **[getStorageAccount](#getstorageaccount)**
-    -   **[getStorageAccounts](#getstorageaccount)**
-    -   **[listObjects](#listobjects)**
-    -   **[makeStorageImmutable](#makestorageimmutable)**
-    -   **[migrate](#migrate)**
-    -   **[redeemRent](#redeemrent)**
-    -   **[reduceStorage](#reducestorage)**
-    -   **[storageConfigPDA](#storageconfigpda)**
-    -   **[uploadFile](#uploadfile)**
-    -   **[uploadMultipleFiles](#uploadmultiplefiles)**
-    -   **[userInfo](#userinfo)**
+## **Contents**
 
-## **Getting Started: Javascript SDK**
+* [**Getting Started**](sdk-javascript.md#getting-started-javascript-sdk)
+* [**Create a Storage Account**](sdk-javascript.md#create-a-storage-account)
+* [**Upload a File**](sdk-javascript.md#upload-a-file)
+* [**Edit a File**](sdk-javascript.md#edit-a-file-aka-replace-a-file)
+* [**Delete a File**](sdk-javascript.md#delete-a-file)
+* [**Methods**](sdk-javascript.md#methods)
+  * [**constructor**](sdk-javascript.md#constructor)
+  * [**addStorage**](sdk-javascript.md#addstorage)
+  * [**cancelDeleteStorageAccount**](sdk-javascript.md#canceldeletestorageaccount)
+  * [**claimStake**](sdk-javascript.md#claimstake)
+  * [**createStorageAccount**](sdk-javascript.md#createstorageaccount)
+  * [**deleteFile**](sdk-javascript.md#deletefile)
+  * [**deleteStorageAccount**](sdk-javascript.md#deletestorageaccount)
+  * [**editFile**](sdk-javascript.md#editfile)
+  * [**getStorageAccount**](sdk-javascript.md#getstorageaccount)
+  * [**getStorageAccounts**](sdk-javascript.md#getstorageaccount)
+  * [**listObjects**](sdk-javascript.md#listobjects)
+  * [**makeStorageImmutable**](sdk-javascript.md#makestorageimmutable)
+  * [**migrate**](sdk-javascript.md#migrate)
+  * [**redeemRent**](sdk-javascript.md#redeemrent)
+  * [**reduceStorage**](sdk-javascript.md#reducestorage)
+  * [**storageConfigPDA**](sdk-javascript.md#storageconfigpda)
+  * [**uploadFile**](sdk-javascript.md#uploadfile)
+  * [**uploadMultipleFiles**](sdk-javascript.md#uploadmultiplefiles)
+  * [**userInfo**](sdk-javascript.md#userinfo)
+
+### **Getting Started: Javascript SDK**
 
 Let's scaffold a React app and add our dependencies
 
@@ -42,9 +44,9 @@ yarn add @shadow-drive/sdk @project-serum/anchor \
     @solana-mobile/wallet-adapter-mobile
 ```
 
-Solana Web3.js can be reviewed here -https://solana-labs.github.io/solana-web3.js/
+Review the [Solana Web3.js](https://solana-labs.github.io/solana-web3.js/) SDK and [Solana API](https://docs.solana.com/developing/clients/javascript-api) resources.
 
-### **Instantiate the Wallet and Connection**
+#### **Instantiate the Wallet and Connection**
 
 Use the [Solana docs and examples here](https://github.com/solana-labs/wallet-adapter) if you need help. We're going to focus on Shadow Drive SDK in these docs, so if you need a primer on how to build a React site with Solana, we can refer you to other resources.
 
@@ -97,11 +99,9 @@ return (
 
 </details>
 
-### **Building components for various Shadow Drive operations**
+#### **Building components for various Shadow Drive operations**
 
-Let's start by instantiating the Shadow Drive connection class object. This will
-have all Shadow Drive methods and it implements the signing wallet within the class for all
-transactions.
+Let's start by instantiating the Shadow Drive connection class object. This will have all Shadow Drive methods and it implements the signing wallet within the class for all transactions.
 
 At the simplest level, it is recommend for a React app to immediately try to load a connection to a user's Shadow Drives upon wallet connection. This can be done with the `useEffect` React hook.
 
@@ -147,14 +147,13 @@ async function main() {
 main();
 ```
 
-#### Create a Storage Account
+**Create a Storage Account**
 
 This implementation is effectively the same for both Web and Node implementations. There are three params that are required to create a storage account:
 
--   `name`: a friendly name for your storage account
--   `size`: The size of your storage accounts with a human readable ending containing `KB`, `MB`, or `GB`
--   `version`: can be either `v1` or `v2`. Note - `v1` is completely deprecated
-    and you shuold only use `v2` moving forward.
+* `name`: a friendly name for your storage account
+* `size`: The size of your storage accounts with a human readable ending containing `KB`, `MB`, or `GB`
+* `version`: can be either `v1` or `v2`. Note - `v1` is completely deprecated and you shuold only use `v2` moving forward.
 
 ```javascript
 //create account
@@ -162,7 +161,7 @@ const newAcct = await drive.createStorageAccount("myDemoBucket", "10MB", "v2");
 console.log(newAcct);
 ```
 
-### **Get a list of Owned Storage Accounts**
+#### **Get a list of Owned Storage Accounts**
 
 This implementation is effectively the same for both Web and Node implementations. The only parameter required is either `v1` or `v2` for the version of storage account you created in the previous step.
 
@@ -220,8 +219,7 @@ Full Response:
 
 </details>
 
-### **Get a Specific Storage Account**
-
+#### **Get a Specific Storage Account**
 
 This implementation is effectively the same for both Web and Node implementations. The only parameter required is either a PublicKey object or a base-58 string of the public key.
 
@@ -258,20 +256,18 @@ Full Response:
 
 </details>
 
-### **Upload a File**
+#### **Upload a File**
 
 The `uploadFile` method requires two parameters:
 
--   `key`: A PublicKey object representing the public key of the Shadow Storage Account
--   `data`: A file of either the `File` object type or `ShadowFile` object type
+* `key`: A PublicKey object representing the public key of the Shadow Storage Account
+* `data`: A file of either the `File` object type or `ShadowFile` object type
 
 Check the intellisense popup below when hovering over the method
 
 <figure><img src="../../.gitbook/assets/Screen Shot 2022-10-13 at 7.40.37 PM.png" alt=""><figcaption></figcaption></figure>
 
-`File` objects are implemented in web browsers, and `ShadowFile` is a custom
-type we implemented in TypeScript. So either you are using `File` in the web, or you are
-scripting in TS.
+`File` objects are implemented in web browsers, and `ShadowFile` is a custom type we implemented in TypeScript. So either you are using `File` in the web, or you are scripting in TS.
 
 Here is an example with a React Component:
 
@@ -366,22 +362,21 @@ console.log(uploadFile);
 
 </details>
 
-### **Upload Multiple Files**
+#### **Upload Multiple Files**
 
-This is a nearly identical implementation to uploadFile, except that it requires
-a `FileList` or array of `ShadowFiles` and an optional concurrency parameter.
+This is a nearly identical implementation to uploadFile, except that it requires a `FileList` or array of `ShadowFiles` and an optional concurrency parameter.
 
 <figure><img src="../../.gitbook/assets/Screen Shot 2022-10-13 at 8.12.08 PM.png" alt=""><figcaption></figcaption></figure>
 
 Recall that the default setting is to attempt to upload 3 files concurrently. Here you can override this and specify how many files you want to try to upload based on the cores and bandwith of your infrastructure.
 
-### **Delete a File**
+#### **Delete a File**
 
 The implementation of `deleteFile` is the same between web and Node. There are three required parameters to delete a file:
 
--   `key`: the storage account's public key
--   `url`: the current URL of the file to be deleted
--   `version`: can be either `v1` or `v2`
+* `key`: the storage account's public key
+* `url`: the current URL of the file to be deleted
+* `version`: can be either `v1` or `v2`
 
 ```javascript
 const url =
@@ -393,16 +388,16 @@ const delFile = await drive.deleteFile(acctPubKey, url, "v2");
 console.log(delFile);
 ```
 
-### **Edit a File (aka Replace a file)**
+#### **Edit a File (aka Replace a file)**
 
-<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-13 at 8.28.30 PM.png" alt=""><figcaption><p></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2022-10-13 at 8.28.30 PM.png" alt=""><figcaption></figcaption></figure>
 
 The editFile method is a combo of `uploadFile` and `deleteFile`. Let's look at the params:
 
--   `key`: the Public Key of the storage account
--   `url`: the URL of the file that is being replaced
--   `data`: the file that is replacing the current file. **It must have the exact same filename and extension, and it must be a `File` or `ShadowFile` object**
--   `version`: either `v1` or `v2`
+* `key`: the Public Key of the storage account
+* `url`: the URL of the file that is being replaced
+* `data`: the file that is replacing the current file. **It must have the exact same filename and extension, and it must be a `File` or `ShadowFile` object**
+* `version`: either `v1` or `v2`
 
 ```typescript
 const fileToUpload: ShadowFile = {
@@ -417,7 +412,7 @@ const acctPubKey = new anchor.web3.PublicKey(
 const editFile = await drive.editFile(acctPubKey, url, "v2", fileToUpload);
 ```
 
-### **List Storage Account Files (aka List Objects)**
+#### **List Storage Account Files (aka List Objects)**
 
 This is a simple implementation that only requires a public key to get the file names of a storage account.
 
@@ -435,13 +430,13 @@ And the response payload:
 { keys: [ 'index.html' ] }
 ```
 
-### **Increase Storage Account Size**
+#### **Increase Storage Account Size**
 
 This is a method to simply increase the storage limit of a storage account. It requires three params:
 
--   `key`: storage account public key
--   `size`: amount to increase by, must end with `KB`, `MB`, or `GB`
--   `version`: storage account version, must be `v1` or `v2`
+* `key`: storage account public key
+* `size`: amount to increase by, must end with `KB`, `MB`, or `GB`
+* `version`: storage account version, must be `v1` or `v2`
 
 ```javascript
 const accts = await drive.getStorageAccounts("v2");
@@ -449,7 +444,7 @@ let acctPubKey = new anchor.web3.PublicKey(accts[1].publicKey);
 const addStgResp = await drive.addStorage(acctPubKey, "10MB", "v2");
 ```
 
-### **Reduce Storage Account Size**
+#### **Reduce Storage Account Size**
 
 This is a method to decrease the storage limit of a storage account. This implementation only requires three params - the storage account key, the amount to reduce it by, and the version.
 
@@ -460,7 +455,7 @@ const acctPubKey = new anchor.web3.PublicKey(
 const shrinkAcct = await drive.reduceStorage(acctPubKey, "10MB", "v2");
 ```
 
-### **Next you'll want to claim your unused SHDW**
+#### **Next you'll want to claim your unused SHDW**
 
 This method allows you to reclaim the SHDW that is no longer being used. This method only requires a storage account public key and a version.
 
@@ -471,12 +466,9 @@ const acctPubKey = new anchor.web3.PublicKey(
 const claimStake = await drive.claimStake(acctPubKey, "v2");
 ```
 
-### **Delete a Storage Account**
+#### **Delete a Storage Account**
 
-As the name implies, you can delete a storage account and all of its files. The
-storage account can still be recovered until the current epoch ends, but after
-that, it will be removed. This implementation only requires two params - a storage account key
-and a version.
+As the name implies, you can delete a storage account and all of its files. The storage account can still be recovered until the current epoch ends, but after that, it will be removed. This implementation only requires two params - a storage account key and a version.
 
 ```javascript
 const acctPubKey = new anchor.web3.PublicKey(
@@ -485,11 +477,9 @@ const acctPubKey = new anchor.web3.PublicKey(
 const delAcct = await drive.deleteStorageAccount(acctPubKey, "v2");
 ```
 
-### **Undelete the Deleted Storage Account**
+#### **Undelete the Deleted Storage Account**
 
-You can still get your storage account back if the current epoch hasn't elapsed.
-This implementation only requires two params - an account public key
-and a version.
+You can still get your storage account back if the current epoch hasn't elapsed. This implementation only requires two params - an account public key and a version.
 
 ```javascript
 const acctPubKey = new anchor.web3.PublicKey(
@@ -498,57 +488,53 @@ const acctPubKey = new anchor.web3.PublicKey(
 const cancelDelStg = await drive.cancelDeleteStorageAccount(acctPubKey, "v2");
 ```
 
-# **Methods**
+## **Methods**
 
-## **`constructor`**
+### **`constructor`**
 
-### **Definition**
+#### **Definition**
 
 This method is used to create a new instance of the ShadowDrive class. It accepts a web3 connection object and a web3 wallet. It returns an instance of the ShadowDrive class.
 
-### **Parameters**
+#### **Parameters**
 
--   `connection`: `Connection` - initialized web3 connection object
--   `wallet`: `any` - Web3 wallet
+* `connection`: `Connection` - initialized web3 connection object
+* `wallet`: `any` - Web3 wallet
 
-### **Returns**
+#### **Returns**
 
 It returns an instance of the ShadowDrive class.
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const shadowDrive = new ShadowDrive(connection, wallet).init();
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // this creates a new instance of the ShadowDrive class and initializes it with the given connection and wallet parameters
 const shadowDrive = new ShadowDrive(connection, wallet).init();
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`addStorage`**
+### **`addStorage`**
 
-### **Definition**
+#### **Definition**
 
 `addStorage` is a method of the `ShadowDrive` class defined in `index.ts` at line 121. It takes three parameters: `key`, `size`, and `version` and returns a `Promise<ShadowDriveResponse>` with the confirmed transaction ID.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey` - Public Key of the existing storage to increase size on
--   `size`: `string` - Amount of storage you are requesting to add to your storage account. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently.
--   `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `key`: `PublicKey` - Public Key of the existing storage to increase size on
+* `size`: `string` - Amount of storage you are requesting to add to your storage account. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently.
+* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
 
-### **Returns**
+#### **Returns**
 
 Confirmed transaction ID
 
@@ -561,18 +547,15 @@ Confirmed transaction ID
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const accts = await drive.getStorageAccounts("v2");
 let acctPubKey = new anchor.web3.PublicKey(accts[1].publicKey);
 const addStgResp = await drive.addStorage(acctPubKey, "10MB", "v2");
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // This line retrieves the storage accounts with version "v2" using the `getStorageAccounts` method of the `drive` object and stores them in the `accts` variable.
 const accts = await drive.getStorageAccounts("v2")
@@ -583,41 +566,36 @@ let acctPubKey = new anchor.web3.PublicKey(accts[1].publicKey)
 // This line adds a new storage allocation of size "10MB" and version "v2" to the storage account identified by the public key in `acctPubKey`. The response is stored in the `addStgResp` variable.
 const addStgResp = await drive.addStorage(acctPubKey,"10MB","v2"ca
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`cancelDeleteStorageAccount`**
+### **`cancelDeleteStorageAccount`**
 
-### **Definition**
+#### **Definition**
 
-Implementation of ShadowDrive.cancelDeleteStorageAccount defined in index.ts:135
-This method is used to cancel a delete request for a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and the Shadow Drive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the undelete request.
+Implementation of ShadowDrive.cancelDeleteStorageAccount defined in index.ts:135 This method is used to cancel a delete request for a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and the Shadow Drive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the undelete request.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey
+* `key`: `PublicKey` - Publickey
 
-### **Returns**
+#### **Returns**
 
 Confirmed transaction ID
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
 );
 const cancelDelStg = await drive.cancelDeleteStorageAccount(acctPubKey, "v2");
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Create a new public key object from a string representation of a Solana account public key
 const acctPubKey = new anchor.web3.PublicKey(
@@ -627,41 +605,37 @@ const acctPubKey = new anchor.web3.PublicKey(
 // Call the "cancelDeleteStorageAccount" function of the Shadow Drive API, passing in the account public key object and a string indicating the storage account version to cancel deletion for
 const cancelDelStg = await drive.cancelDeleteStorageAccount(acctPubKey, "v2");
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`claimStake`**
+### **`claimStake`**
 
-### **Definition**
+#### **Definition**
 
 This method is used to request a Stake on ShadowDrive. It accepts a PublicKey of the Storage Account and the ShadowDrive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the claimStake request.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of Storage Account
--   `version`: `ShadowDrive
+* `key`: `PublicKey` - Publickey of Storage Account
+* `version`: \`ShadowDrive
 
-### **Returns**
+#### **Returns**
 
 Confirmed transaction ID
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
 );
 const claimStake = await drive.claimStake(acctPubKey, "v2");
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Create a new public key object with the specified value
 const acctPubKey = new anchor.web3.PublicKey(
@@ -671,26 +645,24 @@ const acctPubKey = new anchor.web3.PublicKey(
 // Call the 'claimStake' function on the 'drive' object with the account public key and 'v2' as parameters, and wait for its completion before proceeding
 const claimStake = await drive.claimStake(acctPubKey, "v2");
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`createStorageAccount`**
+### **`createStorageAccount`**
 
-### **Definition**
+#### **Definition**
 
-Implementation of ShadowDrive.createStorageAccount defined in index.ts:120
-This method is used to create a new Storage Account on ShadowDrive. It accepts the name of the Storage Account, the size of the requested Storage Account, and the ShadowDrive version (v1 or v2). It also accepts an optional secondary owner for the Storage Account. It returns a Promise<CreateStorageResponse> containing the created Storage Account and the transaction signature.
+Implementation of ShadowDrive.createStorageAccount defined in index.ts:120 This method is used to create a new Storage Account on ShadowDrive. It accepts the name of the Storage Account, the size of the requested Storage Account, and the ShadowDrive version (v1 or v2). It also accepts an optional secondary owner for the Storage Account. It returns a Promise containing the created Storage Account and the transaction signature.
 
-### **Parameters**
+#### **Parameters**
 
--   `name`: `string` - What you want your storage account to be named. (Does not have to be unique)
--   `size`: `string` - Amount of storage you are requesting to create. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently.
--   `version`: `ShadowDriveVersion` - ShadowDrive version(v1 or v2)
--   `owner2` (optional): `PublicKey` - Optional secondary owner for the storage account.
+* `name`: `string` - What you want your storage account to be named. (Does not have to be unique)
+* `size`: `string` - Amount of storage you are requesting to create. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently.
+* `version`: `ShadowDriveVersion` - ShadowDrive version(v1 or v2)
+* `owner2` (optional): `PublicKey` - Optional secondary owner for the storage account.
 
-### **Returns**
+#### **Returns**
 
 ```json
 {
@@ -701,18 +673,15 @@ This method is used to create a new Storage Account on ShadowDrive. It accepts t
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 //create account
 const newAcct = await drive.createStorageAccount("myDemoBucket", "10MB", "v2");
 console.log(newAcct);
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Calls the 'createStorageAccount' function on the 'drive' object with "myDemoBucket", "10MB", and "v2" as parameters, and waits for its completion before proceeding. The result of the function call is assigned to the 'newAcct' variable.
 const newAcct = await drive.createStorageAccount("myDemoBucket", "10MB", "v2");
@@ -720,25 +689,24 @@ const newAcct = await drive.createStorageAccount("myDemoBucket", "10MB", "v2");
 // Logs the value of the 'newAcct' variable to the console
 console.log(newAcct);
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`deleteFile`**
+### **`deleteFile`**
 
-### **Definition**
+#### **Definition**
 
-This method is used to delete a file on ShadowDrive. It accepts a Public Key of your Storage Account, the Shadow Drive URL of the file you are requesting to delete and the ShadowDrive version (v1 or v2). It returns a Promise<ShadowDriveResponse> containing the confirmed transaction ID of the delete request.
+This method is used to delete a file on ShadowDrive. It accepts a Public Key of your Storage Account, the Shadow Drive URL of the file you are requesting to delete and the ShadowDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the delete request.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of Storage Account
--   `url`: `string` - Shadow Drive URL of the file you are requesting to delete.
--   `version`: `ShadowDrive
--   Version` - ShadowDrive version (v1 or v2)
+* `key`: `PublicKey` - Publickey of Storage Account
+* `url`: `string` - Shadow Drive URL of the file you are requesting to delete.
+* `version`: \`ShadowDrive
+* Version\` - ShadowDrive version (v1 or v2)
 
-### **Returns**
+#### **Returns**
 
 ```json
 {
@@ -749,7 +717,6 @@ This method is used to delete a file on ShadowDrive. It accepts a Public Key of 
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const url =
     "https://shdw-drive.genesysgo.net/4HUkENqjnTAZaUR4QLwff1BvQPCiYkNmu5PPSKGoKf9G/fape.png";
@@ -759,12 +726,10 @@ const acctPubKey = new anchor.web3.PublicKey(
 const delFile = await drive.deleteFile(acctPubKey, url, "v2");
 console.log(delFile);
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Assigns a string value containing the URL of the file to be deleted to the 'url' variable
 const url =
@@ -781,42 +746,37 @@ const delFile = await drive.deleteFile(acctPubKey, url, "v2");
 // Logs the value of the 'delFile' variable to the console
 console.log(delFile);
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`deleteStorageAccount`**
+### **`deleteStorageAccount`**
 
-### **Definition**
+#### **Definition**
 
-Implementation of ShadowDrive.deleteStorageAccount defined in index.ts:124
-This method is used to delete a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and the Shadow Drive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the delete request.
+Implementation of ShadowDrive.deleteStorageAccount defined in index.ts:124 This method is used to delete a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and the Shadow Drive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the delete request.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of a Storage Account
--   `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `key`: `PublicKey` - Publickey of a Storage Account
+* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
 
-### **Returns**
+#### **Returns**
 
 Confirmed transaction ID
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
 );
 const delAcct = await drive.deleteStorageAccount(acctPubKey, "v2");
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Creates a new public key object with a specific value and assigns it to the 'acctPubKey' variable
 const acctPubKey = new anchor.web3.PublicKey(
@@ -826,25 +786,24 @@ const acctPubKey = new anchor.web3.PublicKey(
 // Calls the 'deleteStorageAccount' function on the 'drive' object with the account public key and "v2" as parameters, and waits for its completion before proceeding. The result of the function call is assigned to the 'delAcct' variable.
 const delAcct = await drive.deleteStorageAccount(acctPubKey, "v2");
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`editFile`**
+### **`editFile`**
 
-### **Definition**
+#### **Definition**
 
-This method is used to edit a file on ShadowDrive. It accepts a Public Key of your Storage Account, the URL of the existing file, the File or ShadowFile object, and the ShadowDrive version (v1 or v2). It returns a Promise<ShadowEditResponse> containing the file location and the transaction signature.
+This method is used to edit a file on ShadowDrive. It accepts a Public Key of your Storage Account, the URL of the existing file, the File or ShadowFile object, and the ShadowDrive version (v1 or v2). It returns a Promise containing the file location and the transaction signature.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of Storage Account
--   `url`: `string` - URL of existing file
--   `data`: `File | ShadowFile` - File or ShadowFile object, file extensions should be included in the name property of ShadowFiles.
--   `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `key`: `PublicKey` - Publickey of Storage Account
+* `url`: `string` - URL of existing file
+* `data`: `File | ShadowFile` - File or ShadowFile object, file extensions should be included in the name property of ShadowFiles.
+* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
 
-### **Returns**
+#### **Returns**
 
 ```json
 {
@@ -854,7 +813,6 @@ This method is used to edit a file on ShadowDrive. It accepts a Public Key of yo
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const fileToUpload: ShadowFile = {
     name: "mytext.txt",
@@ -867,12 +825,10 @@ const acctPubKey = new anchor.web3.PublicKey(
 );
 const editFile = await drive.editFile(acctPubKey, url, "v2", fileToUpload);
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Creates an object containing the name and content of the file to upload and assigns it to the 'fileToUpload' variable
 const fileToUpload: ShadowFile = {
@@ -892,22 +848,21 @@ const acctPubKey = new anchor.web3.PublicKey(
 // Calls the 'editFile' function on the 'drive' object with the account public key, URL, "v2", and the file object as parameters, and waits for its completion before proceeding. The result of the function call is assigned to the 'editFile' variable.
 const editFile = await drive.editFile(acctPubKey, url, "v2", fileToUpload);
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`getStorageAccount`**
+### **`getStorageAccount`**
 
-### **Definition**
+#### **Definition**
 
-This method is used to get the details of a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and returns a Promise<StorageAccountInfo> containing the Storage Account details.
+This method is used to get the details of a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and returns a Promise containing the Storage Account details.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of a Storage Account
+* `key`: `PublicKey` - Publickey of a Storage Account
 
-### **Returns**
+#### **Returns**
 
 ```json
 {
@@ -929,19 +884,16 @@ This method is used to get the details of a Storage Account on ShadowDrive. It a
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const acct = await drive.getStorageAccount(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
 );
 console.log(acct);
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Calls the 'getStorageAccount' function on the 'drive' object with the account public key as a parameter, and waits for its completion before proceeding. The result of the function call is assigned to the 'acct' variable.
 const acct = await drive.getStorageAccount(
@@ -951,22 +903,21 @@ const acct = await drive.getStorageAccount(
 // Logs the resulting object to the console
 console.log(acct);
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`getStorageAccounts`**
+### **`getStorageAccounts`**
 
-### **Definition**
+#### **Definition**
 
-This method is used to get a list of all the Storage Accounts associated with the current user. It accepts a ShadowDrive version (v1 or v2). It returns a Promise<StorageAccountResponse[]> containing the list of storage accounts.
+This method is used to get a list of all the Storage Accounts associated with the current user. It accepts a ShadowDrive version (v1 or v2). It returns a Promise\<StorageAccountResponse\[]> containing the list of storage accounts.
 
-### **Parameters**
+#### **Parameters**
 
--   `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
 
-### **Returns**
+#### **Returns**
 
 ```json
 {
@@ -977,7 +928,6 @@ This method is used to get a list of all the Storage Accounts associated with th
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 ShadowDrive.getStorageAccounts(shadowDriveVersion)
     .then((storageAccounts) =>
@@ -985,12 +935,10 @@ ShadowDrive.getStorageAccounts(shadowDriveVersion)
     )
     .catch((err) => console.log(`Error getting storage accounts: ${err}`));
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Calls the 'getStorageAccounts' function on the 'drive' object with the version parameter "v2", and waits for its completion before proceeding. The result of the function call is assigned to the 'accts' variable.
 const accts = await drive.getStorageAccounts("v2");
@@ -999,22 +947,21 @@ const accts = await drive.getStorageAccounts("v2");
 let acctPubKey = new anchor.web3.PublicKey(accts[0].publicKey);
 console.log(acctPubKey.toBase58());
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`listObjects`**
+### **`listObjects`**
 
-### **Definition**
+#### **Definition**
 
-This method is used to list the Objects in a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and returns a Promise<ListObjectsResponse> containing the list of Objects in the Storage Account.
+This method is used to list the Objects in a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and returns a Promise containing the list of Objects in the Storage Account.
 
-### **Parameters**
+#### **Parameters**
 
--   `storageAccount`: `PublicKey`
+* `storageAccount`: `PublicKey`
 
-### **Returns**
+#### **Returns**
 
 ```json
 {
@@ -1024,7 +971,6 @@ This method is used to list the Objects in a Storage Account on ShadowDrive. It 
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
@@ -1032,12 +978,10 @@ const acctPubKey = new anchor.web3.PublicKey(
 const listItems = await drive.listObjects(acctPubKey);
 console.log(listItems);
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Creates a new 'PublicKey' object using a specific public key string and assigns it to the 'acctPubKey' variable.
 const acctPubKey = new anchor.web3.PublicKey(
@@ -1050,23 +994,22 @@ const listItems = await drive.listObjects(acctPubKey);
 // Logs the resulting object to the console.
 console.log(listItems);
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`makeStorageImmutable`**
+### **`makeStorageImmutable`**
 
-### **Definition**
+#### **Definition**
 
-This method is used to make a Storage Account immutable on ShadowDrive. It accepts a Public Key of the Storage Account and the Shadow Drive version (v1 or v2). It returns a Promise<ShadowDriveResponse> containing the confirmed transaction ID of the makeStorageImmutable request.
+This method is used to make a Storage Account immutable on ShadowDrive. It accepts a Public Key of the Storage Account and the Shadow Drive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the makeStorageImmutable request.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of Storage Account
--   `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `key`: `PublicKey` - Publickey of Storage Account
+* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
 
-### **Returns**
+#### **Returns**
 
 ```json
 {
@@ -1077,7 +1020,6 @@ This method is used to make a Storage Account immutable on ShadowDrive. It accep
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const key = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
@@ -1085,12 +1027,10 @@ const key = new anchor.web3.PublicKey(
 const result = await drive.makeStorageImmutable(key, "v2");
 console.log(result);
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Create a new PublicKey object using a public key string.
 const key = new anchor.web3.PublicKey(
@@ -1103,76 +1043,68 @@ const result = await drive.makeStorageImmutable(key, "v2");
 // Log the resulting object to the console.
 console.log(result);
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`migrate`**
+### **`migrate`**
 
-### **Definition**
+#### **Definition**
 
 This method is used to migrate a Storage Account on ShadowDrive. It accepts a PublicKey of the Storage Account. It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the migration request.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of Storage Account
+* `key`: `PublicKey` - Publickey of Storage Account
 
-### **Returns**
+#### **Returns**
 
 Confirmed transaction ID
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const result = await drive.migrate(key);
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Call the migrate function on the drive object, passing in the PublicKey object as a parameter.
 const result = await drive.migrate(key);
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`redeemRent`**
+### **`redeemRent`**
 
-### **Definition**
+#### **Definition**
 
 This method is used to redeem Rent on ShadowDrive. It accepts a Public Key of the Storage Account and the Public Key of the file account to close. It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the redeemRent request.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of Storage Account
--   `fileAccount`: `PublicKey` - PublicKey of the file account to close
+* `key`: `PublicKey` - Publickey of Storage Account
+* `fileAccount`: `PublicKey` - PublicKey of the file account to close
 
-### **Returns**
+#### **Returns**
 
 Confirmed transaction ID
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const fileAccount = new anchor.web3.PublicKey(
     "3p6U9s1sGLpnpkMMwW8o4hr4RhQaQFV7MkyLuW8ycvG9"
 );
 const result = await drive.redeemRent(key, fileAccount);
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Create a new PublicKey object using a public key string for the file account.
 const fileAccount = new anchor.web3.PublicKey(
@@ -1182,24 +1114,23 @@ const fileAccount = new anchor.web3.PublicKey(
 // Call the redeemRent function on the drive object, passing in both PublicKey objects as parameters.
 const result = await drive.redeemRent(key, fileAccount);
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`reduceStorage`**
+### **`reduceStorage`**
 
-### **Definition**
+#### **Definition**
 
-This method is used to reduce the storage of a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account, the amount of storage you are requesting to reduce from your storage account, and the Shadow Drive version (v1 or v2). It returns a Promise<ShadowDriveResponse> containing the confirmed transaction ID of the reduce storage request.
+This method is used to reduce the storage of a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account, the amount of storage you are requesting to reduce from your storage account, and the Shadow Drive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the reduce storage request.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of Storage Account
--   `size`: `string` - Amount of storage you are requesting to reduce from your storage account. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently.
--   `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `key`: `PublicKey` - Publickey of Storage Account
+* `size`: `string` - Amount of storage you are requesting to reduce from your storage account. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently.
+* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
 
-### **Returns**
+#### **Returns**
 
 ```json
 {
@@ -1210,19 +1141,16 @@ This method is used to reduce the storage of a Storage Account on ShadowDrive. I
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
 );
 const shrinkAcct = await drive.reduceStorage(acctPubKey, "10MB", "v2");
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Create a new public key object with the given string
 const acctPubKey = new anchor.web3.PublicKey(
@@ -1233,59 +1161,54 @@ const acctPubKey = new anchor.web3.PublicKey(
 // to 10MB using the version specified
 const shrinkAcct = await drive.reduceStorage(acctPubKey, "10MB", "v2");
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`storageConfigPDA`**
+### **`storageConfigPDA`**
 
-### **Definition**
+#### **Definition**
 
 This exposes the PDA account in case developers have a need to display / use the data stored in the account.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of Storage Account
--   `data`: `File | ShadowFile` - File or ShadowFile object, file extensions should be included in the name property of ShadowFiles.
+* `key`: `PublicKey` - Publickey of Storage Account
+* `data`: `File | ShadowFile` - File or ShadowFile object, file extensions should be included in the name property of ShadowFiles.
 
-### **Returns**
+#### **Returns**
 
 Public Key
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 storageConfigPDA: PublicKey;
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 //storageConfigPDA is a method in the Shadow SDK that returns the public key of the program derived account (PDA) for the Shadow storage program's config. A program derived account is a special account on the Solana blockchain that is derived from a program's public key and a specific seed. The purpose of this method is to provide a convenient way to obtain the PDA for the Shadow storage program's config. The config contains important information such as the current storage rent exemption threshold and the data size limits for storage accounts. This public key can be used to interact with the Shadow storage program's config account, allowing the user to retrieve and modify the program's global configuration settings.
 storageConfigPDA: PublicKey;
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`uploadFile`**
+### **`uploadFile`**
 
-### **Definition**
+#### **Definition**
 
-This method is used to upload a file to ShadowDrive. It accepts a Public Key of your Storage Account and a File or ShadowFile object. The file extensions should be included in the name property of ShadowFiles. It returns a Promise<ShadowUploadResponse> containing the file location and the transaction signature.
+This method is used to upload a file to ShadowDrive. It accepts a Public Key of your Storage Account and a File or ShadowFile object. The file extensions should be included in the name property of ShadowFiles. It returns a Promise containing the file location and the transaction signature.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey `- Publickey of Storage Account.
--   `data`: `File | ShadowFile` - File or ShadowFile object, file extensions should be included in the name property of ShadowFiles.
+* `key`: `PublicKey` - Publickey of Storage Account.
+* `data`: `File | ShadowFile` - File or ShadowFile object, file extensions should be included in the name property of ShadowFiles.
 
-### **Returns**
+#### **Returns**
 
 ```json
 {
@@ -1297,41 +1220,37 @@ This method is used to upload a file to ShadowDrive. It accepts a Public Key of 
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const uploadFile = await drive.uploadFile(acctPubKey, fileToUpload);
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // This line calls the uploadFile method of the drive object and passes in two parameters:
 // 1. acctPubKey: A PublicKey object representing the public key of the storage account where the file will be uploaded.
 // 2. fileToUpload: A ShadowFile object containing the file name and file buffer to be uploaded.
 const uploadFile = await drive.uploadFile(acctPubKey, fileToUpload);
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`uploadMultipleFiles`**
+### **`uploadMultipleFiles`**
 
-### **Definition**
+#### **Definition**
 
-This method is used to upload multiple files to a Storage Account on ShadowDrive. It accepts the Storage Account's PublicKey, a data object containing the FileList or ShadowFile array of files to upload, an optional concurrent number for the number of files to concurrently upload, and an optional callback function for every batch of files uploaded. It returns a Promise<ShadowBatchUploadResponse[]> containing the file names, locations and transaction signatures for uploaded files.
+This method is used to upload multiple files to a Storage Account on ShadowDrive. It accepts the Storage Account's PublicKey, a data object containing the FileList or ShadowFile array of files to upload, an optional concurrent number for the number of files to concurrently upload, and an optional callback function for every batch of files uploaded. It returns a Promise\<ShadowBatchUploadResponse\[]> containing the file names, locations and transaction signatures for uploaded files.
 
-### **Parameters**
+#### **Parameters**
 
--   `key`: `PublicKey` - Storage account PublicKey to upload the files to.
--   `data`: `FileList | ShadowFile[]` -
--   `concurrent` (optional): `number` - Number of files to concurrently upload. Default: 3
--   `callback` (optional): `Function` - Callback function for every batch of files uploaded. A number will be passed into the callback like callback(num) indicating the number of files that were confirmed in that specific batch.
+* `key`: `PublicKey` - Storage account PublicKey to upload the files to.
+* `data`: `FileList | ShadowFile[]` -
+* `concurrent` (optional): `number` - Number of files to concurrently upload. Default: 3
+* `callback` (optional): `Function` - Callback function for every batch of files uploaded. A number will be passed into the callback like callback(num) indicating the number of files that were confirmed in that specific batch.
 
-### **Returns**
+#### **Returns**
 
 ```json
 {
@@ -1343,7 +1262,6 @@ This method is used to upload multiple files to a Storage Account on ShadowDrive
 
 {% tabs %}
 {% tab title="Example" %}
-
 ```javascript
 const drive = new ShadowDrive();
 const acctPubKey = new anchor.web3.PublicKey(
@@ -1375,12 +1293,10 @@ const responses = await drive.uploadMultipleFiles(
 );
 console.log(responses);
 ```
-
 {% endtab %}
 
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
-
 ```javascript
 // Create an instance of the Shadow Drive client
 const drive = new ShadowDrive();
@@ -1425,15 +1341,14 @@ const responses = await drive.uploadMultipleFiles(
 // Print the responses returned by the server for each file uploaded
 console.log(responses);
 ```
-
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## **`userInfo`**
+### **`userInfo`**
 
-### **Definition**
+#### **Definition**
 
 userInfo: PublicKey
 
-### **Help improve this [resource]() or provide us with [feedback](discord).**
+#### **Help improve this** [**resource**](sdk-javascript.md) **or provide us with** [**feedback**](discord/)**.**

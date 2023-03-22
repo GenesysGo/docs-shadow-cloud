@@ -1,5 +1,5 @@
 ---
-description: The topics in this section help you get started using Shadow Drive storage
+description: The topics in this section help you get started using Shadow Drive
 ---
 
 # Install Shadow Drive
