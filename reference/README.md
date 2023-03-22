@@ -50,4 +50,4 @@ description: Shadow Cloud consolidated resources
 
 [Logos and branding](https://www.shadow.cloud/media-kit)
 
-[Download graphics](https://drive.google.com/uc?export=download\&id=1hrbjRtQ6jlQfOKtQ1EVvzJVFfFhs2Coe)
+[Download graphics](https://shdw-drive.genesysgo.net/EgveE9YhDPERULujeBq5c3g5qVSxxjyvVxazw3KnRZtv/Media%20Kit%20-%20Final.zip)

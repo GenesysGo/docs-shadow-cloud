@@ -20,13 +20,13 @@ One of the most widely used GUIs for interacting with Shadow Storage. Users can 
 
 #### **Synx - a React Native UI for Shadow Drive**
 
-\{% content-ref url="https://pages.viral-loops.com/synx"}
+{% content-ref url="https://pages.viral-loops.com/synx" %}
 
 A nice mobile application for working with private cloud storage using Shadow Drive created by the Blxckout team!
 
 #### **Shadow Portal - summoning off-chain data to your smart contract**
 
-\{% content-ref url="https://twitter.com/ShadowyPortal"}
+{% content-ref url="https://twitter.com/ShadowyPortal" %}
 
 2nd play winners in the Grizzlython hackthon and new primitive to Solana. A novel way to summon off-chain data aka "runes" from Shadow Drive directy into your Solana smart contract.
 
