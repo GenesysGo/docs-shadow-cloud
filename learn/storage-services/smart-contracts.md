@@ -1,26 +1,28 @@
-# The Shadow Drive Smart Contracts
+# Smart Contracts
 
-The Shadow Drive smart contracts are designed to fit multiple use cases. The beauty of smart contracts is the flexibility of design, which is one of the great things about building a storage layer as opposed to building a whole new blockchain (again, why build a whole new blockchain when we already have the world’s most performant state machine at our disposal).
+The Shadow Drive smart contracts are engineered for diverse use cases, showcasing the versatility inherent in smart contract design. This adaptability is a significant advantage when constructing a storage layer, rather than developing an entirely new blockchain. After all, why create a new blockchain when we can leverage the world's most efficient state machine already at our disposal?
 
-**The Shadow Drive Smart Contract and Paxos**
+### The Shadow Drive Smart Contracts
 
-The Paxos consensus mechanism is pretty amazing and is, arguably, the forerunner of the Proof of History consensus mechanism. As written in the Solana docs, Leslie Lamport (the creator of Paxos) is credited as the greatest technical influence to Solana. Another great resource explaining Paxos can be found here: [https://understandingpaxos.wordpress.com/](https://understandingpaxos.wordpress.com)
+#### Gossip-driven Consensus
 
-![Confirmed: Sneakers = Peak Performance](<../../.gitbook/assets/>)
+The Paxos consensus mechanism is pretty amazing and is, arguably, the forerunner of the Proof of History consensus mechanism. It is a widely influential approach to gossip-driven consensus networks.
 
-These pages are not meant to be a deep dive into Paxos. Instead, they will focus on how the Shadow Drive smart contract interacts with Paxos. Inside of Shadow Drive, a series of monitor daemons maintain the CRUSH map and ensure the integrity of the data stored within Shadow Drive. They also guard against unauthorized changes to the data and can restore all of the data stored within Shadow Drive. They are very similar to Solana validators in this way, and they should be considered the guardians of the state of all the data stored in Shadow Drive.
+Gossip-driven consensus mechanisms are remarkable, providing an efficient and fault-tolerant means of achieving agreement in distributed systems. This approach, along with the distributed Shadow Drive architecture, forms the foundation of the Shadow Drive smart contract interaction.
 
-Monitor daemons are also what will allow for the decentralization of Shadow Drive, as they can be housed on any host machine to participate in the quorum and all consensus voting can be recorded on-chain. More on this later, but Shadow Operators wishing to become Shadow Monitors will be held to a much higher standard of slashing and collateral requirements. This would be similar to the Serum/Mega-Serum node structure currently utilized by Project Serum.
+Within the Shadow Drive, multiple nodes work together to maintain the storage layer, ensuring data integrity and guarding against unauthorized changes. These nodes are akin to Solana validators and can be considered the guardians of the state of all data stored in Shadow Drive.
 
-Circling back to the Shadow Drive smart contract... The smart contract has admin control over Shadow Drive and is the gatekeeper for uploading or editing anything held in the storage layer. Additionally, Shadow Monitors are configured to report their state and their votes to the Solana validator network for validation and inclusion on-chain. This provides an on-chain mechanism for the recording and slashing of Shadow Monitors either attempting malicious activity or not participating in maintaining the integrity of Shadow Drive’s data store. This is very similar to how the Solana validator network records and reports on the vote history of Solana validators and is a critical part of ensuring that Shadow Drive is a trustless permissionless network.
+These nodes also enable the decentralization of Shadow Drive, as they can be hosted on any machine and participate in consensus voting, which is recorded on-chain. Future Shadow Drive operators wishing to become part of the network will be subject to higher slashing and collateral requirements, akin to the Serum/Mega-Serum node structure utilized by Project Serum.
 
-TL;DR: Shadow Monitors run a lightweight consensus mechanism and the Shadow Drive smart contract ensures that the activity of that consensus is trustless and fully visible to all on-chain.
+The Shadow Drive smart contract serves as an administrator, controlling access and managing uploads or edits to the storage layer. Furthermore, nodes are configured to report their state and votes to the Solana validator network for validation and inclusion on-chain. This on-chain mechanism allows for the recording and slashing of nodes attempting malicious activity or failing to maintain the integrity of Shadow Drive's data store. This process closely resembles how the Solana validator network records and reports on the vote history of Solana validators, ensuring that Shadow Drive remains a trustless, permissionless network.
 
-Please note, uploads and edits of data are different than reading data. Projects using Shadow Drive to store their data will have the ability to control who can and cannot read what has been uploaded.
+In summary, nodes within the Shadow Drive run a lightweight gossip-driven consensus mechanism, while the smart contract guarantees that the activity of this consensus is trustless and transparent to all on-chain.
+
+Please note that data uploads and edits are distinct from data access. Projects using Shadow Drive for storage can control who can read the uploaded data, ensuring the desired level of privacy and access control.
 
 **Mutable vs. Immutable Storage**
 
-We have learned from the experience of existing storage providers and feel that it is important we ensure users have choice in how their data is stored. Some data should be stored perpetually, but not all data requires this. In fact, one could argue that very little data actually needs to be stored forever. This is likely one of the reasons why Arweave only stores \~60TB (as of the time of writing) of data in total.&#x20;
+We have learned from the experience of existing storage providers and feel that it is important we ensure users have choice in how their data is stored. Some data should be stored perpetually, but not all data requires this. In fact, one could argue that very little data actually needs to be stored forever. This is likely one of the reasons why Arweave only stores \~60TB (as of the time of writing) of data in total.
 
 With all that said, users will select how they want their data stored, and that will impact the overall cost of storage and the way that cost is assessed.
 

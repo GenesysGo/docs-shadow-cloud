@@ -16,6 +16,8 @@ S3-compatibility is a widely adopted standard in the cloud storage industry. Man
 
 It is our goal to empower developers to integrate Shadow Drive directly into their builds and to support this incredibly talented community of designers who will absolutely come up with better platforms for Shadow Drive than we could possibly come up with on our own!
 
+Release of S3-Compatibility upgrades set for Q2 2023.
+
 ### **Deterministic Naming**
 
 The Shadow Drive platform is designed to support entire ecosystems being built on top of it. Shadow Drive storage is deterministic to allow for ease of use. While other storage protocols require the user to wait for data to be uploaded in order to generate a URI, Shadow Drive has a deterministic scheme:
@@ -26,9 +28,11 @@ Information can be prepped for uploads, index, the creation of custom RPC calls,
 
 ## **Evolution**
 
+The path to decentralization is a journey through v1.0, v1.5, and the upcoming release v2.0 of Shadow Drive. This section walks through the build progression and rationale behind the engineering approach to Shadow Drive.
+
 ### **Under the Hood of Version 1**
 
-Coordinating between physically distributed object storage devices (OSDs) lives an open source software defined storage program called Ceph that we have customized for the Shadow Drive network of nodes.
+Coordinating between physically distributed object storage devices (OSDs) lives an open source software defined storage program called Ceph that we customized for the Shadow Drive network of nodes for version 1.
 
 **Ceph was initially chosen for a number of reasons…**
 
@@ -39,19 +43,33 @@ Coordinating between physically distributed object storage devices (OSDs) lives 
 5. Speaking of decentralization of data… Ceph runs its own consensus mechanism internally to ensure the integrity of your data. Monitor daemons are the custodians of the pieces of the CRUSH map and are responsible for verifying its accuracy and approving/recording changes to the stored data. Ceph monitors use a Paxos consensus mechanism to maintain a quorum and verify the authenticity of the data stored in the cluster. We will revisit the importance of this consensus mechanism later when we discuss Solana integrations.
 6. Finally, Ceph is (theoretically) infinitely scalable without any notable decrease in performance. There is no theoretical max to how large a Ceph cluster can become. This is due to the different software daemons Ceph employs and how well the CRUSH algorithm scales. The largest Ceph cluster ever tested successfully stored 10,000,000,000 unique objects. If we think about each Solana block produced we are currently in the 120 millions (as of the time of this writing). Therefore, Ceph is uniquely positioned to be the best possible solution for a blockchain that produces a new block every 400 milliseconds.
 
-### **As a fun side note**
+#### **As a fun side note...**
 
 The creator of the Paxos Consensus Mechanism, Leslie Lamport, is also honored as Solana’s biggest technical influence
 
 ![https://docs.solana.com/introduction](../../.gitbook/assets/leslislamport.png)
 
-![https://martinfowler.com/articles/patterns-of-distributed-systems/paxos.html](../../.gitbook/assets/paxos.png)
+### Achieving Agreement in Distributed Systems
 
-Also, we’re using the same DB software as the CERN team is! [https://indico.cern.ch/event/649159/contributions/2761965/attachments/1544385/2423339/hroussea-storage-at-CERN.pdf](https://indico.cern.ch/event/649159/contributions/2761965/attachments/1544385/2423339/hroussea-storage-at-CERN.pdf)
+Paxos is a consensus algorithm used in distributed systems to achieve agreement among a set of nodes, even in the presence of failures or delays. It was proposed by Leslie Lamport in 1989 and is named after the Paxos island in Greece. The algorithm is designed to ensure reliability, fault tolerance, and consistency in distributed systems where nodes may fail or communicate unreliably.
 
-In fact, the CERN team submitted PRs to the main Ceph branch to have their homegrown improvements included in the main branch. This is further evidence to the extent at which Ceph can be customized as a distributed system.
+The Paxos algorithm operates in a message-passing environment and involves several rounds of communication between nodes, called "proposers," "acceptors," and "learners." The algorithm ensures that a single, agreed-upon value is chosen among the proposed values by the nodes.
 
-Of course, none of this is to suggest that Ceph is some kind of perfect solution that has no flaws and can do no wrong. However, for our use case and pathway to decentralization, Ceph checks all the boxes for an initial underlay to coordinate OSDs and provide us a foundation to begin customizing. The performance, reliability, durability, scalability, and its functionality can be adapted to provide the decentralized trustless data storage that Solana needs.
+Here is a high-level overview of the Paxos algorithm:
+
+1. A proposer node selects a unique proposal number and sends a "prepare" request to a majority of acceptor nodes.
+2. Upon receiving a "prepare" request, an acceptor node checks if the proposal number is higher than any proposal number it has seen so far. If it is, the acceptor promises not to accept any proposals with a lower number and responds with the highest-numbered proposal it has accepted, if any.
+3. The proposer collects responses from a majority of acceptor nodes. If a previously accepted value is reported, the proposer uses that value; otherwise, it chooses a new value. The proposer then sends an "accept" request to a majority of acceptor nodes with the chosen value and its proposal number.
+4. If an acceptor receives an "accept" request with a proposal number that is equal to or higher than the highest proposal number it has seen, it accepts the value and sends an acknowledgment to the proposer.
+5. The proposer considers the value chosen when it receives acknowledgments from a majority of acceptor nodes. At this point, the proposer can inform the learners about the chosen value.
+
+The Paxos algorithm guarantees that only a single value is chosen, even in the presence of failures, as long as a majority of acceptor nodes can communicate reliably. It is a fundamental building block for many distributed systems and has inspired the development of other consensus algorithms, **such as DAGGER which is replacing PAXOS!**
+
+Also, we’re using the same database technology as the CERN team is! [https://indico.cern.ch/event/649159/contributions/2761965/attachments/1544385/2423339/hroussea-storage-at-CERN.pdf](https://indico.cern.ch/event/649159/contributions/2761965/attachments/1544385/2423339/hroussea-storage-at-CERN.pdf)
+
+In fact, the CERN team submitted PRs to the main Ceph branch to have their homegrown improvements included in the main branch. This is further evidence to the extent at which Ceph can be customized as a distributed system, which has proven itself over the past year as we have evolved it.
+
+Of course, none of this is to suggest that Ceph is some kind of perfect solution that has no flaws and can do no wrong. However, for our use case and pathway to decentralization, Ceph checked all the boxes for an initial underlay to coordinate OSDs and provide us a foundation to begin customizing. The performance, reliability, durability, scalability, and its functionality can be adapted to provide the decentralized trustless data storage that Solana needs. It was this strong foundation that allowed us to channel energy into blockchain-based puzzles first (V1.5), soon followed by permissionless, decentralized network puzzles (DAGGER).
 
 ### **Building the overlay and Solana-PDA compatibility**
 
@@ -79,17 +97,17 @@ By building out these foundational components first, we were able to gain a deep
 
 Overall, our approach to the DAGGER systems-level design requirements was focused on building a solid foundation that would allow us to scale efficiently and effectively. This approach enabled us to streamline Solana as a transaction payment layer and a ledger of all Shadow Drive operations, while also providing the flexibility and scalability needed to support future growth and development.
 
-## **Present Design Considerations**
+## **Present Design Considerations: Advancing towards v2.0**
 
-Our team has been grateful for the significant amount of constructive input provided by Shadow Ecosystem builders. We've received a growing number of pull requests, builder bounties, ideas, and new app use cases that have helped drive front-end enhancements to Shadow Drive v1.5.
+Our team is immensely grateful for the invaluable insights and contributions from the dedicated Shadow Ecosystem builders. We've experienced a surge in pull requests, builder bounties, innovative ideas, and novel app use cases, all of which have significantly contributed to driving front-end enhancements to the cutting-edge Shadow Drive v1.5.
 
-These enhancements include more parallel processing of bulk multi-file uploads, increased file size limits, improved regional footprint of the cluster, and API enhancements that increase speed and allow external apps to virtually mount their Shadow Drive accounts. These improvements enable huge advancements in CDN capability for builders and streaming data-processing, supporting a wide range of use cases from social media to AI.
+These enhancements feature advanced parallel processing techniques for bulk multi-file uploads, enabling increased file size limits and an optimized regional footprint of the storage cluster. Furthermore, the enhanced API offers improved performance and permits external apps to virtually mount their Shadow Drive accounts, paving the way for substantial advancements in CDN capabilities for builders and streaming data-processing. This support extends to a diverse range of use cases, from social media platforms to next-generation AI applications.
 
-While this is not a comprehensive list of all the improvements in the pipeline, it does suggest the later stage cycles of optimization that the Shadow Drive front-end has reached. Thanks to our rapid progress and positive feedback, we are well positioned to move efficiently into the mid-stages of the fully decentralized Shadow Drive v2.
+Though this overview does not encompass all the improvements in the pipeline, it showcases the advanced optimization stage that the Shadow Drive front-end has reached. Our swift progress and overwhelmingly positive feedback have positioned us to efficiently transition into the intermediate stages of the fully decentralized Shadow Drive v2.
 
-Our present design considerations are almost entirely focused on two things:
+**Our current design endeavors are primarily focused on the following objectives:**
 
-1. Optimizing the well-received v1.5 developer environment by expanding the SDK and APIs to mobile and ensuring mobile brand presence.
-2. Finishing the deployment of the Shadow Drive implementation of DAGGER for intra-network communication and consensus. This includes closed alpha-pool testing with Shadow Operators as we finalize low-level communication improvements, canonical chunk shredding, 7:3 Reed-Solomon erasure coding, and many other elements of decentralized storage DLT.
+1. Refining the acclaimed v1.5 developer environment by extending the SDK and APIs to mobile platforms, thereby ensuring a solid mobile brand presence. This expansion facilitates greater developer engagement, fostering rapid growth and increased market penetration.
+2. Finalizing the deployment of the Shadow Drive implementation of DAGGER for seamless intra-network communication and consensus. This process includes closed alpha-pool testing with Shadow Operators as we perfect low-level communication improvements, canonical chunk shredding, 7:3 Reed-Solomon erasure coding, and numerous other components of decentralized storage DLT. Implementing these advanced features sets the stage for future scalability, robustness, and adaptability, further solidifying our position in the market.
 
-Updates to our present design efforts will be published in the [Change Log](../../reference/change-logs.md). More frequently document revisions are planned with additional content to added into the Shadow Drive resources.
+Stay tuned for updates on our cutting-edge design efforts, which will be published in the [Change Log](../../reference/change-logs.md). We're planning more frequent document revisions and expanding the wealth of content in the ever-growing Shadow Drive resources. As a result, we anticipate accelerated growth and market capture, driven by our commitment to innovation and technological excellence.
