@@ -129,4 +129,3 @@ description: A list of terms that relate to all thing Shadow!
 **Virtual Voting**: Digital voting system where citizens are able to cast their vote over the internet, directly or through a voting portal. It has been used as an alternative to physical voting polls, particularly during the pandemic. It can also be used to verify the accuracy and security of elections.\
 \
 **Web 3.0:** The Web 3.0 concept refers to the newest generation of the internet. It is highly decentralized and automated, based on AI and distributed ledger technologies such as blockchain. It allows for a more open and secure infrastructure for data storage, authentication, and interactions between devices across the web. It has the potential to be much smarter, faster, and more efficient than its predecessor Web 2.0.\
-\\

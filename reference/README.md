@@ -8,11 +8,11 @@ description: Shadow Cloud consolidated resources
 
 [CLI](../build/shadow-drive/the-cli.md)
 
-[SDK JavaScript/Typescript](https://www.npmjs.com/package/@shadow-drive/sdk)
+[SDK JavaScript/Typescript](../build/shadow-drive/sdk-javascript.md)
 
-[SDK Rust](https://crates.io/crates/shadow-drive-rust)
+[SDK Rust](../build/shadow-drive/sdk-rust.md)
 
-[SDK Python](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py)
+[SDK Python](../build/shadow-drive/sdk-python.md)
 
 [API](../build/shadow-drive/the-api.md)
 
@@ -20,7 +20,7 @@ description: Shadow Cloud consolidated resources
 
 ## **Support**
 
-[Network Status](http://184.154.66.109:8080/)
+[Network Status](https://status.genesysgo.net/)
 
 [Change Log](change-logs.md)
 
@@ -42,7 +42,7 @@ description: Shadow Cloud consolidated resources
 
 ## **Community**
 
-[Shadow Ecosystem](/build/)
+[Shadow Ecosystem](../build/)
 
 [Solana Breakpoint Demo 2022](breakpoint-2022-demo.md)
 
