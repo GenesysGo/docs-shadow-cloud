@@ -20,7 +20,7 @@ The components, in the order an incoming transaction (a user write request) woul
 
 <figure><img src="../.gitbook/assets/Dagger_Lifecycle2.png" alt=""><figcaption></figcaption></figure>
 
-#### **Key Terms**
+### **Key Terms**
 
 For introductory help, many technical terms in this document have links to their definitions. The following list defines a few terms commonly used throughout this document:
 
@@ -28,11 +28,19 @@ For introductory help, many technical terms in this document have links to their
 * Block: A set of transactions that are packed into a [Merkle Tree](dagger.md#merkle-tree-a-data-structure-used-in-cryptography-to-verify-the-integrity-of-data-a-merkle-tree-allows-large-datasets-to-be-checked-for-consistency-and-completeness-without-having-to-download-the-entire-dataset) whose root hash is included in a node in the [DAG](dagger.md#directed-acyclic-graph-a-graph-that-consists-of-directed-edges-with-no-cycles-used-to-represent-relationships-between-distributed-ledger-transactions).
 * Event: A node in the DAG, which contains the [hashes](dagger.md#cryptographic-hashes-a-one-way-function-used-to-map-data-of-any-size-to-a-fixed-length-value-used-to-create-digital-fingerprints-to-verify-data-integrity) of its parents, a timestamp, a Block payload, and the creator’s signature of the aforementioned.
 
-The DAGGER system reaches consensus on the ordering of Events via asynchronous computations() on a local graph.
+### Understanding DAGGER's Asynchronous Consensus
+
+The DAGGER system achieves consensus on the ordering of Events through asynchronous computations on a local graph, ensuring efficient and secure distributed processing. This consensus mechanism is crucial for maintaining the integrity and consistency of data within the network.
+
+In the DAGGER system, each node maintains a local graph, representing a partial view of the overall network state. The local graph consists of vertices, which represent Events, and edges that indicate dependencies between Events. As new Events are generated, they are integrated into the local graph following specific rules.
+
+Asynchronous computations are employed to continuously update and process the local graphs. This approach allows nodes to work independently without waiting for a global synchronization signal, thus improving overall system performance and scalability. The asynchronous nature of DAGGER's consensus mechanism enables nodes to adapt to varying network conditions and maintain a high degree of fault tolerance.
+
+The DAGGER consensus algorithm utilizes various techniques to ensure the correct ordering of Events within the local graph. These techniques may include voting mechanisms, reputation systems, and probabilistic approaches. By leveraging these methods, the system can effectively resolve conflicts and reach consensus on the global ordering of Events.
 
 ## **Components**
 
-### **Communications (Network I/O)**
+### **Communication Module: The Network's Incoming & Outgoing Data**
 
 The communications module initializes outgoing [sync](dagger.md#synchronization-requests-in-peer-to-peer-network-requests-sent-between-nodes-in-a-peer-to-peer-network-to-ensure-that-the-nodes-have-the-same-data) requests with [peers](dagger.md#peer-to-peer-a-type-of-network-architecture-in-which-each-node-in-the-network-can-act-as-both-a-client-and-a-server-in-a-peer-to-peer-network-nodes-communicate-directly-with-each-other-rather-than-through-a-central-server) and forwards sync responses from peers to the processor, handles incoming sync requests from peers, forwards transactions to the processor, forwards RPC requests to the controller, and maintains a peer IP database.
 
@@ -52,7 +60,7 @@ The communications module initializes outgoing [sync](dagger.md#synchronization-
 
 <figure><img src="../.gitbook/assets/RPC_Request_Graphic_Docs_Transparent.png" alt=""><figcaption></figcaption></figure>
 
-### **Processor (Verification)**
+### **Processor Module: Verification**
 
 The verifier and forester are [sibling modules](dagger.md#sibling-modules) responsible for verification of events, blocks, and transactions. The verification happens for events made by peers, as well as for incoming transactions made by users. There are several forms of verification: signature verification for transactions, signature verification for blocks, and [root hash](dagger.md#root-hash) verification for blocks. When processing peer events, the verifier is responsible for the first two of these forms of verification, while the forester is responsible for verification of the root hash of the transaction Merkle trees that form the blocks. When processing incoming user transactions, the forester gathers transactions to pack into a block and produces the Merkle root hash which represents the block.\
 \
@@ -60,11 +68,11 @@ In the case of filesystem applications like Shadow Drive, the controller module 
 
 In the case of other use cases like oracles, bridges, and VM orchestration, the controller module would make external calls to other systems and services as needed. For example, if a user wanted to execute a smart contract on Shadow Compute, the controller module would interact with the verifier and forester modules to ensure that the transaction is valid and secure. The verifier would verify the signature on the transaction, while the forester would validate the root hash of the transaction
 
-### **Graph (Consensus)**
+### **Graph Module: Asynchronous Consensus**
 
 At a high level, the graph has two core responsibilities along with some collaborative duties. The two core responsibilities are:
 
-#### 1. Process sync responses to contruct the gossip graph
+#### 1. Process sync responses to construct the gossip graph
 
 Directed acyclic Merkle-based gossip graphs are a way to organize and verify information in a secure and efficient manner. Think of it like a tree, where each branch splits into two smaller branches, and so on, until you reach the smallest branches, or "leaves." Each piece of information, or "data block," is stored in one of these leaves.
 
@@ -92,7 +100,7 @@ The diagram shows the relationships between these classes, including the composi
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-03-21 133926.png" alt=""><figcaption><p>A high level concept of comms related to consensus</p></figcaption></figure>
 
-### **Controller (Transaction Execution)**
+### **Controller Module: Transaction Execution**
 
 The controller module performs reads and writes to the [ledger](dagger.md#ledger). This is where different use cases of DAGGER will vary the most. For filesystem applications of DAGGER (e.g. Shadow Drive), this includes operations like [shredding](dagger.md#erasure-coding) and [erasure coding](dagger.md#erasure-coding). For other use cases like oracles, bridges, and [VM orchestration](dagger.md#virtual-machine-orchestration) (e.g. Shadow Compute), this is where external calls are made.
 
