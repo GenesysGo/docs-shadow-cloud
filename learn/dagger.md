@@ -64,18 +64,31 @@ In the case of other use cases like oracles, bridges, and VM orchestration, the 
 
 At a high level, the graph has two core responsibilities along with some collaborative duties. The two core responsibilities are:
 
-#### 1. Digest sync responses to build up the gossip graph
+#### 1. Process sync responses to contruct the gossip graph
 
-* Here is a general description of the basic concept behind a Merkel-based gossip graph: The `MerkleTree` class has a `root` property that holds the root hash of the tree, and a `computeTree` method that takes a list of `Data` objects and constructs the Merkle tree by recursively hashing pairs of nodes. The `Node` class represents a node in the tree, which has a `hash` property that holds the hash of the node's children (if it is not a leaf node) or the hash of the data block (if it is a leaf node). The `Data` class represents a data block that is stored in a leaf node, and the `Hash` class represents a hash value.
+Directed acyclic Merkle-based gossip graphs are a way to organize and verify information in a secure and efficient manner. Think of it like a tree, where each branch splits into two smaller branches, and so on, until you reach the smallest branches, or "leaves." Each piece of information, or "data block," is stored in one of these leaves.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>This is a conceptual grapihic only.</p></figcaption></figure>
+To ensure the tree's integrity, a unique code called a "hash" is created for each data block. These hash codes are then combined in pairs as we move up the tree. This process repeats until we reach the top, or "root," of the tree. The root hash represents the entire tree and can be used to verify that the information within the tree has not been tampered with.
+
+In summary, a Merkle-based gossip graph is a tree structure that securely organizes and verifies information using unique codes called hashes. The tree is built from the bottom up by combining pairs of hashes, ultimately resulting in a single root hash that represents the entire tree.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>This is a conceptual graphic.</p></figcaption></figure>
+
+This UML class diagram above consists of four classes: MerkleTree, Node, Data, and Hash.
+
+* MerkleTree: Represents the entire Merkle tree structure. It has a `root` property that holds the root hash of the tree and a `computeTree` method that builds the Merkle tree based on an array of Data objects.
+* Node: Represents a node within the Merkle tree. Each node has a `hash` property and references to its `left` and `right` child nodes.
+* Data: Represents the data blocks stored in the leaf nodes of the Merkle tree. Each data block has a value.
+* Hash: Represents the hash values that are calculated for the data blocks and nodes in the Merkle tree. Each hash has a value.
+
+The diagram shows the relationships between these classes, including the composition of the MerkleTree and Node classes, as well as the association between the Node, Data, and Hash classes. The purpose of a UML class diagram is to provide an abstract and visual representation of a software system's structure, making it easier to understand, design, and maintain the system. This is for concept purposes only and for helping explain how Merkel data structures work. DAGGER uses a more advanced implementation of this data structure which will be explained in more detail as more technical documents are released.
 
 #### 2. Analyze the graph to derive the [consensus](dagger.md#consensus) ordering of events. The collaborative duties are to help the communications module decide which peer to sync with and to inform the communications module.
 
-* Consensus based on virtual voting is a key component of hashgraph protocols that enables consensus to be reached in a distributed system. In a hashgraph protocol, each node maintains a local copy of the hashgraph, which is essentially an acyclic graph that records all the transactions and events that have occurred in the system. Nodes also communicate with each other using a gossip protocol, which involves sharing information about events and transactions.
-* When a new transaction is submitted to the system, it is first validated by the node that receives it. The node then creates a new event that includes the transaction and adds it to its local copy of the hashgraph. The node then gossips about the new event to other nodes in the network.
-* As events are gossiped about, each node updates its local copy of the hashgraph to include the new events. Nodes also update their knowledge of other nodes' opinions on the order of events in the hashgraph. This is where virtual voting comes in.
-* Each node maintains a virtual voting weight that is proportional to its weighting in the system. When two conflicting events are encountered, nodes use their virtual voting weight to vote on which event they believe should come first in the hashgraph. This is done by exchanging messages with other nodes to gather their opinions on the order of events
+* Consensus based on the ordering of graph events is a key component of protocols like DAGGER. In DAGGER, each node maintains a local copy of the "Shadow Graph," which is essentially an acyclic graph that records all the transactions and events that have occurred in the system. Nodes also communicate with each other using a gossip protocol, which involves sharing information about events and transactions.
+* When a new transaction is submitted to the system, it is first validated by the node that receives it. The node then creates a new event that includes the transaction and adds it to its local copy of the Shadow Graph. The node then gossips about the new event to other nodes in the network.
+* As events are gossiped about, each node updates its local copy of the Shadow Graph to include the new events. Nodes also update their knowledge of other nodes' opinions on the order of events in the Shadow Graph. This is where hashgraph-driven gossip comes in allowing consensus to be derived.
+* Each node maintains a virtual voting weight that is proportional to its weighting in the system. When two conflicting transactions are encountered, nodes use their virtual voting weight to vote on which transaction they believe should come first in the Shadow Graph. This is done by exchanging messages with other nodes to gather their opinions on the order of events. Transactions that have been seen and agreed upon by more than 2/3rd of the network are considered "strongly seen."
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-03-21 133926.png" alt=""><figcaption><p>A high level concept of comms related to consensus</p></figcaption></figure>
 
@@ -84,6 +97,8 @@ At a high level, the graph has two core responsibilities along with some collabo
 The controller module performs reads and writes to the [ledger](dagger.md#ledger). This is where different use cases of DAGGER will vary the most. For filesystem applications of DAGGER (e.g. Shadow Drive), this includes operations like [shredding](dagger.md#erasure-coding) and [erasure coding](dagger.md#erasure-coding). For other use cases like oracles, bridges, and [VM orchestration](dagger.md#virtual-machine-orchestration) (e.g. Shadow Compute), this is where external calls are made.
 
 ### Lifecycle of a Transaction
+
+In conclusion and summary of the DAGGER consensus network, the below sequency diagram revisits the lifecycle of a transaction with greater detail:
 
 <figure><img src="../.gitbook/assets/dagger_comprehensive.png" alt=""><figcaption></figcaption></figure>
 
