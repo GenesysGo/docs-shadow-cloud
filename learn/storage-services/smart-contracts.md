@@ -2,9 +2,9 @@
 
 The Shadow Drive smart contracts are engineered for diverse use cases, showcasing the versatility inherent in smart contract design. This adaptability is a significant advantage when constructing a storage layer, rather than developing an entirely new blockchain. After all, why create a new blockchain when we can leverage the world's most efficient state machine already at our disposal?
 
-### The Shadow Drive Smart Contracts
+## The Shadow Drive Smart Contracts
 
-#### Gossip-driven Consensus
+### Gossip-driven Consensus
 
 The Paxos consensus mechanism is pretty amazing and is, arguably, the forerunner of the Proof of History consensus mechanism. It is a widely influential approach to gossip-driven consensus networks.
 
@@ -20,38 +20,31 @@ In summary, nodes within the Shadow Drive run a lightweight gossip-driven consen
 
 Please note that data uploads and edits are distinct from data access. Projects using Shadow Drive for storage can control who can read the uploaded data, ensuring the desired level of privacy and access control.
 
-**Mutable vs. Immutable Storage**
+### Balancing Mutable and Immutable Storage Needs: Adapting to Evolving Storage Requirements with Shadow Drive
 
-We have learned from the experience of existing storage providers and feel that it is important we ensure users have choice in how their data is stored. Some data should be stored perpetually, but not all data requires this. In fact, one could argue that very little data actually needs to be stored forever. This is likely one of the reasons why Arweave only stores \~60TB (as of the time of writing) of data in total.
+Understanding the diversity of user requirements, we strive to offer a flexible storage solution that caters to both mutable and immutable data storage. Our approach acknowledges the fact that not all data needs to be stored perpetually and provides users with the freedom to choose the storage method that best suits their needs.
 
-With all that said, users will select how they want their data stored, and that will impact the overall cost of storage and the way that cost is assessed.
+The Shadow Drive token, SHDW, is divisible into fundamental units called "Shades," with the focus on storage fundamentals. This relationship between Shades and bytes is maintained for simplicity:
 
-The SHDW token is broken up into fundamental units called “Shades”. Shadow Drive focuses on the fundamentals of storage and, at the most fundamental level, Shadow Drive stores bytes. Therefore, in the spirit of simplicity, the following conversions are applied:
+* 1,000,000,000 Shades = 1 SHDW
+* 1,000,000,000 bytes = 1 gigabyte
 
-1,000,000,000 Shades = 1 SHDW
+Thus, 1 byte stored = 1 Shade.
 
-_This is in line with 1b lamports equaling 1 SOL as a measure of the cost computational units_
+#### **Immutable Storage**
 
-1,000,000,000 bytes = 1 gigabyte
+Immutable storage offers users the peace of mind that their data will be retained permanently and cannot be edited or deleted. The cost calculation for immutable storage is simple, as the smart contract sends the appropriate amount of SHDW to the Shadow Operator smart contract as emissions for operating Shadow Nodes.
 
-_Therefore…_
+#### **Mutable Storage**
 
-1 byte stored = 1 Shade
+Mutable storage, on the other hand, involves a more complex process that addresses short-term storage needs and the increased bandwidth requirements typically associated with mutable storage. This process incorporates staking and rent mechanics similar to Solana's on-chain accounts design.
 
-**Immutable storage** is relatively simple… If you upload 1gb of data to Shadow Drive, then a cost of .25 SHDW is applied and the smart contract sends that SHDW to the Shadow Operator smart contract to be sent out to Shadow Operators as emissions for operating Shadow Nodes. The data is flagged as “immutable” by the Shadow Drive smart contract and is therefore unable to be edited or deleted.
+Users are required to stake a specific amount of SHDW when they upload data to Shadow Drive. Rent is assessed on a per-epoch basis for mutable storage, with the rate subject to change as the system evolves. The rent assessed each epoch is sent to the Shadow Operator Smart Contract, contributing to the pool that the smart contract pays out to Shadow Operators as emissions.
 
-**Mutable storage** is a little more complex (but not overly so) and relies on staking and rent mechanics very similar to the ones used by Solana in their on-chain accounts design. If you upload 1gb of data to Shadow Drive, then you are required to **stake** .25 SHDW. On a per epoch basis, rent is assessed against mutable storage at the rate of 1 SHDW per GB per year. Therefore, uploading 1gb of data to Shadow Drive would look something like this…
+### **Adapting to Evolving Requirements with DAGGER and Shadow Drive v2**
 
-1. A user uploads 1gb of data into Shadow Drive. In order to do so, the user is required to stake 1 SHDW with the Shadow Drive smart contract.
-2. On a per epoch basis, rent is assessed and removed from the staked SHDW (unless the user has flagged the data as immutable) in the form of Shades. By the end of a 1 year period, the storage user would need to add additional SHDW to their account or risk the data being deleted.
-3. The rent assessed each epoch is sent to the Shadow Operator Smart Contract and adds to the pool the smart contract pays out to Shadow Operators as emissions.
-4. If, after six months, the storage user un-stakes their SHDW (signaling that they no longer need this data to be stored), then they would have paid .5 SHDW in rent and would receive .5 SHDW back.
-5. If, after six months, the storage user decided to flag their data as immutable, then they would need to add the difference between what is currently staked in the smart contract and what it would cost to immutably store their data. So, a user with 1gb of data stored and .5 SHDW staked in the smart contract (after six months of staking) would need to add .5 SHDW in order to make their data immutable.
+Our smart-contract design is tailored to accommodate both mutable and immutable storage options effectively. As DAGGER and Shadow Drive v2 continue to evolve, the pricing dynamics and overall system will adapt to provide the most efficient and flexible storage solutions for our users.
 
-The rent mechanic is designed to take into account the increased bandwidth usage that typically comes along with mutable storage as it has an increased amount of reads and writes relative to immutable storage.
-
-The benefit to users of mutable storage is that their short-term storage needs are met; and once those needs have been met, the mutable storage user can un-stake their SHDW and be returned whatever amount of SHDW they did not use. The benefit to those who use immutable storage is that they can rest assured that their account data will be retained for continual access and usage into perpetuity. This also means that as the price of $SHDW fluctuates, users of immutable storage will likely have paid a cheaper price for storage as years pass.
-
-In the end, we believe immutable storage to be the best overall value, but we also recognize that short-term data storage needs should not be forced into a singular regime.
+We are committed to ensuring that our users can make informed choices about their data storage preferences and that they have access to a system that can adapt to their diverse storage requirements.
 
 _Please note, the team reserves the right to change any and all aspects of storage design and costs in order to ensure the long term viability of Shadow Drive and Shadow Operators. We would rather make tweaks to one protocol along the way instead of building a new protocol each time to address any unforeseen issues._
