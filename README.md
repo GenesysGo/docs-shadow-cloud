@@ -14,15 +14,15 @@ description: >-
 
 ### [**Learn**](learn/)
 
-* This section explains our how we are combining powerful bare-metal with decentralized solutions to create superior technologies. This section is for those interested in understanding the value we bring to developers and enterprises in need of distributed ledger compute and storage solutions.
+This section explains our how we are combining powerful bare-metal with decentralized solutions to create superior technologies. This section is for those interested in understanding the value we bring to developers and enterprises in need of distributed ledger compute and storage solutions.
 
 ### [**Build**](build/)
 
-* This section focuses on easy and actionable information to help you quickly get started building. Step by step guides, and line by line CLI instruction offer developers the quickest path to working concepts. We are constantly improving this section to make sure utilizing our solutions is as easy as possible.
+This section focuses on easy and actionable information to help you quickly get started building. Step by step guides, and line by line CLI instruction offer developers the quickest path to working concepts. We are constantly improving this section to make sure utilizing our solutions is as easy as possible.
 
 ### [**Reference**](reference/)
 
-* Much like an appendix, the reference section is a quick navigation hub for key resources. Our media kit, social media presence, and more can be found here.
+Much like an appendix, the reference section is a quick navigation hub for key resources. Our media kit, social media presence, and more can be found here.
 
 This resource will be updated frequently and the developer community should feel empowered to [submit Issues](https://github.com/GenesysGo/shadow-drive/issues) for edits they would like to see or platform enhancement ideas. We also have a process for [Bug submissions](https://github.com/GenesysGo/shdw-drive-bug-reports).
 
