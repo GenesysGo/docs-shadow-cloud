@@ -36,13 +36,11 @@ description: Shadow Cloud consolidated resources
 
 [Twitter](./)
 
-[https://shadow.cloud](https://shadow.cloud)
-
 [Medium Articles](https://genesysgo.medium.com/)
 
 ## **Community**
 
-[Shadow Ecosystem](../build/)
+[Shadow Ecosystem](https://docs.shadow.cloud/build/community-mainted-uis)
 
 [Solana Breakpoint Demo 2022](breakpoint-2022-demo.md)
 
