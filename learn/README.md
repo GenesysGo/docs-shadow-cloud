@@ -97,7 +97,9 @@ Decentralized Ledger Technology should be thought of as a superset of technologi
   * Enterprise VMs _(future release)_
     * White-glove handling of bare metal and virtual provisioning for specialized distributed ledger technology implementations.
 
-[**Start Building on Shadow Drive!**](../build/shadow-drive/)
+****[**Start Building on Shadow Drive!**](../build/shadow-drive/)****
+
+****[**See what others are building on Shadow Drive!**](../build/shadow-drive/community-mainted-uis.md)****
 
 ## **Shadow Operators**
 
