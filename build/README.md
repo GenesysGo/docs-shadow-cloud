@@ -20,17 +20,20 @@ description: Shadow Drive Developer Tools
    * You can build directly on top of the [API](shadow-drive/the-api.md).
    * Tell us about your project in our [Disord](https://discord.gg/genesysgo) so we can publish to the community. See others [here](shadow-drive/community-mainted-uis.md).
 
-### **Submitting Bugs**
-
-If you experience any issues or think you have found a bug with Shadow Drive then please submit it via the github link below!
+### **Submitting Bugs & Security Issues**
 
 **https://github.com/GenesysGo/shdw-drive-bug-reports**
 
-We adhere to a responsible disclosure process for security related issues which includes sending an email to support@genesysgo.com, and/or reaching out to us in private-channels in our [**Discord**](https://discord.gg/genesysgo).
+We adhere to a responsible disclosure process for security related issues. To ensure the responsible disclosure and handling of security vulnerabilities, we ask that you follow the process outlined below.
 
-Submit a PR for general issues or, if you need immediate help join our [**Discord**](https://discord.gg/genesysgo) (discord.gg/genesysgo) and check out the #shdw-drive-support channel! Though, be warned, if you're popping in to submit a bug report then we'll likely thank you very much for your help and then direct you to the Github to submit the bug so that way we can properly document everything on our end!
+#### **Bug Reporting Process**
 
-### **(Coming Soon) Enhanced API Subscription Access**
+1. Submit a new bug report by creating a [new issue](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose) in this repository.
+2. Please provide a clear and concise description of the issue, steps to reproduce it, and any relevant screenshots or logs.
+3. Label your issue as a 'bug' or 'security' accordingly.
 
-* Access a more robust API with S3 compatibly secrets/keys to more deeply integrate Shadow Drive into your application's SDK.
-* Virtually mount Shadow Drive to power your AI training models and LLMs.
+**Important**: For security-related issues, do not include sensitive information in the issue description. Instead, submit a pull request to our repository, containing the necessary details, so that the information remains concealed until the issue is resolved.
+
+**Security related issues should only be reported through this repository.**
+
+While we strongly encourage the use of this repository for bug reports and security issues, you may also reach out to us via our [**Discord**](https://discord.gg/genesysgo) server. Join the #shdw-drive-technical-support channel for assistance. However, please note that we will redirect you to submit the bug report through this GitHub repository for proper handling and tracking.
