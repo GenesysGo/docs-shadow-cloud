@@ -29,15 +29,18 @@ npm install -g @shadow-drive/cli
 
 ## **Submitting Bugs**
 
-If you experience any issues or think you have found a bug with Shadow Drive then please submit it via the github link below!
+We adhere to a responsible disclosure process for security related issues. To ensure the responsible disclosure and handling of security vulnerabilities, we ask that you follow the process outlined below.
 
-**https://github.com/GenesysGo/shdw-drive-bug-reports**
+#### **Bug Reporting Process**
 
-Submit a PR or, if you need immediate help join our [**Discord**](https://discord.gg/genesysgo) (discord.gg/genesysgo) and check out the #shdw-drive-support channel! Though, be warned, if you're popping in to submit a bug report then we'll likely thank you very much for your help and then direct you to the Github to submit the pug so that way we can properly document everything on our end!
+1. For non-security-related bugs, please submit a new bug report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose). For security-related reports, please open a "**security vulnerability**" report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose).&#x20;
+2. Please provide a clear and concise description of the issue, steps to reproduce it, and any relevant screenshots or logs.
 
-There are A LOT of moving parts when you build a storage network that is designed to interface with the Solana Mainnet chain and so we want to make sure our processes for investigating and solving bugs are well maintained.
+**Important**: For security-related issues, please include as much information as possible for reproduction and what its related to. Please be sure to use the **report a security vulnerability** feature in the repository listed above. If you submit a security vulnerability as a public bug report, we reserve the right to remove the report and move any communications to private channels until a resolution is made.
 
-Thank you for your help!
+**Security related issues should only be reported through this repository.**
+
+While we strongly encourage the use of this repository for bug reports and security issues, you may also reach out to us via our [**Discord**](https://discord.gg/genesysgo) server. Join the #shdw-drive-technical-support channel for assistance. However, please note that we will redirect you to submit the bug report through this GitHub repository for proper handling and tracking.
 
 ## **Discover benefits and use cases of Shadow Drive:**
 
