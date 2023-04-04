@@ -49,6 +49,14 @@ If you think there is an issue with how you're implementing the wallet, or your 
 
 <details>
 
+<summary> I can create a storage account using the phantom wallet through CLI, but when I try from the SDK in my app the transactions fails saying insufficient balance. Why is this?</summary>
+
+For the purposes of utilizing the Shadow Drive, ~0.1 SOL in our experience will avoid insufficient balance errors. You can also examine the TXs to see if there's any differences in your spend when using the CLI versus the SDK methods.
+
+</details>
+
+<details>
+
 <summary>Does Shadow Drive support Ledger wallet signing?</summary>
 
 No, Shadow Drive does not currently support Ledger wallet signing.
@@ -65,7 +73,7 @@ Yes, accounts are returned in the order they are created when calling the `getSt
 
 <details>
 
-<summary>Is there a way to delete multiple files at the same time ? Or is it in the roadmap ?</summary>
+<summary>Is there a way to delete multiple files at the same time?</summary>
 
 Currently, it is not possible to delete multiple files at once. However, we have added this feature to our roadmap and will be working on it in the near future. Thank you for your suggestion!
 
@@ -91,7 +99,7 @@ Currently, it is not possible to ask the user to sign a Shadow transaction and a
 
 <summary>I'm trying to create a File object on my React app to upload it to Shadow but I keep getting an error.</summary>
 
-The error you're getting may be due to the ShdwDrive instance being created before the wallet-provider is ready. In the latest example on the main branch, there is a slight change in the useEffect that creates the drive instance which may resolve your issue. Additionally, make sure that the file data buffer is converted to a Blob using `new Blob([Buffer.from("data")])`.
+The error you're getting may be due to the Shadow Drive instance being created before the wallet-provider is ready. In the latest example on the main branch, there is a slight change in the useEffect that creates the drive instance which may resolve your issue. Additionally, make sure that the file data buffer is converted to a Blob using `new Blob([Buffer.from("data")])`.
 
 </details>
 
@@ -235,6 +243,22 @@ Shadow Drive runs on a global network of bare metal infrastructure, with all com
 
 <details>
 
+<summary>How are storage costs determined?</summary>
+
+Prices vary depending on the front-end and the market value of storage costs per unit SHDW. You can visit front-end UIs such as https://sdrive.app/stats to determine costs.
+
+</details>
+
+<details>
+
+<summary>How do I become a node operator?</summary>
+
+Shadow Operators is currently in closed private alpha testing. Future updates will be provided as we progress towards a mainnet launch.
+
+</details>
+
+<details>
+
 <summary>What is GenesysGo?</summary>
 
 GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator. Since then, GG has expanded its offerings to provide RPCs and build out a large ecosystem of tools and infrastructure for Solana. GG has a team of talented developers and coders who are dedicated to building innovative solutions for the Solana community. For more information, you can visit their website at http://shadow.cloud/.
@@ -245,6 +269,6 @@ GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator
 
 <summary>Can I advertise my project if I use DAGGER/Shadow Drive?</summary>
 
-Yes, the Shadow Drive team would love to hear about your project if you are building on top of the Drive or using DAGGER. You can share your work in the [Shadow Drive Discord](https://discord.com/invite/genesysgo) community or submit a pull request to get added to the [Shadow Ecosystem](community-mainted-uis.md) page, which showcases projects built on Shadow Drive.
+Yes, the Shadow Drive team would love to hear about your project if you are building on top of the Drive or using DAGGER. You can share your work in the [Shadow Drive Discord](https://discord.com/invite/genesysgo). We will soon release an automated process to be added to the Shadow Ecosystem page.
 
 </details>

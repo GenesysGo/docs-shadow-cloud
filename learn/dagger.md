@@ -104,7 +104,7 @@ The diagram shows the relationships between these classes, including the composi
 
 The controller module performs reads and writes to the [ledger](dagger.md#ledger). This is where different use cases of DAGGER will vary the most. For filesystem applications of DAGGER (e.g. Shadow Drive), this includes operations like [shredding](dagger.md#erasure-coding) and [erasure coding](dagger.md#erasure-coding). For other use cases like oracles, bridges, and [VM orchestration](dagger.md#virtual-machine-orchestration) (e.g. Shadow Compute), this is where external calls are made.
 
-### Lifecycle of a Transaction
+### **Lifecycle of a Transaction**
 
 In conclusion and summary of the DAGGER consensus network, the below sequency diagram revisits the lifecycle of a transaction with greater detail:
 
