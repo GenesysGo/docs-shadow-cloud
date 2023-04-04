@@ -22,7 +22,7 @@ description: Shadow Drive Developer Tools
 
 ### **Submitting Bugs & Security Issues**
 
-**https://github.com/GenesysGo/shdw-drive-bug-reports**
+****[**https://github.com/GenesysGo/shdw-drive-bug-reports**](https://github.com/GenesysGo/shdw-drive-bug-reports)****
 
 We adhere to a responsible disclosure process for security related issues. To ensure the responsible disclosure and handling of security vulnerabilities, we ask that you follow the process outlined below.
 
