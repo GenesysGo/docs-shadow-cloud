@@ -28,11 +28,10 @@ We adhere to a responsible disclosure process for security related issues. To en
 
 #### **Bug Reporting Process**
 
-1. Submit a new bug report by creating a [new issue](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose) in this repository.
+1. For non-security-related bugs, please submit a new bug report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose). For security-related reports, please open a "**security vulnerability**" report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose).&#x20;
 2. Please provide a clear and concise description of the issue, steps to reproduce it, and any relevant screenshots or logs.
-3. Label your issue as a 'bug' or 'security' accordingly.
 
-**Important**: For security-related issues, do not include sensitive information in the issue description. Instead, submit a pull request to our repository, containing the necessary details, so that the information remains concealed until the issue is resolved.
+**Important**: For security-related issues, please include as much information as possible for reproduction and what its related to. Please be sure to use the **report a security vulnerability** feature in the repository listed above. If you submit a security vulnerability as a public bug report, we reserve the right to remove the report and move any communications to private channels until a resolution is made.
 
 **Security related issues should only be reported through this repository.**
 
