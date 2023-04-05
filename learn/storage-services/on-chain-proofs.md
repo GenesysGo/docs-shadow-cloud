@@ -6,7 +6,15 @@ What do I mean by “state”? Let’s use computers as an example… Everything
 
 The next thing we need to know is that Solana is unique in the way it structures everything as an “account.” This is important terminology, so here’s the definition:
 
-![https://docs.solana.com/terminology](<../../.gitbook/assets/image (6).png>)
+```
+Accounts
+Storing State between Transactions
+If the program needs to store state between transactions, it does so using accounts. Accounts are similar to files in operating systems such as Linux in that they may hold arbitrary data that persists beyond the lifetime of a program. Also like a file, an account includes metadata that tells the runtime who is allowed to access the data and how.
+
+Unlike a file, the account includes metadata for the lifetime of the file. That lifetime is expressed by a number of fractional native tokens called lamports. Accounts are held in validator memory and pay "rent" to stay there. Each validator periodically scans all accounts and collects rent. Any account that drops to zero lamports is purged. Accounts can also be marked rent-exempt if they contain a sufficient number of lamports.
+
+In the same way that a Linux user uses a path to look up a file, a Solana client uses an address to look up an account. The address is a 256-bit public key.
+```
 
 Thinking back to state, the history of the accounts on Solana is completely irrelevant to their current state. Why? Because all the events that took place in order to arrive at the current state were reviewed by the Proof of History consensus mechanism (i.e. the Solana Validator network) and deemed to be valid.
 
