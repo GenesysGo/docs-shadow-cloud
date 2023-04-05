@@ -8,31 +8,31 @@ description: Seeing what others have built with Shadow Drive
 
 Easy to use, reliable, private, and secure cloud storage and publishing. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
 
-<a href="https://sdrive.app/landing"><img src="../../.gitbook/assets/sdrive-feature.png" alt=""></a>
+[![](<../../.gitbook/assets/sdrive-feature (1).png>)](https://sdrive.app/landing)
 
 **SYNX**
 
 A nice mobile & desktop application for working with private cloud storage using Shadow Drive created by the Blxckout team! Synx brings amazing UI/UX to real world mobile and desktop data management and provides robust documentation making it easy to use.
 
-<a href="https://twitter.com/synx_xyz"><img src="../../.gitbook/assets/synx-feature.png" alt=""></a>
+[![](../../.gitbook/assets/synx-feature.png)](https://twitter.com/synx\_xyz)
 
 **SPLING**
 
 Build a Web3 social app with ease. Developer-friendly, with no prior blockchain knowledge required. Unlock new crypto experiences that your users will love. A truly excellent approach at a platform of platform for social app builders.
 
-<a href="https://www.splinglabs.com/"><img src="../../.gitbook/assets/spling-feature.png" alt=""></a>
+[![](../../.gitbook/assets/spling-feature.png)](https://www.splinglabs.com/)
 
 **SHADOW STORAGE**
 
 File management, transfer & sharing, immutable storage. A unique user experience that let teams and individuals unlock the power of web3 through crypto and decentralization. One of the most widely used GUIs for interacting with Shadow Storage. Users can perform every action _and then some_, including uploading encrypted private files. Very cool!
 
-<a href="https://www.shadow.storage/#features"><img src="../../.gitbook/assets/shadowstorage.png" alt=""></a>
+[![](../../.gitbook/assets/shadowstorage.png)](https://www.shadow.storage/#features)
 
 #### **Blok.host Web Hosting**
 
 This is a full web-hosting service where the backend storage is built on shadow drive. Host static websites and even manage things like telemetry and deployments in upcoming versions!
 
-<a href="https://blok.host/"><img src="../../.gitbook/assets/blockhost.png" alt=""></a>
+[![](../../.gitbook/assets/blockhost.png)](https://blok.host/)
 
 #### **Shadow Portal**
 
@@ -82,6 +82,8 @@ Another great contribution from a community member! A Rust-based CLI for working
 
 #### **Not on this list?** [**Submit a PR**](https://github.com/GenesysGo/Gitbook-staging/blob/main/shadow-drive/community-mainted-uis.md) **or drop into our** [**Discord**](https://discord.gg/genesysgo) **to get added.**
 
-<br><br>
+\
+\
 
-\[1] Disclaimer: Please be advised that the "Shadow Ecosystem" projects displayed on our website are developed and run by independent third-party entities. GenesysGo is not responsible for any content, products, or services provided by these Third-Party Projects. The order and arrangement of the Third-Party Projects in the Ecosystem do not imply any ranking, preference, or superiority. It is solely your responsibility to evaluate the quality, security, legality, and suitability of any Third-Party Project you decide to interact with.\
+
+\[1] Disclaimer: Please be advised that the "Shadow Ecosystem" projects displayed on our website are developed and run by independent third-party entities. GenesysGo is not responsible for any content, products, or services provided by these Third-Party Projects. The order and arrangement of the Third-Party Projects in the Ecosystem do not imply any ranking, preference, or superiority. It is solely your responsibility to evaluate the quality, security, legality, and suitability of any Third-Party Project you decide to interact with.\\
