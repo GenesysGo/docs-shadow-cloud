@@ -8,7 +8,7 @@ The Shadow Drive is a new approach to S3-compatible cloud storage with the enhan
 
 The idea for Shadow Drive was founded on the premise that the Solana network is largely misunderstood in terms of what it was built to achieve. By understanding what it truly means to be the world’s most performant state machine, you realize that Solana can be used to reach consensus and maintain state on nearly anything.
 
-Whereas other decentralized storage providers require multiple layers in order to make their solution viable (i.e. Arweave does storage, but to scale uploads faster you need to use Bundlr for example, and then in order to serve the data in any kind of a useful way you need to subscribe to a front-end UI for basic high-speed CDN functionaility), Shadow Drive builds everything in to one platform.
+Whereas other decentralized storage providers require multiple layers in order to make their solution viable (i.e. Arweave does storage, but to scale uploads faster you need to use Bundlr for example, and then in order to serve the data in any kind of a useful way you need to subscribe to a front-end UI for basic high-speed CDN functionality), Shadow Drive builds everything in to one platform.
 
 When a user commits their $SHDW to Shadow Drive for storage they are not only provided with storage space, but also with incredibly fast batched uploads and a robust CDN. This ensures their content is stored quickly, efficiently, and delivered at speeds that makes Shadow Drive a truly viable solution for projects that need speed, stability, and efficiency.
 
@@ -18,7 +18,7 @@ The following pages are intended to outline what Shadow Drive is, how it works, 
 
 <summary>Please note</summary>
 
-_This resource assumes some basic knowledge of GenesysGo and the Solana architecture as a whole. If you aren’t familiar with Solana’s architecture, then it is highly recommended to spend some time learning about how Solana validators store “Account State”, what “AccountsDB” is, and what goes into the creation of “on-chain accounts.” Please see the Solana Discord (discord.gg/solana) and check out the dev-resources channel to learn more._
+_This resource assumes some basic knowledge of GenesysGo and the Solana architecture as a whole. If you aren’t familiar with Solana’s architecture, then it is highly recommended to spend some time learning about how Solana validators store “Account State”, what “AccountsDB” is, and what goes into the creation of “on-chain accounts.” Please see the Solana Discord (discord.gg/Solana) and check out the dev-resources channel to learn more._
 
 </details>
 

@@ -12,7 +12,7 @@
   * [Install Shadow Drive](build/shadow-drive/README.md)
   * [CLI](build/shadow-drive/the-cli.md)
   * [SDKs](build/shadow-drive/the-sdk.md)
-    * [Javascript](build/shadow-drive/sdk-javascript.md)
+    * [JavaScript](build/shadow-drive/sdk-javascript.md)
     * [Rust](build/shadow-drive/sdk-rust.md)
     * [Python](build/shadow-drive/sdk-python.md)
   * [API](build/shadow-drive/the-api.md)
