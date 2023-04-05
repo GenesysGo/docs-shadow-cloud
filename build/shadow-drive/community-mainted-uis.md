@@ -4,63 +4,49 @@ description: Seeing what others have built with Shadow Drive
 
 # Shadow Ecosystem
 
-#### **Not on this list?** [**Submit a PR**](community-mainted-uis.md) **or drop into our** [**Discord**](https://discord.gg/genesysgo) **to get added.**
+SDRIVE
 
-#### **SDrive.app**
+Easy to use, reliable, private, and secure cloud storage and publishing. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
 
-{% embed url="https://sdrive.app/landing" %}
+**SYNX**
 
-Easy to use, reliable, private, and secure cloud storage and publishing. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed to support and promote creators around the world.
+A nice mobile & desktop application for working with private cloud storage using Shadow Drive created by the Blxckout team! Synx brings amazing UI/UX to real world mobile and desktop data management and provides robust documentation making it easy to use.
 
-#### **Shadow Storage**
+**SPLING**
 
-{% embed url="https://www.shadow.storage/" %}
+Build a Web3 social app with ease. Developer-friendly, with no prior blockchain knowledge required. Unlock new crypto experiences that your users will love. A truly excellent approach at a platform of platform for social app builders.
 
-One of the most widely used GUIs for interacting with Shadow Storage. Users can perform every action _and then some_, including uploading encrypted private files. Very cool!
+**SHADOW STORAGE**
 
-#### **Synx - a React Native UI for Shadow Drive**
-
-{% content-ref url="https://pages.viral-loops.com/synx" %}
-[https://pages.viral-loops.com/synx](https://pages.viral-loops.com/synx)
-{% endcontent-ref %}
-
-A nice mobile application for working with private cloud storage using Shadow Drive created by the Blxckout team!
-
-#### **Shadow Portal - summoning off-chain data to your smart contract**
-
-{% content-ref url="https://twitter.com/ShadowyPortal" %}
-[https://twitter.com/ShadowyPortal](https://twitter.com/ShadowyPortal)
-{% endcontent-ref %}
-
-2nd play winners in the Grizzlython hackthon and new primitive to Solana. A novel way to summon off-chain data aka "runes" from Shadow Drive directy into your Solana smart contract.
-
-#### **AlphaBatem's Shadow UI**
-
-{% embed url="https://drive.alphabatem.com/login#/" %}
-
-Another full suite of functionality for working with Shadow Storage. This tool is a very fast and snappy way to interact with your storage account, including handling the swap from SOL to SHDW for any fees!
+File management, transfer & sharing, immutable storage. A unique user experience that let teams and individuals unlock the power of web3 through crypto and decentralization. One of the most widely used GUIs for interacting with Shadow Storage. Users can perform every action _and then some_, including uploading encrypted private files. Very cool!
 
 #### **Blok.host Web Hosting**
 
-{% embed url="https://blok.host/" %}
-
 This is a full web-hosting service where the backend storage is built on shadow drive. Host static websites and even manage things like telemetry and deployments in upcoming versions!
+
+#### **Shadow Portal**&#x20;
+
+A new primitive on Solana. A novel way to summon off-chain data aka "runes" from Shadow Drive directy into your Solana smart contract.
+
+[https://twitter.com/ShadowyPortal](https://twitter.com/ShadowyPortal)
+
+#### **AlphaBatem's Shadow UI**
+
+Another full suite of functionality for working with Shadow Storage. This tool is a very fast and snappy way to interact with your storage account, including handling the swap from SOL to SHDW for any fees!
+
+{% embed url="https://drive.alphabatem.com/login#/" %}
 
 #### **ShadowTube**
 
-{% embed url="https://www.shadowtube.io/" %}
-
 Like YouTube, but built on top of Shadow Drive storage. Uploads come directly from your Shadow Drive storage accounts!
+
+{% embed url="https://www.shadowtube.io/" %}
 
 #### **Crab.so Decentralized Social Network**
 
-{% embed url="https://www.crab.so/" %}
-
 Crab is a community-driven, open-source, decentralized network for thriving communities in Web3
 
-#### **CryptoStraps NFT Tools Shadow UI**
-
-{% embed url="https://cryptostraps.tools/shadow-drive" %}
+{% embed url="https://www.crab.so/" %}
 
 Another prime example of a comprehensive suite of NFT tools should include Shadow Drive storage, and this tool delivers on all fronts.
 
@@ -84,8 +70,8 @@ Another Shadow UI tool for managing your storage from the browser, but this time
 
 Another great contribution from a community member! A Rust-based CLI for working with Shadow Drive!
 
+#### **Not on this list?** [**Submit a PR**](https://github.com/GenesysGo/Gitbook-staging/blob/main/shadow-drive/community-mainted-uis.md) **or drop into our** [**Discord**](https://discord.gg/genesysgo) **to get added.**
 
-
-
+#### ****
 
 \[1] Disclaimer: Please be advised that the "Shadow Ecosystem" projects displayed on our website are developed and run by independent third-party entities. GenesysGo is not responsible for any content, products, or services provided by these Third-Party Projects. The order and arrangement of the Third-Party Projects in the Ecosystem do not imply any ranking, preference, or superiority. It is solely your responsibility to evaluate the quality, security, legality, and suitability of any Third-Party Project you decide to interact with.\
