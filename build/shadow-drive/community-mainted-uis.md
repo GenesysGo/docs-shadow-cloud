@@ -8,31 +8,31 @@ description: Seeing what others have built with Shadow Drive
 
 Easy to use, reliable, private, and secure cloud storage and publishing. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
 
-[<figure><img src="../../.gitbook/assets/sdrive-feature.png" alt=""><figcaption></figcaption></figure>](https://sdrive.app/landing)
+<a href="https://sdrive.app/landing"><img src="../../.gitbook/assets/sdrive-feature.png" alt=""></a>
 
 **SYNX**
 
 A nice mobile & desktop application for working with private cloud storage using Shadow Drive created by the Blxckout team! Synx brings amazing UI/UX to real world mobile and desktop data management and provides robust documentation making it easy to use.
 
-[<figure><img src="../../.gitbook/assets/synx-feature.png" alt=""><figcaption></figcaption></figure>](https://twitter.com/synx_xyz)
+<a href="https://twitter.com/synx_xyz"><img src="../../.gitbook/assets/synx-feature.png" alt=""></a>
 
 **SPLING**
 
 Build a Web3 social app with ease. Developer-friendly, with no prior blockchain knowledge required. Unlock new crypto experiences that your users will love. A truly excellent approach at a platform of platform for social app builders.
 
-[<figure><img src="../../.gitbook/assets/spling-feature.png" alt=""><figcaption></figcaption></figure>](https://www.splinglabs.com/)
+<a href="https://www.splinglabs.com/"><img src="../../.gitbook/assets/spling-feature.png" alt=""></a>
 
 **SHADOW STORAGE**
 
 File management, transfer & sharing, immutable storage. A unique user experience that let teams and individuals unlock the power of web3 through crypto and decentralization. One of the most widely used GUIs for interacting with Shadow Storage. Users can perform every action _and then some_, including uploading encrypted private files. Very cool!
 
-[<figure><img src="../../.gitbook/assets/shadowstorage.png" alt=""><figcaption></figcaption></figure>](https://www.shadow.storage/#features)
+<a href="https://www.shadow.storage/#features"><img src="../../.gitbook/assets/shadowstorage.png" alt=""></a>
 
 #### **Blok.host Web Hosting**
 
 This is a full web-hosting service where the backend storage is built on shadow drive. Host static websites and even manage things like telemetry and deployments in upcoming versions!
 
-[<figure><img src="../../.gitbook/assets/blockhost.png" alt=""><figcaption></figcaption></figure>](https://blok.host/)
+<a href="https://blok.host/"><img src="../../.gitbook/assets/blockhost.png" alt=""></a>
 
 #### **Shadow Portal**
 
