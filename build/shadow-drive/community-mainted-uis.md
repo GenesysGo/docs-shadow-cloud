@@ -36,7 +36,7 @@ This is a full web-hosting service where the backend storage is built on shadow 
 
 #### **Shadow Portal**
 
-A new primitive on Solana. A novel way to summon off-chain data aka "runes" from Shadow Drive directy into your Solana smart contract.
+A new primitive on Solana. A novel way to summon off-chain data aka "runes" from Shadow Drive directly into your Solana smart contract.
 
 [https://twitter.com/ShadowyPortal](https://twitter.com/ShadowyPortal)
 
