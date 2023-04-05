@@ -58,7 +58,7 @@ description: A list of terms that relate to all thing Shadow!
 \
 **Erasure Coded File Storage:** Erasure coded file storage is an archive strategy that divides data into portions, and then encodes each portion multiple times using various error-correction algorithms. This redundancy makes erasure coding valuable for permanently storing critical data as it increases reliability but reduces storage costs.\
 \
-**Fault Tolerance**: Fault tolerance is the capability of a system to continue its normal opertion despite the presence of hardware or software errors, disruptions, and even loss of components or data. Fault tolerant systems are designed to be resilient to failure and to continue normal operation in the event of a partial or total system failure.\
+**Fault Tolerance**: Fault tolerance is the capability of a system to continue its normal operation despite the presence of hardware or software errors, disruptions, and even loss of components or data. Fault tolerant systems are designed to be resilient to failure and to continue normal operation in the event of a partial or total system failure.\
 \
 **Gossip Protocol:** A distributed algorithm in which each member of a distributed system periodically communicates a message to one or more nodes, which then send the same message onto other nodes, until all members of the network receive the same message. This allows for a system to remain aware of all other nodes and records in the system without the need for a central server.\
 \
@@ -84,7 +84,7 @@ description: A list of terms that relate to all thing Shadow!
 \
 **Peer-to-Peer Networking**: Peer-to-peer networking is a type of network architecture model where computers (or peer nodes) are connected together in such a way that each node can act as a client or a server for the other nodes in the network. In other words, it does not rely on a central server to manage the communication between the connected peers in the network.\
 \
-" **Proof of Stake (PoS):** A consensus mechanism in blockchain technology which allows nodes to validate transactions and produce new blocks according to the amount of coins each node holds. It is an alternative to the Proof of Work (PoW) consensus protocol. In PoS, validators stake their coins, meaning they have to deposit coins with the blockchain protocol before they can validate blocks. Validators receive rewards for creating blocks and are penalized for malicious behaviour.\
+" **Proof of Stake (PoS):** A consensus mechanism in blockchain technology which allows nodes to validate transactions and produce new blocks according to the amount of coins each node holds. It is an alternative to the Proof of Work (PoW) consensus protocol. In PoS, validators stake their coins, meaning they have to deposit coins with the blockchain protocol before they can validate blocks. Validators receive rewards for creating blocks and are penalized for malicious behavior.\
 \
 **Proof of Storage (PoSt):** Proof of Storage is a consensus cryptographic mechanism which is used to attest to the storage of data in a distributed storage network. The consensus model requires a randomly chosen subset of storage miners to periodically provide cryptographic proofs that they are storing data correctly and that all necessary nodes are online. The goal of PoSt is to ensure that data stored is secure, as well as increase the security and transparency of distributed storage networks.\
 \

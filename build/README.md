@@ -15,10 +15,10 @@ description: Shadow Drive Developer Tools
 
 ### **To get started with the Shadow Drive SDKs:**
 
-1. [Javascript](shadow-drive/sdk-javascript.md), [Rust](shadow-drive/sdk-rust.md), and [Python](shadow-drive/sdk-python.md) are your choices.
+1. [JavaScript](shadow-drive/sdk-javascript.md), [Rust](shadow-drive/sdk-rust.md), and [Python](shadow-drive/sdk-python.md) are your choices.
 2. Follow the [SDK Guide](shadow-drive/the-sdk.md)
    * You can build directly on top of the [API](shadow-drive/the-api.md).
-   * Tell us about your project in our [Disord](https://discord.gg/genesysgo) so we can publish to the community. See others [here](shadow-drive/community-mainted-uis.md).
+   * Tell us about your project in our [Discord](https://discord.gg/genesysgo) so we can publish to the community. See others [here](shadow-drive/community-mainted-uis.md).
 
 ### **Submitting Bugs & Security Issues**
 

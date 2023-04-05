@@ -212,7 +212,7 @@ The process of copying data from one location to another in a distributed system
 
 #### **Root hash:**&#x20;
 
-A single cryptographic hash that represents all of the data of a merkel tree.
+A single cryptographic hash that represents all of the data of a Merkle tree.
 
 #### **RPC request:**&#x20;
 
