@@ -8,7 +8,7 @@ description: Seeing what others have built with Shadow Drive
 
 Easy to use, reliable, private, and secure cloud storage and publishing. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
 
-<figure><a href="https://sdrive.app/landing"><img src="../../.gitbook/assets/sdrive-feature.png" alt=""></a></figure>
+<a href="https://sdrive.app/landing"><img src="../../.gitbook/assets/sdrive-feature.png" alt=""></a>
 
 **SYNX**
 
