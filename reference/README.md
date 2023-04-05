@@ -34,7 +34,7 @@ description: Shadow Cloud consolidated resources
 
 [Discord](https://discord.gg/genesysgo)
 
-[Twitter](./)
+[Twitter](https://twitter.com/GenesysGo)
 
 [Medium Articles](https://genesysgo.medium.com/)
 
