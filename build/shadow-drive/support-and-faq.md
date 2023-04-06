@@ -11,7 +11,10 @@ If you've got questions, we've got answers.
 Our [Discord server](https://discord.gg/genesysgo) is the best place to get in touch with us.\
 We have a dedicated support section.
 
-In addition to this FAQ, you might find the [Github Q\&A](https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed) useful as deeper technical issues are discussed.&#x20;
+In addition to this FAQ, you might find the [Github Q\&A](https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed) useful as deeper technical issues are discussed.
+
+https://discord.gg/genesysgo  
+https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed
 
 </details>
 
@@ -19,15 +22,15 @@ In addition to this FAQ, you might find the [Github Q\&A](https://github.com/Gen
 
 <summary>What should I do if creating a storage account is failing?</summary>
 
-If creating a storage account is failing, make sure that you have appropriate amounts of both SOL and SHDW in your wallet. Creating a storage account requires a small amount of SOL to cover the transaction fee, as well as some SHDW to cover the initial storage allocation. Make sure that your wallet has enough funds to cover these requirements.
+If creating a storage account is failing, make sure that you have appropriate amounts of both SOL and SHDW in your wallet. Creating a storage account requires a small amount of SOL to cover the transaction fee, as well as some SHDW to cover the initial storage allocation. Make sure that your wallet has enough funds to cover these requirements. Review the docs here: https://app.gitbook.com/o/QICwbV8Jy5jeT6jrQNzS/s/3pmrRFhZIr9mPXG3yCuu/build/the-cli#create-a-storage-account
 
 If you have the correct amount of SOL and SHDW in your wallet but creating a storage account is still failing, there may be other factors at play that are causing the issue. Some possible causes could be network connectivity issues, problems with the Shadow Drive node, or bugs/issues with the SDK.
 
 To troubleshoot the issue, you can try the following:
 
-* Verify that the [Shadow Drive network](https://status.genesysgo.net/) is up and running.
-* Check the Shadow Drive [Change Log](../../reference/change-logs.md) for any known issues or bugs that may be causing the problem.
-* Contact Shadow Drive [support](https://discord.gg/genesysgo) for further assistance.
+* Verify that the [Shadow Drive network](https://status.genesysgo.net/) is up and running. https://status.genesysgo.net/
+* Check the Shadow Drive [Change Log](../../reference/change-logs.md) for any known issues or bugs that may be causing the problem. https://docs.shadow.cloud/reference/change-logs
+* Contact Shadow Drive [support](https://discord.gg/genesysgo) for further assistance. https://discord.gg/genesysgo
 
 </details>
 
@@ -35,7 +38,9 @@ To troubleshoot the issue, you can try the following:
 
 <summary>How much storage space can I reserve?</summary>
 
-There is an upper limit of 1GB per bucket. Development is currently underway which will greatly increase this cap.
+There is an upper limit of 1GB per bucket as stated in the CLI: https://app.gitbook.com/o/QICwbV8Jy5jeT6jrQNzS/s/3pmrRFhZIr9mPXG3yCuu/build/the-cli#create-a-storage-account 
+
+Development is currently underway which will greatly increase this cap.
 
 </details>
 
@@ -67,7 +72,7 @@ No, Shadow Drive does not currently support Ledger wallet signing.
 
 <summary>Are accounts returned in any specific order when calling the `getStorageAccounts` method?</summary>
 
-Yes, accounts are returned in the order they are created when calling the `getStorageAccounts` method in GenesysGo Shadow Drive. This is because the system was designed and built in such a way to ensure that the accounts are returned in the order they were created.
+Yes, accounts are returned in the order they are created when calling the `getStorageAccounts` method in GenesysGo Shadow Drive. This is because the system was designed and built in such a way to ensure that the accounts are returned in the order they were created. https://app.gitbook.com/o/QICwbV8Jy5jeT6jrQNzS/s/3pmrRFhZIr9mPXG3yCuu/build/the-sdk/sdk-javascript#getstorageaccounts
 
 </details>
 
@@ -109,13 +114,15 @@ The error you're getting may be due to the Shadow Drive instance being created b
 
 By default, the rpc used is the Solana mainnet rpc api.mainnet-beta.solana.com. If you're getting blocked by that, you'll have to sign up for a paid RPC as we cannot control how the Solana mainnet rpc endpoint is limited. It is possible that the endpoint is blocking requests from the browser due to security reasons.
 
+For additional help, consider joining our [Discord](https://discord.gg/genesysgo) and asking in support channels.
+
 </details>
 
 <details>
 
 <summary>Why does my method fail with "Blockhash not found" error?</summary>
 
-This is an issue on the Solana RPC side and unfortunately, all you can do is retry the method.
+This is an issue on the Solana RPC side and unfortunately, all you can do is retry the method. Consider implementing retry and/or error handling in your application.
 
 </details>
 
@@ -123,7 +130,7 @@ This is an issue on the Solana RPC side and unfortunately, all you can do is ret
 
 <summary>How would I use the SDK to get file contents from the account?</summary>
 
-You can send a normal GET request to https://shdw-drive.genesysgo.net// to get the file contents from the account.
+You can send a normal GET request to https://shdw-drive.genesysgo.net// to get the file contents from the account. You can read more in API methods here: https://docs.shadow.cloud/build/the-api
 
 </details>
 
@@ -131,7 +138,7 @@ You can send a normal GET request to https://shdw-drive.genesysgo.net// to get t
 
 <summary>Is there a way to get information about filetypes so I can then handle different types?</summary>
 
-You can make a HEAD request or a GET request to get information about file types. If you make a GET request, the response headers should include the content type.
+You can make a HEAD request or a GET request to get information about file types. If you make a GET request, the response headers should include the content type. Review the API methods here: https://docs.shadow.cloud/build/the-api
 
 </details>
 
@@ -139,7 +146,7 @@ You can make a HEAD request or a GET request to get information about file types
 
 <summary>How can I get metadata for the file?</summary>
 
-You can get metadata for the file by making a POST request to https://shdw-drive.genesysgo.net//. The response will include metadata for the file.
+You can get metadata for the file by making a POST request to https://shdw-drive.genesysgo.net//. The response will include metadata for the file. Review the API methods here: https://docs.shadow.cloud/build/the-api
 
 </details>
 
@@ -181,6 +188,12 @@ Currently, the Shadow network only allows Shadow Drive-specific transactions to 
 
 When getting 400 timeouts for transaction submissions, it is most likely due to congestion on the Solana network. While timing out and retrying is normal during Solana congestion, many are now using priority fees may help solve congestion-related issues. Contact your RPC provider for further help.
 
+If your 400 error is stating "Invalid transaction supplied" then you may need to join our support channel in [Discord](https://discord.gg/genesysgo) and provide more details on the specific method. To resolve the typical causes of this error do the following:
+
+1. Check announcements in Discord (https://discord.gg/genesysgo) or the network status (https://status.genesysgo.net/) to make sure there is no platform-wide problem.
+2. Check all of your versions and dependencies. You Solana wallet adapter dependencies and the version of the JavaScript SDK must be up to date. 
+3. Double check the wallet you have chosen to work with is not having issues. You may need to reach out to them directly.
+
 </details>
 
 <details>
@@ -200,7 +213,7 @@ We adhere to a responsible disclosure process for security related issues. To en
 
 #### **Bug Reporting Process**
 
-1. Submit a new bug report by creating a [new issue](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose) in this repository.
+1. Submit a new bug report by creating a [new issue](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose) in this repository. https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose
 2. Please provide a clear and concise description of the issue, steps to reproduce it, and any relevant screenshots or logs.
 3. Label your issue as a 'bug' or 'security' accordingly.
 
@@ -209,6 +222,16 @@ We adhere to a responsible disclosure process for security related issues. To en
 **Security related issues should only be reported through this repository.**
 
 While we strongly encourage the use of this repository for bug reports and security issues, you may also reach out to us via our [**Discord**](https://discord.gg/genesysgo) server. Join the #shdw-drive-technical-support channel for assistance. However, please note that we will redirect you to submit the bug report through this GitHub repository for proper handling and tracking.
+</details>
+
+<details>
+
+<summary>Is there a way to monitor the network so I know if there are issues or downtime?</summary>
+
+Yes, you can subscribe to the Shadow Network status here: https://status.genesysgo.net/
+
+Also follow us on twitter https://twitter.com/GenesysGo or join our tech support Discord: https://discord.gg/genesysgo
+
 </details>
 
 ## General
@@ -233,7 +256,9 @@ Shadow Drive provides developers with tools to comply with GDPR and can provide 
 
 <summary>Is Shadow Drive supported on mobile?</summary>
 
-Yes, Shadow Drive is supported on mobile through our ecosystem partners who are actively building on mobile. Please check out our Shadow Ecosystem page for more details. Additionally, in the future, our DAGGER distributed ledger technology will enable Solana Saga powered storage solutions for those seeking low cost decentralized mobile clouds. Please check out the Learn section for more information.
+Yes, Shadow Drive is supported on mobile through our ecosystem partners who are actively building on mobile. Please check out our Shadow Ecosystem page for more details. https://docs.shadow.cloud/build/community-mainted-uis
+
+Additionally, in the future, our DAGGER distributed ledger technology will enable Solana Saga powered storage solutions for those seeking low cost decentralized mobile clouds. Please check out the Learn section for more information. You can read more here: https://docs.shadow.cloud/learn#compute
 
 </details>
 
@@ -241,7 +266,7 @@ Yes, Shadow Drive is supported on mobile through our ecosystem partners who are 
 
 <summary>How much does it cost to store data on Shadow Drive?</summary>
 
-Shadow Drive storage costs are driven by wholesale network costs and can be estimated through various front end UIs that capture moment-in-time estimates. One example is the front-end designed by an ecosystem partners, which provides detailed information on the network as well. Here is the link to the front-end: https://sdrive.app/stats
+Shadow Drive storage costs are driven by wholesale network costs, a fixed rate of 0.25 SHDW per 1 GB, and can be estimated through various front end UIs that capture moment-in-time estimates. One example is the front-end designed by an ecosystem partners, which provides detailed information on the network as well. Here is the link to the front-end: https://sdrive.app/stats
 
 </details>
 
@@ -249,7 +274,7 @@ Shadow Drive storage costs are driven by wholesale network costs and can be esti
 
 <summary>Is Shadow Drive S3-compatible?</summary>
 
-Yes, Shadow Drive is S3-compatible. S3-compatibility is a widely adopted standard in the cloud storage industry, and many providers offer S3-compatible APIs and protocols, which gives builders greater flexibility in choosing a cloud storage provider. This means developers can easily move data between different services without worrying about compatibility issues. Additionally, S3-compatibility offers robust APIs that enable fast and reliable query, along with virtual mount capability, making it important for Web2, Web3, and the frontiers of distributed ledger tech and AI. Shadow Drive aims to empower developers to integrate it directly into their builds, and to support the talented community of designers who will create innovative platforms for Shadow Drive.
+Yes, Shadow Drive is S3-compatible. S3-compatibility is a widely adopted standard in the cloud storage industry, and many providers offer S3-compatible APIs and protocols, which gives builders greater flexibility in choosing a cloud storage provider. This means developers can easily move data between different services without worrying about compatibility issues. Additionally, S3-compatibility offers robust APIs that enable fast and reliable query, along with virtual mount capability, making it important for Web2, Web3, and the frontiers of distributed ledger tech and AI. Shadow Drive aims to empower developers to integrate it directly into their builds, and to support the talented community of designers who will create innovative platforms for Shadow Drive. You can read more here: https://docs.shadow.cloud/learn/design#s3-compatibility
 
 </details>
 
@@ -257,7 +282,7 @@ Yes, Shadow Drive is S3-compatible. S3-compatibility is a widely adopted standar
 
 <summary>What physical infrastructure powers Shadow Drive?</summary>
 
-Shadow Drive runs on a global network of bare metal infrastructure, with all compute and storage existing on bare metal. There is no dependency on cloud providers for Shadow Drive operations. For more details on the design of Shadow Drive, please see the "Design" section under the "Learn" category.
+Shadow Drive runs on a global network of bare metal infrastructure, with all compute and storage existing on bare metal. There is no dependency on cloud providers for Shadow Drive operations. For more details on the design of Shadow Drive, please see the "Design" section under the "Learn" category: https://docs.shadow.cloud/learn/design
 
 </details>
 
@@ -265,7 +290,7 @@ Shadow Drive runs on a global network of bare metal infrastructure, with all com
 
 <summary>How are storage costs determined?</summary>
 
-Prices vary depending on the front-end and the market value of storage costs per unit SHDW. You can visit front-end UIs such as https://sdrive.app/stats to determine costs.
+Prices vary depending on the front-end and the market value of storage costs per unit SHDW. There is a fixed 0.25 SHDW per 1 GB of storage across the network. You can visit front-end UIs such as https://sdrive.app/stats to determine costs.
 
 </details>
 
@@ -289,6 +314,10 @@ GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator
 
 <summary>Can I advertise my project if I use DAGGER/Shadow Drive?</summary>
 
-Yes, the Shadow Drive team would love to hear about your project if you are building on top of the Drive or using DAGGER. You can share your work in the [Shadow Drive Discord](https://discord.com/invite/genesysgo). We will soon release an automated process to be added to the Shadow Ecosystem page.
+Yes, the Shadow Drive team would love to hear about your project if you are building on top of the Drive or using DAGGER. The best way to gain visibility is to submit a PR directly to the docs-shadow-cloud repo adding your project/business, details, and image to the Shadow Ecosystem list: https://github.com/GenesysGo/docs-shadow-cloud
+
+Submit a PR to edit the file located here: https://github.com/GenesysGo/docs-shadow-cloud/blob/main/build/shadow-drive/community-mainted-uis.md
+
+You can also share your work in the [Shadow Drive Discord](https://discord.com/invite/genesysgo). We will soon release an automated process to be added to the Shadow Ecosystem page.
 
 </details>
