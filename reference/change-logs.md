@@ -6,14 +6,17 @@
 
 **[Shadow Drive CLI](https://github.com/GenesysGo/shadow-drive-cli/releases)**
 
-**[Shadow Drive Rust CLI](https://github.com/GenesysGo/shadow-drive-rust/releases)**
+**[Shadow Drive Rust](https://github.com/GenesysGo/shadow-drive-rust/releases)**
 
 ## Consolidated Summary
 
-3 weeks ago - Shadow Drive Rust CLI  
+New - Shadow Drive Rust  
+[v0.6.3 - Minor Fixes](https://github.com/GenesysGo/shadow-drive-rust/releases/tag/v0.6.3)
+
+3 weeks ago - Shadow Drive Rust  
 [v0.6.2 - New crates](https://github.com/GenesysGo/shadow-drive-rust/releases/tag/v0.6.2)
 
-3 weeks ago - Shadow Drive Rust CLI  
+3 weeks ago - Shadow Drive Rust   
 [SDK v0.6.1 - Edit fixes](https://github.com/GenesysGo/shadow-drive-rust/releases/tag/v0.6.1)
 
 Mar 16, 2023 - Shadow Drive  
