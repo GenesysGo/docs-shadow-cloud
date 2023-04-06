@@ -22,15 +22,15 @@ https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed
 
 <summary>What should I do if creating a storage account is failing?</summary>
 
-If creating a storage account is failing, make sure that you have appropriate amounts of both SOL and SHDW in your wallet. Creating a storage account requires a small amount of SOL to cover the transaction fee, as well as some SHDW to cover the initial storage allocation. Make sure that your wallet has enough funds to cover these requirements. Review the docs here: https://app.gitbook.com/o/QICwbV8Jy5jeT6jrQNzS/s/3pmrRFhZIr9mPXG3yCuu/build/the-cli#create-a-storage-account
+If creating a storage account is failing, make sure that you have appropriate amounts of both SOL and SHDW in your wallet. Creating a storage account requires a small amount of SOL to cover the transaction fee, as well as some SHDW to cover the initial storage allocation. Make sure that your wallet has enough funds to cover these requirements. Review the docs here: https://docs.shadow.cloud/build/the-cli#create-a-storage-account
 
 If you have the correct amount of SOL and SHDW in your wallet but creating a storage account is still failing, there may be other factors at play that are causing the issue. Some possible causes could be network connectivity issues, problems with the Shadow Drive node, or bugs/issues with the SDK.
 
 To troubleshoot the issue, you can try the following:
 
-* Verify that the [Shadow Drive network](https://status.genesysgo.net/) is up and running. https://status.genesysgo.net/
-* Check the Shadow Drive [Change Log](../../reference/change-logs.md) for any known issues or bugs that may be causing the problem. https://docs.shadow.cloud/reference/change-logs
-* Contact Shadow Drive [support](https://discord.gg/genesysgo) for further assistance. https://discord.gg/genesysgo
+-   Verify that the [Shadow Drive network](https://status.genesysgo.net/) is up and running. https://status.genesysgo.net/
+-   Check the Shadow Drive [Change Log](../../reference/change-logs.md) for any known issues or bugs that may be causing the problem. https://docs.shadow.cloud/reference/change-logs
+-   Contact Shadow Drive [support](https://discord.gg/genesysgo) for further assistance. https://discord.gg/genesysgo
 
 </details>
 
@@ -38,7 +38,7 @@ To troubleshoot the issue, you can try the following:
 
 <summary>How much storage space can I reserve?</summary>
 
-There is an upper limit of 1GB per bucket as stated in the CLI: https://app.gitbook.com/o/QICwbV8Jy5jeT6jrQNzS/s/3pmrRFhZIr9mPXG3yCuu/build/the-cli#create-a-storage-account 
+There is an upper limit of 1GB per bucket as stated in the CLI: https://docs.shadow.cloud/build/the-cli#create-a-storage-account
 
 Development is currently underway which will greatly increase this cap.
 
@@ -72,7 +72,7 @@ No, Shadow Drive does not currently support Ledger wallet signing.
 
 <summary>Are accounts returned in any specific order when calling the `getStorageAccounts` method?</summary>
 
-Yes, accounts are returned in the order they are created when calling the `getStorageAccounts` method in GenesysGo Shadow Drive. This is because the system was designed and built in such a way to ensure that the accounts are returned in the order they were created. https://app.gitbook.com/o/QICwbV8Jy5jeT6jrQNzS/s/3pmrRFhZIr9mPXG3yCuu/build/the-sdk/sdk-javascript#getstorageaccounts
+Yes, accounts are returned in the order they are created when calling the `getStorageAccounts` method in GenesysGo Shadow Drive. This is because the system was designed and built in such a way to ensure that the accounts are returned in the order they were created. https://docs.shadow.cloud/build/the-sdk/sdk-javascript#getstorageaccounts
 
 </details>
 
@@ -191,7 +191,7 @@ When getting 400 timeouts for transaction submissions, it is most likely due to 
 If your 400 error is stating "Invalid transaction supplied" then you may need to join our support channel in [Discord](https://discord.gg/genesysgo) and provide more details on the specific method. To resolve the typical causes of this error do the following:
 
 1. Check announcements in Discord (https://discord.gg/genesysgo) or the network status (https://status.genesysgo.net/) to make sure there is no platform-wide problem.
-2. Check all of your versions and dependencies. You Solana wallet adapter dependencies and the version of the JavaScript SDK must be up to date. 
+2. Check all of your versions and dependencies. You Solana wallet adapter dependencies and the version of the JavaScript SDK must be up to date.
 3. Double check the wallet you have chosen to work with is not having issues. You may need to reach out to them directly.
 
 </details>
@@ -222,6 +222,7 @@ We adhere to a responsible disclosure process for security related issues. To en
 **Security related issues should only be reported through this repository.**
 
 While we strongly encourage the use of this repository for bug reports and security issues, you may also reach out to us via our [**Discord**](https://discord.gg/genesysgo) server. Join the #shdw-drive-technical-support channel for assistance. However, please note that we will redirect you to submit the bug report through this GitHub repository for proper handling and tracking.
+
 </details>
 
 <details>
