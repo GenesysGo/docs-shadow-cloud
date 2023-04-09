@@ -13,8 +13,9 @@ We have a dedicated support section.
 
 In addition to this FAQ, you might find the [Github Q\&A](https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed) useful as deeper technical issues are discussed.
 
-https://discord.gg/genesysgo  
-https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed
+Discord Server: https://discord.gg/genesysgo
+
+GitHub FAQ: https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed
 
 </details>
 
