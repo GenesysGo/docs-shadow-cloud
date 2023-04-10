@@ -1,6 +1,6 @@
 # Smart Contracts
 
-The Shadow Drive smart contracts are engineered for diverse use cases, showcasing the versatility inherent in smart contract design. This adaptability is a significant advantage when constructing a storage layer, rather than developing an entirely new blockchain. After all, why create a new blockchain when we can leverage the world's most efficient state machine already at our disposal?
+The Shadow Drive smart contracts are engineered for diverse use cases, showcasing the versatility inherent in smart contract design. This adaptability is a significant advantage when constructing a storage layer, rather than developing an entirely new blockchain. After all, why create a new blockchain when we can leverage the World's Most Performant Global State Machine already at our disposal?
 
 ## The Shadow Drive Smart Contracts
 
