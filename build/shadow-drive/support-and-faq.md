@@ -13,9 +13,9 @@ We have a dedicated support section.
 
 In addition to this FAQ, you might find the [Github Q\&A](https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed) useful as deeper technical issues are discussed.
 
-Discord Server: https://discord.gg/genesysgo
+Shadow Drive Technical Support: [https://discord.gg/genesysgo](https://discord.gg/genesysgo)
 
-GitHub FAQ: https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed
+GitHub FAQ:[ https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed](https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed)
 
 </details>
 
@@ -29,9 +29,9 @@ If you have the correct amount of SOL and SHDW in your wallet but creating a sto
 
 To troubleshoot the issue, you can try the following:
 
--   Verify that the [Shadow Drive network](https://status.genesysgo.net/) is up and running. https://status.genesysgo.net/
--   Check the Shadow Drive [Change Log](../../reference/change-logs.md) for any known issues or bugs that may be causing the problem. https://docs.shadow.cloud/reference/change-logs
--   Contact Shadow Drive [support](https://discord.gg/genesysgo) for further assistance. https://discord.gg/genesysgo
+* Verify that the [Shadow Drive network](https://status.genesysgo.net/) is up and running. https://status.genesysgo.net/
+* Check the Shadow Drive [Change Log](../../reference/change-logs.md) for any known issues or bugs that may be causing the problem. https://docs.shadow.cloud/reference/change-logs
+* Contact Shadow Drive [support](https://discord.gg/genesysgo) for further assistance. https://discord.gg/genesysgo
 
 </details>
 
@@ -55,9 +55,9 @@ If you think there is an issue with how you're implementing the wallet, or your 
 
 <details>
 
-<summary> I can create a storage account using the phantom wallet through CLI, but when I try from the SDK in my app the transactions fails saying insufficient balance. Why is this?</summary>
+<summary>I can create a storage account using the phantom wallet through CLI, but when I try from the SDK in my app the transactions fails saying insufficient balance. Why is this?</summary>
 
-For the purposes of utilizing the Shadow Drive, ~0.1 SOL in our experience will avoid insufficient balance errors. You can also examine the TXs to see if there's any differences in your spend when using the CLI versus the SDK methods.
+For the purposes of utilizing the Shadow Drive, \~0.1 SOL in our experience will avoid insufficient balance errors. You can also examine the TXs to see if there's any differences in your spend when using the CLI versus the SDK methods.
 
 </details>
 
@@ -206,13 +206,14 @@ If you encounter an ENOTFOUND error when using the Shadow Drive CLI, it is likel
 </details>
 
 <details>
-<summary> How do I submit a bug or a security issue?</summary>
+
+<summary>How do I submit a bug or a security issue?</summary>
 
 **https://github.com/GenesysGo/shdw-drive-bug-reports**
 
 We adhere to a responsible disclosure process for security related issues. To ensure the responsible disclosure and handling of security vulnerabilities, we ask that you follow the process outlined below.
 
-#### **Bug Reporting Process**
+**Bug Reporting Process**
 
 1. Submit a new bug report by creating a [new issue](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose) in this repository. https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose
 2. Please provide a clear and concise description of the issue, steps to reproduce it, and any relevant screenshots or logs.
