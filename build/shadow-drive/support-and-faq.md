@@ -49,13 +49,19 @@ Development is currently underway which will greatly increase this cap.
 
 <summary>What should I do if I think there is an issue with how I'm implementing the wallet, or my transactions are not working?</summary>
 
-If you think there is an issue with how you're implementing the wallet, or your transactions are not working, you can try upgrading the wallet adapters. Check the Solana wallet adapter repositories for their examples, as the process for importing the adapters may have changed. Additionally, you can refer to the Shadow Drive documentation and SDK for more information on how to properly implement the wallet and perform transactions. If you're still having issues, contact Shadow Drive support for further assistance.
+If you think there is an issue with how you're implementing the wallet, or your transactions are not working, you can try upgrading the wallet adapters. Check the Solana wallet adapter repositories for their examples, as the process for importing the adapters may have changed.
+
+Additionally, you can refer to the Shadow Drive documentation and SDK for more information on how to properly implement the wallet and perform transactions. You can review the example here: https://docs.shadow.cloud/build/the-sdk/sdk-javascript#example-post-request-via-sdk-make-immutable
+
+If you are using react to build a wallet using `const drive = await new ShdwDrive(connection, wallet).init();` and getting the error "Cannot read properties of undefined (reading 'toBytes')" then remember to make sure you must pass the entire wallet around and make sure to not deconstruct it.
+
+If you're still having issues, contact Shadow Drive support for further assistance.
 
 </details>
 
 <details>
 
-<summary> I can create a storage account using the phantom wallet through CLI, but when I try from the SDK in my app the transactions fails saying insufficient balance. Why is this?</summary>
+<summary> I can create a storage account using the phantom wallet through CLI, but when I try from the SDK in my app the transaction fails saying insufficient balance. Why is this?</summary>
 
 For the purposes of utilizing the Shadow Drive, ~0.1 SOL in our experience will avoid insufficient balance errors. You can also examine the TXs to see if there's any differences in your spend when using the CLI versus the SDK methods.
 
@@ -189,7 +195,7 @@ Currently, the Shadow network only allows Shadow Drive-specific transactions to 
 
 <summary>I'm getting a 400 error.</summary>
 
-When getting 400 timeouts for transaction submissions, it is most likely due to congestion on the Solana network. While timing out and retrying is normal during Solana congestion, many are now using priority fees may help solve congestion-related issues. Contact your RPC provider for further help.
+When getting 400 timeouts for transaction submissions, it is most likely due to congestion on the Solana network. While timing out and retrying is normal during Solana congestion, many are now using priority fees which may help solve congestion-related issues. Contact your RPC provider for further help.
 
 If your 400 error is stating "Invalid transaction supplied" then you may need to join our support channel in [Discord](https://discord.gg/genesysgo) and provide more details on the specific method. To resolve the typical causes of this error do the following:
 
@@ -213,9 +219,14 @@ If you encounter an ENOTFOUND error when using the Shadow Drive CLI, it is likel
 try setting --log-level debug with your command that is getting an error
 confirm that ~/.config/solana/id.json exists
 make sure you have installed the latest versions and dependencies
+</details>
 
+<details>
+<summary>What does "Internal Server Error" mean when calling the Shadow Drive API?</summary>
 
+There are a few reasons for this error but the most common is the file that have not migrated from the original version 1 format storage account to the newer version 2 format. For users that have created legacy style Shadow Drive accounts, please finish the migration steps. 
 
+For additional help please reach out to to us in Discord (https://discord.gg/genesysgo).
 
 </details>
 
@@ -322,7 +333,7 @@ Shadow Operators is currently in closed private alpha testing. Future updates wi
 
 <summary>What is GenesysGo?</summary>
 
-GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator. Since then, GG has expanded its offerings to provide RPCs and build out a large ecosystem of tools and infrastructure for Solana. GG has a team of talented developers and coders who are dedicated to building innovative solutions for the Solana community. For more information, you can visit their website at http://shadow.cloud/.
+GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator. Since then, GG has expanded its offerings to focus on a large ecosystem of tools and infrastructure for Solana. More details about the scope of our offerings can be found under the "Learn" category. GG has a team of talented developers and coders who are dedicated to building innovative solutions for the Solana community. For more information, you can visit our website at http://shadow.cloud/.
 
 </details>
 

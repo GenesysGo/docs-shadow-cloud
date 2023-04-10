@@ -16,7 +16,7 @@ _Please note: this section adheres to high level explanations and general concep
 
 ## **Overview**
 
-The components, in the order an incoming transaction (a user write request) would see them throughout its lifecycle are illustrated the figure below:
+The components, in the order an incoming transaction (a user write request) would see them throughout its lifecycle are illustrated in the figure below:
 
 <figure><img src="../.gitbook/assets/Dagger_Lifecycle2.png" alt=""><figcaption></figcaption></figure>
 
@@ -47,16 +47,16 @@ The communications module initializes outgoing [sync](dagger.md#synchronization-
 * **Outgoing Sync Requests**
   * To initialize a sync request, we begin by selecting a random active peer which has not recently been synced with.
   * Since we need the most up-to-date peer list along with a summary of our current graph’s state, the communications module sends a request to the graph module to summarize the current graph’s state and choose a peer 1.
-  * The communications receives the state summary and a chosen peer, sends it to the peer and awaits a sync response, which is forwarded to the graph module to be digested.
+  * The communications receive the state summary and a chosen peer, sends it to the peer and awaits a sync response, which is forwarded to the graph module to be digested.
 * **Incoming Sync Requests**
-  * An incoming sync request is immediately forward to the graph module. We await a packaged sync response containing all [events](dagger.md#events-an-occurrence-that-is-detected-by-a-distributed-ledger) that we have which the peer does not have, which is sent back to the peer.
+  * An incoming sync request is immediately forwarded to the graph module. We await a packaged sync response containing all [events](dagger.md#events-an-occurrence-that-is-detected-by-a-distributed-ledger) that we have which the peer does not have, which is sent back to the peer.
 * **Incoming Transactions**
-  * When a user submits a transaction, the communications module receiving the transaction then forwards it to the processor. After verification, the transaction makes it way through the forester and the graph module which, upon inclusion in a block, sends back the signature for the event which contains the block in which the transaction was included. The communications module forwards this signature back to the user. Note that this does not mean the block has been [finalized](dagger.md#finalized-block-a-block-that-has-been-accepted-by-the-consensus-protocol-and-will-not-be-changed).
+  * When a user submits a transaction, the communications module receiving the transaction then forwards it to the processor. After verification, the transaction makes its way through the forester and the graph module which, upon inclusion in a block, sends back the signature for the event containing the block in which the transaction was included. The communications module forwards this signature back to the user. Note that this does not mean the block has been [finalized](dagger.md#finalized-block-a-block-that-has-been-accepted-by-the-consensus-protocol-and-will-not-be-changed).
 
 <figure><img src="../.gitbook/assets/Docs_MindMap_4.png" alt=""><figcaption></figcaption></figure>
 
 * **Incoming RPC Requests**
-  * When a user submits one of several possible [RPC](dagger.md#rpc-request) requests, whether it be to read a file or inquire about a block or transaction, it is forwarded to the controller. The controller sends back the result of the ledger query to the communications module, which forwards it to the user. This RPC API is native to DAGGER and confirm to JSON standards.
+  * When a user submits one of several possible [RPC](dagger.md#rpc-request) requests, whether it be to read a file or inquire about a block or transaction, it is forwarded to the controller. The controller sends back the result of the ledger query to the communications module, which forwards it to the user. This RPC API is native to DAGGER and conforms to JSON standards.
 
 <figure><img src="../.gitbook/assets/RPC_Request_Graphic_Docs_Transparent.png" alt=""><figcaption></figcaption></figure>
 
@@ -116,7 +116,7 @@ Proof-of-stake (PoS) and [proof-of-work](dagger.md#proof-of-work) (PoW) are two 
 
 On the other hand, D.A.G.G.E.R. is a [directed acyclic](dagger.md#directed-acyclic-graph) graph-based (DAG) consensus mechanism, where nodes directly communicate with each other and share their transactions, creating a DAG of transactions. In this DAG, every node has its own history of transactions, and consensus is reached by analyzing the entire graph and identifying a single, agreed-upon order of transactions. This process allows for high throughput and fast finality, making it an attractive choice for applications that require high speed and scalability (e.g. Shadow Drive, DAGGER Mobile, AI model training).
 
-In the case of a decentralized storage network like GenesysGo Shadow Drive, D.A.G.G.E.R. this allows for horizontal scalability, meaning that the network can grow by adding more nodes, increasing storage capacity, and processing power without compromising the speed or security of the network. This is because each node can process and validate transactions independently, and the final consensus is reached by analyzing the entire DAG.
+In the case of a decentralized storage network like GenesysGo Shadow Drive, D.A.G.G.E.R. allows for horizontal scalability, meaning that the network can grow by adding more nodes, increasing storage capacity and processing power without compromising the speed or security of the network. This is because each node can process and validate transactions independently, and the final consensus is reached by analyzing the entire DAG.
 
 Proof-of-storage (PoS) consensus mechanisms like [Filecoin ](dagger.md#filecoin)and [IPFS](dagger.md#ipfs), on the other hand, allow for decentralized storage by incentivizing participants to store and retrieve data in exchange for cryptocurrency rewards. PoS systems have the potential to offer greater security than centralized storage solutions, as data is distributed across multiple nodes, making it difficult for any single node to compromise the network. However, PoS systems typically require a significant amount of storage capacity and computational resources to participate, making it less accessible to the general public.
 
