@@ -1,5 +1,5 @@
 ---
-description: An introduction to the Shadow Cloud and it's implementations
+description: An introduction to the Shadow Cloud and its implementations
 ---
 
 # Learn
