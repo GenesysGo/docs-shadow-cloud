@@ -1,6 +1,6 @@
 ---
 description: >-
-  D.A.G.G.E.R. stands for Directed acyclic gossiping graph enabling replication,
+  D.A.G.G.E.R. stands for directed acyclic gossiping graph enabling replication,
   and this section explains the architecture on a high level.
 ---
 
@@ -8,11 +8,11 @@ description: >-
 
 ## **Introduction**
 
-DAGGER is a distributed system with a graph based consensus mechanism. There are four components that make up the protocol specification. This article will explain on a high level each of these four components and how they would interact with an incoming request. For simplicity, the use-case of the transaction can be considered a request to store a file on Shadow Drive.&#x20;
+DAGGER is a distributed system with a graph based consensus mechanism. There are four components that make up the protocol specification. This article will explain on a high level each of these four components and how they would interact with an incoming request. For simplicity, the use-case of the transaction can be considered a request to store a file on Shadow Drive.
 
-There are many possible and planned implementations of the GenesysGo's D.A.G.G.E.R., however the flagship implementation will be Shadow Drive v2 - a soon to be released enhancement on the current Shadow Drive v1.5. This is why we regard a "transactions" as simply a write request submitted by a user. This section wraps by explaining how speed, stability, and scalability are why we chose to build a brand new cutting edge acyclic-graph-style consensus technology.
+There are many possible and planned implementations of the GenesysGo's D.A.G.G.E.R., however the flagship implementation will be Shadow Drive v2 - a soon to be released enhancement on the current Shadow Drive v1.5. This is why we regard a "transaction" as simply a write request submitted by a user. This section wraps by explaining how speed, stability, and scalability are why we chose to build a brand new cutting edge acyclic-graph-style consensus technology.
 
-_Please note: this section adheres to high level explanations and general concepts suitable for all readers. This is not to be considered a whitepaper, however as DAGGER continues to mature we are planning the release of a more technical documentation._&#x20;
+_Please note: this section adheres to high level explanations and general concepts suitable for all readers. This is not to be considered a whitepaper, however as DAGGER continues to mature we are planning the release of a more technical documentation._
 
 ## **Overview**
 
@@ -130,106 +130,106 @@ In summary, D.A.G.G.E.R. protocol offers a unique consensus mechanism that allow
 
 A type of digital ledger technology that is used to record transactions in a secure, decentralized way. Each transaction is grouped into a "block" that is added to a chain of blocks, creating a permanent record of all transactions that have occurred.
 
-#### **Consensus:**&#x20;
+#### **Consensus:**
 
 A process in which a group of participants agree on a single version of the truth. In a distributed system, achieving consensus is important for ensuring that all nodes in the network have the same view of the system's state.
 
-#### **Cryptographic hashes:**&#x20;
+#### **Cryptographic hashes:**
 
 A one-way function used to map data of any size to a fixed-length value. Used to create digital fingerprints to verify data integrity.
 
-#### **Directed acyclic graph:**&#x20;
+#### **Directed acyclic graph:**
 
 A graph that consists of directed edges with no cycles. Used to represent relationships between distributed ledger transactions.
 
-#### **Distributed System:**&#x20;
+#### **Distributed System:**
 
 A network of independent computers that work together to achieve a common goal. In a distributed system, tasks are divided among different nodes, which communicate and coordinate with each other to complete the tasks.
 
-#### **Distributed system file shredding:**&#x20;
+#### **Distributed system file shredding:**
 
 The process of splitting a file into multiple pieces and storing them on different computers in a distributed system.
 
-#### **Erasure Coding:**&#x20;
+#### **Erasure Coding:**
 
 A technique for breaking up data into smaller pieces and distributing them across a network to provide redundancy and ensure that the data can be recovered even if some of the pieces are lost.
 
-#### **Events:**&#x20;
+#### **Events:**
 
 An occurrence that is detected by a distributed ledger.
 
-#### **Finalized block:**&#x20;
+#### **Finalized block:**
 
 A block that has been accepted by the consensus protocol and will not be changed.
 
-#### **Hashgraph:**&#x20;
+#### **Hashgraph:**
 
 A type of distributed ledger technology that uses a directed acyclic graph (DAG) to record transactions. Hashgraph is designed to be fast and scalable, making it well-suited for use cases such as decentralized storage networks.
 
-#### **IPFS:**&#x20;
+#### **IPFS:**
 
 InterPlanetary File System is a protocol and network designed to create a content-addressable, peer-to-peer method of storing and sharing hypermedia in a distributed file system.
 
-#### **Filecoin:**&#x20;
+#### **Filecoin:**
 
 Filecoin is a decentralized storage network where anyone can rent out their extra hard drive space to earn money in the form of its native cryptocurrency, FIL. The Filecoin project seeks to combine the advantages of blockchain technology with the existing IPFS protocol to provide a secure, incentive-based storage infrastructure.
 
-#### **Ledger:**&#x20;
+#### **Ledger:**
 
 A record of all transactions in a system. In a digital system, a ledger can be implemented as a database or other type of data structure.
 
-#### **Merkle Tree:**&#x20;
+#### **Merkle Tree:**
 
 A data structure used in cryptography to verify the integrity of data. A Merkle tree allows large datasets to be checked for consistency and completeness without having to download the entire dataset.
 
-#### **Node:**&#x20;
+#### **Node:**
 
 A computer or other device that is connected to a network. In a distributed system, each node performs a specific function and communicates with other nodes in the network to complete tasks.
 
-#### **Orchestration:**&#x20;
+#### **Orchestration:**
 
 The process of coordinating and managing multiple components or services in a distributed system. In a decentralized storage network, orchestration is used to ensure that data is stored and retrieved correctly across the network.
 
-#### **Peer-to-Peer:**&#x20;
+#### **Peer-to-Peer:**
 
 A type of network architecture in which each node in the network can act as both a client and a server. In a peer-to-peer network, nodes communicate directly with each other, rather than through a central server.
 
-#### **Proof-of-Work:**&#x20;
+#### **Proof-of-Work:**
 
 A consensus algorithm used in some blockchain-based systems to validate transactions and create new blocks. Proof-of-work requires participants to solve complex mathematical problems in order to earn the right to validate a block of transactions.
 
-#### **Protocol:**&#x20;
+#### **Protocol:**
 
 A set of rules and standards that govern how data is transmitted and received over a network. In a distributed system, protocols ensure that all nodes in the network communicate in a standardized way.
 
-#### **Raw bytes:**&#x20;
+#### **Raw bytes:**
 
 Binary data that is made up of 0s and 1s, usually representing a string of text, a file or an image.
 
-#### **Replication:**&#x20;
+#### **Replication:**
 
 The process of copying data from one location to another in a distributed system. Replication is used to ensure that data is available even if one or more nodes in the network fail.
 
-#### **Root hash:**&#x20;
+#### **Root hash:**
 
 A single cryptographic hash that represents all of the data of a Merkle tree.
 
-#### **RPC request:**&#x20;
+#### **RPC request:**
 
 A remote procedure call, usually over an HTTP connection, used to communicate between distributed ledger nodes.
 
-#### **Sibling modules:**&#x20;
+#### **Sibling modules:**
 
 Separate modules that work together to create a distributed ledger.
 
-#### **Smart Contract:**&#x20;
+#### **Smart Contract:**
 
 A self-executing contract that is enforced and recorded on a blockchain or other type of digital ledger. Smart contracts automate the enforcement of contract terms and can be used to create decentralized applications.
 
-#### **Synchronization requests in peer-to-peer network:**&#x20;
+#### **Synchronization requests in peer-to-peer network:**
 
 Requests sent between nodes in a peer-to-peer network to ensure that the nodes have the same data.
 
-#### **Virtual machine orchestration:**&#x20;
+#### **Virtual machine orchestration:**
 
 The process of provisioning and managing virtual machines in a distributed system.
