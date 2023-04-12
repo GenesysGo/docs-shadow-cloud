@@ -337,6 +337,14 @@ Shadow Operators is currently in closed private alpha testing. Future updates wi
 
 <details>
 
+<summary>Is there a Devnet or Testnet?</summary>
+
+No. There is only a live mainnet at this time. We will revisit the idea of a Testnet as we get closer to the launch of Shadow Drive v2.
+
+</details>
+
+<details>
+
 <summary>What is GenesysGo?</summary>
 
 GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator. Since then, GG has expanded its offerings to focus on a large ecosystem of tools and infrastructure for Solana. More details about the scope of our offerings can be found under the "Learn" category. GG has a team of talented developers and coders who are dedicated to building innovative solutions for the Solana community. For more information, you can visit our website at http://shadow.cloud/.
