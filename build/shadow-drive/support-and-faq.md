@@ -29,9 +29,9 @@ If you have the correct amount of SOL and SHDW in your wallet but creating a sto
 
 To troubleshoot the issue, you can try the following:
 
--   Verify that the [Shadow Drive network](https://status.genesysgo.net/) is up and running. https://status.genesysgo.net/
--   Check the Shadow Drive [Change Log](../../reference/change-logs.md) for any known issues or bugs that may be causing the problem. https://docs.shadow.cloud/reference/change-logs
--   Contact Shadow Drive [support](https://discord.gg/genesysgo) for further assistance. https://discord.gg/genesysgo
+* Verify that the [Shadow Drive network](https://status.genesysgo.net/) is up and running. https://status.genesysgo.net/
+* Check the Shadow Drive [Change Log](../../reference/change-logs.md) for any known issues or bugs that may be causing the problem. https://docs.shadow.cloud/reference/change-logs
+* Contact Shadow Drive [support](https://discord.gg/genesysgo) for further assistance. https://discord.gg/genesysgo
 
 </details>
 
@@ -61,9 +61,9 @@ If you're still having issues, contact Shadow Drive support for further assistan
 
 <details>
 
-<summary> I can create a storage account using the phantom wallet through CLI, but when I try from the SDK in my app the transaction fails saying insufficient balance. Why is this?</summary>
+<summary>I can create a storage account using the phantom wallet through CLI, but when I try from the SDK in my app the transaction fails saying insufficient balance. Why is this?</summary>
 
-For the purposes of utilizing the Shadow Drive, ~0.1 SOL in our experience will avoid insufficient balance errors. You can also examine the TXs to see if there's any differences in your spend when using the CLI versus the SDK methods.
+For the purposes of utilizing the Shadow Drive, \~0.1 SOL in our experience will avoid insufficient balance errors. You can also examine the TXs to see if there's any differences in your spend when using the CLI versus the SDK methods.
 
 </details>
 
@@ -183,11 +183,9 @@ No, unfortunately it is not possible to resume an upload from where it left off 
 
 </details>
 
-<detials>
-<summary>Can I use the rust SDK in anchor programs?</summary>
+Can I use the rust SDK in anchor programs?
 
 No, the SDK requires internet access to send http requests. This is not allowed within Solana runtime because arbitrary http responses are not deterministic and may produce different Solana ledger state transitions
-</details>
 
 <details>
 
@@ -220,30 +218,32 @@ If you encounter an ENOTFOUND error when using the Shadow Drive CLI, it is likel
 </details>
 
 <details>
+
 <summary>What are some things I should check when getting errors?</summary>
 
-try setting --log-level debug with your command that is getting an error
-confirm that ~/.config/solana/id.json exists
-make sure you have installed the latest versions and dependencies
+try setting --log-level debug with your command that is getting an error confirm that \~/.config/solana/id.json exists make sure you have installed the latest versions and dependencies
+
 </details>
 
 <details>
+
 <summary>What does "Internal Server Error" mean when calling the Shadow Drive API?</summary>
 
-There are a few reasons for this error but the most common is the file that have not migrated from the original version 1 format storage account to the newer version 2 format. For users that have created legacy style Shadow Drive accounts, please finish the migration steps. 
+There are a few reasons for this error but the most common is the file that have not migrated from the original version 1 format storage account to the newer version 2 format. For users that have created legacy style Shadow Drive accounts, please finish the migration steps.
 
 For additional help please reach out to to us in Discord (https://discord.gg/genesysgo).
 
 </details>
 
 <details>
-<summary> How do I submit a bug or a security issue?</summary>
+
+<summary>How do I submit a bug or a security issue?</summary>
 
 **https://github.com/GenesysGo/shdw-drive-bug-reports**
 
 We adhere to a responsible disclosure process for security related issues. To ensure the responsible disclosure and handling of security vulnerabilities, we ask that you follow the process outlined below.
 
-#### **Bug Reporting Process**
+**Bug Reporting Process**
 
 1. Submit a new bug report by creating a [new issue](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose) in this repository. https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose
 2. Please provide a clear and concise description of the issue, steps to reproduce it, and any relevant screenshots or logs.
@@ -267,7 +267,7 @@ Also follow us on twitter https://twitter.com/GenesysGo or join our tech support
 
 </details>
 
-## General
+### General
 
 <details>
 
@@ -324,22 +324,6 @@ Shadow Drive runs on a global network of bare metal infrastructure, with all com
 <summary>How are storage costs determined?</summary>
 
 Prices vary depending on the front-end and the market value of storage costs per unit SHDW. There is a fixed 0.25 SHDW per 1 GB of storage across the network. You can visit front-end UIs such as https://sdrive.app/stats to determine costs.
-
-</details>
-
-<details>
-
-<summary>How do I become a node operator?</summary>
-
-Shadow Operators is currently in closed private alpha testing. Future updates will be provided as we progress towards a mainnet launch.
-
-</details>
-
-<details>
-
-<summary>Is there a Devnet or Testnet?</summary>
-
-No. Shadow Drive is fully live and in production, adopted by many. We will revisit the idea of a Testnet as we get closer to the launch of Shadow Drive v2.
 
 </details>
 

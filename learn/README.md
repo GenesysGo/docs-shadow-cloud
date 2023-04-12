@@ -1,5 +1,5 @@
 ---
-description: An introductions to the Shadow Cloud and it's implementations
+description: An introduction to the Shadow Cloud and its implementations
 ---
 
 # Learn
@@ -46,7 +46,7 @@ The current [design](storage-services/design.md#present-design-considerations) o
 
 [**Start Building on Shadow Drive!**](../build/)
 
-****[**Pricing**](storage-services/#pricing)****
+[**Pricing**](storage-services/#pricing)
 
 ## **Compute**
 
@@ -97,9 +97,9 @@ Decentralized Ledger Technology should be thought of as a superset of technologi
   * Enterprise VMs _(future release)_
     * White-glove handling of bare metal and virtual provisioning for specialized distributed ledger technology implementations.
 
-****[**Start Building on Shadow Drive!**](../build/shadow-drive/)****
+[**Start Building on Shadow Drive!**](../build/shadow-drive/)
 
-****[**See what others are building on Shadow Drive!**](../build/shadow-drive/community-mainted-uis.md)****
+[**See what others are building on Shadow Drive!**](../build/shadow-drive/community-mainted-uis.md)
 
 ## **Shadow Operators**
 
