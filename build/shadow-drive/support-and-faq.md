@@ -339,7 +339,7 @@ Shadow Operators is currently in closed private alpha testing. Future updates wi
 
 <summary>Is there a Devnet or Testnet?</summary>
 
-No. There is only a live mainnet at this time. We will revisit the idea of a Testnet as we get closer to the launch of Shadow Drive v2.
+No. Shadow Drive is fully live and in production, adopted by many. We will revisit the idea of a Testnet as we get closer to the launch of Shadow Drive v2.
 
 </details>
 
