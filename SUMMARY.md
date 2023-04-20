@@ -17,7 +17,7 @@
     * [Python](build/shadow-drive/sdk-python.md)
   * [API](build/shadow-drive/the-api.md)
   * [FAQ](build/shadow-drive/support-and-faq.md)
-  * [Shadow Ecosystem](build/shadow-drive/community-mainted-uis.md)
+  * [Shadow Ecosystem](build/shadow-drive/community-maintained-uis.md)
 * [Reference](reference/README.md)
   * [Change Logs](reference/change-logs.md)
   * [Social Media & Community](reference/social-media-and-community.md)
