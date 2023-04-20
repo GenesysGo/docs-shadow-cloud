@@ -6,7 +6,7 @@ description: Explore projects utilizing Shadow Drive
 
 **SDRIVE**
 
-Easy to use, reliable, private, and secure cloud storage and publishing. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
+Easy to use, reliable, private, and secure cloud storage built on Shadow Drive. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
 
 [![](<../../.gitbook/assets/sdrive-feature (1).png>)](https://sdrive.app/landing)
 
@@ -54,33 +54,29 @@ A Web3 version of YouTube built with Shadow Drive storage, uploads come directly
 
 #### **Crab.so Decentralized Social Network**
 
-Delete the copy under the URL "Another prime example of a comprehensive suite of NFT tools should include Shadow Drive storage, and this tool delivers on all fronts."
+Another prime example of a comprehensive suite of NFT tools should include Shadow Drive storage, and this tool delivers on all fronts.
 
 {% embed url="https://www.crab.so/" %}
 
-Another prime example of a comprehensive suite of NFT tools should include Shadow Drive storage, and this tool delivers on all fronts.
-
 #### **You are Loved**
-
-{% embed url="https://shdw-drive.genesysgo.net/6P6WznKbJ2nEMCfrXZDQvipCgCSx45SXxjWMWvqfPtyJ/yal_website.html" %}
 
 A fascinating use case where an HTML doc can be served on Shadow Drive while the minting functionality and wallet connection can remain in tact. Check it out!
 
-#### **Grape Shadow UI**
+{% embed url="https://shdw-drive.genesysgo.net/6P6WznKbJ2nEMCfrXZDQvipCgCSx45SXxjWMWvqfPtyJ/yal_website.html" %}
 
-{% embed url="https://grapedrive.vercel.app/" %}
+#### **Grape Shadow UI**
 
 An open-sourced tool for managing Shadow Drive storage from the browser.
 
-{% embed url="https://github.com/Grape-Labs/grape-drive" %}
+{% embed url="https://grapedrive.vercel.app/" %}
 
 #### **A Rust CLI for Shadow Drive**
 
-{% embed url="https://github.com/ebrightfield/shadow-drive-rust-cli" %}
-
 Another great contribution from a community member! A Rust-based CLI for working with Shadow Drive!
 
-#### **Not on this list?** [**Submit a PR**](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose) **or drop into our** [**Discord**](https://discord.gg/genesysgo) **to get added.**
+{% embed url="https://github.com/ebrightfield/shadow-drive-rust-cli" %}
+
+#### **Not on this list?** [**Submit a PR**](https://github.com/GenesysGo/docs-shadow-cloud/blob/main/build/shadow-drive/community-maintained-uis.md) **or drop into our** [**Discord**](https://discord.gg/genesysgo) **to get added.**
 
 
 
