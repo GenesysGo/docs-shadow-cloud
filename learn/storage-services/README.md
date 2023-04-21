@@ -50,9 +50,13 @@ If you're a developer and are wondering why you should use Shadow Drive, here's 
 
 ### Pricing
 
+Shadow Drive is cheaper than any storage platform currently on the market! Users can easily and affordably pay for both storage and the bandwidth needed to serve requests at a fraction of the cost of using other providers.
+
 Shadow Drive storage costs are driven by wholesale network costs and can be estimated through various front end UIs that capture moment-in-time estimates. Here is one of the platforms designed by ecosystem partners that provides detailed information on the network:
 
 {% embed url="https://sdrive.app/stats" %}
+Please see the Shadow Drive dashboard above for current pricing and how Shadow Drive pricing compares to all other cloud storage providers.
+{% endembed %}
 
 For common questions check out the [General](../../build/shadow-drive/support-and-faq.md) section of our FAQ.
 
