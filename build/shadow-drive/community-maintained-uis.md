@@ -76,8 +76,6 @@ Another great contribution from a community member! A Rust-based CLI for working
 
 {% embed url="https://github.com/ebrightfield/shadow-drive-rust-cli" %}
 
-#### **Not on this list?** [**Submit a PR**](https://github.com/GenesysGo/docs-shadow-cloud/blob/main/build/shadow-drive/community-maintained-uis.md) **or drop into our** [**Discord**](https://discord.gg/genesysgo) **to get added.**
+#### **Not on this list?** [**Submit a PR**](https://github.com/GenesysGo/docs-shadow-cloud) **or drop into our** [**Discord**](https://discord.gg/genesysgo) **to get added.**
 
-
-
-[1] Disclaimer: Please be advised that the "Shadow Ecosystem" projects displayed on our website are developed and run by independent third-party entities. GenesysGo is not responsible for any content, products, or services provided by these Third-Party Projects. The order and arrangement of the Third-Party Projects in the Ecosystem do not imply any ranking, preference, or superiority. It is solely your responsibility to evaluate the quality, security, legality, and suitability of any Third-Party Project you decide to interact with.
+\[1] Disclaimer: Please be advised that the "Shadow Ecosystem" projects displayed on our website are developed and run by independent third-party entities. GenesysGo is not responsible for any content, products, or services provided by these Third-Party Projects. The order and arrangement of the Third-Party Projects in the Ecosystem do not imply any ranking, preference, or superiority. It is solely your responsibility to evaluate the quality, security, legality, and suitability of any Third-Party Project you decide to interact with.
