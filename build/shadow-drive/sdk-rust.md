@@ -796,7 +796,9 @@ let store_files_response = shdw_drive_client
   upload_errors: Array<UploadError>;
 }
 ```
+
 ## **Example - Add Immutable Storage**
+
 ```rust
 use byte_unit::Byte;
 use shadow_drive_rust::{
@@ -931,6 +933,7 @@ async fn add_immutable_storage_test<T: Signer>(
 ```
 
 ## **Example - Cancel Delete Storage Accounts**
+
 ```rust
 use shadow_drive_rust::ShadowDriveClient;
 use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
@@ -958,6 +961,7 @@ async fn main() {
 ```
 
 ## **Example - Claim Stake**
+
 ```rust
 use shadow_drive_rust::ShadowDriveClient;
 use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
@@ -1014,6 +1018,7 @@ async fn main() {
 ```
 
 ## **Example - Delete File**
+
 ```rust
 use shadow_drive_rust::{models::ShadowFile, ShadowDriveClient};
 use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
@@ -1081,6 +1086,7 @@ async fn main() {
 ```
 
 ## **Example - Delete Storage Account**
+
 ```rust
 use shadow_drive_rust::ShadowDriveClient;
 use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
@@ -1108,6 +1114,7 @@ async fn main() {
 ```
 
 ## **Example - Tests**
+
 ```rust
 use byte_unit::Byte;
 use shadow_drive_rust::{models::ShadowFile, ShadowDriveClient, StorageAccountVersion};
@@ -1287,6 +1294,7 @@ async fn upload_file_test<T: Signer>(
 ```
 
 ## **Example - Migrate**
+
 ```rust
 use byte_unit::Byte;
 use shadow_drive_rust::{ShadowDriveClient, StorageAccountVersion};
@@ -1344,6 +1352,7 @@ async fn main() {
 ```
 
 ## **Example - Redeem Rent**
+
 ```rust
 use shadow_drive_rust::ShadowDriveClient;
 use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
@@ -1374,6 +1383,7 @@ async fn main() {
 ```
 
 ## **Example - Upload Multiple Files**
+
 ```rust
 use byte_unit::Byte;
 use futures::TryStreamExt;
