@@ -23,6 +23,7 @@
     * **[redeem_rent](#redeem_rent)**
     * **[reduce_storage](#reduce_storage)**
     * **[store_files](#store_files)**
+* **[More Examples](#add_immutable_storage)**
 
 ## **Install**
 
@@ -793,5 +794,655 @@ let store_files_response = shdw_drive_client
   finalized_locations: Array<string>;
   message: string;
   upload_errors: Array<UploadError>;
+}
+```
+## **Example - Add Immutable Storage**
+```rust
+use byte_unit::Byte;
+use shadow_drive_rust::{
+    models::storage_acct::StorageAcct, ShadowDriveClient, StorageAccountVersion,
+};
+use solana_sdk::{
+    pubkey::Pubkey,
+    signer::{keypair::read_keypair_file, Signer},
+};
+use std::str::FromStr;
+
+const KEYPAIR_PATH: &str = "/Users/dboures/.config/solana/id.json";
+
+#[tokio::main]
+async fn main() {
+    //load keypair from file
+    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+
+    //create shdw drive client
+    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+
+    // // 1.
+    // create_storage_accounts(shdw_drive_client).await;
+
+    // // 2.
+    // let v1_pubkey = Pubkey::from_str("J4RJYandDDKxyF6V1HAdShDSbMXk78izZ2yEksqyvGmo").unwrap();
+    let v2_pubkey = Pubkey::from_str("9dXUV4BEKWohSRDn4cy5G7JkhUDWoSUGGwJngrSg453r").unwrap();
+
+    // make_storage_immutable(&shdw_drive_client, &v1_pubkey).await;
+    // make_storage_immutable(&shdw_drive_client, &v2_pubkey).await;
+
+    // // 3.
+    // add_immutable_storage_test(&shdw_drive_client, &v1_pubkey).await;
+    add_immutable_storage_test(&shdw_drive_client, &v2_pubkey).await;
+}
+
+async fn create_storage_accounts<T: Signer>(shdw_drive_client: ShadowDriveClient<T>) {
+    let result_v1 = shdw_drive_client
+        .create_storage_account(
+            "shdw-drive-1.5-test-v1",
+            Byte::from_str("1MB").expect("invalid byte string"),
+            StorageAccountVersion::v1(),
+        )
+        .await
+        .expect("error creating storage account");
+
+    let result_v2 = shdw_drive_client
+        .create_storage_account(
+            "shdw-drive-1.5-test-v2",
+            Byte::from_str("1MB").expect("invalid byte string"),
+            StorageAccountVersion::v2(),
+        )
+        .await
+        .expect("error creating storage account");
+
+    println!("v1: {:?}", result_v1);
+    println!("v2: {:?}", result_v2);
+}
+
+async fn make_storage_immutable<T: Signer>(
+    shdw_drive_client: &ShadowDriveClient<T>,
+    storage_account_key: &Pubkey,
+) {
+    let storage_account = shdw_drive_client
+        .get_storage_account(storage_account_key)
+        .await
+        .expect("failed to get storage account");
+    match storage_account {
+        StorageAcct::V1(storage_account) => println!("account: {:?}", storage_account),
+        StorageAcct::V2(storage_account) => println!("account: {:?}", storage_account),
+    }
+
+    let make_immutable_response = shdw_drive_client
+        .make_storage_immutable(&storage_account_key)
+        .await
+        .expect("failed to make storage immutable");
+
+    println!("response: {:?}", make_immutable_response);
+
+    let storage_account = shdw_drive_client
+        .get_storage_account(&storage_account_key)
+        .await
+        .expect("failed to get storage account");
+    match storage_account {
+        StorageAcct::V1(storage_account) => println!("account: {:?}", storage_account),
+        StorageAcct::V2(storage_account) => println!("account: {:?}", storage_account),
+    }
+}
+
+async fn add_immutable_storage_test<T: Signer>(
+    shdw_drive_client: &ShadowDriveClient<T>,
+    storage_account_key: &Pubkey,
+) {
+    let storage_account = shdw_drive_client
+        .get_storage_account(&storage_account_key)
+        .await
+        .expect("failed to get storage account");
+
+    match storage_account {
+        StorageAcct::V1(storage_account) => {
+            println!("old size: {:?}", storage_account.reserved_bytes)
+        }
+        StorageAcct::V2(storage_account) => {
+            println!("old size: {:?}", storage_account.reserved_bytes)
+        }
+    }
+
+    let add_immutable_storage_response = shdw_drive_client
+        .add_immutable_storage(
+            storage_account_key,
+            Byte::from_str("1MB").expect("invalid byte string"),
+        )
+        .await
+        .expect("error adding storage");
+
+    println!("response: {:?}", add_immutable_storage_response);
+
+    let storage_account = shdw_drive_client
+        .get_storage_account(&storage_account_key)
+        .await
+        .expect("failed to get storage account");
+
+    match storage_account {
+        StorageAcct::V1(storage_account) => {
+            println!("new size: {:?}", storage_account.reserved_bytes)
+        }
+        StorageAcct::V2(storage_account) => {
+            println!("new size: {:?}", storage_account.reserved_bytes)
+        }
+    }
+}
+```
+
+## **Example - Cancel Delete Storage Accounts**
+```rust
+use shadow_drive_rust::ShadowDriveClient;
+use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
+use std::str::FromStr;
+
+const KEYPAIR_PATH: &str = "keypair.json";
+
+#[tokio::main]
+async fn main() {
+    //load keypair from file
+    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+    let storage_account_key =
+        Pubkey::from_str("GHSNTDyMmay7xDjBNd9dqoHTGD3neioLk5VJg2q3fJqr").unwrap();
+
+    //create shdw drive client
+    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+
+    let response = shdw_drive_client
+        .cancel_delete_storage_account(&storage_account_key)
+        .await
+        .expect("failed to cancel storage account deletion");
+
+    println!("Unmark delete storage account complete {:?}", response);
+}
+```
+
+## **Example - Claim Stake**
+```rust
+use shadow_drive_rust::ShadowDriveClient;
+use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
+use std::str::FromStr;
+
+const KEYPAIR_PATH: &str = "keypair.json";
+
+/// This example doesn't quite work.
+/// claim_stake is used to redeem SHDW after you reduce the storage amount of an account
+/// In order to successfully claim_stake, the user needs to wait an epoch after reducing storage
+/// Trying to claim_stake in the same epoch as a reduction will result in
+/// "custom program error: 0x1775"
+/// "Error Code: ClaimingStakeTooSoon"
+
+#[tokio::main]
+async fn main() {
+    //load keypair from file
+    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+    let storage_account_key =
+        Pubkey::from_str("GHSNTDyMmay7xDjBNd9dqoHTGD3neioLk5VJg2q3fJqr").unwrap();
+
+    //create shdw drive client
+    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+
+    let url = String::from(
+        "https://shdw-drive.genesysgo.net/B7Qk2omAvchkePhzHubCVQuVpZHcieqPQCwFxeeBZGuT/hey.txt",
+    );
+
+    // reduce storage
+
+    // let reduce_storage_response = shdw_drive_client
+    //     .reduce_storage(
+    //         storage_account_key,
+    //         Byte::from_str("100KB").expect("invalid byte string"),
+    //     )
+    //     .await
+    //     .expect("error adding storage");
+
+    // println!("txn id: {:?}", reduce_storage_response.txid);
+
+    // WAIT AN EPOCH
+
+    // claim stake
+    // let claim_stake_response = shdw_drive_client
+    //     .claim_stake(storage_account_key)
+    //     .await
+    //     .expect("failed to claim stake");
+
+    // println!(
+    //     "Claim stake complete {:?}",
+    //     claim_stake_response
+    // );
+}
+```
+
+## **Example - Delete File**
+```rust
+use shadow_drive_rust::{models::ShadowFile, ShadowDriveClient};
+use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
+use std::str::FromStr;
+
+const KEYPAIR_PATH: &str = "keypair.json";
+
+#[tokio::main]
+async fn main() {
+    //load keypair from file
+    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+
+    let v1_pubkey = Pubkey::from_str("GSvvRguVTtSayF5zLQPLVTJQHQ6Fqu1Z3HSRMP8AHY9K").unwrap();
+    let v2_pubkey = Pubkey::from_str("2cvgcqfmMg9ioFtNf57ZqCNbuWDfB8ZSzromLS8Kkb7q").unwrap();
+
+    //create shdw drive client
+    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+
+    //add a file
+    let v1_upload_reponse = shdw_drive_client
+        .store_files(
+            &v1_pubkey,
+            vec![ShadowFile::file(
+                String::from("example.png"),
+                "multiple_uploads/0.txt",
+            )],
+        )
+        .await
+        .expect("failed to upload v1 file");
+    println!("Upload complete {:?}", v1_upload_reponse);
+
+    let v2_upload_reponse = shdw_drive_client
+        .store_files(
+            &v2_pubkey,
+            vec![ShadowFile::file(
+                String::from("example.png"),
+                "multiple_uploads/0.txt",
+            )],
+        )
+        .await
+        .expect("failed to upload v2 file");
+
+    println!("Upload complete {:?}", v2_upload_reponse);
+
+    let v1_url = String::from(
+        "https://shdw-drive.genesysgo.net/GSvvRguVTtSayF5zLQPLVTJQHQ6Fqu1Z3HSRMP8AHY9K/example.png",
+    );
+    let v2_url = String::from(
+        "https://shdw-drive.genesysgo.net/2cvgcqfmMg9ioFtNf57ZqCNbuWDfB8ZSzromLS8Kkb7q/example.png",
+    );
+
+    //delete file
+    let v1_delete_file_response = shdw_drive_client
+        .delete_file(&v1_pubkey, v1_url)
+        .await
+        .expect("failed to delete file");
+    println!("Delete file complete {:?}", v1_delete_file_response);
+
+    let v2_delete_file_response = shdw_drive_client
+        .delete_file(&v2_pubkey, v2_url)
+        .await
+        .expect("failed to delete file");
+    println!("Delete file complete {:?}", v2_delete_file_response);
+}
+```
+
+## **Example - Delete Storage Account**
+```rust
+use shadow_drive_rust::ShadowDriveClient;
+use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
+use std::str::FromStr;
+
+const KEYPAIR_PATH: &str = "keypair.json";
+
+#[tokio::main]
+async fn main() {
+    //load keypair from file
+    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+    let storage_account_key =
+        Pubkey::from_str("9VndNFwL7cVTshY2x5GAjKQusRCAsDU4zynYg76xTguo").unwrap();
+
+    //create shdw drive client
+    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+
+    let response = shdw_drive_client
+        .delete_storage_account(&storage_account_key)
+        .await
+        .expect("failed to request storage account deletion");
+
+    println!("Delete Storage Account complete {:?}", response);
+}
+```
+
+## **Example - Tests**
+```rust
+use byte_unit::Byte;
+use shadow_drive_rust::{models::ShadowFile, ShadowDriveClient, StorageAccountVersion};
+use solana_sdk::{
+    pubkey,
+    pubkey::Pubkey,
+    signer::{keypair::read_keypair_file, Signer},
+};
+
+const KEYPAIR_PATH: &str = "keypair.json";
+
+#[tokio::main]
+async fn main() {
+    //load keypair from file
+    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+    // let pubkey = keypair.pubkey();
+    // let (storage_account_key, _) =
+    //     shadow_drive_rust::derived_addresses::storage_account(&pubkey, 0);
+
+    let storage_account_key = pubkey!("G6nE9EbNgSDcvUvs67enP2Jba3exgLyStgsg8S7n9StS");
+
+    //create shdw drive client
+    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+
+    // get_storage_accounts_test(shdw_drive_client, &pubkey).await
+
+    // create_storage_account_v2_test(shdw_drive_client).await
+    upload_file_test(shdw_drive_client, &storage_account_key).await
+}
+
+async fn get_storage_accounts_test<T: Signer>(
+    shdw_drive_client: ShadowDriveClient<T>,
+    pubkey: &Pubkey,
+) {
+    let storage_accounts = shdw_drive_client
+        .get_storage_accounts(pubkey)
+        .await
+        .expect("failed to get storage account");
+    println!("{:?}", storage_accounts);
+}
+
+async fn create_storage_account_v2_test<T: Signer>(shdw_drive_client: ShadowDriveClient<T>) {
+    let result = shdw_drive_client
+        .create_storage_account(
+            "shdw-drive-1.5-test",
+            Byte::from_str("10MB").expect("invalid byte string"),
+            StorageAccountVersion::v2(),
+        )
+        .await
+        .expect("error creating storage account");
+    println!("{:?}", result);
+}
+
+// async fn get_object_data_test<T: Signer>(
+//     shdw_drive_client: ShadowDriveClient<T>,
+//     location: &str,
+// ) {
+//     let result = shdw_drive_client
+//         .get_object_data(location)
+//         .await
+//         .expect("error getting object data");
+//     println!("{:?}", result);
+// }
+
+// async fn list_objects_test<T: Signer>(
+//     shdw_drive_client: ShadowDriveClient<T>,
+//     storage_account_key: &Pubkey,
+// ) {
+//     let objects = shdw_drive_client
+//         .list_objects(storage_account_key)
+//         .await
+//         .expect("failed to list objects");
+
+//     println!("objects {:?}", objects);
+// }
+
+// async fn make_storage_immutable_test<T: Signer>(
+//     shdw_drive_client: ShadowDriveClient<T>,
+//     storage_account_key: &Pubkey,
+// ) {
+//     let storage_account = shdw_drive_client
+//         .get_storage_account(storage_account_key)
+//         .await
+//         .expect("failed to get storage account");
+//     println!(
+//         "identifier: {:?}; immutable: {:?}",
+//         storage_account.identifier, storage_account.immutable
+//     );
+
+//     let make_immutable_response = shdw_drive_client
+//         .make_storage_immutable(&storage_account_key)
+//         .await
+//         .expect("failed to make storage immutable");
+
+//     println!("txn id: {:?}", make_immutable_response.txid);
+
+//     let storage_account = shdw_drive_client
+//         .get_storage_account(&storage_account_key)
+//         .await
+//         .expect("failed to get storage account");
+//     println!(
+//         "identifier: {:?}; immutable: {:?}",
+//         storage_account.identifier, storage_account.immutable
+//     );
+// }
+
+// async fn add_storage_test<T: Signer>(
+//     shdw_drive_client: &ShadowDriveClient<T>,
+//     storage_account_key: &Pubkey,
+// ) {
+//     let storage_account = shdw_drive_client
+//         .get_storage_account(&storage_account_key)
+//         .await
+//         .expect("failed to get storage account");
+
+//     let add_storage_response = shdw_drive_client
+//         .add_storage(
+//             storage_account_key,
+//             Byte::from_str("10MB").expect("invalid byte string"),
+//         )
+//         .await
+//         .expect("error adding storage");
+
+//     println!("txn id: {:?}", add_storage_response.txid);
+
+//     let storage_account = shdw_drive_client
+//         .get_storage_account(&storage_account_key)
+//         .await
+//         .expect("failed to get storage account");
+
+//     println!("new size: {:?}", storage_account.storage);
+// }
+
+// async fn reduce_storage_test<T: Signer>(
+//     shdw_drive_client: ShadowDriveClient<T>,
+//     storage_account_key: &Pubkey,
+// ) {
+//     let storage_account = shdw_drive_client
+//         .get_storage_account(storage_account_key)
+//         .await
+//         .expect("failed to get storage account");
+
+//     println!("previous size: {:?}", storage_account.storage);
+
+//     let add_storage_response = shdw_drive_client
+//         .reduce_storage(
+//             storage_account_key,
+//             Byte::from_str("10MB").expect("invalid byte string"),
+//         )
+//         .await
+//         .expect("error adding storage");
+
+//     println!("txn id: {:?}", add_storage_response.txid);
+
+//     let storage_account = shdw_drive_client
+//         .get_storage_account(storage_account_key)
+//         .await
+//         .expect("failed to get storage account");
+
+//     println!("new size: {:?}", storage_account.storage);
+// }
+
+async fn upload_file_test<T: Signer>(
+    shdw_drive_client: ShadowDriveClient<T>,
+    storage_account_key: &Pubkey,
+) {
+    let upload_reponse = shdw_drive_client
+        .store_files(
+            storage_account_key,
+            vec![ShadowFile::file(String::from("example.png"), "example.png")],
+        )
+        .await
+        .expect("failed to upload file");
+
+    println!("Upload complete {:?}", upload_reponse);
+}
+```
+
+## **Example - Migrate**
+```rust
+use byte_unit::Byte;
+use shadow_drive_rust::{ShadowDriveClient, StorageAccountVersion};
+use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
+use std::str::FromStr;
+
+const KEYPAIR_PATH: &str = "keypair.json";
+
+#[tokio::main]
+async fn main() {
+    //load keypair from file
+    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+
+    //create shdw drive client
+    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+
+    // create V1 storage account
+    let v1_response = shdw_drive_client
+        .create_storage_account(
+            "1.5-test",
+            Byte::from_str("1MB").expect("invalid byte string"),
+            StorageAccountVersion::v1(),
+        )
+        .await
+        .expect("error creating storage account");
+
+    println!("v1: {:?} \n", v1_response);
+
+    let key_string: String = v1_response.shdw_bucket.unwrap();
+    let v1_pubkey: Pubkey = Pubkey::from_str(&key_string).unwrap();
+
+    // can migrate all at once
+    let migrate = shdw_drive_client
+        .migrate(&v1_pubkey)
+        .await
+        .expect("failed to migrate");
+    println!("Migrated {:?} \n", migrate);
+
+    // alternatively can split migration into 2 steps (boths steps are exposed)
+
+    // // step 1
+    // let migrate_step_1 = shdw_drive_client
+    //     .migrate_step_1(&v1_pubkey)
+    //     .await
+    //     .expect("failed to migrate v1 step 1");
+    // println!("Step 1 complete {:?} \n", migrate_step_1);
+
+    // // step 2
+    // let migrate_step_2 = shdw_drive_client
+    //     .migrate_step_2(&v1_pubkey)
+    //     .await
+    //     .expect("failed to migrate v1 step 2");
+    // println!("Step 2 complete {:?} \n", migrate_step_2);
+}
+```
+
+## **Example - Redeem Rent**
+```rust
+use shadow_drive_rust::ShadowDriveClient;
+use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
+use std::str::FromStr;
+
+const KEYPAIR_PATH: &str = "keypair.json";
+
+#[tokio::main]
+async fn main() {
+    //load keypair from file
+    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+
+    //create shdw drive client
+    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+
+    let storage_account_key =
+        Pubkey::from_str("D7Qk2omAvchkePhzHubCVQuVpZHcieqPQCwFxeeBZGuT").unwrap();
+
+    let file_account_key =
+        Pubkey::from_str("B41kFXqFkDhY7kHbMhEk17bP2w7QLUYU9X5tRhDLttnJ").unwrap();
+
+    let redeem_rent_response = shdw_drive_client
+        .redeem_rent(&storage_account_key, &file_account_key)
+        .await
+        .expect("failed to redeem_storage");
+    println!("Redeemed {:?} \n", redeem_rent_response);
+}
+```
+
+## **Example - Upload Multiple Files**
+```rust
+use byte_unit::Byte;
+use futures::TryStreamExt;
+use shadow_drive_rust::{models::ShadowFile, ShadowDriveClient, StorageAccountVersion};
+use solana_sdk::signer::{keypair::read_keypair_file, Signer};
+use tokio_stream::StreamExt;
+
+const KEYPAIR_PATH: &str = "keypair.json";
+
+#[tokio::main]
+async fn main() {
+    tracing_subscriber::fmt()
+        .with_env_filter("off,shadow_drive_rust=debug")
+        .init();
+
+    //load keypair from file
+    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+    let pubkey = keypair.pubkey();
+    let (storage_account_key, _) =
+        shadow_drive_rust::derived_addresses::storage_account(&pubkey, 21);
+
+    //create shdw drive client
+    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+
+    //ensure storage account
+    if let Err(_) = shdw_drive_client
+        .get_storage_account(&storage_account_key)
+        .await
+    {
+        println!("Error finding storage account, assuming it's not created yet");
+        shdw_drive_client
+            .create_storage_account(
+                "shadow-drive-rust-test-2",
+                Byte::from_str("1MB").expect("failed to parse byte string"),
+                StorageAccountVersion::v2(),
+            )
+            .await
+            .expect("failed to create storage account");
+    }
+
+    let dir = tokio::fs::read_dir("multiple_uploads")
+        .await
+        .expect("failed to read multiple uploads dir");
+
+    let mut files = tokio_stream::wrappers::ReadDirStream::new(dir)
+        .filter(Result::is_ok)
+        .and_then(|entry| async move {
+            Ok(ShadowFile::file(
+                entry
+                    .file_name()
+                    .into_string()
+                    .expect("failed to convert os string to regular string"),
+                entry.path(),
+            ))
+        })
+        .collect::<Result<Vec<_>, _>>()
+        .await
+        .expect("failed to create shdw files for dir");
+
+    files.push(ShadowFile::bytes(
+        String::from("buf.txt"),
+        &b"this is a buf test"[..],
+    ));
+
+    let upload_results = shdw_drive_client
+        .store_files(&storage_account_key, files)
+        .await
+        .expect("failed to upload files");
+
+    println!("upload results: {:#?}", upload_results);
 }
 ```
