@@ -1,4 +1,4 @@
-# Javascript
+# JavaScript
 
 ## **Contents**
 
@@ -27,8 +27,8 @@
   * [**uploadFile**](sdk-javascript.md#uploadfile)
   * [**uploadMultipleFiles**](sdk-javascript.md#uploadmultiplefiles)
   * [**userInfo**](sdk-javascript.md#userinfo)
-* [**Example - POST request via SDK**](#example---post-request-via-sdk-make-immutable)
-* []()
+* [**Example - POST request via SDK**](sdk-javascript.md#example---post-request-via-sdk-make-immutable)
+
 ### **Getting Started: Javascript SDK**
 
 Let's scaffold a React app and add our dependencies
@@ -1353,6 +1353,7 @@ console.log(responses);
 userInfo: PublicKey
 
 ### **Example - POST request via SDK (make immutable)**
+
 ```java
 import * as anchor from "@project-serum/anchor";
 import { getStakeAccount, findAssociatedTokenAddress } from "../utils/helpers";
@@ -1479,7 +1480,5 @@ export default async function makeStorageImmutable(
   }
 }
 ```
-
-
 
 #### **Help improve this** [**resource**](sdk-javascript.md) **or provide us with** [**feedback**](discord/)**.**
