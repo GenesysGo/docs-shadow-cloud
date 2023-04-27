@@ -60,6 +60,6 @@ Please see the Shadow Drive dashboard above for current pricing and how Shadow D
 
 For common questions check out the [General](../../build/shadow-drive/support-and-faq.md) section of our FAQ.
 
-For a comprehensive look at the Shadow Platform's ecosystem check out the [Shadow Ecosystem](broken-reference) page.
+For a comprehensive look at the Shadow Platform's ecosystem check out the [Shadow Ecosystem](https://docs.shadow.cloud/build/community-maintained-uis) page.
 
 ### [**Get started with Shadow Drive!**](../../build/shadow-drive/)
