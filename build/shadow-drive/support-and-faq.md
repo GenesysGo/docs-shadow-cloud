@@ -177,7 +177,7 @@ Yes, currently only the owner of the storage account can edit the files.
 
 <details>
 
-<summary>Is it possible to resume an upload from where it left off if it fails?</summary>
+<summary>Is it possible to resume an upload from where it left off if it fails</summary>
 
 No, unfortunately it is not possible to resume an upload from where it left off if it fails. However, the CLI checks files before uploading and skips them if they already exist. You also receive an output JSON file for each file upload, which will indicate if a file already exists.
 
@@ -221,7 +221,7 @@ If you encounter an ENOTFOUND error when using the Shadow Drive CLI, it is likel
 
 <summary>What are some things I should check when getting errors?</summary>
 
-try setting --log-level debug with your command that is getting an error confirm that \~/.config/solana/id.json exists make sure you have installed the latest versions and dependencies
+You can try setting --log-level debug with your command that is getting an error. Make sure to confirm you have installed the latest versions and dependencies and that your keypair file is being accessed properly. Make sure you wallet is funded properly with both SOL and SHDW, that you are handling Solana connection objects properly, and that you are not having Solana RPC related errors. For further help you can capture logs and share relevant code in the technical support channels of our [Discord](https://discord.gg/genesysgo).
 
 </details>
 
@@ -274,6 +274,13 @@ Also follow us on twitter https://twitter.com/GenesysGo or join our tech support
 <summary>What makes Shadow Drive unique?</summary>
 
 Shadow Drive is a commodity cloud network that offers multiple service options, leveraging distributed ledger technology, and offering vertically integrated, L1-specific storage and compute. It is the only cloud network designed to democratize the earnings of traditional cloud platforms without sacrificing performance. Being S3-compatible, Shadow Drive maintains an open-source SDK and interoperability standards that make it easy to access through popular builder tools and SDKs. Its objective is to support popular tools that make building easier, regardless of the application you are building.
+
+</details>
+
+<details>
+
+<summary>How does Shadow Drive ensure data privacy and security?</summary>
+Shadow Drive ensures data privacy and security by encrypting and erasure coding the data, and then algorithmically distributing the fragments across the distributed network. This is done trustlessly via smart contracts and requires signed Solana transactions, creating a publicly verifiable on-chain log. Additionally, Shadow Drive provides developers with the tools they need to comply with GDPR and can show records that prove that they have deleted a user's personal data.  
 
 </details>
 
