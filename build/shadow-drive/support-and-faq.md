@@ -183,9 +183,11 @@ No, unfortunately it is not possible to resume an upload from where it left off 
 
 </details>
 
-Can I use the rust SDK in anchor programs?
+<details>
+<summary>Can I use the rust SDK in anchor programs?</summary>
 
 No, the SDK requires internet access to send http requests. This is not allowed within Solana runtime because arbitrary http responses are not deterministic and may produce different Solana ledger state transitions
+</details>
 
 <details>
 
