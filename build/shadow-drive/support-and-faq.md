@@ -39,7 +39,7 @@ To troubleshoot the issue, you can try the following:
 
 <summary>How much storage space can I reserve?</summary>
 
-There is an upper limit of 1GB per bucket as stated in the CLI: https://docs.shadow.cloud/build/the-cli#create-a-storage-account
+There is an upper limit of one terabyte (1TB) per bucket.
 
 Development is currently underway which will greatly increase this cap.
 
