@@ -288,6 +288,16 @@ Yes. Your storage account will be kept for 6 months. After that, it is up for cl
 
 </details>
 
+<details>
+
+<summary>How much are the Mutable storage fees?</summary>
+
+Mutable storage fees target a specific USD price. Currently, that is $0.05 USD per gibibyte per year. This comes out to $0.0002739726 USD per gib per Solana Epoch (interval for which mutable storage fees are collected. This price target is converted to $SHDW/$USDC at the time of fee collection.
+
+Mutable storage fees are collected for bytes stored.
+
+</details>
+
 ### General
 
 <details>
