@@ -19,11 +19,13 @@
   * [**getStorageAccount**](sdk-javascript.md#getstorageaccount)
   * [**getStorageAccounts**](sdk-javascript.md#getstorageaccount)
   * [**listObjects**](sdk-javascript.md#listobjects)
-  * [**makeStorageImmutable**](sdk-javascript.md#makestorageimmutable)
+  * [**makeStorageImmutable**](sdk-javascript.md#makestorageimmutable) **(updated)**
   * [**migrate**](sdk-javascript.md#migrate)
   * [**redeemRent**](sdk-javascript.md#redeemrent)
-  * [**reduceStorage**](sdk-javascript.md#reducestorage)
+  * [**reduceStorage**](sdk-javascript.md#reducestorage) **(updated)**
   * [**storageConfigPDA**](sdk-javascript.md#storageconfigpda)
+  * [**refreshStake**](sdk-javascript.md#refreshstake) **(new)**
+  * [**topUp**](sdk-javascript.md#topup) **(new)**
   * [**uploadFile**](sdk-javascript.md#uploadfile)
   * [**uploadMultipleFiles**](sdk-javascript.md#uploadmultiplefiles)
   * [**userInfo**](sdk-javascript.md#userinfo)
@@ -1197,6 +1199,44 @@ storageConfigPDA: PublicKey;
 {% endcode %}
 {% endtab %}
 {% endtabs %}
+
+### `refreshStake`
+
+#### Definition
+
+This method is used to update your storage account's stake amount. It is required to call this method after calling the [\`topUp\`](sdk-javascript.md#topup) method in order for your stage account to update properly.
+
+#### Parameters
+
+* `key`: `PublicKey` - Publickey of the Storage Account
+* `version`: can be either `v1` or `v2`. Note - `v1` is completely deprecated and you shuold only use `v2` moving forward.
+
+#### Returns
+
+```json
+{
+    txid: string
+}
+```
+
+### `topUp`
+
+#### Definition
+
+This method is used to top up a storage account's $SHDW balance to cover any necessary fees, like mutable storage fees which are collected every epoch. It is necessary to call the \`[refreshStake](sdk-javascript.md#refreshstake)\` method after this.
+
+#### Parameters
+
+* `key`: `PublicKey` - Publickey of the Storage Account
+* `amount`: `Number` - Amount of $SHDW to transfer to the stake account
+
+#### Returns
+
+```json
+{
+    txid: string;
+}
+```
 
 ### **`uploadFile`**
 

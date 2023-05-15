@@ -287,7 +287,7 @@ Serialized add storage transaction that is partially signed by the shadow drive 
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="reduce-storage" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="reduce-storage (updated)" %}
 {% swagger-description %}
 Reduces storage
 
@@ -309,7 +309,7 @@ Serialized reduce storage transaction that is partially signed by the shadow dri
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="make-immutable" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="make-immutable (updated)" %}
 {% swagger-description %}
 Makes file immutable
 
