@@ -1,8 +1,9 @@
-# **Contents**
-* **[Install Python SDK](#installing-shadow-drive)**
-* **[Examples](#example-end-to-end-script)**
-* **[Github](#about-the-github-repo)**
-* **[Methods](#methods)**
+# Python
+
+* [**Install Python SDK**](sdk-python.md#installing-shadow-drive)
+* [**Examples**](sdk-python.md#example-end-to-end-script)
+* [**Github**](sdk-python.md#about-the-github-repo)
+* [**Methods**](sdk-python.md#methods)
 
 ## **Installing Shadow Drive**
 
@@ -14,10 +15,10 @@ Also for running the examples:
 
 Check out the [`examples`](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py) directory for a demonstration of the functionality.
 
-https://shdw-drive.genesysgo.net/[STORAGE_ACCOUNT_ADDRESS]
+https://shdw-drive.genesysgo.net/\[STORAGE\_ACCOUNT\_ADDRESS]
 
-### **Example End-to-End Script**
-#### **full.py**
+### **Example -** Shadow Drive Storage Management: Account Creation, File Upload, and Storage Modification in Python
+
 ```python
 from shadow_drive import ShadowDriveClient
 from solders.keypair import Keypair
@@ -60,10 +61,10 @@ client.delete_account(account)
 print("Closed account")
 ```
 
-#### **About the [Github Repo](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py)**
+#### **About the** [**Github Repo**](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py)
+
 This package uses PyO3 to build a wrapper around the official Shadow Drive Rust SDK. For more information, see the [Rust SDK documentation](https://github.com/GenesysGo/shadow-drive-rust/tree/main/sdk).
 
-
-#### **Methods** 
+#### **Methods**
 
 Section under development.

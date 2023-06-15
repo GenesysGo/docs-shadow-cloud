@@ -43,60 +43,64 @@ Or add the following line to your Cargo.toml\
 
 **You can find more examples on our** [**Github**](https://github.com/GenesysGo/shadow-drive-rust/blob/main/sdk/examples/end\_to\_end.rs)
 
-### **Example**
+### **Example -** Upload Multiple Files to Shadow Drive Using Rust
+
+This Rust code example demonstrates how to upload multiple files to a Shadow Drive using the `shadow_drive_rust` library. It initializes a tracing subscriber, reads a keypair from a file, creates a Shadow Drive client, derives the storage account public key, reads files from a directory, creates a vector of `ShadowFile` structs for upload, and finally uploads the files to the Shadow Drive.
 
 ```rust
-    //init tracing.rs subscriber
-    tracing_subscriber::fmt()
-        .with_env_filter("off,shadow_drive_rust=debug")
-        .init();
+// Example - Upload Multiple Files to Shadow Drive Using Rust
+// Initialize the tracing.rs subscriber with environment filter
+tracing_subscriber::fmt()
+    .with_env_filter("off,shadow_drive_rust=debug")
+    .init();
 
-    //load keypair from file
-    let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
+// Load keypair from file using the provided KEYPAIR_PATH
+let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
 
-    //create shdw drive client
-    let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
+// Create a new ShadowDriveClient instance with the loaded keypair and server URL
+let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
 
-    //derive the storage account pubkey
-    let pubkey = keypair.pubkey();
-    let (storage_account_key, _) =
-        shadow_drive_rust::derived_addresses::storage_account(&pubkey, 0);
+// Derive the storage account public key using the keypair's public key
+let pubkey = keypair.pubkey();
+let (storage_account_key, _) =
+    shadow_drive_rust::derived_addresses::storage_account(&pubkey, 0);
 
-    // read files in directory
-    let dir = tokio::fs::read_dir("multiple_uploads")
+// Read files from the "multiple_uploads" directory
+let dir = tokio::fs::read_dir("multiple_uploads")
+.await
+.expect("failed to read multiple uploads dir");
+
+// Create a Vec of ShadowFile structs for upload 
+// by iterating through the directory entries
+let mut files = tokio_stream::wrappers::ReadDirStream::new(dir)
+    .filter(Result::is_ok)
+    .and_then(|entry| async move {
+        Ok(ShadowFile::file(
+            entry
+                .file_name()
+                .into_string()
+                .expect("failed to convert os string to regular string"),
+            entry.path(),
+        ))
+    })
+    .collect::<Result<Vec<_>, _>>()
     .await
-    .expect("failed to read multiple uploads dir");
+    .expect("failed to create shdw files for dir");
 
-    // create Vec of ShadowFile structs for upload
-    let mut files = tokio_stream::wrappers::ReadDirStream::new(dir)
-        .filter(Result::is_ok)
-        .and_then(|entry| async move {
-            Ok(ShadowFile::file(
-                entry
-                    .file_name()
-                    .into_string()
-                    .expect("failed to convert os string to regular string"),
-                entry.path(),
-            ))
-        })
-        .collect::<Result<Vec<_>, _>>()
-        .await
-        .expect("failed to create shdw files for dir");
+// Add a ShadowFile with bytes content to the files vector
+files.push(ShadowFile::bytes(
+    String::from("buf.txt"),
+    &b"this is a buf test"[..],
+));
 
-    // Bytes are also supported
-    files.push(ShadowFile::bytes(
-        String::from("buf.txt"),
-        &b"this is a buf test"[..],
-    ));
+// Upload the files to the Shadow Drive using the storage_account_key
+let upload_results = shdw_drive_client
+    .upload_multiple_files(&storage_account_key, files)
+    .await
+    .expect("failed to upload files");
 
-    // kick off upload
-    let upload_results = shdw_drive_client
-        .upload_multiple_files(&storage_account_key, files)
-        .await
-        .expect("failed to upload files");
-
-    //profit
-    println!("upload results: {:#?}", upload_results);
+//profit
+println!("upload results: {:#?}", upload_results);
 ```
 
 ## **Methods**
@@ -112,7 +116,7 @@ Adds storage capacity to the specified immutable `StorageAccount`. This will fai
 * `storage_account_key` - The public key of the immutable `StorageAccount`.
 * `size` - The additional amount of storage you want to add. E.g if you have an existing StorageAccount with 1MB of storage but you need 2MB total, size should equal 1MB. When specifying size, only KB, MB, and GB storage units are currently supported.
 
-#### **Example**
+#### **Example of `add_immutable_storage`**
 
 ```rust
 let add_immutable_storage_response = shdw_drive_client
@@ -120,7 +124,7 @@ let add_immutable_storage_response = shdw_drive_client
     .await?;
 ```
 
-#### **Response**
+#### **Response from `add_immutable_storage`**
 
 ```json
 {
@@ -141,7 +145,7 @@ Adds storage capacity to the specified StorageAccount.
 * `storage_account_key` - The public key of the StorageAccount.
 * `size` - The additional amount of storage you want to add. E.g if you have an existing StorageAccount with 1MB of storage but you need 2MB total, size should equal 1MB. When specifying size, only KB, MB, and GB storage units are currently supported.
 
-#### **Example**
+#### **Example of `add_storage`**
 
 ```rust
 let add_immutable_storage_response = shdw_drive_client
@@ -149,7 +153,7 @@ let add_immutable_storage_response = shdw_drive_client
     .await?;
 ```
 
-#### **Response**
+#### **Response from `add_storage`**
 
 ```json
 {
@@ -169,7 +173,7 @@ Unmarks a StorageAccount for deletion from the Shadow Drive. To prevent deletion
 
 * `storage_account_key` - The public key of the `StorageAccount` that you want to unmark for deletion.
 
-#### **Example**
+#### **Example of `cancel_delete_storage_account`**
 
 ```rust
 let cancel_delete_storage_account_response = shdw_drive_client
@@ -177,7 +181,7 @@ let cancel_delete_storage_account_response = shdw_drive_client
     .await?;
 ```
 
-#### **Response**
+#### **Response from `cancel_delete_storage_account`**
 
 ```json
 {
@@ -195,7 +199,7 @@ Claims any available stake as a result of the `reduce_storage` command. After re
 
 * `storage_account_key` - The public key of the StorageAccount that you want to claim excess stake from.
 
-#### **Example**
+#### **Example of `claim_stake`**
 
 ```rust
 let claim_stake_response = shdw_drive_client
@@ -203,7 +207,7 @@ let claim_stake_response = shdw_drive_client
     .await?;
 ```
 
-#### **Response**
+#### **Response from `claim_stake`**
 
 ```json
 {
@@ -222,11 +226,12 @@ Creates a `StorageAccount` on the Shadow Drive. `StorageAccount`s can hold multi
 * `name` - The name of the `StorageAccount`. Does not need to be unique.
 * `size` - The amount of storage the `StorageAccount` should be initialized with. When specifying size, only KB, MB, and GB storage units are currently supported.
 
-#### **Example**
+#### **Example of `create_storage_account`**
 
 An example use case for this method can be found in the same [github repository](https://github.com/phantom-labs/shadow\_sdk/blob/master/examples/end\_to\_end.rs)
 
 ```rust
+// Rust SDK example of creating a StorageAccount using create_storage_account
 async fn main() {
     // Get keypair
     let keypair_file: String = std::env::args()
@@ -251,7 +256,7 @@ async fn main() {
 }
 ```
 
-#### **Response**
+#### **Response from `create_storage_account`**
 
 ```json
 {
@@ -273,7 +278,7 @@ Marks a file for deletion from the Shadow Drive. Files marked for deletion are d
 * `storage_account_key` - The public key of the `StorageAccount` that contains the file.
 * `url` - The Shadow Drive url of the file you want to mark for deletion.
 
-#### **Example**
+#### **Example of `delete_file`**
 
 ```rust
 let delete_file_response = shdw_drive_client
@@ -284,6 +289,7 @@ let delete_file_response = shdw_drive_client
 An example use case for this method can be found in the same [github repository](https://github.com/phantom-labs/shadow\_sdk/blob/master/examples/end\_to\_end.rs)
 
 ```rust
+// Rust SDK example of marking a file for deletion from Shadow Drive using delete_file
 async fn main() {
     // Get keypair
     let keypair_file: String = std::env::args()
@@ -356,11 +362,11 @@ This function marks a StorageAccount for deletion from the Shadow Drive. If an a
 
 * `storage_account_key` - The public key of the StorageAccount that you want to mark for deletion.
 
-#### **Response**
+#### **Response from `delete_storage_account`**
 
 * This method returns success if it can successfully mark the account for deletion and refund any remaining stake in the account before the end of the current Solana epoch.
 
-#### Example
+#### Example of **`delete_storage_account`**
 
 ```rust
 let delete_storage_account_response = shdw_drive_client
@@ -382,7 +388,7 @@ Replace an existing file on the Shadow Drive with the given updated file.
 * `url` - The Shadow Drive url of the file you want to replace.
 * `data` - The updated `ShadowFile`.
 
-#### **Example**
+#### **Example of `edit_file`**
 
 ```rust
 let edit_file_response = shdw_drive_client
@@ -390,7 +396,7 @@ let edit_file_response = shdw_drive_client
     .await?;
 ```
 
-#### **Response**
+#### **Response from `edit_file`**
 
 ```json
 {
@@ -403,9 +409,10 @@ Examples found in [repository](https://github.com/GenesysGo/shadow-drive-rust/bl
 
 File: examples/end\_to\_end.rs, Line 53
 
-```rust
-async fn main() {
-    // Get keypair
+<pre class="language-rust"><code class="lang-rust"><strong>// Rust SDK end to end example of getting a keypair, initializing a client, 
+</strong><strong>// creating an account, uploading a file, and editing the file
+</strong><strong>async fn main() {
+</strong>    // Get keypair
     let keypair_file: String = std::env::args()
         .skip(1)
         .next()
@@ -426,11 +433,11 @@ async fn main() {
         )
         .await
         .expect("failed to create storage account");
-    let account = Pubkey::from_str(&response.shdw_bucket.unwrap()).unwrap();
+    let account = Pubkey::from_str(&#x26;response.shdw_bucket.unwrap()).unwrap();
     println!("created storage account");
 
     // Upload files
-    let files: Vec<ShadowFile> = vec![
+    let files: Vec&#x3C;ShadowFile> = vec![
         ShadowFile::file("alpha.txt".to_string(), "./examples/files/alpha.txt"),
         ShadowFile::file(
             "not_alpha.txt".to_string(),
@@ -438,22 +445,22 @@ async fn main() {
         ),
     ];
     let response = client
-        .store_files(&account, files.clone())
+        .store_files(&#x26;account, files.clone())
         .await
         .expect("failed to upload files");
     println!("uploaded files");
-    for url in &response.finalized_locations {
+    for url in &#x26;response.finalized_locations {
         println!("    {url}")
     }
     // Try editing
     for file in files {
         let response = client
-            .edit_file(&account, file)
+            .edit_file(&#x26;account, file)
             .await
             .expect("failed to upload files");
     }    
 }
-```
+</code></pre>
 
 ### **`get_object_data`**
 
@@ -469,7 +476,7 @@ Returns the `StorageAccount` associated with the pubkey provided by a user.
 
 * `key` - The public key of the `StorageAccount`.
 
-#### **Example**
+#### **Example of `get_storage_account`**
 
 ```rust
 let storage_account = shdw_drive_client
@@ -478,7 +485,7 @@ let storage_account = shdw_drive_client
     .expect("failed to get storage account");
 ```
 
-#### **Response for V1 StorageAccount**
+#### **Response for V1 StorageAccount from `get_storage_account`**
 
 ```json
 {
@@ -498,7 +505,7 @@ let storage_account = shdw_drive_client
 }
 ```
 
-#### **Response for V2 StorageAccount**
+#### **Response for V2 StorageAccount from `get_storage_account`**
 
 ```json
 {
@@ -527,7 +534,7 @@ Returns all `StorageAccounts` associated with the public key provided by a user.
 
 * `owner` - The public key that is the owner of all the returned `StorageAccounts`.
 
-#### **Example**
+#### **Example of `get_storage_accounts`**
 
 ```rust
 let storage_accounts = shdw_drive_client
@@ -536,7 +543,7 @@ let storage_accounts = shdw_drive_client
     .expect("failed to get storage account");
 ```
 
-#### **Response for V1 StorageAccount**
+#### **Response for V1 StorageAccount from `get_storage_accounts`**
 
 ```json
 {
@@ -557,7 +564,7 @@ let storage_accounts = shdw_drive_client
 }
 ```
 
-#### **Response for V2 StorageAccount**
+#### **Response for V2 StorageAccount from `get_storage_accounts`**
 
 ```json
 {
@@ -586,7 +593,7 @@ This method is used to get the amount of storage currently used by a given stora
 
 * `storage_account_key` - The public key of the `StorageAccount` that owns the files.
 
-#### Example
+#### Example of `get_storage_account_size`
 
 ```rust
 let storage_account_size = shdw_drive_client
@@ -594,7 +601,7 @@ let storage_account_size = shdw_drive_client
     .await?;
 ```
 
-#### Response
+#### Response from `get_storage_account_size`
 
 ```json
 {
@@ -613,7 +620,7 @@ Gets a list of all files associated with a `StorageAccount`. The output contains
 
 * `storage_account_key` - The public key of the `StorageAccount` that owns the files.
 
-#### **Example**
+#### **Example of `list_objects`**
 
 ```rust
 let files = shdw_drive_client
@@ -621,7 +628,7 @@ let files = shdw_drive_client
     .await?;
 ```
 
-#### **Response**
+#### **Response from `list_objects`**
 
 Note: The response is a vector containing all of the file names as strings.
 
@@ -635,7 +642,7 @@ Permanently locks a `StorageAccount` and all contained files. After a `StorageAc
 
 * `storage_account_key` - The public key of the `StorageAccount` that will be made immutable.
 
-#### **Example**
+#### **Example of `make_storage_immutable`**
 
 ```rust
 let make_immutable_response = shdw_drive_client  
@@ -643,7 +650,7 @@ let make_immutable_response = shdw_drive_client
     .await?;  
 ```
 
-#### **Response**
+#### **Response from `make_storage_immutable`**
 
 ```json
 {
@@ -663,7 +670,7 @@ Migrates a v1 StorageAccount to v2. This requires two separate transactions to r
 
 * `storage_account_key` - The public key of the StorageAccount to be migrated.
 
-#### **Example**
+#### **Example of `migrate`**
 
 ```rust
 let migrate_response = shdw_drive_client
@@ -671,7 +678,7 @@ let migrate_response = shdw_drive_client
     .await?;
 ```
 
-#### **Result**
+#### **Response from `migrate`**
 
 ```json
 {
@@ -705,7 +712,7 @@ Creates a new ShadowDriveClient from the given `Signer` and URL.
 
 To customize RpcClient settings see `new_with_rpc`.
 
-#### **Example**
+#### **Example of `new`**
 
 ```rust
 use solana_sdk::signer::keypair::Keypair;    
@@ -719,6 +726,7 @@ Examples found in [repository](https://github.com/GenesysGo/shadow-drive-rust/bl
 `examples/end_to_end.rs` (line 19)
 
 ```rust
+// Rust SDK example using `new` method to create a new ShadowDriveClient
 async fn main() {
     // Get keypair
     let keypair_file: String = std::env::args()
@@ -744,9 +752,9 @@ Creates a new ShadowDriveClient from the given `Signer` and `RpcClient`.
 
 * `wallet` - A `Signer` that for signs all transactions generated by the client. Typically this is a user’s keypair.
 * `rpc_client` - A Solana `RpcClient` that handles sending transactions and reading accounts from the blockchain.\
-  Providng the `RpcClient` allows customization of timeout and committment level.
+  Providing the `RpcClient` allows customization of timeout and commitment level.
 
-#### **Example**
+#### **Example of `new_with_rpc`**
 
 ```rust
 use solana_client::rpc_client::RpcClient;
@@ -769,7 +777,7 @@ Reclaims the Solana rent from any on-chain file accounts. Older versions of the 
 * `storage_account_key` - The public key of the StorageAccount that contained the deleted file.
 * `file_account_key` - The public key of the File account to be closed.
 
-#### **Example**
+#### **Example of `redeem_rent`**
 
 ```rust
 let redeem_rent_response = shdw_drive_client
@@ -777,7 +785,7 @@ let redeem_rent_response = shdw_drive_client
     .await?;
 ```
 
-#### **Response**
+#### **Response from `redeem_rent`**
 
 ```json
 {
@@ -798,7 +806,7 @@ Reduces the amount of total storage available for the given `StorageAccount`.
 * `storage_account_key` - The public key of the `StorageAccount` whose storage will be reduced.
 * `size` - The amount of storage you want to remove. E.g if you have an existing `StorageAccount` with 3MB of storage but you want 2MB total, size should equal 1MB. When specifying size, only KB, MB, and GB storage units are currently supported.
 
-#### **Example**
+#### **Example of `reduce_storage`**
 
 ```rust
 let reduce_storage_response = shdw_drive_client
@@ -806,7 +814,7 @@ let reduce_storage_response = shdw_drive_client
     .await?;
 ```
 
-#### **Response**
+#### **Response from `reduce_storage`**
 
 ```json
 {
@@ -826,7 +834,7 @@ This method is used to update your storage account's stake amount. It is require
 
 * `storage_account_key`: `PublicKey` - Publickey of the Storage Account
 
-#### Example
+#### Example of `refresh_stake`
 
 ```rust
 let refresh_stake = shdw_drive_client
@@ -834,7 +842,7 @@ let refresh_stake = shdw_drive_client
     .await?;
 ```
 
-#### Response
+#### Response from `refresh_stake`
 
 ```json
 {
@@ -853,7 +861,7 @@ Stores files in the specified `StorageAccount`.
 * `storage_account_key` - The public key of the `StorageAccount`.
 * `data` - Vector of `ShadowFile` objects representing the files that will be stored.
 
-#### **Example**
+#### **Example of `store_files`**
 
 ```rust
 let files: Vec<ShadowFile> = vec![
@@ -868,7 +876,7 @@ let store_files_response = shdw_drive_client
     .await?;
 ```
 
-#### **Response**
+#### **Response from `store_files`**
 
 ```json
 {
@@ -889,7 +897,7 @@ This method is used to top up a storage account's $SHDW balance to cover any nec
 * `key`: `PublicKey` - Publickey of the Storage Account
 * `amount`: `u64`- Amount of $SHDW to transfer to the stake account
 
-#### Example
+#### Example of **`top_up`**
 
 ```rust
 let top_up_amount: u64 = 1000;
@@ -901,7 +909,7 @@ let refresh_stake = shdw_drive_client
     .await?;
 ```
 
-#### Response
+#### Response from **`top_up`**
 
 ```json
 {
@@ -909,7 +917,7 @@ let refresh_stake = shdw_drive_client
 }
 ```
 
-### **Example - Add Immutable Storage**
+### **Example -** Shadow Drive Rust Client Example: Creating and Managing Storage Accounts
 
 ```rust
 use byte_unit::Byte;
@@ -924,6 +932,7 @@ use std::str::FromStr;
 
 const KEYPAIR_PATH: &str = "/Users/dboures/.config/solana/id.json";
 
+// Main function demonstrating the usage of Shadow Drive Rust client
 #[tokio::main]
 async fn main() {
     //load keypair from file
@@ -947,6 +956,7 @@ async fn main() {
     add_immutable_storage_test(&shdw_drive_client, &v2_pubkey).await;
 }
 
+// Function to create storage accounts with specified version and size
 async fn create_storage_accounts<T: Signer>(shdw_drive_client: ShadowDriveClient<T>) {
     let result_v1 = shdw_drive_client
         .create_storage_account(
@@ -956,7 +966,8 @@ async fn create_storage_accounts<T: Signer>(shdw_drive_client: ShadowDriveClient
         )
         .await
         .expect("error creating storage account");
-
+        
+    // Create a storage account with version 2
     let result_v2 = shdw_drive_client
         .create_storage_account(
             "shdw-drive-1.5-test-v2",
@@ -970,6 +981,7 @@ async fn create_storage_accounts<T: Signer>(shdw_drive_client: ShadowDriveClient
     println!("v2: {:?}", result_v2);
 }
 
+// Function to make a storage account immutable
 async fn make_storage_immutable<T: Signer>(
     shdw_drive_client: &ShadowDriveClient<T>,
     storage_account_key: &Pubkey,
@@ -983,6 +995,7 @@ async fn make_storage_immutable<T: Signer>(
         StorageAcct::V2(storage_account) => println!("account: {:?}", storage_account),
     }
 
+    // Make the storage account immutable
     let make_immutable_response = shdw_drive_client
         .make_storage_immutable(&storage_account_key)
         .await
@@ -1000,6 +1013,7 @@ async fn make_storage_immutable<T: Signer>(
     }
 }
 
+// Function to add immutable storage to a storage account
 async fn add_immutable_storage_test<T: Signer>(
     shdw_drive_client: &ShadowDriveClient<T>,
     storage_account_key: &Pubkey,
@@ -1018,6 +1032,7 @@ async fn add_immutable_storage_test<T: Signer>(
         }
     }
 
+    // Add immutable storage to the account
     let add_immutable_storage_response = shdw_drive_client
         .add_immutable_storage(
             storage_account_key,
@@ -1044,15 +1059,17 @@ async fn add_immutable_storage_test<T: Signer>(
 }
 ```
 
-### **Example - Cancel Delete Storage Accounts**
+### **Example -** Cancel Storage Account Deletion in Shadow Drive using rust
 
-```rust
-use shadow_drive_rust::ShadowDriveClient;
-use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
+<pre class="language-rust"><code class="lang-rust">// Import necessary libraries and modules
+<strong>use shadow_drive_rust::ShadowDriveClient;
+</strong>use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
 use std::str::FromStr;
 
-const KEYPAIR_PATH: &str = "keypair.json";
+// Define the path to the keypair file
+const KEYPAIR_PATH: &#x26;str = "keypair.json";
 
+// Main function with async support
 #[tokio::main]
 async fn main() {
     //load keypair from file
@@ -1063,16 +1080,17 @@ async fn main() {
     //create shdw drive client
     let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
 
+    // Send a request to cancel the deletion of the storage account
     let response = shdw_drive_client
-        .cancel_delete_storage_account(&storage_account_key)
+        .cancel_delete_storage_account(&#x26;storage_account_key)
         .await
         .expect("failed to cancel storage account deletion");
 
     println!("Unmark delete storage account complete {:?}", response);
 }
-```
+</code></pre>
 
-### **Example - Claim Stake**
+### **Example - Claim Stake using rust**
 
 ```rust
 use shadow_drive_rust::ShadowDriveClient;
@@ -1129,15 +1147,17 @@ async fn main() {
 }
 ```
 
-### **Example - Delete File**
+### **Example -** Uploading and Deleting Files with rust SDK
 
 ```rust
+// Import necessary modules and types
 use shadow_drive_rust::{models::ShadowFile, ShadowDriveClient};
 use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
 use std::str::FromStr;
 
 const KEYPAIR_PATH: &str = "keypair.json";
 
+// Main function
 #[tokio::main]
 async fn main() {
     //load keypair from file
@@ -1149,7 +1169,7 @@ async fn main() {
     //create shdw drive client
     let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
 
-    //add a file
+    // Upload file for v1_pubkey
     let v1_upload_reponse = shdw_drive_client
         .store_files(
             &v1_pubkey,
@@ -1162,6 +1182,7 @@ async fn main() {
         .expect("failed to upload v1 file");
     println!("Upload complete {:?}", v1_upload_reponse);
 
+    // Upload file for v2_pubkey
     let v2_upload_reponse = shdw_drive_client
         .store_files(
             &v2_pubkey,
@@ -1183,12 +1204,14 @@ async fn main() {
     );
 
     //delete file
+    // Delete file for v1_pubkey
     let v1_delete_file_response = shdw_drive_client
         .delete_file(&v1_pubkey, v1_url)
         .await
         .expect("failed to delete file");
     println!("Delete file complete {:?}", v1_delete_file_response);
 
+    // Delete file for v2_pubkey
     let v2_delete_file_response = shdw_drive_client
         .delete_file(&v2_pubkey, v2_url)
         .await
@@ -1197,7 +1220,7 @@ async fn main() {
 }
 ```
 
-### **Example - Delete Storage Account**
+### **Example - Delete Storage Account using rust**
 
 ```rust
 use shadow_drive_rust::ShadowDriveClient;
@@ -1216,6 +1239,7 @@ async fn main() {
     //create shdw drive client
     let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
 
+    // Request storage account deletion
     let response = shdw_drive_client
         .delete_storage_account(&storage_account_key)
         .await
@@ -1405,17 +1429,18 @@ async fn upload_file_test<T: Signer>(
 }
 ```
 
-### **Example - Migrate**
+### **Example -** Creating and Migrating a Storage Account using ShadowDriveClient in Rust
 
-```rust
-use byte_unit::Byte;
+<pre class="language-rust"><code class="lang-rust">use byte_unit::Byte;
 use shadow_drive_rust::{ShadowDriveClient, StorageAccountVersion};
 use solana_sdk::{pubkey::Pubkey, signer::keypair::read_keypair_file};
 use std::str::FromStr;
 
-const KEYPAIR_PATH: &str = "keypair.json";
+const KEYPAIR_PATH: &#x26;str = "keypair.json";
 
-#[tokio::main]
+<strong>// Main function to demonstrate creating and migrating a storage account 
+</strong><strong>// using ShadowDriveClient
+</strong>#[tokio::main]
 async fn main() {
     //load keypair from file
     let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
@@ -1436,11 +1461,11 @@ async fn main() {
     println!("v1: {:?} \n", v1_response);
 
     let key_string: String = v1_response.shdw_bucket.unwrap();
-    let v1_pubkey: Pubkey = Pubkey::from_str(&key_string).unwrap();
+    let v1_pubkey: Pubkey = Pubkey::from_str(&#x26;key_string).unwrap();
 
     // can migrate all at once
     let migrate = shdw_drive_client
-        .migrate(&v1_pubkey)
+        .migrate(&#x26;v1_pubkey)
         .await
         .expect("failed to migrate");
     println!("Migrated {:?} \n", migrate);
@@ -1449,21 +1474,21 @@ async fn main() {
 
     // // step 1
     // let migrate_step_1 = shdw_drive_client
-    //     .migrate_step_1(&v1_pubkey)
+    //     .migrate_step_1(&#x26;v1_pubkey)
     //     .await
     //     .expect("failed to migrate v1 step 1");
     // println!("Step 1 complete {:?} \n", migrate_step_1);
 
     // // step 2
     // let migrate_step_2 = shdw_drive_client
-    //     .migrate_step_2(&v1_pubkey)
+    //     .migrate_step_2(&#x26;v1_pubkey)
     //     .await
     //     .expect("failed to migrate v1 step 2");
     // println!("Step 2 complete {:?} \n", migrate_step_2);
 }
-```
+</code></pre>
 
-### **Example - Redeem Rent**
+### **Example -** Redeem Rent for Storage in Shadow Drive using Rust
 
 ```rust
 use shadow_drive_rust::ShadowDriveClient;
@@ -1494,7 +1519,7 @@ async fn main() {
 }
 ```
 
-### **Example - Upload Multiple Files**
+### **Example -** Uploading Multiple Files to a storage account in rust
 
 ```rust
 use byte_unit::Byte;
@@ -1505,6 +1530,7 @@ use tokio_stream::StreamExt;
 
 const KEYPAIR_PATH: &str = "keypair.json";
 
+// Main function for uploading multiple files to a Shadow Drive storage account
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt()
@@ -1517,10 +1543,10 @@ async fn main() {
     let (storage_account_key, _) =
         shadow_drive_rust::derived_addresses::storage_account(&pubkey, 21);
 
-    //create shdw drive client
+    //create shadow drive client
     let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
 
-    //ensure storage account
+    //ensure storage account exists
     if let Err(_) = shdw_drive_client
         .get_storage_account(&storage_account_key)
         .await
@@ -1536,10 +1562,12 @@ async fn main() {
             .expect("failed to create storage account");
     }
 
+    // Read files from "multiple_uploads" directory
     let dir = tokio::fs::read_dir("multiple_uploads")
         .await
         .expect("failed to read multiple uploads dir");
 
+    // Create ShadowFile objects for each file in the directory
     let mut files = tokio_stream::wrappers::ReadDirStream::new(dir)
         .filter(Result::is_ok)
         .and_then(|entry| async move {
@@ -1555,11 +1583,13 @@ async fn main() {
         .await
         .expect("failed to create shdw files for dir");
 
+    // Add a ShadowFile object with byte content
     files.push(ShadowFile::bytes(
         String::from("buf.txt"),
         &b"this is a buf test"[..],
     ));
 
+    // Upload files to the storage account
     let upload_results = shdw_drive_client
         .store_files(&storage_account_key, files)
         .await

@@ -518,6 +518,7 @@ const shadowDrive = new ShadowDrive(connection, wallet).init();
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the constructor method
 // this creates a new instance of the ShadowDrive class and initializes it with the given connection and wallet parameters
 const shadowDrive = new ShadowDrive(connection, wallet).init();
 ```
@@ -560,6 +561,7 @@ const addStgResp = await drive.addStorage(acctPubKey, "10MB", "v2");
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the addStorage method
 // This line retrieves the storage accounts with version "v2" using the `getStorageAccounts` method of the `drive` object and stores them in the `accts` variable.
 const accts = await drive.getStorageAccounts("v2")
 
@@ -600,6 +602,7 @@ const cancelDelStg = await drive.cancelDeleteStorageAccount(acctPubKey, "v2");
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the cancelDeleteStorageAccount method
 // Create a new public key object from a string representation of a Solana account public key
 const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
@@ -640,6 +643,7 @@ const claimStake = await drive.claimStake(acctPubKey, "v2");
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the claimStake method
 // Create a new public key object with the specified value
 const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
@@ -684,15 +688,13 @@ console.log(newAcct);
 {% endtab %}
 
 {% tab title="Explanations" %}
-{% code overflow="wrap" %}
-```javascript
-// Calls the 'createStorageAccount' function on the 'drive' object with "myDemoBucket", "10MB", and "v2" as parameters, and waits for its completion before proceeding. The result of the function call is assigned to the 'newAcct' variable.
-const newAcct = await drive.createStorageAccount("myDemoBucket", "10MB", "v2");
+<pre class="language-javascript" data-overflow="wrap"><code class="lang-javascript">// Javascript SDK example using the createStorageAccount method
+<strong>// Calls the 'createStorageAccount' function on the 'drive' object with "myDemoBucket", "10MB", and "v2" as parameters, and waits for its completion before proceeding. The result of the function call is assigned to the 'newAcct' variable.
+</strong>const newAcct = await drive.createStorageAccount("myDemoBucket", "10MB", "v2");
 
 // Logs the value of the 'newAcct' variable to the console
 console.log(newAcct);
-```
-{% endcode %}
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
@@ -734,6 +736,7 @@ console.log(delFile);
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the deleteFile method
 // Assigns a string value containing the URL of the file to be deleted to the 'url' variable
 const url =
     "https://shdw-drive.genesysgo.net/4HUkENqjnTAZaUR4QLwff1BvQPCiYkNmu5PPSKGoKf9G/fape.png";
@@ -781,6 +784,7 @@ const delAcct = await drive.deleteStorageAccount(acctPubKey, "v2");
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the deleteStorageAccount method
 // Creates a new public key object with a specific value and assigns it to the 'acctPubKey' variable
 const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
@@ -833,6 +837,7 @@ const editFile = await drive.editFile(acctPubKey, url, "v2", fileToUpload);
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the editFile method
 // Creates an object containing the name and content of the file to upload and assigns it to the 'fileToUpload' variable
 const fileToUpload: ShadowFile = {
     name: "mytext.txt",
@@ -898,6 +903,7 @@ console.log(acct);
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the getStorageAccount method
 // Calls the 'getStorageAccount' function on the 'drive' object with the account public key as a parameter, and waits for its completion before proceeding. The result of the function call is assigned to the 'acct' variable.
 const acct = await drive.getStorageAccount(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
@@ -943,6 +949,7 @@ ShadowDrive.getStorageAccounts(shadowDriveVersion)
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the getStorageAccounts method
 // Calls the 'getStorageAccounts' function on the 'drive' object with the version parameter "v2", and waits for its completion before proceeding. The result of the function call is assigned to the 'accts' variable.
 const accts = await drive.getStorageAccounts("v2");
 
@@ -984,10 +991,9 @@ console.log(listItems);
 {% endtab %}
 
 {% tab title="Explanations" %}
-{% code overflow="wrap" %}
-```javascript
-// Creates a new 'PublicKey' object using a specific public key string and assigns it to the 'acctPubKey' variable.
-const acctPubKey = new anchor.web3.PublicKey(
+<pre class="language-javascript" data-overflow="wrap"><code class="lang-javascript"><strong>// Javascript SDK example using the listObjects method
+</strong><strong>// Creates a new 'PublicKey' object using a specific public key string and assigns it to the 'acctPubKey' variable.
+</strong>const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
 );
 
@@ -996,8 +1002,7 @@ const listItems = await drive.listObjects(acctPubKey);
 
 // Logs the resulting object to the console.
 console.log(listItems);
-```
-{% endcode %}
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
@@ -1033,10 +1038,9 @@ console.log(result);
 {% endtab %}
 
 {% tab title="Explanations" %}
-{% code overflow="wrap" %}
-```javascript
-// Create a new PublicKey object using a public key string.
-const key = new anchor.web3.PublicKey(
+<pre class="language-javascript" data-overflow="wrap"><code class="lang-javascript">// Javascript SDK example using the makeStorageImmutable method
+<strong>// Create a new PublicKey object using a public key string.
+</strong>const key = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
 );
 
@@ -1045,8 +1049,7 @@ const result = await drive.makeStorageImmutable(key, "v2");
 
 // Log the resulting object to the console.
 console.log(result);
-```
-{% endcode %}
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
@@ -1074,6 +1077,7 @@ const result = await drive.migrate(key);
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the migrate method
 // Call the migrate function on the drive object, passing in the PublicKey object as a parameter.
 const result = await drive.migrate(key);
 ```
@@ -1109,6 +1113,7 @@ const result = await drive.redeemRent(key, fileAccount);
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the redeemRent method
 // Create a new PublicKey object using a public key string for the file account.
 const fileAccount = new anchor.web3.PublicKey(
     "3p6U9s1sGLpnpkMMwW8o4hr4RhQaQFV7MkyLuW8ycvG9"
@@ -1155,6 +1160,7 @@ const shrinkAcct = await drive.reduceStorage(acctPubKey, "10MB", "v2");
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example using the reduceStorage method
 // Create a new public key object with the given string
 const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
@@ -1269,6 +1275,7 @@ const uploadFile = await drive.uploadFile(acctPubKey, fileToUpload);
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example of the uploadFile method
 // This line calls the uploadFile method of the drive object and passes in two parameters:
 // 1. acctPubKey: A PublicKey object representing the public key of the storage account where the file will be uploaded.
 // 2. fileToUpload: A ShadowFile object containing the file name and file buffer to be uploaded.
@@ -1339,6 +1346,7 @@ console.log(responses);
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
+// Javascript SDK example of the uploadMultipleFiles method
 // Create an instance of the Shadow Drive client
 const drive = new ShadowDrive();
 
@@ -1392,9 +1400,10 @@ console.log(responses);
 
 userInfo: PublicKey
 
-### **Example - POST request via SDK (make immutable)**
+### **Example - Using POST API requests via the Javascript SDK to make an account immutable with solana transaction signing**
 
 ```java
+// Import required modules and constants
 import * as anchor from "@project-serum/anchor";
 import { getStakeAccount, findAssociatedTokenAddress } from "../utils/helpers";
 import {
@@ -1410,6 +1419,7 @@ import {
 } from "@solana/spl-token";
 import { ShadowDriveVersion, ShadowDriveResponse } from "../types";
 import fetch from "node-fetch";
+
 /**
  *
  * @param {anchor.web3.PublicKey} key - Publickey of a Storage Account
@@ -1421,6 +1431,8 @@ export default async function makeStorageImmutable(
   version: ShadowDriveVersion
 ): Promise<ShadowDriveResponse> {
   let selectedAccount;
+  
+  // Fetch the selected account based on the version
   try {
     switch (version.toLocaleLowerCase()) {
       case "v1":
@@ -1432,13 +1444,19 @@ export default async function makeStorageImmutable(
         );
         break;
     }
+    
+    // Find associated token addresses
     const ownerAta = await findAssociatedTokenAddress(
       selectedAccount.owner1,
       tokenMint
     );
     const emissionsAta = await findAssociatedTokenAddress(emissions, tokenMint);
+    
+    // Get stake account
     let stakeAccount = (await getStakeAccount(this.program, key))[0];
     let txn;
+    
+    // Create transaction based on the version
     switch (version.toLocaleLowerCase()) {
       case "v1":
         txn = await this.program.methods
@@ -1478,12 +1496,16 @@ export default async function makeStorageImmutable(
           .transaction();
         break;
     }
+    
+    // Set recent blockhash and fee payer
     txn.recentBlockhash = (
       await this.connection.getLatestBlockhash()
     ).blockhash;
     txn.feePayer = this.wallet.publicKey;
     let signedTx;
     let serializedTxn;
+    
+    // Sign and serialize the transaction
     if (!isBrowser) {
       await txn.partialSign(this.wallet.payer);
       serializedTxn = txn.serialize({ requireAllSignatures: false });
@@ -1491,6 +1513,8 @@ export default async function makeStorageImmutable(
       signedTx = await this.wallet.signTransaction(txn);
       serializedTxn = signedTx.serialize({ requireAllSignatures: false });
     }
+    
+    // Send the transaction to the server
     const makeImmutableResponse = await fetch(
       `${SHDW_DRIVE_ENDPOINT}/make-immutable`,
       {
@@ -1505,6 +1529,8 @@ export default async function makeStorageImmutable(
         }),
       }
     );
+    
+    // Handle server response
     if (!makeImmutableResponse.ok) {
       return Promise.reject(
         new Error(`Server response status code: ${
@@ -1513,6 +1539,8 @@ export default async function makeStorageImmutable(
 			Server response status message: ${(await makeImmutableResponse.json()).error}`)
       );
     }
+    
+    // Return the response JSON
     const responseJson = await makeImmutableResponse.json();
     return Promise.resolve(responseJson);
   } catch (e) {
