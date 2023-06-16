@@ -17,7 +17,7 @@ Check out the [`examples`](https://github.com/GenesysGo/shadow-drive-rust/tree/m
 
 https://shdw-drive.genesysgo.net/\[STORAGE\_ACCOUNT\_ADDRESS]
 
-### **Example -** Shadow Drive Storage Management: Account Creation, File Upload, and Storage Modification in Python
+### **Example -** Create Account, File Upload, Add or Reduce Storage, and Delete Account using Python
 
 ```python
 from shadow_drive import ShadowDriveClient

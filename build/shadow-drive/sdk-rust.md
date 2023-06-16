@@ -917,7 +917,7 @@ let refresh_stake = shdw_drive_client
 }
 ```
 
-### **Example -** Shadow Drive Rust Client Example: Creating and Managing Storage Accounts
+### **Example -** Shadow Drive Client: Creating and Managing Storage Accounts using Rust
 
 ```rust
 use byte_unit::Byte;
@@ -1059,7 +1059,7 @@ async fn add_immutable_storage_test<T: Signer>(
 }
 ```
 
-### **Example -** Cancel Storage Account Deletion in Shadow Drive using rust
+### **Example -** Cancel Storage Account Deletion using rust
 
 <pre class="language-rust"><code class="lang-rust">// Import necessary libraries and modules
 <strong>use shadow_drive_rust::ShadowDriveClient;
@@ -1488,7 +1488,7 @@ async fn main() {
 }
 </code></pre>
 
-### **Example -** Redeem Rent for Storage in Shadow Drive using Rust
+### **Example -** Redeem Rent for Storage using Rust
 
 ```rust
 use shadow_drive_rust::ShadowDriveClient;
