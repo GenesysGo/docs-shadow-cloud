@@ -298,6 +298,14 @@ Mutable storage fees are collected for bytes stored.
 
 </details>
 
+<details>
+
+<summary>Where should I send PRs if I have a good example to share? Is there a way to give feedback on the technical documents?</summary>
+
+We welcome any feedback and examples you can provide to our documentation. You can submit a PR to our technical documents repository here - https://github.com/GenesysGo/docs-shadow-cloud/tree/main - and we will find a good place for it. 
+
+</details>
+
 ### General
 
 <details>
