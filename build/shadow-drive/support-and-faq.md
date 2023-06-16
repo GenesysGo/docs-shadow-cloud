@@ -184,9 +184,11 @@ No, unfortunately it is not possible to resume an upload from where it left off 
 </details>
 
 <details>
+
 <summary>Can I use the rust SDK in anchor programs?</summary>
 
 No, the SDK requires internet access to send http requests. This is not allowed within Solana runtime because arbitrary http responses are not deterministic and may produce different Solana ledger state transitions
+
 </details>
 
 <details>
@@ -269,6 +271,33 @@ Also follow us on twitter https://twitter.com/GenesysGo or join our tech support
 
 </details>
 
+<details>
+
+<summary>Is there a grace period if my storage account runs out of $SHDW to cover mutable fees?</summary>
+
+Yes. Your storage account will be kept for 6 months. After that, it is up for cleanup and a storage node may delete your storage account and all data in it.
+
+</details>
+
+<details>
+
+<summary>How can I add more $SHDW to my storage account for mutable fees?</summary>
+
+1. Either use the \`topUp\` method in one of the [SDKs](the-sdk.md) or send $SHDW directly to the storage account's token address
+2. Use the \`refreshStake\` method in one of the SDKs to refresh your storage account's stake status. This is not done for you, you must do this step manually.
+
+</details>
+
+<details>
+
+<summary>How much are the Mutable storage fees?</summary>
+
+Mutable storage fees target a specific USD price. Currently, that is $0.05 USD per gibibyte per year. This comes out to $0.0002739726 USD per gib per Solana Epoch (interval for which mutable storage fees are collected. This price target is converted to $SHDW/$USDC at the time of fee collection.
+
+Mutable storage fees are collected for bytes stored.
+
+</details>
+
 ### General
 
 <details>
@@ -282,7 +311,8 @@ Shadow Drive is a commodity cloud network that offers multiple service options, 
 <details>
 
 <summary>How does Shadow Drive ensure data privacy and security?</summary>
-Shadow Drive ensures data privacy and security by encrypting and erasure coding the data, and then algorithmically distributing the fragments across the distributed network. This is done trustlessly via smart contracts and requires signed Solana transactions, creating a publicly verifiable on-chain log. Additionally, Shadow Drive provides developers with the tools they need to comply with GDPR and can show records that prove that they have deleted a user's personal data.  
+
+Shadow Drive ensures data privacy and security by encrypting and erasure coding the data, and then algorithmically distributing the fragments across the distributed network. This is done trustlessly via smart contracts and requires signed Solana transactions, creating a publicly verifiable on-chain log. Additionally, Shadow Drive provides developers with the tools they need to comply with GDPR and can show records that prove that they have deleted a user's personal data.
 
 </details>
 

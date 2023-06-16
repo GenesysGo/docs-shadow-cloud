@@ -287,7 +287,7 @@ Serialized add storage transaction that is partially signed by the shadow drive 
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="reduce-storage" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="reduce-storage (updated)" %}
 {% swagger-description %}
 Reduces storage
 
@@ -309,7 +309,7 @@ Serialized reduce storage transaction that is partially signed by the shadow dri
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="make-immutable" %}
+{% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="make-immutable (updated)" %}
 {% swagger-description %}
 Makes file immutable
 
@@ -331,7 +331,9 @@ Serialized make immutable transaction that is partially signed by the shadow dri
 {% endswagger-response %}
 {% endswagger %}
 
-### **Example - Sign and upload a file**
+### **Example - Secure SIgn and Upload File** to Shadow Drive using API
+
+This example demonstrates how to securely upload files to the Shadow Drive using the provided API. It includes the process of hashing file names, creating a signed message, and sending the files along with the necessary information to the Shadow Drive endpoint.
 
 ```javascript
 import bs58 from 'bs58'
@@ -378,7 +380,9 @@ const request = await fetch(`${SHDW_DRIVE_ENDPOINT}/upload`, {
 });
 ```
 
-### **Example - Edit a file**
+### **Example -** Editing a File in Shadow Drive using API and Message Signature Verification
+
+In this example, we demonstrate how to edit a file in Shadow Drive using the API and message signature verification. The code imports necessary libraries, constructs a message to be signed, encodes and signs the message, and sends an API request to edit the file on Shadow Drive.
 
 ```javascript
 import bs58 from 'bs58'
@@ -419,7 +423,9 @@ const uploadResponse = await fetch(`${SHDW_DRIVE_ENDPOINT}/edit`, {
 });
 ```
 
-### **Example - Delete a file**
+### **Example -** Deleting a File from Shadow Drive using Signed Message and API
+
+In this example, we demonstrate how to delete a file from the Shadow Drive using a signed message and the Shadow Drive API. The code first constructs a message containing the storage account and the file URL to be deleted. It then encodes and signs the message using the tweetnacl library. The signed message is then converted to a bs58-encoded string. Finally, a POST request is sent to the Shadow Drive API endpoint to delete the file.
 
 ```javascript
 import bs58 from 'bs58'
