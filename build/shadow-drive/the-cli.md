@@ -83,7 +83,7 @@ shdw-drive create-storage-account --help
 
 ### **Create a Storage Account**
 
-This is one of the few commands where you will need SHDW. Before the command executes, it will prompt you as to how much SHDW will be required to reserve the storage account. There are three required options:
+This is one of the few commands where you will need [SHDW](https://docs.shadow.cloud/reference/shdw-token). Before the command executes, it will prompt you as to how much [SHDW](https://docs.shadow.cloud/reference/shdw-token) will be required to reserve the storage account. There are three required options:
 
 `-kp, --keypair`
 
@@ -240,9 +240,9 @@ There are two requirements
 shdw-drive reduce-storage -kp ~/shdw-keypair.json -s 500MB
 ```
 
-### **Claim Stake (aka Claim Unused SHDW Tokens after Reduction)**
+### **Claim Stake (aka Claim Unused** [**SHDW**](https://docs.shadow.cloud/reference/shdw-token) **Tokens after Reduction)**
 
-Since you reduced the amount of storage being used in the previous step, you are now free to claim your unused SHDW tokens. The only requirement here is a keypair.
+Since you reduced the amount of storage being used in the previous step, you are now free to claim your unused [SHDW](https://docs.shadow.cloud/reference/shdw-token) tokens. The only requirement here is a keypair.
 
 **Example:**\*\*
 
@@ -252,7 +252,7 @@ shdw-drive claim-stake -kp ~/shdw-keypair.json
 
 ### **Delete a Storage Account**
 
-You can entirely remove a storage account from Shadow Drive. Upon completion, your SHDW tokens will be returned to the wallet.
+You can entirely remove a storage account from Shadow Drive. Upon completion, your [SHDW](https://docs.shadow.cloud/reference/shdw-token) tokens will be returned to the wallet.
 
 _NOTE: You have a grace period upon deletion that lasts until the end of the current Solana epoch._ [_Go HERE to see_](https://explorer.solana.com/) _how much time is remaining in the current Solana epoch to know how much grace period you will get._
 

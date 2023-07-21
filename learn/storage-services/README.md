@@ -10,7 +10,7 @@ The idea for Shadow Drive was founded on the premise that the Solana network is 
 
 Whereas other decentralized storage providers require multiple layers in order to make their solution viable (i.e. Arweave does storage, but to scale uploads faster you need to use Bundlr for example, and then in order to serve the data in any kind of a useful way you need to subscribe to a front-end UI for basic high-speed CDN functionality), Shadow Drive builds everything into one platform.
 
-When a user commits their $SHDW to Shadow Drive for storage, they are not only provided with storage space, but also with incredibly fast batched uploads and a robust CDN. This ensures their content is stored quickly, efficiently, and delivered at speeds that makes Shadow Drive a truly viable solution for projects that need speed, stability, and efficiency.
+When a user commits their [$SHDW](https://docs.shadow.cloud/reference/shdw-token) to Shadow Drive for storage, they are not only provided with storage space, but also with incredibly fast batched uploads and a robust CDN. This ensures their content is stored quickly, efficiently, and delivered at speeds that makes Shadow Drive a truly viable solution for projects that need speed, stability, and efficiency.
 
 The following pages are intended to outline what Shadow Drive is, how it works, and why it works. These pages will do so by explaining things in practical terms as our goal is for a wide range of people to fully understand what is being built.
 

@@ -273,7 +273,7 @@ Also follow us on twitter https://twitter.com/GenesysGo or join our tech support
 
 <details>
 
-<summary>Is there a grace period if my storage account runs out of $SHDW to cover mutable fees?</summary>
+<summary>Is there a grace period if my storage account runs out of <a href="https://docs.shadow.cloud/reference/shdw-token">$SHDW</a> to cover mutable fees?</summary>
 
 Yes. Your storage account will be kept for 6 months. After that, it is up for cleanup and a storage node may delete your storage account and all data in it.
 
@@ -281,7 +281,7 @@ Yes. Your storage account will be kept for 6 months. After that, it is up for cl
 
 <details>
 
-<summary>How can I add more $SHDW to my storage account for mutable fees?</summary>
+<summary>How can I add more <a href="https://docs.shadow.cloud/reference/shdw-token">$SHDW</a> to my storage account for mutable fees?</summary>
 
 1. Either use the \`topUp\` method in one of the [SDKs](the-sdk.md) or send $SHDW directly to the storage account's token address
 2. Use the \`refreshStake\` method in one of the SDKs to refresh your storage account's stake status. This is not done for you, you must do this step manually.
@@ -302,7 +302,7 @@ Mutable storage fees are collected for bytes stored.
 
 <summary>Where should I send PRs if I have a good example to share? Is there a way to give feedback on the technical documents?</summary>
 
-We welcome any feedback and examples you can provide to our documentation. You can submit a PR to our technical documents repository here - https://github.com/GenesysGo/docs-shadow-cloud/tree/main - and we will find a good place for it. 
+We welcome any feedback and examples you can provide to our documentation. You can submit a PR to our technical documents repository here - https://github.com/GenesysGo/docs-shadow-cloud/tree/main - and we will find a good place for it.
 
 </details>
 
@@ -346,7 +346,7 @@ Additionally, in the future, our DAGGER distributed ledger technology will enabl
 
 <summary>How much does it cost to store data on Shadow Drive?</summary>
 
-Shadow Drive storage costs are driven by wholesale network costs, a fixed rate of 0.25 SHDW per 1 GB, and can be estimated through various front end UIs that capture moment-in-time estimates. One example is the front-end designed by an ecosystem partners, which provides detailed information on the network as well. Here is the link to the front-end: https://sdrive.app/stats
+Shadow Drive storage costs are driven by wholesale network costs, a fixed rate of 0.25 [SHDW](https://docs.shadow.cloud/reference/shdw-token) per 1 GB, and can be estimated through various front end UIs that capture moment-in-time estimates. One example is the front-end designed by an ecosystem partners, which provides detailed information on the network as well. Here is the link to the front-end: https://sdrive.app/stats
 
 </details>
 
@@ -370,7 +370,7 @@ Shadow Drive runs on a global network of bare metal infrastructure, with all com
 
 <summary>How are storage costs determined?</summary>
 
-Prices vary depending on the front-end and the market value of storage costs per unit SHDW. There is a fixed 0.25 SHDW per 1 GB of storage across the network. You can visit front-end UIs such as https://sdrive.app/stats to determine costs.
+Prices vary depending on the front-end and the market value of storage costs per unit [SHDW](https://docs.shadow.cloud/reference/shdw-token). There is a fixed 0.25 [SHDW](https://docs.shadow.cloud/reference/shdw-token) per 1 GB of storage across the network. You can visit front-end UIs such as https://sdrive.app/stats to determine costs.
 
 </details>
 

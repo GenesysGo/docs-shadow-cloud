@@ -150,7 +150,7 @@ async function main() {
 main();
 ```
 
-**Create a Storage Account**
+#### **Create a Storage Account**
 
 This implementation is effectively the same for both Web and Node implementations. There are three params that are required to create a storage account:
 

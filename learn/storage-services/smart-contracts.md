@@ -24,22 +24,22 @@ Please note that data uploads and edits are distinct from data access. Projects 
 
 Understanding the diversity of user requirements, we strive to offer a flexible storage solution that caters to both mutable and immutable data storage. Our approach acknowledges the fact that not all data needs to be stored perpetually and provides users with the freedom to choose the storage method that best suits their needs.
 
-The Shadow Drive token, SHDW, is divisible into fundamental units called "Shades," with the focus on storage fundamentals. This relationship between Shades and bytes is maintained for simplicity:
+The Shadow Drive token, [SHDW](https://docs.shadow.cloud/reference/shdw-token), is divisible into fundamental units called "Shades," with the focus on storage fundamentals. This relationship between Shades and bytes is maintained for simplicity:
 
-* 1,000,000,000 Shades = 1 SHDW
+* 1,000,000,000 Shades = 1 [SHDW](https://docs.shadow.cloud/reference/shdw-token)
 * 1,000,000,000 bytes = 1 gigabyte
 
 Thus, 1 byte stored = 1 Shade.
 
 #### **Immutable Storage**
 
-Immutable storage offers users the peace of mind that their data will be retained permanently and cannot be edited or deleted. The cost calculation for immutable storage is simple, as the smart contract sends the appropriate amount of SHDW to the Shadow Operator smart contract as emissions for operating Shadow Nodes.
+Immutable storage offers users the peace of mind that their data will be retained permanently and cannot be edited or deleted. The cost calculation for immutable storage is simple, as the smart contract sends the appropriate amount of [SHDW](https://docs.shadow.cloud/reference/shdw-token) to the Shadow Operator smart contract as emissions for operating Shadow Nodes.
 
 #### **Mutable Storage**
 
 Mutable storage, on the other hand, involves a more complex process that addresses short-term storage needs and the increased bandwidth requirements typically associated with mutable storage. This process incorporates staking and rent mechanics similar to Solana's on-chain accounts design.
 
-Users are required to stake a specific amount of SHDW when they upload data to Shadow Drive. Rent is assessed on a per-epoch basis for mutable storage, with the rate subject to change as the system evolves. The rent assessed each epoch is sent to the Shadow Operator Smart Contract, contributing to the pool that the smart contract pays out to Shadow Operators as emissions.
+Users are required to stake a specific amount of [SHDW](https://docs.shadow.cloud/reference/shdw-token) when they upload data to Shadow Drive. Rent is assessed on a per-epoch basis for mutable storage, with the rate subject to change as the system evolves. The rent assessed each epoch is sent to the Shadow Operator Smart Contract, contributing to the pool that the smart contract pays out to Shadow Operators as emissions.
 
 ### **Adapting Storage Requirements with DAGGER and Shadow Drive v2**
 

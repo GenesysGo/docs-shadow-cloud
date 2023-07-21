@@ -12,7 +12,7 @@ DAGGER is a distributed system with a graph based consensus mechanism. There are
 
 There are many possible and planned implementations of the GenesysGo's D.A.G.G.E.R., however the flagship implementation will be Shadow Drive v2 - a soon to be released enhancement on the current Shadow Drive v1.5. This is why we regard a "transaction" as simply a write request submitted by a user. This section wraps by explaining how speed, stability, and scalability are why we chose to build a brand new cutting edge acyclic-graph-style consensus technology.
 
-_Please note: this section adheres to high level explanations and general concepts suitable for all readers. This is not to be considered a whitepaper, however as DAGGER continues to mature we are planning the release of a more technical documentation._
+_Please note: this section adheres to high level explanations and general concepts suitable for all readers. This is not to be considered a whitepaper, however as DAGGER continues to mature we are planning the release of a more technical documentation. For more detail on how the_ [_SHDW_](https://docs.shadow.cloud/reference/shdw-token) _token is utilized with DAGGER please see our_ [_SHDW_](https://docs.shadow.cloud/reference/shdw-token) _Token page_ [_here_](https://docs.shadow.cloud/reference/shdw-token)_._&#x20;
 
 ## **Overview**
 
