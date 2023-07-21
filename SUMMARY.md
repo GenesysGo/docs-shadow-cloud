@@ -22,4 +22,5 @@
   * [Change Logs](reference/change-logs.md)
   * [Social Media & Community](reference/social-media-and-community.md)
   * [Solana Breakpoint 2022 Demo](reference/breakpoint-2022-demo.md)
+  * [SHDW Token](reference/shdw-token.md)
   * [Shadow Glossary](reference/shadow-glossary.md)
