@@ -39,9 +39,24 @@ To troubleshoot the issue, you can try the following:
 
 <summary>How much storage space can I reserve?</summary>
 
+A user can reserve 4kb at minimum.
+
 There is an upper limit of one terabyte (1TB) per bucket.
 
 Development is currently underway which will greatly increase this cap.
+
+</details>
+
+<details>
+
+<summary>What's the smallest or largest file I can upload?</summary>
+
+Currently, these are the limits:
+
+* Minimum: 4kb. If you upload a 100 byte file, it will still take up 4kb of space. This is due to the replication overhead required.
+* Maximum: 1gb.
+
+There's ongoing development to increase the maximum file size.
 
 </details>
 
