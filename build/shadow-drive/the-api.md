@@ -118,7 +118,7 @@ Publickey of the signer of the message signature and owner of the storage accoun
 Key of the storage account you want to upload to
 {% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="" %}
+{% swagger-response status="201: Created" description="" %}
 ```json
 {
     "finalized_locations": [String],
