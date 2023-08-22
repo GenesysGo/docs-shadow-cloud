@@ -10,6 +10,20 @@
 
 ## Consolidated Summary
 
+[v5.0.0 - August 22, 2023](https://github.com/GenesysGo/shadow-drive/releases/tag/v5.0.0)
+## What's Changed
+* set fetch req timeout to 2hrs by @khaIilnafis in https://github.com/GenesysGo/shadow-drive/pull/98
+* Typescript client by @khaIilnafis in https://github.com/GenesysGo/shadow-drive/pull/100
+* Typescript Client Updates by @tracy-codes in https://github.com/GenesysGo/shadow-drive/pull/101
+* Create dispatch-on-release.yml by @GummersGG in https://github.com/GenesysGo/shadow-drive/pull/90
+
+## New Contributors
+* @GummersGG made their first contribution in https://github.com/GenesysGo/shadow-drive/pull/90
+
+**Full Changelog**: https://github.com/GenesysGo/shadow-drive/compare/v4.0.2...v5.0.0
+
+
+
 New - Shadow Drive Rust  
 [v0.6.3 - Minor Fixes](https://github.com/GenesysGo/shadow-drive-rust/releases/tag/v0.6.3)
 
