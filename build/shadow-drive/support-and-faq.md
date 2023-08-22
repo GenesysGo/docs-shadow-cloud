@@ -21,6 +21,16 @@ GitHub FAQ: https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Ac
 
 <details>
 
+<summary>I'm getting a "410 Gone" error when trying to use the CLI. What should I do?</summary>
+
+This error means the Solana RPC provider you're using with the CLI doesn't support a specific RPC method that's necessary for the CLI to function. This could be \`getProgramAccounts\` or some other method.
+
+We'd recommend trying a more premium RPC provider like [Helius](https://www.helius.dev/), Hellomoon.io, or some other premium Solana RPC provider that allows for all Solana RPC methods to be used.
+
+</details>
+
+<details>
+
 <summary>What should I do if creating a storage account is failing?</summary>
 
 If creating a storage account is failing, make sure that you have appropriate amounts of both SOL and SHDW in your wallet. Creating a storage account requires a small amount of SOL to cover the transaction fee, as well as some SHDW to cover the initial storage allocation. Make sure that your wallet has enough funds to cover these requirements. Review the docs here: https://docs.shadow.cloud/build/the-cli#create-a-storage-account
