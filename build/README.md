@@ -18,17 +18,17 @@ description: Shadow Drive Developer Tools
 1. [JavaScript](shadow-drive/sdk-javascript.md), [Rust](shadow-drive/sdk-rust.md), and [Python](shadow-drive/sdk-python.md) are your choices.
 2. Follow the [SDK Guide](shadow-drive/the-sdk.md)
    * You can build directly on top of the [API](shadow-drive/the-api.md).
-   * Tell us about your project in our [Discord](https://discord.gg/genesysgo) so we can publish to the community. See others [here](shadow-drive/community-mainted-uis.md).
+   * Tell us about your project in our [Discord](https://discord.gg/genesysgo) so we can publish to the community. See others [here](broken-reference).
 
 ### **Submitting Bugs & Security Issues**
 
-****[**https://github.com/GenesysGo/shdw-drive-bug-reports**](https://github.com/GenesysGo/shdw-drive-bug-reports)****
+[**https://github.com/GenesysGo/shdw-drive-bug-reports**](https://github.com/GenesysGo/shdw-drive-bug-reports)
 
 We adhere to a responsible disclosure process for security related issues. To ensure the responsible disclosure and handling of security vulnerabilities, we ask that you follow the process outlined below.
 
 #### **Bug Reporting Process**
 
-1. For non-security-related bugs, please submit a new bug report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose). For security-related reports, please open a "**security vulnerability**" report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose).&#x20;
+1. For non-security-related bugs, please submit a new bug report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose). For security-related reports, please open a "**security vulnerability**" report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose).
 2. Please provide a clear and concise description of the issue, steps to reproduce it, and any relevant screenshots or logs.
 
 **Important**: For security-related issues, please include as much information as possible for reproduction and what its related to. Please be sure to use the **report a security vulnerability** feature in the repository listed above. If you submit a security vulnerability as a public bug report, we reserve the right to remove the report and move any communications to private channels until a resolution is made.

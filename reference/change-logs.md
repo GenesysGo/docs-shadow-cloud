@@ -10,28 +10,29 @@
 
 ## Consolidated Summary
 
+Shadow Drive\
 [v5.0.0 - August 22, 2023](https://github.com/GenesysGo/shadow-drive/releases/tag/v5.0.0)
 
-## What's Changed
+Shadow Drive Rust\
+[v0.7.2 - August 18, 2023](https://github.com/GenesysGo/shadow-drive-rust/releases/tag/v0.7.2)
 
-* set fetch req timeout to 2hrs by @khaIilnafis in https://github.com/GenesysGo/shadow-drive/pull/98
-* Typescript client by @khaIilnafis in https://github.com/GenesysGo/shadow-drive/pull/100
-* Typescript Client Updates by @tracy-codes in https://github.com/GenesysGo/shadow-drive/pull/101
-* Create dispatch-on-release.yml by @GummersGG in https://github.com/GenesysGo/shadow-drive/pull/90
+Shadow Drive\
+[v4.0.2 - June 27, 2023](https://github.com/GenesysGo/shadow-drive/releases/tag/v4.0.2)
 
-**Full Changelog**: https://github.com/GenesysGo/shadow-drive/compare/v4.0.2...v5.0.0
+Shadow Drive\
+[v4.0.1 - May 31, 2023](https://github.com/GenesysGo/shadow-drive/releases/tag/v4.0.1)
 
-New - Shadow Drive Rust\
+Apr 5, 2023- Shadow Drive Rust\
 [v0.6.3 - Minor Fixes](https://github.com/GenesysGo/shadow-drive-rust/releases/tag/v0.6.3)
-
-3 weeks ago - Shadow Drive Rust\
-[v0.6.2 - New crates](https://github.com/GenesysGo/shadow-drive-rust/releases/tag/v0.6.2)
-
-3 weeks ago - Shadow Drive Rust\
-[SDK v0.6.1 - Edit fixes](https://github.com/GenesysGo/shadow-drive-rust/releases/tag/v0.6.1)
 
 Mar 16, 2023 - Shadow Drive\
 [v3.3.0 - Minor Fixes](https://github.com/GenesysGo/shadow-drive/releases/tag/v3.3.0)
+
+Mar 15, 2023 - Shadow Drive Rust\
+[v0.6.2 - New crates](https://github.com/GenesysGo/shadow-drive-rust/releases/tag/v0.6.2)
+
+Feb 28, 2023 - Shadow Drive Rust\
+[SDK v0.6.1 - Edit fixes](https://github.com/GenesysGo/shadow-drive-rust/releases/tag/v0.6.1)
 
 Feb 27, 2023 - Shadow Drive CLI\
 [v0.4.2 - The one that's better faster stronger](https://github.com/GenesysGo/shadow-drive-cli/releases/tag/v0.4.2)
@@ -42,13 +43,13 @@ Feb 27, 2023 - Shadow Drive\
 Feb 27, 2023 - Shadow Drive\
 [v3.2.1 - Faster better stronger](https://github.com/GenesysGo/shadow-drive/releases/tag/v3.2.1)
 
-2 weeks ago - Shadow Drive\
+Feb 9, 2023 - Shadow Drive\
 [v3.1.1 - Fix for Hardware Wallet Transaction Signing](https://github.com/GenesysGo/shadow-drive/releases/tag/v3.1.1)
 
-2 weeks ago - Shadow Drive\
+Feb 8, 2023 - Shadow Drive\
 [v3.1.0- Minor Improvements and Fixes](https://github.com/GenesysGo/shadow-drive/releases/tag/v3.1.0)
 
-2 weeks ago - Shadow Drive CLI\
+Feb 9, 2023 - Shadow Drive CLI\
 [v0.3.9 - Minor Bugfix Latest](https://github.com/GenesysGo/shadow-drive-cli/releases/tag/v0.3.9)
 
 Dec 13, 2022 - Shadow Drive CLI\
