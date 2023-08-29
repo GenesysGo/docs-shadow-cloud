@@ -99,7 +99,7 @@ Decentralized Ledger Technology should be thought of as a superset of technologi
 
 [**Start Building on Shadow Drive!**](../build/shadow-drive/)
 
-[**See what others are building on Shadow Drive!**](../build/shadow-drive/community-mainted-uis.md)
+[**See what others are building on Shadow Drive!**](broken-reference)
 
 ## **Shadow Operators**
 

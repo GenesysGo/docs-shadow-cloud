@@ -16,6 +16,7 @@
     * [Rust](build/shadow-drive/sdk-rust.md)
     * [Python](build/shadow-drive/sdk-python.md)
   * [API](build/shadow-drive/the-api.md)
+  * [S3-Compatible Client Access](build/s3-compatible-client-access.md)
   * [FAQ](build/shadow-drive/support-and-faq.md)
   * [Shadow Ecosystem](build/shadow-drive/community-maintained-uis.md)
 * [Reference](reference/README.md)
