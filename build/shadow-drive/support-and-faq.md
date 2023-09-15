@@ -369,14 +369,6 @@ Additionally, in the future, our DAGGER distributed ledger technology will enabl
 
 <details>
 
-<summary>How much does it cost to store data on Shadow Drive?</summary>
-
-Shadow Drive storage costs are driven by wholesale network costs, a fixed rate of 0.25 [SHDW](https://docs.shadow.cloud/reference/shdw-token) per 1 GB, and can be estimated through various front end UIs that capture moment-in-time estimates. One example is the front-end designed by an ecosystem partners, which provides detailed information on the network as well. Here is the link to the front-end: https://sdrive.app/stats
-
-</details>
-
-<details>
-
 <summary>Is Shadow Drive S3-compatible?</summary>
 
 Yes, Shadow Drive is S3-compatible. S3-compatibility is a widely adopted standard in the cloud storage industry, and many providers offer S3-compatible APIs and protocols, which gives builders greater flexibility in choosing a cloud storage provider. This means developers can easily move data between different services without worrying about compatibility issues. Additionally, S3-compatibility offers robust APIs that enable fast and reliable query, along with virtual mount capability, making it important for Web2, Web3, and the frontiers of distributed ledger tech and AI. Shadow Drive aims to empower developers to integrate it directly into their builds, and to support the talented community of designers who will create innovative platforms for Shadow Drive. You can read more here: https://docs.shadow.cloud/learn/design#s3-compatibility
