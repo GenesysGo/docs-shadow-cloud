@@ -393,17 +393,9 @@ Shadow Drive runs on a global network of bare metal infrastructure, with all com
 
 <details>
 
-<summary>How are storage costs determined?</summary>
-
-Prices vary depending on the front-end and the market value of storage costs per unit [SHDW](https://docs.shadow.cloud/reference/shdw-token). There is a fixed 0.25 [SHDW](https://docs.shadow.cloud/reference/shdw-token) per 1 GB of storage across the network. You can visit front-end UIs such as https://sdrive.app/stats to determine costs.
-
-</details>
-
-<details>
-
 <summary>What is GenesysGo?</summary>
 
-GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator. Since then, GG has expanded its offerings to focus on a large ecosystem of tools and infrastructure for Solana. More details about the scope of our offerings can be found under the "Learn" category. GG has a team of talented developers and coders who are dedicated to building innovative solutions for the Solana community. For more information, you can visit our website at http://shadow.cloud/.
+GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator. Since then, GG has expanded its offerings to focus on a large ecosystem of tools and infrastructure for Solana. More details about the scope of our offerings can be found under the "Learn" category. GG has a team of talented developers and coders who are dedicated to building innovative solutions for the Solana community. For more information, you can visit our website at https://shadow.cloud.
 
 </details>
 

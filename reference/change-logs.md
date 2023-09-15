@@ -10,8 +10,8 @@
 
 ## Consolidated Summary
 
-Shadow Cloud\
-Release S3 Compatible Gateway - August 29, 2023
+Shadow Cloud - Release S3 Compatible Gateway\
+August 29, 2023
 
 Shadow Drive\
 [v5.0.0 - August 22, 2023](https://github.com/GenesysGo/shadow-drive/releases/tag/v5.0.0)

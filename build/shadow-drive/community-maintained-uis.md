@@ -4,12 +4,6 @@ description: Explore projects utilizing Shadow Drive
 
 # Shadow Ecosystem
 
-**SDRIVE**
-
-Easy to use, reliable, private, and secure cloud storage built on Shadow Drive. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
-
-[![](<../../.gitbook/assets/sdrive-feature (1).png>)](https://sdrive.app/landing)
-
 **SYNX**
 
 Synx, developed by the Blxckout team, offers exceptional UI/UX for managing real-world mobile and desktop data. It also comes with comprehensive documentation, making it user-friendly. Synx is a private cloud storage solution supported by a mobile and desktop app that utilizes Shadow Drive.
@@ -33,6 +27,12 @@ One of the most widely used GUIs for interacting with Shadow Drive. A unique use
 Simple, secure Web3 hosting with backend storage built on Shadow Drive. BlokHost empowers users to quickly deploy their websites and use the platform's node network to distribute content in an optimally efficient manner globally.
 
 [![](../../.gitbook/assets/blockhost.png)](https://blok.host/)
+
+**SDRIVE**
+
+Easy to use, reliable, private, and secure cloud storage built on Shadow Drive. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
+
+[https://sdrive.app/landing](https://sdrive.app/landing)
 
 #### **Shadow Portal**
 

@@ -24,7 +24,7 @@ npm install -g @shadow-drive/cli
 
 * Review the [FAQ](support-and-faq.md)
 * Visit us in [Discord](https://discord.gg/genesysgo) for support and feedback!
-* Submit your project to the [Shadow Ecosystem](community-mainted-uis.md) page so we can highlight your amazing work!
+* Submit your project to the [Shadow Ecosystem](broken-reference) page so we can highlight your amazing work!
 * Check the [Network Status](http://184.154.66.109:8080/) of the Shadow Drive network.
 
 ## **Submitting Bugs**
@@ -33,7 +33,7 @@ We adhere to a responsible disclosure process for security related issues. To en
 
 #### **Bug Reporting Process**
 
-1. For non-security-related bugs, please submit a new bug report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose). For security-related reports, please open a "**security vulnerability**" report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose).&#x20;
+1. For non-security-related bugs, please submit a new bug report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose). For security-related reports, please open a "**security vulnerability**" report [here](https://github.com/GenesysGo/shdw-drive-bug-reports/issues/new/choose).
 2. Please provide a clear and concise description of the issue, steps to reproduce it, and any relevant screenshots or logs.
 
 **Important**: For security-related issues, please include as much information as possible for reproduction and what its related to. Please be sure to use the **report a security vulnerability** feature in the repository listed above. If you submit a security vulnerability as a public bug report, we reserve the right to remove the report and move any communications to private channels until a resolution is made.
