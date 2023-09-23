@@ -66,6 +66,8 @@ Currently, these are the limits:
 * Minimum: 4kb. If you upload a 100 byte file, it will still take up 4kb of space. This is due to the replication overhead required.
 * Maximum: 1gb.
 
+With the [s3-compatible client access](../s3-compatible-client-access.md), you're able to upload files up to 1TiB.
+
 There's ongoing development to increase the maximum file size.
 
 </details>
