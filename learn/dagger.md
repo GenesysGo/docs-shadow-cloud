@@ -1,10 +1,10 @@
 ---
 description: >-
-  D.A.G.G.E.R. stands for directed acyclic gossiping graph enabling replication,
+  D.A.G.G.E.R. stands for directed acyclic gossip graph enabling replication,
   and this section explains the architecture on a high level.
 ---
 
-# D.A.G.G.E.R
+# D.A.G.G.E.R.
 
 ## **Introduction**
 
