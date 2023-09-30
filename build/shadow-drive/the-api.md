@@ -380,10 +380,10 @@ const request = await fetch(`${SHDW_DRIVE_ENDPOINT}/upload`, {
 });
 ```
 
-### **Example -** Getting a file from Shadow Drive
+### **Example -** Getting a File from Shadow Drive
 Shadow Drive uses a deterministic URL naming convention to retrieve files from storage. The scheme is defined as:
 
-`https://shdw-drive.genesysgo.net/:storageAccount/:fileName`
+`https://shdw-drive.genesysgo.net/<storage-account>/<file-name>`
 
 Making a GET request with the specified storageAccount and fileName will retrieve the desired file.
 
