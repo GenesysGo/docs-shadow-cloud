@@ -41,9 +41,9 @@ Mutable storage, on the other hand, involves a more complex process that address
 
 Users are required to stake a specific amount of [SHDW](https://docs.shadow.cloud/reference/shdw-token) when they upload data to Shadow Drive. Rent is assessed on a per-epoch basis for mutable storage, with the rate subject to change as the system evolves. The rent assessed each epoch is sent to the Shadow Operator Smart Contract, contributing to the pool that the smart contract pays out to Shadow Operators as emissions.
 
-### **Adapting Storage Requirements with DAGGER and Shadow Drive v2**
+### **Adapting Storage Requirements with D.A.G.G.E.R. and Shadow Drive v2**
 
-Our smart-contract design is tailored to accommodate both mutable and immutable storage options effectively. As DAGGER and Shadow Drive v2 continue to evolve, the pricing dynamics and overall system will adapt to provide the most efficient and flexible storage solutions for our users.
+Our smart-contract design is tailored to accommodate both mutable and immutable storage options effectively. As D.A.G.G.E.R. and Shadow Drive v2 continue to evolve, the pricing dynamics and overall system will adapt to provide the most efficient and flexible storage solutions for our users.
 
 We are committed to ensuring that our users can make informed choices about their data storage preferences and that they have access to a system that can adapt to their diverse storage requirements.
 

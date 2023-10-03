@@ -365,7 +365,7 @@ Shadow Drive provides developers with tools to comply with GDPR and can provide 
 
 Yes, Shadow Drive is supported on mobile through our ecosystem partners who are actively building on mobile. Please check out our Shadow Ecosystem page for more details. https://docs.shadow.cloud/build/community-mainted-uis
 
-Additionally, in the future, our DAGGER distributed ledger technology will enable Solana Saga powered storage solutions for those seeking low cost decentralized mobile clouds. Please check out the Learn section for more information. You can read more here: https://docs.shadow.cloud/learn#compute
+Additionally, in the future, our _D.A.G.G.E.R._ distributed ledger technology will enable Solana Saga powered storage solutions for those seeking low cost decentralized mobile clouds. Please check out the Learn section for more information. You can read more here: https://docs.shadow.cloud/learn#compute
 
 </details>
 
@@ -395,9 +395,9 @@ GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator
 
 <details>
 
-<summary>Can I advertise my project if I use DAGGER/Shadow Drive?</summary>
+<summary>Can I advertise my project if I use D.A.G.G.E.R./Shadow Drive?</summary>
 
-Yes, the Shadow Drive team would love to hear about your project if you are building on top of the Drive or using DAGGER. The best way to gain visibility is to submit a PR directly to the docs-shadow-cloud repo adding your project/business, details, and image to the Shadow Ecosystem list: https://github.com/GenesysGo/docs-shadow-cloud
+Yes, the Shadow Drive team would love to hear about your project if you are building on top of the Drive or using _D.A.G.G.E.R_. The best way to gain visibility is to submit a PR directly to the docs-shadow-cloud repo adding your project/business, details, and image to the Shadow Ecosystem list: https://github.com/GenesysGo/docs-shadow-cloud
 
 Submit a PR to edit the file located here: https://github.com/GenesysGo/docs-shadow-cloud/blob/main/build/shadow-drive/community-mainted-uis.md
 

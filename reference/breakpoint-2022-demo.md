@@ -1,8 +1,10 @@
 ---
-description: Take a look at how we use DAGGER to trustelessly deploy a VM through the Shadow Cloud portal.
+description: >-
+  Take a look at how we use D.A.G.G.E.R. to trustelessly deploy a VM through the
+  Shadow Cloud portal.
 ---
 
-# Breakpoint 2022 Demo
+# Solana Breakpoint 2022 Demo
 
 <figure><img src="https://media.tenor.com/r-mBXs5HH2EAAAAM/thumbs-up-keanu-reeves.gif" alt=""><figcaption></figcaption></figure>
 
@@ -30,7 +32,7 @@ After connecting your wallet, you'll land on the dashboard page of the Shadow Cl
 
 Now that you're right with Devnet, let's see how easy it is to deploy a VM. It's so easy, a prehistoric anthropomorphic spokesperson for an auto insurance company could probably pull it off without violating copyright and trademark rules.
 
-In the center of your screen, you'll see the big button. Give it a tappy.&#x20;
+In the center of your screen, you'll see the big button. Give it a tappy.
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-11-01 at 1.15.23 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -62,7 +64,6 @@ And lastly is how you want authentication to be handled by the VM. We can genera
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-11-01 at 1.40.43 PM.png" alt=""><figcaption></figcaption></figure>
 
-It's go time. Click the Pay with Solana Pay button and the provisioning begins. It will take a couple minutes to deploy, but after that, you'll have a full fledged VM running on decentralized infrastructure. After a few minutes, you will see a dialog box that says "ready fren?" and we know you are, in fact ready. You are directed back to the landing page where your Dashboard will now show you your VM details.&#x20;
+It's go time. Click the Pay with Solana Pay button and the provisioning begins. It will take a couple minutes to deploy, but after that, you'll have a full fledged VM running on decentralized infrastructure. After a few minutes, you will see a dialog box that says "ready fren?" and we know you are, in fact ready. You are directed back to the landing page where your Dashboard will now show you your VM details.
 
 <figure><img src="../.gitbook/assets/vm.png" alt=""><figcaption></figcaption></figure>
-
