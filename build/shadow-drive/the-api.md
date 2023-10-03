@@ -380,6 +380,14 @@ const request = await fetch(`${SHDW_DRIVE_ENDPOINT}/upload`, {
 });
 ```
 
+### **Example -** Getting a File from Shadow Drive
+Shadow Drive uses a deterministic URL naming convention to retrieve files from storage. The scheme is defined as:
+
+`https://shdw-drive.genesysgo.net/<storage-account>/<file-name>`
+
+Making a GET request with the specified storageAccount and fileName will retrieve the desired file.
+
+
 ### **Example -** Editing a File in Shadow Drive using API and Message Signature Verification
 
 In this example, we demonstrate how to edit a file in Shadow Drive using the API and message signature verification. The code imports necessary libraries, constructs a message to be signed, encodes and signs the message, and sends an API request to edit the file on Shadow Drive.
