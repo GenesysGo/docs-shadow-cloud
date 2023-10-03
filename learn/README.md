@@ -50,25 +50,25 @@ The current [design](storage-services/design.md#present-design-considerations) o
 
 ## **Compute**
 
-Utilizing DAGGER as an orchestration / oracle protocol, we are capable of networking together decentralized commodity clouds (Shadow Operator virtual machines) under a front end UI/UX experience that effectively decentralizes virtual machine provisioning. This is similar in concept as an Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operated trustlessly by individuals / entities who are Shadow Operators! This is currently in proof-of-concept and under development for the future. We revealed this technology at the Solana Breakpoint 2022 event. With over 2,000 attendees we opened showcased live demonstrations of trustless virtual machine provisioning powered by a decentralized group of micro-clouds. Developers were able to build on these virtual machines for the span of the conference, experiencing first hand the exciting direction our platform is headed.
+Utilizing _D.A.G.G.E.R._ as an orchestration / oracle protocol, we are capable of networking together decentralized commodity clouds (Shadow Operator virtual machines) under a front end UI/UX experience that effectively decentralizes virtual machine provisioning. This is similar in concept as an Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operated trustlessly by individuals / entities who are Shadow Operators! This is currently in proof-of-concept and under development for the future. We revealed this technology at the Solana Breakpoint 2022 event. With over 2,000 attendees we opened showcased live demonstrations of trustless virtual machine provisioning powered by a decentralized group of micro-clouds. Developers were able to build on these virtual machines for the span of the conference, experiencing first hand the exciting direction our platform is headed.
 
 [**Check out the Shadow VMs Demo from Breakpoint**](../reference/breakpoint-2022-demo.md)
 
-As mobile compute power and data speeds surge, we're developing DAGGER's permissionless mobile compute and storage through the early-stage Solana Saga Mobile. This enhancement supports our existing ecosystem of builders using Shadow Drive in mobile apps. DAGGER Mobile will bring distributed ledger technology for compute and storage to smartphones amid growing AI and gaming demands. We aim to make DAGGER, including Shadow Drive and mobile implementations, a practical choice for mobile and edge AI solutions, aligning with our roadmap.
+As mobile compute power and data speeds surge, we're developing _D.A.G.G.E.R._'s permissionless mobile compute and storage through the early-stage Solana Saga Mobile. This enhancement supports our existing ecosystem of builders using Shadow Drive in mobile apps. _D.A.G.G.E.R._ Mobile will bring distributed ledger technology for compute and storage to smartphones amid growing AI and gaming demands. We aim to make _D.A.G.G.E.R._, including Shadow Drive and mobile implementations, a practical choice for mobile and edge AI solutions, aligning with our roadmap.
 
 ## **Roadmap**
 
 There are three areas we focus our developments:
 
-* The Shadow Drive implementation of DAGGER
-* The Mobile implementation of DAGGER and Shadow Drive
+* The Shadow Drive implementation of _D.A.G.G.E.R._
+* The Mobile implementation of _D.A.G.G.E.R._ and Shadow Drive
 * The combination of the above two to support AI evolution
 
 ## **Putting it all together**
 
 "On-chain" versus "off-chain" is a concept that needs to evolve in order for Web3 technology to meaningfully gain user adoption. Blockchain is a type of decentralized ledger technology (DLT), but it's not the only DLT anymore. "On-DLT" versus "off-DLT", that's what matters. This is not to take away from the significance of blockchain or its impact on the world. Instead, it's merely to say that the subset of technologies falling under the DLT umbrella has expanded in the 14 years since blockchain first appeared. The right tool for the right job matters.
 
-Our hope is that Shadow Cloud and D.A.G.G.E.R represent a first step on the path to creating composability in Web3. Not just composability between one blockchain and another... instead, zoom out and think about composability between all the different systems underneath the DLT umbrella. By creating interoperability between Solana and DAGGER the result is a true Web3 cloud platform that doesn't sacrifice speed, stability, and/or security in order to gain trustlessness, decentralization, permissionlessness, and/or censorship resistance.
+Our hope is that Shadow Cloud and D.A.G.G.E.R represent a first step on the path to creating composability in Web3. Not just composability between one blockchain and another... instead, zoom out and think about composability between all the different systems underneath the DLT umbrella. By creating interoperability between Solana and _D.A.G.G.E.R._ the result is a true Web3 cloud platform that doesn't sacrifice speed, stability, and/or security in order to gain trustlessness, decentralization, permissionlessness, and/or censorship resistance.
 
 Decentralized Ledger Technology should be thought of as a superset of technologies that can be selected and assembled in various combinations to satisfy specific user requirements. So what are some of these user requirements? Here are some real world use cases to start:
 
@@ -109,7 +109,7 @@ Shadow Operators are the decentralized backbone of the Shadow commodity cloud. O
 
 At the foundation of everything are the Shadow Operators who run the nodes that power the Shadow Platform. Operators can connect new nodes to the network, manage their existing servers, or view the overall status of other Shadow Operators – all through the one easy-to-use portal.
 
-Currently in development are a series of Shadow Operator node roles including resolvers, ingestors, storers, cachers. These roles work together under the orchestration of DAGGER to form a permissionless distributed platform that supports both Shadow Cloud services and mobile storage being developed.
+Currently in development are a series of Shadow Operator node roles including resolvers, ingestors, storers, cachers. These roles work together under the orchestration of _D.A.G.G.E.R._ to form a permissionless distributed platform that supports both Shadow Cloud services and mobile storage being developed.
 
 ## **Our Team**
 
