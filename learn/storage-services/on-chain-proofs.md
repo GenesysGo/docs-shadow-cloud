@@ -26,15 +26,15 @@ The current state of Solana is already hashed, but then it is shredded and decen
 
 Now, just because historical transactions are irrelevant to the current “in the moment” state of all accounts on Solana (because every event leading up to the present had to be passed through the Solana validator network and therefore was part of the consensus that led to the current state) doesn’t mean that historical transactions aren’t important to the **developers and users** performing actions on Solana.
 
-This is where we circle back to Shadow Drive. The Shadow Drive utilizes the world’s most performant state machine to ensure the validity and integrity of the state of its storage network via on-chain change events.
+This is where we circle back to ShdwDrive. The ShdwDrive utilizes the world’s most performant state machine to ensure the validity and integrity of the state of its storage network via on-chain change events.
 
-It’s easiest to explain in real terms, so here’s an example… Let’s say you upload NFT metadata to Shadow Drive and want that data to be stored permanently and want it to be immutable.
+It’s easiest to explain in real terms, so here’s an example… Let’s say you upload NFT metadata to ShdwDrive and want that data to be stored permanently and want it to be immutable.
 
-1. An NFT project uploads their NFT metadata to Shadow Drive. The NFT project wishes for this metadata to be stored forever and wants it to be immutable.
-2. These instructions from the NFT project creators are passed to the Shadow Drive smart contract and the smart contract sends a transaction request to the Solana validators which has been signed by the NFT project’s wallet.
+1. An NFT project uploads their NFT metadata to ShdwDrive. The NFT project wishes for this metadata to be stored forever and wants it to be immutable.
+2. These instructions from the NFT project creators are passed to the ShdwDrive smart contract and the smart contract sends a transaction request to the Solana validators which has been signed by the NFT project’s wallet.
 3. An account hash is created on-chain that indicates which NFT project the metadata is associated with, that this metadata is immutable, and it is to be stored permanently.
-4. Then the hash plus the actual NFT metadata itself are hashed again, sharded, and uploaded to Shadow Drive by the smart contract in the appropriate storage format and location to ensure that the data can never be edited (not even by the NFT founders who uploaded it) and never deleted.
+4. Then the hash plus the actual NFT metadata itself are hashed again, sharded, and uploaded to ShdwDrive by the smart contract in the appropriate storage format and location to ensure that the data can never be edited (not even by the NFT founders who uploaded it) and never deleted.
 
-Under this design, the Shadow Drive smart contract only recognizes signatures from the wallet associated with the stored data. In this example, any transaction request to change the data listed as immutable in Shadow Drive would fail to be validated by the Solana validators. This is because the smart contract would not pass through any instructions to edit or delete this data, due to the fact that the data is immutable and therefore cannot be edited or deleted.
+Under this design, the ShdwDrive smart contract only recognizes signatures from the wallet associated with the stored data. In this example, any transaction request to change the data listed as immutable in ShdwDrive would fail to be validated by the Solana validators. This is because the smart contract would not pass through any instructions to edit or delete this data, due to the fact that the data is immutable and therefore cannot be edited or deleted.
 
-In the [**Shadow Drive Smart Contract**](smart-contracts.md) section, we will go deeper into how the Shadow Drive smart contract interacts with the Solana validator network to ensure the current state (and thus the integrity of the data) remains intact.
+In the [**ShdwDrive Smart Contract**](smart-contracts.md) section, we will go deeper into how the ShdwDrive smart contract interacts with the Solana validator network to ensure the current state (and thus the integrity of the data) remains intact.

@@ -1,12 +1,12 @@
 ---
-description: Explore projects utilizing Shadow Drive
+description: Explore projects utilizing ShdwDrive
 ---
 
 # Shadow Ecosystem
 
 **SYNX**
 
-Synx, developed by the Blxckout team, offers exceptional UI/UX for managing real-world mobile and desktop data. It also comes with comprehensive documentation, making it user-friendly. Synx is a private cloud storage solution supported by a mobile and desktop app that utilizes Shadow Drive.
+Synx, developed by the Blxckout team, offers exceptional UI/UX for managing real-world mobile and desktop data. It also comes with comprehensive documentation, making it user-friendly. Synx is a private cloud storage solution supported by a mobile and desktop app that utilizes ShdwDrive.
 
 [![](../../.gitbook/assets/synx-feature.png)](https://twitter.com/synx\_xyz)
 
@@ -18,61 +18,61 @@ A Social Protocol to help build on-chain social media platforms. Developer-frien
 
 **SHADOW STORAGE**
 
-One of the most widely used GUIs for interacting with Shadow Drive. A unique user experience that lets teams and individuals unlock the power of web3 through crypto and decentralization—file management, transfer & sharing, immutable storage, private notes, real-time collaboration, and more.
+One of the most widely used GUIs for interacting with ShdwDrive. A unique user experience that lets teams and individuals unlock the power of web3 through crypto and decentralization—file management, transfer & sharing, immutable storage, private notes, real-time collaboration, and more.
 
 [![](../../.gitbook/assets/shadowstorage.png)](https://www.shadow.storage/#features)
 
 #### **Blok.host Web Hosting**
 
-Simple, secure Web3 hosting with backend storage built on Shadow Drive. BlokHost empowers users to quickly deploy their websites and use the platform's node network to distribute content in an optimally efficient manner globally.
+Simple, secure Web3 hosting with backend storage built on ShdwDrive. BlokHost empowers users to quickly deploy their websites and use the platform's node network to distribute content in an optimally efficient manner globally.
 
 [![](../../.gitbook/assets/blockhost.png)](https://blok.host/)
 
 **SDRIVE**
 
-Easy to use, reliable, private, and secure cloud storage built on Shadow Drive. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
+Easy to use, reliable, private, and secure cloud storage built on ShdwDrive. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
 
 [https://sdrive.app/landing](https://sdrive.app/landing)
 
 #### **Shadow Portal**
 
-A new primitive on Solana. A novel way to summon off-chain data aka "runes" from Shadow Drive directly into your Solana smart contract.
+A new primitive on Solana. A novel way to summon off-chain data aka "runes" from ShdwDrive directly into your Solana smart contract.
 
 [https://twitter.com/ShadowyPortal](https://twitter.com/ShadowyPortal)
 
 #### **AlphaBatem's Shadow UI**
 
-This tool provides a speedy way to interact with your Shadow Drive storage account, including handling the swap from SOL to SHDW.
+This tool provides a speedy way to interact with your ShdwDrive storage account, including handling the swap from SOL to SHDW.
 
 {% embed url="https://drive.alphabatem.com/login#/" %}
 
 #### **ShadowTube**
 
-A Web3 version of YouTube built with Shadow Drive storage, uploads come directly from your Shadow Drive storage accounts!
+A Web3 version of YouTube built with ShdwDrive storage, uploads come directly from your ShdwDrive storage accounts!
 
 {% embed url="https://www.shadowtube.io/" %}
 
 #### **Crab.so Decentralized Social Network**
 
-Another prime example of a comprehensive suite of NFT tools should include Shadow Drive storage, and this tool delivers on all fronts.
+Another prime example of a comprehensive suite of NFT tools should include ShdwDrive storage, and this tool delivers on all fronts.
 
 {% embed url="https://www.crab.so/" %}
 
 #### **You are Loved**
 
-A fascinating use case where an HTML doc can be served on Shadow Drive while the minting functionality and wallet connection can remain in tact. Check it out!
+A fascinating use case where an HTML doc can be served on ShdwDrive while the minting functionality and wallet connection can remain in tact. Check it out!
 
 {% embed url="https://shdw-drive.genesysgo.net/6P6WznKbJ2nEMCfrXZDQvipCgCSx45SXxjWMWvqfPtyJ/yal_website.html" %}
 
 #### **Grape Shadow UI**
 
-An open-sourced tool for managing Shadow Drive storage from the browser.
+An open-sourced tool for managing ShdwDrive storage from the browser.
 
 {% embed url="https://grapedrive.vercel.app/" %}
 
-#### **A Rust CLI for Shadow Drive**
+#### **A Rust CLI for ShdwDrive**
 
-Another great contribution from a community member! A Rust-based CLI for working with Shadow Drive!
+Another great contribution from a community member! A Rust-based CLI for working with ShdwDrive!
 
 {% embed url="https://github.com/ebrightfield/shadow-drive-rust-cli" %}
 

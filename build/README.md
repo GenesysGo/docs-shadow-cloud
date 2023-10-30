@@ -1,19 +1,19 @@
 ---
-description: Shadow Drive Developer Tools
+description: ShdwDrive Developer Tools
 ---
 
 # Build
 
 <table data-view="cards"><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td align="center"></td><td align="center"><strong>CLI</strong></td><td align="center">Get started within minutes</td><td><a href="../.gitbook/assets/CLI_icon.png">CLI_icon.png</a></td><td><a href="shadow-drive/the-cli.md#introduction">#introduction</a></td></tr><tr><td align="center"></td><td align="center"><strong>API</strong></td><td align="center">Instant interaction</td><td><a href="../.gitbook/assets/API_icon.png">API_icon.png</a></td><td><a href="shadow-drive/the-api.md#contents">#contents</a></td></tr><tr><td align="center"></td><td align="center"><strong>SDKs</strong></td><td align="center">Advanced applications</td><td><a href="../.gitbook/assets/SDK_Icon.png">SDK_Icon.png</a></td><td><a href="shadow-drive/the-sdk.md">the-sdk.md</a></td></tr></tbody></table>
 
-### **To get started with the Shadow Drive CLI:**
+### **To get started with the ShdwDrive CLI:**
 
 1. [Install NodeJS LTS 16.17.1](https://nodejs.org/en/download/)
-2. Install the [Shadow Drive CLI](shadow-drive/)
+2. Install the [ShdwDrive CLI](shadow-drive/)
 3. Follow the [CLI Guide](shadow-drive/the-cli.md)
    * After installing Solana, **make sure you have both SHDW and SOL in your wallet in order to reserve storage**.
 
-### **To get started with the Shadow Drive SDKs:**
+### **To get started with the ShdwDrive SDKs:**
 
 1. [JavaScript](shadow-drive/sdk-javascript.md), [Rust](shadow-drive/sdk-rust.md), and [Python](shadow-drive/sdk-python.md) are your choices.
 2. Follow the [SDK Guide](shadow-drive/the-sdk.md)

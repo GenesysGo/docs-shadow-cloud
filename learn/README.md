@@ -4,7 +4,7 @@ description: An introduction to the Shadow Cloud and its implementations
 
 # Learn
 
-<table data-view="cards"><thead><tr><th></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Design</strong></td><td align="center">v1.5</td><td><a href="storage-services/design.md#shadow-drive-v1.5-is-born-building-tools-and-listening-to-developer-feedback">#shadow-drive-v1.5-is-born-building-tools-and-listening-to-developer-feedback</a></td><td><a href="../.gitbook/assets/Design1.png">Design1.png</a></td></tr><tr><td></td><td align="center"><strong>D.A.G.G.E.R.</strong></td><td align="center">Distributed Ledger Tech</td><td><a href="dagger.md#introduction">#introduction</a></td><td><a href="../.gitbook/assets/Dagger2.png">Dagger2.png</a></td></tr><tr><td></td><td align="center"><strong>Use Cases</strong></td><td align="center">Shadow Drive Capability</td><td><a href="./#shadow-cloud-use-cases">#shadow-cloud-use-cases</a></td><td><a href="../.gitbook/assets/Usecases.png">Usecases.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Design</strong></td><td align="center">v1.5</td><td><a href="storage-services/design.md#shadow-drive-v1.5-is-born-building-tools-and-listening-to-developer-feedback">#shadow-drive-v1.5-is-born-building-tools-and-listening-to-developer-feedback</a></td><td><a href="../.gitbook/assets/Design1.png">Design1.png</a></td></tr><tr><td></td><td align="center"><strong>D.A.G.G.E.R.</strong></td><td align="center">Distributed Ledger Tech</td><td><a href="dagger.md#introduction">#introduction</a></td><td><a href="../.gitbook/assets/Dagger2.png">Dagger2.png</a></td></tr><tr><td></td><td align="center"><strong>Use Cases</strong></td><td align="center">ShdwDrive Capability</td><td><a href="./#shadow-cloud-use-cases">#shadow-cloud-use-cases</a></td><td><a href="../.gitbook/assets/Usecases.png">Usecases.png</a></td></tr></tbody></table>
 
 ## **Mission**
 
@@ -14,7 +14,7 @@ Our mission is to provide a high-performance and affordable cloud storage platfo
 
 Our objectives are to continually evolve a stable high-performance Shadow Cloud Storage Platform powered by a decentralized network of operators. Shadow is the only commodity cloud network designed to democratize the hundreds of billions earned each year by traditional cloud platforms without sacrificing performance. Through thoughtful design, the Shadow Cloud will offer multiple service options which leverage our distributed ledger technology. The result is vertically integrated, L1-specific storage and compute offering that greatly improves developer experience. This will also enable the offering of distributed ledger technology "as-a-service" giving builders and businesses more granular options to customize their desired degree of Web2 or Web3 exposures.
 
-We will focus on constantly improving the developer experience by identifying and implementing industry interoperability standards. We will maintain S3-compatibility and an open-source SDK. Being easy to use means building bridges across protocols and APIs that enable the Shadow Drive to be accessed directly and easily through popular builder tools and SDKs. Whether you are building an AI generative art program, training your enterprise NLP model, or crafting a layer-1 Rust smart-contract in need of off-chain compression, our objective is to support the popular tools that make building easier.
+We will focus on constantly improving the developer experience by identifying and implementing industry interoperability standards. We will maintain S3-compatibility and an open-source SDK. Being easy to use means building bridges across protocols and APIs that enable the ShdwDrive to be accessed directly and easily through popular builder tools and SDKs. Whether you are building an AI generative art program, training your enterprise NLP model, or crafting a layer-1 Rust smart-contract in need of off-chain compression, our objective is to support the popular tools that make building easier.
 
 ## **The Basics of Shadow Cloud**
 
@@ -38,13 +38,13 @@ D.A.G.G.E.R. stands for Directed Acyclic Gossip Graph Enabling Replication (of c
 
 ## **Storage**
 
-Shadow Drive takes open source software-defined object storage and integrates it with Solana’s Proof of History consensus mechanism, and then decentralizes it. This allows it to achieve extremely fast I/O speeds, massive scalability, and data integrity. At the same time, it retains the benefits of the trustlessness, enhanced security, full transparency, and decentralization that blockchain technology brings to the table.
+ShdwDrive takes open source software-defined object storage and integrates it with Solana’s Proof of History consensus mechanism, and then decentralizes it. This allows it to achieve extremely fast I/O speeds, massive scalability, and data integrity. At the same time, it retains the benefits of the trustlessness, enhanced security, full transparency, and decentralization that blockchain technology brings to the table.
 
-Ultimately, Shadow Drive’s implementation of D.A.G.G.E.R. will produce a permissionless, trustless, decentralized distributed storage network that exists in perpetuity without needing to rely on the direct efforts of a centralized team to grow and expand. It will take time, as the path for open sourcing hardware infrastructure is different from that of software, but Shadow Drive’s final form will be one in which the community of businesses and builders drive the direction, enhancements, and future of Shadow Drive.
+Ultimately, ShdwDrive’s implementation of D.A.G.G.E.R. will produce a permissionless, trustless, decentralized distributed storage network that exists in perpetuity without needing to rely on the direct efforts of a centralized team to grow and expand. It will take time, as the path for open sourcing hardware infrastructure is different from that of software, but ShdwDrive’s final form will be one in which the community of businesses and builders drive the direction, enhancements, and future of ShdwDrive.
 
-The current [design](storage-services/design.md#present-design-considerations) of Shadow Drive makes embedding storage into applications easy, robust, and natively interfaced into the Solana blockchain. The SDKs support [Javascript](../build/shadow-drive/sdk-javascript.md), [Rust](../build/shadow-drive/sdk-rust.md), and [Python ](../build/shadow-drive/sdk-python.md)all on top of fast and reliable API. Use Shadow Drive to store your 800gb model weights, 10 TB training data and all the generated images your users generate via our [Python](../build/shadow-drive/sdk-python.md) SDK. Or maybe you just want to store your historical geyser plugin output and state, and any relevant program accounts and transactions. If you are building an application in need of back-end storage, secondary storage, or a client-facing storage option then our robust [Javascript SDK](../build/shadow-drive/sdk-javascript.md) has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
+The current [design](storage-services/design.md#present-design-considerations) of ShdwDrive makes embedding storage into applications easy, robust, and natively interfaced into the Solana blockchain. The SDKs support [Javascript](../build/shadow-drive/sdk-javascript.md), [Rust](../build/shadow-drive/sdk-rust.md), and [Python ](../build/shadow-drive/sdk-python.md)all on top of fast and reliable API. Use ShdwDrive to store your 800gb model weights, 10 TB training data and all the generated images your users generate via our [Python](../build/shadow-drive/sdk-python.md) SDK. Or maybe you just want to store your historical geyser plugin output and state, and any relevant program accounts and transactions. If you are building an application in need of back-end storage, secondary storage, or a client-facing storage option then our robust [Javascript SDK](../build/shadow-drive/sdk-javascript.md) has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
 
-[**Start Building on Shadow Drive!**](../build/)
+[**Start Building on ShdwDrive!**](../build/)
 
 [**Pricing**](storage-services/#pricing)
 
@@ -54,14 +54,14 @@ Utilizing _D.A.G.G.E.R._ as an orchestration / oracle protocol, we are capable o
 
 [**Check out the Shadow VMs Demo from Breakpoint**](../reference/breakpoint-2022-demo.md)
 
-As mobile compute power and data speeds surge, we're developing _D.A.G.G.E.R._'s permissionless mobile compute and storage through the early-stage Solana Saga Mobile. This enhancement supports our existing ecosystem of builders using Shadow Drive in mobile apps. _D.A.G.G.E.R._ Mobile will bring distributed ledger technology for compute and storage to smartphones amid growing AI and gaming demands. We aim to make _D.A.G.G.E.R._, including Shadow Drive and mobile implementations, a practical choice for mobile and edge AI solutions, aligning with our roadmap.
+As mobile compute power and data speeds surge, we're developing _D.A.G.G.E.R._'s permissionless mobile compute and storage through the early-stage Solana Saga Mobile. This enhancement supports our existing ecosystem of builders using ShdwDrive in mobile apps. _D.A.G.G.E.R._ Mobile will bring distributed ledger technology for compute and storage to smartphones amid growing AI and gaming demands. We aim to make _D.A.G.G.E.R._, including ShdwDrive and mobile implementations, a practical choice for mobile and edge AI solutions, aligning with our roadmap.
 
 ## **Roadmap**
 
 There are three areas we focus our developments:
 
-* The Shadow Drive implementation of _D.A.G.G.E.R._
-* The Mobile implementation of _D.A.G.G.E.R._ and Shadow Drive
+* The ShdwDrive implementation of _D.A.G.G.E.R._
+* The Mobile implementation of _D.A.G.G.E.R._ and ShdwDrive
 * The combination of the above two to support AI evolution
 
 ## **Putting it all together**
@@ -76,19 +76,19 @@ Decentralized Ledger Technology should be thought of as a superset of technologi
 
 * Storage
   * Web hosting & content management
-    * Managing static content at high volumes that can elastically scale with your needs makes Shadow Drive a great solution for web content, media, images, and other unstructured data types.
+    * Managing static content at high volumes that can elastically scale with your needs makes ShdwDrive a great solution for web content, media, images, and other unstructured data types.
   * Social media
     * Temporarily or permanently store message history and embedded media, stream video content from user uploads, and store and deliver vast amounts of images and avatars to enhance the Web3 efficacy of your app.
   * Archival & back-up
-    * By 3x replicating and erasure coding encrypted records across a decentralized network, Shadow Drive can preserve valuable records from bad actors.
+    * By 3x replicating and erasure coding encrypted records across a decentralized network, ShdwDrive can preserve valuable records from bad actors.
   * Datasets
     * Some information is too important for humanity to lose. From scientific research projects to historical documentation, cryptographic proofs guarantee a dataset’s integrity and availability forever. Imagine if the world’s most important libraries couldn’t be destroyed because the information has been distributed across thousands of unique locations worldwide.
   * AI implementation
-    * From training models, to backing up data sets, to virtually mounting the storage accounts, Shadow Drive will offer fast, reliable, transparent methods to support many AI data-processing applications by lowering costs of housing huge amounts of data and offering extremely high read/write more cheaply than other decentralized competitors.
+    * From training models, to backing up data sets, to virtually mounting the storage accounts, ShdwDrive will offer fast, reliable, transparent methods to support many AI data-processing applications by lowering costs of housing huge amounts of data and offering extremely high read/write more cheaply than other decentralized competitors.
   * Personal & editable storage space
-    * With optional mutability, you are free to create and delete files as you see fit. With low costs and many front-end user interfaces to choose from, Shadow Drive can be your personal expanded storage space.
+    * With optional mutability, you are free to create and delete files as you see fit. With low costs and many front-end user interfaces to choose from, ShdwDrive can be your personal expanded storage space.
   * Specialized distributed ledger implementations
-    * The current [design](storage-services/design.md) of Shadow Drive makes embedding storage into applications easy, robust, and natively integrated into the Solana blockchain. Use Shadow Drive to store your 800gb model weights, 100 TB training data and all the generated images your users generate via our [Python](../build/shadow-drive/sdk-python.md) SDK. Or maybe you just want to store your historical geyser plugin output and state, and any relevant program accounts and transactions. If you are building an application in need of back-end storage, secondary storage, or client-facing storage option then our robust [Javascript SDK](../build/shadow-drive/sdk-javascript.md) has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
+    * The current [design](storage-services/design.md) of ShdwDrive makes embedding storage into applications easy, robust, and natively integrated into the Solana blockchain. Use ShdwDrive to store your 800gb model weights, 100 TB training data and all the generated images your users generate via our [Python](../build/shadow-drive/sdk-python.md) SDK. Or maybe you just want to store your historical geyser plugin output and state, and any relevant program accounts and transactions. If you are building an application in need of back-end storage, secondary storage, or client-facing storage option then our robust [Javascript SDK](../build/shadow-drive/sdk-javascript.md) has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
 * Compute
   * Application Building _(future release)_
     * Delivery on-chain data to front-end business applications with speed and reliability.
@@ -97,9 +97,9 @@ Decentralized Ledger Technology should be thought of as a superset of technologi
   * Enterprise VMs _(future release)_
     * White-glove handling of bare metal and virtual provisioning for specialized distributed ledger technology implementations.
 
-[**Start Building on Shadow Drive!**](../build/shadow-drive/)
+[**Start Building on ShdwDrive!**](../build/shadow-drive/)
 
-[**See what others are building on Shadow Drive!**](broken-reference)
+[**See what others are building on ShdwDrive!**](broken-reference)
 
 ## **Shadow Operators**
 

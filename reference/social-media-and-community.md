@@ -8,6 +8,6 @@
 
 {% embed url="https://discord.gg/genesysgo" %}
 
-## The Official Shadow Drive Telegram
+## The Official ShdwDrive Telegram
 
 {% embed url="https://t.me/shadowdriveecosystem" %}

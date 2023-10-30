@@ -1,8 +1,8 @@
 ---
-description: The topics in this section help you get started using Shadow Drive
+description: The topics in this section help you get started using ShdwDrive
 ---
 
-# Install Shadow Drive
+# Install ShdwDrive
 
 ## **Getting Started**
 
@@ -16,16 +16,16 @@ npm install -g @shadow-drive/cli
 
 ## **Next steps**
 
-* After you install Shadow Drive, learn how to use the [CLI client](the-cli.md).
+* After you install ShdwDrive, learn how to use the [CLI client](the-cli.md).
 * If you prefer, here is a step by step [video walkthrough](https://www.youtube.com/watch?v=MfSuzFDDQ30).
-* Further streamline your integrations with Shadow Drive using the [SDK](the-sdk.md) and [API](./).
+* Further streamline your integrations with ShdwDrive using the [SDK](the-sdk.md) and [API](./).
 
 ## **Get Support**
 
 * Review the [FAQ](support-and-faq.md)
 * Visit us in [Discord](https://discord.gg/genesysgo) for support and feedback!
 * Submit your project to the [Shadow Ecosystem](broken-reference) page so we can highlight your amazing work!
-* Check the [Network Status](http://184.154.66.109:8080/) of the Shadow Drive network.
+* Check the [Network Status](http://184.154.66.109:8080/) of the ShdwDrive network.
 
 ## **Submitting Bugs**
 
@@ -42,6 +42,6 @@ We adhere to a responsible disclosure process for security related issues. To en
 
 While we strongly encourage the use of this repository for bug reports and security issues, you may also reach out to us via our [**Discord**](https://discord.gg/genesysgo) server. Join the #shdw-drive-technical-support channel for assistance. However, please note that we will redirect you to submit the bug report through this GitHub repository for proper handling and tracking.
 
-## **Discover benefits and use cases of Shadow Drive:**
+## **Discover benefits and use cases of ShdwDrive:**
 
-### [**Learn more**](../../learn/storage-services/#why-use-shadow-drive) about why Shadow Drive is growing so quickly and what makes it a strong product market fit.
+### [**Learn more**](../../learn/storage-services/#why-use-shadow-drive) about why ShdwDrive is growing so quickly and what makes it a strong product market fit.

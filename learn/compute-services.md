@@ -14,8 +14,8 @@ This proof-of-concept technology is currently under development for future deplo
 
 [**Check out the Shadow VMs Demo from Breakpoint**](compute-services.md)
 
-### **The Mobile implementation of D.A.G.G.E.R. + Shadow Drive v2**
+### **The Mobile implementation of D.A.G.G.E.R. + ShdwDrive v2**
 
-With our recent success in recompiling _D.A.G.G.E.R._ on the Solana Saga mobile platform, our roadmap now includes the deployment of _D.A.G.G.E.R._ to mobile devices, which will bring fast Layer-2 finality across mobile peers and deeper integration with Shadow Drive + Solana Mobile for our builders.
+With our recent success in recompiling _D.A.G.G.E.R._ on the Solana Saga mobile platform, our roadmap now includes the deployment of _D.A.G.G.E.R._ to mobile devices, which will bring fast Layer-2 finality across mobile peers and deeper integration with ShdwDrive + Solana Mobile for our builders.
 
 By leveraging the power of mobile resources spread across the globe, the convergence of _D.A.G.G.E.R._ technology with the Shadow Platform will position us well for emerging trends such as "data-as-code," AI-edge apps, and the monetization of idle latent resources by mobile users. This will enable us to stay ahead of the curve and provide our users with cutting-edge technology for their building needs. This project remains in very early stage development and a release date has yet to be determined.

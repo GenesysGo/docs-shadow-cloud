@@ -35,13 +35,13 @@ We'd recommend trying a more premium RPC provider like [Helius](https://www.heli
 
 If creating a storage account is failing, make sure that you have appropriate amounts of both SOL and SHDW in your wallet. Creating a storage account requires a small amount of SOL to cover the transaction fee, as well as some SHDW to cover the initial storage allocation. Make sure that your wallet has enough funds to cover these requirements. Review the docs here: https://docs.shadow.cloud/build/the-cli#create-a-storage-account
 
-If you have the correct amount of SOL and SHDW in your wallet but creating a storage account is still failing, there may be other factors at play that are causing the issue. Some possible causes could be network connectivity issues, problems with the Shadow Drive node, or bugs/issues with the SDK.
+If you have the correct amount of SOL and SHDW in your wallet but creating a storage account is still failing, there may be other factors at play that are causing the issue. Some possible causes could be network connectivity issues, problems with the ShdwDrive node, or bugs/issues with the SDK.
 
 To troubleshoot the issue, you can try the following:
 
-* Verify that the [Shadow Drive network](https://status.genesysgo.net/) is up and running. https://status.genesysgo.net/
-* Check the Shadow Drive [Change Log](../../reference/change-logs.md) for any known issues or bugs that may be causing the problem. https://docs.shadow.cloud/reference/change-logs
-* Contact Shadow Drive [support](https://discord.gg/genesysgo) for further assistance. https://discord.gg/genesysgo
+* Verify that the [ShdwDrive network](https://status.genesysgo.net/) is up and running. https://status.genesysgo.net/
+* Check the ShdwDrive [Change Log](../../reference/change-logs.md) for any known issues or bugs that may be causing the problem. https://docs.shadow.cloud/reference/change-logs
+* Contact ShdwDrive [support](https://discord.gg/genesysgo) for further assistance. https://discord.gg/genesysgo
 
 </details>
 
@@ -78,11 +78,11 @@ There's ongoing development to increase the maximum file size.
 
 If you think there is an issue with how you're implementing the wallet, or your transactions are not working, you can try upgrading the wallet adapters. Check the Solana wallet adapter repositories for their examples, as the process for importing the adapters may have changed.
 
-Additionally, you can refer to the Shadow Drive documentation and SDK for more information on how to properly implement the wallet and perform transactions. You can review the example here: https://docs.shadow.cloud/build/the-sdk/sdk-javascript#example-post-request-via-sdk-make-immutable
+Additionally, you can refer to the ShdwDrive documentation and SDK for more information on how to properly implement the wallet and perform transactions. You can review the example here: https://docs.shadow.cloud/build/the-sdk/sdk-javascript#example-post-request-via-sdk-make-immutable
 
 If you are using react to build a wallet using `const drive = await new ShdwDrive(connection, wallet).init();` and getting the error "Cannot read properties of undefined (reading 'toBytes')" then remember to make sure you must pass the entire wallet around and make sure to not deconstruct it.
 
-If you're still having issues, contact Shadow Drive support for further assistance.
+If you're still having issues, contact ShdwDrive support for further assistance.
 
 </details>
 
@@ -90,15 +90,15 @@ If you're still having issues, contact Shadow Drive support for further assistan
 
 <summary>I can create a storage account using the phantom wallet through CLI, but when I try from the SDK in my app the transaction fails saying insufficient balance. Why is this?</summary>
 
-For the purposes of utilizing the Shadow Drive, \~0.1 SOL in our experience will avoid insufficient balance errors. You can also examine the TXs to see if there's any differences in your spend when using the CLI versus the SDK methods.
+For the purposes of utilizing the ShdwDrive, \~0.1 SOL in our experience will avoid insufficient balance errors. You can also examine the TXs to see if there's any differences in your spend when using the CLI versus the SDK methods.
 
 </details>
 
 <details>
 
-<summary>Does Shadow Drive support Ledger wallet signing?</summary>
+<summary>Does ShdwDrive support Ledger wallet signing?</summary>
 
-No, Shadow Drive does not currently support Ledger wallet signing. The reason we are currently unable to provide Ledger support is due to the absence of the message signing feature in the Solana app for Ledger, as our system relies on this functionality.
+No, ShdwDrive does not currently support Ledger wallet signing. The reason we are currently unable to provide Ledger support is due to the absence of the message signing feature in the Solana app for Ledger, as our system relies on this functionality.
 
 To expedite the implementation of Ledger support, kindly consider drawing attention to this GitHub issue by leaving a comment: https://github.com/solana-labs/wallet-adapter/pull/712
 
@@ -108,7 +108,7 @@ To expedite the implementation of Ledger support, kindly consider drawing attent
 
 <summary>Are accounts returned in any specific order when calling the `getStorageAccounts` method?</summary>
 
-Yes, accounts are returned in the order they are created when calling the `getStorageAccounts` method in GenesysGo Shadow Drive. This is because the system was designed and built in such a way to ensure that the accounts are returned in the order they were created. https://docs.shadow.cloud/build/the-sdk/sdk-javascript#getstorageaccounts
+Yes, accounts are returned in the order they are created when calling the `getStorageAccounts` method in GenesysGo ShdwDrive. This is because the system was designed and built in such a way to ensure that the accounts are returned in the order they were created. https://docs.shadow.cloud/build/the-sdk/sdk-javascript#getstorageaccounts
 
 </details>
 
@@ -124,7 +124,7 @@ Currently, it is not possible to delete multiple files at once. However, we have
 
 <summary>Is there a reason why `edit-file` works differently from `upload-file` when generating upload hashes server side?</summary>
 
-The `edit-file` functionality works differently from `upload-file` because it is a remnant of the first iteration of Shadow Drive where every file had an associated account on-chain with some metadata that was crucial for tracking. However, we've made some changes that aren't documented yet and aren't implemented in the SDKs. If you add `overwrite: true` to the request body of an upload request that you make manually instead of through the SDK, it will do the same thing as editing a file.
+The `edit-file` functionality works differently from `upload-file` because it is a remnant of the first iteration of ShdwDrive where every file had an associated account on-chain with some metadata that was crucial for tracking. However, we've made some changes that aren't documented yet and aren't implemented in the SDKs. If you add `overwrite: true` to the request body of an upload request that you make manually instead of through the SDK, it will do the same thing as editing a file.
 
 </details>
 
@@ -132,7 +132,7 @@ The `edit-file` functionality works differently from `upload-file` because it is
 
 <summary>Is it possible to ask the user to sign a Shadow transaction and another transaction at the same time on the frontend?</summary>
 
-Currently, it is not possible to ask the user to sign a Shadow transaction and another transaction at the same time on the frontend. The Shadow network only allows shadow drive-specific transactions to have instructions related to the shadow drive on chain program. Any other instructions will cause the transaction to fail. This security feature is in place to prevent malicious transactions.
+Currently, it is not possible to ask the user to sign a Shadow transaction and another transaction at the same time on the frontend. The Shadow network only allows ShdwDrive-specific transactions to have instructions related to the ShdwDrive on chain program. Any other instructions will cause the transaction to fail. This security feature is in place to prevent malicious transactions.
 
 </details>
 
@@ -140,7 +140,7 @@ Currently, it is not possible to ask the user to sign a Shadow transaction and a
 
 <summary>I'm trying to create a File object on my React app to upload it to Shadow but I keep getting an error.</summary>
 
-The error you're getting may be due to the Shadow Drive instance being created before the wallet-provider is ready. In the latest example on the main branch, there is a slight change in the useEffect that creates the drive instance which may resolve your issue. Additionally, make sure that the file data buffer is converted to a Blob using `new Blob([Buffer.from("data")])`.
+The error you're getting may be due to the ShdwDrive instance being created before the wallet-provider is ready. In the latest example on the main branch, there is a slight change in the useEffect that creates the drive instance which may resolve your issue. Additionally, make sure that the file data buffer is converted to a Blob using `new Blob([Buffer.from("data")])`.
 
 </details>
 
@@ -222,7 +222,7 @@ No, the SDK requires internet access to send http requests. This is not allowed 
 
 <summary>Is it possible for a user to sign a Shadow transaction and another unrelated transaction at the same time?</summary>
 
-Currently, the Shadow network only allows Shadow Drive-specific transactions to include instructions related to the Shadow Drive on-chain program. Any other instructions will cause the transaction to fail as a security measure. This means that it is not possible for a user to sign a Shadow transaction and another unrelated transaction at the same time.
+Currently, the Shadow network only allows ShdwDrive-specific transactions to include instructions related to the ShdwDrive on-chain program. Any other instructions will cause the transaction to fail as a security measure. This means that it is not possible for a user to sign a Shadow transaction and another unrelated transaction at the same time.
 
 </details>
 
@@ -242,9 +242,9 @@ If your 400 error is stating "Invalid transaction supplied" then you may need to
 
 <details>
 
-<summary>What should I do if I encounter an ENOTFOUND error when using the Shadow Drive CLI?</summary>
+<summary>What should I do if I encounter an ENOTFOUND error when using the ShdwDrive CLI?</summary>
 
-If you encounter an ENOTFOUND error when using the Shadow Drive CLI, it is likely a local DNS issue on your side. ENOTFOUND is a DNS resolver problem, which means you will need to check with your Internet Service Provider (ISP) to resolve the issue. Alternatively, you can try using a Virtual Private Network (VPN) to see if that resolves the issue.
+If you encounter an ENOTFOUND error when using the ShdwDrive CLI, it is likely a local DNS issue on your side. ENOTFOUND is a DNS resolver problem, which means you will need to check with your Internet Service Provider (ISP) to resolve the issue. Alternatively, you can try using a Virtual Private Network (VPN) to see if that resolves the issue.
 
 </details>
 
@@ -258,9 +258,9 @@ You can try setting --log-level debug with your command that is getting an error
 
 <details>
 
-<summary>What does "Internal Server Error" mean when calling the Shadow Drive API?</summary>
+<summary>What does "Internal Server Error" mean when calling the ShdwDrive API?</summary>
 
-There are a few reasons for this error but the most common is the file that have not migrated from the original version 1 format storage account to the newer version 2 format. For users that have created legacy style Shadow Drive accounts, please finish the migration steps.
+There are a few reasons for this error but the most common is the file that have not migrated from the original version 1 format storage account to the newer version 2 format. For users that have created legacy style ShdwDrive accounts, please finish the migration steps.
 
 For additional help please reach out to to us in Discord (https://discord.gg/genesysgo).
 
@@ -337,17 +337,17 @@ We welcome any feedback and examples you can provide to our documentation. You c
 
 <details>
 
-<summary>What makes Shadow Drive unique?</summary>
+<summary>What makes ShdwDrive unique?</summary>
 
-Shadow Drive is a commodity cloud network that offers multiple service options, leveraging distributed ledger technology, and offering vertically integrated, L1-specific storage and compute. It is the only cloud network designed to democratize the earnings of traditional cloud platforms without sacrificing performance. Being S3-compatible, Shadow Drive maintains an open-source SDK and interoperability standards that make it easy to access through popular builder tools and SDKs. Its objective is to support popular tools that make building easier, regardless of the application you are building.
+ShdwDrive is a commodity cloud network that offers multiple service options, leveraging distributed ledger technology, and offering vertically integrated, L1-specific storage and compute. It is the only cloud network designed to democratize the earnings of traditional cloud platforms without sacrificing performance. Being S3-compatible, ShdwDrive maintains an open-source SDK and interoperability standards that make it easy to access through popular builder tools and SDKs. Its objective is to support popular tools that make building easier, regardless of the application you are building.
 
 </details>
 
 <details>
 
-<summary>How does Shadow Drive ensure data privacy and security?</summary>
+<summary>How does ShdwDrive ensure data privacy and security?</summary>
 
-Shadow Drive ensures data privacy and security by encrypting and erasure coding the data, and then algorithmically distributing the fragments across the distributed network. This is done trustlessly via smart contracts and requires signed Solana transactions, creating a publicly verifiable on-chain log. Additionally, Shadow Drive provides developers with the tools they need to comply with GDPR and can show records that prove that they have deleted a user's personal data.
+ShdwDrive ensures data privacy and security by encrypting and erasure coding the data, and then algorithmically distributing the fragments across the distributed network. This is done trustlessly via smart contracts and requires signed Solana transactions, creating a publicly verifiable on-chain log. Additionally, ShdwDrive provides developers with the tools they need to comply with GDPR and can show records that prove that they have deleted a user's personal data.
 
 </details>
 
@@ -355,15 +355,15 @@ Shadow Drive ensures data privacy and security by encrypting and erasure coding 
 
 <summary>How is GDPR handled?</summary>
 
-Shadow Drive provides developers with tools to comply with GDPR and can provide records to prove the deletion of a user's personal data. All records for GDPR compliance are stored on-chain and have been verified by the Solana validator network. The data is then encrypted and algorithmically distributed across the network in triplicate. All transactions are signed and publicly verifiable on-chain.
+ShdwDrive provides developers with tools to comply with GDPR and can provide records to prove the deletion of a user's personal data. All records for GDPR compliance are stored on-chain and have been verified by the Solana validator network. The data is then encrypted and algorithmically distributed across the network in triplicate. All transactions are signed and publicly verifiable on-chain.
 
 </details>
 
 <details>
 
-<summary>Is Shadow Drive supported on mobile?</summary>
+<summary>Is ShdwDrive supported on mobile?</summary>
 
-Yes, Shadow Drive is supported on mobile through our ecosystem partners who are actively building on mobile. Please check out our Shadow Ecosystem page for more details. https://docs.shadow.cloud/build/community-mainted-uis
+Yes, ShdwDrive is supported on mobile through our ecosystem partners who are actively building on mobile. Please check out our Shadow Ecosystem page for more details. https://docs.shadow.cloud/build/community-mainted-uis
 
 Additionally, in the future, our _D.A.G.G.E.R._ distributed ledger technology will enable Solana Saga powered storage solutions for those seeking low cost decentralized mobile clouds. Please check out the Learn section for more information. You can read more here: https://docs.shadow.cloud/learn#compute
 
@@ -371,17 +371,17 @@ Additionally, in the future, our _D.A.G.G.E.R._ distributed ledger technology wi
 
 <details>
 
-<summary>Is Shadow Drive S3-compatible?</summary>
+<summary>Is ShdwDrive S3-compatible?</summary>
 
-Yes, Shadow Drive is S3-compatible. S3-compatibility is a widely adopted standard in the cloud storage industry, and many providers offer S3-compatible APIs and protocols, which gives builders greater flexibility in choosing a cloud storage provider. This means developers can easily move data between different services without worrying about compatibility issues. Additionally, S3-compatibility offers robust APIs that enable fast and reliable query, along with virtual mount capability, making it important for Web2, Web3, and the frontiers of distributed ledger tech and AI. Shadow Drive aims to empower developers to integrate it directly into their builds, and to support the talented community of designers who will create innovative platforms for Shadow Drive. You can read more here: https://docs.shadow.cloud/learn/design#s3-compatibility
+Yes, ShdwDrive is S3-compatible. S3-compatibility is a widely adopted standard in the cloud storage industry, and many providers offer S3-compatible APIs and protocols, which gives builders greater flexibility in choosing a cloud storage provider. This means developers can easily move data between different services without worrying about compatibility issues. Additionally, S3-compatibility offers robust APIs that enable fast and reliable query, along with virtual mount capability, making it important for Web2, Web3, and the frontiers of distributed ledger tech and AI. ShdwDrive aims to empower developers to integrate it directly into their builds, and to support the talented community of designers who will create innovative platforms for ShdwDrive. You can read more here: https://docs.shadow.cloud/learn/design#s3-compatibility
 
 </details>
 
 <details>
 
-<summary>What physical infrastructure powers Shadow Drive?</summary>
+<summary>What physical infrastructure powers ShdwDrive?</summary>
 
-Shadow Drive runs on a global network of bare metal infrastructure, with all compute and storage existing on bare metal. There is no dependency on cloud providers for Shadow Drive operations. For more details on the design of Shadow Drive, please see the "Design" section under the "Learn" category: https://docs.shadow.cloud/learn/design
+ShdwDrive runs on a global network of bare metal infrastructure, with all compute and storage existing on bare metal. There is no dependency on cloud providers for ShdwDrive operations. For more details on the design of ShdwDrive, please see the "Design" section under the "Learn" category: https://docs.shadow.cloud/learn/design
 
 </details>
 
@@ -395,12 +395,12 @@ GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator
 
 <details>
 
-<summary>Can I advertise my project if I use D.A.G.G.E.R./Shadow Drive?</summary>
+<summary>Can I advertise my project if I use D.A.G.G.E.R./ShdwDrive?</summary>
 
-Yes, the Shadow Drive team would love to hear about your project if you are building on top of the Drive or using _D.A.G.G.E.R_. The best way to gain visibility is to submit a PR directly to the docs-shadow-cloud repo adding your project/business, details, and image to the Shadow Ecosystem list: https://github.com/GenesysGo/docs-shadow-cloud
+Yes, the ShdwDrive team would love to hear about your project if you are building on top of the Drive or using _D.A.G.G.E.R_. The best way to gain visibility is to submit a PR directly to the docs-shadow-cloud repo adding your project/business, details, and image to the Shadow Ecosystem list: https://github.com/GenesysGo/docs-shadow-cloud
 
 Submit a PR to edit the file located here: https://github.com/GenesysGo/docs-shadow-cloud/blob/main/build/shadow-drive/community-mainted-uis.md
 
-You can also share your work in the [Shadow Drive Discord](https://discord.com/invite/genesysgo). We will soon release an automated process to be added to the Shadow Ecosystem page.
+You can also share your work in the [ShdwDrive Discord](https://discord.com/invite/genesysgo). We will soon release an automated process to be added to the Shadow Ecosystem page.
 
 </details>

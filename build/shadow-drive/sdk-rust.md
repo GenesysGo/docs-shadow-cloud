@@ -43,12 +43,12 @@ Or add the following line to your Cargo.toml\
 
 **You can find more examples on our** [**Github**](https://github.com/GenesysGo/shadow-drive-rust/blob/main/sdk/examples/end\_to\_end.rs)
 
-### **Example -** Upload Multiple Files to Shadow Drive Using Rust
+### **Example -** Upload Multiple Files to ShdwDrive Using Rust
 
-This Rust code example demonstrates how to upload multiple files to a Shadow Drive using the `shadow_drive_rust` library. It initializes a tracing subscriber, reads a keypair from a file, creates a Shadow Drive client, derives the storage account public key, reads files from a directory, creates a vector of `ShadowFile` structs for upload, and finally uploads the files to the Shadow Drive.
+This Rust code example demonstrates how to upload multiple files to a ShdwDrive using the `shadow_drive_rust` library. It initializes a tracing subscriber, reads a keypair from a file, creates a ShdwDrive client, derives the storage account public key, reads files from a directory, creates a vector of `ShadowFile` structs for upload, and finally uploads the files to the ShdwDrive.
 
 ```rust
-// Example - Upload Multiple Files to Shadow Drive Using Rust
+// Example - Upload Multiple Files to ShdwDrive Using Rust
 // Initialize the tracing.rs subscriber with environment filter
 tracing_subscriber::fmt()
     .with_env_filter("off,shadow_drive_rust=debug")
@@ -93,7 +93,7 @@ files.push(ShadowFile::bytes(
     &b"this is a buf test"[..],
 ));
 
-// Upload the files to the Shadow Drive using the storage_account_key
+// Upload the files to the ShdwDrive using the storage_account_key
 let upload_results = shdw_drive_client
     .upload_multiple_files(&storage_account_key, files)
     .await
@@ -167,7 +167,7 @@ let add_immutable_storage_response = shdw_drive_client
 
 #### **Definition**
 
-Unmarks a StorageAccount for deletion from the Shadow Drive. To prevent deletion, this method must be called before the end of the Solana epoch in which `delete_storage_account` is called.
+Unmarks a StorageAccount for deletion from the ShdwDrive. To prevent deletion, this method must be called before the end of the Solana epoch in which `delete_storage_account` is called.
 
 #### **Parameters**
 
@@ -219,7 +219,7 @@ let claim_stake_response = shdw_drive_client
 
 #### **Definition**
 
-Creates a `StorageAccount` on the Shadow Drive. `StorageAccount`s can hold multiple files and are paid for using the SHDW token.
+Creates a `StorageAccount` on the ShdwDrive. `StorageAccount`s can hold multiple files and are paid for using the SHDW token.
 
 #### **Parameters**
 
@@ -271,12 +271,12 @@ async fn main() {
 
 #### **Definition**
 
-Marks a file for deletion from the Shadow Drive. Files marked for deletion are deleted at the end of each Solana epoch. Marking a file for deletion can be undone with cancel\_delete\_file, but this must be done before the end of the Solana epoch.
+Marks a file for deletion from the ShdwDrive. Files marked for deletion are deleted at the end of each Solana epoch. Marking a file for deletion can be undone with cancel\_delete\_file, but this must be done before the end of the Solana epoch.
 
 #### **Parameters**
 
 * `storage_account_key` - The public key of the `StorageAccount` that contains the file.
-* `url` - The Shadow Drive url of the file you want to mark for deletion.
+* `url` - The ShdwDrive url of the file you want to mark for deletion.
 
 #### **Example of `delete_file`**
 
@@ -289,7 +289,7 @@ let delete_file_response = shdw_drive_client
 An example use case for this method can be found in the same [github repository](https://github.com/phantom-labs/shadow\_sdk/blob/master/examples/end\_to\_end.rs)
 
 ```rust
-// Rust SDK example of marking a file for deletion from Shadow Drive using delete_file
+// Rust SDK example of marking a file for deletion from ShdwDrive using delete_file
 async fn main() {
     // Get keypair
     let keypair_file: String = std::env::args()
@@ -356,7 +356,7 @@ async fn main() {
 
 #### **Definition**
 
-This function marks a StorageAccount for deletion from the Shadow Drive. If an account is marked for deletion, all files within the account will be deleted as well. Any stake remaining in the StorageAccount will be refunded to the creator. Accounts marked for deletion are deleted at the end of each Solana epoch.
+This function marks a StorageAccount for deletion from the ShdwDrive. If an account is marked for deletion, all files within the account will be deleted as well. Any stake remaining in the StorageAccount will be refunded to the creator. Accounts marked for deletion are deleted at the end of each Solana epoch.
 
 #### **Parameters**
 
@@ -380,12 +380,12 @@ An example use case for this method can be found in the same [github repository]
 
 #### **Definition**
 
-Replace an existing file on the Shadow Drive with the given updated file.
+Replace an existing file on the ShdwDrive with the given updated file.
 
 #### **Parameters**
 
 * `storage_account_key` - The public key of the `StorageAccount` that contains the file.
-* `url` - The Shadow Drive url of the file you want to replace.
+* `url` - The ShdwDrive url of the file you want to replace.
 * `data` - The updated `ShadowFile`.
 
 #### **Example of `edit_file`**
@@ -770,7 +770,7 @@ let shdw_drive = ShadowDriveClient::new_with_rpc(wallet, solana_rpc);
 
 #### **Definition**
 
-Reclaims the Solana rent from any on-chain file accounts. Older versions of the Shadow Drive used to create accounts for uploaded files.
+Reclaims the Solana rent from any on-chain file accounts. Older versions of the ShdwDrive used to create accounts for uploaded files.
 
 #### **Parameters**
 
@@ -917,7 +917,7 @@ let refresh_stake = shdw_drive_client
 }
 ```
 
-### **Example -** Shadow Drive Client: Creating and Managing Storage Accounts using Rust
+### **Example -** ShdwDrive Client: Creating and Managing Storage Accounts using Rust
 
 ```rust
 use byte_unit::Byte;
@@ -932,7 +932,7 @@ use std::str::FromStr;
 
 const KEYPAIR_PATH: &str = "/Users/dboures/.config/solana/id.json";
 
-// Main function demonstrating the usage of Shadow Drive Rust client
+// Main function demonstrating the usage of ShdwDrive Rust client
 #[tokio::main]
 async fn main() {
     //load keypair from file
@@ -1530,7 +1530,7 @@ use tokio_stream::StreamExt;
 
 const KEYPAIR_PATH: &str = "keypair.json";
 
-// Main function for uploading multiple files to a Shadow Drive storage account
+// Main function for uploading multiple files to a ShdwDrive storage account
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt()
@@ -1543,7 +1543,7 @@ async fn main() {
     let (storage_account_key, _) =
         shadow_drive_rust::derived_addresses::storage_account(&pubkey, 21);
 
-    //create shadow drive client
+    //create ShdwDrive client
     let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
 
     //ensure storage account exists

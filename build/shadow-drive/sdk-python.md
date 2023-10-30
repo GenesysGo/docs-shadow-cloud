@@ -5,7 +5,7 @@
 * [**Github**](sdk-python.md#about-the-github-repo)
 * [**Methods**](sdk-python.md#methods)
 
-## **Installing Shadow Drive**
+## **Installing ShdwDrive**
 
 `pip install shadow-drive`
 
@@ -63,7 +63,7 @@ print("Closed account")
 
 #### **About the** [**Github Repo**](https://github.com/GenesysGo/shadow-drive-rust/tree/main/py)
 
-This package uses PyO3 to build a wrapper around the official Shadow Drive Rust SDK. For more information, see the [Rust SDK documentation](https://github.com/GenesysGo/shadow-drive-rust/tree/main/sdk).
+This package uses PyO3 to build a wrapper around the official ShdwDrive Rust SDK. For more information, see the [Rust SDK documentation](https://github.com/GenesysGo/shadow-drive-rust/tree/main/sdk).
 
 #### **Methods**
 

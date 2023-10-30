@@ -2,7 +2,7 @@
 
 ## **Contents**
 
-* [**Install Shadow Drive CLI**](the-cli.md#install-the-shadow-drive-cli)
+* [**Install ShdwDrive CLI**](the-cli.md#install-the-shadow-drive-cli)
   * [**Video Walkthrough**](the-cli.md#video-guide-and-walkthrough)
   * [**Install Solana CLI**](the-cli.md#install-the-solana-cli)
   * [**Create a Storage Account**](the-cli.md#create-a-storage-account)
@@ -17,9 +17,9 @@
 
 ## **Introduction**
 
-The CLI is the easiest way to interact with Shadow Drive. You can use your favorite shell scripting language, or just type the commands one at a time. For test driving Shadow Drive, this is the best way to get started.
+The CLI is the easiest way to interact with ShdwDrive. You can use your favorite shell scripting language, or just type the commands one at a time. For test driving ShdwDrive, this is the best way to get started.
 
-## **Install the Shadow Drive CLI**
+## **Install the ShdwDrive CLI**
 
 Prerequisites: Install [NodeJS LTS 16.17.1](https://nodejs.org/en/download/) on any OS.
 
@@ -33,9 +33,9 @@ npm install -g @shadow-drive/cli
 
 ### **Install the Solana CLI**
 
-In order to interact with Shadow Drive, we're going to need a Solana wallet and CLI to interact with the Solana blockchain.
+In order to interact with ShdwDrive, we're going to need a Solana wallet and CLI to interact with the Solana blockchain.
 
-_NOTE: The Shadow Drive CLI uses it's own RPC configuration. It does not use your Solana environment configuration._
+_NOTE: The ShdwDrive CLI uses it's own RPC configuration. It does not use your Solana environment configuration._
 
 Check [HERE for the latest version](https://docs.solana.com/cli/install-solana-cli-tools).
 
@@ -51,7 +51,7 @@ export PATH="/home/sol/.local/share/solana/install/active_release/bin:$PATH"
 
 ### **Create a Keypair file**
 
-We need to have a keypair in .json format to use the Shadow Drive CLI. This is going to be the wallet that owns the storage account. If you want, you can convert your browser wallet into a .json file by exporting the private keys. Solflare by default exports it in a .json format (it looks like a standard array of integers, \[1,2,3,4...]. Phantom, however, needs some help and [we have just the tool to do that](https://gist.github.com/tracy-codes/f17e7ed8acfdd1be442f632f5b80763c).
+We need to have a keypair in .json format to use the ShdwDrive CLI. This is going to be the wallet that owns the storage account. If you want, you can convert your browser wallet into a .json file by exporting the private keys. Solflare by default exports it in a .json format (it looks like a standard array of integers, \[1,2,3,4...]. Phantom, however, needs some help and [we have just the tool to do that](https://gist.github.com/tracy-codes/f17e7ed8acfdd1be442f632f5b80763c).
 
 If you want to create a new wallet, just use
 
@@ -65,7 +65,7 @@ You will see it write a new keypair file and it was display the `pubkey` which i
 
 #### **Context-Sensitive Help**
 
-Shadow Drive CLI comes with integrated help. All shadow drive commands begin with `shdw-drive`.
+ShdwDrive CLI comes with integrated help. All ShdwDrive commands begin with `shdw-drive`.
 
 ```
 shdw-drive help
@@ -103,7 +103,7 @@ This is one of the few commands where you will need [SHDW](https://docs.shadow.c
 shdw-drive create-storage-account -kp ~/shdw-keypair.json -n "pony storage drive" -s 1GB
 ```
 
-### **Upload File to Shadow Drive**
+### **Upload File to ShdwDrive**
 
 There are only two required options for this command:
 
@@ -127,7 +127,7 @@ If you have multiple storage accounts it will present you with a list of owned s
 shdw-drive upload-file -kp ~/shdw-keypair.json -f ~/AccountHolders.csv
 ```
 
-### **Upload Multiple Files to Shadow Drive**
+### **Upload Multiple Files to ShdwDrive**
 
 A more realistic use case is to upload an entire directory of, say, NFT images and metadata. It's basically the same thing, except we point the command to a directory.
 
@@ -171,7 +171,7 @@ There are three requirements for this command:
 
 `-u, --url`
 
-* Shadow Drive URL of the file you are requesting to delete
+* ShdwDrive URL of the file you are requesting to delete
 
 **Example:**
 
@@ -190,7 +190,7 @@ There are two requirements and there aren't any options outside of the standard 
 * Path to the keypair file for the wallet that owns the storage account and file
 
 `-u, --url`\
-Shadow Drive URL of the file you are requesting to delete
+ShdwDrive URL of the file you are requesting to delete
 
 **Example:**
 
@@ -252,7 +252,7 @@ shdw-drive claim-stake -kp ~/shdw-keypair.json
 
 ### **Delete a Storage Account**
 
-You can entirely remove a storage account from Shadow Drive. Upon completion, your [SHDW](https://docs.shadow.cloud/reference/shdw-token) tokens will be returned to the wallet.
+You can entirely remove a storage account from ShdwDrive. Upon completion, your [SHDW](https://docs.shadow.cloud/reference/shdw-token) tokens will be returned to the wallet.
 
 _NOTE: You have a grace period upon deletion that lasts until the end of the current Solana epoch._ [_Go HERE to see_](https://explorer.solana.com/) _how much time is remaining in the current Solana epoch to know how much grace period you will get._
 
@@ -274,7 +274,7 @@ shdw-drive undelete-storage-account -kp ~/shdw-keypair.json
 
 ### **Make Storage Account Immutable**
 
-One of the most unique and useful features of Shadow Drive is that you can make your storage truly permanent. With immutable storage, no file that was uploaded to the account can ever be deleted or edited. They are solidified and permanent, as is the storage account itself. You can still continue to upload files to an immutable account, as well as add storage to an immutable account.
+One of the most unique and useful features of ShdwDrive is that you can make your storage truly permanent. With immutable storage, no file that was uploaded to the account can ever be deleted or edited. They are solidified and permanent, as is the storage account itself. You can still continue to upload files to an immutable account, as well as add storage to an immutable account.
 
 The only requirement is a keypair. You will be prompted to select a storage account when running the command.
 

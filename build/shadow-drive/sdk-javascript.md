@@ -51,7 +51,7 @@ Review the [Solana Web3.js](https://solana-labs.github.io/solana-web3.js/) SDK a
 
 #### **Instantiate the Wallet and Connection**
 
-Use the [Solana docs and examples here](https://github.com/solana-labs/wallet-adapter) if you need help. We're going to focus on Shadow Drive SDK in these docs, so if you need a primer on how to build a React site with Solana, we can refer you to other resources.
+Use the [Solana docs and examples here](https://github.com/solana-labs/wallet-adapter) if you need help. We're going to focus on ShdwDrive SDK in these docs, so if you need a primer on how to build a React site with Solana, we can refer you to other resources.
 
 Solana example code:
 
@@ -102,11 +102,11 @@ return (
 
 </details>
 
-#### **Building components for various Shadow Drive operations**
+#### **Building components for various ShdwDrive operations**
 
-Let's start by instantiating the Shadow Drive connection class object. This will have all Shadow Drive methods and it implements the signing wallet within the class for all transactions.
+Let's start by instantiating the ShdwDrive connection class object. This will have all ShdwDrive methods and it implements the signing wallet within the class for all transactions.
 
-At the simplest level, it is recommend for a React app to immediately try to load a connection to a user's Shadow Drives upon wallet connection. This can be done with the `useEffect` React hook.
+At the simplest level, it is recommend for a React app to immediately try to load a connection to a user's ShdwDrives upon wallet connection. This can be done with the `useEffect` React hook.
 
 ```javascript
 import React, { useEffect } from "react";
@@ -311,7 +311,7 @@ export default function Upload() {
                     setTxnSig(upload.transaction_signature);
                 }}
             >
-                <h1>Shadow Drive File Upload</h1>
+                <h1>ShdwDrive File Upload</h1>
                 <input
                     type="file"
                     onChange={(e) => setFile(e.target.files[0])}
@@ -579,7 +579,7 @@ const addStgResp = await drive.addStorage(acctPubKey,"10MB","v2"ca
 
 #### **Definition**
 
-Implementation of ShadowDrive.cancelDeleteStorageAccount defined in index.ts:135 This method is used to cancel a delete request for a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and the Shadow Drive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the undelete request.
+Implementation of ShadowDrive.cancelDeleteStorageAccount defined in index.ts:135 This method is used to cancel a delete request for a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and the ShdwDrive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the undelete request.
 
 #### **Parameters**
 
@@ -608,7 +608,7 @@ const acctPubKey = new anchor.web3.PublicKey(
     "EY8ZktbRmecPLfopBxJfNBGUPT1LMqZmDFVcWeMTGPcN"
 );
 
-// Call the "cancelDeleteStorageAccount" function of the Shadow Drive API, passing in the account public key object and a string indicating the storage account version to cancel deletion for
+// Call the "cancelDeleteStorageAccount" function of the ShdwDrive API, passing in the account public key object and a string indicating the storage account version to cancel deletion for
 const cancelDelStg = await drive.cancelDeleteStorageAccount(acctPubKey, "v2");
 ```
 {% endcode %}
@@ -702,12 +702,12 @@ console.log(newAcct);
 
 #### **Definition**
 
-This method is used to delete a file on ShadowDrive. It accepts a Public Key of your Storage Account, the Shadow Drive URL of the file you are requesting to delete and the ShadowDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the delete request.
+This method is used to delete a file on ShadowDrive. It accepts a Public Key of your Storage Account, the ShdwDrive URL of the file you are requesting to delete and the ShadowDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the delete request.
 
 #### **Parameters**
 
 * `key`: `PublicKey` - Publickey of Storage Account
-* `url`: `string` - Shadow Drive URL of the file you are requesting to delete.
+* `url`: `string` - ShdwDrive URL of the file you are requesting to delete.
 * `version`: \`ShadowDrive
 * Version\` - ShadowDrive version (v1 or v2)
 
@@ -760,7 +760,7 @@ console.log(delFile);
 
 #### **Definition**
 
-Implementation of ShadowDrive.deleteStorageAccount defined in index.ts:124 This method is used to delete a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and the Shadow Drive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the delete request.
+Implementation of ShadowDrive.deleteStorageAccount defined in index.ts:124 This method is used to delete a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and the ShdwDrive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the delete request.
 
 #### **Parameters**
 
@@ -1010,7 +1010,7 @@ console.log(listItems);
 
 #### **Definition**
 
-This method is used to make a Storage Account immutable on ShadowDrive. It accepts a Public Key of the Storage Account and the Shadow Drive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the makeStorageImmutable request.
+This method is used to make a Storage Account immutable on ShadowDrive. It accepts a Public Key of the Storage Account and the ShdwDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the makeStorageImmutable request.
 
 #### **Parameters**
 
@@ -1130,7 +1130,7 @@ const result = await drive.redeemRent(key, fileAccount);
 
 #### **Definition**
 
-This method is used to reduce the storage of a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account, the amount of storage you are requesting to reduce from your storage account, and the Shadow Drive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the reduce storage request.
+This method is used to reduce the storage of a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account, the amount of storage you are requesting to reduce from your storage account, and the ShdwDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the reduce storage request.
 
 #### **Parameters**
 
@@ -1347,7 +1347,7 @@ console.log(responses);
 {% code overflow="wrap" %}
 ```javascript
 // Javascript SDK example of the uploadMultipleFiles method
-// Create an instance of the Shadow Drive client
+// Create an instance of the ShdwDrive client
 const drive = new ShadowDrive();
 
 // Define the public key of the storage account where the files will be uploaded

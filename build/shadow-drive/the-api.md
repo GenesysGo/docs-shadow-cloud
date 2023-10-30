@@ -1,6 +1,6 @@
 ---
 description: >-
-  Shadow Drive exposes an API that you can interact directly without the need of
+  ShdwDrive exposes an API that you can interact directly without the need of
   the CLI or SDK. You may build on top of these methods.
 ---
 
@@ -35,7 +35,7 @@ Serialized create storage account transaction that's partially signed by the sto
 
 {% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="storage-account-info" %}
 {% swagger-description %}
-Gets on-chain and Shadow Drive Network data about a storage account
+Gets on-chain and ShdwDrive Network data about a storage account
 
 Request content type: application/json
 {% endswagger-description %}
@@ -229,7 +229,7 @@ URL of the file you want to get information for
 
 {% swagger-response status="200: OK" description="" %}
 ```
-JSON object of the file's metadata in the Shadow Drive Network or an error
+JSON object of the file's metadata in the ShdwDrive Network or an error
 ```
 {% endswagger-response %}
 {% endswagger %}
@@ -273,7 +273,7 @@ Request content type: application/json
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="transaction " required="true" %}
-Serialized add storage transaction that is partially signed by the shadow drive network
+Serialized add storage transaction that is partially signed by the ShdwDrive network
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
@@ -295,7 +295,7 @@ Request content type: application/json
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="transaction " required="true" %}
-Serialized reduce storage transaction that is partially signed by the shadow drive network
+Serialized reduce storage transaction that is partially signed by the ShdwDrive network
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
@@ -317,7 +317,7 @@ Request content type: application/json
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="transaction" required="false" %}
-Serialized make immutable transaction that is partially signed by the shadow drive network
+Serialized make immutable transaction that is partially signed by the ShdwDrive network
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
@@ -331,9 +331,9 @@ Serialized make immutable transaction that is partially signed by the shadow dri
 {% endswagger-response %}
 {% endswagger %}
 
-### **Example - Secure SIgn and Upload File** to Shadow Drive using API
+### **Example - Secure SIgn and Upload File** to ShdwDrive using API
 
-This example demonstrates how to securely upload files to the Shadow Drive using the provided API. It includes the process of hashing file names, creating a signed message, and sending the files along with the necessary information to the Shadow Drive endpoint.
+This example demonstrates how to securely upload files to the ShdwDrive using the provided API. It includes the process of hashing file names, creating a signed message, and sending the files along with the necessary information to the ShdwDrive endpoint.
 
 ```javascript
 import bs58 from 'bs58'
@@ -347,7 +347,7 @@ const hashSum = crypto.createHash("sha256")
 const hashedFileNames = hashSum.update(allFileNames.toString())
 const fileNamesHashed = hashSum.digest("hex")
 // `storageAccount` is the string representation of a storage account pubkey
-let msg = `Shadow Drive Signed Message:\nStorage Account: ${storageAccount}\nUpload files with hash: ${fileNamesHashed}`;
+let msg = `ShdwDrive Signed Message:\nStorage Account: ${storageAccount}\nUpload files with hash: ${fileNamesHashed}`;
 const fd = new FormData();
 // `files` is an array of each file passed in
 for (let j = 0; j < files.length; j++) {
@@ -357,12 +357,12 @@ for (let j = 0; j < files.length; j++) {
     });
 }
 // Expect the final message string to look something like this if you were to output it
-// Shadow Drive Signed Message:
+// ShdwDrive Signed Message:
 // Storage Acount: ABC123
 // Upload files with hash: hash1
 
 // If the message is not formatted like above exactly, it will fail message signature verification
-// on the Shadow Drive Network side.
+// on the ShdwDrive Network side.
 const encodedMessage = new TextEncoder().encode(message);
 // Uses https://github.com/dchest/tweetnacl-js to sign the message. If it's not signed in the same manor,
 // the message will fail signature verification on the Shadow Network side.
@@ -380,9 +380,9 @@ const request = await fetch(`${SHDW_DRIVE_ENDPOINT}/upload`, {
 });
 ```
 
-### **Example -** Editing a File in Shadow Drive using API and Message Signature Verification
+### **Example -** Editing a File in ShdwDrive using API and Message Signature Verification
 
-In this example, we demonstrate how to edit a file in Shadow Drive using the API and message signature verification. The code imports necessary libraries, constructs a message to be signed, encodes and signs the message, and sends an API request to edit the file on Shadow Drive.
+In this example, we demonstrate how to edit a file in ShdwDrive using the API and message signature verification. The code imports necessary libraries, constructs a message to be signed, encodes and signs the message, and sends an API request to edit the file on ShdwDrive.
 
 ```javascript
 import bs58 from 'bs58'
@@ -391,14 +391,14 @@ import nacl from 'tweetnacl'
 // `storageAccount` is the string representation of a storage account pubkey
 // `fileName` is the name of the file to be edited
 // `sha256Hash` is the sha256 hash of the new file's contents
-const message = `Shadow Drive Signed Message:\n StorageAccount: ${storageAccount}\nFile to edit: ${fileName}\nNew file hash: ${sha256Hash}`
+const message = `ShdwDrive Signed Message:\n StorageAccount: ${storageAccount}\nFile to edit: ${fileName}\nNew file hash: ${sha256Hash}`
 // Expect the final message string to look something like this if you were to output it
-// Shadow Drive Signed Message:
+// ShdwDrive Signed Message:
 // Storage Acount: ABC123
 // File to delete: https://shadow-drive.genesysgo.net/ABC123/file.png
 
 // If the message is not formatted like above exactly, it will fail message signature verification
-// on the Shadow Drive Network side.
+// on the ShdwDrive Network side.
 const encodedMessage = new TextEncoder().encode(message);
 // Uses https://github.com/dchest/tweetnacl-js to sign the message. If it's not signed in the same manor,
 // the message will fail signature verification on the Shadow Network side.
@@ -423,24 +423,24 @@ const uploadResponse = await fetch(`${SHDW_DRIVE_ENDPOINT}/edit`, {
 });
 ```
 
-### **Example -** Deleting a File from Shadow Drive using Signed Message and API
+### **Example -** Deleting a File from ShdwDrive using Signed Message and API
 
-In this example, we demonstrate how to delete a file from the Shadow Drive using a signed message and the Shadow Drive API. The code first constructs a message containing the storage account and the file URL to be deleted. It then encodes and signs the message using the tweetnacl library. The signed message is then converted to a bs58-encoded string. Finally, a POST request is sent to the Shadow Drive API endpoint to delete the file.
+In this example, we demonstrate how to delete a file from the ShdwDrive using a signed message and the ShdwDrive API. The code first constructs a message containing the storage account and the file URL to be deleted. It then encodes and signs the message using the tweetnacl library. The signed message is then converted to a bs58-encoded string. Finally, a POST request is sent to the ShdwDrive API endpoint to delete the file.
 
 ```javascript
 import bs58 from 'bs58'
 import nacl from 'tweetnacl'
 
 // `storageAccount` is the string representation of a storage account pubkey
-// `url` is the link to the shadow drive file, just like the previous implementation needed the url input
-const message = `Shadow Drive Signed Message:\nStorageAccount: ${storageAccount}\nFile to delete: ${url}`
+// `url` is the link to the ShdwDrive file, just like the previous implementation needed the url input
+const message = `ShdwDrive Signed Message:\nStorageAccount: ${storageAccount}\nFile to delete: ${url}`
 // Expect the final message string to look something like this if you were to output it
-// Shadow Drive Signed Message:
+// ShdwDrive Signed Message:
 // Storage Acount: ABC123
 // File to delete: https://shadow-drive.genesysgo.net/ABC123/file.png
 
 // If the message is not formatted like above exactly, it will fail message signature verification
-// on the Shadow Drive Network side.
+// on the ShdwDrive Network side.
 const encodedMessage = new TextEncoder().encode(message);
 // Uses https://github.com/dchest/tweetnacl-js to sign the message. If it's not signed in the same manor,
 // the message will fail signature verification on the Shadow Network side.
