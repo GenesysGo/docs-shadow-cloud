@@ -8,7 +8,7 @@
   * [On-Chain Proofs](learn/storage-services/on-chain-proofs.md)
   * [Smart Contracts](learn/storage-services/smart-contracts.md)
 * [Build](build/README.md)
-  * [Install Shdw Drive](build/shadow-drive/README.md)
+  * [Install ShdwDrive](build/shadow-drive/README.md)
   * [CLI](build/shadow-drive/the-cli.md)
   * [SDKs](build/shadow-drive/the-sdk.md)
     * [JavaScript](build/shadow-drive/sdk-javascript.md)
