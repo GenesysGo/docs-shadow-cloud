@@ -7,7 +7,6 @@
   * [Design](learn/storage-services/design.md)
   * [On-Chain Proofs](learn/storage-services/on-chain-proofs.md)
   * [Smart Contracts](learn/storage-services/smart-contracts.md)
-  * [Compute](learn/compute-services.md)
 * [Build](build/README.md)
   * [Install Shdw Drive](build/shadow-drive/README.md)
   * [CLI](build/shadow-drive/the-cli.md)
