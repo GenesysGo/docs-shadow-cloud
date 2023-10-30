@@ -10,7 +10,7 @@
 
 ## Consolidated Summary
 
-Shadow Cloud - Release S3 Compatible Gateway\
+ShdwDrive - Release S3 Compatible Gateway\
 August 29, 2023
 
 ShdwDrive\

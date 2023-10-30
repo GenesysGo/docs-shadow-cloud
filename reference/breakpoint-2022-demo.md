@@ -1,7 +1,6 @@
 ---
 description: >-
-  Take a look at how we use D.A.G.G.E.R. to trustelessly deploy a VM through the
-  Shadow Cloud portal.
+  Take a look at how we use D.A.G.G.E.R. to trustelessly deploy a VM..
 ---
 
 # Solana Breakpoint 2022 Demo
@@ -24,7 +23,7 @@ Now don't freak out if you don't have any SOL or USDC in your Devnet account. We
 Demo Deploying At BreakPoint
 {% endhint %}
 
-After connecting your wallet, you'll land on the dashboard page of the Shadow Cloud. See these two buttons at the top right? Click these to airdrop some SOL and USDC into your Devnet wallet. Don't get too carried away now; save some for the rest of us. Only take what you need.
+After connecting your wallet, you'll land on the dashboard page of the D.A.G.G.E.R. demo. See these two buttons at the top right? Click these to airdrop some SOL and USDC into your Devnet wallet. Don't get too carried away now; save some for the rest of us. Only take what you need.
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-11-01 at 1.13.12 PM.png" alt=""><figcaption></figcaption></figure>
 

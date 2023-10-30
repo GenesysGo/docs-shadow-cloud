@@ -1,14 +1,14 @@
 ---
 description: >-
   This consolidated resource is for anyone exploring and developing on top of
-  the Shadow Cloud platform.
+  the ShdwDrive platform.
 ---
 
 # GET STARTED
 
 <table data-view="cards"><thead><tr><th></th><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Learn</strong></td><td></td><td><a href="learn/">learn</a></td><td><a href=".gitbook/assets/Learn_Icon.png">Learn_Icon.png</a></td></tr><tr><td></td><td align="center"><strong>Build</strong></td><td></td><td><a href="build/">build</a></td><td><a href=".gitbook/assets/Build_Icon.png">Build_Icon.png</a></td></tr><tr><td></td><td align="center"><strong>Reference</strong></td><td></td><td><a href="reference/">reference</a></td><td><a href=".gitbook/assets/Reference_Icon.png">Reference_Icon.png</a></td></tr></tbody></table>
 
-### [Install Shadow Drive](build/)
+### [Install ShdwDrive](build/)
 
 ## How this resource is organized
 

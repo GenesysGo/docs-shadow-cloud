@@ -1,8 +1,8 @@
 ---
-description: A list of terms that relate to all thing Shadow!
+description: A list of terms that relate to all thing Shdw!
 ---
 
-# Shadow Glossary
+# Shdw Glossary
 
 **Asynchronous Byzantine Fault Tolerance (aBFT):** aBFT is a consensus algorithm used to provide fault tolerance for distributed systems within asynchronous networks. It is based on the Byzantine Fault Tolerance (BFT) algorithm and guarantees that, when properly configured and given tolerable network conditions, its consensus will eventually be reached — even when faults such as computer crashes, perfect cyber-attacks, or malicious manipulation have happened. aBFT is designed to be tolerant of malicious or faulty actors even when those actors make up more than one-third of the nodes inside the network.\
 \

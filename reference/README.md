@@ -1,10 +1,10 @@
 ---
-description: Shadow Cloud consolidated resources
+description: ShdwDrive consolidated resources
 ---
 
 # Reference
 
-## **Shadow Drive**
+## **Shdw Drive**
 
 [CLI](../build/shadow-drive/the-cli.md)
 
@@ -28,7 +28,7 @@ description: Shadow Cloud consolidated resources
 
 [Technical Support](https://discord.gg/genesysgo)
 
-[Shadow Glossary](shadow-glossary.md)
+[Shdw Glossary](shadow-glossary.md)
 
 ## **Social Media**
 
@@ -40,7 +40,7 @@ description: Shadow Cloud consolidated resources
 
 ## **Community**
 
-[Shadow Ecosystem](https://docs.shadow.cloud/build/community-mainted-uis)
+[Shdw Ecosystem](https://docs.shadow.cloud/build/community-mainted-uis)
 
 [Solana Breakpoint Demo 2022](breakpoint-2022-demo.md)
 

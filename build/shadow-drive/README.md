@@ -24,7 +24,7 @@ npm install -g @shadow-drive/cli
 
 * Review the [FAQ](support-and-faq.md)
 * Visit us in [Discord](https://discord.gg/genesysgo) for support and feedback!
-* Submit your project to the [Shadow Ecosystem](broken-reference) page so we can highlight your amazing work!
+* Submit your project to the [Shdw Ecosystem](broken-reference) page so we can highlight your amazing work!
 * Check the [Network Status](http://184.154.66.109:8080/) of the ShdwDrive network.
 
 ## **Submitting Bugs**
@@ -44,4 +44,4 @@ While we strongly encourage the use of this repository for bug reports and secur
 
 ## **Discover benefits and use cases of ShdwDrive:**
 
-### [**Learn more**](../../learn/storage-services/#why-use-shadow-drive) about why ShdwDrive is growing so quickly and what makes it a strong product market fit.
+### [**Learn more**](../../learn/storage-services/#why-use-Shdw-drive) about why ShdwDrive is growing so quickly and what makes it a strong product market fit.

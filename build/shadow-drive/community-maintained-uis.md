@@ -2,7 +2,7 @@
 description: Explore projects utilizing ShdwDrive
 ---
 
-# Shadow Ecosystem
+# Shdw Ecosystem
 
 **SYNX**
 
@@ -40,7 +40,7 @@ A new primitive on Solana. A novel way to summon off-chain data aka "runes" from
 
 [https://twitter.com/ShadowyPortal](https://twitter.com/ShadowyPortal)
 
-#### **AlphaBatem's Shadow UI**
+#### **AlphaBatem's Shdw UI**
 
 This tool provides a speedy way to interact with your ShdwDrive storage account, including handling the swap from SOL to SHDW.
 

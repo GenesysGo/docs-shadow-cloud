@@ -75,7 +75,7 @@ Of course, none of this is to suggest that Ceph is some kind of perfect solution
 
 At the core of any system engineering problem is the decision of which problems to tackle first. When we began our work on ShdwDrive v1.0, we knew that one of the most important questions we needed to answer was whether or not Solana was fast and cheap enough to handle on-chain proofs of storage for an enterprise-level database. This was a critical decision that required us to approach the problem from the very top of the network stack, where we interface with notoriously "experimental" layer-1 chains.
 
-Rather than spending months designing new erasure coding methods over a QUIC peer-to-peer protocol, which is something we have already accomplished at the bottom of the stack, we decided to focus on the higher-level issues first. This allowed us to more quickly discover how to best use Solana prior to investing significant resources in the bottom-up design of the Shadow Storage network.
+Rather than spending months designing new erasure coding methods over a QUIC peer-to-peer protocol, which is something we have already accomplished at the bottom of the stack, we decided to focus on the higher-level issues first. This allowed us to more quickly discover how to best use Solana prior to investing significant resources in the bottom-up design of the Shdw Storage network.
 
 By starting at the top of the network stack, we were able to quickly evaluate Solana's suitability for our use case, and determine if it was fast and cheap enough to power on-chain proofs of storage for an enterprise-level database. This decision allowed us to move forward with confidence, knowing that we had made the right choice and could begin designing the rest of the system with an eye towards efficiency and scalability. What exactly is a Solana-PDA?
 
@@ -99,7 +99,7 @@ Overall, our approach to the DAGGER systems-level design requirements was focuse
 
 ## **Present Design Considerations: Advancing towards v2.0**
 
-Our team is immensely grateful for the invaluable insights and contributions from the dedicated Shadow Ecosystem builders. We've experienced a surge in pull requests, builder bounties, innovative ideas, and novel app use cases, all of which have significantly contributed to driving front-end enhancements to the cutting-edge ShdwDrive v1.5.
+Our team is immensely grateful for the invaluable insights and contributions from the dedicated Shdw Ecosystem builders. We've experienced a surge in pull requests, builder bounties, innovative ideas, and novel app use cases, all of which have significantly contributed to driving front-end enhancements to the cutting-edge ShdwDrive v1.5.
 
 These enhancements feature advanced parallel processing techniques for bulk multi-file uploads, enabling increased file size limits and an optimized regional footprint of the storage cluster. Furthermore, the enhanced API offers improved performance and permits external apps to virtually mount their ShdwDrive accounts, paving the way for substantial advancements in CDN capabilities for builders and streaming data-processing. This support extends to a diverse range of use cases, from social media platforms to next-generation AI applications.
 
@@ -108,6 +108,6 @@ Though this overview does not encompass all the improvements in the pipeline, it
 **Our current design endeavors are primarily focused on the following objectives:**
 
 1. Refining the acclaimed v1.5 developer environment by extending the SDK and APIs to mobile platforms, thereby ensuring a solid mobile brand presence. This expansion facilitates greater developer engagement, fostering rapid growth and increased market penetration.
-2. Finalizing the deployment of the ShdwDrive implementation of DAGGER for seamless intra-network communication and consensus. This process includes closed alpha-pool testing with Shadow Operators as we perfect low-level communication improvements, canonical chunk shredding, 7:3 Reed-Solomon erasure coding, and numerous other components of decentralized storage DLT. Implementing these advanced features sets the stage for future scalability, robustness, and adaptability, further solidifying our position in the market.
+2. Finalizing the deployment of the ShdwDrive implementation of DAGGER for seamless intra-network communication and consensus. This process includes closed alpha-pool testing with Shdw Operators as we perfect low-level communication improvements, canonical chunk shredding, 7:3 Reed-Solomon erasure coding, and numerous other components of decentralized storage DLT. Implementing these advanced features sets the stage for future scalability, robustness, and adaptability, further solidifying our position in the market.
 
 Stay tuned for updates on our cutting-edge design efforts, which will be published in the [Change Log](../../reference/change-logs.md). We're planning more frequent document revisions and expanding the wealth of content in the ever-growing ShdwDrive resources. As a result, we anticipate accelerated growth and market capture, driven by our commitment to innovation and technological excellence.

@@ -1,7 +1,7 @@
 ---
 description: >-
   ShdwDrive now provides a S3-Compatible method of accessing the ShdwDrive
-  network. This is powered by shadow.cloud.
+  network.
 ---
 
 # S3-Compatible Client Access

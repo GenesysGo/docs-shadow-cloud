@@ -263,7 +263,7 @@ Full Response:
 
 The `uploadFile` method requires two parameters:
 
-* `key`: A PublicKey object representing the public key of the Shadow Storage Account
+* `key`: A PublicKey object representing the public key of the Shdw Storage Account
 * `data`: A file of either the `File` object type or `ShadowFile` object type
 
 Check the intellisense popup below when hovering over the method
@@ -497,7 +497,7 @@ const cancelDelStg = await drive.cancelDeleteStorageAccount(acctPubKey, "v2");
 
 #### **Definition**
 
-This method is used to create a new instance of the ShadowDrive class. It accepts a web3 connection object and a web3 wallet. It returns an instance of the ShadowDrive class.
+This method is used to create a new instance of the ShdwDrive class. It accepts a web3 connection object and a web3 wallet. It returns an instance of the ShdwDrive class.
 
 #### **Parameters**
 
@@ -506,7 +506,7 @@ This method is used to create a new instance of the ShadowDrive class. It accept
 
 #### **Returns**
 
-It returns an instance of the ShadowDrive class.
+It returns an instance of the ShdwDrive class.
 
 {% tabs %}
 {% tab title="Example" %}
@@ -579,7 +579,7 @@ const addStgResp = await drive.addStorage(acctPubKey,"10MB","v2"ca
 
 #### **Definition**
 
-Implementation of ShadowDrive.cancelDeleteStorageAccount defined in index.ts:135 This method is used to cancel a delete request for a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and the ShdwDrive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the undelete request.
+Implementation of cancelDeleteStorageAccount defined in index.ts:135 This method is used to cancel a delete request for a Storage Account on ShdwDrive. It accepts a Public Key of the Storage Account and the ShdwDrive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the undelete request.
 
 #### **Parameters**
 
@@ -619,7 +619,7 @@ const cancelDelStg = await drive.cancelDeleteStorageAccount(acctPubKey, "v2");
 
 #### **Definition**
 
-This method is used to request a Stake on ShadowDrive. It accepts a PublicKey of the Storage Account and the ShadowDrive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the claimStake request.
+This method is used to request a Stake on ShdwDrive. It accepts a PublicKey of the Storage Account and the ShdwDrive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the claimStake request.
 
 #### **Parameters**
 
@@ -660,13 +660,13 @@ const claimStake = await drive.claimStake(acctPubKey, "v2");
 
 #### **Definition**
 
-Implementation of ShadowDrive.createStorageAccount defined in index.ts:120 This method is used to create a new Storage Account on ShadowDrive. It accepts the name of the Storage Account, the size of the requested Storage Account, and the ShadowDrive version (v1 or v2). It also accepts an optional secondary owner for the Storage Account. It returns a Promise containing the created Storage Account and the transaction signature.
+Implementation of ShdwDrive.createStorageAccount defined in index.ts:120 This method is used to create a new Storage Account on ShdwDrive. It accepts the name of the Storage Account, the size of the requested Storage Account, and the ShdwDrive version (v1 or v2). It also accepts an optional secondary owner for the Storage Account. It returns a Promise containing the created Storage Account and the transaction signature.
 
 #### **Parameters**
 
 * `name`: `string` - What you want your storage account to be named. (Does not have to be unique)
 * `size`: `string` - Amount of storage you are requesting to create. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently.
-* `version`: `ShadowDriveVersion` - ShadowDrive version(v1 or v2)
+* `version`: `ShadowDriveVersion` - ShdwDrive version(v1 or v2)
 * `owner2` (optional): `PublicKey` - Optional secondary owner for the storage account.
 
 #### **Returns**
@@ -702,14 +702,14 @@ console.log(newAcct);
 
 #### **Definition**
 
-This method is used to delete a file on ShadowDrive. It accepts a Public Key of your Storage Account, the ShdwDrive URL of the file you are requesting to delete and the ShadowDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the delete request.
+This method is used to delete a file on ShdwDrive. It accepts a Public Key of your Storage Account, the ShdwDrive URL of the file you are requesting to delete and the ShdwDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the delete request.
 
 #### **Parameters**
 
 * `key`: `PublicKey` - Publickey of Storage Account
 * `url`: `string` - ShdwDrive URL of the file you are requesting to delete.
-* `version`: \`ShadowDrive
-* Version\` - ShadowDrive version (v1 or v2)
+* `version`: \`ShdwDrive
+* Version\` - ShdwDrive version (v1 or v2)
 
 #### **Returns**
 
@@ -760,12 +760,12 @@ console.log(delFile);
 
 #### **Definition**
 
-Implementation of ShadowDrive.deleteStorageAccount defined in index.ts:124 This method is used to delete a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and the ShdwDrive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the delete request.
+Implementation of ShadowDrive.deleteStorageAccount defined in index.ts:124 This method is used to delete a Storage Account on ShdwDrive. It accepts a Public Key of the Storage Account and the ShdwDrive version (v1 or v2). It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the delete request.
 
 #### **Parameters**
 
 * `key`: `PublicKey` - Publickey of a Storage Account
-* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `version`: `ShadowDriveVersion` - ShdwDrive version (v1 or v2)
 
 #### **Returns**
 
@@ -801,14 +801,14 @@ const delAcct = await drive.deleteStorageAccount(acctPubKey, "v2");
 
 #### **Definition**
 
-This method is used to edit a file on ShadowDrive. It accepts a Public Key of your Storage Account, the URL of the existing file, the File or ShadowFile object, and the ShadowDrive version (v1 or v2). It returns a Promise containing the file location and the transaction signature.
+This method is used to edit a file on ShdwDrive. It accepts a Public Key of your Storage Account, the URL of the existing file, the File or ShadowFile object, and the ShdwDrive version (v1 or v2). It returns a Promise containing the file location and the transaction signature.
 
 #### **Parameters**
 
 * `key`: `PublicKey` - Publickey of Storage Account
 * `url`: `string` - URL of existing file
 * `data`: `File | ShadowFile` - File or ShadowFile object, file extensions should be included in the name property of ShadowFiles.
-* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `version`: `ShadowDriveVersion` - ShdwDrive version (v1 or v2)
 
 #### **Returns**
 
@@ -864,7 +864,7 @@ const editFile = await drive.editFile(acctPubKey, url, "v2", fileToUpload);
 
 #### **Definition**
 
-This method is used to get the details of a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and returns a Promise containing the Storage Account details.
+This method is used to get the details of a Storage Account on ShdwDrive. It accepts a Public Key of the Storage Account and returns a Promise containing the Storage Account details.
 
 #### **Parameters**
 
@@ -920,11 +920,11 @@ console.log(acct);
 
 #### **Definition**
 
-This method is used to get a list of all the Storage Accounts associated with the current user. It accepts a ShadowDrive version (v1 or v2). It returns a Promise\<StorageAccountResponse\[]> containing the list of storage accounts.
+This method is used to get a list of all the Storage Accounts associated with the current user. It accepts a ShdwDrive version (v1 or v2). It returns a Promise\<StorageAccountResponse\[]> containing the list of storage accounts.
 
 #### **Parameters**
 
-* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `version`: `ShadowDriveVersion` - ShdwDrive version (v1 or v2)
 
 #### **Returns**
 
@@ -965,7 +965,7 @@ console.log(acctPubKey.toBase58());
 
 #### **Definition**
 
-This method is used to list the Objects in a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account and returns a Promise containing the list of Objects in the Storage Account.
+This method is used to list the Objects in a Storage Account on ShdwDrive. It accepts a Public Key of the Storage Account and returns a Promise containing the list of Objects in the Storage Account.
 
 #### **Parameters**
 
@@ -1010,12 +1010,12 @@ console.log(listItems);
 
 #### **Definition**
 
-This method is used to make a Storage Account immutable on ShadowDrive. It accepts a Public Key of the Storage Account and the ShdwDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the makeStorageImmutable request.
+This method is used to make a Storage Account immutable on ShdwDrive. It accepts a Public Key of the Storage Account and the ShdwDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the makeStorageImmutable request.
 
 #### **Parameters**
 
 * `key`: `PublicKey` - Publickey of Storage Account
-* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `version`: `ShadowDriveVersion` - ShdwDrive version (v1 or v2)
 
 #### **Returns**
 
@@ -1057,7 +1057,7 @@ console.log(result);
 
 #### **Definition**
 
-This method is used to migrate a Storage Account on ShadowDrive. It accepts a PublicKey of the Storage Account. It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the migration request.
+This method is used to migrate a Storage Account on ShdwDrive. It accepts a PublicKey of the Storage Account. It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the migration request.
 
 #### **Parameters**
 
@@ -1089,7 +1089,7 @@ const result = await drive.migrate(key);
 
 #### **Definition**
 
-This method is used to redeem Rent on ShadowDrive. It accepts a Public Key of the Storage Account and the Public Key of the file account to close. It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the redeemRent request.
+This method is used to redeem Rent on ShdwDrive. It accepts a Public Key of the Storage Account and the Public Key of the file account to close. It returns a Promise<{ txid: string }> containing the confirmed transaction ID of the redeemRent request.
 
 #### **Parameters**
 
@@ -1130,13 +1130,13 @@ const result = await drive.redeemRent(key, fileAccount);
 
 #### **Definition**
 
-This method is used to reduce the storage of a Storage Account on ShadowDrive. It accepts a Public Key of the Storage Account, the amount of storage you are requesting to reduce from your storage account, and the ShdwDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the reduce storage request.
+This method is used to reduce the storage of a Storage Account on ShdwDrive. It accepts a Public Key of the Storage Account, the amount of storage you are requesting to reduce from your storage account, and the ShdwDrive version (v1 or v2). It returns a Promise containing the confirmed transaction ID of the reduce storage request.
 
 #### **Parameters**
 
 * `key`: `PublicKey` - Publickey of Storage Account
 * `size`: `string` - Amount of storage you are requesting to reduce from your storage account. Should be in a string like '1KB', '1MB', '1GB'. Only KB, MB, and GB storage delineations are supported currently.
-* `version`: `ShadowDriveVersion` - ShadowDrive version (v1 or v2)
+* `version`: `ShadowDriveVersion` - ShdwDrive version (v1 or v2)
 
 #### **Returns**
 
@@ -1199,7 +1199,7 @@ storageConfigPDA: PublicKey;
 {% tab title="Explanations" %}
 {% code overflow="wrap" %}
 ```javascript
-//storageConfigPDA is a method in the Shadow SDK that returns the public key of the program derived account (PDA) for the Shadow storage program's config. A program derived account is a special account on the Solana blockchain that is derived from a program's public key and a specific seed. The purpose of this method is to provide a convenient way to obtain the PDA for the Shadow storage program's config. The config contains important information such as the current storage rent exemption threshold and the data size limits for storage accounts. This public key can be used to interact with the Shadow storage program's config account, allowing the user to retrieve and modify the program's global configuration settings.
+//storageConfigPDA is a method in the Shdw SDK that returns the public key of the program derived account (PDA) for the Shdw storage program's config. A program derived account is a special account on the Solana blockchain that is derived from a program's public key and a specific seed. The purpose of this method is to provide a convenient way to obtain the PDA for the Shdw storage program's config. The config contains important information such as the current storage rent exemption threshold and the data size limits for storage accounts. This public key can be used to interact with the Shdw storage program's config account, allowing the user to retrieve and modify the program's global configuration settings.
 storageConfigPDA: PublicKey;
 ```
 {% endcode %}
@@ -1248,7 +1248,7 @@ This method is used to top up a storage account's $SHDW balance to cover any nec
 
 #### **Definition**
 
-This method is used to upload a file to ShadowDrive. It accepts a Public Key of your Storage Account and a File or ShadowFile object. The file extensions should be included in the name property of ShadowFiles. It returns a Promise containing the file location and the transaction signature.
+This method is used to upload a file to ShdwDrive. It accepts a Public Key of your Storage Account and a File or ShadowFile object. The file extensions should be included in the name property of ShadowFiles. It returns a Promise containing the file location and the transaction signature.
 
 #### **Parameters**
 
@@ -1289,7 +1289,7 @@ const uploadFile = await drive.uploadFile(acctPubKey, fileToUpload);
 
 #### **Definition**
 
-This method is used to upload multiple files to a Storage Account on ShadowDrive. It accepts the Storage Account's PublicKey, a data object containing the FileList or ShadowFile array of files to upload, an optional concurrent number for the number of files to concurrently upload, and an optional callback function for every batch of files uploaded. It returns a Promise\<ShadowBatchUploadResponse\[]> containing the file names, locations and transaction signatures for uploaded files.
+This method is used to upload multiple files to a Storage Account on ShdwDrive. It accepts the Storage Account's PublicKey, a data object containing the FileList or ShadowFile array of files to upload, an optional concurrent number for the number of files to concurrently upload, and an optional callback function for every batch of files uploaded. It returns a Promise\<ShadowBatchUploadResponse\[]> containing the file names, locations and transaction signatures for uploaded files.
 
 #### **Parameters**
 

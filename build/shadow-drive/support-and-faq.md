@@ -11,11 +11,11 @@ If you've got questions, we've got answers.
 Our [Discord server](https://discord.gg/genesysgo) is the best place to get in touch with us.\
 We have a dedicated support section.
 
-In addition to this FAQ, you might find the [Github Q\&A](https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed) useful as deeper technical issues are discussed.
+In addition to this FAQ, you might find the [Github Q\&A](https://github.com/GenesysGo/Shdw-drive/issues?q=is%3Aissue+is%3Aclosed) useful as deeper technical issues are discussed.
 
 Discord Server: https://discord.gg/genesysgo
 
-GitHub FAQ: https://github.com/GenesysGo/shadow-drive/issues?q=is%3Aissue+is%3Aclosed
+GitHub FAQ: https://github.com/GenesysGo/Shdw-drive/issues?q=is%3Aissue+is%3Aclosed
 
 </details>
 
@@ -130,15 +130,15 @@ The `edit-file` functionality works differently from `upload-file` because it is
 
 <details>
 
-<summary>Is it possible to ask the user to sign a Shadow transaction and another transaction at the same time on the frontend?</summary>
+<summary>Is it possible to ask the user to sign a Shdw transaction and another transaction at the same time on the frontend?</summary>
 
-Currently, it is not possible to ask the user to sign a Shadow transaction and another transaction at the same time on the frontend. The Shadow network only allows ShdwDrive-specific transactions to have instructions related to the ShdwDrive on chain program. Any other instructions will cause the transaction to fail. This security feature is in place to prevent malicious transactions.
+Currently, it is not possible to ask the user to sign a Shdw transaction and another transaction at the same time on the frontend. The Shdw network only allows ShdwDrive-specific transactions to have instructions related to the ShdwDrive on chain program. Any other instructions will cause the transaction to fail. This security feature is in place to prevent malicious transactions.
 
 </details>
 
 <details>
 
-<summary>I'm trying to create a File object on my React app to upload it to Shadow but I keep getting an error.</summary>
+<summary>I'm trying to create a File object on my React app to upload it to Shdw but I keep getting an error.</summary>
 
 The error you're getting may be due to the ShdwDrive instance being created before the wallet-provider is ready. In the latest example on the main branch, there is a slight change in the useEffect that creates the drive instance which may resolve your issue. Additionally, make sure that the file data buffer is converted to a Blob using `new Blob([Buffer.from("data")])`.
 
@@ -220,9 +220,9 @@ No, the SDK requires internet access to send http requests. This is not allowed 
 
 <details>
 
-<summary>Is it possible for a user to sign a Shadow transaction and another unrelated transaction at the same time?</summary>
+<summary>Is it possible for a user to sign a Shdw transaction and another unrelated transaction at the same time?</summary>
 
-Currently, the Shadow network only allows ShdwDrive-specific transactions to include instructions related to the ShdwDrive on-chain program. Any other instructions will cause the transaction to fail as a security measure. This means that it is not possible for a user to sign a Shadow transaction and another unrelated transaction at the same time.
+Currently, the Shdw network only allows ShdwDrive-specific transactions to include instructions related to the ShdwDrive on-chain program. Any other instructions will cause the transaction to fail as a security measure. This means that it is not possible for a user to sign a Shdw transaction and another unrelated transaction at the same time.
 
 </details>
 
@@ -292,7 +292,7 @@ While we strongly encourage the use of this repository for bug reports and secur
 
 <summary>Is there a way to monitor the network so I know if there are issues or downtime?</summary>
 
-Yes, you can subscribe to the Shadow Network status here: https://status.genesysgo.net/
+Yes, you can subscribe to the Shdw Network status here: https://status.genesysgo.net/
 
 Also follow us on twitter https://twitter.com/GenesysGo or join our tech support Discord: https://discord.gg/genesysgo
 
@@ -329,7 +329,7 @@ Mutable storage fees are collected for bytes stored.
 
 <summary>Where should I send PRs if I have a good example to share? Is there a way to give feedback on the technical documents?</summary>
 
-We welcome any feedback and examples you can provide to our documentation. You can submit a PR to our technical documents repository here - https://github.com/GenesysGo/docs-shadow-cloud/tree/main - and we will find a good place for it.
+We welcome any feedback and examples you can provide to our documentation. You can submit a PR to our technical documents repository here - https://github.com/GenesysGo/docs-Shdw-cloud/tree/main - and we will find a good place for it.
 
 </details>
 
@@ -363,7 +363,7 @@ ShdwDrive provides developers with tools to comply with GDPR and can provide rec
 
 <summary>Is ShdwDrive supported on mobile?</summary>
 
-Yes, ShdwDrive is supported on mobile through our ecosystem partners who are actively building on mobile. Please check out our Shadow Ecosystem page for more details. https://docs.shadow.cloud/build/community-mainted-uis
+Yes, ShdwDrive is supported on mobile through our ecosystem partners who are actively building on mobile. Please check out our Shdw Ecosystem page for more details. https://docs.shadow.cloud/build/community-mainted-uis
 
 Additionally, in the future, our _D.A.G.G.E.R._ distributed ledger technology will enable Solana Saga powered storage solutions for those seeking low cost decentralized mobile clouds. Please check out the Learn section for more information. You can read more here: https://docs.shadow.cloud/learn#compute
 
@@ -389,7 +389,7 @@ ShdwDrive runs on a global network of bare metal infrastructure, with all comput
 
 <summary>What is GenesysGo?</summary>
 
-GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator. Since then, GG has expanded its offerings to focus on a large ecosystem of tools and infrastructure for Solana. More details about the scope of our offerings can be found under the "Learn" category. GG has a team of talented developers and coders who are dedicated to building innovative solutions for the Solana community. For more information, you can visit our website at https://shadow.cloud.
+GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator. Since then, GG has expanded its offerings to focus on a large ecosystem of tools and infrastructure for Solana. More details about the scope of our offerings can be found under the "Learn" category. GG has a team of talented developers and coders who are dedicated to building innovative solutions for the Solana community. For more information, you can visit our website at https://Shdw.cloud.
 
 </details>
 
@@ -397,10 +397,10 @@ GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator
 
 <summary>Can I advertise my project if I use D.A.G.G.E.R./ShdwDrive?</summary>
 
-Yes, the ShdwDrive team would love to hear about your project if you are building on top of the Drive or using _D.A.G.G.E.R_. The best way to gain visibility is to submit a PR directly to the docs-shadow-cloud repo adding your project/business, details, and image to the Shadow Ecosystem list: https://github.com/GenesysGo/docs-shadow-cloud
+Yes, the ShdwDrive team would love to hear about your project if you are building on top of the Drive or using _D.A.G.G.E.R_. The best way to gain visibility is to submit a PR directly to the docs-Shdw-cloud repo adding your project/business, details, and image to the Shdw Ecosystem list: https://github.com/GenesysGo/docs-Shdw-cloud
 
-Submit a PR to edit the file located here: https://github.com/GenesysGo/docs-shadow-cloud/blob/main/build/shadow-drive/community-mainted-uis.md
+Submit a PR to edit the file located here: https://github.com/GenesysGo/docs-Shdw-cloud/blob/main/build/Shdw-drive/community-mainted-uis.md
 
-You can also share your work in the [ShdwDrive Discord](https://discord.com/invite/genesysgo). We will soon release an automated process to be added to the Shadow Ecosystem page.
+You can also share your work in the [ShdwDrive Discord](https://discord.com/invite/genesysgo). We will soon release an automated process to be added to the Shdw Ecosystem page.
 
 </details>

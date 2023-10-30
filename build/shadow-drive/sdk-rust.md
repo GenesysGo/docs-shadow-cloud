@@ -57,7 +57,7 @@ tracing_subscriber::fmt()
 // Load keypair from file using the provided KEYPAIR_PATH
 let keypair = read_keypair_file(KEYPAIR_PATH).expect("failed to load keypair at path");
 
-// Create a new ShadowDriveClient instance with the loaded keypair and server URL
+// Create a new ShdwDriveClient instance with the loaded keypair and server URL
 let shdw_drive_client = ShadowDriveClient::new(keypair, "https://ssc-dao.genesysgo.net");
 
 // Derive the storage account public key using the keypair's public key

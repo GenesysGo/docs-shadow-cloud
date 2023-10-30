@@ -33,13 +33,13 @@ Thus, 1 byte stored = 1 Shade.
 
 #### **Immutable Storage**
 
-Immutable storage offers users the peace of mind that their data will be retained permanently and cannot be edited or deleted. The cost calculation for immutable storage is simple, as the smart contract sends the appropriate amount of [SHDW](https://docs.shadow.cloud/reference/shdw-token) to the Shadow Operator smart contract as emissions for operating Shadow Nodes.
+Immutable storage offers users the peace of mind that their data will be retained permanently and cannot be edited or deleted. The cost calculation for immutable storage is simple, as the smart contract sends the appropriate amount of [SHDW](https://docs.shadow.cloud/reference/shdw-token) to the Shdw Operator smart contract as emissions for operating Shdw Nodes.
 
 #### **Mutable Storage**
 
 Mutable storage, on the other hand, involves a more complex process that addresses short-term storage needs and the increased bandwidth requirements typically associated with mutable storage. This process incorporates staking and rent mechanics similar to Solana's on-chain accounts design.
 
-Users are required to stake a specific amount of [SHDW](https://docs.shadow.cloud/reference/shdw-token) when they upload data to ShdwDrive. Rent is assessed on a per-epoch basis for mutable storage, with the rate subject to change as the system evolves. The rent assessed each epoch is sent to the Shadow Operator Smart Contract, contributing to the pool that the smart contract pays out to Shadow Operators as emissions.
+Users are required to stake a specific amount of [SHDW](https://docs.shadow.cloud/reference/shdw-token) when they upload data to ShdwDrive. Rent is assessed on a per-epoch basis for mutable storage, with the rate subject to change as the system evolves. The rent assessed each epoch is sent to the Shdw Operator Smart Contract, contributing to the pool that the smart contract pays out to Shdw Operators as emissions.
 
 ### **Adapting Storage Requirements with D.A.G.G.E.R. and ShdwDrive v2**
 
@@ -47,4 +47,4 @@ Our smart-contract design is tailored to accommodate both mutable and immutable 
 
 We are committed to ensuring that our users can make informed choices about their data storage preferences and that they have access to a system that can adapt to their diverse storage requirements.
 
-_Please note, the team reserves the right to change any and all aspects of storage design and costs in order to ensure the long term viability of ShdwDrive and Shadow Operators. We would rather make tweaks to one protocol along the way instead of building a new protocol each time to address any unforeseen issues._
+_Please note, the team reserves the right to change any and all aspects of storage design and costs in order to ensure the long term viability of ShdwDrive and Shdw Operators. We would rather make tweaks to one protocol along the way instead of building a new protocol each time to address any unforeseen issues._

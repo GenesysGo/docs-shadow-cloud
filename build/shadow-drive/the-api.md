@@ -365,7 +365,7 @@ for (let j = 0; j < files.length; j++) {
 // on the ShdwDrive Network side.
 const encodedMessage = new TextEncoder().encode(message);
 // Uses https://github.com/dchest/tweetnacl-js to sign the message. If it's not signed in the same manor,
-// the message will fail signature verification on the Shadow Network side.
+// the message will fail signature verification on the ShdwNetwork side.
 // This will return a base58 byte array of the signature.
 const signedMessage = nacl.sign.detached(encodedMessage, keypair.secretKey);
 // Convert the byte array to a bs58-encoded string
@@ -401,7 +401,7 @@ const message = `ShdwDrive Signed Message:\n StorageAccount: ${storageAccount}\n
 // on the ShdwDrive Network side.
 const encodedMessage = new TextEncoder().encode(message);
 // Uses https://github.com/dchest/tweetnacl-js to sign the message. If it's not signed in the same manor,
-// the message will fail signature verification on the Shadow Network side.
+// the message will fail signature verification on the Shdw Network side.
 // This will return a base58 byte array of the signature.
 const signedMessage = nacl.sign.detached(encodedMessage, keypair.secretKey);
 // Convert the byte array to a bs58-encoded string
@@ -443,7 +443,7 @@ const message = `ShdwDrive Signed Message:\nStorageAccount: ${storageAccount}\nF
 // on the ShdwDrive Network side.
 const encodedMessage = new TextEncoder().encode(message);
 // Uses https://github.com/dchest/tweetnacl-js to sign the message. If it's not signed in the same manor,
-// the message will fail signature verification on the Shadow Network side.
+// the message will fail signature verification on the Shdw Network side.
 // This will return a base58 byte array of the signature.
 const signedMessage = nacl.sign.detached(encodedMessage, keypair.secretKey);
 // Convert the byte array to a bs58-encoded string
