@@ -24,4 +24,4 @@
   * [Solana Breakpoint 2022 Demo](reference/breakpoint-2022-demo.md)
   * [SHDW Token](reference/shdw-token.md)
   * [Shdw Glossary](reference/shadow-glossary.md)
-* [Run a Wield Node](run_a_wield_node/README.md)
+* [Run a Wield Node](wield/README.md)

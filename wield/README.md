@@ -1,5 +1,5 @@
 ---
-description: GenesysGo's Directed Acyclic Gossiping Graph Enabling Replication (D.A.G.G.E.R.) is currently running Testnet Phase 1 now with the ability for users to trustlessly operate and test Wield Node. Join in on the early development and help test!
+description: GenesysGo's Directed Acyclic Gossiping Graph Enabling Replication (D.A.G.G.E.R.) is currently running Testnet Phase 1 now with the ability for trustless operators to join in a help test!
 ---
 
 ## Configuring a Wield Node from Prebuilt Binaries
