@@ -8,7 +8,7 @@ description: Explore projects utilizing ShdwDrive
 
 Synx, developed by the Blxckout team, offers exceptional UI/UX for managing real-world mobile and desktop data. It also comes with comprehensive documentation, making it user-friendly. Synx is a private cloud storage solution supported by a mobile and desktop app that utilizes ShdwDrive.
 
-[![](../../.gitbook/assets/synx-feature.png)](https://twitter.com/synx\_xyz)
+[![](../../.gitbook/assets/synx.png)](https://twitter.com/synx\_xyz)
 
 **SPLING**
 
