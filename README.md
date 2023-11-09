@@ -10,6 +10,8 @@ description: >-
 
 ### [Install ShdwDrive](build/)
 
+### [Join the Testnet](https://docs.shdwdrive.com/wield)
+
 ## How this resource is organized
 
 ### [**Learn**](learn/)
@@ -24,5 +26,10 @@ This section focuses on easy and actionable information to help you quickly get 
 
 Much like an appendix, the reference section is a quick navigation hub for key resources. Our media kit, social media presence, and more can be found here.
 
-This resource will be updated frequently and the developer community should feel empowered to [submit Issues](https://github.com/GenesysGo/shadow-drive/issues) for edits they would like to see or platform enhancement ideas. We also have a process for [Bug submissions](https://github.com/GenesysGo/shdw-drive-bug-reports).
+### [Run a Wield Node](https://docs.shdwdrive.com/wield)
 
+Running a Wield Node will allow you to participate in the decentralized D.A.G.G.E.R. phase 1 testnet which powers the D.A.G.G.E.R. Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). Wield Node operators will be handling thousands of live user test transactions and trustlessly storing data for user file uploads.&#x20;
+
+
+
+This resource will be updated frequently and the developer community should feel empowered to [submit Issues](https://github.com/GenesysGo/shadow-drive/issues) for edits they would like to see or platform enhancement ideas. We also have a process for [Bug submissions](https://github.com/GenesysGo/shdw-drive-bug-reports).
