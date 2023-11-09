@@ -7,7 +7,7 @@ description: >-
 
 # Run a Wield Node
 
-## 1. Node Requirements - Specific hardware requirements are yet to be determined. Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not *officially* supported at this time.
+## 1. Node Requirements - Specific hardware requirements are yet to be determined. Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not _officially_ supported at this time.
 
 ## 2. Operating system configuration.
 
@@ -96,7 +96,7 @@ Create a new unique keypair ID using the Shdw-Keygen utility:
 Create a config file with `nano config.toml` and paste the the below contents into the file:
 
 ```
-trusted_node = "147.75.47.13:2030"
+trusted_node = "139.178.81.111:2030"
 dagger = "JoinAndRetrieve"
 
 [node_config]
@@ -158,4 +158,5 @@ Register the service and start the `wield` process with:
 ```
 sudo systemctl enable --now wield.service
 ```
+
 Verify proper operation by tailing the log with `tail -f config.log`.
