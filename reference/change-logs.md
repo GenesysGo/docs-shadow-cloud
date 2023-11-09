@@ -10,8 +10,11 @@
 
 ## Consolidated Summary
 
+D.A.G.G.E.R. - Launch of [Testnet and Hammer](https://dagger-hammer.shdwdrive.com/)\
+[Phase 1](https://www.shdwdrive.com/blog/dagger-testnet-release) - September 29, 2023
+
 ShdwDrive - Release S3 Compatible Gateway\
-August 29, 2023
+[S3-Client Access](https://docs.shdwdrive.com/build/s3-compatible-client-access) - August 29, 2023
 
 ShdwDrive\
 [v5.0.0 - August 22, 2023](https://github.com/GenesysGo/shadow-drive/releases/tag/v5.0.0)

@@ -8,17 +8,23 @@ description: An introduction to the ShdwDrive and its implementations
 
 ## **Mission**
 
-Our mission is to provide a high-performance and affordable cloud storage platform, enhanced with D.A.G.G.E.R. distributed ledger technology that empowers businesses and developers of all aspects to build secure, performant and scalable Web2/Web3 applications.
+GenesysGo is committed to revolutionizing cloud storage by harnessing the power of our [Directed Acyclic Gossip Graph Enabling Replication](https://github.com/GenesysGo/dagger-litepaper/blob/main/DAGGER-Litepaper.pdf) ([D.A.G.G.E.R.)](https://github.com/GenesysGo/dagger-litepaper/blob/main/DAGGER-Litepaper.pdf) technology. Our mission is to deliver a high-performance, cost-effective, and decentralized cloud storage platform that empowers developers and businesses to build secure, scalable, and efficient Web2 and Web3 applications.
 
 ## **Objectives**
 
-Our objectives are to continually evolve a stable high-performance ShdwDrive Storage Platform powered by a decentralized network of operators. Shdw is the only commodity cloud storage network designed to democratize the hundreds of billions earned each year by traditional cloud storage platforms without sacrificing performance. Through thoughtful design, the ShdwDrive will offer multiple service options which leverage our distributed ledger technology. The result is vertically integrated storage and compute offering that greatly improves developer experience. This will also enable the offering of distributed ledger technology "as-a-service" giving builders and businesses more granular options to customize their desired degree of Web2 or Web3 exposures.
+Our primary objectives at GenesysGo are strategically aligned with the core functionalities of D.A.G.G.E.R. and the expansive capabilities of ShdwDrive. We are dedicated to creating a future where decentralized data management is not only viable but superior to centralized alternatives. Our focused objectives include:
 
-We will focus on constantly improving the developer experience by identifying and implementing industry interoperability standards. We will maintain S3-compatibility and an open-source SDK. Being easy to use means building bridges across protocols and APIs that enable the ShdwDrive to be accessed directly and easily through popular builder tools and SDKs. Whether you are building an AI generative art program, training your enterprise NLP model, or crafting a layer-1 Rust smart-contract in need of off-chain compression, our objective is to support the popular tools that make building easier.
+1. **Data Availability Optimization**: Elevate D.A.G.G.E.R. to become the benchmark for data availability protocols, adept at accommodating the expansive and diverse needs of both Web2 and Web3 ecosystems. By enhancing its ability to manage large datasets seamlessly, D.A.G.G.E.R. will serve as the backbone for robust decentralized applications.
+2. **ShdwDrive Evolution**: Propel ShdwDrive towards its v2.0 iteration, fully powered by D.A.G.G.E.R., to provide an unparalleled decentralized storage experience. Our vision for ShdwDrive v2.0 is to be a versatile platform that excels in both static data archiving and dynamic database services, ensuring optimal performance for a myriad of use cases.
+3. **Mobile Integration and Network Democratization**: Harness the latent computational power of mobile devices worldwide by integrating them as auditors within the Shdw Ecosystem. This initiative aims to democratize network participation, allowing anyone with a smartphone to contribute to and benefit from the network's growth and security.
+4. **Sustainable and Inclusive Ecosystem Development**:  Build towards an energy-efficient and inclusive network that rewards participation and fosters a sense of community ownership. By incentivizing users through a well-structured reward system, we aim to cultivate a vibrant ecosystem that thrives on collective contribution and shared success.
+5. **Seamless User Experience and Interoperability**: Ensure a frictionless transition for users adopting ShdwDrive by maintaining compatibility with established standards like Amazon S3 and providing comprehensive development kits in various programming languages. Our goal is to make ShdwDrive accessible and easily integrated into existing and future digital workflows.
+
+By concentrating our efforts on these key objectives, GenesysGo is set to redefine the landscape of decentralized storage solutions, offering a platform that is secure, efficient, and aligned with the evolving needs of the digital world.
 
 ## **The Basics of ShdwDrive**
 
-The Shdw Ecosystem is a series of trustless infrastructure layers focused on a path to decentralizing the traditional cloud storage stack. Using distributed ledger technology, ShdwDrive will take advantage of high-powered mobile storage and compute as well as rapidly reducing costs of enterprise grade data center storage. We call this core technology D.A.G.G.E.R.
+The Shdw Ecosystem is a series of trustless infrastructure layers focused on a path to decentralizing the traditional cloud storage stack. Using distributed ledger technology, ShdwDrive will take advantage of high-powered traditional and mobile compute in order reducing costs of enterprise grade data center storage. We call this core technology D.A.G.G.E.R.
 
 Powered by Shdw Operators, the network provides builders and businesses with storage and compute solutions to optionally expand their web3 presence, or just simply use some of the most highly performant distributed ledger technology for its low cost and resiliency in business.
 
@@ -30,21 +36,18 @@ In order to execute this trustless decentralized network, we built our own highl
 
 ## **D.A.G.G.E.R.**
 
-The foundation of the Shdw Ecosystem is D.A.G.G.E.R., a trustless decentralized consensus protocol that expands the ShdwDrive platform beyond standard data-center enterprise compute and storage offerings, enabling optional decentralized offerings of compute, mobile compute, and decentralized storage - all while pushing the limits of performance, quality, and security.
+At the heart of the Shdw Ecosystem lies D.A.G.G.E.R., a trustless decentralized consensus protocol that extends ShdwDrive's capabilities beyond typical data-center offerings. It enables decentralized compute, mobile compute, and storage, all while maintaining high performance, quality, and security. D.A.G.G.E.R. is characterized by its asynchronous, leaderless consensus, efficient bandwidth usage, and flexibility in supporting both permissioned and permissionless deployments.
 
-D.A.G.G.E.R. stands for Directed Acyclic Gossip Graph Enabling Replication (of compute and storage).
+Learn about D.A.G.G.E.R.:
 
-[**Learn about D.A.G.G.E.R**](dagger.md)
-
-[**Run a Wield Node on our Testnet**](https://docs.shdwdrive.com/wield)
+* Explore the full potential of D.A.G.G.E.R. through our [Litepaper](https://github.com/GenesysGo/dagger-litepaper/blob/main/DAGGER-Litepaper.pdf).
+* Participate in our [Testnet](https://dagger-hammer.shadow.cloud/) and run a [Wield Node](https://docs.shdwdrive.com/wield) to experience D.A.G.G.E.R. firsthand.
 
 ## **Storage**
 
-ShdwDrive takes open source software-defined object storage and integrates it with Solana’s Proof of History consensus mechanism, and then decentralizes it. This allows it to achieve extremely fast I/O speeds, massive scalability, and data integrity. At the same time, it retains the benefits of the trustlessness, enhanced security, full transparency, and decentralization that blockchain technology brings to the table.
+ShdwDrive integrates open-source, software-defined object storage with Solana’s Proof of History consensus mechanism and decentralizes it, achieving remarkable I/O speeds, scalability, and data integrity. ShdwDrive's v2 implementation of D.A.G.G.E.R. will ultimately result in a permissionless, trustless, and decentralized distributed storage network, driven by community participation.
 
-Ultimately, ShdwDrive’s implementation of D.A.G.G.E.R. will produce a permissionless, trustless, decentralized distributed storage network that exists in perpetuity without needing to rely on the direct efforts of a centralized team to grow and expand. It will take time, as the path for open sourcing hardware infrastructure is different from that of software, but ShdwDrive’s final form will be one in which the community of businesses and builders drive the direction, enhancements, and future of ShdwDrive.
-
-The current [design](storage-services/design.md#present-design-considerations) of ShdwDrive makes embedding storage into applications easy, robust, and natively interfaced into the Solana blockchain. The SDKs support [Javascript](../build/shadow-drive/sdk-javascript.md), [Rust](../build/shadow-drive/sdk-rust.md), and [Python ](../build/shadow-drive/sdk-python.md)all on top of fast and reliable API. Use ShdwDrive to store your 800gb model weights, 10 TB training data and all the generated images your users generate via our [Python](../build/shadow-drive/sdk-python.md) SDK. Or maybe you just want to store your historical geyser plugin output and state, and any relevant program accounts and transactions. If you are building an application in need of back-end storage, secondary storage, or a client-facing storage option then our robust [Javascript SDK](../build/shadow-drive/sdk-javascript.md) has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
+The current [design](storage-services/design.md#present-design-considerations) of ShdwDrive makes embedding storage into applications easy, robust, and natively interfaced into the Solana blockchain. The SDKs support [Javascript](../build/shadow-drive/sdk-javascript.md), [Rust](../build/shadow-drive/sdk-rust.md), and [Python ](../build/shadow-drive/sdk-python.md)all on top of fast and reliable API. If you are building an application in need of back-end storage, secondary storage, or a client-facing storage option then our robust [Javascript SDK](../build/shadow-drive/sdk-javascript.md) has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
 
 [**Start Building on ShdwDrive!**](../build/)
 
@@ -60,37 +63,31 @@ As mobile compute power and data speeds surge, we're developing _D.A.G.G.E.R._'s
 
 ## **Roadmap**
 
-There are three areas we focus our developments:
+GenesysGo's development roadmap is meticulously structured around key milestones that are integral to the evolution of ShdwDrive, powered by D.A.G.G.E.R. technology. Our condensed roadmap highlights the strategic phases of development:
 
-* The ShdwDrive implementation of _D.A.G.G.E.R._
-* The Mobile implementation of _D.A.G.G.E.R._ and ShdwDrive
-* The combination of the above two to support AI evolution
+* **Testnet Phase 1**: Successfully launched an interactive explorer and enhanced the D.A.G.G.E.R. core for efficiency. Addressed multithreading improvements and resolved critical stability issues, laying the groundwork for robust performance and memory management. Achieved significant network load capabilities and introduced the ShdwDrive File Management UI.
+* **Testnet Phase 2**: Focus shifts to empowering node operators with comprehensive documentation and initiating the testnet with a decentralized operator base. Emphasis will be on improving node stability, refining network performance metrics, and enhancing the block and graph explorer features. Core development efforts on ShdwDrive v2 will concentrate on refining bandwidth management and filesystem operations.
+* **Testnet Phase 3 and Beyond**: A critical phase where individual node operators will be integrated, marking a significant step towards a fully decentralized ShdwDrive v2. This phase will involve rigorous observation and fine-tuning based on real-world network engagement. Commitment to resolving bugs and technical debt will be paramount to ensure the reliability of the platform. The roadmap will be periodically updated to reflect new phases and features, signaling our ongoing commitment to technological innovation and excellence.
 
 ## **Putting it all together**
 
-"On-chain" versus "off-chain" is a concept that needs to evolve in order for Web3 technology to meaningfully gain user adoption. Blockchain is a type of decentralized ledger technology (DLT), but it's not the only DLT anymore. "On-DLT" versus "off-DLT", that's what matters. This is not to take away from the significance of blockchain or its impact on the world. Instead, it's merely to say that the subset of technologies falling under the DLT umbrella has expanded in the 14 years since blockchain first appeared. The right tool for the right job matters.
+In the evolving landscape of distributed ledger technologies (DLT), GenesysGo's D.A.G.G.E.R. stands out with its focus on data availability—a key advancement that addresses the real-world practicality and usability challenges faced by earlier blockchain systems. D.A.G.G.E.R.'s architecture is built upon the principle of data scalability, ensuring that it can handle the increasing demands of modern applications without sacrificing speed, stability, or security.
 
-Our hope is that ShdwDrive and D.A.G.G.E.R represent a first step on the path to creating composability in Web3. Not just composability between one blockchain and another... instead, zoom out and think about composability between all the different systems underneath the DLT umbrella. By creating interoperability between Solana and _D.A.G.G.E.R._ the result is a true Web3 cloud storage platform that doesn't sacrifice speed, stability, and/or security in order to gain trustlessness, decentralization, permissionlessness, and/or censorship resistance.
+The modular and versatile nature of D.A.G.G.E.R. is designed to offer seamless interoperability and composability within the Web3 ecosystem. By prioritizing data availability, D.A.G.G.E.R. enables a level of performance and flexibility that empowers developers to build decentralized applications that are not only trustless and permissionless but also resilient to censorship.
 
-Decentralized Ledger Technology should be thought of as a superset of technologies that can be selected and assembled in various combinations to satisfy specific user requirements. So what are some of these user requirements? Here are some real world use cases to start:
+By embracing this data-centric approach, GenesysGo is paving the way for a new era of DLT that is equipped to meet the diverse and complex needs of today's digital world. This commitment to advancing data availability and scalability positions D.A.G.G.E.R. as a pioneering force in the drive towards practical, efficient, and accessible decentralized technologies.
 
 ## **ShdwDrive Use Cases**
 
-* Storage
-  * Web hosting & content management
-    * Managing static content at high volumes that can elastically scale with your needs makes ShdwDrive a great solution for web content, media, images, and other unstructured data types.
-  * Social media
-    * Temporarily or permanently store message history and embedded media, stream video content from user uploads, and store and deliver vast amounts of images and avatars to enhance the Web3 efficacy of your app.
-  * Archival & back-up
-    * By 3x replicating and erasure coding encrypted records across a decentralized network, ShdwDrive can preserve valuable records from bad actors.
-  * Datasets
-    * Some information is too important for humanity to lose. From scientific research projects to historical documentation, cryptographic proofs guarantee a dataset’s integrity and availability forever. Imagine if the world’s most important libraries couldn’t be destroyed because the information has been distributed across thousands of unique locations worldwide.
-  * AI implementation
-    * From training models, to backing up data sets, to virtually mounting the storage accounts, ShdwDrive will offer fast, reliable, transparent methods to support many AI data-processing applications by lowering costs of housing huge amounts of data and offering extremely high read/write more cheaply than other decentralized competitors.
-  * Personal & editable storage space
-    * With optional mutability, you are free to create and delete files as you see fit. With low costs and many front-end user interfaces to choose from, ShdwDrive can be your personal expanded storage space.
-  * Specialized distributed ledger implementations
-    * The current [design](storage-services/design.md) of ShdwDrive makes embedding storage into applications easy, robust, and natively integrated into the Solana blockchain. Use ShdwDrive to store your 800gb model weights, 100 TB training data and all the generated images your users generate via our [Python](../build/shadow-drive/sdk-python.md) SDK. Or maybe you just want to store your historical geyser plugin output and state, and any relevant program accounts and transactions. If you are building an application in need of back-end storage, secondary storage, or client-facing storage option then our robust [Javascript SDK](../build/shadow-drive/sdk-javascript.md) has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
+ShdwDrive caters to a wide range of storage needs:
+
+* Web hosting & content management
+* Social media platforms
+* Archival & backup solutions
+* Datasets for scientific and historical research
+* AI applications and model storage
+* Personal & editable storage space
+* Specialized distributed ledger implementations
 
 [**Start Building on ShdwDrive!**](../build/shadow-drive/)
 
