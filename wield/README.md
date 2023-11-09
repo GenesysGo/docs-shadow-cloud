@@ -5,7 +5,7 @@ description: >-
   trustless operators to join in and help test!
 ---
 
-# Run a Wield Node
+# Run a D.A.G.G.E.R. Wield Node
 
 ## Testnet Information:
 
@@ -150,6 +150,12 @@ Change owner of `historydb` location to `dagger` user:
 
 ```
 sudo chown -R dagger:dagger /mnt/dag/*
+```
+
+You will also need a `snapshots` directory at the same location as your `wield` binary. This should be your home directory if you've followed along thus far. You can created by doing the following:
+
+```
+mkdir ~/snapshots
 ```
 
 Create a system service for `wield` with `sudo nano /etc/systemd/system/wield.service` and paste the below contents into the file:
