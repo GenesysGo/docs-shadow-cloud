@@ -23,7 +23,14 @@ Wield Node operators will be handling thousands of live user test transactions a
 
 ## 1. Node Requirements:
 
-**Specific hardware requirements are yet to be determined. Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not **_**officially**_** supported at this time.**
+**Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not **_**officially**_** supported at this time.**
+
+**Minimum hardware requirements for a wield node are subject to change over time, but currently they are:**
+
+* **8 CPU cores**
+* **32 GB RAM**
+* **250 GB SSD for data storage and high speed i/o operations**
+* **100mbps up/down network connection is the bare minimum**
 
 ## 2. Operating system configuration:
 
