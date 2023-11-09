@@ -12,7 +12,7 @@ Gossip-driven consensus mechanisms are remarkable, providing an efficient and fa
 
 Within the ShdwDrive, multiple nodes work together to maintain the storage layer, ensuring data integrity and guarding against unauthorized changes. These nodes are akin to Solana validators and can be considered the guardians of the state of all data stored in ShdwDrive.
 
-These nodes also enable the decentralization of ShdwDrive, as they can be hosted on any machine and participate in consensus voting, which is recorded on-chain. Future ShdwDrive operators wishing to become part of the network will be subject to higher slashing and collateral requirements, akin to the Serum/Mega-Serum node structure utilized by Project Serum.
+These nodes also enable the decentralization of ShdwDrive, as they can be hosted on any machine and participate in consensus voting, which is recorded on-chain. Future ShdwDrive operators wishing to become part of the network will be subject to higher slashing and collateral requirements.
 
 The ShdwDrive smart contract serves as an administrator, controlling access and managing uploads or edits to the storage layer. Furthermore, nodes are configured to report their state and votes to the Solana validator network for validation and inclusion on-chain. This on-chain mechanism allows for the recording and slashing of nodes attempting malicious activity or failing to maintain the integrity of ShdwDrive's data store. This process closely resembles how the Solana validator network records and reports on the vote history of Solana validators, ensuring that ShdwDrive remains a trustless, permissionless network.
 
