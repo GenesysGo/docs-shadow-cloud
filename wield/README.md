@@ -25,7 +25,7 @@ Wield Node operators will be handling thousands of live user test transactions a
 
 **Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not **_**officially**_** supported at this time.**
 
-**Minimum hardware requirements for a wield node are subject to change over time, but currently they are:**
+**Minimum hardware requirements\* to operate a D.A.G.G.E.R. Wield Node for Testnet Phase 1 are as follows:**
 
 * **8 CPU cores**
 * **32 GB RAM**
@@ -192,4 +192,4 @@ Verify proper operation by tailing the log with `tail -f config.log`.
 
 
 
-Disclaimer: By operating a Wield Node on GenesysGo's D.A.G.G.E.R. Testnet Phase 1, you acknowledge that you do so voluntarily and at your own risk. GenesysGo provides the testnet software "as is" without any warranties, and accepts no responsibility for any direct, indirect, incidental, or consequential damages you may incur. You are responsible for the security of your own system and data. GenesysGo shall not be liable for any losses or damages resulting from your participation in the testnet. By using the software, you agree to indemnify GenesysGo against any claims or disputes related to your node operation. This agreement is binding upon download and operation of a Wield Node. GenesysGo may alter or discontinue the testnet without notice. If you disagree with these terms, do not participate in the testnet.
+\*Disclaimer: By operating a Wield Node on GenesysGo's D.A.G.G.E.R. Testnet Phase 1, you acknowledge that you do so voluntarily and at your own risk. GenesysGo provides the Testnet software "as is" without any warranties, and accepts no responsibility for any direct, indirect, incidental, or consequential damages you may incur. You are responsible for the security of your own system and data. GenesysGo shall not be liable for any losses or damages resulting from your participation in the Testnet. By using the software, you agree to indemnify GenesysGo against any claims or disputes related to your node operation. This agreement is binding upon download and operation of a Wield Node. GenesysGo may alter or discontinue the Testnet without notice. This includes, but is not limited to, the hardware requirements to operate a D.A.G.G.E.R. Wield Node in Testnet Phase 1. If you disagree with these terms, do not participate in the Testnet.
