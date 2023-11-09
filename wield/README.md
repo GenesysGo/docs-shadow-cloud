@@ -7,9 +7,25 @@ description: >-
 
 # Run a Wield Node
 
-## 1. Node Requirements - Specific hardware requirements are yet to be determined. Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not _officially_ supported at this time.
+## Testnet Information:
 
-## 2. Operating system configuration.
+[Testnet 1: Release Overview](https://www.shdwdrive.com/blog/dagger-testnet-release)
+
+[D.A.G.G.E.R. Hammer: The magic behind a keypress](https://www.shdwdrive.com/blog/dagger-hammer-the-magic-behind-a-keypress)
+
+[Testnet Phase 1 Learnings](https://www.shdwdrive.com/blog/dagger-testnet-phase-1-learnings)
+
+[D.A.G.G.E.R. Hammer](https://dagger-hammer.shdwdrive.com/)
+
+Running a Wield Node will allow you to trustlessly participate in the D.A.G.G.E.R. phase 1 testnet which powers the D.A.G.G.E.R. Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). We encourage node operators to review our blog articles for full context on the role of Wield Nodes and the purpose of D.A.G.G.E.R. Hammer.&#x20;
+
+Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are requires to erasure code and store files uploaded to the Hammer test interface.&#x20;
+
+## 1. Node Requirements:
+
+**Specific hardware requirements are yet to be determined. Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not **_**officially**_** supported at this time.**
+
+## 2. Operating system configuration:
 
 It is recommended to set the maximum open file descriptors (`ulimit`) to the maximum hard limit of `1048576` by editing `/etc/security/limits.conf` and adding the below lines to the bottom of the configuration file (log out and back in for changes to take effect):
 
@@ -59,7 +75,7 @@ vm.dirty_writeback_centisecs=3000
 vm.dirtytime_expire_seconds=43200
 ```
 
-## 3. Node configuration.
+## 3. Node configuration:
 
 If you have not already done so, it is recommended to create a dedicated user to run the application. In this case, we create the `dagger` user with `sudo adduser dagger` (create a password of your choosing) and then add the `dagger` user to the `sudo` usergroup with `sudo usermod -aG sudo dagger`. Switch to the `dagger` user with `sudo su - dagger`. All remaining tasks will be ran as the `dagger` user.
 
@@ -160,3 +176,7 @@ sudo systemctl enable --now wield.service
 ```
 
 Verify proper operation by tailing the log with `tail -f config.log`.
+
+
+
+Disclaimer: By operating a Wield Node on GenesysGo's D.A.G.G.E.R. Testnet Phase 1, you acknowledge that you do so voluntarily and at your own risk. GenesysGo provides the testnet software "as is" without any warranties, and accepts no responsibility for any direct, indirect, incidental, or consequential damages you may incur. You are responsible for the security of your own system and data. GenesysGo shall not be liable for any losses or damages resulting from your participation in the testnet. By using the software, you agree to indemnify GenesysGo against any claims or disputes related to your node operation. This agreement is binding upon download and operation of a Wield Node. GenesysGo may alter or discontinue the testnet without notice. If you disagree with these terms, do not participate in the testnet.
