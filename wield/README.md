@@ -7,7 +7,7 @@ description: >-
 
 # Run a Wield Node
 
-## 1. Node Requirements - Specific hardware requirements are yet to be determined. Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not supported at this time.
+## 1. Node Requirements - Specific hardware requirements are yet to be determined. Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not *officially* supported at this time.
 
 ## 2. Operating system configuration.
 
