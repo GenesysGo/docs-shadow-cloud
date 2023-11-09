@@ -5,8 +5,6 @@
   * [D.A.G.G.E.R.](learn/dagger.md)
   * [Storage](learn/storage-services/README.md)
   * [Design](learn/storage-services/design.md)
-  * [On-Chain Proofs](learn/storage-services/on-chain-proofs.md)
-  * [Smart Contracts](learn/storage-services/smart-contracts.md)
 * [Build](build/README.md)
   * [Install ShdwDrive](build/shadow-drive/README.md)
   * [CLI](build/shadow-drive/the-cli.md)
