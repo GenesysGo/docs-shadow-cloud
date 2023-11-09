@@ -4,6 +4,12 @@ description: Explore projects utilizing ShdwDrive
 
 # Shdw Ecosystem
 
+**Shadow Storage**
+
+One of the most widely used GUIs for interacting with ShdwDrive. A unique user experience that lets teams and individuals unlock the power of web3 through crypto and decentralization—file management, transfer & sharing, immutable storage, private notes, real-time collaboration, and more.
+
+[![](../../.gitbook/assets/shadowstorage.png)](https://www.shadow.storage/#features)
+
 **SYNX**
 
 Synx, developed by the Blxckout team, offers exceptional UI/UX for managing real-world mobile and desktop data. It also comes with comprehensive documentation, making it user-friendly. Synx is a private cloud storage solution supported by a mobile and desktop app that utilizes ShdwDrive.
@@ -16,11 +22,17 @@ A Social Protocol to help build on-chain social media platforms. Developer-frien
 
 [![](../../.gitbook/assets/spling-feature.png)](https://www.splinglabs.com/)
 
-**SHADOW STORAGE**
+**Firethree**
 
-One of the most widely used GUIs for interacting with ShdwDrive. A unique user experience that lets teams and individuals unlock the power of web3 through crypto and decentralization—file management, transfer & sharing, immutable storage, private notes, real-time collaboration, and more.
+Firebase for Web3. Create your own Solana dApp with collection, storage, and analytics with this protocol. Storage by ShdwDrive and multisig by SquadsProtocol.
 
-[![](../../.gitbook/assets/shadowstorage.png)](https://www.shadow.storage/#features)
+[![](../../.gitbook/assets/spling-feature.png)](https://www.firethree.xyz/)
+
+**Blockpal**
+
+Blockpal is the leader in cooperative gaming communities. It is one home for the games that real players want. A place for players, guilds, and games to thrive.
+
+[![](../../.gitbook/assets/spling-feature.png)](https://blockpal.gg/)
 
 #### **Blok.host Web Hosting**
 
@@ -28,47 +40,11 @@ Simple, secure Web3 hosting with backend storage built on ShdwDrive. BlokHost em
 
 [![](../../.gitbook/assets/blockhost.png)](https://blok.host/)
 
-**SDRIVE**
-
-Easy to use, reliable, private, and secure cloud storage built on ShdwDrive. Experience the best in secure, accessible file storage with SDrive's intuitive platform, designed with a robust toolset to support and promote content creators around the world.
-
-[https://sdrive.app/landing](https://sdrive.app/landing)
-
-#### **Shadow Portal**
-
-A new primitive on Solana. A novel way to summon off-chain data aka "runes" from ShdwDrive directly into your Solana smart contract.
-
-[https://twitter.com/ShadowyPortal](https://twitter.com/ShadowyPortal)
-
 #### **AlphaBatem's Shdw UI**
 
 This tool provides a speedy way to interact with your ShdwDrive storage account, including handling the swap from SOL to SHDW.
 
 {% embed url="https://drive.alphabatem.com/login#/" %}
-
-#### **ShadowTube**
-
-A Web3 version of YouTube built with ShdwDrive storage, uploads come directly from your ShdwDrive storage accounts!
-
-{% embed url="https://www.shadowtube.io/" %}
-
-#### **Crab.so Decentralized Social Network**
-
-Another prime example of a comprehensive suite of NFT tools should include ShdwDrive storage, and this tool delivers on all fronts.
-
-{% embed url="https://www.crab.so/" %}
-
-#### **You are Loved**
-
-A fascinating use case where an HTML doc can be served on ShdwDrive while the minting functionality and wallet connection can remain in tact. Check it out!
-
-{% embed url="https://shdw-drive.genesysgo.net/6P6WznKbJ2nEMCfrXZDQvipCgCSx45SXxjWMWvqfPtyJ/yal_website.html" %}
-
-#### **Grape Shadow UI**
-
-An open-sourced tool for managing ShdwDrive storage from the browser.
-
-{% embed url="https://grapedrive.vercel.app/" %}
 
 #### **A Rust CLI for ShdwDrive**
 
