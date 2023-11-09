@@ -132,15 +132,3 @@ Register the service and start the `wield` process with:
 sudo systemctl enable --now wield.service
 ```
 Verify proper operation by tailing the log with `tail -f config.log`.
-
-### Wield
-
-#### System requirements:
-
--   Rust: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
--   The following system packages: `sudo apt install pkg-config libssl-dev build-essential cmake clang`
-
-#### Available env vars:
-
--   `SHDW_NETWORK`
-    -   `testnet`
