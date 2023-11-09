@@ -36,6 +36,8 @@ D.A.G.G.E.R. stands for Directed Acyclic Gossip Graph Enabling Replication (of c
 
 [**Learn about D.A.G.G.E.R**](dagger.md)
 
+[**Run a Wield Node on our Testnet**](https://docs.shdwdrive.com/wield)
+
 ## **Storage**
 
 ShdwDrive takes open source software-defined object storage and integrates it with Solana’s Proof of History consensus mechanism, and then decentralizes it. This allows it to achieve extremely fast I/O speeds, massive scalability, and data integrity. At the same time, it retains the benefits of the trustlessness, enhanced security, full transparency, and decentralization that blockchain technology brings to the table.
@@ -96,13 +98,19 @@ Decentralized Ledger Technology should be thought of as a superset of technologi
 
 ## **Shdw Operators**
 
-**(currently in private alpha)**
+**(currently in Testnet Phase 1)**
 
 Shdw Operators are the decentralized backbone of the ShdwDrive storage platform. Operators lease their high-performance compute, storage, and bandwidth. Businesses, projects, and/or individual developers can trustlessly provision network resources. User payments are sent directly to Shdw Operators. Shdw Operators who ensure their resources are always available and performant earn more. Shdw Operators who are inconsistent earn less.
 
 At the foundation of everything are the Shdw Operators who run the nodes that power the Shdw Platform. Operators can connect new nodes to the network, manage their existing servers, or view the overall status of other Shdw Operators – all through the one easy-to-use portal.
 
-Currently in development are a series of Shdw Operator node roles including resolvers, ingestors, storers, cachers. These roles work together under the orchestration of _D.A.G.G.E.R._ to form a permissionless distributed platform that supports both ShdwDrive services and mobile storage being developed.
+Currently in development are a series of Shdw Operator node roles including Wield Nodes, Metadata Nodes, and Auditor Nodes. These roles work together under the orchestration of _D.A.G.G.E.R._ to form a permissionless distributed platform that supports both ShdwDrive services and mobile storage being developed.
+
+#### Testnet Phase 1:
+
+[Running a Wield Node](https://docs.shdwdrive.com/wield) will allow you to trustlessly participate in the D.A.G.G.E.R. phase 1 testnet which powers the D.A.G.G.E.R. Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). We encourage node operators to review our blog articles for full context on the role of Wield Nodes and the purpose of D.A.G.G.E.R. Hammer.&#x20;
+
+Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are requires to erasure code and store files uploaded to the Hammer test interface.&#x20;
 
 ## **Our Team**
 

@@ -14,6 +14,12 @@ Please review our most up to date resources which are located here:\
 ](https://github.com/GenesysGo/dagger-litepaper/blob/main/DAGGER-Litepaper.pdf)[Article on testnet series\
 ](https://www.shadow.cloud/blog/dagger-testnet-release)[Testnet Demo](https://dagger-hammer.shadow.cloud/)
 
+Update: We are currenlty in Testnet Phase 1 of D.A.G.G.E.R. and have released the ability for trustless and permission participation as a Wield Node operator.&#x20;
+
+[Run a Wield Node ](https://docs.shdwdrive.com/wield)to join in!
+
+### Introduction
+
 _Please note: this page adheres to high level explanations and general concepts suitable for all readers. This is not to be considered a whitepaper, more technical documentation can be found by using the links provided directly above. For more detail on how the_ [_SHDW_](https://docs.shadow.cloud/reference/shdw-token) _token is utilized with D.A.G.G.E.R. please see our_ [_SHDW_](https://docs.shadow.cloud/reference/shdw-token) _Token page_ [_here_](https://docs.shadow.cloud/reference/shdw-token)_. This page is currently undergoing changes to improve the alignment with the recently released D.A.G.G.E.R. Litepaper and blog article._
 
 _D.A.G.G.E.R._ is a distributed system with a graph based consensus mechanism. There are five components that make up the protocol specification. This article will explain on a high level each of these five components and how they would interact with an incoming request. For simplicity, the use-case of the transaction can be considered a request to store a file on ShdwDrive v2.
