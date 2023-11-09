@@ -6,11 +6,11 @@ description: >-
 
 # GET STARTED
 
-<table data-view="cards"><thead><tr><th></th><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Learn</strong></td><td></td><td><a href="learn/">learn</a></td><td><a href=".gitbook/assets/Learn_Icon.png">Learn_Icon.png</a></td></tr><tr><td></td><td align="center"><strong>Build</strong></td><td></td><td><a href="build/">build</a></td><td><a href=".gitbook/assets/Build_Icon.png">Build_Icon.png</a></td></tr><tr><td></td><td align="center"><strong>Reference</strong></td><td></td><td><a href="reference/">reference</a></td><td><a href=".gitbook/assets/Reference_Icon.png">Reference_Icon.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Learn</strong></td><td></td><td><a href="learn/">learn</a></td><td><a href=".gitbook/assets/Learn_Icon.png">Learn_Icon.png</a></td></tr><tr><td></td><td align="center"><strong>Build</strong></td><td></td><td><a href="build/">build</a></td><td><a href=".gitbook/assets/Build_Icon.png">Build_Icon.png</a></td></tr><tr><td></td><td align="center"><strong>Reference</strong></td><td></td><td><a href="reference/">reference</a></td><td><a href=".gitbook/assets/Reference_Icon.png">Reference_Icon.png</a></td></tr><tr><td></td><td align="center"><strong>Wield Node</strong></td><td></td><td><a href="wield/">wield</a></td><td><a href=".gitbook/assets/SHDW-4.png">SHDW-4.png</a></td></tr></tbody></table>
 
 ### [Install ShdwDrive](build/)
 
-### [Join the Testnet](https://docs.shdwdrive.com/wield)
+### [Join the Testnet](https://docs.shdwdrive.com/wield)&#x20;
 
 ## How this resource is organized
 
