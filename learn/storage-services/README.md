@@ -1,35 +1,18 @@
 ---
-description: A resource for those exploring GenesysGo's Shadow Drive as a storage solution.
+description: A resource for those exploring GenesysGo's ShdwDrive as a storage solution.
 ---
 
 # Storage
 
-The Shdw Drive is a new approach to S3-compatible cloud storage with the enhancements of on-chain storage. We have completed full integration with the Solana blockchain, while retaining the ability to become a poly-chain service in the future. For this reason we define the combination of Shdw Drive and its evolving [D.A.G.G.E.R. ](../dagger.md)technology as cloud storage with additional Layer-1 specific integration. Other web3 storage providers have attempted to integrate with Solana in the past and have had only marginal success. Shdw Drive solves this by integrating directly with the Proof of History consensus mechanism, passing on-chain events for consensus approval by the Solana validator network which prove the continued existence and integrity of the stored data.
+The Shdw Drive is a new approach to S3-compatible cloud storage with the enhancements of on-chain storage. We have completed full integration with the Solana blockchain, while retaining the ability to become a poly-chain service in the future. For this reason we define the combination of ShdwDrive and its evolving [D.A.G.G.E.R. ](../dagger.md)technology as a data-availability layer for all of web2 and web3. Other web3 storage providers have attempted to integrate with Solana in the past and have had only marginal success. Shdw Drive solves this by integrating directly with the Proof of History consensus mechanism, passing on-chain events for consensus approval by the Solana validator network which prove the continued existence and integrity of the stored data.
 
-The idea for Shdw Drive was founded on the premise that the Solana network is largely misunderstood in terms of what it was built to achieve. By understanding what it truly means to be the world’s most performant state machine, you realize that Solana can be used to reach consensus and maintain state on nearly anything.
+The idea for ShdwDrive was founded on the premise that the Solana network is largely misunderstood in terms of what it was built to achieve. By understanding what it truly means to be the world’s most performant state machine, you realize that Solana can be used to reach consensus and maintain state on nearly anything.
 
-Whereas other decentralized storage providers require multiple layers in order to make their solution viable (i.e. Arweave does storage, but to scale uploads faster you need to use Bundlr for example, and then in order to serve the data in any kind of a useful way you need to subscribe to a front-end UI for basic high-speed CDN functionality), Shdw Drive builds everything into one platform.
+Whereas other decentralized storage providers require multiple layers in order to make their solution viable (i.e. Arweave does storage, but to scale uploads faster you need to use Bundlr for example, and then in order to serve the data in any kind of a useful way you need to subscribe to a front-end UI for basic high-speed CDN functionality), ShdwDrive builds everything into one platform.
 
-When a user commits their [$SHDW](https://docs.shadow.cloud/reference/shdw-token) to Shdw Drive for storage, they are not only provided with storage space, but also with incredibly fast batched uploads and a robust CDN. This ensures their content is stored quickly, efficiently, and delivered at speeds that makes Shdw Drive a truly viable solution for projects that need speed, stability, and efficiency.
+When a user commits their [$SHDW](https://docs.shadow.cloud/reference/shdw-token) to ShdwDrive for storage, they are not only provided with storage space, but also with incredibly fast batched uploads and a robust CDN. This ensures their content is stored quickly, efficiently, and delivered at speeds that makes ShdwDrive a truly viable solution for projects that need speed, stability, and efficiency.
 
-The following pages are intended to outline what Shdw Drive is, how it works, and why it works. These pages will do so by explaining things in practical terms as our goal is for a wide range of people to fully understand what is being built.
-
-<details>
-
-<summary>Please note</summary>
-
-_This resource assumes some basic knowledge of GenesysGo and the Solana architecture as a whole. If you aren’t familiar with Solana’s architecture, then it is highly recommended to spend some time learning about how Solana validators store “Account State”, what “AccountsDB” is, and what goes into the creation of “on-chain accounts.” Please see the Solana Discord (discord.gg/Solana) and check out the dev-resources channel to learn more._
-
-</details>
-
-## **Contents**
-
-* [**Design**](design.md)
-  * Learn how the Shdw Drive is built to support an entire ecosystem of new developers
-* [**On-Chain Events as Proof of Storage**](on-chain-proofs.md)
-  * Learn how the Shdw Drive utilizes the world’s most performant state machine to ensure the validity and integrity of the state of its storage network via on-chain change events.
-* [**Smart-Contracts**](smart-contracts.md)
-  * Learn how smart-contracts securely interact and orchestrate client storage
+The following pages are intended to outline what ShdwDrive is, how it works, and why it works. These pages will do so by explaining things in practical terms as our goal is for a wide range of people to fully understand what is being built.
 
 ## **Why use Shdw Drive?**
 
