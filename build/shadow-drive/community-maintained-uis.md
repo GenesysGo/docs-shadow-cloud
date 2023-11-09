@@ -8,7 +8,7 @@ description: Explore projects utilizing ShdwDrive
 
 One of the most widely used GUIs for interacting with ShdwDrive. A unique user experience that lets teams and individuals unlock the power of web3 through crypto and decentralization—file management, transfer & sharing, immutable storage, private notes, real-time collaboration, and more.
 
-[![](../../.gitbook/assets/shadowstorage.png)](https://www.shadow.storage/#features)
+[![](../../.gitbook/assets/shadow\_storage.png)](https://www.shadow.storage/#features)
 
 **SYNX**
 
@@ -26,19 +26,19 @@ A Social Protocol to help build on-chain social media platforms. Developer-frien
 
 Firebase for Web3. Create your own Solana dApp with collection, storage, and analytics with this protocol. Storage by ShdwDrive and multisig by SquadsProtocol.
 
-[![](../../.gitbook/assets/spling-feature.png)](https://www.firethree.xyz/)
+[![](../../.gitbook/assets/firethree.png)](https://www.firethree.xyz/)
 
 **Blockpal**
 
 Blockpal is the leader in cooperative gaming communities. It is one home for the games that real players want. A place for players, guilds, and games to thrive.
 
-[![](../../.gitbook/assets/spling-feature.png)](https://blockpal.gg/)
+[![](../../.gitbook/assets/blockpal.png)](https://blockpal.gg/)
 
 #### **Blok.host Web Hosting**
 
 Simple, secure Web3 hosting with backend storage built on ShdwDrive. BlokHost empowers users to quickly deploy their websites and use the platform's node network to distribute content in an optimally efficient manner globally.
 
-[![](../../.gitbook/assets/blockhost.png)](https://blok.host/)
+[![](<../../.gitbook/assets/blockhost (1).png>)](https://blok.host/)
 
 #### **AlphaBatem's Shdw UI**
 
