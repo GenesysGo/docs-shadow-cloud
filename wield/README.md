@@ -193,3 +193,40 @@ Verify proper operation by tailing the log with `tail -f config.log`.
 
 
 \*Disclaimer: By operating a Wield Node on GenesysGo's D.A.G.G.E.R. Testnet Phase 1, you acknowledge that you do so voluntarily and at your own risk. GenesysGo provides the Testnet software "as is" without any warranties, and accepts no responsibility for any direct, indirect, incidental, or consequential damages you may incur. You are responsible for the security of your own system and data. GenesysGo shall not be liable for any losses or damages resulting from your participation in the Testnet. By using the software, you agree to indemnify GenesysGo against any claims or disputes related to your node operation. This agreement is binding upon download and operation of a Wield Node. GenesysGo may alter or discontinue the Testnet without notice. This includes, but is not limited to, the hardware requirements to operate a D.A.G.G.E.R. Wield Node in Testnet Phase 1. If you disagree with these terms, do not participate in the Testnet.
+
+
+
+### Frequently Asked Questions (FAQ) for D.A.G.G.E.R. Testnet and Wield Nodes
+
+**Q: What are the system requirements for running a Wield Node?**
+A: The recommended system requirements are an AWS EC2 t2.2xlarge instance or equivalent with 8 vCPU, 32GB RAM, running Ubuntu 22.04 LTS with kernel version 5.15.0 or newer.
+
+**Q: What should I do if my Wield Node fails to start?**
+A: If `wield.service` shows as failed, you can try adjusting the settings in `start_wield.sh` script or use the `--help` command for guidance. It may also be necessary to clear out snapshots and wait for 5 epochs before attempting to join again.
+
+**Q: What is an epoch on the D.A.G.G.E.R. network?**
+A: An epoch on the D.A.G.G.E.R. network is not correlated to Solana epochs. A DAGGER epoch can be as short as 5-10 minutes currently, depending on network activity.
+
+**Q: What should I do if I encounter errors in the logs after starting my Wield Node?**
+A: Share the logs in the support channel. Errors such as "Should not be genesis event" or timeout syncing with peers may require you to clear snapshots and wait for a few epochs. If errors persist, wait for the core engineering team to investigate.
+
+**Q: Can I run a Wield Node on a virtualized environment?**
+A: Yes, Wield Nodes have been tested on bare metal, VMs with 8 vCPU, and various cloud platforms. Performance may vary based on network traffic and usage increases.
+
+**Q: What should I do if I get a GLIBC version error when generating a keypair?**
+A: This error may occur if you are not running the correct version of the Linux kernel. Ensure you are using Ubuntu 22.04 with kernel 5.15.0 or newer. You may need to perform system updates (`sudo apt update` and `sudo apt upgrade`) and possibly reboot your machine.
+
+**Q: Can I run a Wield Node on a lower-end machine just for testing?**
+A: You may attempt to run a node on lower-end hardware, but be aware that if you do not meet the minimum requirements, particularly for RAM, your node may crash. It's also important to have sufficient CPU power to keep up with the network.
+
+**Q: Where can I rent a server to run a Wield Node?**
+A: Most cloud providers offer suitable images for running a Wield Node. Digital Ocean is a solid standard for comparison, but always ensure the provider meets the system requirements for running a node.
+
+**Q: If I have no experience with Linux or running nodes, can I still set up a Wield Node?**
+A: Yes, with a willingness to learn and some research, such as consulting YouTube tutorials or using resources like ChatGPT for Linux guidance, you can set up a node. The community and engineering team are also available to help with questions.
+
+**Q: What should I do if I encounter unfamiliar terms or need further assistance?**
+A: Don't hesitate to ask for clarification or assistance in the support channel. The community and the core engineering team are there to help you through the process.
+
+Remember that the information provided in the FAQ is based on the latest knowledge as of the last update and may change as the D.A.G.G.E.R. network evolves or as new updates are released. Always refer to the official documentation and Discord support channels for the most current information.
+
