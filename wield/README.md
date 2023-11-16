@@ -204,9 +204,6 @@ A: Yes, with a willingness to learn and some research, such as consulting YouTub
 ## **Q: What hardware do I need to set up a Wield Node?**
 A: The recommended system requirements are an AWS EC2 t2.2xlarge instance or equivalent with 8 vCPU, 32GB RAM, running Ubuntu 22.04 LTS with kernel version 5.15.0 or newer. Alternatively, you can use parts from an old gaming machine or any setup that meets these minimum requirements.
 
-## **Q: Is it possible to run a Wield Node without Linux knowledge?**
-A: While it's possible to follow a guide with copy/paste commands, it's important to understand the commands you're executing. Beginners should invest time in learning Linux basics to effectively manage a node.
-
 ## **Q: Can I use a virtual machine to run a Wield Node?**
 A: Yes, Wield Nodes have been successfully tested on virtual machines like VirtualBox or VMware, as well as on various cloud platforms. Ensure that the VM meets the recommended system requirements for optimal performance.
 
@@ -236,9 +233,6 @@ A: An epoch on the D.A.G.G.E.R. network is a time period that can be as short as
 
 ## **Q: Where can I rent a server to run a Wield Node?**
 A: Most cloud providers offer suitable instances for running a Wield Node. Digital Ocean is a solid standard for comparison, but always ensure the provider meets the system requirements for running a node.
-
-## **Q: If I have no experience with Linux or running nodes, can I still set up a Wield Node?**
-A: Yes, with a willingness to learn and some research, such as consulting YouTube tutorials or using resources like ChatGPT for Linux guidance, you can set up a node. The community and engineering team are also available to help with questions.
 
 ## **Q: What should I do if I encounter unfamiliar terms or need further assistance?**
 A: Don't hesitate to ask for clarification or assistance in the support channel. The community and the core engineering team are there to help you through the process.
