@@ -36,11 +36,10 @@ description: ShdwDrive consolidated resources
 
 [Twitter](https://twitter.com/GenesysGo)
 
-[Medium Articles](https://genesysgo.medium.com/)
 
 ## **Community**
 
-[Shdw Ecosystem](https://docs.shadow.cloud/build/community-mainted-uis)
+[Shdw Ecosystem](https://docs.shdwdrive.com/build/community-maintained-uis)
 
 [Solana Breakpoint Demo 2022](breakpoint-2022-demo.md)
 
