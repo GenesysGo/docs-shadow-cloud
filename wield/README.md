@@ -17,13 +17,13 @@ description: >-
 
 [D.A.G.G.E.R. Hammer](https://dagger-hammer.shdwdrive.com/)
 
-Running a Wield Node will allow you to trustlessly participate in the D.A.G.G.E.R. phase 1 testnet which powers the D.A.G.G.E.R. Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). We encourage node operators to review our blog articles for full context on the role of Wield Nodes and the purpose of D.A.G.G.E.R. Hammer.&#x20;
+Running a Wield Node will allow you to trustlessly participate in the D.A.G.G.E.R. phase 1 testnet which powers the D.A.G.G.E.R. Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). We encourage node operators to review our blog articles for full context on the role of Wield Nodes and the purpose of D.A.G.G.E.R. Hammer.
 
-Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are requires to erasure code and store files uploaded to the Hammer test interface.&#x20;
+Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are requires to erasure code and store files uploaded to the Hammer test interface.
 
 ## 1. Node Requirements:
 
-**Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not **_**officially**_** supported at this time.**
+**Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not \_officially**\_\*\* supported at this time.\*\*
 
 **Minimum hardware requirements\* to operate a D.A.G.G.E.R. Wield Node for Testnet Phase 1 are as follows:**
 
@@ -31,6 +31,26 @@ Wield Node operators will be handling thousands of live user test transactions a
 * **32 GB RAM**
 * **250 GB SSD for data storage and high speed i/o operations**
 * **100mbps up/down network connection is the bare minimum**
+
+## 1.1. Guided install + startup
+
+If you'd like a more guided experience, we have created a special installer script that will:
+
+* Check your system's hardware to ensure it meets the minimum hardware specified
+* Apply some kernel tunes to allow for improved traffic flow over tcp
+* Download `wield` and `shdw-keygen` binaries
+* Generate a keypair file
+* Generate a config file and startup script based on your machine's specs
+* Generate and configure a system service
+* Start up the wield service
+
+To do this, all you have to do is run the following command from your terminal:
+
+```
+curl -sSL https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-installer.sh | bash
+```
+
+If you have an issues with the above script, please continue on below with the manual installation.
 
 ## 2. Operating system configuration:
 
@@ -89,7 +109,7 @@ If you have not already done so, it is recommended to create a dedicated user to
 Download the Wield binary to the `dagger` user directory:
 
 ```
-wget -O wield https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-0.1.0-x84_64-linux-gnu
+wget -O wield https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-latest
 ```
 
 Make the Wield binary executable:
@@ -101,7 +121,7 @@ sudo chmod +x wield
 Download the Shdw-Keygen utility to the `dagger` user directory:
 
 ```
-wget -O shdw-keygen https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-keygen-0.1.0-x84_64-linux-gnu
+wget -O shdw-keygen https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-keygen-latest
 ```
 
 Make the Shdw-Keygen utility executable:
@@ -119,27 +139,26 @@ Create a new unique keypair ID using the Shdw-Keygen utility:
 Create a config file with `nano config.toml` and paste the the below contents into the file:
 
 ```
-trusted_node = "139.178.81.111:2030"
+trusted_nodes = ["64.23.128.41:2030", "64.23.128.15:2030", "138.197.42.158:2030"]
 dagger = "JoinAndRetrieve"
 
 [node_config]
 socket = 2030
-idle_timeout = 3600
 keypair_file = "id.json"
 
 [storage]
 peers_db = "dbs/peers.db"
 ```
 
-Create the Wield startup script with `nano start_wield.sh` and paste the below contents into the file. NOTE: These parameters are based on a 32c/64t processor. For tuning parameters on different hardware please consult the output of `wield --help`:
+Create the Wield startup script with `nano start_wield.sh` and paste the below contents into the file. NOTE: This startup script sets some tuning parameters to the default. For tuning parameters on different hardware please consult the output of `wield --help`:
 
 ```
 #!/bin/bash
 PATH=/home/dagger
 exec wield \
---processor-threads 36 \
---global-threads 12 \
---comms-threads 8 \
+--processor-threads 4 \
+--global-threads 4 \
+--comms-threads 2 \
 --log-level info \
 --history-db-path /mnt/dag/historydb \
 --config-toml config.toml \
@@ -190,49 +209,58 @@ sudo systemctl enable --now wield.service
 
 Verify proper operation by tailing the log with `tail -f config.log`.
 
-
-
 \*Disclaimer: By operating a Wield Node on GenesysGo's D.A.G.G.E.R. Testnet Phase 1, you acknowledge that you do so voluntarily and at your own risk. GenesysGo provides the Testnet software "as is" without any warranties, and accepts no responsibility for any direct, indirect, incidental, or consequential damages you may incur. You are responsible for the security of your own system and data. GenesysGo shall not be liable for any losses or damages resulting from your participation in the Testnet. By using the software, you agree to indemnify GenesysGo against any claims or disputes related to your node operation. This agreement is binding upon download and operation of a Wield Node. GenesysGo may alter or discontinue the Testnet without notice. This includes, but is not limited to, the hardware requirements to operate a D.A.G.G.E.R. Wield Node in Testnet Phase 1. If you disagree with these terms, do not participate in the Testnet.
-
-
 
 ### Frequently Asked Questions (FAQ) for D.A.G.G.E.R. Testnet and Wield Nodes
 
 ## **Q: Can I set up a Wield Node if I have never used Linux before?**
+
 A: Yes, with a willingness to learn and some research, such as consulting YouTube tutorials or using resources like ChatGPT for Linux guidance, you can set up a node. The community and the engineering team are also available to help with questions.
 
 ## **Q: What hardware do I need to set up a Wield Node?**
+
 A: The recommended system requirements are an AWS EC2 t2.2xlarge instance or equivalent with 8 vCPU, 32GB RAM, running Ubuntu 22.04 LTS with kernel version 5.15.0 or newer. Alternatively, you can use parts from an old gaming machine or any setup that meets these minimum requirements.
 
 ## **Q: Can I use a virtual machine to run a Wield Node?**
+
 A: Yes, Wield Nodes have been successfully tested on virtual machines like VirtualBox or VMware, as well as on various cloud platforms. Ensure that the VM meets the recommended system requirements for optimal performance.
 
 ## **Q: What if I encounter a GLIBC not found error when setting up my node or generating a keypair?**
+
 A: This error usually indicates that you're not on the correct version of Ubuntu or the Linux kernel. Ensure you are using Ubuntu 22.04 with kernel 5.15.0 or newer. You may need to perform system updates (`sudo apt update` and `sudo apt upgrade`) and possibly reboot your machine.
 
 ## **Q: Is it safe to upgrade from Ubuntu 20.04 to 22.04?**
+
 A: Yes, many users have successfully performed an in-place upgrade from Ubuntu 20.04 to 22.04 without issues.
 
 ## **Q: What should I do if I encounter issues with the Wield service or during the setup process?**
+
 A: First, ensure your `config.toml` is set up correctly and that you've given execution permissions to `start_wield.sh` with `chmod +x`. Check the service status with `sudo journalctl -u wield` for more details. If `wield.service` shows as failed, try adjusting the settings in `start_wield.sh` or use the `--help` command for guidance. Share any errors or issues in the support channel for further assistance.
 
 ## **Q: Can I deploy a Wield Node on a server that's already hosting another node?**
+
 A: It's possible, but ensure that the server has enough resources to handle both nodes without affecting performance. Monitor resource usage closely.
 
 ## **Q: How many testnet phases will there be, and when is the estimated Mainnet launch?**
+
 A: The number of testnet phases and the Mainnet launch date are still to be determined. The team is focused on ensuring stability and performance before setting any deadlines.
 
 ## **Q: Where can I find the roadmap for D.A.G.G.E.R.?**
+
 A: The roadmap can be found on the official blog, which outlines the plans for upcoming testnet phases.
 
 ## **Q: Can I run a Wield Node on a system with less than the recommended specs for testing purposes?**
+
 A: You can try running a node on a system with lower specs, but it may not perform optimally and may crash, especially if the RAM and CPU power do not meet the minimum requirements. The team may learn from your experience, but there's no guarantee it will work smoothly.
 
 ## **Q: What is an epoch on the D.A.G.G.E.R. network?**
+
 A: An epoch on the D.A.G.G.E.R. network is a time period that can be as short as 5-10 minutes currently, depending on network activity.
 
 ## **Q: Where can I rent a server to run a Wield Node?**
+
 A: Most cloud providers offer suitable instances for running a Wield Node. Digital Ocean is a solid standard for comparison, but always ensure the provider meets the system requirements for running a node.
 
 ## **Q: What should I do if I encounter unfamiliar terms or need further assistance?**
+
 A: Don't hesitate to ask for clarification or assistance in the support channel. The community and the core engineering team are there to help you through the process.
