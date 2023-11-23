@@ -47,7 +47,7 @@ If you'd like a more guided experience, we have created a special installer scri
 To do this, all you have to do is run the following command from your terminal:
 
 ```
-curl -sSL https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-installer.sh | bash
+wget https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-installer.sh && chmod +x wield-installer.sh && ./wield-installer.sh
 ```
 
 If you have an issues with the above script, please continue on below with the manual installation.
