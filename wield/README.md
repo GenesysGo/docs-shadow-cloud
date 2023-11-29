@@ -47,7 +47,7 @@ If you'd like a more guided experience, we have created a special installer scri
 To do this, all you have to do is run the following command from your terminal:
 
 ```
-wget https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-installer.sh && chmod +x wield-installer.sh && ./wield-installer.sh
+wget -O wield-installer.sh https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-installer.sh && chmod +x wield-installer.sh && ./wield-installer.sh
 ```
 
 If you have an issues with the above script, please continue on below with the manual installation.
@@ -271,6 +271,7 @@ A: You can update your node by stopping the service, downloading the latest bina
 A: Log rotation is a system for managing log files so they don't consume too much disk space. You can set up log rotation using the `logrotate` utility on Linux, configuring it to rotate your node's log files based on size or time.
 
 ## **Q: Can I run a Wield Node on a system with less than the recommended specs for testing purposes?**
+
 A: You can try running a node on a system with lower specs, but it may not perform optimally and may crash, especially if the RAM and CPU power do not meet the minimum requirements. The team may learn from your experience, but there's no guarantee it will work smoothly.
 
 ## **Q: How can I check system usage on my server?**
