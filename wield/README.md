@@ -139,7 +139,7 @@ Create a new unique keypair ID using the Shdw-Keygen utility:
 Create a config file with `nano config.toml` and paste the the below contents into the file:
 
 ```
-trusted_nodes = ["64.23.128.41:2030", "64.23.128.15:2030", "138.197.42.158:2030"]
+trusted_nodes = ["24.199.104.119:2030", "24.144.92.19:2030", "134.209.162.83:2030"]
 dagger = "JoinAndRetrieve"
 
 [node_config]
@@ -214,9 +214,11 @@ Verify proper operation by tailing the log with `tail -f config.log`.
 ### Frequently Asked Questions (FAQ) for D.A.G.G.E.R. Testnet and Wield Nodes
 
 ## **Q: Where can I find the roadmap for D.A.G.G.E.R.?**
+
 A: The roadmap can be found on the official blog, which outlines the plans for upcoming testnet phases.
 
 ## **Q: How many testnet phases will there be, and when is the estimated Mainnet launch?**
+
 A: The number of testnet phases and the Mainnet launch date are still to be determined. The team is focused on ensuring stability and performance before setting any deadlines.
 
 ## **Q: Can I set up a Wield Node if I have never used Linux before?**
@@ -224,6 +226,7 @@ A: The number of testnet phases and the Mainnet launch date are still to be dete
 A: Yes, with a willingness to learn and some research, such as consulting YouTube tutorials or using resources like ChatGPT for Linux guidance, you can set up a node. The community and the engineering team are also available to help with questions.
 
 ## **Q: Where can I rent a server to run a Wield Node?**
+
 A: Most cloud providers offer suitable instances for running a Wield Node. Digital Ocean is a solid standard for comparison, but always ensure the provider meets the system requirements for running a node.
 
 ## **Q: What hardware do I need to set up a Wield Node?**
@@ -264,12 +267,14 @@ A: You can check your node's version with `./wield --version`. To upgrade, you c
 A: You can update your node by stopping the service, downloading the latest binary, and then restarting the service. Detailed commands are provided by users in the chat.
 
 ## **Q: What is log rotation and how do I set it up for my node?**
+
 A: Log rotation is a system for managing log files so they don't consume too much disk space. You can set up log rotation using the `logrotate` utility on Linux, configuring it to rotate your node's log files based on size or time.
 
 ## **Q: Can I run a Wield Node on a system with less than the recommended specs for testing purposes?**
 A: You can try running a node on a system with lower specs, but it may not perform optimally and may crash, especially if the RAM and CPU power do not meet the minimum requirements. The team may learn from your experience, but there's no guarantee it will work smoothly.
 
 ## **Q: How can I check system usage on my server?**
+
 A: On an Ubuntu server, you can check system usage by opening the Ubuntu System Monitor or by using command-line tools such as `htop`, `top`, or `vmstat`. These tools provide information on CPU, memory, and disk usage.
 
 ## **Q: What is an epoch on the D.A.G.G.E.R. network?**
@@ -280,9 +285,11 @@ A: An epoch on the D.A.G.G.E.R. network is a time period that can be as short as
 A: An epoch is now 200 bundles in length.
 
 ## **Q: Can I close the terminal window after starting a node on a VPS?**
+
 A: Yes, you can close the terminal window if you are using a service manager like `systemd` to run your node. The service will continue to run in the background. Use `systemctl status <service_name>` to check the status of your node.
 
 ## **Q: What should I do if I encounter a 'Resource temporarily unavailable' error when starting my node?**
+
 A: This error usually means that a required resource, such as a database file, is locked because it is in use by another process. Make sure that no other instance of the node is running. You may need to stop the running service before starting it manually.
 
 **Q: What should I do if I receive an error about an invalid epoch in my logs?**
@@ -292,36 +299,47 @@ A: This could indicate that either the peer or your node is very behind. Make su
 A: Ensure you have the correct trusted peer values in your `config.toml` and that you have waited the full 5 epochs after an update before restarting your node.
 
 ## **Q: Is there a way to configure my node to use more memory or CPU resources?**
+
 A: The node software will automatically use the resources it needs up to the limits of what is available on your system. If you notice low resource usage, it could be due to network idle times or inefficiencies in the node software that may be addressed in future updates.
 
 ## **Q: What happens if I accidentally try to start a second instance of my node?**
+
 A: If you try to start a second instance while one is already running, you may encounter errors related to locked resources or port conflicts. Ensure that only one instance is running at any given time.
 
 ## **Q: Can I deploy a Wield Node on a server that's already hosting another node?**
+
 A: It's possible, but ensure that the server has enough resources to handle both nodes without affecting performance. Monitor resource usage closely.
 
 ## **Q: How can I monitor the progress of epochs on the network?**
+
 A: The progress of epochs can typically be monitored through the node's logs or through any network-monitoring tools provided by the D.A.G.G.E.R. team.
 
 ## **Q: What should I do if I notice the network has slowed down or is not progressing?**
+
 A: Network slowdowns can occur for various reasons. Stay updated with official announcements from the D.A.G.G.E.R. team for information on network status and any actions you may need to take.
 
 ## **Q: What if I encounter a GLIBC not found error when setting up my node or generating a keypair?**
+
 A: This error usually indicates that you're not on the correct version of Ubuntu or the Linux kernel. Ensure you are using Ubuntu 22.04 with kernel 5.15.0 or newer. You may need to perform system updates (`sudo apt update` and `sudo apt upgrade`) and possibly reboot your machine.
 
 ## **Q: How can I ensure my node stays live after closing the terminal?**
+
 A: To ensure your node remains active after closing the terminal, run it as a background service using `systemd` or `screen`. This way, the process isn't tied to your terminal session.
 
 ## **Q: How can I increase the limits of my node's resource usage?**
+
 A: Limits on resource usage are generally defined by the system's capabilities and the node's software. There may be configuration options that allow for tuning, but these should be used with caution to avoid instability.
 
 ## **Q: Where can I find announcements and updates for the testnet?**
+
 A: Announcements and updates for the testnet are typically posted in the official channels provided by the D.A.G.G.E.R. team. Keep an eye on these channels for the latest information.
 
 ## **Q: How do I determine the profitability of running a node?**
+
 A: Profitability will depend on various factors, including the rewards structure, operational costs, and network performance. Details on operator rewards, including allowances and penalties for downtime, will be provided by the D.A.G.G.E.R. team as the testnet progresses.
 
 ## **Q: What should I do if I encounter unfamiliar terms or need further assistance?**
+
 A: Don't hesitate to ask for clarification or assistance in the Discord support channel. The community and the core engineering team are there to help you through the process.
 
 **Q: How do I share my server log file?**
