@@ -27,7 +27,7 @@ Wield Node operators will be handling thousands of live user test transactions a
 
 **Minimum hardware requirements\* to operate a D.A.G.G.E.R. Wield Node for Testnet Phase 1 are as follows:**
 
-* **8 CPU cores**
+* **16 CPU cores**
 * **32 GB RAM**
 * **250 GB SSD for data storage and high speed i/o operations**
 * **100mbps up/down network connection is the bare minimum**
@@ -150,14 +150,14 @@ keypair_file = "id.json"
 peers_db = "dbs/peers.db"
 ```
 
-Create the Wield startup script with `nano start_wield.sh` and paste the below contents into the file. NOTE: This startup script sets some tuning parameters to the default. For tuning parameters on different hardware please consult the output of `wield --help`:
+Create the Wield startup script with `nano start_wield.sh` and paste the below contents into the file. NOTE: This startup script is optimized for a 16 thread CPU. For tuning parameters on different hardware please consult the output of `wield --help`:
 
 ```
 #!/bin/bash
 PATH=/home/dagger
 exec wield \
 --processor-threads 4 \
---global-threads 4 \
+--global-threads 10 \
 --comms-threads 2 \
 --log-level info \
 --history-db-path /mnt/dag/historydb \
@@ -254,6 +254,7 @@ A: For troubleshooting, check the system logs, review the node's configuration f
 A: Log files can be checked using command-line tools like `cat`, `less`, `tail`, or `grep`. The specific log file location may vary based on your node configuration. Use `journalctl` to check systemd service logs, for example, `sudo journalctl -u wield.service`. You can check the status of your node by running the command `sudo systemctl status wield`. This will give you an overview of your node's current operational status. You can monitor the finalization process by using the command `tail -f config.log | grep "finalized"`. This will filter the log entries to show you only the lines that mention "finalized," allowing you to track the finalization process in real-time.
 
 ## **Q: Where can I find the log file on my server?**
+
 A: The log file is usually located in `/home/dagger/config.log`.
 
 ## **Q: How do I find my node ID?**
@@ -261,9 +262,11 @@ A: The log file is usually located in `/home/dagger/config.log`.
 A: Run `./shdw-keygen pubkey id.json` in the `/home/dagger` directory, assuming you have the `shdw-keygen` program downloaded.
 
 ## **Q: How do I check my node's version and upgrade if necessary?**
+
 A: You can check your node's version with `./wield --version`. To upgrade, you can use the interactive installer script, which now includes an option to upgrade.
 
 ## **Q: How do I update to the latest version of the software?**
+
 A: You can update your node by stopping the service, downloading the latest binary, and then restarting the service. Detailed commands are provided by users in the chat.
 
 ## **Q: What is log rotation and how do I set it up for my node?**
@@ -283,6 +286,7 @@ A: On an Ubuntu server, you can check system usage by opening the Ubuntu System 
 A: An epoch on the D.A.G.G.E.R. network is a time period that can be as short as 5-10 minutes currently, depending on network activity.
 
 ## **Q: How long is an epoch and where can I monitor the progress?**
+
 A: An epoch is now 200 bundles in length.
 
 ## **Q: Can I close the terminal window after starting a node on a VPS?**
@@ -294,9 +298,11 @@ A: Yes, you can close the terminal window if you are using a service manager lik
 A: This error usually means that a required resource, such as a database file, is locked because it is in use by another process. Make sure that no other instance of the node is running. You may need to stop the running service before starting it manually.
 
 ## **Q: What should I do if I receive an error about an invalid epoch in my logs?**
+
 A: This could indicate that either the peer or your node is very behind. Make sure your node is up-to-date and has restarted correctly. You may have to wait several epochs before attempting to start your node again.
 
 ## **Q: What should I do if I encounter handshake errors or max handshake duration exceeded messages?**
+
 A: Ensure you have the correct trusted peer values in your `config.toml` and that you have waited the full 5 epochs after an update before restarting your node.
 
 ## **Q: Is there a way to configure my node to use more memory or CPU resources?**
@@ -344,4 +350,5 @@ A: Profitability will depend on various factors, including the rewards structure
 A: Don't hesitate to ask for clarification or assistance in the Discord support channel. The community and the core engineering team are there to help you through the process.
 
 ## **Q: How do I share my server log file?**
+
 A: You can download your log file from your server using the `scp` command or a similar method, and then upload it to a sharing service.
