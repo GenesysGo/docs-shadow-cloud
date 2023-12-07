@@ -100,6 +100,9 @@ vm.min_free_kbytes = 3000000
 vm.dirty_expire_centisecs=36000
 vm.dirty_writeback_centisecs=3000
 vm.dirtytime_expire_seconds=43200
+
+# open files limit
+fs.nr_open = 2097152
 ```
 
 ## 3. Node configuration:
