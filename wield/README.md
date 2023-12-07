@@ -46,7 +46,7 @@ If you'd like a more guided experience, we have created a special installer scri
 
 To do this, all you have to do is run the following command from your terminal:
 
-```
+```sh
 wget -O wield-installer.sh https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-installer.sh && chmod +x wield-installer.sh && ./wield-installer.sh
 ```
 
@@ -56,14 +56,14 @@ If you have an issues with the above script, please continue on below with the m
 
 It is recommended to set the maximum open file descriptors (`ulimit`) to the maximum hard limit of `1048576` by editing `/etc/security/limits.conf` and adding the below lines to the bottom of the configuration file (log out and back in for changes to take effect):
 
-```
-*               soft    nofile          1048576
-*               hard    nofile          1048576
+```sh
+*               soft    nofile          2097152
+*               hard    nofile          2097152
 ```
 
 The following kernel tuning parameters are recommended to be applied by editing `/etc/sysctl.conf` and adding the below lines to the configuration file, then applying the new parameters with `sudo sysctl -p`. NOTE: Please review these parameters to ensure they make sense for your specific hardware configuration.:
 
-```
+```sh
 # set default and maximum socket buffer sizes to 12MB
 net.core.rmem_default=12582912
 net.core.wmem_default=12582912
@@ -108,37 +108,37 @@ If you have not already done so, it is recommended to create a dedicated user to
 
 Download the Wield binary to the `dagger` user directory:
 
-```
+```sh
 wget -O wield https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-latest
 ```
 
 Make the Wield binary executable:
 
-```
+```sh
 sudo chmod +x wield
 ```
 
 Download the Shdw-Keygen utility to the `dagger` user directory:
 
-```
+```sh
 wget -O shdw-keygen https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-keygen-latest
 ```
 
 Make the Shdw-Keygen utility executable:
 
-```
+```sh
 sudo chmod +x shdw-keygen
 ```
 
 Create a new unique keypair ID using the Shdw-Keygen utility:
 
-```
+```sh
 ./shdw-keygen new -o ~/id.json
 ```
 
 Create a config file with `nano config.toml` and paste the the below contents into the file:
 
-```
+```toml
 trusted_nodes = ["24.199.104.119:2030", "24.144.92.19:2030", "134.209.162.83:2030"]
 dagger = "JoinAndRetrieve"
 
@@ -152,13 +152,13 @@ peers_db = "dbs/peers.db"
 
 Create the Wield startup script with `nano start_wield.sh` and paste the below contents into the file. NOTE: This startup script is optimized for a 16 thread CPU. For tuning parameters on different hardware please consult the output of `wield --help`:
 
-```
+```bash
 #!/bin/bash
 PATH=/home/dagger
 exec wield \
---processor-threads 4 \
---global-threads 10 \
---comms-threads 2 \
+--processor-threads 8 \
+--global-threads 8 \
+--comms-threads 4 \
 --log-level info \
 --history-db-path /mnt/dag/historydb \
 --config-toml config.toml \
@@ -168,25 +168,25 @@ Make the script executable with `sudo chmod +x start_wield.sh`
 
 Create a location to store the `historydb` on a disk with at least 200GB of available space (preparing and mounting disks is beyond the scope of this document). This location must match what is specified in the `start_wield.sh` startup script `--history-db-path` flag. In our case, a spare disk is mounted to `/mnt/dag` and the `historydb` directory is created there:
 
-```
+```sh
 sudo mkdir -p /mnt/dag/historydb
 ```
 
 Change owner of `historydb` location to `dagger` user:
 
-```
+```sh
 sudo chown -R dagger:dagger /mnt/dag/*
 ```
 
 You will also need a `snapshots` directory at the same location as your `wield` binary. This should be your home directory if you've followed along thus far. You can created by doing the following:
 
-```
+```sh
 mkdir ~/snapshots
 ```
 
 Create a system service for `wield` with `sudo nano /etc/systemd/system/wield.service` and paste the below contents into the file:
 
-```
+```sh
 [Unit]
 Description=DAGGER Wield Service
 After=network.target
@@ -203,7 +203,7 @@ WantedBy=multi-user.target
 
 Register the service and start the `wield` process with:
 
-```
+```sh
 sudo systemctl enable --now wield.service
 ```
 
