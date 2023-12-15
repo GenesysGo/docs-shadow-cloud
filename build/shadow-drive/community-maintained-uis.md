@@ -44,7 +44,7 @@ Simple, secure Web3 hosting with backend storage built on ShdwDrive. BlokHost em
 
 An example of a fully-decentralized on-chain game immortalized on ShdwDrive's immutable storage. Coin Clicker showcases not only ShdwDrive's impressive CDN performance, but it's ability to create perma-dApps.
 
-[![](<../../.gitbook/assets/coach-coin-clicker.png>)](https://shdw-drive.genesysgo.net/81AsEZByxnLFnpXVBLEASxvxknJ5pNWrbXP647iSv6Qh/Screenshot%202023-12-13%20at%2012.39.23%20PM.png)
+[![](<../../.gitbook/assets/coach-coin-clicker.png>)](https://shdw-drive.genesysgo.net/5WRCJEgy7c1Wy3ewWdfJcAePMCaUq4asyuP8sRgTQZYq/index.html)
 
 
 #### **AlphaBatem's Shdw UI**
