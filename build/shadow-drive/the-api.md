@@ -331,7 +331,7 @@ Serialized make immutable transaction that is partially signed by the ShdwDrive 
 {% endswagger-response %}
 {% endswagger %}
 
-### **Example - Secure SIgn and Upload File** to ShdwDrive using API
+### **Example - Secure Sign and Upload File** to ShdwDrive using API
 
 This example demonstrates how to securely upload files to the ShdwDrive using the provided API. It includes the process of hashing file names, creating a signed message, and sending the files along with the necessary information to the ShdwDrive endpoint.
 
