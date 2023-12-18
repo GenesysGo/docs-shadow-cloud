@@ -159,9 +159,9 @@ Create the Wield startup script with `nano start_wield.sh` and paste the below c
 #!/bin/bash
 PATH=/home/dagger
 exec wield \
---processor-threads 8 \
---global-threads 8 \
---comms-threads 4 \
+--processor-threads 16 \
+--global-threads 16 \
+--comms-threads 2 \
 --log-level info \
 --history-db-path /mnt/dag/historydb \
 --config-toml config.toml \
