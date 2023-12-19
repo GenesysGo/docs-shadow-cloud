@@ -7,6 +7,10 @@ description: >-
 
 # Monitoring Stack
 
+{% hint style="warning" %}
+Working knowledge of Docker is recommended. GenesysGo will not be providing Docker support.
+{% endhint %}
+
 ### Head over to [https://github.com/GenesysGo/dagger-monitoring](https://github.com/GenesysGo/dagger-monitoring) for the official dagger-monitoring code + instructions.
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
