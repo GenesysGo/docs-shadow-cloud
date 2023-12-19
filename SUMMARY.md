@@ -23,3 +23,4 @@
   * [SHDW Token](reference/shdw-token.md)
   * [Shdw Glossary](reference/shadow-glossary.md)
 * [Run a D.A.G.G.E.R. Wield Node](wield/README.md)
+  * [Monitoring Stack](wield/monitoring-stack.md)

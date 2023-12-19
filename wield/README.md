@@ -142,7 +142,7 @@ Create a new unique keypair ID using the Shdw-Keygen utility:
 Create a config file with `nano config.toml` and paste the the below contents into the file:
 
 ```toml
-trusted_nodes = ["24.199.104.119:2030", "24.144.92.19:2030", "134.209.162.83:2030"]
+trusted_nodes = ["165.232.137.22:2030", "64.23.136.217:2030", "157.245.220.233:2030"]
 dagger = "JoinAndRetrieve"
 
 [node_config]
@@ -213,6 +213,10 @@ sudo systemctl enable --now wield.service
 Verify proper operation by tailing the log with `tail -f config.log`.
 
 \*Disclaimer: By operating a Wield Node on GenesysGo's D.A.G.G.E.R. Testnet Phase 1, you acknowledge that you do so voluntarily and at your own risk. GenesysGo provides the Testnet software "as is" without any warranties, and accepts no responsibility for any direct, indirect, incidental, or consequential damages you may incur. You are responsible for the security of your own system and data. GenesysGo shall not be liable for any losses or damages resulting from your participation in the Testnet. By using the software, you agree to indemnify GenesysGo against any claims or disputes related to your node operation. This agreement is binding upon download and operation of a Wield Node. GenesysGo may alter or discontinue the Testnet without notice. This includes, but is not limited to, the hardware requirements to operate a D.A.G.G.E.R. Wield Node in Testnet Phase 1. If you disagree with these terms, do not participate in the Testnet.
+
+### Where to go from here?
+
+Now that you've got your node up and running, check out [monitoring-stack.md](monitoring-stack.md "mention") for how to set up a monitoring stack to view and monitor your node's performance.
 
 ### Frequently Asked Questions (FAQ) for D.A.G.G.E.R. Testnet and Wield Nodes
 
