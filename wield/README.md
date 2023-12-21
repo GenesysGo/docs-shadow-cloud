@@ -238,7 +238,7 @@ A: Most cloud providers offer suitable instances for running a Wield Node. Digit
 
 ## **Q: What hardware do I need to set up a Wield Node?**
 
-A: The recommended system requirements are an AWS EC2 t2.2xlarge instance or equivalent with 8 vCPU, 32GB RAM, running Ubuntu 22.04 LTS with kernel version 5.15.0 or newer. Alternatively, you can use parts from an old gaming machine or any setup that meets these minimum requirements.
+A: The recommended system requirements are an AWS EC2 t2.2xlarge instance or equivalent with 16 vCPU, 32GB RAM, running Ubuntu 22.04 LTS with kernel version 5.15.0 or newer. Alternatively, you can use parts from an old gaming machine or any setup that meets these minimum requirements.
 
 ## **Q: Can I use a virtual machine to run a Wield Node?**
 
