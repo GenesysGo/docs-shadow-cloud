@@ -1,13 +1,21 @@
+---
+description: >-
+  These are the official social media accounts for GenesysGo and the
+  shdwEcosystem.
+---
+
 # Social Media & Community
 
-## Follow us on Twitter!
+##
+
+## Twitter
 
 {% embed url="https://twitter.com/genesysgo" %}
 
-## Join the GenesysGo Discord!
+## Discord
 
-{% embed url="https://discord.gg/genesysgo" %}
+{% embed url="https://discord.com/invite/genesysgo" %}
 
-## The Official ShdwDrive Telegram
+## Telegram
 
 {% embed url="https://t.me/shadowdriveecosystem" %}
