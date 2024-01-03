@@ -146,9 +146,11 @@ Create a new unique keypair ID using the Shdw-Keygen utility, write down your un
 ./shdw-keygen new -o ~/id.json
 ```
 
+{% hint style="danger" %}
 **IMPORTANT: You must back up your seed phrase and id.json keypair file to a secure location other than your node! Your node performance and rewards are tied to this identity. If you need to reinstall your node, you can restore from this backup to maintain continuity of your node ID. If you lose your keypair we cannot help you recover it!**
 
 **If you need to reinstall or update your node, DO NOT create a new keypair, simply retain or copy over your original `id.json` file.**
+{% endhint %}
 
 To display your pubkey, you can run:
 
