@@ -159,7 +159,7 @@ To display your pubkey, you can run:
 Create a config file with `nano config.toml` and paste the the below contents into the file:
 
 ```toml
-trusted_nodes = ["165.232.137.22:2030", "64.23.136.217:2030", "157.245.220.233:2030"]
+trusted_nodes = ["184.154.98.116:2030", "184.154.98.117:2030", "184.154.98.118:2030", "184.154.98.119:2030", "184.154.98.120:2030"]
 dagger = "JoinAndRetrieve"
 
 [node_config]
