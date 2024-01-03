@@ -379,7 +379,7 @@ A: An epoch on the D.A.G.G.E.R. network is a time period that can be as short as
 
 ## **Q: How long is an epoch and where can I monitor the progress?**
 
-A: An epoch is now 200 bundles in length.
+A: An epoch is now 64 bundles in length.
 
 ## **Q: Can I close the terminal window after starting a node on a VPS?**
 
