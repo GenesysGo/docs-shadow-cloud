@@ -58,13 +58,6 @@ If you have any issues with the above script, please give Option 2 a shot, below
 
 ## 2. Operating system configuration:
 
-It is recommended to set the maximum open file descriptors (`ulimit`) to the maximum hard limit of `1048576` by editing `/etc/security/limits.conf` and adding the below lines to the bottom of the configuration file (log out and back in for changes to take effect):
-
-```sh
-*               soft    nofile          2097152
-*               hard    nofile          2097152
-```
-
 The following kernel tuning parameters are recommended to be applied by editing `/etc/sysctl.conf` and adding the below lines to the configuration file, then applying the new parameters with `sudo sysctl -p`. NOTE: Please review these parameters to ensure they make sense for your specific hardware configuration.:
 
 ```sh
@@ -126,19 +119,19 @@ If you have not already done so, it is recommended to create a dedicated user to
 Download the Wield binary to the `dagger` user directory:
 
 ```sh
-wget -O !/wield https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-latest
+wget -O ~/wield https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-latest
 ```
 
 Make the Wield binary executable:
 
 ```sh
-sudo chmod +x !/wield
+sudo chmod +x ~/wield
 ```
 
 Download the Shdw-Keygen utility to the `dagger` user directory:
 
 ```sh
-wget -O !/shdw-keygen https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-keygen-latest
+wget -O ~/shdw-keygen https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-keygen-latest
 ```
 
 Make the Shdw-Keygen utility executable:
