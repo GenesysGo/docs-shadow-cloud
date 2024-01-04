@@ -17,11 +17,11 @@ description: >-
 
 [D.A.G.G.E.R. Hammer](https://dagger-hammer.shdwdrive.com/)
 
-Running a Wield Node will allow you to trustlessly participate in the D.A.G.G.E.R. phase 1 testnet which powers the D.A.G.G.E.R. Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). We encourage node operators to review our blog articles for full context on the role of Wield Nodes and the purpose of D.A.G.G.E.R. Hammer.
+Running a Wield Node will allow you to trustlessly participate in the testnets which powers the Hammer interface for shdwDrive located [here](https://dagger-hammer.shdwdrive.com/). We encourage node operators to review our blog articles for full context on the role of Wield Nodes and the purpose of D.A.G.G.E.R. Hammer.
 
-Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are requires to erasure code and store files uploaded to the Hammer test interface.
+Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are requires to erasure code and store files uploaded to the shdwDrive test interface.
 
-## 1. Node Requirements:
+## Node Requirements:
 
 **Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not \_officially**\_\*\* supported at this time.\*\*
 
@@ -32,7 +32,8 @@ Wield Node operators will be handling thousands of live user test transactions a
 * **250 GB SSD for data storage and high speed i/o operations**
 * **100mbps up/down network connection is the bare minimum**
 
-## 1.1. Guided install + startup
+## Option 1 - Guided install + startup script
+
 
 {% hint style="info" %}
 It is highly recommended to, at the very least, review the manual install steps below prior to determining how you would like to proceed. If you are comfortable with basic Linux commands and would like to be involved in the configuration of your node, follow the steps outlined in Option 2 - Manual Install below.
@@ -56,7 +57,19 @@ wget -O wield-installer.sh https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgy
 
 If you have any issues with the above script, please give Option 2 a shot, below.
 
-## 2. Operating system configuration:
+## Option 2 - Manual Install
+
+### 1. Node Requirements - 16 CPU threads, 32 GB of RAM, 250 GB of SSD storage, 100 Mbps up/down network. Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not officially supported at this time.
+
+### 2. Operating system configuration.
+
+Begin by ensuring your operating system is up to date:
+
+```sh
+sudo apt update && sudo apt upgrade -y
+```
+
+If necessary, reboot your system to ensure the kernel is up to date.
 
 The following kernel tuning parameters are recommended to be applied by editing `/etc/sysctl.conf` and adding the below lines to the configuration file, then applying the new parameters with `sudo sysctl -p`. NOTE: Please review these parameters to ensure they make sense for your specific hardware configuration.:
 
@@ -69,7 +82,6 @@ net.core.wmem_max=12582912
 
 # make changes for ulimit
 fs.nr_open = 2097152
-
 # set minimum, default, and maximum tcp buffer sizes (10k, 87.38k (linux default), 12M resp)
 net.ipv4.tcp_rmem=10240 87380 12582912
 net.ipv4.tcp_wmem=10240 87380 12582912
@@ -100,9 +112,6 @@ vm.min_free_kbytes = 3000000
 vm.dirty_expire_centisecs=36000
 vm.dirty_writeback_centisecs=3000
 vm.dirtytime_expire_seconds=43200
-
-# open files limit
-fs.nr_open = 2097152
 ```
 
 It is recommended to increase the maximum open file descriptors (`ulimit`) beyond the maximum hard limit to `2097152` by editing `/etc/security/limits.conf` and adding the below lines to the bottom of the configuration file (log out and back in for changes to take effect):
@@ -112,7 +121,7 @@ It is recommended to increase the maximum open file descriptors (`ulimit`) beyon
 *               hard    nofile          2097152
 ```
 
-## 3. Initial Node configuration:
+### 3. Initial Node configuration:
 
 If you have not already done so, it is recommended to create a dedicated user to run the application. In this case, we create the `dagger` user with `sudo adduser dagger` (create a password of your choosing) and then add the `dagger` user to the `sudo` usergroup with `sudo usermod -aG sudo dagger`. Switch to the `dagger` user with `sudo su - dagger`. All remaining tasks will be ran as the `dagger` user.
 
@@ -279,7 +288,7 @@ You may also wish to ensure that your `syslog` log file is set up to rotate prop
 }
 ```
 
-**4. Node maintenance**
+### **4. Node maintenance**
 
 If you need to perform maintenance on your node during normal network operations, it is imperative that you wait five (5) D.A.G.G.E.R. Epochs before attempting to rejoin the network, otherwise your node will be excluded. You can monitor D.A.G.G.E.R. progress here: [https://dagger-hammer.shdwdrive.com/explorer](https://dagger-hammer.shdwdrive.com/explorer)
 
