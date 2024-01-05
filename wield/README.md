@@ -81,7 +81,7 @@ net.core.rmem_max=12582912
 net.core.wmem_max=12582912
 
 # make changes for ulimit
-fs.nr_open = 2097152
+fs.nr_open = 5000000
 # set minimum, default, and maximum tcp buffer sizes (10k, 87.38k (linux default), 12M resp)
 net.ipv4.tcp_rmem=10240 87380 12582912
 net.ipv4.tcp_wmem=10240 87380 12582912
@@ -117,8 +117,8 @@ vm.dirtytime_expire_seconds=43200
 It is recommended to increase the maximum open file descriptors (`ulimit`) beyond the maximum hard limit to `2097152` by editing `/etc/security/limits.conf` and adding the below lines to the bottom of the configuration file (log out and back in for changes to take effect):
 
 ```sh
-*               soft    nofile          2097152
-*               hard    nofile          2097152
+*               soft    nofile          5000000
+*               hard    nofile          5000000
 ```
 
 ### 3. Initial Node configuration:
