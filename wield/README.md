@@ -114,7 +114,7 @@ vm.dirty_writeback_centisecs=3000
 vm.dirtytime_expire_seconds=43200
 ```
 
-It is recommended to increase the maximum open file descriptors (`ulimit`) beyond the maximum hard limit to `2097152` by editing `/etc/security/limits.conf` and adding the below lines to the bottom of the configuration file (log out and back in for changes to take effect):
+It is recommended to increase the maximum open file descriptors (`ulimit`) beyond the maximum hard limit to `5000000` by editing `/etc/security/limits.conf` and adding the below lines to the bottom of the configuration file (log out and back in for changes to take effect):
 
 ```sh
 *               soft    nofile          5000000
