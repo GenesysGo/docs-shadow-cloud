@@ -19,7 +19,7 @@ description: >-
 
 Running a Wield Node will allow you to trustlessly participate in the testnets which powers the Hammer interface for shdwDrive located [here](https://dagger-hammer.shdwdrive.com/). We encourage node operators to review our blog articles for full context on the role of Wield Nodes and the purpose of D.A.G.G.E.R. Hammer.
 
-Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are requires to erasure code and store files uploaded to the shdwDrive test interface.
+Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are required to erasure code and store files uploaded to the shdwDrive test interface.
 
 ## Node Requirements:
 
