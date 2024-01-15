@@ -99,15 +99,12 @@ Parameters (FormData fields)
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="file" type="" required="true" %}
-The file you want to upload. You may add up to 5 files each with a field name of
-
-`file`
-
-.
+The file you want to upload
+You may add up to 5 files each with a field name of `file`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="message" required="true" %}
-Base58 message signature.
+Base58 message signature
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="signer" required="true" %}
@@ -141,15 +138,12 @@ Parameters (FormData fields)
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="file" required="true" %}
-The file you want to upload. You may add up to 5 files each with a field name of
-
-`file`
-
-.
+The file you want to upload
+You may add up to 5 files each with a field name of `file`
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="message" required="true" %}
-Base58 message signature.
+Base58 message signature
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="signer" required="true" %}
@@ -161,9 +155,9 @@ Key of the storage account you want to upload to
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="url" required="true" %}
-Url of the original file you want to edit. Example:
+Url of the original file you want to edit
 
-`https://shdw-drive.genesysgo.net/<storage-account>/<file-name>`
+Example: `https://shdw-drive.genesysgo.net/<storage-account>/<file-name>`
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
@@ -244,7 +238,7 @@ Request content type: application/json
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="message" required="false" %}
-Base58 message signature.
+Base58 message signature
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="signer" required="false" %}
