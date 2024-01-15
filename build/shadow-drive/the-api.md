@@ -8,9 +8,9 @@ description: >-
 
 ## **Contents**
 
-* [**Example - Sign and upload a file**](the-api.md#example-sign-and-upload-a-file)
-* [**Example - Edit a file**](the-api.md#example-edit-a-file)
-* [**Example - Delete a file**](the-api.md#example-delete-a-file)
+* [**Example - Sign and upload a file**](the-api.md#example-secure-sign-and-upload-file-to-shdwdrive-using-api)
+* [**Example - Edit a file**](the-api.md#example-editing-a-file-in-shdwdrive-using-api-and-message-signature-verification)
+* [**Example - Delete a file**](the-api.md#example-deleting-a-file-from-shdwdrive-using-signed-message-and-api)
 
 {% swagger method="post" path="" baseUrl="https://shadow-storage.genesysgo.net" summary="storage-account" %}
 {% swagger-description %}
@@ -92,7 +92,7 @@ Uploads a single file or multiple files at once\
 \
 Request content type: multipart/form-data\
 \
-[**Example Implementation**](the-api.md#example-sign-and-upload-a-file)
+[**Example Implementation**](the-api.md#example-secure-sign-and-upload-file-to-shdwdrive-using-api)
 
 \
 Parameters (FormData fields)
@@ -135,7 +135,7 @@ Edits an existing file
 
 Request content type: multipart/form-data
 
-[**Example Implementation**](the-api.md#example-edit-a-file)
+[**Example Implementation**](the-api.md#example-editing-a-file-in-shdwdrive-using-api-and-message-signature-verification)
 
 Parameters (FormData fields)
 {% endswagger-description %}
@@ -240,7 +240,7 @@ Deletes a file from a given Storage Account
 
 Request content type: application/json
 
-[**Example Implementation**](the-api.md#example-delete-a-file)
+[**Example Implementation**](the-api.md#example-deleting-a-file-from-shdwdrive-using-signed-message-and-api)
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="message" required="false" %}
