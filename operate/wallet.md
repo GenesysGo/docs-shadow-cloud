@@ -1,7 +1,9 @@
 # Wallet
 
 {% hint style="warning" %}
-**IMPORTANT - You need to verify your identity by adding your node id to your discord user before your node is eligible for rewards. Once that's done, then rewards will start accumulating for your node.**
+**IMPORTANT - You need to verify your identity by adding your node id to your Discord user before your node is eligible for rewards. Once that's done, then rewards will start accumulating for your node.**
+
+**You need to have 100 SHDW at minimum across all wallets that are verified with the Discord verification system in order to maintain your verified status and therefore your place in the network.**
 {% endhint %}
 
 Identity security for shdwDrive is trustlessly handled by a local CLI-based shdwWallet that transparently publishes to the ledger. As development continues on shdwDrive v2 a key milestone will be the release of a full-featured shdwWallet which will greatly enhance users experiences of the network.

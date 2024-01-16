@@ -12,16 +12,16 @@ description: >-
 
 1. [Install](install.md) the latest version GenesysGo's Directed Acyclic Gossiping Graph Enabling Replication (D.A.G.G.E.R.).
 2. [Create](wallet.md) a wallet
-3. Acquire 500 SHDW in your shdwNode wallet. [Read this Note](node-faq.md#q-how-are-earnings-paid-out-and-how-do-i-claim-my-shdwoperator-earnings).&#x20;
+3. Acquire 100 SHDW in your shdwNode wallet connected to your Discord user. [Read this Note](node-faq.md#q-how-are-earnings-paid-out-and-how-do-i-claim-my-shdwoperator-earnings).
 4. [Verify](./#discord-verification) your identity to the network (required to earn rewards).
-5. [Monitor](monitoring-stack.md) and maintain your shdwNode and stay up to date with announcements. View the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard).&#x20;
+5. [Monitor](monitoring-stack.md) and maintain your shdwNode and stay up to date with announcements. View the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard).
 6. [Read FAQ](node-faq.md#testnet-2) about the current testnet.
 7. [Claim](https://testnet.shdwdrive.com/operator-rewards) rewards.
 
 {% hint style="warning" %}
-**IMPORTANT - You need to add your node id to your discord user before your node is eligible for rewards. Once that's done, then rewards will start accumulating for your node.**
+**IMPORTANT - You need to add your node id to your Discord user before your node is eligible for rewards. Once that's done, then rewards will start accumulating for your node.**
 
-**You need to have 500 SHDW at minimum in your node ID wallet that is verified with the discord verification system in order to maintain your verified status and therefore your place in the network. That means you must maintain 500 SHDW in your shdwNode ID wallet in order to earn rewards.**&#x20;
+**You need to have 100 SHDW at minimum across all wallets that are verified with the Discord verification system in order to maintain your verified status and therefore your place in the network.**&#x20;
 {% endhint %}
 
 ## Testnet Information:
@@ -38,7 +38,7 @@ ShdwNodes will be handling thousands of live user test transactions and trustles
 
 ## Hardware Requirements:
 
-**Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not **_**officially**_** supported at this time.**
+**Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not \_officially**\_\*\* supported at this time.\*\*
 
 **Minimum hardware requirements to operate a shdwNode for Testnets are as follows:**
 
@@ -48,7 +48,7 @@ ShdwNodes will be handling thousands of live user test transactions and trustles
 * **100mbps up/down network connection is the bare minimum**
 
 {% hint style="info" %}
-\*\*Note: Using SSDs and NVMe that are less than 2 TB will not prevent a shdwNode from running, however as we increase the file transaction volumes during testnet 2 smaller storage drives will fill up more quickly requiring more frequent restarts. Storage drives 2 TB or greater are now recommended.&#x20;
+\*\*Note: Using SSDs and NVMe that are less than 2 TB will not prevent a shdwNode from running, however as we increase the file transaction volumes during testnet 2 smaller storage drives will fill up more quickly requiring more frequent restarts. Storage drives 2 TB or greater are now recommended.
 {% endhint %}
 
 ## Discord Verification

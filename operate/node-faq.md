@@ -30,7 +30,7 @@ A: The recommended system requirements are 8 cores or 16 vCPU (16 threads) , 32G
 
 A: Yes, shdwNodes have been successfully tested on virtual machines like VirtualBox or VMware, as well as on various cloud platforms. Ensure that the VM meets the recommended system requirements for optimal performance.
 
-### **Q: Can I run a node in Docker?**&#x20;
+### **Q: Can I run a node in Docker?**
 
 A: Running a node in Docker is possible, and some community members may share images or guides. However, there's no official long-term or stress-tested Docker image provided by GenesysGo at the moment.
 
@@ -56,7 +56,7 @@ A: The log file is usually located in `/home/dagger/config.log`.
 
 ### **Q: How do I find my node ID?**
 
-A: Run `./shdw-keygen pubkey id.json` in the `/home/dagger` directory, assuming you have the `shdw-keygen` program downloaded. The latest version of shdw-keygen also has a privkey function described [here](wallet.md#importing-usdshdw-accounts-into-solana-wallets).&#x20;
+A: Run `./shdw-keygen pubkey id.json` in the `/home/dagger` directory, assuming you have the `shdw-keygen` program downloaded. The latest version of shdw-keygen also has a privkey function described [here](wallet.md#importing-usdshdw-accounts-into-solana-wallets).
 
 ### **Q: How do I check my node's version and upgrade if necessary?**
 
@@ -146,27 +146,27 @@ A: Don't hesitate to ask for clarification or assistance in the Discord support 
 
 A: You can download your log file from your server using the `scp` command or a similar method, and then upload it to a sharing service.
 
-### **Q: Can I use a hardware wallet like Ledger with my node?**&#x20;
+### **Q: Can I use a hardware wallet like Ledger with my node?**
 
 A: No, you need a keypair on your node, and using a hardware wallet like Ledger will not work for node operations.
 
 ## Testnet 2
 
-### **Q: What are the requirements to run a node on the Testnet?**&#x20;
+### **Q: What are the requirements to run a node on the Testnet?**
 
-A: For hardware, you will need a bare metal server or a VPS with at least 16 threads (8 cores), 32 GB RAM, and sufficient SSD storage (2 TB SSD or better recommended). Generally, expect to conduct many restarts, handle outages, bugs, report issues and share logs with the core team.&#x20;
+A: For hardware, you will need a bare metal server or a VPS with at least 16 threads (8 cores), 32 GB RAM, and sufficient SSD storage (2 TB SSD or better recommended). Generally, expect to conduct many restarts, handle outages, bugs, report issues and share logs with the core team.
 
 ### **Q: When Testnet 2 starts, will all existing nodes automatically transition to Testnet 2?**
 
 A: No. There will be an announcement that calls for a global restart on the 16th. All shdwOperators will be required to download the latest version of D.A.G.G.E.R. and restart their nodes.
 
-### **Q: How do I associate my node ID with my wallet?**&#x20;
+### **Q: How do I associate my node ID with my wallet?**
 
 A: The process for associating your node ID with your wallet is explained in the [verification guide](./#discord-verification).
 
-### **Q: How are the 150 incentivized operators selected?**&#x20;
+### **Q: How are the 150 incentivized operators selected?**
 
-A: The ongoing selection process for incentivized operators will be based on various criteria, including node performance and uptime. Upon initialization of the testnet, a global restart will be requested and the first 150 that join will be on a first come first serve. After the initial global restart, the entirety of testnet 2 will be governed by entirely programmatic on-chain smart contracts monitoring performance, proper version, error states and uptime.&#x20;
+A: The ongoing selection process for incentivized operators will be based on various criteria, including node performance and uptime. Upon initialization of the testnet, a global restart will be requested and the first 150 that join will be on a first come first serve. After the initial global restart, the entirety of testnet 2 will be governed by entirely programmatic on-chain smart contracts monitoring performance, proper version, error states and uptime.
 
 ### Q: How do I track my progress and the progress of the network?
 
@@ -174,13 +174,13 @@ A: Operators can visit the [leaderboard](https://testnet.shdwdrive.com/uptime-le
 
 ### Q: How are earnings paid out and how do I claim my shdwOperator earnings?
 
-A: The shdwOperator incentives are calculated in real time (milliseconds) on-chain via D.A.G.G.E.R.'s internal consensus runtime. This real time available ledger data is then scraped by a shdwOracle server and packeged for Solana smart contract integration. This trustlessly and transparently powers the data behind the shdwOperator [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard), network [dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m), and portal for claiming operator rewards.&#x20;
+A: The shdwOperator incentives are calculated in real time (milliseconds) on-chain via D.A.G.G.E.R.'s internal consensus runtime. This real time available ledger data is then scraped by a shdwOracle server and packeged for Solana smart contract integration. This trustlessly and transparently powers the data behind the shdwOperator [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard), network [dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m), and portal for claiming operator rewards.
 
 This has been explain in detail in the [Testnet 2 blog](https://www.shdwdrive.com/blog/shdwdrive-v2-incentivized-testnet). You can read the sections "Rewards Details for shdwOperators" and "Expected Earnings and Costs" for an understanding of how earnings will be handled.
 
 IMPORTANT CHANGE - We have previously stated that staking SHDW through the shdwNode wallet gives preferential treatment for rejoining the network, **however this is no longer the case.**
 
-Instead, you **need to have 500 SHDW at minimum across your wallets verified with the discord verification system in order to maintain your verified status and therefore you place in the network queue. That means you must maintain 500 SHDW in your shdwNode ID wallet in order to earn rewards. This SHDW may be staked without causing issue to your eligibility!**
+Instead, y**ou need to have 100 SHDW at minimum across all wallets that are verified with the Discord verification system in order to maintain your verified status and therefore your place in the network. This SHDW may be staked without causing issue to your eligibility!**
 
 ### **Q: What are common issues with locating and importing my private key?**
 

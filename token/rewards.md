@@ -26,12 +26,12 @@ Read[ here](https://www.shdwdrive.com/blog/shdwdrive-v2-incentivized-testnet) fo
 
 * **Max Operators**: Unlimited. All network participants are active in the network and there is no limit to who can join.
 * **Total that can Earn**: 150 shwdNodes based on uptime and priority. These 150 will change as their performance changes.
-* **Wallet**: Each shdwNode must be linked to a unique SPL wallet and hold a minimum of 500 $SHDW.&#x20;
-* **Inactivity Rule**: Nodes inactive for two epochs (average epoch \~30 minutes) are considered for removal from the top 150 group eligible for earnings.&#x20;
+* **Wallet**: Each shdwNode must be linked to a unique SPL wallet and hold a minimum of 100 $SHDW.
+* **Inactivity Rule**: Nodes inactive for two epochs (average epoch \~30 minutes) are considered for removal from the top 150 group eligible for earnings.
 * **Earnings**: Up to 2,000 $SHDW based on uptime, with additional rewards for uptime >=2,096 hours (approx. 95% of Testnet2).
 * **Costs**: Running a shdwNode estimated at $100-300/month.
 * **Uptime Tracking**: Via the shdwOperator [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard) at https://dashboard.shdwdrive.com. Details beyond those provided in this dashboard as to how your uptime has positively or negatively impacted your placement in the top 150 is beyond the scope of this testnet 2, and therefore we ask that everyone calibrate their expectations at this time.
-* **Earnings Requirement**: You need to have 500 $SHDW at minimum across your wallets verified with the discord verification system to be eligible to earn rewards from running a shdwNode.  You can [stake](https://testnet.shdwdrive.com) this SHDW without impacting your eligibility! The SHDW token can be purchased on [Jupiter.](https://jup.ag/swap/USDC-SHDW)
+* **Earnings Requirement**: You need to have 100 $SHDW at minimum across your wallets verified with the discord verification system to be eligible to earn rewards from running a shdwNode. You can [stake](https://testnet.shdwdrive.com) this SHDW without impacting your eligibility! The SHDW token can be purchased on [Jupiter.](https://jup.ag/swap/USDC-SHDW)
 * **Claim Rewards:** shdwOperators claim at [https://testnet.shdwdrive.com/operator-rewards](https://testnet.shdwdrive.com/operator-rewards)
 
 ## Staking
@@ -42,7 +42,7 @@ Staking is a mechanism in which holders earn rewards for holding their tokens. H
 * **Rewards**: Rewards will be proportional to the individual's contribution to the total staked pool.
 * **Staking Ratio**: **There is no longer a staking ratio for testnet 2**, meaning anyone can stake any amount of $SHDW. Previously we had decided that for every 1 shdwNode, 10,000 cumulative SHDW must be staked, **however this will no longer be factor for testnet 2** (although could come into play in the future).
 * **Staking Contract**: All $SHDW stakes go to the same shdwStaking smart contract.
-* **shdwOperators:** For testnet 2, required to stake 500 $SHDW through their node ID wallet in order to validate and earn rewards.
+* **shdwOperators:** For testnet 2, you need to have 100 $SHDW at minimum across your wallets verified with the discord verification system to be eligible to earn rewards from running a shdwNode.
 * **Stake and Claim:** [https://testnet.shdwdrive.com](https://testnet.shdwdrive.com/operator-rewards)
 
 ## Points
