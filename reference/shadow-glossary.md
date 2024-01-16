@@ -2,7 +2,7 @@
 description: A list of terms that relate to all thing Shdw!
 ---
 
-# Shdw Glossary
+# shdwGlossary
 
 **Asynchronous Byzantine Fault Tolerance (aBFT):** aBFT is a consensus algorithm used to provide fault tolerance for distributed systems within asynchronous networks. It is based on the Byzantine Fault Tolerance (BFT) algorithm and guarantees that, when properly configured and given tolerable network conditions, its consensus will eventually be reached — even when faults such as computer crashes, perfect cyber-attacks, or malicious manipulation have happened. aBFT is designed to be tolerant of malicious or faulty actors even when those actors make up more than one-third of the nodes inside the network.\
 \
@@ -128,4 +128,4 @@ description: A list of terms that relate to all thing Shdw!
 \
 **Virtual Voting**: Digital voting system where citizens are able to cast their vote over the internet, directly or through a voting portal. It has been used as an alternative to physical voting polls, particularly during the pandemic. It can also be used to verify the accuracy and security of elections.\
 \
-**Web 3.0:** The Web 3.0 concept refers to the newest generation of the internet. It is highly decentralized and automated, based on AI and distributed ledger technologies such as blockchain. It allows for a more open and secure infrastructure for data storage, authentication, and interactions between devices across the web. It has the potential to be much smarter, faster, and more efficient than its predecessor Web 2.0.\
+**Web 3.0:** The Web 3.0 concept refers to the newest generation of the internet. It is highly decentralized and automated, based on AI and distributed ledger technologies such as blockchain. It allows for a more open and secure infrastructure for data storage, authentication, and interactions between devices across the web. It has the potential to be much smarter, faster, and more efficient than its predecessor Web 2.0.\\

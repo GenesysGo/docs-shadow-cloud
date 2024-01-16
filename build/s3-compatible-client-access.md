@@ -59,4 +59,3 @@ In order to ensure the stability of the ShdwDrive network, speeds are initially 
 ## Security
 
 In the event a s3 key has been compromised, you can easily rotate the key. Simply navigate to [https://portal.shadow.cloud](https://portal.shadow.cloud), connect your wallet, select a storage account, and then click on the "Addons" tab. From there, you can click "Rotate" button to rotate a given key/secret pair to generate a fresh pair.
-

@@ -4,19 +4,31 @@ description: ShdwDrive consolidated resources
 
 # Reference
 
+## **Testnet Links**
+
+[Staking website](https://testnet.shdwdrive.com/)
+
+[Operator Rewards](https://testnet.shdwdrive.com/operator-rewards)
+
+[Leaderboard for shdwOperators](https://testnet.shdwdrive.com/uptime-leaderboard)
+
+[Live Network Dashboard](https://dashboard.shdwdrive.com/)
+
+[Announcements](https://discord.com/channels/830127596355190804/1180230759685030039)
+
 ## **Shdw Drive**
 
-[CLI](../build/shadow-drive/the-cli.md)
+[CLI](../build/the-cli.md)
 
-[SDK JavaScript/Typescript](../build/shadow-drive/sdk-javascript.md)
+[SDK JavaScript/Typescript](../build/the-sdk/sdk-javascript.md)
 
-[SDK Rust](../build/shadow-drive/sdk-rust.md)
+[SDK Rust](../build/the-sdk/sdk-rust.md)
 
-[SDK Python](../build/shadow-drive/sdk-python.md)
+[SDK Python](../build/the-sdk/sdk-python.md)
 
-[API](../build/shadow-drive/the-api.md)
+[API](../build/the-api.md)
 
-[FAQ](../build/shadow-drive/support-and-faq.md)
+[FAQ](../build/support-and-faq.md)
 
 ## **Support**
 
@@ -35,7 +47,6 @@ description: ShdwDrive consolidated resources
 [Discord](https://discord.gg/genesysgo)
 
 [Twitter](https://twitter.com/GenesysGo)
-
 
 ## **Community**
 

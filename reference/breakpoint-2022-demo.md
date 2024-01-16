@@ -1,6 +1,5 @@
 ---
-description: >-
-  Take a look at how we use D.A.G.G.E.R. to trustelessly deploy a VM..
+description: Take a look at how we use D.A.G.G.E.R. to trustelessly deploy a VM..
 ---
 
 # Solana Breakpoint 2022 Demo

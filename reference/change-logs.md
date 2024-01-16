@@ -10,6 +10,9 @@
 
 ## Consolidated Summary
 
+D.A.G.G.E.R. - Launch of [Incentivized Testnet 2](https://dagger-hammer.shdwdrive.com/)\
+[Phase 2](https://www.shdwdrive.com/blog/shdwdrive-v2-incentivized-testnet) - January 16th
+
 D.A.G.G.E.R. - Launch of [Testnet and Hammer](https://dagger-hammer.shdwdrive.com/)\
 [Phase 1](https://www.shdwdrive.com/blog/dagger-testnet-release) - September 29, 2023
 

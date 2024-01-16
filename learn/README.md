@@ -4,7 +4,7 @@ description: An introduction to the ShdwDrive and its implementations
 
 # Learn
 
-<table data-view="cards"><thead><tr><th></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Design</strong></td><td align="center">ShdwDrive Evolution</td><td><a href="storage-services/design.md#shadow-drive-v1.5-is-born-building-tools-and-listening-to-developer-feedback">#shadow-drive-v1.5-is-born-building-tools-and-listening-to-developer-feedback</a></td><td><a href="../.gitbook/assets/Design1.png">Design1.png</a></td></tr><tr><td></td><td align="center"><strong>D.A.G.G.E.R.</strong></td><td align="center">Distributed Ledger Tech</td><td><a href="dagger.md#introduction">#introduction</a></td><td><a href="../.gitbook/assets/Dagger2.png">Dagger2.png</a></td></tr><tr><td></td><td align="center"><strong>Use Cases</strong></td><td align="center">ShdwDrive Capability</td><td><a href="./#shadow-cloud-use-cases">#shadow-cloud-use-cases</a></td><td><a href="../.gitbook/assets/Usecases.png">Usecases.png</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>D.A.G.G.E.R.</strong></td><td align="center">Distributed Ledger Tech</td><td><a href="dagger.md#introduction">#introduction</a></td><td><a href="../.gitbook/assets/Dagger2.png">Dagger2.png</a></td></tr><tr><td></td><td align="center"><strong>Use Cases</strong></td><td align="center">ShdwDrive Capability</td><td><a href="./#shadow-cloud-use-cases">#shadow-cloud-use-cases</a></td><td><a href="../.gitbook/assets/Usecases.png">Usecases.png</a></td></tr><tr><td></td><td align="center"><strong>Design</strong></td><td align="center">ShdwDrive Evolution</td><td><a href="design.md#shadow-drive-v1.5-is-born-building-tools-and-listening-to-developer-feedback">#shadow-drive-v1.5-is-born-building-tools-and-listening-to-developer-feedback</a></td><td><a href="../.gitbook/assets/Design1.png">Design1.png</a></td></tr></tbody></table>
 
 ## **Mission**
 
@@ -17,7 +17,7 @@ Our primary objectives at GenesysGo are strategically aligned with the core func
 1. **Data Availability Optimization**: Elevate D.A.G.G.E.R. to become the benchmark for data availability protocols, adept at accommodating the expansive and diverse needs of both Web2 and Web3 ecosystems. By enhancing its ability to manage large datasets seamlessly, D.A.G.G.E.R. will serve as the backbone for robust decentralized applications.
 2. **ShdwDrive Evolution**: Propel ShdwDrive towards its v2.0 iteration, fully powered by D.A.G.G.E.R., to provide an unparalleled decentralized storage experience. Our vision for ShdwDrive v2.0 is to be a versatile platform that excels in both static data archiving and dynamic database services, ensuring optimal performance for a myriad of use cases.
 3. **Mobile Integration and Network Democratization**: Harness the latent computational power of mobile devices worldwide by integrating them as auditors within the Shdw Ecosystem. This initiative aims to democratize network participation, allowing anyone with a smartphone to contribute to and benefit from the network's growth and security.
-4. **Sustainable and Inclusive Ecosystem Development**:  Build towards an energy-efficient and inclusive network that rewards participation and fosters a sense of community ownership. By incentivizing users through a well-structured reward system, we aim to cultivate a vibrant ecosystem that thrives on collective contribution and shared success.
+4. **Sustainable and Inclusive Ecosystem Development**: Build towards an energy-efficient and inclusive network that rewards participation and fosters a sense of community ownership. By incentivizing users through a well-structured reward system, we aim to cultivate a vibrant ecosystem that thrives on collective contribution and shared success.
 5. **Seamless User Experience and Interoperability**: Ensure a frictionless transition for users adopting ShdwDrive by maintaining compatibility with established standards like Amazon S3 and providing comprehensive development kits in various programming languages. Our goal is to make ShdwDrive accessible and easily integrated into existing and future digital workflows.
 
 By concentrating our efforts on these key objectives, GenesysGo is set to redefine the landscape of decentralized storage solutions, offering a platform that is secure, efficient, and aligned with the evolving needs of the digital world.
@@ -47,11 +47,11 @@ Learn about D.A.G.G.E.R.:
 
 ShdwDrive integrates open-source, software-defined object storage with Solana’s Proof of History consensus mechanism and decentralizes it, achieving remarkable I/O speeds, scalability, and data integrity. ShdwDrive's v2 implementation of D.A.G.G.E.R. will ultimately result in a permissionless, trustless, and decentralized distributed storage network, driven by community participation.
 
-The current [design](storage-services/design.md#present-design-considerations) of ShdwDrive makes embedding storage into applications easy, robust, and natively interfaced into the Solana blockchain. The SDKs support [Javascript](../build/shadow-drive/sdk-javascript.md), [Rust](../build/shadow-drive/sdk-rust.md), and [Python ](../build/shadow-drive/sdk-python.md)all on top of fast and reliable API. If you are building an application in need of back-end storage, secondary storage, or a client-facing storage option then our robust [Javascript SDK](../build/shadow-drive/sdk-javascript.md) has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
+The current [design](design.md#present-design-considerations) of ShdwDrive makes embedding storage into applications easy, robust, and natively interfaced into the Solana blockchain. The SDKs support [Javascript](../build/the-sdk/sdk-javascript.md), [Rust](../build/the-sdk/sdk-rust.md), and [Python ](../build/the-sdk/sdk-python.md)all on top of fast and reliable API. If you are building an application in need of back-end storage, secondary storage, or a client-facing storage option then our robust [Javascript SDK](../build/the-sdk/sdk-javascript.md) has you covered. For all use cases, we are focused on making fast and reliable storage incredibly easy to build with.
 
 [**Start Building on ShdwDrive!**](../build/)
 
-[**Pricing**](storage-services/#pricing)
+[**Pricing**](storage-services.md#pricing)
 
 ## **Compute**
 
@@ -71,9 +71,9 @@ GenesysGo's development roadmap is meticulously structured around key milestones
 
 ## **Putting it all together**
 
-In the evolving landscape of distributed ledger technologies (DLT), GenesysGo's D.A.G.G.E.R. stands out with its focus on data availability—a key advancement that addresses the real-world practicality and usability challenges faced by earlier blockchain systems. D.A.G.G.E.R.'s architecture is built upon the principle of data scalability, ensuring that it can handle the increasing demands of modern applications without sacrificing speed, stability, or security.
+In the evolving landscape of distributed ledger technologies (DLT), GenesysGo's D.A.G.G.E.R. stands out with its focus on data authenticity, availability and scalability — key advancements that addresses the real-world practicality and usability challenges faced by earlier blockchain systems. D.A.G.G.E.R.'s architecture is built upon the principle of data scalability, ensuring that it can handle the increasing demands of modern applications without sacrificing speed, stability, or security.
 
-The modular and versatile nature of D.A.G.G.E.R. is designed to offer seamless interoperability and composability within the Web3 ecosystem. By prioritizing data availability, D.A.G.G.E.R. enables a level of performance and flexibility that empowers developers to build decentralized applications that are not only trustless and permissionless but also resilient to censorship.
+The modular and versatile nature of D.A.G.G.E.R. is designed to offer seamless interoperability and composability within the Web3 ecosystem. By prioritizing data efficacy as a design principal, D.A.G.G.E.R. enables a level of performance and flexibility that empowers developers to build decentralized applications that are not only trustless and permissionless but also resilient to censorship.
 
 By embracing this data-centric approach, GenesysGo is paving the way for a new era of DLT that is equipped to meet the diverse and complex needs of today's digital world. This commitment to advancing data availability and scalability positions D.A.G.G.E.R. as a pioneering force in the drive towards practical, efficient, and accessible decentralized technologies.
 
@@ -88,10 +88,11 @@ ShdwDrive caters to a wide range of storage needs:
 * AI applications and model storage
 * Personal & editable storage space
 * Specialized distributed ledger implementations
+* Blockchain archival
 
-[**Start Building on ShdwDrive!**](../build/shadow-drive/)
+[**Start Building on ShdwDrive!**](../build/shadow-drive.md)
 
-[**See what others are building on ShdwDrive!**](broken-reference/)
+[**See what others are building on ShdwDrive!**](https://github.com/GenesysGo/docs-shadow-cloud/blob/main/learn/broken-reference/README.md)
 
 ## **Shdw Operators**
 
@@ -105,9 +106,13 @@ Currently in development are a series of Shdw Operator node roles including Wiel
 
 #### Testnet Phase 1:
 
-[Running a Wield Node](https://docs.shdwdrive.com/wield) will allow you to trustlessly participate in the D.A.G.G.E.R. phase 1 testnet which powers the D.A.G.G.E.R. Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). We encourage node operators to review our blog articles for full context on the role of Wield Nodes and the purpose of D.A.G.G.E.R. Hammer.&#x20;
+[Operating](../operate/) a shdwNode will allow you to trustlessly participate in the D.A.G.G.E.R. phase 1 testnet which powers the D.A.G.G.E.R. Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). We encourage node operators to review our blog articles for full context on the role of Wield Nodes and the purpose of D.A.G.G.E.R. Hammer.
 
-Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are requires to erasure code and store files uploaded to the Hammer test interface.&#x20;
+Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are requires to erasure code and store files uploaded to the Hammer test interface.
+
+#### Testnet Phase 2:
+
+Launching January 16th
 
 ## **Our Team**
 
