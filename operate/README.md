@@ -21,7 +21,7 @@ To operate a shdwNode you must
 {% hint style="warning" %}
 **IMPORTANT - You need to add your node id to your discord user before your node is eligible for rewards. Once that's done, then rewards will start accumulating for your node.**
 
-**You need to have 500 SHDW at minimum across your wallets verified with the discord verification system in order to maintain your verified status and therefore your place in the network. That means you must maintain 500 SHDW in your shdwNode ID wallet in order to earn rewards.**&#x20;
+**You need to have 500 SHDW at minimum in your node ID wallet that is verified with the discord verification system in order to maintain your verified status and therefore your place in the network. That means you must maintain 500 SHDW in your shdwNode ID wallet in order to earn rewards.**&#x20;
 {% endhint %}
 
 ## Testnet Information:
