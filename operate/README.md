@@ -8,7 +8,7 @@ description: >-
 
 <table data-view="cards"><thead><tr><th></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Install</strong></td><td align="center"></td><td><a href="install.md">install.md</a></td><td><a href="../.gitbook/assets/SHDW-15.png">SHDW-15.png</a></td></tr><tr><td></td><td align="center"><strong>Wallet</strong></td><td align="center"></td><td><a href="wallet.md">wallet.md</a></td><td><a href="../.gitbook/assets/SHDW-16.png">SHDW-16.png</a></td></tr><tr><td></td><td align="center"><strong>Monitor</strong></td><td align="center"></td><td><a href="monitoring-stack.md">monitoring-stack.md</a></td><td><a href="../.gitbook/assets/SHDW-17.png">SHDW-17.png</a></td></tr><tr><td></td><td align="center">FAQ</td><td align="center"></td><td><a href="node-faq.md">node-faq.md</a></td><td><a href="../.gitbook/assets/SHDW-19.png">SHDW-19.png</a></td></tr></tbody></table>
 
-To operate a shdwNode you must
+## To operate a shdwNode you must:
 
 1. [Install](install.md) the latest version GenesysGo's Directed Acyclic Gossiping Graph Enabling Replication (D.A.G.G.E.R.).
 2. [Create](wallet.md) a wallet
