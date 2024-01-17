@@ -16,7 +16,7 @@ Please review our most up to date resources which are located here:\
 
 Update: We are currenlty in Testnet Phase 1 of D.A.G.G.E.R. and have released the ability for trustless and permission participation as a Wield Node operator.
 
-[Run a Wield Node ](https://docs.shdwdrive.com/wield)to join in!
+[Run a shdwNode](../operate/) to join in!
 
 ### Introduction
 
