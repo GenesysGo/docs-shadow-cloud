@@ -38,7 +38,7 @@ ShdwNodes will be handling thousands of live user test transactions and trustles
 
 ## Hardware Requirements:
 
-**Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not \_officially**\_\*\* supported at this time.\*\*
+**Operating system requirements are Ubuntu 22.04 LTS kernel 5.15.0. Other Linux x86 distributions may work but are not officially supported at this time.**
 
 **Minimum hardware requirements to operate a shdwNode for Testnets are as follows:**
 
