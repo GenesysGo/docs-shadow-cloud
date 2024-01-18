@@ -162,7 +162,7 @@ A: No. There will be an announcement that calls for a global restart on the 16th
 
 ### **Q: How do I associate my node ID with my wallet?**
 
-A: The process for associating your node ID with your wallet is explained in the [verification guide](./#discord-verification).
+A: The process for associating your node ID with your wallet is explained in the [verification ](https://docs.shdwdrive.com/operate#discord-verification)guide.
 
 ### **Q: How are the 150 incentivized operators selected?**
 

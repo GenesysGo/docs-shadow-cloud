@@ -10,18 +10,18 @@ description: >-
 
 ## To operate a shdwNode you must:
 
-1. [Install](install.md) the latest version GenesysGo's Directed Acyclic Gossiping Graph Enabling Replication (D.A.G.G.E.R.).
-2. [Create](wallet.md) a wallet
-3. Acquire 100 SHDW in your shdwNode wallet connected to your Discord user. [Read this Note](node-faq.md#q-how-are-earnings-paid-out-and-how-do-i-claim-my-shdwoperator-earnings).
-4. [Verify](./#discord-verification) your identity to the network (required to earn rewards).
-5. [Monitor](monitoring-stack.md) and maintain your shdwNode and stay up to date with announcements. View the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard).
+1. [Install ](https://docs.shdwdrive.com/operate/install)the latest version GenesysGo's Directed Acyclic Gossiping Graph Enabling Replication (D.A.G.G.E.R.).
+2. [Create ](https://docs.shdwdrive.com/operate/wallet)a wallet
+3. Acquire 100 SHDW in your shdwNode wallet connected to your Discord user. [Read this Note](https://docs.shdwdrive.com/operate/node-faq#q-how-are-earnings-paid-out-and-how-do-i-claim-my-shdwoperator-earnings).
+4. [Verify ](https://docs.shdwdrive.com/operate#discord-verification)your identity to the network (required to earn rewards).
+5. [Monitor ](https://docs.shdwdrive.com/operate/monitoring-stack)and maintain your shdwNode and stay up to date with announcements. View the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard).
 6. [Read FAQ](node-faq.md#testnet-2) about the current testnet.
 7. [Claim](https://testnet.shdwdrive.com/operator-rewards) rewards.
 
 {% hint style="warning" %}
 **IMPORTANT - You need to add your node id to your Discord user before your node is eligible for rewards. Once that's done, then rewards will start accumulating for your node.**
 
-**You need to have 100 SHDW at minimum across all wallets that are verified with the Discord verification system in order to maintain your verified status and therefore your place in the network.**&#x20;
+**You need to have 100 SHDW at minimum across all wallets that are verified with the Discord verification system in order to maintain your verified status and therefore your place in the network.**
 {% endhint %}
 
 ## Testnet Information:
@@ -55,7 +55,7 @@ ShdwNodes will be handling thousands of live user test transactions and trustles
 
 Follow this guide if you'd like to connect your node identity to your Discord user. This will unlock the shdwOperator role and the wield operators channel in the GenesysGo Discord Server.
 
-* Follow [this guide ](wallet.md#importing-usdshdw-accounts-into-solana-wallets)to import your shdwNode identity keypair into a Solana UI wallet.
+* Follow this [guide ](https://docs.shdwdrive.com/operate/wallet#importing-usdshdw-accounts-into-solana-wallets)to import your shdwNode identity keypair into a Solana UI wallet.
 * Go to [https://holders.genesysgo.com/](https://holders.genesysgo.com/)
 * Log in with the Discord user that you'd like to connect your shdwNode identity to
 * Connect your wallet, then click "Add wallet" and sign + submit the message.
