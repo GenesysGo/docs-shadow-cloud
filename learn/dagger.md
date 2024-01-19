@@ -20,7 +20,7 @@ Update: We are currenlty in Testnet Phase 2 of D.A.G.G.E.R. and have released th
 
 ### Introduction
 
-_Please note: this page adheres to high level explanations and general concepts suitable for all readers. This is not to be considered a whitepaper, more technical documentation can be found by using the links provided directly above. For more detail on how the_ [_SHDW_](https://docs.shadow.cloud/reference/shdw-token) _token is utilized with D.A.G.G.E.R. please see our_ [_SHDW_](https://docs.shadow.cloud/reference/shdw-token) _Token page_ [_here_](https://docs.shadow.cloud/reference/shdw-token)_. This page is currently undergoing changes to improve the alignment with the recently released D.A.G.G.E.R. Litepaper and blog article._
+_Please note: this page adheres to high level explanations and general concepts suitable for all readers. This is not to be considered a whitepaper, more technical documentation can be found by using the links provided directly above. For more detail on how the_ _SHDW_ _token is utilized with D.A.G.G.E.R. please see our_ _SHDW_ _Token page_ [_here_](../token/)_. This page is currently undergoing changes to improve the alignment with the recently released D.A.G.G.E.R. Litepaper and blog article._
 
 _D.A.G.G.E.R._ is a distributed system with a graph based consensus mechanism. There are five components that make up the protocol specification. This article will explain on a high level each of these five components and how they would interact with an incoming request. For simplicity, the use-case of the transaction can be considered a request to store a file on ShdwDrive v2.
 
@@ -36,9 +36,9 @@ The components, in the order an incoming transaction (a user write request) woul
 
 For introductory help, many technical terms in this document have links to their definitions. The following list defines a few terms commonly used throughout this document:
 
-* Transaction: A write request submitted by a user. A transaction can contain [raw bytes](dagger.md#raw-bytes-binary-data-that-is-made-up-of-0s-and-1s-usually-representing-a-string-of-text-a-file-or-an-image), membership management requests, and Shdw transactions (\[ShdwDrive/Cloud actions e.g. store file, instantiate VM).
-* Block: A set of transactions that are packed into a [Merkle Tree](dagger.md#merkle-tree-a-data-structure-used-in-cryptography-to-verify-the-integrity-of-data-a-merkle-tree-allows-large-datasets-to-be-checked-for-consistency-and-completeness-without-having-to-download-the-entire-dataset) whose root hash is included in a node in the [DAG](dagger.md#directed-acyclic-graph-a-graph-that-consists-of-directed-edges-with-no-cycles-used-to-represent-relationships-between-distributed-ledger-transactions).
-* Event: A node in the DAG, which contains the [hashes](dagger.md#cryptographic-hashes-a-one-way-function-used-to-map-data-of-any-size-to-a-fixed-length-value-used-to-create-digital-fingerprints-to-verify-data-integrity) of its parents, a timestamp, a Block payload, and the creator’s signature of the aforementioned.
+* Transaction: A write request submitted by a user. A transaction can contain raw bytes, membership management requests, and Shdw transactions (\[ShdwDrive/Cloud actions e.g. store file, instantiate VM).
+* Block: A set of transactions that are packed into a Merkle Tree whose root hash is included in a node in the DAG.
+* Event: A node in the DAG, which contains the hashes of its parents, a timestamp, a Block payload, and the creator’s signature of the aforementioned.
 
 ### Understanding _D.A.G.G.E.R._'s Asynchronous Consensus
 
@@ -54,27 +54,27 @@ The _D.A.G.G.E.R._ consensus algorithm utilizes various techniques to ensure the
 
 ### **Communication Module: The Network's Incoming & Outgoing Data**
 
-The communications module initializes outgoing [sync](dagger.md#synchronization-requests-in-peer-to-peer-network-requests-sent-between-nodes-in-a-peer-to-peer-network-to-ensure-that-the-nodes-have-the-same-data) requests with [peers](dagger.md#peer-to-peer-a-type-of-network-architecture-in-which-each-node-in-the-network-can-act-as-both-a-client-and-a-server-in-a-peer-to-peer-network-nodes-communicate-directly-with-each-other-rather-than-through-a-central-server) and forwards sync responses from peers to the processor, handles incoming sync requests from peers, forwards transactions to the processor, forwards RPC requests to the controller, and maintains a peer IP database.
+The communications module initializes outgoing sync requests with peers and forwards sync responses from peers to the processor, handles incoming sync requests from peers, forwards transactions to the processor, forwards RPC requests to the controller, and maintains a peer IP database.
 
 * **Outgoing Sync Requests**
   * To initialize a sync request, we begin by selecting a random active peer which has not recently been synced with.
   * Since we need the most up-to-date peer list along with a summary of our current graph’s state, the communications module sends a request to the graph module to summarize the current graph’s state and choose a peer 1.
   * The communications receive the state summary and a chosen peer, sends it to the peer and awaits a sync response, which is forwarded to the graph module to be digested.
 * **Incoming Sync Requests**
-  * An incoming sync request is immediately forwarded to the graph module. We await a packaged sync response containing all [events](dagger.md#events-an-occurrence-that-is-detected-by-a-distributed-ledger) that we have which the peer does not have, which is sent back to the peer.
+  * An incoming sync request is immediately forwarded to the graph module. We await a packaged sync response containing all events that we have which the peer does not have, which is sent back to the peer.
 * **Incoming Transactions**
-  * When a user submits a transaction, the communications module receiving the transaction then forwards it to the processor. After verification, the transaction makes its way through the forester and the graph module which, upon inclusion in a block, sends back the signature for the event containing the block in which the transaction was included. The communications module forwards this signature back to the user. Note that this does not mean the block has been [finalized](dagger.md#finalized-block-a-block-that-has-been-accepted-by-the-consensus-protocol-and-will-not-be-changed).
+  * When a user submits a transaction, the communications module receiving the transaction then forwards it to the processor. After verification, the transaction makes its way through the forester and the graph module which, upon inclusion in a block, sends back the signature for the event containing the block in which the transaction was included. The communications module forwards this signature back to the user. Note that this does not mean the block has been finalized.
 
 <figure><img src="../.gitbook/assets/Docs_MindMap_4.png" alt=""><figcaption></figcaption></figure>
 
 * **Incoming RPC Requests**
-  * When a user submits one of several possible [RPC](dagger.md#rpc-request) requests, whether it be to read a file or inquire about a block or transaction, it is forwarded to the controller. The controller sends back the result of the ledger query to the communications module, which forwards it to the user. This RPC API is native to _D.A.G.G.E.R._ and conforms to JSON standards.
+  * When a user submits one of several possible RPC requests, whether it be to read a file or inquire about a block or transaction, it is forwarded to the controller. The controller sends back the result of the ledger query to the communications module, which forwards it to the user. This RPC API is native to _D.A.G.G.E.R._ and conforms to JSON standards.
 
 <figure><img src="../.gitbook/assets/RPC_Request_Graphic_Docs_Transparent.png" alt=""><figcaption></figcaption></figure>
 
 ### **Processor Module: Verification**
 
-The verifier and forester are [sibling modules](dagger.md#sibling-modules) responsible for verification of events, blocks, and transactions. The verification happens for events made by peers, as well as for incoming transactions made by users. There are several forms of verification: signature verification for transactions, signature verification for blocks, and [root hash](dagger.md#root-hash) verification for blocks. When processing peer events, the verifier is responsible for the first two of these forms of verification, while the forester is responsible for verification of the root hash of the transaction Merkle trees that form the blocks. When processing incoming user transactions, the forester gathers transactions to pack into a block and produces the Merkle root hash which represents the block.\
+The verifier and forester are sibling modules responsible for verification of events, blocks, and transactions. The verification happens for events made by peers, as well as for incoming transactions made by users. There are several forms of verification: signature verification for transactions, signature verification for blocks, and root hash verification for blocks. When processing peer events, the verifier is responsible for the first two of these forms of verification, while the forester is responsible for verification of the root hash of the transaction Merkle trees that form the blocks. When processing incoming user transactions, the forester gathers transactions to pack into a block and produces the Merkle root hash which represents the block.\
 \
 In the case of filesystem applications like ShdwDrive, the controller module would perform reads and writes to the ledger using the _D.A.G.G.E.R._ protocol. This would include operations like shredding and erasure coding to ensure the files are secure and resilient. When a user submits a request to store a file on ShdwDrive, the forester module would gather the transactions and pack them into a block. The verifier module would then verify the signatures on the transactions and validate the root hash of the transaction Merkle tree in the block. Once the block is verified, it would be added to the _D.A.G.G.E.R._ ledger, which maintains a secure and tamper-proof record of all transactions.
 
@@ -103,7 +103,7 @@ This UML class diagram above consists of four classes: MerkleTree, Node, Data, a
 
 The diagram shows the relationships between these classes, including the composition of the MerkleTree and Node classes, as well as the association between the Node, Data, and Hash classes. The purpose of a UML class diagram is to provide an abstract and visual representation of a software system's structure, making it easier to understand, design, and maintain the system. This is for concept purposes only and for helping explain how Merkel data structures work. _D.A.G.G.E.R._ uses a more advanced implementation of this data structure which will be explained in more detail as more technical documents are released.
 
-#### 2. Analyze the graph to derive the [consensus](dagger.md#consensus) ordering of events. The collaborative duties are to help the communications module decide which peer to sync with and to inform the communications module.
+#### 2. Analyze the graph to derive the consensus ordering of events. The collaborative duties are to help the communications module decide which peer to sync with and to inform the communications module.
 
 * Consensus based on the ordering of graph events is a key component of protocols like _D.A.G.G.E.R_. Each node maintains a local copy of the "Shdw Graph," which is essentially an acyclic graph that records all the transactions and events that have occurred in the system. Nodes also communicate with each other using a gossip protocol, which involves sharing information about events and transactions.
 * When a new transaction is submitted to the system, it is first validated by the node that receives it. The node then creates a new event that includes the transaction and adds it to its local copy of the Shdw Graph. The node then gossips about the new event to other nodes in the network.
