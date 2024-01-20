@@ -124,7 +124,7 @@ A: For troubleshooting, check the system logs, review the node's configuration f
 
 ### **Q: How do I check the status and log files for my shdwNode?**
 
-A: Log files can be checked using command-line tools like `cat`, `less`, `tail`, or `grep`. The specific log file location may vary based on your node configuration. Use `journalctl` to check systemd service logs, for example, `sudo journalctl -u wield.service`. You can check the status of your node by running the command `sudo systemctl status wield`. This will give you an overview of your node's current operational status. You can monitor the finalization process by using the command `tail -f config.log | grep "finalized"`. This will filter the log entries to show you only the lines that mention "finalized," allowing you to track the finalization process in real-time.
+A: Log files can be checked using command-line tools like `cat`, `less`, `tail`, or `grep`. The specific log file location may vary based on your node configuration. Use `journalctl` to check systemd service logs, for example, `sudo journalctl -u wield.service`. You can check the status of your node by running the command `sudo systemctl status wield`. This will give you an overview of your node's current operational status. You can monitor the finalization process by using the command `tail -f config.log | grep "finalized"`. This will filter the log entries to show you only the lines that mention "finalized," allowing you to track the finalization process in real-time. If your logs are reporting "finalized" then it's working!
 
 ### **Q: Where can I find the log file on my server?**
 
