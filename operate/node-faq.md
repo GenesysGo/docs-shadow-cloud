@@ -24,7 +24,7 @@ A: The ongoing selection process for incentivized operators will be based on var
 
 ### Q: How do I know if I am connected to the network properly and achieving uptime?
 
-A: Look for "finalized" in your logs - if it's there then it's working. You can monitor the finalization process by using the command `tail -f config.log | grep "finalized"`. This will filter the log entries to show you only the lines that mention "finalized," allowing you to track the finalization process in real-time. If your logs are reporting "finalized" then it's working!
+A: Look for "finalized" in your logs - if it's there then it's working. You can monitor the finalization process by navigating to the directory your log file is in and using the command `tail -f config.log | grep "finalized"`. This will filter the log entries to show you only the lines that mention "finalized," allowing you to track the finalization process in real-time. If your logs are reporting "finalized" then it's working!
 
 If you need more help tracking logs or errors then review the general FAQ section more help.&#x20;
 
