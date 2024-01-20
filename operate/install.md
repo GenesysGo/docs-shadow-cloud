@@ -3,6 +3,8 @@
 ### Option 1 - Guided install + startup script
 
 {% hint style="info" %}
+Please make sure to review the [minimum hardware requirements](./#hardware-requirements) prior to installation.
+
 It is highly recommended to, at the very least, review the manual install steps below prior to determining how you would like to proceed. If you are comfortable with basic Linux commands and would like to be involved in the configuration of your node, follow the steps outlined in Option 2 - Manual Install below.
 {% endhint %}
 
