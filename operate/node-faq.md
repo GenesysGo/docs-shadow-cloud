@@ -20,7 +20,13 @@ Our system that checks your stake, creates and send the cNFT (shdwOperator NFT),
 
 ### **Q: How are the 150 incentivized operators selected?**
 
-A: The ongoing selection process for incentivized operators will be based on various criteria, including node performance and uptime. Upon initialization of the testnet, a global restart will be requested and the first 150 that join will be on a first come first serve. After the initial global restart, testnet 2 will be governed by entirely programmatic on-chain smart contracts monitoring performance, proper version, error states and uptime.
+A: The ongoing selection process for incentivized operators will be based on various criteria, including node performance and uptime. Upon initialization of the testnet, a global restart will be requested and the first 150 that join will be on a first come first serve. After the initial global restart, testnet 2 will be governed by entirely programmatic on-chain smart contracts monitoring performance, proper version, error states and uptime. You will want to achieve as much consistent uptime as possible.
+
+### Q: How do I know if I am connected to the network properly and achieving uptime?
+
+A: Look for "finalized" in your logs - if it's there then it's working. You can monitor the finalization process by using the command `tail -f config.log | grep "finalized"`. This will filter the log entries to show you only the lines that mention "finalized," allowing you to track the finalization process in real-time. If your logs are reporting "finalized" then it's working!
+
+If you need more help tracking logs or errors then review the general FAQ section more help.&#x20;
 
 ### Q: What does it mean to be in queue for earnings, and how is the queue managed?
 
