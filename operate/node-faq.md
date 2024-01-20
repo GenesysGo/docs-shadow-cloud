@@ -16,7 +16,7 @@ For the rest just follow this guide: [Step for operating a shdwNode](https://doc
 
 A: The process for associating your node ID with your wallet is explained in the [verification guide](./#discord-verification).
 
-Our system that checks your stake, creates and send the cNFT (shdwOperator NFT), and assigns the Discord role will take a few minutes to process. It is designed to be scalable and thus orderly queues database, Solana RPC, and Discord API calls with retries for robustness. Please be patient and give the cranks ample time to process your verification (several minutes).
+Our system that checks your stake, creates and send the cNFT (shdwOperator NFT), and assigns the Discord role will take several minutes to process. It is designed to be scalable and thus orderly queues database, Solana RPC, and Discord API calls with retries for robustness. Please be patient and give the cranks ample time to process your verification (several minutes).
 
 ### **Q: How are the 150 incentivized operators selected?**
 
