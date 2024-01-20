@@ -10,10 +10,6 @@ A: For hardware, you will need a bare metal server or a VPS with at least 16 thr
 
 For the rest just follow this guide: https://docs.shdwdrive.com/operate#to-operate-a-shdwnode-you-must
 
-## **Q: When Testnet 2 starts, will all existing nodes automatically transition to Testnet 2?**
-
-A: No. There will be an announcement that calls for a global restart on the 16th. All shdwOperators will be required to download the latest version of D.A.G.G.E.R. and restart their nodes.
-
 ## **Q: How do I associate my node ID with my wallet and get the shdwOperator role?**
 
 A: The process for associating your node ID with your wallet is explained in the [verification guide](./#discord-verification).
@@ -46,11 +42,11 @@ A: Operators can visit the [leaderboard](https://testnet.shdwdrive.com/uptime-le
 
 A: The shdwOperator incentives are calculated in real time (milliseconds) on-chain via D.A.G.G.E.R.'s internal consensus runtime. This real time available ledger data is then scraped by a shdwOracle server and packaged for Solana smart contract integration. This trustlessly and transparently powers the data behind the shdwOperator [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard), network [dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m), and portal for claiming operator rewards.
 
-This has been explain in detail in the [Testnet 2 blog](https://www.shdwdrive.com/blog/shdwdrive-v2-incentivized-testnet). You can read the sections "Rewards Details for shdwOperators" and "Expected Earnings and Costs" for an understanding of how earnings will be handled.
+This has been explain in detail in the [Testnet 2 blog](https://www.shdwdrive.com/blog/shdwdrive-v2-incentivized-testnet). You can read the sections "Rewards Details for shdwOperators" and "Expected Earnings and Costs" for an general understanding of how earnings will be handled.
 
 IMPORTANT CHANGE - We have previously stated that staking SHDW through the shdwNode wallet gives preferential treatment for rejoining the network, **however this is no longer the case.**
 
-Instead, y**ou need to have 100 SHDW at minimum across all wallets that are verified with the Discord verification system in order to maintain your verified status and therefore your place in the network. This SHDW may be staked without causing issue to your eligibility!**
+Instead, **you need to have 100 SHDW at minimum across all wallets that are verified with the Discord verification system in order to maintain your verified status and therefore your place in the network. This SHDW may be staked without causing issue to your eligibility!**
 
 ## **Q: What are common issues with locating and importing my private key?**
 
