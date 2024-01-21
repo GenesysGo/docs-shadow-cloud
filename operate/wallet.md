@@ -26,9 +26,9 @@ For advanced users and developers, command-line (CLI) wallets may be more approp
 
 ### Importing $SHDW Accounts into Solana Wallets
 
-To bring a shdwAccount from the shdwWallet into another Solana wallet, the `Private Key` or the 12/24-word seed phrase can be used to restore your account.
+To bring a shdwAccount from the shdwWallet into another Solana wallet, us the `Private Key`method.
 
-Technically, the private key embeds the specific derivation path used by the shdw Wallet. This derivation path is Solana for full compatibility. The common derivation path is `44'/501'/n'/0'`. This allows you to use the [#seed-phrase-method](wallet.md#seed-phrase-method "mention") and you can regenerate your wallet within any Solana UI wallet.
+The private key method is the recommended method to extracting the key you will need to import into 3rd party wallets. Technically, the private key embeds the specific derivation path used by the shdwNode wallet.&#x20;
 
 ### Private Key Method
 
@@ -63,8 +63,14 @@ For this, we'll demonstrate with [Phantom ](https://phantom.app/)wallet.
 ### Seed Phrase Method
 
 {% hint style="info" %}
+Using the above `privkey` method is the recommended approach for importing your node ID into other wallets, since results van vary from 3rd-party Solana wallets when generating keys with seed phrases. If you have issues with verification from seed phrase method, then use the `privkey` method instead.&#x20;
+
 You can only use this method if you write down your seed phrase after generating your node's identity keypair. If you did not write it down, please use the private key method above.
 {% endhint %}
+
+This derivation path is Solana for full compatibility. The common derivation path is `44'/501'/n'/0'`. This allows you to use the [#seed-phrase-method](wallet.md#seed-phrase-method "mention") and you can regenerate your wallet within any Solana UI wallet.
+
+The seed phrase is most often used for backup and recover and should be retained and securely stored.
 
 1. Open your Phantom Wallet.
 2. Click on the hamburger menu icon that looks like this:\
