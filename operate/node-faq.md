@@ -46,6 +46,8 @@ A: The best way to see the queue is to look at the [leaderboard](https://testnet
 
 A: Operators can visit the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard) to check their status. A [public dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m) is available for overall network monitoring.
 
+Keep in mind the public dashboard updates every 30 minutes, so please be patient if you do not see your shdwNode ID right away.
+
 ### Q: How are earnings paid out and how do I claim my shdwOperator earnings?
 
 A: The shdwOperator incentives are calculated in real time (milliseconds) on-chain via D.A.G.G.E.R.'s internal consensus runtime. This real time available ledger data is then scraped by a shdwOracle server and packaged for Solana smart contract integration. This trustlessly and transparently powers the data behind the shdwOperator [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard), network [dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m), and portal for claiming operator rewards.
