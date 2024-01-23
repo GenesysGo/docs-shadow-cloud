@@ -284,8 +284,6 @@ We adhere to a responsible disclosure process for security related issues. To en
 
 **Security related issues should only be reported through this repository.**
 
-While we strongly encourage the use of this repository for bug reports and security issues, you may also reach out to us via our [**Discord**](https://discord.gg/genesysgo) server. Join the #shdw-drive-technical-support channel for assistance. However, please note that we will redirect you to submit the bug report through this GitHub repository for proper handling and tracking.
-
 </details>
 
 <details>
