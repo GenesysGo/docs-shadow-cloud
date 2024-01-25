@@ -28,16 +28,6 @@ A: Look for "finalized" in your logs - if it's there then it's working. You can 
 
 If you need more help tracking logs or errors then review the general FAQ section more help.&#x20;
 
-### Q: What does it mean to be in queue for earnings, and how is the queue managed?
-
-A: Your place in the queue is governed by the testnet network trustlessly reporting the state of your shdwNode. The main source of data and truth for operator uptime comes from the D.A.G.G.E.R. ledger that is trustlessly agreed upon and gossiped between all shdwNodes (read more about this in the [litepaper](https://github.com/GenesysGo/dagger-litepaper/blob/main/DAGGER-Litepaper.pdf)). These shdwOperator metrics are therefore "on-ledger" and tamperproof, and are scraped by a shdwOracle that integrates with a Solana smart contract. The Solana smart contract is a second economic layer that is a tamperproof and trustless verifier of shdwOperator stake in the D.A.G.G.E.R. testnet. This forms a consensus backbone for uptime, with the physical state of shdwDrive infrastructure validated by D.A.G.G.E.R. and the economic state by Solana.
-
-Uptime is achieved the moment your shdwNode successfully performs its first sync request within the comms module (see [litepaper](https://github.com/GenesysGo/dagger-litepaper/blob/main/DAGGER-Litepaper.pdf)). Specifically, when it successfully handles an incoming sync request or a response to a sync request to another peer without error. This sync becomes a gossip event that is published to the ledger, agreed upon by a "shadowy council" that it is a strongly seen event (valid) and published in the logs. This is a collectible metric directly from the D.A.G.G.E.R. runtime by an Oracle. Failing to perform these syncs places your node in a flagged status (a 30 minute grace period). After 30 minutes have passed with in a flagged status, the node is internally marked as down and therefore reported to the shdwOracle as disconnected. You then move to the back of the queue. This is why it is important to restart and resolve errors on your shdwNode within 30 minutes.
-
-The queue is formed based on the network's global agreed upon order of success/failure of an individual shdwNode's effectiveness at syncing. This total ordering happens first across all nodes with the appropriate amount of stake. Assuming everyone has the appropriate amount of stake, there is one total order of shdwNodes where the first 150 are actively earning and those that come after the first 150 are in queue waiting for a shdwNode ahead of them to timeout, get evicted, or somehow fail to reconnect to the network after 30 minutes. Nodes without the appropriate amount of stake, or who have failed to verify their stake through Discord verification, are actively participating in the network and in it's consensus however are not placed in any queue.
-
-This is a widely varying dynamic queue. Why? Everyone's network hardware, DNS, local conditions, luck and skills are completely different. Decentralized network are highly heterogenous and everyone's experience with uptime will differ. Furthermore, this is a testnet. Things will change, break and often act differently than expected thereby potentially impacting some more than others in regards to uptime. This is a learning process, and embracing the flux while trying to maintain uptime in the chaos is designed to be rewarded. The queue as you can see is straightforward, but the manner in which it emerges through the testnet framework and unpredictable network conditions make it seemingly less predictable. Focus on learning your shdwNodes behavior, meet the staked minimum, and be consistent in maintaining uptime and you will move up in the queue replacing those ahead of you who fail to do as good of a job. There are many restarts and bugs in testnets, and therefore many chances for the diligent to work their way into the 150.
-
 ### Q: How can I see the queue or is there a way for me collect the queue data on my own?
 
 A: The best way to see the queue is to look at the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard) and locate your shdwNode ID. There is currently no collectible queue metric that is packaged as a public facing API. We have intentionally decided to not enable this feature as we deem it lower priority at this stage of a testnet. This is best left as a future feature release being that we will evolve and improve the internal metric collection over time.
@@ -48,15 +38,17 @@ A: Operators can visit the [leaderboard](https://testnet.shdwdrive.com/uptime-le
 
 Keep in mind the public dashboard updates every 30 minutes, so please be patient if you do not see your shdwNode ID right away.
 
-### Q: How are earnings paid out and how do I claim my shdwOperator earnings?
+### Q: What do the different statuses on the leaderboard mean, particularly "N/A"?
 
-A: The shdwOperator incentives are calculated in real time (milliseconds) on-chain via D.A.G.G.E.R.'s internal consensus runtime. This real time available ledger data is then scraped by a shdwOracle server and packaged for Solana smart contract integration. This trustlessly and transparently powers the data behind the shdwOperator [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard), network [dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m), and portal for claiming operator rewards.
+A: Overview of the current state of the leaderboard:
 
-This has been explain in detail in the [Testnet 2 blog](https://www.shdwdrive.com/blog/shdwdrive-v2-incentivized-testnet). You can read the sections "Rewards Details for shdwOperators" and "Expected Earnings and Costs" for an general understanding of how earnings will be handled.
+- **Is Top 150 - Yes:** Your node is currently among the top 150 nodes and is eligible for rewards based on its performance and uptime.
+- **Is Top 150 - Waiting:** Your node is not currently in the top 150 but is in the queue to earn rewards. If a node in the top 150 goes offline for 30 minutes or more, the oldest node in the queue (that's been waiting the longest) will move up.
+- **Is Top 150 - N/A (Not Applicable):** This status indicates that your node does not meet the eligibility criteria for earning rewards. Reasons for this status include not being Discord verified, being offline for more than 30 minutes, or not having the minimum required stake. Nodes with this status are not placed in the queue for earning rewards.
 
-IMPORTANT CHANGE - We have previously stated that staking SHDW through the shdwNode wallet gives preferential treatment for rejoining the network, **however this is no longer the case.**
+If you see an "N/A" status next to your operator ID, it means you are currently not eligible to earn rewards. To change this status and become eligible, you must follow the steps outlined in our documentation on staking and Discord verification. Total uptime is distinct from the time spent in a position to earn rewards. Therefore, uptime alone does not guarantee earnings unless your node is within the top 150.
 
-Instead, **you need to have 100 SHDW at minimum across all wallets that are verified with the Discord verification system in order to maintain your verified status and therefore your place in the network. This SHDW may be staked without causing issue to your eligibility!**
+For more detailed information on how to become eligible and improve your status, please refer to our comprehensive guides for [Operators](https://docs.shdwdrive.com/operate) and [Discord verification](https://docs.shdwdrive.com/operate#discord-verification).
 
 ### Q: Why might my rewards and leaderboard position not align with my expectations based on uptime?
 
@@ -84,6 +76,34 @@ A: Here are some key points to consider:
    We are working on improving log verbosity to make uptime tracking more intuitive. As we refine our systems, the transparency and understanding of the leaderboard mechanics will improve.
 
 In short, the leaderboard is influenced by a combination of cumulative uptime, queue mechanics, verification timing, local conditions, and reward calculations. These factors can lead to discrepancies between your perceived uptime and the rewards earned. We encourage operators to adjust their expectations in awareness of typical testnet environments and to focus on maintaining consistent uptime, promptly addressing any disconnections, and ensuring that they are fully verified to optimize their position and potential rewards.
+
+### Q: What does it mean to be in queue for earnings, and how is the queue managed?
+
+A: Your place in the queue is governed by the testnet network trustlessly reporting the state of your shdwNode. The main source of data and truth for operator uptime comes from the D.A.G.G.E.R. ledger that is trustlessly agreed upon and gossiped between all shdwNodes (read more about this in the [litepaper](https://github.com/GenesysGo/dagger-litepaper/blob/main/DAGGER-Litepaper.pdf)). These shdwOperator metrics are therefore "on-ledger" and tamperproof, and are scraped by a shdwOracle that integrates with a Solana smart contract. The Solana smart contract is a second economic layer that is a tamperproof and trustless verifier of shdwOperator stake in the D.A.G.G.E.R. testnet. This forms a consensus backbone for uptime, with the physical state of shdwDrive infrastructure validated by D.A.G.G.E.R. and the economic state by Solana.
+
+Uptime is achieved the moment your shdwNode successfully performs its first sync request within the comms module (see [litepaper](https://github.com/GenesysGo/dagger-litepaper/blob/main/DAGGER-Litepaper.pdf)). Specifically, when it successfully handles an incoming sync request or a response to a sync request to another peer without error. This sync becomes a gossip event that is published to the ledger, agreed upon by a "shadowy council" that it is a strongly seen event (valid) and published in the logs. This is a collectible metric directly from the D.A.G.G.E.R. runtime by an Oracle. Failing to perform these syncs places your node in a flagged status (a 30 minute grace period). After 30 minutes have passed with in a flagged status, the node is internally marked as down and therefore reported to the shdwOracle as disconnected. You then move to the back of the queue. This is why it is important to restart and resolve errors on your shdwNode within 30 minutes.
+
+The queue is formed based on the network's global agreed upon order of success/failure of an individual shdwNode's effectiveness at syncing. This total ordering happens first across all nodes with the appropriate amount of stake. Assuming everyone has the appropriate amount of stake, there is one total order of shdwNodes where the first 150 are actively earning and those that come after the first 150 are in queue waiting for a shdwNode ahead of them to timeout, get evicted, or somehow fail to reconnect to the network after 30 minutes. Nodes without the appropriate amount of stake, or who have failed to verify their stake through Discord verification, are actively participating in the network and in it's consensus however are not placed in any queue.
+
+This is a widely varying dynamic queue. Why? Everyone's network hardware, DNS, local conditions, luck and skills are completely different. Decentralized network are highly heterogenous and everyone's experience with uptime will differ. Furthermore, this is a testnet. Things will change, break and often act differently than expected thereby potentially impacting some more than others in regards to uptime. This is a learning process, and embracing the flux while trying to maintain uptime in the chaos is designed to be rewarded. The queue as you can see is straightforward, but the manner in which it emerges through the testnet framework and unpredictable network conditions make it seemingly less predictable. Focus on learning your shdwNodes behavior, meet the staked minimum, and be consistent in maintaining uptime and you will move up in the queue replacing those ahead of you who fail to do as good of a job. There are many restarts and bugs in testnets, and therefore many chances for the diligent to work their way into the 150.
+
+### Q: How are earnings for shdwOperators paid out and where do I claim my earnings?
+
+A: Earnings for shdwOperators are paid out via the shdwOperator stake site located at https://testnet.shdwdrive.com based on the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard). For claiming rewards, you **must have SOL in your wallet to process the transaction** otherwise the transaction to claim your rewards will fail.
+
+### Q: Why did the transaction fail when trying to claim or withdraw my rewards?
+
+A: The most likely cause for this is not having a small amount of SOL in your wallet to pay for the transaction fee.
+
+### Q: Where does the data for rewards come from and how are they used?
+
+A: The shdwOperator incentives are calculated in real time (milliseconds) on-chain via D.A.G.G.E.R.'s internal consensus runtime. This real time available ledger data is then scraped by a shdwOracle server and packaged for Solana smart contract integration. This trustlessly and transparently powers the data behind the shdwOperator [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard), network [dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m), and portal for claiming operator rewards.
+
+This has been explain in detail in the [Testnet 2 blog](https://www.shdwdrive.com/blog/shdwdrive-v2-incentivized-testnet). You can read the sections "Rewards Details for shdwOperators" and "Expected Earnings and Costs" for an general understanding of how earnings will be handled.
+
+IMPORTANT CHANGE - We have previously stated that staking SHDW through the shdwNode wallet gives preferential treatment for rejoining the network, **however this is no longer the case.**
+
+Instead, **you need to have 100 SHDW at minimum across all wallets that are verified with the Discord verification system in order to maintain your verified status and therefore your place in the network. This SHDW may be staked without causing issue to your eligibility!**
 
 ### **Q: What are common issues with locating and importing my private key?**
 
