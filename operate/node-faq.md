@@ -38,13 +38,13 @@ A: Operators can visit the [leaderboard](https://testnet.shdwdrive.com/uptime-le
 
 Keep in mind the public dashboard updates every 30 minutes, so please be patient if you do not see your shdwNode ID right away.
 
-### Q: What do the different statuses on the leaderboard mean, particularly "N/A"?
+### Q: What do the different statuses on the leaderboard mean, particularly "not_eligible"?
 
 A: Overview of the current state of the leaderboard:
 
-- **Is Top 150 - Yes:** Your node is currently among the top 150 nodes and is eligible for rewards based on its performance and uptime.
-- **Is Top 150 - Waiting:** Your node is not currently in the top 150 but is in the queue to earn rewards. If a node in the top 150 goes offline for 30 minutes or more, the oldest node in the queue (that's been waiting the longest) will move up.
-- **Is Top 150 - N/A (Not Applicable):** This status indicates that your node does not meet the eligibility criteria for earning rewards. Reasons for this status include not being Discord verified, being offline for more than 30 minutes, or not having the minimum required stake. Nodes with this status are not placed in the queue for earning rewards.
+- **Status - top_150:** Your node is currently among the top 150 nodes and is eligible for rewards based on its performance and uptime.
+- **Status - queued:** Your node is not currently in the top 150 but is in the queue to earn rewards. If a node in the top 150 goes offline for 30 minutes or more, the oldest node in the queue (that's been waiting the longest) will move up.
+- **Status - not_eligible:** This status indicates that your node does not meet the eligibility criteria for earning rewards. Reasons for this status include not being Discord verified, being offline for more than 30 minutes, or not having the minimum required stake. Nodes with this status are not placed in the queue for earning rewards.
 
 If you see an "N/A" status next to your operator ID, it means you are currently not eligible to earn rewards. To change this status and become eligible, you must follow the steps outlined in our documentation on staking and Discord verification. Total uptime is distinct from the time spent in a position to earn rewards. Therefore, uptime alone does not guarantee earnings unless your node is within the top 150.
 
@@ -121,7 +121,7 @@ As a best practice, we recommend automated your restart process through scriptin
 
 ### Q: Why am I not able to withdraw immediately from the staking site?
 
-A: You are able to withdraw after waiting approximately 53 hours for Solana epoch cycles. We have chosen to align with Solana epoch cycles for several technical reasons that can be generalized by our overall intent for shdwDrive to run in harmony with Solana. Also, much like Solana, having waiting cycles based on epochs strengthen the network against certain type of vulnerabilities, and since SHDW is a native Solana SPL we are able to utilize Solana epochs rather than shdwDrive v2 epochs thereby freeing our testnet 2 for epoch experimentations without impact on staking withdraw cycles.
+A: You are able to withdraw after waiting approximately 53 hours for Solana epoch cycles. We have chosen to align with Solana epoch cycles for several technical reasons that can be generalized by our overall intent for shdwDrive to run in harmony with Solana. Also, much like Solana, having waiting cycles based on epochs strengthen the network against certain type of vulnerabilities, and since SHDW is a native Solana SPL we are able to utilize Solana epochs rather than shdwDrive v2 epochs thereby freeing our testnet 2 for epoch experimentations without impact on staking withdraw cycles. Also make sure you have a little bit of SOL to cover the Solana transaction fee. 
 
 Please keep in mind we are constantly making improvements to user experience and if you have a feature idee or feedback you would like us to consider please open a Github issue suing think link: https://github.com/genesysgo/dagger-testnet-issues
 
