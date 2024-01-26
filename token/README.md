@@ -1,6 +1,6 @@
 # SHDW Token
 
-Visit the [staking website](https://testnet.shdwdrive.com) to claim staking rewards and view the testnet [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard). The SHDW Token can be purchased on [Jupiter.](https://jup.ag/swap/USDC-SHDW)&#x20;
+Visit the [staking website](https://testnet.shdwdrive.com) to claim staking rewards and view the testnet [leaderboard](https://testnet.shdwdrive.com/status-dashboard). The SHDW Token can be purchased on [Jupiter.](https://jup.ag/swap/USDC-SHDW)&#x20;
 
 <table data-view="cards"><thead><tr><th></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Rewards</strong></td><td align="center"></td><td><a href="rewards.md">rewards.md</a></td><td><a href="../.gitbook/assets/SHDW-20 (1).png">SHDW-20 (1).png</a></td></tr><tr><td></td><td align="center"><strong>Utility</strong></td><td align="center"></td><td><a href="utility.md">utility.md</a></td><td><a href="../.gitbook/assets/SHDW-21 (1).png">SHDW-21 (1).png</a></td></tr><tr><td></td><td align="center">Roadmap</td><td align="center"></td><td><a href="roadmap.md">roadmap.md</a></td><td><a href="../.gitbook/assets/SHDW-23 (1).png">SHDW-23 (1).png</a></td></tr></tbody></table>
 

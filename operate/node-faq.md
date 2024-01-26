@@ -30,11 +30,11 @@ If you need more help tracking logs or errors then review the general FAQ sectio
 
 ### Q: How can I see the queue or is there a way for me collect the queue data on my own?
 
-A: The best way to see the queue is to look at the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard) and locate your shdwNode ID. There is currently no collectible queue metric that is packaged as a public facing API. We have intentionally decided to not enable this feature as we deem it lower priority at this stage of a testnet. This is best left as a future feature release being that we will evolve and improve the internal metric collection over time.
+A: The best way to see the queue is to look at the [leaderboard](https://testnet.shdwdrive.com/status-dashboard) and locate your shdwNode ID. There is currently no collectible queue metric that is packaged as a public facing API. We have intentionally decided to not enable this feature as we deem it lower priority at this stage of a testnet. This is best left as a future feature release being that we will evolve and improve the internal metric collection over time.
 
 ### Q: How do I track my progress and the progress of the network?
 
-A: Operators can visit the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard) to check their status. A [public dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m) is available for overall network monitoring.
+A: Operators can visit the [leaderboard](https://testnet.shdwdrive.com/status-dashboard) to check their status. A [public dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m) is available for overall network monitoring.
 
 Keep in mind the public dashboard updates every 30 minutes, so please be patient if you do not see your shdwNode ID right away.
 
@@ -89,7 +89,7 @@ This is a widely varying dynamic queue. Why? Everyone's network hardware, DNS, l
 
 ### Q: How are earnings for shdwOperators paid out and where do I claim my earnings?
 
-A: Earnings for shdwOperators are paid out via the shdwOperator stake site located at https://testnet.shdwdrive.com based on the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard). For claiming rewards, you **must have SOL in your wallet to process the transaction** otherwise the transaction to claim your rewards will fail.
+A: Earnings for shdwOperators are paid out via the shdwOperator stake site located at https://testnet.shdwdrive.com based on the [leaderboard](https://testnet.shdwdrive.com/status-dashboard). For claiming rewards, you **must have SOL in your wallet to process the transaction** otherwise the transaction to claim your rewards will fail.
 
 ### Q: Why did the transaction fail when trying to claim or withdraw my rewards?
 
@@ -97,7 +97,7 @@ A: The most likely cause for this is not having a small amount of SOL in your wa
 
 ### Q: Where does the data for rewards come from and how are they used?
 
-A: The shdwOperator incentives are calculated in real time (milliseconds) on-chain via D.A.G.G.E.R.'s internal consensus runtime. This real time available ledger data is then scraped by a shdwOracle server and packaged for Solana smart contract integration. This trustlessly and transparently powers the data behind the shdwOperator [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard), network [dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m), and portal for claiming operator rewards.
+A: The shdwOperator incentives are calculated in real time (milliseconds) on-chain via D.A.G.G.E.R.'s internal consensus runtime. This real time available ledger data is then scraped by a shdwOracle server and packaged for Solana smart contract integration. This trustlessly and transparently powers the data behind the shdwOperator [leaderboard](https://testnet.shdwdrive.com/status-dashboard), network [dashboard](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m), and portal for claiming operator rewards.
 
 This has been explain in detail in the [Testnet 2 blog](https://www.shdwdrive.com/blog/shdwdrive-v2-incentivized-testnet). You can read the sections "Rewards Details for shdwOperators" and "Expected Earnings and Costs" for an general understanding of how earnings will be handled.
 
@@ -131,7 +131,7 @@ A: See the following links:
 
 * Staking: [https://testnet.shdwdrive.com/](https://testnet.shdwdrive.com/)
 * Operator rewards: [https://testnet.shdwdrive.com/operator-rewards](https://testnet.shdwdrive.com/operator-rewards)
-* Leaderboard: [https://testnet.shdwdrive.com/uptime-leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard)
+* Leaderboard: [https://testnet.shdwdrive.com/status-dashboard](https://testnet.shdwdrive.com/status-dashboard)
 * Public dashboard: [https://dashboard.shdwdrive.com/](https://dashboard.shdwdrive.com/)
 * Announcements: ⁠[https://discord.gg/genesysgo](https://discord.gg/genesysgo)
 

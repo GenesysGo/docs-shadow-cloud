@@ -30,7 +30,7 @@ Read[ here](https://www.shdwdrive.com/blog/shdwdrive-v2-incentivized-testnet) fo
 * **Inactivity Rule**: Nodes inactive for 30 minutes are removed from the top 150 group eligible for earnings and placed at the back of the queue.
 * **Earnings**: Up to 2,000 $SHDW based on uptime, with additional rewards for uptime >=2,096 hours (approx. 95% of Testnet2).
 * **Costs**: Running a shdwNode estimated at $100-300/month.
-* **Uptime Tracking**: Via the shdwOperator [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard) at https://dashboard.shdwdrive.com. Details beyond those provided in this dashboard as to how your uptime has positively or negatively impacted your placement in the top 150 is beyond the scope of this testnet 2, and therefore we ask that everyone calibrate their expectations at this time.
+* **Uptime Tracking**: Via the shdwOperator [leaderboard](https://testnet.shdwdrive.com/status-dashboard) at https://dashboard.shdwdrive.com. Details beyond those provided in this dashboard as to how your uptime has positively or negatively impacted your placement in the top 150 is beyond the scope of this testnet 2, and therefore we ask that everyone calibrate their expectations at this time.
 * **Earnings Requirement**: You need to have 100 $SHDW at minimum across your wallets verified with the discord verification system to be eligible to earn rewards from running a shdwNode. You can [stake](https://testnet.shdwdrive.com) this SHDW without impacting your eligibility! The SHDW token can be purchased on [Jupiter.](https://jup.ag/swap/USDC-SHDW)
 * **Claim Rewards:** shdwOperators claim at [https://testnet.shdwdrive.com/operator-rewards](https://testnet.shdwdrive.com/operator-rewards)
 

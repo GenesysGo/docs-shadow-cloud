@@ -14,7 +14,7 @@ description: >-
 2. [Create ](https://docs.shdwdrive.com/operate/wallet)a wallet
 3. Acquire 100 SHDW in your shdwNode wallet connected to your Discord user. [Read this Note](https://docs.shdwdrive.com/operate/node-faq#q-how-are-earnings-paid-out-and-how-do-i-claim-my-shdwoperator-earnings).
 4. [Verify ](https://docs.shdwdrive.com/operate#discord-verification)your identity to the network (required to earn rewards).
-5. [Monitor ](https://docs.shdwdrive.com/operate/monitoring-stack)and maintain your shdwNode and stay up to date with announcements. View the [leaderboard](https://testnet.shdwdrive.com/uptime-leaderboard).
+5. [Monitor ](https://docs.shdwdrive.com/operate/monitoring-stack)and maintain your shdwNode and stay up to date with announcements. View the [leaderboard](https://testnet.shdwdrive.com/status-dashboard).
 6. [Read FAQ](node-faq.md#testnet-2) about the current testnet.
 7. [Claim](https://testnet.shdwdrive.com/operator-rewards) rewards.
 
