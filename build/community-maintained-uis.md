@@ -8,7 +8,7 @@ description: Explore projects utilizing ShdwDrive
 
 One of the most widely used GUIs for interacting with ShdwDrive. A unique user experience that lets teams and individuals unlock the power of web3 through crypto and decentralization—file management, transfer & sharing, immutable storage, private notes, real-time collaboration, and more.
 
-[![](../.gitbook/assets/shadow\_storage.png)](https://www.shadow.storage/#features)
+[![](../.gitbook/assets/shadow\_storage.png)](https://shadow.storage/)
 
 **SYNX**
 
@@ -20,7 +20,7 @@ Synx, developed by the Blxckout team, offers exceptional UI/UX for managing real
 
 A Social Protocol to help build on-chain social media platforms. Developer-friendly, with no prior blockchain knowledge required. Unlock new crypto experiences that your users will love—build a Web3 social app with ease.
 
-[![](../.gitbook/assets/spling-feature.png)](https://www.splinglabs.com/)
+[![](../.gitbook/assets/spling-feature.png)](https://twitter.com/Spling\_Labs)
 
 **Firethree**
 
