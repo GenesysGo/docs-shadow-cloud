@@ -27,7 +27,7 @@ Read[ here](https://www.shdwdrive.com/blog/shdwdrive-v2-incentivized-testnet) fo
 * **Max Operators**: Unlimited. All network participants are active in the network and there is no limit to who can join.
 * **Total that can Earn**: 150 shwdNodes based on uptime and priority. These 150 will change as their performance changes, replaced by a queue of eligible shdwOperators.
 * **Wallet**: Each shdwNode must be linked to a unique SPL wallet and hold a minimum of 100 $SHDW.
-* **Inactivity Rule**: Nodes inactive for 30 minutes are removed from the top 150 group eligible for earnings and placed at the back of the queue.
+* **Inactivity Rule**: Nodes inactive for 10 minutes are removed from the top 150 group eligible for earnings and placed at the back of the queue.
 * **Earnings**: Up to 2,000 $SHDW based on uptime, with additional rewards for uptime >=2,096 hours (approx. 95% of Testnet2).
 * **Costs**: Running a shdwNode estimated at $100-300/month.
 * **Uptime Tracking**: Via the shdwOperator [leaderboard](https://testnet.shdwdrive.com/status-dashboard) at https://dashboard.shdwdrive.com. Details beyond those provided in this dashboard as to how your uptime has positively or negatively impacted your placement in the top 150 is beyond the scope of this testnet 2, and therefore we ask that everyone calibrate their expectations at this time.
