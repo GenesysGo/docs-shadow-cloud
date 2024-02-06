@@ -6,16 +6,10 @@ description: >-
 
 # Social Media & Community
 
-##
+## Twitter: [https://twitter.com/genesysgo](https://twitter.com/genesysgo)
 
-## Twitter
+## Discord: [https://discord.com/invite/genesysgo](https://discord.com/invite/genesysgo)&#x20;
 
-{% embed url="https://twitter.com/genesysgo" %}
+## Telegram: [https://t.me/+UKTjvypXkhtkMmUx](https://t.me/+UKTjvypXkhtkMmUx)
 
-## Discord
-
-{% embed url="https://discord.com/invite/genesysgo" %}
-
-## Telegram
-
-{% embed url="https://t.me/shadowdriveecosystem" %}
+## Blog: [https://shdwdrive.com/blog](https://shdwdrive.com/blog)

@@ -28,5 +28,6 @@
 * [Reference](reference/README.md)
   * [Change Logs](reference/change-logs.md)
   * [Social Media & Community](reference/social-media-and-community.md)
+  * [Podcasts](reference/podcasts.md)
   * [Solana Breakpoint 2022 Demo](reference/breakpoint-2022-demo.md)
   * [shdwGlossary](reference/shadow-glossary.md)
