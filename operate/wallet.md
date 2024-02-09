@@ -59,30 +59,3 @@ For this, we'll demonstrate with [Phantom ](https://phantom.app/)wallet.
 5. Click Import Private Key
 6. Make sure Solana is selected as the network, you can name it whatever you'd like and then paste the private key from the output of [#get-your-accounts-private-key-from-your-shdwnode](wallet.md#get-your-accounts-private-key-from-your-shdwnode "mention").
 7. Your shdwNode's identity should now be in your Solana Wallet! You can now go to [https://holders.genesysgo.com/](https://holders.genesysgo.com/), sign in with your Discord account, and once your node has been identified in the network, you will receive the `shdwOperator` role in discord automatically.
-
-### Seed Phrase Method
-
-{% hint style="info" %}
-Using the above `privkey` method is the recommended approach for importing your node ID into other wallets, since results van vary from 3rd-party Solana wallets when generating keys with seed phrases. If you have issues with verification from seed phrase method, then use the `privkey` method instead.&#x20;
-
-You can only use this method if you write down your seed phrase after generating your node's identity keypair. If you did not write it down, please use the private key method above.
-{% endhint %}
-
-This derivation path is Solana for full compatibility. The common derivation path is `44'/501'/n'/0'`. This allows you to use the [#seed-phrase-method](wallet.md#seed-phrase-method "mention") and you can regenerate your wallet within any Solana UI wallet.
-
-The seed phrase is most often used for backup and recover and should be retained and securely stored.
-
-1. Open your Phantom Wallet.
-2. Click on the hamburger menu icon that looks like this:\
-   ![](<../.gitbook/assets/image (5).png>)
-3. Once the side menu opens up, click the `+` icon for `Add / Connect Wallet`\
-   ![](<../.gitbook/assets/image (6).png>)
-4. You should now see a screen like this:\
-   ![](<../.gitbook/assets/image (7).png>)
-5. Click on `Import Secret Recovery Phrase`. You should then be taken to a screen like this:\
-   ![](<../.gitbook/assets/image (8).png>)
-6. Enter the secret recovery phrase for your node's identity keypair and click `Import Wallet`
-7. If successful, you should see a screen like this:\
-   ![](<../.gitbook/assets/image (9).png>)
-8. Click `View Accounts` to confirm the `Solana` network wallet address matches the public key for your node's identity keypair. Click `Continue` after verifying everything is correct.
-9. Your shdwNode's identity should now be in your Solana Wallet! Next, you can go to [https://holders.genesysgo.com/](https://holders.genesysgo.com/) and sign in with your Discord account. Once your node has been identified in the network, you will automatically receive the role in Discord.
