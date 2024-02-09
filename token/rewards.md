@@ -51,6 +51,8 @@ Staking is a mechanism in which holders earn rewards for holding their tokens. H
 * **Acquisition**: 1 point per 10 SHDW purchased through Jupiter Exchange.
 * **Loss**: 1 point deducted for every 1 SHDW leaving the wallet, except when staking.
 * **Redemption**: Awarded at the end of Testnet2 based on average transaction size. Points can be redeemed for SHDW at the end of Testnet2.
+* Points Leaderboard: [https://testnet.shdwdrive.com/points-leaderboard](https://testnet.shdwdrive.com/points-leaderboard)
+* Points Fraud: [Form to report deceptive wallets](https://docs.google.com/forms/d/e/1FAIpQLSdztbGTeLSBuYi9nghZsC0rZ\_mnDORf7nB2Oqzml8\_hGIrl4g/viewform)
 
 ## General Notes on Participation
 
