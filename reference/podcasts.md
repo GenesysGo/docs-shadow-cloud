@@ -4,7 +4,15 @@ description: Official SHDW and GenesysGo podcast appearances
 
 # Podcasts
 
-1/26/24: [100X Podcast - Decentralizing Big Tech w/ shdwDrive](https://x.com/100xPodcast/status/1750918608455074122?s=20)
+2/15/24  [AI on Solana: Compute, Earn, & Store (Spaces w/ Frank)](https://x.com/gizmothegizzer/status/1758151275147849855?s=20)
+
+<div align="left">
+
+<figure><img src="../.gitbook/assets/AI on Solana Computer, Earn, &#x26; Store" alt="" width="165"><figcaption><p><a href="https://x.com/gizmothegizzer/status/1758151275147849855?s=20">AI on Solana</a></p></figcaption></figure>
+
+</div>
+
+1/26/24  [100X Podcast: Decentralizing Big Tech w/ shdwDrive](https://x.com/100xPodcast/status/1750918608455074122?s=20)
 
 <div align="left" data-full-width="false">
 
@@ -12,7 +20,7 @@ description: Official SHDW and GenesysGo podcast appearances
 
 </div>
 
-1/17/24: [GM Solana by JPEG Lord - SHDW Talk Twitter Spaces w/ Frank](https://x.com/thejpeglord/status/1746927812131299620?s=20)
+1/17/24  [GM Solana by JPEG Lord: SHDW Talk (Spaces w/ Frank)](https://x.com/thejpeglord/status/1746927812131299620?s=20)
 
 <div align="left">
 
