@@ -105,7 +105,7 @@ shdw-drive create-storage-account -kp ~/shdw-keypair.json -n "pony storage drive
 
 ### **Upload File to ShdwDrive**
 
-There are only two required options for this command:
+Options for this command:
 
 `-kp, --keypair`
 
@@ -121,10 +121,20 @@ If you have multiple storage accounts it will present you with a list of owned s
 
 * Storage account to upload file to.
 
-**Example:**
+`--rpc <your-RPC-endpoint>`
+
+* &#x20;RPC endpoint to pass custom endpoint. This can resolve 410 errors if you are using methods not available from the default free public endpoint.
+
+**Example 1:**
 
 ```
 shdw-drive upload-file -kp ~/shdw-keypair.json -f ~/AccountHolders.csv
+```
+
+**Example 2 with RPC:**
+
+```
+shdw-drive upload-file -kp ~/shdw-keypair.json -f ~/AccountHolders.csv --rpc <https://some-solana-api.com>
 ```
 
 ### **Upload Multiple Files to ShdwDrive**
@@ -149,10 +159,20 @@ Options:
 
 * Number of concurrent batch uploads. (default: "3")
 
-**Example:**
+`--rpc <your-RPC-endpoint>`
+
+* &#x20;RPC endpoint to pass custom endpoint. This can resolve 410 errors if you are using methods not available from the default free public endpoint.
+
+**Example 1:**
 
 ```
 shdw-drive upload-multiple-files -kp ~/shdw-keypair.json -d ~/ponyNFT/assets/
+```
+
+**Example 2 with RPC:**
+
+```
+shdw-drive upload-multiple-files -kp ~/shdw-keypair.json -d ~/ponyNFT/assets/ --rpc <https://some-solana-api.com>
 ```
 
 ### **Edit a File (aka Overwrite a File aka Replace a File)**
