@@ -44,6 +44,7 @@ Staking is a mechanism in which holders earn rewards for holding their tokens. H
 * **Staking Contract**: All $SHDW stakes go to the same shdwStaking smart contract.
 * **shdwOperators:** For testnet 2, you need to have 100 $SHDW at minimum across your wallets verified with the discord verification system to be eligible to earn rewards from running a shdwNode.
 * **Stake and Claim:** [https://testnet.shdwdrive.com](https://testnet.shdwdrive.com/operator-rewards)
+* **Questions**: Review our [FAQ](../operate/node-faq.md#q-why-is-there-a-discrepancy-between-the-stake-rewards-im-claiming-and-the-estimated-amount-shown-in)
 
 ## Points
 

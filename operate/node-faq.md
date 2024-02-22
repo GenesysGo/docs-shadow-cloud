@@ -6,6 +6,10 @@ description: Frequently Asked Questions
 
 ## Testnet 2
 
+### **Q:** Why is there a discrepancy between the stake rewards I'm claiming and the estimated amount shown in my Phantom wallet?
+
+A: The discrepancy arises because the front-end interface displays an estimated amount. Updating the on-chain program to precisely align these values for every user account in real time would be both time-consuming and expensive, costing approximately 2-3 SOL per day. As a result, we opt for providing close approximations on the staking site.
+
 ### **Q: What are the requirements to run a node on the Testnet?**
 
 A: For hardware, you will need a bare metal server or a VPS with at least 16 threads (8 cores), 32 GB RAM, and sufficient SSD storage (2 TB SSD or better recommended). Generally, expect to conduct many restarts, handle outages, bugs, report issues and share logs with the core team.
@@ -26,10 +30,10 @@ A: The ongoing selection process for incentivized operators will be based on var
 
 A: While you are allowed to run multiple nodes, the reward eligibility system for this phase of testnet has been updated to support a fairer distribution of rewards across more individuals and to encourage decentralization. Under the new dynamic:
 
-- Only one of your nodes will be eligible to earn rewards or be placed in the "Waiting" list at any given time. This applies even if you have more than one node verified with your Discord user.
-- The eligible node will be the one that has performed best in terms of rewards earned to date. If no rewards have been earned yet, one of the online nodes will be chosen at random for potential rewards and queue position.
-- Other nodes operated by you will have a status of "Not Applicable" for earnings and will not be placed in the queue.
-- These changes will ensure a more equitable reward system and help prevent network ownership concentration, aligning with our commitment to maintaining a decentralized environment.
+* Only one of your nodes will be eligible to earn rewards or be placed in the "Waiting" list at any given time. This applies even if you have more than one node verified with your Discord user.
+* The eligible node will be the one that has performed best in terms of rewards earned to date. If no rewards have been earned yet, one of the online nodes will be chosen at random for potential rewards and queue position.
+* Other nodes operated by you will have a status of "Not Applicable" for earnings and will not be placed in the queue.
+* These changes will ensure a more equitable reward system and help prevent network ownership concentration, aligning with our commitment to maintaining a decentralized environment.
 
 For additional information on running nodes and reward distribution, please visit our guide for [Operators](https://docs.shdwdrive.com/operate).
 
@@ -37,7 +41,7 @@ For additional information on running nodes and reward distribution, please visi
 
 A: Look for "finalized" in your logs - if it's there then it's working. You can monitor the finalization process by navigating to the directory your log file is in and using the command `tail -f config.log | grep "finalized"`. This will filter the log entries to show you only the lines that mention "finalized," allowing you to track the finalization process in real-time. If your logs are reporting "finalized" then it's working!
 
-If you need more help tracking logs or errors then review the general FAQ section more help.&#x20;
+If you need more help tracking logs or errors then review the general FAQ section more help.
 
 ### Q: How can I see the queue or is there a way for me collect the queue data on my own?
 
@@ -53,9 +57,9 @@ Keep in mind the public dashboard updates every 30 minutes, so please be patient
 
 A: Overview of the current state of the leaderboard:
 
-- **Is Top 150 - Yes:** Your node is currently among the top 150 nodes and is eligible for rewards based on its performance and uptime.
-- **Is Top 150 - Waiting:** Your node is not currently in the top 150 but is in the queue to earn rewards. If a node in the top 150 goes offline for 10 minutes or more, the oldest node in the queue (that's been waiting the longest) will move up.
-- **Is Top 150 - N/A (Not Applicable):** This status indicates that your node does not meet the eligibility criteria for earning rewards. Reasons for this status include not being Discord verified, being offline for more than 10 minutes, or not having the minimum required stake. Nodes with this status are not placed in the queue for earning rewards.
+* **Is Top 150 - Yes:** Your node is currently among the top 150 nodes and is eligible for rewards based on its performance and uptime.
+* **Is Top 150 - Waiting:** Your node is not currently in the top 150 but is in the queue to earn rewards. If a node in the top 150 goes offline for 10 minutes or more, the oldest node in the queue (that's been waiting the longest) will move up.
+* **Is Top 150 - N/A (Not Applicable):** This status indicates that your node does not meet the eligibility criteria for earning rewards. Reasons for this status include not being Discord verified, being offline for more than 10 minutes, or not having the minimum required stake. Nodes with this status are not placed in the queue for earning rewards.
 
 If you see an "N/A" status next to your operator ID, it means you are currently not eligible to earn rewards. To change this status and become eligible, you must follow the steps outlined in our documentation on staking and Discord verification. Total uptime is distinct from the time spent in a position to earn rewards. Therefore, uptime alone does not guarantee earnings unless your node is within the top 150.
 
@@ -65,26 +69,13 @@ For more detailed information on how to become eligible and improve your status,
 
 A: Here are some key points to consider:
 
-1. **Cumulative Uptime vs. Streaks**:
-   Uptime is measured and reported cumulatively on the leaderboard "uptime" column, not as a continuous streak. This means that your uptime is published as an accumulating total, regardless of interruptions or moments went you were or were not earning. Frequent disconnections can affect your position in the queue and subsequently your potential rewards, and this resulting non-earning downtime is not published at this time.
-
-2. **Queue Dynamics**:
-   After 10 minutes of being offline, your node is marked as down. If your node goes offline and then comes back online, it's placed at the end of the queue, even if you previously had significant uptime and were near the top. If you node is in the queue, it will get moved to the back of the queue if fails to maintain uptime after 10 minutes. This "back of the line" mechanic is designed to incentivize consistent uptime and can lead to changes in the leaderboard that may not immediately seem intuitive.
-
-3. **Verification Timing**:
-   The time at which you completed your Discord verification can also impact your rewards. If you were accruing uptime before verifying, that time may not count towards your rewards until after the verification process is completed.
-
-4. **Local Conditions and Network Behavior**:
-   Local network conditions and hardware performance can affect your node's ability to stay online and perform syncs. This variability is part of operating in a decentralized network and can lead to differences in uptime and rewards among operators.
-
-5. **Calculations on a testnet**:
-   Earnings are calculating on a pre-production testnet and therefore are subject to errors. Testnets often behave in unpredictable ways, and since the data that drives rewards come directly from the ledger of the testnet itself there will be instances of errors, corrections, and learnings which everyone should calibrate their expectations around. Rewards are not blindly based on uptime, and there is wide dynamism within the testnet's reported uptime as hundreds of operators are constantly going on and offline. 
-
-6. **Leaderboard Updates**:
-   The public dashboard updates every 30 minutes, so there can be a delay in reflecting the most current status of your shdwNode. Additionally, the leaderboard may not provide granular details on how your uptime has impacted your position due to the scope of Testnet 2.
-
-7. **Log Verbosity and Improvements**:
-   We are working on improving log verbosity to make uptime tracking more intuitive. As we refine our systems, the transparency and understanding of the leaderboard mechanics will improve.
+1. **Cumulative Uptime vs. Streaks**: Uptime is measured and reported cumulatively on the leaderboard "uptime" column, not as a continuous streak. This means that your uptime is published as an accumulating total, regardless of interruptions or moments went you were or were not earning. Frequent disconnections can affect your position in the queue and subsequently your potential rewards, and this resulting non-earning downtime is not published at this time.
+2. **Queue Dynamics**: After 10 minutes of being offline, your node is marked as down. If your node goes offline and then comes back online, it's placed at the end of the queue, even if you previously had significant uptime and were near the top. If you node is in the queue, it will get moved to the back of the queue if fails to maintain uptime after 10 minutes. This "back of the line" mechanic is designed to incentivize consistent uptime and can lead to changes in the leaderboard that may not immediately seem intuitive.
+3. **Verification Timing**: The time at which you completed your Discord verification can also impact your rewards. If you were accruing uptime before verifying, that time may not count towards your rewards until after the verification process is completed.
+4. **Local Conditions and Network Behavior**: Local network conditions and hardware performance can affect your node's ability to stay online and perform syncs. This variability is part of operating in a decentralized network and can lead to differences in uptime and rewards among operators.
+5. **Calculations on a testnet**: Earnings are calculating on a pre-production testnet and therefore are subject to errors. Testnets often behave in unpredictable ways, and since the data that drives rewards come directly from the ledger of the testnet itself there will be instances of errors, corrections, and learnings which everyone should calibrate their expectations around. Rewards are not blindly based on uptime, and there is wide dynamism within the testnet's reported uptime as hundreds of operators are constantly going on and offline.
+6. **Leaderboard Updates**: The public dashboard updates every 30 minutes, so there can be a delay in reflecting the most current status of your shdwNode. Additionally, the leaderboard may not provide granular details on how your uptime has impacted your position due to the scope of Testnet 2.
+7. **Log Verbosity and Improvements**: We are working on improving log verbosity to make uptime tracking more intuitive. As we refine our systems, the transparency and understanding of the leaderboard mechanics will improve.
 
 In short, the leaderboard is influenced by a combination of cumulative uptime, queue mechanics, verification timing, local conditions, and reward calculations. These factors can lead to discrepancies between your perceived uptime and the rewards earned. We encourage operators to adjust their expectations in awareness of typical testnet environments and to focus on maintaining consistent uptime, promptly addressing any disconnections, and ensuring that they are fully verified to optimize their position and potential rewards.
 
@@ -126,13 +117,13 @@ Instead, **you need to have 100 SHDW at minimum across all wallets that are veri
 
 ### Q: Do I have to wait a certain amount of epochs or time before restarting?
 
-A:  No you can restart quickly, and ideally before 10 minutes pass. There had been a previous recommendation of waiting 5 epochs between each restart, **however this is no longer the case**. You may attempt restarts as quickly as you can throughout the 10 minute grace period. This is the 10 minutes that once exceeded, reports your node as down (eviction) and moves you to the back of the queue for earnings. Eviction means you will no longer accumulate uptime and reduce the likelihood of being in the top 150 earners. If you are evicted then you can just restart and rejoin the earnings queue and still continue to be an active participant of the network.
+A: No you can restart quickly, and ideally before 10 minutes pass. There had been a previous recommendation of waiting 5 epochs between each restart, **however this is no longer the case**. You may attempt restarts as quickly as you can throughout the 10 minute grace period. This is the 10 minutes that once exceeded, reports your node as down (eviction) and moves you to the back of the queue for earnings. Eviction means you will no longer accumulate uptime and reduce the likelihood of being in the top 150 earners. If you are evicted then you can just restart and rejoin the earnings queue and still continue to be an active participant of the network.
 
 As a best practice, we recommend automated your restart process through scripting that detects both node errors and restart announcements (many have shared methods in the shdwOperator Discord on how to do this), and paying very close attention to all announcements that call for restarts.
 
 ### Q: Why am I not able to withdraw immediately from the staking site?
 
-A: You are able to withdraw after waiting approximately 53 hours for Solana epoch cycles. We have chosen to align with Solana epoch cycles for several technical reasons that can be generalized by our overall intent for shdwDrive to run in harmony with Solana. Also, much like Solana, having waiting cycles based on epochs strengthen the network against certain type of vulnerabilities, and since SHDW is a native Solana SPL we are able to utilize Solana epochs rather than shdwDrive v2 epochs thereby freeing our testnet 2 for epoch experimentations without impact on staking withdraw cycles. Also make sure you have the small amount of SOL needed to pay for the Solana fee. 
+A: You are able to withdraw after waiting approximately 53 hours for Solana epoch cycles. We have chosen to align with Solana epoch cycles for several technical reasons that can be generalized by our overall intent for shdwDrive to run in harmony with Solana. Also, much like Solana, having waiting cycles based on epochs strengthen the network against certain type of vulnerabilities, and since SHDW is a native Solana SPL we are able to utilize Solana epochs rather than shdwDrive v2 epochs thereby freeing our testnet 2 for epoch experimentations without impact on staking withdraw cycles. Also make sure you have the small amount of SOL needed to pay for the Solana fee.
 
 Please keep in mind we are constantly making improvements to user experience and if you have a feature idee or feedback you would like us to consider please open a Github issue suing think link: https://github.com/genesysgo/dagger-testnet-issues
 
@@ -238,7 +229,7 @@ A: This error usually means that a required resource, such as a database file, i
 
 ### **Q: What should I do if I receive an error about an invalid epoch in my logs?**
 
-A: This could indicate that either the peer or your node is very behind. Make sure your node is up-to-date and has restarted correctly. You may restart as quickly as you can. If errors persist, you may have to wait 1 or more epochs before attempting to start your node again. Try your best to restart within 10 minutes. 
+A: This could indicate that either the peer or your node is very behind. Make sure your node is up-to-date and has restarted correctly. You may restart as quickly as you can. If errors persist, you may have to wait 1 or more epochs before attempting to start your node again. Try your best to restart within 10 minutes.
 
 ### **Q: What should I do if I encounter handshake errors or max handshake duration exceeded messages?**
 
