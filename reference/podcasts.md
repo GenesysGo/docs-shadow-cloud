@@ -4,7 +4,15 @@ description: Official SHDW and GenesysGo podcast appearances
 
 # Podcasts
 
-2/15/24  [AI on Solana: Compute, Earn, & Store (Spaces w/ Frank)](https://x.com/gizmothegizzer/status/1758151275147849855?s=20)
+2/28/24  [GenesysGo x Step Finance](https://x.com/StepFinance\_/status/1762871139322179621?s=20)
+
+<div align="left">
+
+<figure><img src="../.gitbook/assets/Step Spaces Large.jpeg" alt="" width="188"><figcaption><p><a href="https://x.com/StepFinance_/status/1762871139322179621?s=20">Step Finance</a></p></figcaption></figure>
+
+</div>
+
+2/15/24  [AI on Solana: Compute, Earn, & Store](https://x.com/gizmothegizzer/status/1758151275147849855?s=20)
 
 <div align="left">
 
@@ -20,11 +28,10 @@ description: Official SHDW and GenesysGo podcast appearances
 
 </div>
 
-1/17/24  [GM Solana by JPEG Lord: SHDW Talk (Spaces w/ Frank)](https://x.com/thejpeglord/status/1746927812131299620?s=20)
+1/17/24  [GM Solana by JPEG Lord: SHDW Talk](https://x.com/thejpeglord/status/1746927812131299620?s=20)
 
 <div align="left">
 
 <figure><img src="../.gitbook/assets/Jpeg Lord Twitter Spaces.jpg" alt="" width="170"><figcaption><p><a href="https://x.com/thejpeglord/status/1746927812131299620?s=20">GM Solana </a></p></figcaption></figure>
 
 </div>
-
