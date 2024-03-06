@@ -12,16 +12,16 @@ If you'd like a more guided experience, we have created a special installer scri
 
 * Check your system's hardware to ensure it meets the minimum hardware specified
 * Apply some kernel tunes to allow for improved traffic flow over tcp/udp
-* Download `wield` and `shdw-keygen` binaries
+* Download `shdw-node` and `shdw-keygen` binaries
 * Generate a keypair file
 * Generate a config file and startup script based on your machine's specs
 * Generate and configure a system service
-* Start up the wield service
+* Start up the shdw-node service
 
 To do this, all you have to do is run the following command from your terminal:
 
 ```sh
-wget -O wield-installer.sh https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-installer.sh && chmod +x wield-installer.sh && ./wield-installer.sh
+wget -O shdwnode-installer.sh https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdwnode-installer.sh && chmod +x shdwnode-installer.sh && ./shdwnode-installer.sh
 ```
 
 If you have any issues with the above script, please give Option 2 a shot, below.
@@ -94,31 +94,31 @@ It is recommended to increase the maximum open file descriptors (`ulimit`) beyon
 
 If you have not already done so, it is recommended to create a dedicated user to run the application. In this case, we create the `dagger` user with `sudo adduser dagger` (create a password of your choosing) and then add the `dagger` user to the `sudo` usergroup with `sudo usermod -aG sudo dagger`. Switch to the `dagger` user with `sudo su - dagger`. All remaining tasks will be ran as the `dagger` user.
 
-Download the Wield binary to the `dagger` user directory:
+Download the `shdw-node` binary to the `dagger` user directory:
 
 ```sh
-wget -O ~/wield https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-latest
+wget -O ~/shdw-node https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-latest
 ```
 
-Make the Wield binary executable:
+Make the `shdw-node` binary executable:
 
 ```sh
-sudo chmod +x ~/wield
+sudo chmod +x ~/shdw-node
 ```
 
-Download the Shdw-Keygen utility to the `dagger` user directory:
+Download the `shdw-keygen` utility to the `dagger` user directory:
 
 ```sh
 wget -O ~/shdw-keygen https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-keygen-latest
 ```
 
-Make the Shdw-Keygen utility executable:
+Make the `shdw-keygen` utility executable:
 
 ```sh
 sudo chmod +x shdw-keygen
 ```
 
-Create a new unique keypair ID using the Shdw-Keygen utility, write down your unique seed phrase and back up the id.json file to another location:
+Create a new unique keypair ID using the `shdw-keygen` utility, write down your unique seed phrase and back up the id.json file to another location:
 
 ```sh
 ./shdw-keygen new -o ~/id.json
@@ -150,12 +150,12 @@ keypair_file = "id.json"
 peers_db = "dbs/peers.db"
 ```
 
-Create the Wield startup script with `nano start_wield.sh` and paste the below contents into the file. NOTE: These parameters are based on a 16 thread processor. It is recommended to set `--processor-threads` and `--global-threads` equal to the total thread count of your machine, and to leave `--comms-threads` set to `2`. For tuning parameters on different hardware please consult the output of `wield --help`:
+Create the `shdw-node` startup script with `nano start_shdwnode.sh` and paste the below contents into the file. NOTE: These parameters are based on a 16 thread processor. It is recommended to set `--processor-threads` and `--global-threads` equal to the total thread count of your machine, and to leave `--comms-threads` set to `2`. For tuning parameters on different hardware please consult the output of `wield --help`:
 
 ```bash
 #!/bin/bash
 PATH=/home/dagger
-exec wield \
+exec shdw-node \
 --processor-threads 16 \
 --global-threads 16 \
 --comms-threads 2 \
@@ -164,9 +164,9 @@ exec wield \
 --config-toml config.toml \
 ```
 
-Make the script executable with `sudo chmod +x start_wield.sh`
+Make the script executable with `sudo chmod +x start_shdwnode.sh`
 
-Create a location to store the `historydb` on a disk with at least 200GB of available space (preparing and mounting disks is beyond the scope of this document based on the many variables possible with different hardware configurations, but Google or ChatGPT should be able to get you sorted). This location must match what is specified in the `start_wield.sh` startup script `--history-db-path` flag. In our case, a spare disk is mounted to `/mnt/dag` and the `historydb` directory is created there:
+Create a location to store the `historydb` on a disk with at least 200GB of available space (preparing and mounting disks is beyond the scope of this document based on the many variables possible with different hardware configurations, but Google or ChatGPT should be able to get you sorted). This location must match what is specified in the `start_shdwnode.sh` startup script `--history-db-path` flag. In our case, a spare disk is mounted to `/mnt/dag` and the `historydb` directory is created there:
 
 ```sh
 sudo mkdir -p /mnt/dag/historydb
@@ -178,38 +178,38 @@ Change owner of `historydb` location to `dagger` user:
 sudo chown -R dagger:dagger /mnt/dag/*
 ```
 
-You will also need a `snapshots` directory at the same location as your `wield` binary. This should be your home directory if you've followed along thus far. You can created by doing the following:
+You will also need a `snapshots` directory at the same location as your `shdw-node` binary. This should be your home directory if you've followed along thus far. You can created by doing the following:
 
 ```sh
 mkdir ~/snapshots
 ```
 
-Create a system service for `wield` with `sudo nano /etc/systemd/system/wield.service` and paste the below contents into the file:
+Create a system service for `shdw-node` with `sudo nano /etc/systemd/system/shdw-node.service` and paste the below contents into the file:
 
 ```sh
 [Unit]
-Description=DAGGER Wield Service
+Description=shdwNode Service
 After=network.target
 
 [Service]
 User=dagger
 WorkingDirectory=/home/dagger
-ExecStart=/home/dagger/start_wield.sh
+ExecStart=/home/dagger/start_shdwnode.sh
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Register the service and start the `wield` process with:
+Register the service and start the `shdw-node` process with:
 
 ```sh
-sudo systemctl enable --now wield.service
+sudo systemctl enable --now shdw-node.service
 ```
 
 Verify proper operation by tailing the log with `tail -f config.log`. It may take a moment for Wield to begin writing to the log file, as various startup tasks run in the background prior to the software being initialized. You can verify proper node operation by checking your log file for bundles finalizng `tail -f config.log | grep "finalized"`.
 
-To ensure log files do not become too large, it is recommended to add a `logrotate` entry for `wield` with `sudo nano /etc/logrotate.d/wield.conf` and paste the below contents into the file:
+To ensure log files do not become too large, it is recommended to add a `logrotate` entry for `shdw-node` with `sudo nano /etc/logrotate.d/shdw-node.conf` and paste the below contents into the file:
 
 ```/home/dagger/config.log
 /home/dagger/config.log {
@@ -224,7 +224,7 @@ To ensure log files do not become too large, it is recommended to add a `logrota
 }
 ```
 
-Restart the `logrotate` service with `sudo systemctl restart logrotate` and then verify that the `wield.conf` configuration is working correctly with `sudo logrotate -d /etc/logrotate.d/wield.conf` to check for any errors.
+Restart the `logrotate` service with `sudo systemctl restart logrotate` and then verify that the `shdw-node.conf` configuration is working correctly with `sudo logrotate -d /etc/logrotate.d/shdw-node.conf` to check for any errors.
 
 You may also wish to ensure that your `syslog` log file is set up to rotate properly by running `sudo logrotate -d /etc/logrotate.d/rsyslog` and checking for and correcting any errors. As an example, the configuration we have had to use for `/etc/logrotate.d/rsyslog` is as follows:
 
@@ -259,12 +259,10 @@ You may also wish to ensure that your `syslog` log file is set up to rotate prop
 
 #### **4. Node maintenance**
 
-If you need to perform maintenance on your node during normal network operations, it is imperative that you wait five (5) D.A.G.G.E.R. Epochs before attempting to rejoin the network, otherwise your node will be excluded. You can monitor D.A.G.G.E.R. progress here: [https://dagger-hammer.shdwdrive.com/explorer](https://dagger-hammer.shdwdrive.com/explorer) or our official public [dashboard](https://dashboard.shdwdrive.com/).
-
-To stop your node, use `sudo systemctl stop wield`. At this point, you may proceed with any necessary maintenance, including upgrading `wield` to the latest version by simply downloading the current binaries:
+To stop your node, use `sudo systemctl stop shdw-node`. At this point, you may proceed with any necessary maintenance, including upgrading `shdw-node` to the latest version by simply downloading the current binaries:
 
 ```
-wget -O ~/wield https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-latest
+wget -O ~/shdw-node https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-latest
 ```
 
 Note that while it is not strictly necessary, it is recommended to upgrade to the latest `shdw-keygen` utility as well:
@@ -273,7 +271,7 @@ Note that while it is not strictly necessary, it is recommended to upgrade to th
 wget -O ~/shdw-keygen https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-keygen-latest
 ```
 
-If all that is required is a `wield` upgrade, you can then re-start your node after 5 epochs with `sudo systemctl start wield`.
+If all that is required is a `shdw-node` upgrade, you can then re-start your with `sudo systemctl start shdw-node`.
 
 If a full cluster restart is required, it is recommended to follow any instructions given in the appropriate Discord channels.
 
