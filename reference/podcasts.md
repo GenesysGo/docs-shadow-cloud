@@ -4,6 +4,14 @@ description: Official SHDW and GenesysGo podcast appearances
 
 # Podcasts
 
+3/5/24  [The Next Billion Podcast | Earn Money from Storage](https://www.youtube.com/watch?v=78EKzlxpWPk)
+
+<div align="left">
+
+<figure><img src="../.gitbook/assets/Next Billion.jpg" alt="" width="88"><figcaption><p><a href="https://www.youtube.com/watch?v=78EKzlxpWPk">Next Billion </a></p></figcaption></figure>
+
+</div>
+
 2/28/24  [GenesysGo x Step Finance](https://x.com/StepFinance\_/status/1762871139322179621?s=20)
 
 <div align="left">
