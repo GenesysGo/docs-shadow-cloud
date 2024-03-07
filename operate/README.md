@@ -53,7 +53,7 @@ ShdwNodes will be handling thousands of live user test transactions and trustles
 
 ## Discord Verification
 
-Follow this guide if you'd like to connect your node identity to your Discord user. This will unlock the shdwOperator role and the wield operators channel in the GenesysGo Discord Server.
+Follow this guide if you'd like to connect your node identity to your Discord user. This will unlock the shdwOperator role and the shdwNode operators channel in the GenesysGo Discord Server.
 
 * Follow this [guide ](https://docs.shdwdrive.com/operate/wallet#importing-usdshdw-accounts-into-solana-wallets)to import your shdwNode identity keypair into a Solana UI wallet.
 * Go to [https://holders.genesysgo.com/](https://holders.genesysgo.com/)
