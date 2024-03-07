@@ -1,5 +1,58 @@
 # Install
 
+### wield to shdw-node naming transition and restart
+{% hint style="info" %}
+These instructions are solely applicable for those using the manual configuration steps. For the coordinated restart on 3/7/2024 the application naming convention will be transitioning from "wield" to "shdw-node".
+{% endhint %}
+
+Disable the existing `wield.service`:
+
+```sh
+sudo systemctl disable wield.service
+```
+
+Create a new system service for `shdw-node` with `sudo nano /etc/systemd/system/shdw-node.service` and paste the below contents into the file:
+
+```sh
+[Unit]
+Description=shdw-node service
+After=network.target
+
+[Service]
+User=dagger
+WorkingDirectory=/home/dagger
+ExecStart=/home/dagger/start-shdw-node.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Modify the existing startup script with `mv start_wield.sh start-shdw-node.sh` and modify the contents to align with the contents below:
+
+```bash
+#!/bin/bash
+PATH=/home/dagger
+exec shdw-node \
+--processor-threads 16 \
+--global-threads 16 \
+--comms-threads 2 \
+--log-level info \
+--history-db-path /mnt/dag/historydb \
+--config-toml config.toml \
+```
+
+Register the new service and start the `shdw-node` process with:
+
+```sh
+sudo systemctl enable --now shdw-node.service
+```
+
+Update the existing logrotate configuration if applicable with `sudo mv /etc/logrotate.d/wield.conf /etc/logrotate.d/shdw-node.conf`.
+
+Restart the `logrotate` service with `sudo systemctl restart logrotate` and then verify that the `shdw-node.conf` configuration is working correctly with `sudo logrotate -d /etc/logrotate.d/shdw-node.conf` to check for any errors.
+
+
 ### Option 1 - Guided install + startup script
 
 {% hint style="info" %}
@@ -21,7 +74,7 @@ If you'd like a more guided experience, we have created a special installer scri
 To do this, all you have to do is run the following command from your terminal:
 
 ```sh
-wget -O shdwnode-installer.sh https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdwnode-installer.sh && chmod +x shdwnode-installer.sh && ./shdwnode-installer.sh
+wget -O shdw-node-installer.sh https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-node-installer.sh && chmod +x shdw-node-installer.sh && ./shdw-node-installer.sh
 ```
 
 If you have any issues with the above script, please give Option 2 a shot, below.
@@ -97,7 +150,7 @@ If you have not already done so, it is recommended to create a dedicated user to
 Download the `shdw-node` binary to the `dagger` user directory:
 
 ```sh
-wget -O ~/shdw-node https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-latest
+wget -O ~/shdw-node https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-node
 ```
 
 Make the `shdw-node` binary executable:
@@ -150,7 +203,7 @@ keypair_file = "id.json"
 peers_db = "dbs/peers.db"
 ```
 
-Create the `shdw-node` startup script with `nano start_shdwnode.sh` and paste the below contents into the file. NOTE: These parameters are based on a 16 thread processor. It is recommended to set `--processor-threads` and `--global-threads` equal to the total thread count of your machine, and to leave `--comms-threads` set to `2`. For tuning parameters on different hardware please consult the output of `wield --help`:
+Create the `shdw-node` startup script with `nano start-shdw-node.sh` and paste the below contents into the file. NOTE: These parameters are based on a 16 thread processor. It is recommended to set `--processor-threads` and `--global-threads` equal to the total thread count of your machine, and to leave `--comms-threads` set to `2`. For tuning parameters on different hardware please consult the output of `./shdw-node --help`:
 
 ```bash
 #!/bin/bash
@@ -164,9 +217,9 @@ exec shdw-node \
 --config-toml config.toml \
 ```
 
-Make the script executable with `sudo chmod +x start_shdwnode.sh`
+Make the script executable with `sudo chmod +x start-shdw-node.sh`
 
-Create a location to store the `historydb` on a disk with at least 200GB of available space (preparing and mounting disks is beyond the scope of this document based on the many variables possible with different hardware configurations, but Google or ChatGPT should be able to get you sorted). This location must match what is specified in the `start_shdwnode.sh` startup script `--history-db-path` flag. In our case, a spare disk is mounted to `/mnt/dag` and the `historydb` directory is created there:
+Create a location to store the `historydb` on a disk with at least 200GB of available space (preparing and mounting disks is beyond the scope of this document based on the many variables possible with different hardware configurations, but Google or ChatGPT should be able to get you sorted). This location must match what is specified in the `start-shdw-node.sh` startup script `--history-db-path` flag. In our case, a spare disk is mounted to `/mnt/dag` and the `historydb` directory is created there:
 
 ```sh
 sudo mkdir -p /mnt/dag/historydb
@@ -188,13 +241,13 @@ Create a system service for `shdw-node` with `sudo nano /etc/systemd/system/shdw
 
 ```sh
 [Unit]
-Description=shdwNode Service
+Description=shdw-node service
 After=network.target
 
 [Service]
 User=dagger
 WorkingDirectory=/home/dagger
-ExecStart=/home/dagger/start_shdwnode.sh
+ExecStart=/home/dagger/start-shdw-node.sh
 Restart=always
 
 [Install]
@@ -262,7 +315,7 @@ You may also wish to ensure that your `syslog` log file is set up to rotate prop
 To stop your node, use `sudo systemctl stop shdw-node`. At this point, you may proceed with any necessary maintenance, including upgrading `shdw-node` to the latest version by simply downloading the current binaries:
 
 ```
-wget -O ~/shdw-node https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/wield-latest
+wget -O ~/shdw-node https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-node
 ```
 
 Note that while it is not strictly necessary, it is recommended to upgrade to the latest `shdw-keygen` utility as well:
