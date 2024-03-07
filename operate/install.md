@@ -11,6 +11,24 @@ Disable the existing `wield.service`:
 sudo systemctl disable wield.service
 ```
 
+Download the `shdw-node` binary to the `dagger` user directory:
+
+```sh
+wget -O ~/shdw-node https://shdw-drive.genesysgo.net/4xdLyZZJzL883AbiZvgyWKf2q55gcZiMgMkDNQMnyFJC/shdw-node
+```
+
+Make the `shdw-node` binary executable, if necessary:
+
+```sh
+sudo chmod +x ~/shdw-node
+```
+
+Alternatively, rename the existing `wield` binary to `shdw-node`:
+
+```sh
+mv ~/wield ~/shdw-node
+```
+
 Create a new system service for `shdw-node` with `sudo nano /etc/systemd/system/shdw-node.service` and paste the below contents into the file:
 
 ```sh
