@@ -171,9 +171,9 @@ A: Running a node in Docker is possible, and some community members may share im
 
 A: Yes, many users have successfully performed an in-place upgrade from Ubuntu 20.04 to 22.04 without issues.
 
-### **Q: What should I do if I encounter issues with the Wield service or during the setup process?**
+### **Q: What should I do if I encounter issues with the shdw-node service or during the setup process?**
 
-A: First, ensure your `config.toml` is set up correctly and that you've given execution permissions to `start_wield.sh` with `chmod +x`. Check the service status with `sudo journalctl -u wield` for more details. If `wield.service` shows as failed, try adjusting the settings in `start_wield.sh` or use the `--help` command for guidance. Share any errors or issues in the support channel for further assistance.
+A: First, ensure your `config.toml` is set up correctly and that you've given execution permissions to `start-shdw-node.sh` with `chmod +x`. Check the service status with `sudo journalctl -u shdw-node` for more details. If shdw-node`.service` shows as failed, try adjusting the settings in `start-shdw-node.sh` or use the `--help` command for guidance. Share any errors or issues in the support channel for further assistance.
 
 ### **Q: How can I troubleshoot errors or issues with my shdwNode?**
 
@@ -181,7 +181,7 @@ A: For troubleshooting, check the system logs, review the node's configuration f
 
 ### **Q: How do I check the status and log files for my shdwNode?**
 
-A: Log files can be checked using command-line tools like `cat`, `less`, `tail`, or `grep`. The specific log file location may vary based on your node configuration. Use `journalctl` to check systemd service logs, for example, `sudo journalctl -u wield.service`. You can check the status of your node by running the command `sudo systemctl status wield`. This will give you an overview of your node's current operational status. You can monitor the finalization process by using the command `tail -f config.log | grep "finalized"`. This will filter the log entries to show you only the lines that mention "finalized," allowing you to track the finalization process in real-time. If your logs are reporting "finalized" then it's working!
+A: Log files can be checked using command-line tools like `cat`, `less`, `tail`, or `grep`. The specific log file location may vary based on your node configuration. Use `journalctl` to check systemd service logs, for example, `sudo journalctl -u shdw-node.service`. You can check the status of your node by running the command `sudo systemctl status shdw-node`. This will give you an overview of your node's current operational status. You can monitor the finalization process by using the command `tail -f config.log | grep "finalized"`. This will filter the log entries to show you only the lines that mention "finalized," allowing you to track the finalization process in real-time. If your logs are reporting "finalized" then it's working!
 
 ### **Q: Where can I find the log file on my server?**
 
@@ -193,7 +193,7 @@ A: Run `./shdw-keygen pubkey id.json` in the `/home/dagger` directory, assuming 
 
 ### **Q: How do I check my node's version and upgrade if necessary?**
 
-A: You can check your node's version with `./wield --version`. To upgrade, you can use the interactive installer script, which now includes an option to upgrade.
+A: You can check your node's version with `./shdw-node --version`. To upgrade, you can use the interactive installer script, which now includes an option to upgrade.
 
 ### **Q: How do I update to the latest version of the software?**
 

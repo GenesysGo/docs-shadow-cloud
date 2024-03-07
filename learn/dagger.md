@@ -14,7 +14,7 @@ Please review our most up to date resources which are located here:\
 ](https://github.com/GenesysGo/dagger-litepaper/blob/main/DAGGER-Litepaper.pdf)[Article on testnet series\
 ](https://www.shadow.cloud/blog/dagger-testnet-release)[Testnet Demo](https://dagger-hammer.shadow.cloud/)
 
-Update: We are currenlty in Testnet Phase 2 of D.A.G.G.E.R. and have released the ability for trustless and permission participation as a Wield Node operator.
+Update: We are currently in Testnet Phase 2 of D.A.G.G.E.R. and have released the ability for trustless and permission participation as a shdwNode operator.
 
 [Run a shdwNode](../operate/) to join in!
 

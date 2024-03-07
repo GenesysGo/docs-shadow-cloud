@@ -8,8 +8,6 @@
 
 SHDW is a unique cryptocurrency that is designed for the sustainability and security of decentralized data storage infrastructure. Network mechanisms such as staking, halving, slashing, and recycling - are carefully designed to work together to make SHDW an effective tool for securing the network and driving value. These mechanics, along with rewards and incentives, are designed to convert token holders into active participants who are helping to secure the network.
 
-
-
 <figure><img src="../.gitbook/assets/Flowchart_Whiteboard_in_Dark_Blue_Blue_Spaced_Color_Blocks_Style-2.png" alt=""><figcaption><p>High-level Network Architecture</p></figcaption></figure>
 
 ### **Staking and Network Participation**
@@ -20,12 +18,12 @@ Operators of shdwNodes are the foundation of the SHDW network, ensuring its smoo
 
 All of that said, not everyone desires to become a shdwNode Operator and even those who aspire to may face challenges in meeting the staking requirement individually. Additionally, feedback has made it clear to us that members of the SHDW community of all levels of technical expertise are very eager to contribute to the network in meaningful ways. This is where shared staking comes into play.
 
-SHDW Holders delegate their SHDW tokens to Wield Node Operators via smart contract and then share in the emissions the node receives. The rewards from the emissions smart contract to a wield node are then split between the Wield Node Operator and the SHDW holders who staked with that Wield Node Operator. This shared success model fosters a strong community bond and incentivizes both parties to contribute positively to the network's growth.
+SHDW Holders delegate their SHDW tokens to shdwNode Operators via smart contract and then share in the emissions the node receives. The rewards from the emissions smart contract to a shdwNode are then split between the shdwNode Operator and the SHDW holders who staked with that shdwNode Operator. This shared success model fosters a strong community bond and incentivizes both parties to contribute positively to the network's growth.
 
 **Shared Staking**
 
 * Staking: Holders earn rewards for securing the network.
-* Wield Node Operators: Must stake SHDW to connect a server to ShdwDrive.
+* shdwNode Operators: Must stake SHDW to connect a server to ShdwDrive.
 * Shared Staking: Allows SHDW holders to delegate tokens to shdwNode Operators through a shared stake pool and share in node emissions.
 
 **Staking is live for Testnet 2!** [**Join in** ](https://testnet.shdwdrive.com/)**and earn more SHDW!**
@@ -44,14 +42,14 @@ Tokenomics for $SHDW incorporate a revenue-sharing model, where storage customer
 
 **Slashing Mechanism**
 
-Slashing is a critical mechanism for maintaining fairness and security within the SHDW network. It's a penalty system for Wield Node Operators that protects the network against nodes that are failing to perform their role in the network and bad actors looking to damage the network.
+Slashing is a critical mechanism for maintaining fairness and security within the SHDW network. It's a penalty system for shdwNode Operators that protects the network against nodes that are failing to perform their role in the network and bad actors looking to damage the network.
 
-* Slashing: Penalty for Wield Node Operators if nodes underperform or act maliciously.
+* Slashing: Penalty for shdwNode Operators if nodes underperform or act maliciously.
 * Penalty: Loss of 5% of staked SHDW, which must be replaced to avoid removal from the network.
 
 **Auditor Nodes**
 
-Servers and mobile devices acting as Auditor Nodes participate in the vital task of auditing the integrity of the data stored on the ShdwDrive network via a system of mathematical proofs similar in concept to Proof of Work mining. Rewards are earned by solving the mathematical proofs submitted by Wield Node Operators in order to prove their truthfulness and trustworthiness.
+Servers and mobile devices acting as Auditor Nodes participate in the vital task of auditing the integrity of the data stored on the ShdwDrive network via a system of mathematical proofs similar in concept to Proof of Work mining. Rewards are earned by solving the mathematical proofs submitted by shdwNode Operators in order to prove their truthfulness and trustworthiness.
 
 * Auditor Nodes: Server or Mobile devices that audit network data integrity.
 * Rewards: Emissions for solving mathematical proofs.
