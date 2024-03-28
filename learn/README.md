@@ -57,8 +57,6 @@ The current [design](design.md#present-design-considerations) of ShdwDrive makes
 
 Utilizing _D.A.G.G.E.R._ as an orchestration / oracle protocol, we are capable of networking together decentralized resources (Shdw Operator virtual machines) under a front end UI/UX experience that effectively decentralizes virtual machine provisioning. This is similar in concept as an Amazon EC2 instances, or Digital Ocean Droplets, except the back end resources and "network stack" are owned and operated trustlessly by individuals / entities who are Shdw Operators! This is currently in proof-of-concept and under development for the future. We revealed this technology at the Solana Breakpoint 2022 event. With over 2,000 attendees we opened showcased live demonstrations of trustless virtual machine provisioning powered by a decentralized group of micro-clouds. Developers were able to build on these virtual machines for the span of the conference, experiencing first hand the exciting direction our platform is headed.
 
-[**Check out the Shdw VMs Demo from Breakpoint**](../reference/breakpoint-2022-demo.md)
-
 As mobile compute power and data speeds surge, we're developing _D.A.G.G.E.R._'s permissionless mobile compute and storage through the early-stage Solana Saga Mobile. This enhancement supports our existing ecosystem of builders using ShdwDrive in mobile apps. _D.A.G.G.E.R._ Mobile will bring distributed ledger technology for compute and storage to smartphones amid growing AI and gaming demands. We aim to make _D.A.G.G.E.R._, including ShdwDrive and mobile implementations, a practical choice for mobile and edge AI solutions, aligning with our roadmap.
 
 ## **Roadmap**
@@ -92,7 +90,7 @@ ShdwDrive caters to a wide range of storage needs:
 
 [**Start Building on ShdwDrive!**](../build/shadow-drive.md)
 
-[**See what others are building on ShdwDrive!**](https://github.com/GenesysGo/docs-shadow-cloud/blob/main/learn/broken-reference/README.md)
+[**See what others are building on ShdwDrive!**](broken-reference/)
 
 ## **Shdw Operators**
 

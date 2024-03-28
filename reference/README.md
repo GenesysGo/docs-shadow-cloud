@@ -52,7 +52,7 @@ description: ShdwDrive consolidated resources
 
 [Shdw Ecosystem](https://docs.shdwdrive.com/build/community-maintained-uis)
 
-[Solana Breakpoint Demo 2022](breakpoint-2022-demo.md)
+[Solana Breakpoint Demo 2022](broken-reference)
 
 ## **Media Kit**
 

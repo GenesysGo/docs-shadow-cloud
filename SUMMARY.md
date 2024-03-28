@@ -22,6 +22,7 @@
   * [Monitor](operate/monitoring-stack.md)
   * [FAQ](operate/node-faq.md)
 * [SHDW Token](token/README.md)
+  * [Exchange Listings](token/exchange-listings.md)
   * [Rewards](token/rewards.md)
   * [Utility](token/utility.md)
   * [Roadmap](token/roadmap.md)
@@ -29,5 +30,4 @@
   * [Change Logs](reference/change-logs.md)
   * [Social Media & Community](reference/social-media-and-community.md)
   * [Podcasts](reference/podcasts.md)
-  * [Solana Breakpoint 2022 Demo](reference/breakpoint-2022-demo.md)
   * [shdwGlossary](reference/shadow-glossary.md)
