@@ -2,7 +2,7 @@
 
 $SHDW is listed on the following exchanges:&#x20;
 
-1. [Coinbase (coming soon)](https://www.coinbase.com/blog/increasing-transparency-for-new-asset-listings-on-coinbase)
+1. [Coinbase (4/10/24)](https://www.coinbase.com/price/genesysgo-shadow)
 2. [Crypto.com (3/27/24)](https://crypto.com)
 3. [Gate.io (3/27/24)](https://www.gate.io/)
 
