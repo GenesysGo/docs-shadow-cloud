@@ -1,5 +1,5 @@
 ---
-description: A list of terms that relate to all thing Shdw!
+description: A list of terms that relate to all things SHDW!
 ---
 
 # shdwGlossary

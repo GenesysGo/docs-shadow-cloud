@@ -23,20 +23,20 @@ SHDW Holders delegate their SHDW tokens to shdwNode Operators via smart contract
 **Shared Staking**
 
 * Staking: Holders earn rewards for securing the network.
-* shdwNode Operators: Must stake SHDW to connect a server to ShdwDrive.
+* shdwNode Operators: Must stake SHDW to connect a server to shdwDrive.
 * Shared Staking: Allows SHDW holders to delegate tokens to shdwNode Operators through a shared stake pool and share in node emissions.
 
 **Staking is live for Testnet 2!** [**Join in** ](https://testnet.shdwdrive.com/)**and earn more SHDW!**
 
 ### **Revenue Sharing and Tokenomics**
 
-We are committed to making the ShdwDrive network tokenomics as sustainable as possible in the long term while simultaneously ensuring that value is being accrued to the token as the ShdwDrive user base grows and revenues scale.
+We are committed to making the shdwDrive network tokenomics as sustainable as possible in the long term while simultaneously ensuring that value is being accrued to the token as the shdwDrive user base grows and revenues scale.
 
 **Revenue and Rewards**
 
-Tokenomics for $SHDW incorporate a revenue-sharing model, where storage customer fees are partially distributed to ShdwOperators and partially used for SHDW buybacks from the open market. These buybacks support the token's liquidity and are added to the emissions pool, contributing to a sustainable token economy. The token's revenue share and halving schedule align incentives across the network.
+Tokenomics for $SHDW incorporate a revenue-sharing model, where storage customer fees are partially distributed to shdwOperators and partially used for SHDW buybacks from the open market. These buybacks support the token's liquidity and are added to the emissions pool, contributing to a sustainable token economy. The token's revenue share and halving schedule align incentives across the network.
 
-* Storage fees: 60-75% to ShdwOperators, remainder used for SHDW buybacks.
+* Storage fees: 60-75% to shdwOperators, remainder used for SHDW buybacks.
 * Buybacks: Increase demand for SHDW and contribute to liquidity.
 * Emissions Pool: Buyback SHDW is added to the emissions pool, slowing token velocity.
 
@@ -57,7 +57,7 @@ Servers and mobile devices acting as Auditor Nodes participate in the vital task
 
 **Recycling Slashed Tokens**
 
-ShdwDrive recycles these tokens back into the SHDW ecosystem.
+shdwDrive recycles these tokens back into the SHDW ecosystem.
 
 * Slashed SHDW tokens are returned to the emissions pool.
 * Extends reward distribution.
@@ -66,7 +66,7 @@ ShdwDrive recycles these tokens back into the SHDW ecosystem.
 
 **Halving Schedule**
 
-The concept of halving is a method to control supply and, by extension, enhance value. This scarcity mechanism potentially increases SHDW's value over time as it encourages network participants to be early adopters of ShdwDrive and D.A.G.G.E.R. 's technology by rewarding early supporters with higher rewards. This works towards creating a sense of urgency in attracting new network participants, which benefits the entire network by scaling resources and user growth.
+The concept of halving is a method to control supply and, by extension, enhance value. This scarcity mechanism potentially increases SHDW's value over time as it encourages network participants to be early adopters of shdwDrive and D.A.G.G.E.R. 's technology by rewarding early supporters with higher rewards. This works towards creating a sense of urgency in attracting new network participants, which benefits the entire network by scaling resources and user growth.
 
 * Controls supply and enhances value.
 * 7,000,000 SHDW locked for emissions, with annual payouts.
@@ -74,13 +74,13 @@ The concept of halving is a method to control supply and, by extension, enhance 
 
 #### **Ecosystem Growth and Scalability**
 
-The $SHDW token is central to orchestrating a dynamic and interconnected ecosystem. It incentivizes participation, secures compute capabilities, and facilitates network scalability. As ShdwDrive grows, the demand for SHDW increases, enhancing the token's value proposition. The token's design encourages behaviors that drive value, including reduced token velocity and active network participation, fostering a robust and scalable infrastructure.
+The $SHDW token is central to orchestrating a dynamic and interconnected ecosystem. It incentivizes participation, secures compute capabilities, and facilitates network scalability. As shdwDrive grows, the demand for SHDW increases, enhancing the token's value proposition. The token's design encourages behaviors that drive value, including reduced token velocity and active network participation, fostering a robust and scalable infrastructure.
 
 #### **Community-Driven Innovation**
 
-Through shared staking and community feedback mechanisms, $SHDW holders are empowered to contribute to the network's direction and success. This collaborative approach ensures that as the ShdwDrive platform scales, so does the value accrued to the SHDW token, benefiting all stakeholders in the ecosystem.'
+Through shared staking and community feedback mechanisms, $SHDW holders are empowered to contribute to the network's direction and success. This collaborative approach ensures that as the shdwDrive platform scales, so does the value accrued to the SHDW token, benefiting all stakeholders in the ecosystem.'
 
-These mechanics all come together to create a unique and important dynamic, which ensures there is a definitive, verifiable link between ShdwDrive revenue growth and value accrual in the SHDW token. This also incentivizes anyone with a vested interest in the ShdwDrive platform to help market the platform and grow the user base.
+These mechanics all come together to create a unique and important dynamic, which ensures there is a definitive, verifiable link between shdwDrive revenue growth and value accrual in the SHDW token. This also incentivizes anyone with a vested interest in the ShdwDrive platform to help market the platform and grow the user base.
 
 Ultimately, our goal with everything we do is to ensure that as the platform scales in success, so does the amount of value the SHDW token accrues. Not only does this dynamic achieve this goal, but it also gives SHDW holders a way to take action that will directly impact the token they hold in a way that requires zero technical knowledge.
 

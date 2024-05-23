@@ -1,7 +1,7 @@
 ---
 description: >-
   This consolidated resource is for anyone exploring and developing on top of
-  the ShdwDrive platform.
+  the shdwDrive platform.
 ---
 
 # Your cloud. Your token.
@@ -26,13 +26,13 @@ This section focuses on easy and actionable information to help you quickly get 
 
 ### [**Operate**](operate/)
 
-Running a shdwNode will allow you to participate in the decentralized D.A.G.G.E.R. testnet which powers the shdwDrive v2 Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). The shdwNode operators will be handling millions of live user test transactions and trustlessly storing data for user file uploads.&#x20;
+Running a shdwNode will allow you to participate in the decentralized D.A.G.G.E.R. testnet which powers the shdwDrive v2 Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). The shdwNode operators will be handling millions of live user test transactions and trustlessly storing data for user file uploads.
 
 See it for yourself: [Live network metrics](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m)
 
 ### [**SHDW Token**](token/)
 
-Discover the expansive potential of $SHDW, the driving force behind the revolutionary platform shdwDrive, and learn how it's reshaping access, ownership, and rewards in the realm of decentralized data storage.&#x20;
+Discover the expansive potential of $SHDW, the driving force behind the revolutionary platform shdwDrive, and learn how it's reshaping access, ownership, and rewards in the realm of decentralized data storage.
 
 ### [**Reference**](reference/)
 

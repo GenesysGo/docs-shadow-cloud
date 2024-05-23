@@ -2,7 +2,7 @@
 
 ## **Contents**
 
-* [**Install ShdwDrive CLI**](the-cli.md#install-the-shadow-drive-cli)
+* [**Install shdwDrive CLI**](the-cli.md#install-the-shadow-drive-cli)
   * [**Video Walkthrough**](the-cli.md#video-guide-and-walkthrough)
   * [**Install Solana CLI**](the-cli.md#install-the-solana-cli)
   * [**Create a Storage Account**](the-cli.md#create-a-storage-account)
@@ -17,9 +17,9 @@
 
 ## **Introduction**
 
-The CLI is the easiest way to interact with ShdwDrive. You can use your favorite shell scripting language, or just type the commands one at a time. For test driving ShdwDrive, this is the best way to get started.
+The CLI is the easiest way to interact with shdwDrive. You can use your favorite shell scripting language, or just type the commands one at a time. For test driving shdwDrive, this is the best way to get started.
 
-## **Install the ShdwDrive CLI**
+## **Install the shdwDrive CLI**
 
 Prerequisites: Install [NodeJS LTS 16.17.1](https://nodejs.org/en/download/) on any OS.
 
@@ -33,9 +33,9 @@ npm install -g @shadow-drive/cli
 
 ### **Install the Solana CLI**
 
-In order to interact with ShdwDrive, we're going to need a Solana wallet and CLI to interact with the Solana blockchain.
+In order to interact with shdwDrive, we're going to need a Solana wallet and CLI to interact with the Solana blockchain.
 
-_NOTE: The ShdwDrive CLI uses it's own RPC configuration. It does not use your Solana environment configuration._
+_NOTE: The shdwDrive CLI uses it's own RPC configuration. It does not use your Solana environment configuration._
 
 Check [HERE for the latest version](https://docs.solana.com/cli/install-solana-cli-tools).
 
@@ -51,7 +51,7 @@ export PATH="/home/sol/.local/share/solana/install/active_release/bin:$PATH"
 
 ### **Create a Keypair file**
 
-We need to have a keypair in .json format to use the ShdwDrive CLI. This is going to be the wallet that owns the storage account. If you want, you can convert your browser wallet into a .json file by exporting the private keys. Solflare by default exports it in a .json format (it looks like a standard array of integers, \[1,2,3,4...]. Phantom, however, needs some help and [we have just the tool to do that](https://gist.github.com/tracy-codes/f17e7ed8acfdd1be442f632f5b80763c).
+We need to have a keypair in .json format to use the shdwDrive CLI. This is going to be the wallet that owns the storage account. If you want, you can convert your browser wallet into a .json file by exporting the private keys. Solflare by default exports it in a .json format (it looks like a standard array of integers, \[1,2,3,4...]. Phantom, however, needs some help and [we have just the tool to do that](https://gist.github.com/tracy-codes/f17e7ed8acfdd1be442f632f5b80763c).
 
 If you want to create a new wallet, just use
 
@@ -65,7 +65,7 @@ You will see it write a new keypair file and it was display the `pubkey` which i
 
 #### **Context-Sensitive Help**
 
-ShdwDrive CLI comes with integrated help. All ShdwDrive commands begin with `shdw-drive`.
+shdwDrive CLI comes with integrated help. All shdwDrive commands begin with `shdw-drive`.
 
 ```
 shdw-drive help
@@ -103,7 +103,7 @@ This is one of the few commands where you will need [SHDW](https://docs.shadow.c
 shdw-drive create-storage-account -kp ~/shdw-keypair.json -n "pony storage drive" -s 1GB
 ```
 
-### **Upload File to ShdwDrive**
+### **Upload File to shdwDrive**
 
 Options for this command:
 
@@ -137,7 +137,7 @@ shdw-drive upload-file -kp ~/shdw-keypair.json -f ~/AccountHolders.csv
 shdw-drive upload-file -kp ~/shdw-keypair.json -f ~/AccountHolders.csv --rpc <https://some-solana-api.com>
 ```
 
-### **Upload Multiple Files to ShdwDrive**
+### **Upload Multiple Files to shdwDrive**
 
 A more realistic use case is to upload an entire directory of, say, NFT images and metadata. It's basically the same thing, except we point the command to a directory.
 

@@ -1,12 +1,12 @@
 ---
-description: A deeper dive into the design of ShdwDrive and the problems it solves.
+description: A deeper dive into the design of shdwDrive and the problems it solves.
 ---
 
 # Design
 
 ## **Developer Tools**
 
-Builders can interact directly with ShdwDrive using the [API](../build/the-api.md), the [CLI](../build/the-cli.md) with optional [Rust CLI](../build/the-cli.md) or the ShdwDrive [SDK](../build/the-sdk/) to build front-end applications directly on top of the drive.
+Builders can interact directly with shdwDrive using the [API](../build/the-api.md), the [CLI](../build/the-cli.md) with optional [Rust CLI](../build/the-cli.md) or the shdwDrive [SDK](../build/the-sdk/) to build front-end applications directly on top of the drive.
 
 Providing SDKs in [JavaScript](../build/the-sdk/sdk-javascript.md), [Rust](../build/the-sdk/sdk-rust.md), and [Python ](../build/the-sdk/sdk-python.md)provides a number of benefits and efficiencies to developers. It allows developers to access the full range of features and capabilities of the application, and helps developers to quickly get up to speed on the application, since there’s less of a learning curve when working with a language they’re already familiar with.
 
@@ -14,13 +14,13 @@ Providing SDKs in [JavaScript](../build/the-sdk/sdk-javascript.md), [Rust](../bu
 
 S3-compatibility is a widely adopted standard in the cloud storage industry. Many providers now offer S3-compatible APIs and protocols, giving builders greater flexibility in choosing a cloud storage provider. This means developers can easily move data between different services without worrying about compatibility issues. Additionally, they can use their existing knowledge and tools when working with multiple services, eliminating the need to learn new APIs and protocols for each one. S3-compatibility also offers robust APIs that enable fast and reliable query, along with virtual mount capability, making it important for Web2, Web3, and the frontiers of distributed ledger tech and AI.
 
-It is our goal to empower developers to integrate ShdwDrive directly into their builds and to support this incredibly talented community of designers who will absolutely come up with better platforms for ShdwDrive than we could possibly come up with on our own!
+It is our goal to empower developers to integrate shdwDrive directly into their builds and to support this incredibly talented community of designers who will absolutely come up with better platforms for shdwDrive than we could possibly come up with on our own!
 
 Release of S3-Compatibility upgrades set for Q2 2023.
 
 ### **Deterministic Naming**
 
-The ShdwDrive platform is designed to support entire ecosystems being built on top of it. ShdwDrive storage is deterministic to allow for ease of use. While other storage protocols require the user to wait for data to be uploaded in order to generate a URI, ShdwDrive has a deterministic scheme:
+The shdwDrive platform is designed to support entire ecosystems being built on top of it. shdwDrive storage is deterministic to allow for ease of use. While other storage protocols require the user to wait for data to be uploaded in order to generate a URI, shdwDrive has a deterministic scheme:
 
 **`https://shdw-drive.genesysgo.net/<storage-account-pubkey>/<file-name>`**
 
@@ -28,16 +28,16 @@ By preparing information for uploads, indexing, and creating custom RPC calls in
 
 ## **Evolution**
 
-The path to decentralization is a journey through v1.0, v1.5, and the upcoming release v2.0 of ShdwDrive. This section walks through the build progression and rationale behind the engineering approach to ShdwDrive.
+The path to decentralization is a journey through v1.0, v1.5, and the upcoming release v2.0 of shdwDrive. This section walks through the build progression and rationale behind the engineering approach to shdwDrive.
 
 ### **Under the Hood of Version 1**
 
-Coordinating between physically distributed object storage devices (OSDs) lives an open source software defined storage program called Ceph that we customized for the ShdwDrive network of nodes for version 1.
+Coordinating between physically distributed object storage devices (OSDs) lives an open source software defined storage program called Ceph that we customized for the shdwDrive network of nodes for version 1.
 
 **Ceph was initially chosen for a number of reasons…**
 
 1. It is VERY open source. Ceph was first presented in 2006 and merged directly into the Linux kernel in 2010. Since then the Ceph GitHub has grown to 179 different repositories. These different repositories have been collectively forked over 10,000 times, have had thousands of PRs submitted, and have seen a community of tens of thousands emerge to provide support. [https://github.com/ceph](https://github.com/ceph)
-2. It is extremely resilient and adaptable. Ceph is designed to not have a singular point of failure that could lead to data loss. As ShdwDrive is being designed to run in a permissionless trustless decentralized environment, having no singular point of failure is very attractive. The resiliency of how Ceph stores data and its open source design mean that Ceph can be forked and modified to be a trustless permissionless decentralized storage layer that can be integrated with smart contracts to protect the stored data against bad actors.
+2. It is extremely resilient and adaptable. Ceph is designed to not have a singular point of failure that could lead to data loss. As shdwDrive is being designed to run in a permissionless trustless decentralized environment, having no singular point of failure is very attractive. The resiliency of how Ceph stores data and its open source design mean that Ceph can be forked and modified to be a trustless permissionless decentralized storage layer that can be integrated with smart contracts to protect the stored data against bad actors.
 3. Ceph is very performant and scales exceptionally well both horizontally and vertically. Our decentralized cluster consistently handled 2,000 concurrent connections, each uploading 10,000 individual objects measuring 2mb in size, and sustained an upload speed of 2.7gbps with zero packet loss for extended periods of time. This means that the cluster is so fast that when Solana validators finish block #130188099 we can ingest it, store it, and serve live requests against it **before** block #130188100 is finished and propagated.
 4. Ceph’s CRUSH map algorithm is amazing! CRUSH is a scalable pseudo-random data distribution function designed for distributed object-based storage systems that efficiently maps data objects to storage devices without relying on a central directory. The CRUSH whitepaper ([https://ceph.com/assets/pdfs/weil-crush-sc06.pdf](https://ceph.com/assets/pdfs/weil-crush-sc06.pdf)) dives deep into the algorithm but the gist of it is that CRUSH allows for the decentralization of location for data on an individual byte level. Ceph utilizes CRUSH to literally break stored objects down into component bytes, shards/erasure codes those bytes, and then decentralizes their location in triplicate across any particular Ceph cluster.
 5. Speaking of decentralization of data… Ceph runs its own consensus mechanism internally to ensure the integrity of your data. Monitor daemons are the custodians of the pieces of the CRUSH map and are responsible for verifying its accuracy and approving/recording changes to the stored data. Ceph monitors use a Paxos consensus mechanism to maintain a quorum and verify the authenticity of the data stored in the cluster. We will revisit the importance of this consensus mechanism later when we discuss Solana integrations.

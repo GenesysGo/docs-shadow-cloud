@@ -22,9 +22,9 @@ Update: We are currently in Testnet Phase 2 of D.A.G.G.E.R. and have released th
 
 _Please note: this page adheres to high level explanations and general concepts suitable for all readers. This is not to be considered a whitepaper, more technical documentation can be found by using the links provided directly above. For more detail on how the_ _SHDW_ _token is utilized with D.A.G.G.E.R. please see our_ _SHDW_ _Token page_ [_here_](../token/)_. This page is currently undergoing changes to improve the alignment with the recently released D.A.G.G.E.R. Litepaper and blog article._
 
-_D.A.G.G.E.R._ is a distributed system with a graph based consensus mechanism. There are five components that make up the protocol specification. This article will explain on a high level each of these five components and how they would interact with an incoming request. For simplicity, the use-case of the transaction can be considered a request to store a file on ShdwDrive v2.
+_D.A.G.G.E.R._ is a distributed system with a graph based consensus mechanism. There are five components that make up the protocol specification. This article will explain on a high level each of these five components and how they would interact with an incoming request. For simplicity, the use-case of the transaction can be considered a request to store a file on shdwDrive v2.
 
-There are many possible and planned implementations of the GenesysGo's _D.A.G.G.E.R_., however the flagship implementation will be ShdwDrive v2 - a soon to be released enhancement on the current ShdwDrive v1.5. This is why we regard a "transaction" as simply a write request submitted by a user. This section wraps by explaining how speed, stability, and scalability are why we chose to build a brand new cutting edge acyclic-graph-style consensus technology.
+There are many possible and planned implementations of the GenesysGo's _D.A.G.G.E.R_., however the flagship implementation will be shdwDrive v2 - a soon to be released enhancement on the current shdwDrive v1.5. This is why we regard a "transaction" as simply a write request submitted by a user. This section wraps by explaining how speed, stability, and scalability are why we chose to build a brand new cutting edge acyclic-graph-style consensus technology.
 
 ## **Overview**
 
@@ -36,7 +36,7 @@ The components, in the order an incoming transaction (a user write request) woul
 
 For introductory help, many technical terms in this document have links to their definitions. The following list defines a few terms commonly used throughout this document:
 
-* Transaction: A write request submitted by a user. A transaction can contain raw bytes, membership management requests, and Shdw transactions (\[ShdwDrive/Cloud actions e.g. store file, instantiate VM).
+* Transaction: A write request submitted by a user. A transaction can contain raw bytes, membership management requests, and Shdw transactions (\[shdwDrive/Cloud actions e.g. store file, instantiate VM).
 * Block: A set of transactions that are packed into a Merkle Tree whose root hash is included in a node in the DAG.
 * Event: A node in the DAG, which contains the hashes of its parents, a timestamp, a Block payload, and the creator’s signature of the aforementioned.
 
@@ -76,7 +76,7 @@ The communications module initializes outgoing sync requests with peers and forw
 
 The verifier and forester are sibling modules responsible for verification of events, blocks, and transactions. The verification happens for events made by peers, as well as for incoming transactions made by users. There are several forms of verification: signature verification for transactions, signature verification for blocks, and root hash verification for blocks. When processing peer events, the verifier is responsible for the first two of these forms of verification, while the forester is responsible for verification of the root hash of the transaction Merkle trees that form the blocks. When processing incoming user transactions, the forester gathers transactions to pack into a block and produces the Merkle root hash which represents the block.\
 \
-In the case of filesystem applications like ShdwDrive, the controller module would perform reads and writes to the ledger using the _D.A.G.G.E.R._ protocol. This would include operations like shredding and erasure coding to ensure the files are secure and resilient. When a user submits a request to store a file on ShdwDrive, the forester module would gather the transactions and pack them into a block. The verifier module would then verify the signatures on the transactions and validate the root hash of the transaction Merkle tree in the block. Once the block is verified, it would be added to the _D.A.G.G.E.R._ ledger, which maintains a secure and tamper-proof record of all transactions.
+In the case of filesystem applications like shdwDrive, the controller module would perform reads and writes to the ledger using the _D.A.G.G.E.R._ protocol. This would include operations like shredding and erasure coding to ensure the files are secure and resilient. When a user submits a request to store a file on shdwDrive, the forester module would gather the transactions and pack them into a block. The verifier module would then verify the signatures on the transactions and validate the root hash of the transaction Merkle tree in the block. Once the block is verified, it would be added to the _D.A.G.G.E.R._ ledger, which maintains a secure and tamper-proof record of all transactions.
 
 In the case of other use cases like oracles, bridges, and VM orchestration, the controller module would make external calls to other systems and services as needed. For example, if a user wanted to execute a smart contract on Shdw Compute, the controller module would interact with the verifier and forester modules to ensure that the transaction is valid and secure. The verifier would verify the signature on the transaction, while the forester would validate the root hash of the transaction
 
@@ -114,7 +114,7 @@ The diagram shows the relationships between these classes, including the composi
 
 ### **Controller Module: Transaction Execution**
 
-The controller module performs reads and writes to the [ledger](dagger.md#ledger). This is where different use cases of _D.A.G.G.E.R._ will vary the most. For filesystem applications of _D.A.G.G.E.R._ (e.g. ShdwDrive v2), this includes operations like [shredding](dagger.md#erasure-coding) and [erasure coding](dagger.md#erasure-coding). For other use cases like oracles, bridges, and [VM orchestration](dagger.md#virtual-machine-orchestration) (e.g. Shdw Compute), this is where external calls are made.
+The controller module performs reads and writes to the [ledger](dagger.md#ledger). This is where different use cases of _D.A.G.G.E.R._ will vary the most. For filesystem applications of _D.A.G.G.E.R._ (e.g. shdwDrive v2), this includes operations like [shredding](dagger.md#erasure-coding) and [erasure coding](dagger.md#erasure-coding). For other use cases like oracles, bridges, and [VM orchestration](dagger.md#virtual-machine-orchestration) (e.g. Shdw Compute), this is where external calls are made.
 
 ### **Lifecycle of a Transaction**
 
@@ -126,15 +126,15 @@ In conclusion and summary of the _D.A.G.G.E.R._ consensus network, the below seq
 
 Proof-of-stake (PoS) and [proof-of-work](dagger.md#proof-of-work) (PoW) are two of the most popular consensus mechanisms used in [blockchain ](dagger.md#blockchain)networks. In PoS, validators or nodes are chosen to validate transactions based on the amount of cryptocurrency they hold and are willing to "stake." The more they hold and stake, the higher the probability of being selected as the validator. In PoW, miners compete to solve complex mathematical problems, and the first one to solve it is rewarded with cryptocurrency and the right to validate transactions.
 
-On the other hand, _D.A.G.G.E.R._ is a [directed acyclic](dagger.md#directed-acyclic-graph) graph-based (DAG) consensus mechanism, where nodes directly communicate with each other and share their transactions, creating a DAG of transactions. In this DAG, every node has its own history of transactions, and consensus is reached by analyzing the entire graph and identifying a single, agreed-upon order of transactions. This process allows for high throughput and fast finality, making it an attractive choice for applications that require high speed and scalability (e.g. ShdwDrive, _D.A.G.G.E.R._ Mobile, AI model training).
+On the other hand, _D.A.G.G.E.R._ is a [directed acyclic](dagger.md#directed-acyclic-graph) graph-based (DAG) consensus mechanism, where nodes directly communicate with each other and share their transactions, creating a DAG of transactions. In this DAG, every node has its own history of transactions, and consensus is reached by analyzing the entire graph and identifying a single, agreed-upon order of transactions. This process allows for high throughput and fast finality, making it an attractive choice for applications that require high speed and scalability (e.g. shdwDrive, _D.A.G.G.E.R._ Mobile, AI model training).
 
-In the case of a decentralized storage network like GenesysGo ShdwDrive, _D.A.G.G.E.R._ allows for horizontal scalability, meaning that the network can grow by adding more nodes, increasing storage capacity and processing power without compromising the speed or security of the network. This is because each node can process and validate transactions independently, and the final consensus is reached by analyzing the entire DAG.
+In the case of a decentralized storage network like GenesysGo shdwDrive, _D.A.G.G.E.R._ allows for horizontal scalability, meaning that the network can grow by adding more nodes, increasing storage capacity and processing power without compromising the speed or security of the network. This is because each node can process and validate transactions independently, and the final consensus is reached by analyzing the entire DAG.
 
 Proof-of-storage (PoS) consensus mechanisms like [Filecoin ](dagger.md#filecoin)and [IPFS](dagger.md#ipfs), on the other hand, allow for decentralized storage by incentivizing participants to store and retrieve data in exchange for cryptocurrency rewards. PoS systems have the potential to offer greater security than centralized storage solutions, as data is distributed across multiple nodes, making it difficult for any single node to compromise the network. However, PoS systems typically require a significant amount of storage capacity and computational resources to participate, making it less accessible to the general public.
 
-In summary, _D.A.G.G.E.R._ protocol offers a unique consensus mechanism that allows for high throughput, fast finality, and horizontal scalability, making it an attractive choice for decentralized applications like ShdwDrive. PoS, PoW, and PoS consensus mechanisms all offer different benefits and trade-offs, and the choice of which one to use depends on the specific requirements of the application.
+In summary, _D.A.G.G.E.R._ protocol offers a unique consensus mechanism that allows for high throughput, fast finality, and horizontal scalability, making it an attractive choice for decentralized applications like shdwDrive. PoS, PoW, and PoS consensus mechanisms all offer different benefits and trade-offs, and the choice of which one to use depends on the specific requirements of the application.
 
-[**Start Building on ShdwDrive!**](../build/)
+[**Start Building on shdwDrive!**](../build/)
 
 #### **Terminology used on this page**
 

@@ -1,18 +1,18 @@
 ---
-description: Explore projects utilizing ShdwDrive
+description: Explore projects utilizing shdwDrive
 ---
 
 # shdwEcosystem
 
 **Shadow Storage**
 
-One of the most widely used GUIs for interacting with ShdwDrive. A unique user experience that lets teams and individuals unlock the power of web3 through crypto and decentralization—file management, transfer & sharing, immutable storage, private notes, real-time collaboration, and more.
+One of the most widely used GUIs for interacting with shdwDrive. A unique user experience that lets teams and individuals unlock the power of web3 through crypto and decentralization—file management, transfer & sharing, immutable storage, private notes, real-time collaboration, and more.
 
 [![](../.gitbook/assets/shadow\_storage.png)](https://shadow.storage/)
 
 **SYNX**
 
-Synx, developed by the Blxckout team, offers exceptional UI/UX for managing real-world mobile and desktop data. It also comes with comprehensive documentation, making it user-friendly. Synx is a private cloud storage solution supported by a mobile and desktop app that utilizes ShdwDrive.
+Synx, developed by the Blxckout team, offers exceptional UI/UX for managing real-world mobile and desktop data. It also comes with comprehensive documentation, making it user-friendly. Synx is a private cloud storage solution supported by a mobile and desktop app that utilizes shdwDrive.
 
 [![](../.gitbook/assets/synx.png)](https://twitter.com/synx\_xyz)
 
@@ -24,7 +24,7 @@ A Social Protocol to help build on-chain social media platforms. Developer-frien
 
 **Firethree**
 
-Firebase for Web3. Create your own Solana dApp with collection, storage, and analytics with this protocol. Storage by ShdwDrive and multisig by SquadsProtocol.
+Firebase for Web3. Create your own Solana dApp with collection, storage, and analytics with this protocol. Storage by shdwDrive and multisig by SquadsProtocol.
 
 [![](../.gitbook/assets/firethree.png)](https://www.firethree.xyz/)
 
@@ -36,19 +36,19 @@ Blockpal is the leader in cooperative gaming communities. It is one home for the
 
 #### **Blok.host Web Hosting**
 
-Simple, secure Web3 hosting with backend storage built on ShdwDrive. BlokHost empowers users to quickly deploy their websites and use the platform's node network to distribute content in an optimally efficient manner globally.
+Simple, secure Web3 hosting with backend storage built on shdwDrive. BlokHost empowers users to quickly deploy their websites and use the platform's node network to distribute content in an optimally efficient manner globally.
 
 [![](<../.gitbook/assets/blockhost (1).png>)](https://blok.host/)
 
 #### **Coach's Coin Clicker**
 
-An example of a fully-decentralized on-chain game immortalized on ShdwDrive's immutable storage. Coin Clicker showcases not only ShdwDrive's impressive CDN performance, but it's ability to create perma-dApps.
+An example of a fully-decentralized on-chain game immortalized on shdwDrive's immutable storage. Coin Clicker showcases not only shdwDrive's impressive CDN performance, but it's ability to create perma-dApps.
 
 [![](../.gitbook/assets/coach-coin-clicker.png)](https://shdw-drive.genesysgo.net/5WRCJEgy7c1Wy3ewWdfJcAePMCaUq4asyuP8sRgTQZYq/index.html)
 
-#### **AlphaBatem's Shdw UI**
+#### **AlphaBatem's SHDW UI**
 
-This tool provides a speedy way to interact with your ShdwDrive storage account, including handling the swap from SOL to SHDW.
+This tool provides a speedy way to interact with your shdwDrive storage account, including handling the swap from SOL to SHDW.
 
 {% embed url="https://drive.alphabatem.com/login#/" %}
 

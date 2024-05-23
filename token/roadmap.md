@@ -16,7 +16,7 @@ This Roadmap offers a high-level overview of our forthcoming development plans f
 * Observed various network loads up to 4gbps while sustaining 20k transactions per second + file uploads
 * Improved the D.A.G.G.E.R. node CLI & documentation for node operation
 * Developed graph history snapshot system‍
-* Launched the reference ShdwDrive File Management UI on portal.shdwdrive.com
+* Launched the reference shdwDrive File Management UI on portal.shdwdrive.com
 
 (IN PROGRESS)
 
@@ -29,7 +29,7 @@ This Roadmap offers a high-level overview of our forthcoming development plans f
 * Remote node metrics collection system
 * Typescript keypair SDK
 * Improved event & state distribution system over p2p network
-* Additional interactive features for the reference ShdwDrive File Management UI
+* Additional interactive features for the reference shdwDrive File Management UI
 
 ## Testnet Phase 2 (Q1-Q2 2024)
 
@@ -45,15 +45,15 @@ This Roadmap offers a high-level overview of our forthcoming development plans f
 * Complete snapshot testing
 * Run adversarial scenario simulations
 * Address bugs or vulns found during individual node operator testing
-* ShdwDrive v2 implementation - repair bandwidth management
+* shdwDrive v2 implementation - repair bandwidth management
 * Fanout data distribution system & other improvements to comms layer/file system operations
-* ShdwDrive v2 implementation - core feature development and improvements
+* shdwDrive v2 implementation - core feature development and improvements
 
 ## Testnet Phase 3 (Q2-Q3 2024)
 
 (UPCOMING)
 
-* Individual node operators for ShdwDrive v2
+* Individual node operators for shdwDrive v2
 * Observe usage / logs / etc and make further system tweaks as necessary
 * Resolve any outstanding bugs or accrued technical debt
 * Publish an updated version of the Roadmap with subsequent phases and features

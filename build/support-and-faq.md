@@ -96,7 +96,7 @@ For the purposes of utilizing the ShdwDrive, \~0.1 SOL in our experience will av
 
 <details>
 
-<summary>Does ShdwDrive support Ledger wallet signing?</summary>
+<summary>Does shdwDrive support Ledger wallet signing?</summary>
 
 No, ShdwDrive does not currently support Ledger wallet signing. The reason we are currently unable to provide Ledger support is due to the absence of the message signing feature in the Solana app for Ledger, as our system relies on this functionality.
 
@@ -130,7 +130,7 @@ The `edit-file` functionality works differently from `upload-file` because it is
 
 <details>
 
-<summary>Is it possible to ask the user to sign a Shdw transaction and another transaction at the same time on the frontend?</summary>
+<summary>Is it possible to ask the user to sign a shdw transaction and another transaction at the same time on the frontend?</summary>
 
 Currently, it is not possible to ask the user to sign a Shdw transaction and another transaction at the same time on the frontend. The Shdw network only allows ShdwDrive-specific transactions to have instructions related to the ShdwDrive on chain program. Any other instructions will cause the transaction to fail. This security feature is in place to prevent malicious transactions.
 
@@ -138,7 +138,7 @@ Currently, it is not possible to ask the user to sign a Shdw transaction and ano
 
 <details>
 
-<summary>I'm trying to create a File object on my React app to upload it to Shdw but I keep getting an error.</summary>
+<summary>I'm trying to create a File object on my React app to upload it to shdw but I keep getting an error.</summary>
 
 The error you're getting may be due to the ShdwDrive instance being created before the wallet-provider is ready. In the latest example on the main branch, there is a slight change in the useEffect that creates the drive instance which may resolve your issue. Additionally, make sure that the file data buffer is converted to a Blob using `new Blob([Buffer.from("data")])`.
 
@@ -220,7 +220,7 @@ No, the SDK requires internet access to send http requests. This is not allowed 
 
 <details>
 
-<summary>Is it possible for a user to sign a Shdw transaction and another unrelated transaction at the same time?</summary>
+<summary>Is it possible for a user to sign a shdw transaction and another unrelated transaction at the same time?</summary>
 
 Currently, the Shdw network only allows ShdwDrive-specific transactions to include instructions related to the ShdwDrive on-chain program. Any other instructions will cause the transaction to fail as a security measure. This means that it is not possible for a user to sign a Shdw transaction and another unrelated transaction at the same time.
 
@@ -242,7 +242,7 @@ If your 400 error is stating "Invalid transaction supplied" then you may need to
 
 <details>
 
-<summary>What should I do if I encounter an ENOTFOUND error when using the ShdwDrive CLI?</summary>
+<summary>What should I do if I encounter an ENOTFOUND error when using the shdwDrive CLI?</summary>
 
 If you encounter an ENOTFOUND error when using the ShdwDrive CLI, it is likely a local DNS issue on your side. ENOTFOUND is a DNS resolver problem, which means you will need to check with your Internet Service Provider (ISP) to resolve the issue. Alternatively, you can try using a Virtual Private Network (VPN) to see if that resolves the issue.
 
@@ -258,7 +258,7 @@ You can try setting --log-level debug with your command that is getting an error
 
 <details>
 
-<summary>What does "Internal Server Error" mean when calling the ShdwDrive API?</summary>
+<summary>What does "Internal Server Error" mean when calling the shdwDrive API?</summary>
 
 There are a few reasons for this error but the most common is the file that have not migrated from the original version 1 format storage account to the newer version 2 format. For users that have created legacy style ShdwDrive accounts, please finish the migration steps.
 
@@ -335,7 +335,7 @@ We welcome any feedback and examples you can provide to our documentation. You c
 
 <details>
 
-<summary>What makes ShdwDrive unique?</summary>
+<summary>What makes shdwDrive unique?</summary>
 
 ShdwDrive is a commodity cloud network that offers multiple service options, leveraging distributed ledger technology, and offering vertically integrated, L1-specific storage and compute. It is the only cloud network designed to democratize the earnings of traditional cloud platforms without sacrificing performance. Being S3-compatible, ShdwDrive maintains an open-source SDK and interoperability standards that make it easy to access through popular builder tools and SDKs. Its objective is to support popular tools that make building easier, regardless of the application you are building.
 
@@ -343,7 +343,7 @@ ShdwDrive is a commodity cloud network that offers multiple service options, lev
 
 <details>
 
-<summary>How does ShdwDrive ensure data privacy and security?</summary>
+<summary>How does shdwDrive ensure data privacy and security?</summary>
 
 ShdwDrive ensures data privacy and security by encrypting and erasure coding the data, and then algorithmically distributing the fragments across the distributed network. This is done trustlessly via smart contracts and requires signed Solana transactions, creating a publicly verifiable on-chain log. Additionally, ShdwDrive provides developers with the tools they need to comply with GDPR and can show records that prove that they have deleted a user's personal data.
 
@@ -359,7 +359,7 @@ ShdwDrive provides developers with tools to comply with GDPR and can provide rec
 
 <details>
 
-<summary>Is ShdwDrive supported on mobile?</summary>
+<summary>Is shdwDrive supported on mobile?</summary>
 
 Yes, ShdwDrive is supported on mobile through our ecosystem partners who are actively building on mobile. Please check out our Shdw Ecosystem page for more details. https://docs.shadow.cloud/build/community-mainted-uis
 
@@ -369,7 +369,7 @@ Additionally, in the future, our _D.A.G.G.E.R._ distributed ledger technology wi
 
 <details>
 
-<summary>Is ShdwDrive S3-compatible?</summary>
+<summary>Is shdwDrive S3-compatible?</summary>
 
 Yes, ShdwDrive is S3-compatible. S3-compatibility is a widely adopted standard in the cloud storage industry, and many providers offer S3-compatible APIs and protocols, which gives builders greater flexibility in choosing a cloud storage provider. This means developers can easily move data between different services without worrying about compatibility issues. Additionally, S3-compatibility offers robust APIs that enable fast and reliable query, along with virtual mount capability, making it important for Web2, Web3, and the frontiers of distributed ledger tech and AI. ShdwDrive aims to empower developers to integrate it directly into their builds, and to support the talented community of designers who will create innovative platforms for ShdwDrive. You can read more here: https://docs.shadow.cloud/learn/design#s3-compatibility
 
@@ -377,7 +377,7 @@ Yes, ShdwDrive is S3-compatible. S3-compatibility is a widely adopted standard i
 
 <details>
 
-<summary>What physical infrastructure powers ShdwDrive?</summary>
+<summary>What physical infrastructure powers shdwDrive?</summary>
 
 ShdwDrive runs on a global network of bare metal infrastructure, with all compute and storage existing on bare metal. There is no dependency on cloud providers for ShdwDrive operations. For more details on the design of ShdwDrive, please see the "Design" section under the "Learn" category: https://docs.shadow.cloud/learn/design
 

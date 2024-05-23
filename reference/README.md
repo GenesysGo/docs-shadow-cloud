@@ -1,5 +1,5 @@
 ---
-description: ShdwDrive consolidated resources
+description: shdwDrive consolidated resources
 ---
 
 # Reference
@@ -16,7 +16,7 @@ description: ShdwDrive consolidated resources
 
 [Announcements](https://discord.com/channels/830127596355190804/1180230759685030039)
 
-## **Shdw Drive**
+## **shdwDrive**
 
 [CLI](../build/the-cli.md)
 
@@ -40,7 +40,7 @@ description: ShdwDrive consolidated resources
 
 [Technical Support](https://discord.gg/genesysgo)
 
-[Shdw Glossary](shadow-glossary.md)
+[shdw Glossary](shadow-glossary.md)
 
 ## **Social Media**
 
@@ -50,7 +50,7 @@ description: ShdwDrive consolidated resources
 
 ## **Community**
 
-[Shdw Ecosystem](https://docs.shdwdrive.com/build/community-maintained-uis)
+[SHDW Ecosystem](https://docs.shdwdrive.com/build/community-maintained-uis)
 
 ## **Media Kit**
 

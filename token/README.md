@@ -10,9 +10,9 @@ SHDW is a unique cryptocurrency that is designed for the sustainability and secu
 
 Our tokenomics model is more than just a network framework; it's a vision for creating a stable, valuable, and engaging community of active network participants. By implementing these mechanics, we're not only fostering a healthy network but also ensuring that the demand for SHDW grows as the network does by encouraging behaviors that drive value.
 
-This innovative approach to managing the economics of the ShdwDrive platform is designed to benefit all stakeholders of the network. We believe that creating a system that provides benefits to the network stakeholders will ultimately lead to a user experience for the end-users of shdwDrive that is second to none.
+This innovative approach to managing the economics of the shdwDrive platform is designed to benefit all stakeholders of the network. We believe that creating a system that provides benefits to the network stakeholders will ultimately lead to a user experience for the end-users of shdwDrive that is second to none.
 
-All of these mechanics come together to form a system that incentivizes an amazing experience for the end-users of ShdwDrive, which will result in increased user growth, faster network scaling, and value being added to the SHDW token.
+All of these mechanics come together to form a system that incentivizes an amazing experience for the end-users of shdwDrive, which will result in increased user growth, faster network scaling, and value being added to the SHDW token.
 
 Our model is indicative of our commitment to sustainable growth, network health, and value creation. By joining us as a SHDW holder and participating in securing the shdwDrive network, you're not just passively holding a token… you're becoming a part of a movement that values innovation, stability, and long-term growth which proves that web3 is the only logical next step in the evolution of the technology that underpins human society. Together, we’re not just building a network; we’re creating a legacy with real impact. Information about current $SHDW exchange listings can be found [here](exchange-listings.md).
 
