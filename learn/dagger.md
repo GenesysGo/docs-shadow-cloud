@@ -92,7 +92,7 @@ To ensure the tree's integrity, a unique code called a "hash" is created for eac
 
 In summary, a Merkle-based gossip graph is a tree structure that securely organizes and verifies information using unique codes called hashes. The tree is built from the bottom up by combining pairs of hashes, ultimately resulting in a single root hash that represents the entire tree.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>This is a conceptual graphic.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>This is a conceptual graphic.</p></figcaption></figure>
 
 This UML class diagram above consists of four classes: MerkleTree, Node, Data, and Hash.
 

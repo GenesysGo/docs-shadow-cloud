@@ -5,7 +5,7 @@ description: >-
   monitor your node.
 ---
 
-# Monitoring Stack
+# Monitor
 
 {% hint style="warning" %}
 Working knowledge of Docker is recommended. GenesysGo will not be providing Docker support.
@@ -13,7 +13,7 @@ Working knowledge of Docker is recommended. GenesysGo will not be providing Dock
 
 ### Head over to [https://github.com/GenesysGo/dagger-monitoring](https://github.com/GenesysGo/dagger-monitoring) for the official dagger-monitoring code + instructions.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **Docker install for 22.04 taken from DigitalOcean -** [**https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04**](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
 

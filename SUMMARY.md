@@ -29,5 +29,5 @@
 * [Reference](reference/README.md)
   * [Change Logs](reference/change-logs.md)
   * [Social Media & Community](reference/social-media-and-community.md)
-  * [Podcasts](reference/podcasts.md)
+  * [Podcasts & Articles](reference/podcasts.md)
   * [shdwGlossary](reference/shadow-glossary.md)
