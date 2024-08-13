@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Rewards
 
 To stake and claim stake rewards use:

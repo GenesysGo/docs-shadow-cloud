@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Exchange Listings
 
 $SHDW is listed on [Jupiter](https://jup.ag/swap/USDC-SHDW) as well as the following exchanges:&#x20;
