@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # SHDW Token
 
 Visit the [staking website](https://testnet.shdwdrive.com) to claim staking rewards and view the testnet [leaderboard](https://testnet.shdwdrive.com/status-dashboard). The SHDW Token can be purchased on [Jupiter.](https://jup.ag/swap/USDC-SHDW)

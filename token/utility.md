@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Utility
 
 [Start here](https://www.shdwdrive.com/blog/unlocking-the-shdw-token) for comprehensive details on $SHDW's utility. We encourage everyone to read the article in addition to the technical summary below.
@@ -10,7 +14,7 @@ SHDW is a unique cryptocurrency that is designed for the sustainability and secu
 
 <figure><img src="../.gitbook/assets/Flowchart_Whiteboard_in_Dark_Blue_Blue_Spaced_Color_Blocks_Style-2.png" alt=""><figcaption><p>High-level Network Architecture</p></figcaption></figure>
 
-### **Staking and Network Participation**
+### **SHDW Network Participation**
 
 Staking is a mechanism in which holders earn rewards for holding their tokens. Holders who stake their SHDW tokens instead of spending or trading them are rewarded for participating in and helping to secure the network. This process of rewarding holders for participating in the network is central to our ecosystem and is a core component of our overall design process. We believe that staking mechanics simultaneously drive value for both the network and for holders.
 

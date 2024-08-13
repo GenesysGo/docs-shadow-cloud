@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Roadmap
 
 This Roadmap offers a high-level overview of our forthcoming development plans for $SHDW and shdwDrive v2 powered by D.A.G.G.E.R. It's important to note that features and timelines may evolve as we gain new insights and knowledge. For a more in-depth exploration of the technical intricacies of D.A.G.G.E.R., we encourage you to read the Litepaper. If you want to participate in our testnet by running a shdwNode, please visit our Operator page for instructions.
