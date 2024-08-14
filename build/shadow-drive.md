@@ -24,8 +24,6 @@ npm install -g @shadow-drive/cli
 
 * Review the [FAQ](support-and-faq.md)
 * Visit us in [Discord](https://discord.gg/genesysgo) for support and feedback!
-* Submit your project to the [Shdw Ecosystem](https://github.com/GenesysGo/docs-shadow-cloud/blob/main/build/shadow-drive/broken-reference/README.md) page so we can highlight your amazing work!
-* Check the [Network Status](http://184.154.66.109:8080/) of the ShdwDrive network.
 
 ## **Submitting Bugs**
 

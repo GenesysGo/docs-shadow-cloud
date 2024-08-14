@@ -18,7 +18,6 @@ description: ShdwDrive Developer Tools
 1. [JavaScript](the-sdk/sdk-javascript.md), [Rust](the-sdk/sdk-rust.md), and [Python](the-sdk/sdk-python.md) are your choices.
 2. Follow the [SDK Guide](the-sdk/)
    * You can build directly on top of the [API](the-sdk/the-api.md).
-   * Tell us about your project in our [Discord](https://discord.gg/genesysgo) so we can publish to the community. See others [here](broken-reference/).
 
 ### **Submitting Bugs & Security Issues**
 

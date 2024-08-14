@@ -41,7 +41,6 @@ At the heart of the SHDW Ecosystem lies D.A.G.G.E.R., a trustless decentralized 
 Learn about D.A.G.G.E.R.:
 
 * Explore the full potential of D.A.G.G.E.R. through our [Litepaper](https://github.com/GenesysGo/dagger-litepaper/blob/main/DAGGER-Litepaper.pdf).
-* Participate in our [Testnet](https://dagger-hammer.shadow.cloud/) and run a [Wield Node](https://docs.shdwdrive.com/wield) to experience D.A.G.G.E.R. firsthand.
 
 ## **Storage**
 
@@ -59,13 +58,7 @@ Utilizing _D.A.G.G.E.R._ as an orchestration / oracle protocol, we are capable o
 
 As mobile compute power and data speeds surge, we're developing _D.A.G.G.E.R._'s permissionless mobile compute and storage through the early-stage Solana Saga Mobile. This enhancement supports our existing ecosystem of builders using shdwDrive in mobile apps. _D.A.G.G.E.R._ Mobile will bring distributed ledger technology for compute and storage to smartphones amid growing AI and gaming demands. We aim to make _D.A.G.G.E.R._, including shdwDrive and mobile implementations, a practical choice for mobile and edge AI solutions, aligning with our roadmap.
 
-## **Roadmap**
 
-GenesysGo's development roadmap is meticulously structured around key milestones that are integral to the evolution of ShdwDrive, powered by D.A.G.G.E.R. technology. Our condensed roadmap highlights the strategic phases of development:
-
-* **Testnet Phase 1**: Successfully launched an interactive explorer and enhanced the D.A.G.G.E.R. core for efficiency. Addressed multithreading improvements and resolved critical stability issues, laying the groundwork for robust performance and memory management. Achieved significant network load capabilities and introduced the ShdwDrive File Management UI.
-* **Testnet Phase 2**: Focus shifts to empowering node operators with comprehensive documentation and initiating the testnet with a decentralized operator base. Emphasis will be on improving node stability, refining network performance metrics, and enhancing the block and graph explorer features. Core development efforts on ShdwDrive v2 will concentrate on refining bandwidth management and filesystem operations.
-* **Testnet Phase 3 and Beyond**: A critical phase where individual node operators will be integrated, marking a significant step towards a fully decentralized ShdwDrive v2. This phase will involve rigorous observation and fine-tuning based on real-world network engagement. Commitment to resolving bugs and technical debt will be paramount to ensure the reliability of the platform. The roadmap will be periodically updated to reflect new phases and features, signaling our ongoing commitment to technological innovation and excellence.
 
 ## **Putting it all together**
 
@@ -89,28 +82,6 @@ shdwDrive caters to a wide range of storage needs:
 * Blockchain archival
 
 [**Start Building on shdwDrive!**](../build/shadow-drive.md)
-
-[**See what others are building on shdwDrive!**](broken-reference/)
-
-## **shdwOperators**
-
-**(currently in Testnet Phase 1)**
-
-shdwOperators are the decentralized backbone of the shdwDrive storage platform. Operators lease their high-performance compute, storage, and bandwidth. Businesses, projects, and/or individual developers can trustlessly provision network resources. User payments are sent directly to Shdw Operators. shdwOperators who ensure their resources are always available and performant earn more. shdwOperators who are inconsistent earn less.
-
-At the foundation of everything are the shdwOperators who run the nodes that power the Shdw Platform. Operators can connect new nodes to the network, manage their existing servers, or view the overall status of other shdwOperators – all through the one easy-to-use portal.
-
-Currently in development are a series of Shdw Operator node roles including Wield Nodes, Metadata Nodes, and Auditor Nodes. These roles work together under the orchestration of _D.A.G.G.E.R._ to form a permissionless distributed platform that supports both ShdwDrive services and mobile storage being developed.
-
-#### Testnet Phase 1:
-
-[Operating](../operate/) a shdwNode will allow you to trustlessly participate in the D.A.G.G.E.R. phase 1 testnet which powers the D.A.G.G.E.R. Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). We encourage node operators to review our blog articles for full context on the role of Wield Nodes and the purpose of D.A.G.G.E.R. Hammer.
-
-Wield Node operators will be handling thousands of live user test transactions and trustlessly executing all modules within D.A.G.G.E.R. that are requires to erasure code and store files uploaded to the Hammer test interface.
-
-#### Testnet Phase 2:
-
-Launching January 16th
 
 ## **Our Team**
 

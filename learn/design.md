@@ -99,38 +99,7 @@ Overall, our approach to the DAGGER systems-level design requirements was focuse
 
 ## **Present Design Considerations: Advancing towards v2.0**
 
-As GenesysGo strides forward in the development of ShdwDrive, our focus has shifted towards the integration and refinement of D.A.G.G.E.R. (Directed Acyclic Gossip Graph Enabling Replication), our innovative consensus protocol and data management system. With the successful commencement of Testnet Phase 1 and the ongoing progress towards Testnet Phase 2 and beyond, we are laying the groundwork for the fully decentralized ShdwDrive v2.0. This section outlines the evolution of our design considerations as we advance towards this next-generation storage solution.
+{% hint style="danger" %}
+shdwDrive v2’s architecture overwent a major redesign, this was announced at the Solana Crossroads event in May 2024. We will be updating these documents as we get closer to the launch of shdwDrive v2 at the end of 2024! In the meantime, please check out this recap:[https://www.shdwdrive.com/blog/shdwdrive-solana-crossroads-2024-recap](https://www.shdwdrive.com/blog/shdwdrive-solana-crossroads-2024-recap)
+{% endhint %}
 
-Testnet Phase 1 Achievements:
-
-* The initial release of our interactive explorer with foundational features marked a significant milestone in our journey.
-* We identified and addressed several performance bottlenecks within the D.A.G.G.E.R. core and client RPC, enhancing the efficiency of file uploads and gossip network message processing.
-* Multithreading improvements in the D.A.G.G.E.R. Client RPC have unlocked greater throughput capabilities, showcasing the protocol's ability to handle substantial client activity without direct transactions to D.A.G.G.E.R. wield nodes.
-* A critical crash event was observed and subsequently resolved, providing valuable insights into node stability under high-throughput conditions.
-* We implemented a more efficient memory management strategy by transitioning finalized graph history to disk storage.
-* Our collection of metrics on over 250 million transactions and events has been instrumental in fine-tuning our system for optimal performance on Linux hosts.
-* Network load testing demonstrated our ability to maintain 20k transactions per second alongside file uploads, with peak loads reaching up to 4gbps.
-* Enhancements to the D.A.G.G.E.R. node CLI and documentation have streamlined node operation processes.
-* The development of a graph history snapshot system has further solidified the robustness of our network.
-* The launch of the reference ShdwDrive File Management UI on portal.shdwdrive.com provided a tangible interface for user interaction with our storage solution.
-
-Testnet Phase 2 Outlook:
-
-* As we gear up for Testnet Phase 2, our focus will be on distributing comprehensive documentation to node operators and initiating the testnet with decentralized operators.
-* We will delve into the analysis and enhancement of node operator stability, refining our metrics and logging capabilities to ensure network performance and reliability.
-* The block and graph explorer will see new features and improvements, along with enhanced RPC documentation and the addition of new RPC methods.
-* Our team will conduct in-depth epoch and snapshot testing, as well as adversarial scenario simulations, to identify and rectify any vulnerabilities.
-* ShdwDrive v2's bandwidth management for repairs and the fanout data distribution system will undergo development and refinement.
-* Core feature development for ShdwDrive v2 will continue, with a focus on improving the filesystem operations and communication layer.
-
-Testnet Phase 3 and Beyond:
-
-* The introduction of individual node operators for ShdwDrive v2 will be a pivotal step in our testing process, allowing us to observe and adjust based on real-world usage, logs, and feedback.
-* Our commitment to resolving outstanding bugs and addressing technical debt will ensure the stability and reliability of the ShdwDrive platform.
-* An updated version of the Roadmap will be published, detailing subsequent phases and features, as we continue to evolve and enhance our technology.
-
-#### Read more here: [Roadmap Overview](https://www.shdwdrive.com/blog/dagger-roadmap)
-
-The technical advancements and milestones achieved thus far are a testament to our dedication to revolutionizing decentralized data storage. We remain committed to fostering an ecosystem that empowers developers and users with a secure, scalable, and accessible data storage solution. Stay tuned for further updates and developments as we continue to navigate the exciting journey towards ShdwDrive v2.0.
-
-Stay tuned for updates on our cutting-edge design efforts, which will be published in the [Change Log](../reference/change-logs.md). We're planning more frequent document revisions and expanding the wealth of content in the ever-growing ShdwDrive resources. As a result, we anticipate accelerated growth and market capture, driven by our commitment to innovation and technological excellence.

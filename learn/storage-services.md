@@ -46,6 +46,4 @@ You can also set up [S3-compatible](https://docs.shadow.cloud/build/s3-compatibl
 
 For common questions check out the [General](../build/support-and-faq.md) section of our FAQ.
 
-For a comprehensive look at the SHDW Platform's ecosystem check out the [Shadow Ecosystem](https://docs.shadow.cloud/build/community-maintained-uis) page.
-
 ### [**Get started with shdwDrive!**](../build/shadow-drive.md)

@@ -204,7 +204,7 @@ Yes, currently only the owner of the storage account can edit the files.
 
 <details>
 
-<summary>Is it possible to resume an upload from where it left off if it fails</summary>
+<summary>Is it possible to resume an upload from where it left off if it fails?</summary>
 
 No, unfortunately it is not possible to resume an upload from where it left off if it fails. However, the CLI checks files before uploading and skips them if they already exist. You also receive an output JSON file for each file upload, which will indicate if a file already exists.
 
@@ -387,18 +387,6 @@ ShdwDrive runs on a global network of bare metal infrastructure, with all comput
 
 <summary>What is GenesysGo?</summary>
 
-GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator. Since then, GG has expanded its offerings to focus on a large ecosystem of tools and infrastructure for Solana. More details about the scope of our offerings can be found under the "Learn" category. GG has a team of talented developers and coders who are dedicated to building innovative solutions for the Solana community. For more information, you can visit our website at https://Shdw.cloud.
-
-</details>
-
-<details>
-
-<summary>Can I advertise my project if I use D.A.G.G.E.R./ShdwDrive?</summary>
-
-Yes, the ShdwDrive team would love to hear about your project if you are building on top of the Drive or using _D.A.G.G.E.R_. The best way to gain visibility is to submit a PR directly to the docs-Shdw-cloud repo adding your project/business, details, and image to the Shdw Ecosystem list: https://github.com/GenesysGo/docs-Shdw-cloud
-
-Submit a PR to edit the file located here: https://github.com/GenesysGo/docs-Shdw-cloud/blob/main/build/Shdw-drive/community-mainted-uis.md
-
-You can also share your work in the [ShdwDrive Discord](https://discord.com/invite/genesysgo). We will soon release an automated process to be added to the Shdw Ecosystem page.
+GenesysGo (GG) is a company that was founded in April 2021 as a Solana validator. Since then, GG has expanded its offerings to focus on a large ecosystem of tools and infrastructure for Solana. More details about the scope of our offerings can be found under the "Learn" category. GG has a team of talented developers and coders who are dedicated to building innovative solutions for the Solana community. For more information, you can visit our website at https://shdwdrive.com.
 
 </details>
