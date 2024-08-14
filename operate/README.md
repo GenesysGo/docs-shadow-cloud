@@ -1,14 +1,26 @@
 ---
-description: >-
-  The current testnet phase now allows for trustless shdwOperator to join, help
-  test, and earn rewards!
+hidden: true
 ---
 
 # Operate
 
+
+
+{% hint style="danger" %}
+PLEASE NOTE: Testnet2 ended on April 16th, 2024. The information in this section has been deprecated and will be updated when shdwDrive v2 is deployed at the end of this year.
+
+Check back soon!
+{% endhint %}
+
+
+
 <table data-view="cards"><thead><tr><th></th><th align="center"></th><th align="center"></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Install</strong></td><td align="center"></td><td><a href="install.md">install.md</a></td><td><a href="../.gitbook/assets/SHDW-15.png">SHDW-15.png</a></td></tr><tr><td></td><td align="center"><strong>Wallet</strong></td><td align="center"></td><td><a href="wallet.md">wallet.md</a></td><td><a href="../.gitbook/assets/SHDW-16.png">SHDW-16.png</a></td></tr><tr><td></td><td align="center"><strong>Monitor</strong></td><td align="center"></td><td><a href="monitoring-stack.md">monitoring-stack.md</a></td><td><a href="../.gitbook/assets/SHDW-17.png">SHDW-17.png</a></td></tr><tr><td></td><td align="center">FAQ</td><td align="center"></td><td><a href="node-faq.md">node-faq.md</a></td><td><a href="../.gitbook/assets/SHDW-19.png">SHDW-19.png</a></td></tr></tbody></table>
 
-## To operate a shdwNode you must:
+##
+
+##
+
+To operate a shdwNode you must:
 
 1. [Install ](https://docs.shdwdrive.com/operate/install)the latest version GenesysGo's Directed Acyclic Gossiping Graph Enabling Replication (D.A.G.G.E.R.).
 2. [Create ](https://docs.shdwdrive.com/operate/wallet)a wallet

@@ -12,7 +12,7 @@
     * [JavaScript](build/the-sdk/sdk-javascript.md)
     * [Rust](build/the-sdk/sdk-rust.md)
     * [Python](build/the-sdk/sdk-python.md)
-  * [API](build/the-api.md)
+    * [API](build/the-sdk/the-api.md)
   * [S3-Compatible Client Access](build/s3-compatible-client-access.md)
   * [FAQ](build/support-and-faq.md)
   * [shdwEcosystem](build/community-maintained-uis.md)

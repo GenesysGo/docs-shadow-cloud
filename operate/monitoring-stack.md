@@ -3,6 +3,7 @@ description: >-
   The following instructions are for running in a Docker environment. The
   supplied docker-compose.yaml file includes a monitoring stack to allow you to
   monitor your node.
+hidden: true
 ---
 
 # Monitor

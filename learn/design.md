@@ -6,7 +6,7 @@ description: A deeper dive into the design of shdwDrive and the problems it solv
 
 ## **Developer Tools**
 
-Builders can interact directly with shdwDrive using the [API](../build/the-api.md), the [CLI](../build/the-cli.md) with optional [Rust CLI](../build/the-cli.md) or the shdwDrive [SDK](../build/the-sdk/) to build front-end applications directly on top of the drive.
+Builders can interact directly with shdwDrive using the [API](../build/the-sdk/the-api.md), the [CLI](../build/the-cli.md) with optional [Rust CLI](../build/the-cli.md) or the shdwDrive [SDK](../build/the-sdk/) to build front-end applications directly on top of the drive.
 
 Providing SDKs in [JavaScript](../build/the-sdk/sdk-javascript.md), [Rust](../build/the-sdk/sdk-rust.md), and [Python ](../build/the-sdk/sdk-python.md)provides a number of benefits and efficiencies to developers. It allows developers to access the full range of features and capabilities of the application, and helps developers to quickly get up to speed on the application, since there’s less of a learning curve when working with a language they’re already familiar with.
 

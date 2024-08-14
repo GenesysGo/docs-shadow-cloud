@@ -1,5 +1,6 @@
 ---
 description: Explore projects utilizing shdwDrive
+hidden: true
 ---
 
 # shdwEcosystem

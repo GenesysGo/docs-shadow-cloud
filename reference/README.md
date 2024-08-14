@@ -4,17 +4,7 @@ description: shdwDrive consolidated resources
 
 # Reference
 
-## **Testnet Links**
 
-[Staking website](https://testnet.shdwdrive.com/)
-
-[Operator Rewards](https://testnet.shdwdrive.com/operator-rewards)
-
-[Leaderboard for shdwOperators](https://testnet.shdwdrive.com/uptime-leaderboard)
-
-[Live Network Dashboard](https://dashboard.shdwdrive.com/)
-
-[Announcements](https://discord.com/channels/830127596355190804/1180230759685030039)
 
 ## **shdwDrive**
 
@@ -26,7 +16,7 @@ description: shdwDrive consolidated resources
 
 [SDK Python](../build/the-sdk/sdk-python.md)
 
-[API](../build/the-api.md)
+[API](../build/the-sdk/the-api.md)
 
 [FAQ](../build/support-and-faq.md)
 
@@ -47,10 +37,6 @@ description: shdwDrive consolidated resources
 [Discord](https://discord.gg/genesysgo)
 
 [Twitter](https://twitter.com/GenesysGo)
-
-## **Community**
-
-[SHDW Ecosystem](https://docs.shdwdrive.com/build/community-maintained-uis)
 
 ## **Media Kit**
 

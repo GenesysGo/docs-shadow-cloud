@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Install
 
 ### Option 1 - Guided install + startup script

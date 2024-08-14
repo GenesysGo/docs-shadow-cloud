@@ -8,12 +8,6 @@ description: >-
 
 <table data-view="cards"><thead><tr><th></th><th align="center"></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td align="center"><strong>Learn</strong></td><td></td><td><a href="learn/">learn</a></td><td><a href=".gitbook/assets/SHDW-29.png">SHDW-29.png</a></td></tr><tr><td></td><td align="center"><strong>Build</strong></td><td></td><td><a href="build/">build</a></td><td><a href=".gitbook/assets/SHDW-33.png">SHDW-33.png</a></td></tr><tr><td></td><td align="center"><strong>Operate</strong></td><td></td><td><a href="operate/">operate</a></td><td><a href=".gitbook/assets/SHDW-31.png">SHDW-31.png</a></td></tr><tr><td></td><td align="center">Token</td><td></td><td><a href="token/">token</a></td><td><a href=".gitbook/assets/SHDW-28.png">SHDW-28.png</a></td></tr><tr><td></td><td align="center">Dashboard</td><td></td><td><a href="https://dashboard.shdwdrive.com/">https://dashboard.shdwdrive.com/</a></td><td><a href=".gitbook/assets/SHDW-24.png">SHDW-24.png</a></td></tr><tr><td></td><td align="center"><strong>Reference</strong></td><td></td><td><a href="reference/">reference</a></td><td><a href=".gitbook/assets/SHDW-32.png">SHDW-32.png</a></td></tr></tbody></table>
 
-### [Stake](https://testnet.shdwdrive.com/) your SHDW
-
-### [Earn](token/rewards.md#key-information-you-need-to-prepare) SHDW Rewards
-
-### [Join](operate/#testnet-information) the Testnet
-
 ## How this resource is organized
 
 ### [**Learn**](learn/)
@@ -26,13 +20,11 @@ This section focuses on easy and actionable information to help you quickly get 
 
 ### [**Operate**](operate/)
 
-Running a shdwNode will allow you to participate in the decentralized D.A.G.G.E.R. testnet which powers the shdwDrive v2 Hammer interface located [here](https://dagger-hammer.shdwdrive.com/). The shdwNode operators will be handling millions of live user test transactions and trustlessly storing data for user file uploads.
-
-See it for yourself: [Live network metrics](https://dashboard.shdwdrive.com/d/b14b5606-fb9c-4a2a-84fc-80887f144965/dagger-public-data?orgId=1\&refresh=30m)
+Thank you to everyone who participated in shdwDrive v2’s Testnet2! Please keep an eye on this section as we get closer to the launch of shdwDrive v2 for instructions how to download the shdwDrive mobile app and contribute storage directly from your mobile device!
 
 ### [**SHDW Token**](token/)
 
-Discover the expansive potential of $SHDW, the driving force behind the revolutionary platform shdwDrive, and learn how it's reshaping access, ownership, and rewards in the realm of decentralized data storage.
+We are updating this section to reflect the announcement of shdwDrive v2’s mobile architecture. To learn more, please check out: [https://www.shdwdrive.com/blog/shdwdrive-solana-crossroads-2024-recap](https://www.shdwdrive.com/blog/shdwdrive-solana-crossroads-2024-recap)
 
 ### [**Reference**](reference/)
 
