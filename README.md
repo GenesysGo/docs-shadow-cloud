@@ -18,11 +18,11 @@ This section explains our how we are combining powerful bare-metal with decentra
 
 This section focuses on easy and actionable information to help you quickly get started building. Step by step guides, and line by line CLI instruction offer developers the quickest path to working concepts. We are constantly improving this section to make sure utilizing our solutions is as easy as possible.
 
-### [**Operate**](operate/)
+### [**Operate**](operate/) **- Currently Deprecated**
 
 Thank you to everyone who participated in shdwDrive v2’s Testnet2! Please keep an eye on this section as we get closer to the launch of shdwDrive v2 for instructions how to download the shdwDrive mobile app and contribute storage directly from your mobile device!
 
-### [**SHDW Token**](token/)
+### [**SHDW Token**](token/) **- Currently Deprecated**
 
 We are updating this section to reflect the announcement of shdwDrive v2’s mobile architecture. To learn more, please check out: [https://www.shdwdrive.com/blog/shdwdrive-solana-crossroads-2024-recap](https://www.shdwdrive.com/blog/shdwdrive-solana-crossroads-2024-recap)
 
