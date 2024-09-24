@@ -146,7 +146,7 @@ The error you're getting may be due to the ShdwDrive instance being created befo
 
 By default, the rpc used is the Solana mainnet rpc api.mainnet-beta.solana.com. If you're getting blocked by that, you'll have to sign up for a paid RPC as we cannot control how the Solana mainnet rpc endpoint is limited. It is possible that the endpoint is blocking requests from the browser due to security reasons.
 
-For additional help, consider joining our [Discord](https://discord.gg/genesysgo) and asking in support channels.
+For additional help, consider joining our [Discord](https://discord.com/invite/shdwdrive) and asking in support channels.
 
 </details>
 
@@ -228,7 +228,7 @@ Currently, the Shdw network only allows ShdwDrive-specific transactions to inclu
 
 When getting 400 timeouts for transaction submissions, it is most likely due to congestion on the Solana network. While timing out and retrying is normal during Solana congestion, many are now using priority fees which may help solve congestion-related issues. Contact your RPC provider for further help.
 
-If your 400 error is stating "Invalid transaction supplied" then you may need to join our support channel in [Discord](https://discord.gg/genesysgo) and provide more details on the specific method. To resolve the typical causes of this error do the following:
+If your 400 error is stating "Invalid transaction supplied" then you may need to join our support channel in [Discord](https://discord.com/invite/shdwdrive) and provide more details on the specific method. To resolve the typical causes of this error do the following:
 
 1. Check announcements in Discord (https://discord.gg/genesysgo) or the network status (https://status.genesysgo.net/) to make sure there is no platform-wide problem.
 2. Check all of your versions and dependencies. You Solana wallet adapter dependencies and the version of the JavaScript SDK must be up to date.
@@ -248,7 +248,7 @@ If you encounter an ENOTFOUND error when using the ShdwDrive CLI, it is likely a
 
 <summary>What are some things I should check when getting errors?</summary>
 
-You can try setting --log-level debug with your command that is getting an error. Make sure to confirm you have installed the latest versions and dependencies and that your keypair file is being accessed properly. Make sure you wallet is funded properly with both SOL and SHDW, that you are handling Solana connection objects properly, and that you are not having Solana RPC related errors. For further help you can capture logs and share relevant code in the technical support channels of our [Discord](https://discord.gg/genesysgo).
+You can try setting --log-level debug with your command that is getting an error. Make sure to confirm you have installed the latest versions and dependencies and that your keypair file is being accessed properly. Make sure you wallet is funded properly with both SOL and SHDW, that you are handling Solana connection objects properly, and that you are not having Solana RPC related errors. For further help you can capture logs and share relevant code in the technical support channels of our [Discord](https://discord.com/invite/shdwdrive).
 
 </details>
 
