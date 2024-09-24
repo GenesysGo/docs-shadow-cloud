@@ -8,7 +8,7 @@ description: >-
 
 ## Twitter: [https://twitter.com/genesysgo](https://twitter.com/genesysgo)
 
-## Discord: [https://discord.com/invite/genesysgo](https://discord.com/invite/genesysgo)&#x20;
+## Discord: [https://discord.com/invite/shdwdrive](https://discord.com/invite/shdwdrive)
 
 ## Telegram: [https://t.me/+UKTjvypXkhtkMmUx](https://t.me/+UKTjvypXkhtkMmUx)
 

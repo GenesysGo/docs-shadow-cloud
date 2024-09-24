@@ -8,12 +8,12 @@ If you've got questions, we've got answers.
 
 <summary>Where can I go to reach out for technical assistance?</summary>
 
-Our [Discord server](https://discord.gg/genesysgo) is the best place to get in touch with us.\
+Our [Discord server ](https://discord.com/invite/shdwdrive)is the best place to get in touch with us.\
 We have a dedicated support section.
 
 In addition to this FAQ, you might find the [Github Q\&A](https://github.com/GenesysGo/Shdw-drive/issues?q=is%3Aissue+is%3Aclosed) useful as deeper technical issues are discussed.
 
-Discord Server: https://discord.gg/genesysgo
+Discord Server: [https://discord.com/invite/shdwdrive](https://discord.com/invite/shdwdrive)&#x20;
 
 GitHub FAQ: https://github.com/GenesysGo/Shdw-drive/issues?q=is%3Aissue+is%3Aclosed
 

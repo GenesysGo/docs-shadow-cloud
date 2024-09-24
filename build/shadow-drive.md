@@ -23,7 +23,7 @@ npm install -g @shadow-drive/cli
 ## **Get Support**
 
 * Review the [FAQ](support-and-faq.md)
-* Visit us in [Discord](https://discord.gg/genesysgo) for support and feedback!
+* Visit us in [Discord](https://discord.com/invite/shdwdrive) for support and feedback!
 
 ## **Submitting Bugs**
 

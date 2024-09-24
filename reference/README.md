@@ -34,7 +34,7 @@ description: shdwDrive consolidated resources
 
 ## **Social Media**
 
-[Discord](https://discord.gg/genesysgo)
+[Discord](https://discord.com/invite/shdwdrive)
 
 [Twitter](https://twitter.com/GenesysGo)
 

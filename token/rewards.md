@@ -62,5 +62,5 @@ Staking is a mechanism in which holders earn rewards for holding their tokens. H
 ## General Notes on Participation
 
 * Participants can earn rewards from all three pools concurrently!
-* Review setup guides, FAQs, and for further assistance refer to the official Discord channel.
+* Review setup guides, FAQs, and for further assistance refer to the official [Discord](https://discord.com/invite/shdwdrive) channel.
 * The SHDW Token can be purchased on [Jupiter.](https://jup.ag/swap/USDC-SHDW)
