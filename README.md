@@ -1,7 +1,7 @@
 ---
 description: >-
   This consolidated resource is for anyone exploring and developing on top of
-  the shdwDrive platform.
+  the ShdwDrive platform.
 ---
 
 # Your cloud. Your token.

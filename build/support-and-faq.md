@@ -294,14 +294,6 @@ Also follow us on twitter https://twitter.com/GenesysGo or join our tech support
 
 <details>
 
-<summary>Is there a grace period if my storage account runs out of <a href="https://docs.shadow.cloud/reference/shdw-token">$SHDW</a> to cover mutable fees?</summary>
-
-Yes. Your storage account will be kept for 6 months. After that, it is up for cleanup and a storage node may delete your storage account and all data in it.
-
-</details>
-
-<details>
-
 <summary>How can I add more <a href="https://docs.shadow.cloud/reference/shdw-token">$SHDW</a> to my storage account for mutable fees?</summary>
 
 1. Either use the \`topUp\` method in one of the [SDKs](the-sdk/) or send $SHDW directly to the storage account's token address
