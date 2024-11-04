@@ -11,5 +11,3 @@ description: >-
 ## Discord: [https://discord.com/invite/shdwdrive](https://discord.com/invite/shdwdrive)
 
 ## Blog: [https://shdwdrive.com/blog](https://shdwdrive.com/blog)
-
-[https://t.me/shdwdrive](https://t.me/shdwdrive)
